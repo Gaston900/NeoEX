@@ -21,26 +21,26 @@ const options_entry ui_options::s_option_entries[] =
 {
 	// search path options
 	{ nullptr,                              nullptr,                       OPTION_HEADER,  "UI SEARCH PATH OPTIONS" },
-	{ OPTION_HISTORY_PATH,                  "support/history;dats;.",              OPTION_STRING,  "path to history files" },
-	{ OPTION_CATEGORYINI_PATH,              "support/folders",                     OPTION_STRING,  "path to category ini files" },
-	{ OPTION_CABINETS_PATH,                 "support/cabinets;cabdevs",            OPTION_STRING,  "path to cabinets / devices image" },
-	{ OPTION_CPANELS_PATH,                  "support/cpanel",                      OPTION_STRING,  "path to control panel image" },
-	{ OPTION_PCBS_PATH,                     "support/pcb",                         OPTION_STRING,  "path to pcbs image" },
-	{ OPTION_FLYERS_PATH,                   "support/flyers",                      OPTION_STRING,  "path to flyers image" },
-	{ OPTION_TITLES_PATH,                   "support/titles",                      OPTION_STRING,  "path to titles image" },
-	{ OPTION_ENDS_PATH,                     "support/ends",                        OPTION_STRING,  "path to ends image" },
-	{ OPTION_MARQUEES_PATH,                 "support/marquees",                    OPTION_STRING,  "path to marquees image" },
-	{ OPTION_ARTPREV_PATH,                  "support/artwork preview;artpreview",  OPTION_STRING,  "path to artwork preview image" },
-	{ OPTION_BOSSES_PATH,                   "support/bosses",                      OPTION_STRING,  "path to bosses image" },
-	{ OPTION_LOGOS_PATH,                    "support/logo",                        OPTION_STRING,  "path to logos image" },
-	{ OPTION_SCORES_PATH,                   "support/scores",                      OPTION_STRING,  "path to scores image" },
-	{ OPTION_VERSUS_PATH,                   "support/versus",                      OPTION_STRING,  "path to versus image" },
-	{ OPTION_GAMEOVER_PATH,                 "support/gameover",                    OPTION_STRING,  "path to gameover image" },
-	{ OPTION_HOWTO_PATH,                    "support/howto",                       OPTION_STRING,  "path to howto image" },
-	{ OPTION_SELECT_PATH,                   "support/select",                      OPTION_STRING,  "path to select image" },
-	{ OPTION_ICONS_PATH,                    "support/icons",                       OPTION_STRING,  "path to ICOns image" },
-	{ OPTION_COVER_PATH,                    "support/covers",                      OPTION_STRING,  "path to software cover image" },
-	{ OPTION_UI_PATH,                       "config/ui",                           OPTION_STRING,  "path to UI files" },
+	{ OPTION_HISTORY_PATH,                  "support/history;dats;.",              OPTION_STRING,  "path to history files" }, // 修改的 (加斯顿90)
+	{ OPTION_CATEGORYINI_PATH,              "support/folders",                     OPTION_STRING,  "path to category ini files" }, // 修改的 (加斯顿90)
+	{ OPTION_CABINETS_PATH,                 "support/cabinets;cabdevs",            OPTION_STRING,  "path to cabinets / devices image" }, // 修改的 (加斯顿90)
+	{ OPTION_CPANELS_PATH,                  "support/cpanel",                      OPTION_STRING,  "path to control panel image" }, // 修改的 (加斯顿90)
+	{ OPTION_PCBS_PATH,                     "support/pcb",                         OPTION_STRING,  "path to pcbs image" }, // 修改的 (加斯顿90)
+	{ OPTION_FLYERS_PATH,                   "support/flyers",                      OPTION_STRING,  "path to flyers image" }, // 修改的 (加斯顿90)
+	{ OPTION_TITLES_PATH,                   "support/titles",                      OPTION_STRING,  "path to titles image" }, // 修改的 (加斯顿90)
+	{ OPTION_ENDS_PATH,                     "support/ends",                        OPTION_STRING,  "path to ends image" }, // 修改的 (加斯顿90)
+	{ OPTION_MARQUEES_PATH,                 "support/marquees",                    OPTION_STRING,  "path to marquees image" }, // 修改的 (加斯顿90)
+	{ OPTION_ARTPREV_PATH,                  "support/artwork preview;artpreview",  OPTION_STRING,  "path to artwork preview image" }, // 修改的 (加斯顿90)
+	{ OPTION_BOSSES_PATH,                   "support/bosses",                      OPTION_STRING,  "path to bosses image" }, // 修改的 (加斯顿90)
+	{ OPTION_LOGOS_PATH,                    "support/logo",                        OPTION_STRING,  "path to logos image" }, // 修改的 (加斯顿90)
+	{ OPTION_SCORES_PATH,                   "support/scores",                      OPTION_STRING,  "path to scores image" }, // 修改的 (加斯顿90)
+	{ OPTION_VERSUS_PATH,                   "support/versus",                      OPTION_STRING,  "path to versus image" }, // 修改的 (加斯顿90)
+	{ OPTION_GAMEOVER_PATH,                 "support/gameover",                    OPTION_STRING,  "path to gameover image" }, // 修改的 (加斯顿90)
+	{ OPTION_HOWTO_PATH,                    "support/howto",                       OPTION_STRING,  "path to howto image" }, // 修改的 (加斯顿90)
+	{ OPTION_SELECT_PATH,                   "support/select",                      OPTION_STRING,  "path to select image" }, // 修改的 (加斯顿90)
+	{ OPTION_ICONS_PATH,                    "support/icons",                       OPTION_STRING,  "path to ICOns image" }, // 修改的 (加斯顿90)
+	{ OPTION_COVER_PATH,                    "support/covers",                      OPTION_STRING,  "path to software cover image" }, // 修改的 (加斯顿90)
+	{ OPTION_UI_PATH,                       "config/ui",                           OPTION_STRING,  "path to UI files" }, // 修改的 (加斯顿90)
 
 	// misc options
 	{ nullptr,                              nullptr,    OPTION_HEADER,      "UI MISC OPTIONS" },
