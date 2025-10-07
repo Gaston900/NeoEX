@@ -32,6 +32,7 @@
 
 namespace ymfm
 {
+
 //*********************************************************
 // ADPCM "A" REGISTERS
 //*********************************************************
@@ -120,6 +121,7 @@ void adpcm_a_channel::save_restore(ymfm_saved_state &state)
 
 void adpcm_a_channel::keyonoff(bool on)
 {
+	// QUESTION: repeated key ons restart the sample?
 	m_playing = on;
 	if (m_playing)
 	{
@@ -173,14 +175,17 @@ bool adpcm_a_channel::clock()
 			m_playing = m_accumulator = 0;
 			return true;
 		}
+
 		// Look for extra neogeo hack stuff
 		uint32_t read_address = m_curaddress;
+// 修改的 代码来源 (HBMAME)
+/************************************************************************************/
 		if (m_regs.read(m_choffs + 0x08) >= 0xF0)
 		{
 			read_address |= 0x1'000'000;
 			//printf("%X ",read_address);
 		}
-
+/************************************************************************************/
 		m_curbyte = m_owner.intf().ymfm_external_read(ACCESS_ADPCM_A, read_address);
 		m_curaddress++;
 		data = m_curbyte >> 4;

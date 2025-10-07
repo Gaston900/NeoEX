@@ -508,9 +508,9 @@ INPUT_PORTS_EXTERN(dualbios);
 #define NEOGEO_BIOS \
 	ROM_REGION16_BE( 0x80000, "mainbios", 0 ) \
 	ROM_SYSTEM_BIOS( 0, "arcade_mode", "Arcade Mode MVS" ) \
-	ROM_LOAD16_WORD_SWAP_BIOS( 0, "arcade mode.rom",  0x00000, 0x020000, CRC(0de70ac8) SHA1(d41ab190a2c9f91c52649f7e0faf85a9cfa8ed24) ) \
+	ROM_LOAD16_WORD_SWAP_BIOS( 0, "arcade mode.rom",  0x00000, 0x020000, CRC(07c72c00) SHA1(819e3748f3b520c92590d77179919feadca73a16) ) \
 	ROM_SYSTEM_BIOS( 1, "console_mode", "Consola Mode AES" ) \
-	ROM_LOAD16_WORD_SWAP_BIOS( 1, "console mode.rom", 0x00000, 0x020000, CRC(a371d430) SHA1(9519a43eaed7a5753a9fdffaca8167b7214c4d93) ) \
+	ROM_LOAD16_WORD_SWAP_BIOS( 1, "console mode.rom", 0x00000, 0x020000, CRC(a951f2f8) SHA1(dcb92b7ebbd5b89910e8281a670294208f7511ad) ) \
 	ROM_DEFAULT_BIOS("arcade_mode")
 
 #define NEOGEO_UNIBIOS(x) \
