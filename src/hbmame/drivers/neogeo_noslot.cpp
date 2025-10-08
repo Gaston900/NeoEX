@@ -1,5 +1,6 @@
-// Proyecto Shadows Metal Slug Forever
-// copyright-holders:Gaston90
+// NeoEX
+// license:BSD-3-Clause
+// copyright-holders:Bryan McPhail,Ernesto Corvi,Andrew Prime,Zsolt Vasvari, Gaston90S
 // Thanks To The Collaborators Who Have Made A Great Contribution To The Project: Robbert.
 
 #include "includes/neogeo.h"
@@ -707,15 +708,7 @@ ROM_START( bakatono ) /* MVS AND AES VERSION */
 
 	NEO_SFIX_128K( "036.s1", CRC(f3ef4485) SHA1(c30bfceed7e669e4c97b0b3ec2e9f4271e5b6662) )
 
-	ROM_REGION16_BE( 0x20000, "mainbios", 0 )
-	ROM_LOAD16_WORD_SWAP( "vs-bios.rom",  0x00000, 0x20000, CRC(f0e8f27d) SHA1(ecf01eda815909f1facec62abf3594eaa8d11075) )
-
-	ROM_REGION( 0x20000, "audiobios", 0 )
-	ROM_LOAD( "sm1.sm1", 0x00000, 0x20000, CRC(94416d67) SHA1(42f9d7ddd6c0931fd64226a60dc73602b2819dcf) )
-
-	ROM_REGION( 0x90000, "audiocpu", 0 )
-	ROM_LOAD( "036.m1", 0x00000, 0x20000, CRC(f1385b96) SHA1(e7e3d1484188a115e262511116aaf466b8b1f428) )
-	ROM_RELOAD(     0x10000, 0x20000 )
+	NEO_JAPAN_BIOS_AUDIO(0x20000, "036.m1", CRC(f1385b96) SHA1(e7e3d1484188a115e262511116aaf466b8b1f428) )
 
 	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
 	ROM_LOAD( "036.v1", 0x000000, 0x100000, CRC(1c335dce) SHA1(493c273fa71bf81861a20af4c4eaae159e169f39) )
@@ -2019,15 +2012,7 @@ ROM_START( janshin ) /* MVS ONLY RELEASE */
 
 	NEO_SFIX_128K( "048.s1", CRC(8285b25a) SHA1(d983640cda3e346e38469b4d3ec8048b116a7bb7) )
 
-	ROM_REGION16_BE( 0x20000, "mainbios", 0 )
-	ROM_LOAD16_WORD_SWAP( "vs-bios.rom",  0x00000, 0x20000, CRC(f0e8f27d) SHA1(ecf01eda815909f1facec62abf3594eaa8d11075) )
-
-	ROM_REGION( 0x20000, "audiobios", 0 )
-	ROM_LOAD( "sm1.sm1", 0x00000, 0x20000, CRC(94416d67) SHA1(42f9d7ddd6c0931fd64226a60dc73602b2819dcf) )
-
-	ROM_REGION( 0x90000, "audiocpu", 0 )
-	ROM_LOAD( "048.m1", 0x00000, 0x20000, CRC(310467c7) SHA1(c529961195c9bdf5d1ce70a38ad129002d1f3b5f) )
-	ROM_RELOAD(     0x10000, 0x20000 )
+	NEO_JAPAN_BIOS_AUDIO(0x20000, "048.m1", CRC(310467c7) SHA1(c529961195c9bdf5d1ce70a38ad129002d1f3b5f) )
 
 	ROM_REGION( 0x200000, "ymsnd:adpcma", 0 )
 	ROM_LOAD( "048.v1", 0x000000, 0x200000, CRC(f1947d2b) SHA1(955ff91ab24eb2a7ec51ff46c9f9f2ec060456b2) )
@@ -4407,15 +4392,7 @@ ROM_START( minasan ) /* MVS AND AES VERSION */
 
 	NEO_SFIX_128K( "027.s1", CRC(e5824baa) SHA1(8230ff7fe3cabeacecc762d90a084e893db84906) )
 
-	ROM_REGION16_BE( 0x20000, "mainbios", 0 )
-	ROM_LOAD16_WORD_SWAP( "vs-bios.rom",  0x00000, 0x20000, CRC(f0e8f27d) SHA1(ecf01eda815909f1facec62abf3594eaa8d11075) )
-
-	ROM_REGION( 0x20000, "audiobios", 0 )
-	ROM_LOAD( "sm1.sm1", 0x00000, 0x20000, CRC(94416d67) SHA1(42f9d7ddd6c0931fd64226a60dc73602b2819dcf) )
-
-	ROM_REGION( 0x90000, "audiocpu", 0 )
-	ROM_LOAD( "027.m1", 0x00000, 0x20000, CRC(add5a226) SHA1(99995bef2584abbba16777bac52f55523f7aa97d) )
-	ROM_RELOAD(     0x10000, 0x20000 )
+    NEO_JAPAN_BIOS_AUDIO(0x20000, "027.m1", CRC(add5a226) SHA1(99995bef2584abbba16777bac52f55523f7aa97d) )
 
 	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
 	ROM_LOAD( "027.v1", 0x000000, 0x100000, CRC(59ad4459) SHA1(bbb8ba8a8e337dd2946eefda4757e80d0547d54a) )
