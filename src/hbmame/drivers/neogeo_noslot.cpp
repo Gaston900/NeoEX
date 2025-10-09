@@ -8276,13 +8276,13 @@ ROM_START( kf2k2pld )
 	ROM_LOAD16_BYTE( "265.c8", 0x3000001, 0x800000, CRC(ab0bb549) SHA1(d23afb60b7f831f7d4a98ad3c4a00ee19877a1ce) )
 ROM_END
 
-ROM_START( kf2k2plap )
+ROM_START( kf2k2plbp )
 	ROM_REGION( 0x500000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "265mpl.p1", 0x000000, 0x100000, CRC(aba169fe) SHA1(934dd20f6e3da261cb9f3587cdd8145ecdcdfa84) )
-	ROM_LOAD16_WORD_SWAP( "265plp.p2", 0x100000, 0x400000, CRC(dec98282) SHA1(8a3c055c6c728a77134bda1f379995ebca623654) )
+	ROM_LOAD16_WORD_SWAP( "265mpp.p1", 0x000000, 0x100000, CRC(4da7a8f6) SHA1(5efe22dfc2a1cbaaa479d06199d818e3af81fc67) )
+	ROM_LOAD16_WORD_SWAP( "265mp2.p2", 0x100000, 0x400000, CRC(432fdf53) SHA1(d7e542cd84d948162c60768e40ee4ed33d8e7913) )
     KOF2002_ESSENTIALPATCH_MODS_FILL
 
-	NEO_SFIX_128K( "265mpl.s1", CRC(29c0693e) SHA1(a852d15a8558b4a1cadf1ed9ef357d765ff88d35) )
+	NEO_SFIX_128K( "265pla.s1", CRC(1a3ed064) SHA1(9749bb55c750e6b65d651998c2649c5fb68db68e))
 
 	NEO_BIOS_AUDIO_128K( "265d.m1", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
@@ -8301,9 +8301,9 @@ ROM_START( kf2k2plap )
 	ROM_LOAD16_BYTE( "265d.c8", 0x3000001, 0x800000, CRC(bef667a3) SHA1(D5E8BC185DCF63343D129C31D2DDAB9F723F1A12) )
 ROM_END
 
-ROM_START( kf2k2plbp )
+ROM_START( kf2k2plap )
 	ROM_REGION( 0x500000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "265plbp.p1", 0x000000, 0x100000, CRC(758b638b) SHA1(2442e732eb216699545e6848cc5158e33ff81b56) )
+	ROM_LOAD16_WORD_SWAP( "265plap.p1", 0x000000, 0x100000, CRC(758b638b) SHA1(2442e732eb216699545e6848cc5158e33ff81b56) )
 	ROM_LOAD16_WORD_SWAP( "265mp2.p2", 0x100000, 0x400000, CRC(432fdf53) SHA1(d7e542cd84d948162c60768e40ee4ed33d8e7913) )
     KOF2002_ESSENTIALPATCH_MODS_FILL
 
@@ -8326,7 +8326,7 @@ ROM_START( kf2k2plbp )
 	ROM_LOAD16_BYTE( "265d.c8", 0x3000001, 0x800000, CRC(bef667a3) SHA1(D5E8BC185DCF63343D129C31D2DDAB9F723F1A12) )
 ROM_END
 
-ROM_START( kf2k2plcp )
+ROM_START( kf2k2pldp )
 	ROM_REGION( 0x500000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "265plcp.p1", 0x000000, 0x100000, CRC(82bd9093) SHA1(0f9e2ce83cfc631d19f263d2ff38a9832e75bc1b) )
 	ROM_LOAD16_WORD_SWAP( "265mp2.p2", 0x100000, 0x400000, CRC(432fdf53) SHA1(d7e542cd84d948162c60768e40ee4ed33d8e7913) )
@@ -8428,31 +8428,6 @@ ROM_END
 
 ROM_START( kf2k2plde )
 	ROM_REGION( 0x500000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "265plde.p1", 0x000000, 0x100000, CRC(ea1b6e9c) SHA1(cd03c205eb775f133d1f13b1524aac17ec1a6ce3) )
-	ROM_LOAD16_WORD_SWAP( "265.p2", 0x100000, 0x400000, CRC(327266b8) SHA1(98f445cc0a94f8744d74bca71cb420277622b034) )
-    KOF2002_ESSENTIALPATCH_MODS_FILL
-
-	NEO_SFIX_MT_128K
-
-	NEO_BIOS_AUDIO_ENCRYPTED_128K( "265.m1", CRC(85aaa632) SHA1(744fba4ca3bc3a5873838af886efb97a8a316104) )
-
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
-	ROM_LOAD( "265.v1", 0x000000, 0x800000, CRC(15e8f3f5) SHA1(7c9e6426b9fa6db0158baa17a6485ffce057d889) )
-	ROM_LOAD( "265.v2", 0x800000, 0x800000, CRC(da41d6f9) SHA1(a43021f1e58947dcbe3c8ca5283b20b649f0409d) )
-
-	ROM_REGION( 0x4000000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "265plde.c1", 0x0000000, 0x800000, CRC(55c13ecc) SHA1(6966060bfdf6fe7eb3a1d4e17505c815a2c9c196) )
-	ROM_LOAD16_BYTE( "265plde.c2", 0x0000001, 0x800000, CRC(4cada5a5) SHA1(b95ffba8971482bbd8d7d8348b3f2d704f864978) )
-	ROM_LOAD16_BYTE( "265plde.c3", 0x1000000, 0x800000, CRC(b6ca44d9) SHA1(b203abf708adae4b0e38e7bf520f8a1d1278e31b) )
-	ROM_LOAD16_BYTE( "265plde.c4", 0x1000001, 0x800000, CRC(584c82e3) SHA1(3a6efd62a88791a4e90f34a3730f75b2fda2e8e2) )
-	ROM_LOAD16_BYTE( "265plde.c5", 0x2000000, 0x800000, CRC(543e8092) SHA1(0d694d6ce3a708bad03eadd60e18d148881a5c36) )
-	ROM_LOAD16_BYTE( "265plde.c6", 0x2000001, 0x800000, CRC(5e607b53) SHA1(1d9a03629dcaaaa5a001e16b89431b69b7dd8970) )
-	ROM_LOAD16_BYTE( "265plde.c7", 0x3000000, 0x800000, CRC(5be62288) SHA1(578e024e26452110e58a68445004892768382801) )
-	ROM_LOAD16_BYTE( "265plde.c8", 0x3000001, 0x800000, CRC(4a4e472c) SHA1(d5e1cc6f05e605dd3bc7eac6cf1fd67ad76b9d59) )
-ROM_END
-
-ROM_START( kf2k2sple )
-	ROM_REGION( 0x500000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "265nu.p1",  0x000000, 0x100000, CRC(ebedae17) SHA1(5f84562f9ef7a6b007290e59b31a62aca208f579) )
 	ROM_LOAD16_WORD_SWAP( "265.p2", 0x100000, 0x400000, CRC(327266b8) SHA1(98f445cc0a94f8744d74bca71cb420277622b034) )
     KOF2002_ESSENTIALPATCH_MODS_FILL
@@ -8466,14 +8441,39 @@ ROM_START( kf2k2sple )
 	ROM_LOAD( "265.v2", 0x800000, 0x800000, CRC(da41d6f9) SHA1(a43021f1e58947dcbe3c8ca5283b20b649f0409d) )
 
 	ROM_REGION( 0x4000000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "265sple.c1", 0x0000000, 0x800000, CRC(94a5e645) SHA1(5bc60cb2b01bceaadf96681426253121c308b2f8) )
-	ROM_LOAD16_BYTE( "265sple.c2", 0x0000001, 0x800000, CRC(822d1e66) SHA1(d2253ddb5a04fafb70efb3258a50ef044f1e4352) )
-	ROM_LOAD16_BYTE( "265sple.c3", 0x1000000, 0x800000, CRC(1e1d9f2a) SHA1(4541e6a12bfb2ccbbe0e101660e64698a29d837b) )
-	ROM_LOAD16_BYTE( "265sple.c4", 0x1000001, 0x800000, CRC(fd71c6ef) SHA1(c95fecb88903f3a8438ab594516c3e0fac56ca69) )
-	ROM_LOAD16_BYTE( "265sple.c5", 0x2000000, 0x800000, CRC(298b1e04) SHA1(83096958f4d0a6744116510515325c0d872602a9) )
-	ROM_LOAD16_BYTE( "265sple.c6", 0x2000001, 0x800000, CRC(7e252e51) SHA1(a0b9a8f7a492307283947deb246fe035500226e2) )
-	ROM_LOAD16_BYTE( "265sple.c7", 0x3000000, 0x800000, CRC(979841e3) SHA1(82f5bd541adbf301724598078db6a0b3a2d5944d) )
-	ROM_LOAD16_BYTE( "265sple.c8", 0x3000001, 0x800000, CRC(5851abde) SHA1(d6d0094a578cd5d5d17382cb3786d9d0cf676088) )
+	ROM_LOAD16_BYTE( "265plde.c1", 0x0000000, 0x800000, CRC(94a5e645) SHA1(5bc60cb2b01bceaadf96681426253121c308b2f8) )
+	ROM_LOAD16_BYTE( "265plde.c2", 0x0000001, 0x800000, CRC(822d1e66) SHA1(d2253ddb5a04fafb70efb3258a50ef044f1e4352) )
+	ROM_LOAD16_BYTE( "265plde.c3", 0x1000000, 0x800000, CRC(1e1d9f2a) SHA1(4541e6a12bfb2ccbbe0e101660e64698a29d837b) )
+	ROM_LOAD16_BYTE( "265plde.c4", 0x1000001, 0x800000, CRC(fd71c6ef) SHA1(c95fecb88903f3a8438ab594516c3e0fac56ca69) )
+	ROM_LOAD16_BYTE( "265plde.c5", 0x2000000, 0x800000, CRC(298b1e04) SHA1(83096958f4d0a6744116510515325c0d872602a9) )
+	ROM_LOAD16_BYTE( "265plde.c6", 0x2000001, 0x800000, CRC(7e252e51) SHA1(a0b9a8f7a492307283947deb246fe035500226e2) )
+	ROM_LOAD16_BYTE( "265plde.c7", 0x3000000, 0x800000, CRC(979841e3) SHA1(82f5bd541adbf301724598078db6a0b3a2d5944d) )
+	ROM_LOAD16_BYTE( "265plde.c8", 0x3000001, 0x800000, CRC(5851abde) SHA1(d6d0094a578cd5d5d17382cb3786d9d0cf676088) )
+ROM_END
+
+ROM_START( kf2k2plee )
+	ROM_REGION( 0x500000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "265plee.p1", 0x000000, 0x100000, CRC(ea1b6e9c) SHA1(cd03c205eb775f133d1f13b1524aac17ec1a6ce3) )
+	ROM_LOAD16_WORD_SWAP( "265.p2", 0x100000, 0x400000, CRC(327266b8) SHA1(98f445cc0a94f8744d74bca71cb420277622b034) )
+    KOF2002_ESSENTIALPATCH_MODS_FILL
+
+	NEO_SFIX_MT_128K
+
+	NEO_BIOS_AUDIO_ENCRYPTED_128K( "265.m1", CRC(85aaa632) SHA1(744fba4ca3bc3a5873838af886efb97a8a316104) )
+
+	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "265.v1", 0x000000, 0x800000, CRC(15e8f3f5) SHA1(7c9e6426b9fa6db0158baa17a6485ffce057d889) )
+	ROM_LOAD( "265.v2", 0x800000, 0x800000, CRC(da41d6f9) SHA1(a43021f1e58947dcbe3c8ca5283b20b649f0409d) )
+
+	ROM_REGION( 0x4000000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "265plee.c1", 0x0000000, 0x800000, CRC(55c13ecc) SHA1(6966060bfdf6fe7eb3a1d4e17505c815a2c9c196) )
+	ROM_LOAD16_BYTE( "265plee.c2", 0x0000001, 0x800000, CRC(4cada5a5) SHA1(b95ffba8971482bbd8d7d8348b3f2d704f864978) )
+	ROM_LOAD16_BYTE( "265plee.c3", 0x1000000, 0x800000, CRC(b6ca44d9) SHA1(b203abf708adae4b0e38e7bf520f8a1d1278e31b) )
+	ROM_LOAD16_BYTE( "265plee.c4", 0x1000001, 0x800000, CRC(584c82e3) SHA1(3a6efd62a88791a4e90f34a3730f75b2fda2e8e2) )
+	ROM_LOAD16_BYTE( "265plee.c5", 0x2000000, 0x800000, CRC(543e8092) SHA1(0d694d6ce3a708bad03eadd60e18d148881a5c36) )
+	ROM_LOAD16_BYTE( "265plee.c6", 0x2000001, 0x800000, CRC(5e607b53) SHA1(1d9a03629dcaaaa5a001e16b89431b69b7dd8970) )
+	ROM_LOAD16_BYTE( "265plee.c7", 0x3000000, 0x800000, CRC(5be62288) SHA1(578e024e26452110e58a68445004892768382801) )
+	ROM_LOAD16_BYTE( "265plee.c8", 0x3000001, 0x800000, CRC(4a4e472c) SHA1(d5e1cc6f05e605dd3bc7eac6cf1fd67ad76b9d59) )
 ROM_END
 
 ROM_START( kf2k2plad )
@@ -8551,6 +8551,31 @@ ROM_START( kf2k2plcd )
 	ROM_LOAD16_BYTE( "265plcd.c8", 0x3000001, 0x800000, CRC(616a3c60) SHA1(04ca8e70dce91049fd0809b3136390fff14676eb) )
 ROM_END
 
+ROM_START( kf2k2pled )
+	ROM_REGION( 0x500000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "265nu.p1",  0x000000, 0x100000, CRC(ebedae17) SHA1(5f84562f9ef7a6b007290e59b31a62aca208f579) )
+	ROM_LOAD16_WORD_SWAP( "265.p2", 0x100000, 0x400000, CRC(327266b8) SHA1(98f445cc0a94f8744d74bca71cb420277622b034) )
+    KOF2002_ESSENTIALPATCH_MODS_FILL
+
+	NEO_SFIX_MT_128K
+
+	NEO_BIOS_AUDIO_128K( "265d.m1", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
+
+	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "265.v1", 0x000000, 0x800000, CRC(15e8f3f5) SHA1(7c9e6426b9fa6db0158baa17a6485ffce057d889) )
+	ROM_LOAD( "265.v2", 0x800000, 0x800000, CRC(da41d6f9) SHA1(a43021f1e58947dcbe3c8ca5283b20b649f0409d) )
+
+	ROM_REGION( 0x4000000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "265d.c1", 0x0000000, 0x800000, CRC(7efa6ef7) SHA1(71345A4202E7CC9239538FB978638141416C8893) )
+	ROM_LOAD16_BYTE( "265d.c2", 0x0000001, 0x800000, CRC(aa82948b) SHA1(B2A40797F68BDEB80BC54DCCC5495BE68934BF0E) )
+	ROM_LOAD16_BYTE( "265d.c3", 0x1000000, 0x800000, CRC(959fad0b) SHA1(63AB83DDC5F688DC8165A7FF8D262DF3FCD942A2) )
+	ROM_LOAD16_BYTE( "265d.c4", 0x1000001, 0x800000, CRC(efe6a468) SHA1(2A414285E48AA948B5B0D4A9333BAB083B5FB853) )
+	ROM_LOAD16_BYTE( "265d.c5", 0x2000000, 0x800000, CRC(74bba7c6) SHA1(E01ADC7A4633BC0951B9B4F09ABC07D728E9A2D9) )
+	ROM_LOAD16_BYTE( "265d.c6", 0x2000001, 0x800000, CRC(e20d2216) SHA1(5D28EEA7B581E780B78F391A8179F1678EE0D9A5) )
+	ROM_LOAD16_BYTE( "265pled.c7", 0x3000000, 0x800000, CRC(14fcc325) SHA1(b4e30f4b40eb879774c7c92c6954e4593500b46d) )
+	ROM_LOAD16_BYTE( "265pled.c8", 0x3000001, 0x800000, CRC(8bb92d40) SHA1(7cdad8cbe0f46cc7e44f57b35be2225409116b79) )
+ROM_END
+
 ROM_START( kf2k2pldd )
 	ROM_REGION( 0x500000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "265plde.p1", 0x000000, 0x100000, CRC(ea1b6e9c) SHA1(cd03c205eb775f133d1f13b1524aac17ec1a6ce3) )
@@ -8574,31 +8599,6 @@ ROM_START( kf2k2pldd )
 	ROM_LOAD16_BYTE( "265d.c6", 0x2000001, 0x800000, CRC(e20d2216) SHA1(5D28EEA7B581E780B78F391A8179F1678EE0D9A5) )
 	ROM_LOAD16_BYTE( "265pldd.c7", 0x3000000, 0x800000, CRC(dd4ef121) SHA1(f434cf4b5bbad978e9588433c70ab171c1351c11) )
 	ROM_LOAD16_BYTE( "265pldd.c8", 0x3000001, 0x800000, CRC(420cc265) SHA1(e6f83dd3ac7b1f0cd07a295fdde1a9704fd78ade) )
-ROM_END
-
-ROM_START( kf2k2spld )
-	ROM_REGION( 0x500000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "265nu.p1",  0x000000, 0x100000, CRC(ebedae17) SHA1(5f84562f9ef7a6b007290e59b31a62aca208f579) )
-	ROM_LOAD16_WORD_SWAP( "265.p2", 0x100000, 0x400000, CRC(327266b8) SHA1(98f445cc0a94f8744d74bca71cb420277622b034) )
-    KOF2002_ESSENTIALPATCH_MODS_FILL
-
-	NEO_SFIX_MT_128K
-
-	NEO_BIOS_AUDIO_128K( "265d.m1", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
-
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
-	ROM_LOAD( "265.v1", 0x000000, 0x800000, CRC(15e8f3f5) SHA1(7c9e6426b9fa6db0158baa17a6485ffce057d889) )
-	ROM_LOAD( "265.v2", 0x800000, 0x800000, CRC(da41d6f9) SHA1(a43021f1e58947dcbe3c8ca5283b20b649f0409d) )
-
-	ROM_REGION( 0x4000000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "265d.c1", 0x0000000, 0x800000, CRC(7efa6ef7) SHA1(71345A4202E7CC9239538FB978638141416C8893) )
-	ROM_LOAD16_BYTE( "265d.c2", 0x0000001, 0x800000, CRC(aa82948b) SHA1(B2A40797F68BDEB80BC54DCCC5495BE68934BF0E) )
-	ROM_LOAD16_BYTE( "265d.c3", 0x1000000, 0x800000, CRC(959fad0b) SHA1(63AB83DDC5F688DC8165A7FF8D262DF3FCD942A2) )
-	ROM_LOAD16_BYTE( "265d.c4", 0x1000001, 0x800000, CRC(efe6a468) SHA1(2A414285E48AA948B5B0D4A9333BAB083B5FB853) )
-	ROM_LOAD16_BYTE( "265d.c5", 0x2000000, 0x800000, CRC(74bba7c6) SHA1(E01ADC7A4633BC0951B9B4F09ABC07D728E9A2D9) )
-	ROM_LOAD16_BYTE( "265d.c6", 0x2000001, 0x800000, CRC(e20d2216) SHA1(5D28EEA7B581E780B78F391A8179F1678EE0D9A5) )
-	ROM_LOAD16_BYTE( "265spld.c7", 0x3000000, 0x800000, CRC(14fcc325) SHA1(b4e30f4b40eb879774c7c92c6954e4593500b46d) )
-	ROM_LOAD16_BYTE( "265spld.c8", 0x3000001, 0x800000, CRC(8bb92d40) SHA1(7cdad8cbe0f46cc7e44f57b35be2225409116b79) )
 ROM_END
 
 ROM_START( kf2k2mpl )
@@ -14332,22 +14332,22 @@ ROM_START( cyborg )
 	ROM_LOAD16_BYTE( "502.c2",   0x0000001, 0x1000000, CRC(a5abdb83) SHA1(cfc54c46ae6a593a9d2f4fdd1ee0d27877f55c20) )
 ROM_END
 
-ROM_START( doubled1 ) // 2025-09-14
+ROM_START( doubled1 ) // 2025-09-16
 	ROM_REGION( 0x500000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "505b.p1", 0x000000, 0x100000, CRC(33f38286) SHA1(4b949629a85c6877031d7e82f4c980bed0252412) )
-	ROM_LOAD16_WORD_SWAP( "505b.p2", 0x100000, 0x400000, CRC(7e5ed6b8) SHA1(cae16c7d27512f94a242bff167393a2c56c0220d) )
+	ROM_LOAD16_WORD_SWAP( "505.p1", 0x000000, 0x100000, CRC(5991da92) SHA1(c7387217e28c03483ea5d92fa062bb834f8d0534) )
+	ROM_LOAD16_WORD_SWAP( "505.p2", 0x100000, 0x400000, CRC(7e5ed6b8) SHA1(cae16c7d27512f94a242bff167393a2c56c0220d) )
 
-	NEO_SFIX_128K( "505b.s1", CRC(714afb4b) SHA1(63b69781585e503e7fa6a62bcf1e6742f8cb3921) )
+	NEO_SFIX_128K( "505.s1", CRC(714afb4b) SHA1(63b69781585e503e7fa6a62bcf1e6742f8cb3921) )
 
-	NEO_BIOS_AUDIO_64K( "505b.m1", CRC(43295479) SHA1(5f08b91444e89f918cd239019b6df540b5d158fc) )
+	NEO_BIOS_AUDIO_64K( "505.m1", CRC(43295479) SHA1(5f08b91444e89f918cd239019b6df540b5d158fc) )
 
 	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
-	ROM_LOAD( "505b.v1",   0x000000, 0x800000, CRC(f01e97dc) SHA1(3bfb92c2cfb937ddf02299b6ac14c6851b6c1f11) )
-	ROM_LOAD( "502b.v2",   0x800000, 0x800000, CRC(79156c41) SHA1(8f8835139390c021b201384c304d235300b47af7) )
+	ROM_LOAD( "505.v1",   0x000000, 0x800000, CRC(f01e97dc) SHA1(3bfb92c2cfb937ddf02299b6ac14c6851b6c1f11) )
+	ROM_LOAD( "505.v2",   0x800000, 0x800000, CRC(79156c41) SHA1(8f8835139390c021b201384c304d235300b47af7) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "505b.c1", 0x0000000, 0x1000000, CRC(fd883db8) SHA1(9b5c2e916a38438290d9b82eb7b5f34e8b27f660) )
-	ROM_LOAD16_BYTE( "505b.c2", 0x0000001, 0x1000000, CRC(718050d3) SHA1(4bab6c856a8e91d4d8dab12257211e6c6e82b306) )
+	ROM_LOAD16_BYTE( "505.c1",   0x0000000, 0x1000000, CRC(fd883db8) SHA1(9b5c2e916a38438290d9b82eb7b5f34e8b27f660) )
+	ROM_LOAD16_BYTE( "505.c2",   0x0000001, 0x1000000, CRC(718050d3) SHA1(4bab6c856a8e91d4d8dab12257211e6c6e82b306) )
 ROM_END
 
 // 415 : Flappy Chicken by Blastar 2023-04-30
@@ -14405,6 +14405,24 @@ ROM_START( gladmort )
 	ROM_REGION( 0x2800000, "sprites", 0 )
 	ROM_LOAD16_BYTE( "503.c1",   0x0000000, 0x1400000, CRC(c7d367cc) SHA1(91a5241ba793c367e06341c951e9fb43726d0944) )
 	ROM_LOAD16_BYTE( "503.c2",   0x0000001, 0x1400000, CRC(2c39b98e) SHA1(da26d5073fe483650cbcacf595b4410e4f5f4787) )
+ROM_END
+
+// 514: Food Fight port by iq_132
+// bugs: priority issues
+ROM_START( foodfn )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "514.p1", 0x000000, 0x080000, CRC(904bb32f) SHA1(b6e29634485af5e88997971f0dfb7661e93e8724) )
+
+	NEO_SFIX_128K( "021.s1", CRC(6956d778) SHA1(e3757776d60dc07d8e07c9ca61b223b14732f860) )
+
+	NEO_BIOS_AUDIO_256K( "514.m1", CRC(35cb565b) SHA1(887b91c47e99c5b3beb92425d49e240425507afa) )
+
+	ROM_REGION( 0x080000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "514.v1", 0x000000, 0x080000, CRC(16d20386) SHA1(79787d1a6f23937f3da6cb3d7bfea798a3ccaf1f) )
+
+	ROM_REGION( 0x100000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "514.c1", 0x000000, 0x080000, CRC(7b4ca9e3) SHA1(ed5aa0f673e6489f608b4fe3cd16ef7f6fdcff31) )
+	ROM_LOAD16_BYTE( "514.c2", 0x000001, 0x080000, CRC(d9f831bb) SHA1(f2bf06591506c8d142873800a55713de831c49eb) )
 ROM_END
 
 // 503 : Gladmort Demo 2 by Pixelheart
@@ -15953,19 +15971,19 @@ GAME( 2002, kof2k2nd,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 2002, kf2k2plb,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kf2k2plb, ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, Set 3)" , MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2plc,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kf2k2plc, ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, Set 4)" , MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2pld,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, Set 5)" , MACHINE_SUPPORTS_SAVE )
-GAME( 2002, kf2k2plap,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, set 2)(Predecrypted S & P)" , MACHINE_SUPPORTS_SAVE )
-GAME( 2002, kf2k2plbp,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, set 3)(Predecrypted S & P)" , MACHINE_SUPPORTS_SAVE )
-GAME( 2002, kf2k2plcp,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, set 4)(Predecrypted S & P)" , MACHINE_SUPPORTS_SAVE )
+GAME( 2002, kf2k2plbp,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, set 2)(Predecrypted S & P)" , MACHINE_SUPPORTS_SAVE )
+GAME( 2002, kf2k2plap,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, set 1)(Predecrypted S & P)" , MACHINE_SUPPORTS_SAVE )
+GAME( 2002, kf2k2pldp,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, set 5)(Predecrypted S & P)" , MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2plae,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, Set 1 ) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2plbe,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, Set 2 ) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2plce,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, Set 3 ) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2plde,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, Set 4 ) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2002, kf2k2sple,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Super (Encrypted C)" , MACHINE_SUPPORTS_SAVE )
+GAME( 2002, kf2k2plee,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, Set 5 ) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2plad,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, Set 1 ) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2plbd,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, Set 2 ) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2plcd,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, Set 3 ) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2pldd,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, Set 4 ) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2002, kf2k2spld,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Super (Decrypted C)" , MACHINE_SUPPORTS_SAVE )
+GAME( 2002, kf2k2pled,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Plus (bootleg, Set 5 ) (Decrypted C)" , MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2mpl,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Magic Plus (bootleg, set 2)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2mpp,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2002 Magic Plus (bootleg)(Predecrypted S & P)" , MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2mp2p,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2002 Magic Plus II (bootleg)(Predecrypted S & P)" , MACHINE_SUPPORTS_SAVE )
@@ -16201,6 +16219,7 @@ GAME( 2023, cyborg,     neogeo,   neogeo_noslot,   neogeo,     neogeo_state, ini
 GAME( 2025, doubled1,   neogeo,   neogeo_noslot,   neogeo,     neogeo_state, init_neogeo,   ROT0, "La Casa De Ruivo / Neo Byte Force", "Double Dragon One Beta", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, flapchck,   neogeo,   neogeo_noslot,   neogeo,     neogeo_state, init_neogeo,   ROT0, "Blastar", "Flappy Chicken", MACHINE_SUPPORTS_SAVE )
 GAME( 2006, ffeast,     neogeo,   neogeo_noslot,   neogeo,     neogeo_state, init_neogeo,   ROT0, "Rastersoft", "Frog Feast (NeoGeo)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, foodfn,     neogeo,   neogeo_noslot,   neogeo,     neogeo_state, init_neogeo,   ROT0, "iq132", "Food Fight (Neo-Geo port)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, gladmort,   neogeo,   neogeo_noslot,   neogeo,     neogeo_state, init_neogeo,   ROT0, "Pixelheart / ChipsOnSteroids", "Gladmort", MACHINE_SUPPORTS_SAVE )
 GAME( 2009, gladmortd,  neogeo,   neogeo_noslot,   neogeo,     neogeo_state, init_neogeo,   ROT0, "Pixelheart", "Gladmort (Demo)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, goldaxen,   neogeo,   neogeo_noslot,   neogeo,     neogeo_state, init_neogeo,   ROT0, "Hoffman", "Golden Axe (Neo-Geo port)", MACHINE_SUPPORTS_SAVE )

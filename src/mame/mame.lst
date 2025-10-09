@@ -338,17 +338,17 @@ kf2k2plc                        // Decrypted / Bootleg
 kf2k2pld                        // Decrypted / Bootleg
 kf2k2plap                       // Predecrypted / Bootleg
 kf2k2plbp                       // Predecrypted / Bootleg
-kf2k2plcp                       // Predecrypted / Bootleg
+kf2k2pldp                       // Predecrypted / Bootleg
 kf2k2plae                       // Encrypted / Bootleg
 kf2k2plbe                       // Encrypted / Bootleg
 kf2k2plce                       // Encrypted / Bootleg
 kf2k2plde                       // Encrypted / Bootleg
-kf2k2sple                       // Encrypted / Bootleg
+kf2k2plee                       // Encrypted / Bootleg
 kf2k2plad                       // Decrypted / Bootleg
 kf2k2plbd                       // Decrypted / Bootleg
 kf2k2plcd                       // Decrypted / Bootleg
 kf2k2pldd                       // Decrypted / Bootleg
-kf2k2spld                       // Decrypted / Bootleg
+kf2k2pled                       // Decrypted / Bootleg
 kf2k2mpl                        // Decrypted / Bootleg
 kf2k2mpp                        // Predecrypted / Bootleg
 kf2k2mp2p                       // Predecrypted / Bootleg
@@ -1115,6 +1115,7 @@ cyborg                          // HomeBrew
 doubled1                        // HomeBrew
 flapchck                        // HomeBrew
 ffeast                          // HomeBrew
+foodfn                          // HomeBrew
 gladmort                        // HomeBrew
 gladmortd                       // HomeBrew
 goldaxen                        // HomeBrew
