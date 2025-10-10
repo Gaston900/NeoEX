@@ -3555,7 +3555,7 @@ ROM_START( lans2004 ) /* Shock Troopers - 2nd Squad bootleg */
 	ROM_LOAD16_WORD_SWAP( "246l.p1", 0x000000, 0x200000, CRC(b40a879a) SHA1(379f3d44b0bae430b32157fd5f4018d77b243c58) )
 	ROM_LOAD16_WORD_SWAP( "246l.p2", 0x200000, 0x200000, CRC(ecdb2d42) SHA1(0d930cd369dfbcab7778b144355e5f70874aa324) )
 	ROM_LOAD16_WORD_SWAP( "246l.p3", 0x400000, 0x200000, CRC(fac5e2e7) SHA1(5cce7226c137da80c969df00e1cda41ef9c5082c) )
-    LANS2004_ESSENTIALPATCH_MODS_FILL
+ /* Incompatible with the encrypted version "ROM FILL Does Not Work" */
 
 	NEO_SFIX_128K( "246l.s1", CRC(39e82897) SHA1(24a8c94dd7e70ecde8f90ea17f75b6b5d065704f) )
 
@@ -8666,54 +8666,6 @@ ROM_START( kf2k2mp2p )
 	ROM_LOAD16_BYTE( "265d.c8", 0x3000001, 0x800000, CRC(bef667a3) SHA1(D5E8BC185DCF63343D129C31D2DDAB9F723F1A12) )
 ROM_END
 
-ROM_START( kof2003d )
-	ROM_REGION( 0x700000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "271d.p0", 0x000000, 0x100000, CRC(7c2aee16) SHA1(b4373569c4a26829a93759ba6917879518f2fb20) )
-	ROM_LOAD16_WORD_SWAP( "271bl.p1", 0x100000, 0x400000, CRC(92ed6ee3) SHA1(5e7e21eb40dfcc453ba73808760d5ddedd49c58a) )
-	ROM_LOAD16_WORD_SWAP( "271d.p2", 0x500000, 0x200000, CRC(0d0a5861) SHA1(823dd3d11574a42f98588a6d1f9bb5d721f34be2) )
-    KOF2003_ESSENTIALPATCH_MODS_FILL
-
-	NEO_SFIX_512K( "271d.s1", CRC(3230e10f) SHA1(a7aa4c11be7de5969e00338c7f424811174a8ad6) )
-
-    NEO_BIOS_AUDIO_512K( "271d.m1", CRC(cc8b54c0) SHA1(c0dabaad7a8e9e57774af8fa1009296af5c60005) )
-
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
-	ROM_LOAD( "271d.v1", 0x000000, 0x800000, CRC(dd6c6a85) SHA1(e32b16d0b716a4f3b95868457347303d020147fb) )
-	ROM_LOAD( "271d.v2", 0x800000, 0x800000, CRC(0e84f8c1) SHA1(28c964fe89c800b445d3a65c965de32b4e504726) )
-
-	ROM_REGION( 0x4000000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "271b.c1", 0x0000000, 0x800000, CRC(e42fc226) SHA1(1cd9364993e141facdcdd53ec2277df7b275d8a7) )
-	ROM_LOAD16_BYTE( "271b.c2", 0x0000001, 0x800000, CRC(1b5e3b58) SHA1(0eb254477a9479541291e43e415310852a0f0bed) )
-	ROM_LOAD16_BYTE( "271b.c3", 0x1000000, 0x800000, CRC(d334fdd9) SHA1(1efe30b4f56a55e25ab518cf6999de797b5e407c) )
-	ROM_LOAD16_BYTE( "271b.c4", 0x1000001, 0x800000, CRC(0d457699) SHA1(ec73d0c9fc7094d0ac6c0986a6e07cde25893e57) )
-	ROM_LOAD16_BYTE( "271b.c5", 0x2000000, 0x800000, CRC(8a91aae4) SHA1(802f4baacf801646be1ef686e105b2e867a6a5df) )
-	ROM_LOAD16_BYTE( "271b.c6", 0x2000001, 0x800000, CRC(9f8674b8) SHA1(65964f40b2227d020023fb436579927e65807dcd) )
-	ROM_LOAD16_BYTE( "271d.c7", 0x3000000, 0x800000, CRC(8ee6b43c) SHA1(c78b749c7c8e1d8ab8335b96da03764cc8e9eb21) )
-	ROM_LOAD16_BYTE( "271d.c8", 0x3000001, 0x800000, CRC(6d8d2d60) SHA1(841698eead0f7d422937ce2f2329e17c383d90a6) )
-ROM_END
-
-ROM_START( kof2003f )
-	ROM_REGION( 0x800000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "271f.p1", 0x000000, 0x400000, CRC(d29a0d06) SHA1(a5ba68ceac0b4bceb0c37d65844d96835eb244e4) )
-	ROM_LOAD16_WORD_SWAP( "271f.p2", 0x400000, 0x400000, CRC(95477dd4) SHA1(3a57befa3e0772b2989ba5b76afd95f3aed1936b) )
-    KOF2003_ESSENTIALPATCH_MODS_FILL
-
-	NEO_SFIX_128K( "271f.s1", CRC(7c7829aa) SHA1(22f8d38d1d0891295d0593741d9477fbe6b4f48c) )
-
-	NEO_BIOS_AUDIO_512K( "271f.m1", CRC(0e86af8f) SHA1(769102b67bb1a699cfa5674d66cdb46ae633cb65) )
-
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
-	ROM_LOAD( "271f.v1", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
-
-	ROM_REGION( 0x6000000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "271pcd.c1", 0x0000000, 0x1000000, CRC(c29acd28) SHA1(8a10409c5a9ad95fa9b56e94c14f1b96101fb179) )
-	ROM_LOAD16_BYTE( "271pcd.c2", 0x0000001, 0x1000000, CRC(328e80b1) SHA1(c7f8069488be1a88a2ea03718b6a131f5c96bd3f) )
-	ROM_LOAD16_BYTE( "271pcd.c3", 0x2000000, 0x1000000, CRC(020a11f1) SHA1(85cfae76234f72b0039ebc02f931bb2a9c10b1af) )
-	ROM_LOAD16_BYTE( "271pcd.c4", 0x2000001, 0x1000000, CRC(991b5ed2) SHA1(99c4c470bc9cb388773e27de6df4a16803fc7b45) )
-	ROM_LOAD16_BYTE( "271pcd.c5", 0x4000000, 0x1000000, CRC(c2de8b66) SHA1(40c2ea48fc20d470163a9dbb40c0276fc4cfceb9) )
-	ROM_LOAD16_BYTE( "271pcd.c6", 0x4000001, 0x1000000, CRC(3ff750db) SHA1(714f14a2eb2df6f25d10a6b6aff4b3adfbc7a5dc) )
-ROM_END
-
 ROM_START( kof2k3d )
 	ROM_REGION( 0x900000, "maincpu", 0 )
 	ROM_LOAD32_WORD_SWAP( "271.p1", 0x000000, 0x400000, CRC(530ecc14) SHA1(812cf7e9902af3f5e9e330b7c05c2171b139ad2b) )
@@ -8762,8 +8714,8 @@ ROM_START( kf2k3bd )
 	ROM_LOAD16_BYTE( "271b.c4", 0x1000001, 0x800000, CRC(0d457699) SHA1(ec73d0c9fc7094d0ac6c0986a6e07cde25893e57) )
 	ROM_LOAD16_BYTE( "271b.c5", 0x2000000, 0x800000, CRC(8a91aae4) SHA1(802f4baacf801646be1ef686e105b2e867a6a5df) )
 	ROM_LOAD16_BYTE( "271b.c6", 0x2000001, 0x800000, CRC(9f8674b8) SHA1(65964f40b2227d020023fb436579927e65807dcd) )
-	ROM_LOAD16_BYTE( "271b.c7", 0x3000000, 0x800000, CRC(374ea523) SHA1(613827d72c6181f3e08353750c9af0c4dbad020b) )
-	ROM_LOAD16_BYTE( "271b.c8", 0x3000001, 0x800000, CRC(75211f4d) SHA1(d82f044e816ee539ff131d9c931200c818d34cd0) )
+	ROM_LOAD16_BYTE( "271d.c7", 0x3000000, 0x800000, CRC(8ee6b43c) SHA1(c78b749c7c8e1d8ab8335b96da03764cc8e9eb21) )
+	ROM_LOAD16_BYTE( "271d.c8", 0x3000001, 0x800000, CRC(6d8d2d60) SHA1(841698eead0f7d422937ce2f2329e17c383d90a6) )
 ROM_END
 
 ROM_START( kof2k3hd )
@@ -8875,9 +8827,8 @@ ROM_START( kf2k3pd )
 ROM_END
 
 ROM_START( kf2k3upd )
-	ROM_REGION( 0x700000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "364upd.p1", 0x000000, 0x100000, CRC(7397d4b7) SHA1(f2c539d12387c09083d312813e00440080aeebad) )
-	ROM_LOAD16_WORD_SWAP( "364pd.p2", 0x100000, 0x600000, CRC(264744e2) SHA1(cfd43006dad8dc8349b6cb3db0953991ab1d414d) )
+	ROM_REGION( 0x800000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "271upd.p1", 0x000000, 0x800000, CRC(4793b724) SHA1(e49b8496c55bdcf12a8bf0e65f249c68339cc568) )
     KOF2003_ESSENTIALPATCH_MODS_FILL
 
 	NEO_SFIX_512K( "364upd.s1", CRC(3df88da7) SHA1(50ad48ef1e57bbf522d9e6c0c9e7f88c4a96d1f9) )
@@ -8899,27 +8850,6 @@ ROM_START( kf2k3upd )
 	ROM_LOAD16_BYTE( "271b.c6", 0x2000001, 0x800000, CRC(9f8674b8) SHA1(65964f40b2227d020023fb436579927e65807dcd) )
 	ROM_LOAD16_BYTE( "271b.c7", 0x3000000, 0x800000, CRC(374ea523) SHA1(613827d72c6181f3e08353750c9af0c4dbad020b) )
 	ROM_LOAD16_BYTE( "271b.c8", 0x3000001, 0x800000, CRC(75211f4d) SHA1(d82f044e816ee539ff131d9c931200c818d34cd0) )
-ROM_END
-
-ROM_START( kf2k3uplp )
-	ROM_REGION( 0x800000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "271uplp.p1", 0x000000, 0x800000, CRC(4793b724) SHA1(e49b8496c55bdcf12a8bf0e65f249c68339cc568) )
-    KOF2003_ESSENTIALPATCH_MODS_FILL
-
-	NEO_SFIX_128K( "271uplp.s1", CRC(eb232b3a) SHA1(a875222f0e9a37e0a7bf839a21d2feb5e0ac7572) )
-
-	NEO_BIOS_AUDIO_512K( "271d.m1", CRC(cc8b54c0) SHA1(c0dabaad7a8e9e57774af8fa1009296af5c60005) )
-
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
-	ROM_LOAD( "271f.v1", 0x000000, 0x1000000, CRC(2964f36e) SHA1(bfc52f81354eb57e27acb3b80fe1547b9e070293) )
-
-	ROM_REGION( 0x6000000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "271pcd.c1", 0x0000000, 0x1000000, CRC(c29acd28) SHA1(8a10409c5a9ad95fa9b56e94c14f1b96101fb179) )
-	ROM_LOAD16_BYTE( "271pcd.c2", 0x0000001, 0x1000000, CRC(328e80b1) SHA1(c7f8069488be1a88a2ea03718b6a131f5c96bd3f) )
-	ROM_LOAD16_BYTE( "271pcd.c3", 0x2000000, 0x1000000, CRC(020a11f1) SHA1(85cfae76234f72b0039ebc02f931bb2a9c10b1af) )
-	ROM_LOAD16_BYTE( "271pcd.c4", 0x2000001, 0x1000000, CRC(991b5ed2) SHA1(99c4c470bc9cb388773e27de6df4a16803fc7b45) )
-	ROM_LOAD16_BYTE( "271pcd.c5", 0x4000000, 0x1000000, CRC(c2de8b66) SHA1(40c2ea48fc20d470163a9dbb40c0276fc4cfceb9) )
-	ROM_LOAD16_BYTE( "271pcd.c6", 0x4000001, 0x1000000, CRC(3ff750db) SHA1(714f14a2eb2df6f25d10a6b6aff4b3adfbc7a5dc) )
 ROM_END
 
 ROM_START( kogd )
@@ -9319,31 +9249,6 @@ ROM_START( kf2k4plsp )
 	ROM_LOAD16_BYTE( "365.c8", 0x3000001, 0x800000, CRC(2c912ff9) SHA1(b624a625ea3e221808b7ea43fb0b1a51d8c1853e) )
 ROM_END
 
-ROM_START( lans2004p )
-	ROM_REGION( 0x600000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "246p.p1", 0x000000, 0x200000, CRC(ec7b7805) SHA1(4d1245ae452f80a9a533f4eedc431d922406fc59) )
-	ROM_LOAD16_WORD_SWAP( "246p.p2", 0x200000, 0x200000, CRC(9ee6c85e) SHA1(eda1786695715b8db0edf1fe181606604fcbfdd0) )
-	ROM_LOAD16_WORD_SWAP( "246p.p3", 0x400000, 0x200000, CRC(b10e6637) SHA1(f2e6ba37d13bdfccc652cf5f61ebc613f90cfd6d) )
-    LANS2004_ESSENTIALPATCH_MODS_FILL
-
-	NEO_SFIX_128K( "246lnsq.s1", CRC(8699c63a) SHA1(d1a0345bcb4e3f6044c93abd52ff6fe6280dc5ee) )
-
-	NEO_BIOS_AUDIO_128K( "246.m1", CRC(d0604ad1) SHA1(fae3cd52a177eadd5f5775ace957cc0f8301e65d) )
-
-	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
-	ROM_LOAD( "246.v1", 0x000000, 0x400000, CRC(16986fc6) SHA1(cff3103dadf2f4390460456a5bd3fb5f28e21f6a) )
-	ROM_LOAD( "246.v2", 0x400000, 0x400000, CRC(ada41e83) SHA1(78e37ffaaa5679c8775a3a71f6df7a0d15082bdc) )
-	ROM_LOAD( "246.v3", 0x800000, 0x200000, CRC(a05ba5db) SHA1(09d739cad323d918f4196f91b654627fcafd8f4d) )
-
-	ROM_REGION( 0x3000000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "246.c1", 0x0000000, 0x800000, CRC(47ac9ec5) SHA1(2d9eea11ba87baa23b18a1a3f607dc137846e807) )
-	ROM_LOAD16_BYTE( "246.c2", 0x0000001, 0x800000, CRC(7bcab64f) SHA1(08d0edddd14b53d606e9a7a46aa4fb4e7398e0d0) )
-	ROM_LOAD16_BYTE( "246lnsq.c3", 0x1000000, 0x800000, CRC(b28d702a) SHA1(21d70c94ecf9ca519b4e50e2d31620f6dfab9ad0) )
-	ROM_LOAD16_BYTE( "246lnsq.c4", 0x1000001, 0x800000, CRC(da10dd64) SHA1(55bf0922a117325ef6479f654caf13b287a16f67) )
-	ROM_LOAD16_BYTE( "246lnsq.c5", 0x2000000, 0x800000, CRC(bab3b417) SHA1(232f718fecf597434b7a93602387fabab2bda9c0) )
-	ROM_LOAD16_BYTE( "246lnsq.c6", 0x2000001, 0x800000, CRC(4c089a28) SHA1(f854ce46b4723aa971de280007268d474d2a6361) )
-ROM_END
-
 ROM_START( lans2k4d )
 	ROM_REGION( 0x600000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "246lnsq.p1", 0x000000, 0x100000, CRC(724576EA) SHA1(075f5d8ccb7303c8b6bebf630c4fa9c204554044) )
@@ -9399,7 +9304,7 @@ ROM_START( matrimbd )
 	ROM_LOAD16_WORD_SWAP( "266a.p2", 0x100000, 0x400000, CRC(b0132cef) SHA1(3780db1b8947a8371a46b67ca1a14a12bf97986b) )
     MATRIM_ESSENTIALPATCH_MODS_FILL
 
-	NEO_SFIX_512K( "266d.s1", CRC(10b1ce57) SHA1(de40a742508eb44995c1fb467aef5c3aed403497) )
+	NEO_SFIX_128K( "266a.s1", CRC(aff2a3be) SHA1(57aba048573eacf8fbdd228f04a7f30da64cebe5) )
 
 	NEO_BIOS_AUDIO_128K( "266d.m1", CRC(d2f3742d) SHA1(dd42f8a301f07e079fbc2bfd23e788baa03ca72d) )
 
@@ -15510,11 +15415,11 @@ GAME( 1996, twinspri,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 1996, twsoc96,    neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Tecmo", "Tecmo World Soccer '96", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, viewpoin,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Sammy / Aicom", "Viewpoint", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, viewpoinp,  viewpoin, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Sammy / Aicom", "Viewpoint (Prototype)", MACHINE_SUPPORTS_SAVE )
-GAME( 2001, vliner,     neogeo,   neogeo_noctrl,   vliner,   neogeo_state, init_vliner,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.7a)", MACHINE_SUPPORTS_SAVE )
-GAME( 2001, vliner7e,   vliner,   neogeo_noctrl,   vliner,   neogeo_state, init_vliner,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.7e)", MACHINE_SUPPORTS_SAVE )
-GAME( 2001, vliner6e,   vliner,   neogeo_noctrl,   vliner,   neogeo_state, init_vliner,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.6e)", MACHINE_SUPPORTS_SAVE )
-GAME( 2001, vliner54,   vliner,   neogeo_noctrl,   vliner,   neogeo_state, init_vliner,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.54)", MACHINE_SUPPORTS_SAVE )
-GAME( 2001, vliner53,   vliner,   neogeo_noctrl,   vliner,   neogeo_state, init_vliner,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.53)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, vliner,     neogeo,   neogeo_noctrl,   vliner, neogeo_state,   init_vliner,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.7a)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, vliner7e,   vliner,   neogeo_noctrl,   vliner, neogeo_state,   init_vliner,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.7e)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, vliner6e,   vliner,   neogeo_noctrl,   vliner, neogeo_state,   init_vliner,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.6e)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, vliner54,   vliner,   neogeo_noctrl,   vliner, neogeo_state,   init_vliner,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.54)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, vliner53,   vliner,   neogeo_noctrl,   vliner, neogeo_state,   init_vliner,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.53)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, wakuwak7,   neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Sunsoft", "Waku Waku 7", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, wh1,        neogeo,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Alpha Denshi Co.", "World Heroes (ALM-005)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, wh1h,       wh1,      neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Alpha Denshi Co.", "World Heroes (ALH-005)", MACHINE_SUPPORTS_SAVE )
@@ -15582,16 +15487,13 @@ GAME( 2002, kf2k2mpp,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 2002, kf2k2mp2e,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Magic Plus II (bootleg) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2mp2d,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters 2002 Magic Plus II (bootleg) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k2mp2p,  kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2002 Magic Plus II (bootleg) (Predecrypted S & P)", MACHINE_SUPPORTS_SAVE )
-GAME( 2003, kof2003d,   kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2003,  ROT0, "SNK Playmore", "The King of Fighters 2003 (Decrypted P & C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2003, kof2003f,   kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK Playmore", "The King of Fighters 2003 (Fully Decrypted - Fixed)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, kof2k3d,    kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2003,  ROT0, "SNK Playmore", "The King of Fighters 2003 (NGM-2710) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2003, kf2k3bd,    kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg",      "The King of Fighters 2003 (bootleg, fully Decrypted)", MACHINE_SUPPORTS_SAVE )
+GAME( 2003, kf2k3bd,    kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2003 (bootleg, fully Decrypted)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, kof2k3hd,   kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2003h, ROT0, "SNK Playmore", "The King of Fighters 2003 (NGH-2710) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, kof2k3nd,   kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "SNK Playmore", "The King of Fighters 2003 (Fully decrypted)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, kf2k3pcd,   kf2k3pcb, neogeo_noslot,   neogeo, neogeo_state,   init_kof2k3pcd,ROT0, "SNK Playmore", "The King of Fighters 2003 (Japan, JAMMA PCB / decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, kf2k3pd,    kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2004 Plus / Hero (The King of Fighters 2003 bootleg, fully decrypted)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, kf2k3upd,   kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2004 Ultra Plus (The King of Fighters 2003 bootleg, fully decrypted)", MACHINE_SUPPORTS_SAVE )
-GAME( 2003, kf2k3uplp,  kof2003,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2004 Ultra Plus (The King of Fighters 2003 bootleg)(Predecrypted S & P)", MACHINE_SUPPORTS_SAVE )
 GAME( 1997, kogd,       kof97,    neogeo_kog,      neogeo, neogeo_state,   init_kogd,     ROT0, "bootleg", "King of Gladiator (The King of Fighters '97 bootleg / fully Decrypted)", MACHINE_SUPPORTS_SAVE )
 GAME( 1997, kogplusd,   kof97,    neogeo_kog,      neogeo, neogeo_state,   init_kogd,     ROT0, "bootleg", "King of Gladiator Plus (The King of Fighters '97 bootleg / fully Decrypted)", MACHINE_SUPPORTS_SAVE )
 GAME( 2005, kof10thd,   kof2002,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 10th Anniversary (The King of Fighters 2002 bootleg / fully decrypted)", MACHINE_SUPPORTS_SAVE )
@@ -15607,7 +15509,6 @@ GAME( 2004, kf2k4pls,   kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 2004, kf2k4plse,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters Special Edition 2004 Plus (The King of Fighters 2002 bootleg) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, kf2k4plsd,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_kof2002,  ROT0, "bootleg", "The King of Fighters Special Edition 2004 Plus (The King of Fighters 2002 bootleg) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, kf2k4plsp,  kof2k4se, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters Special Edition 2004 Plus (The King of Fighters 2002 bootleg) (Predecrypted P)", MACHINE_SUPPORTS_SAVE )
-GAME( 2022, lans2004p,  shocktr2, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Lansquenet 2004 (Shock Troopers - 2nd Squad bootleg)(Predecrypted P)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, lans2k4d,   shocktr2, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Lansquenet 2004 (Shock Troopers - 2nd Squad bootleg / fully decrypted)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, matrimd,    matrim,   neogeo_noslot,   neogeo, neogeo_state,   init_matrimd,  ROT0, "Noise Factory / Atlus", "Matrimelee / Shin Gouketsuji Ichizoku Toukon (NGM-2660 ~ NGH-2660) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, matrimbd,   matrim,   neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Matrimelee / Shin Gouketsuji Ichizoku Toukon (bootleg) (Decrypted C)", MACHINE_SUPPORTS_SAVE )

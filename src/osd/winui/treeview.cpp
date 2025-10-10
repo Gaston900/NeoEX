@@ -2610,8 +2610,6 @@ void CreateDECRYPTEDFolders(int parent_index)
 		if (!strcmp("kf2k2mp2e", s))		        AddGame(lpFolder, jj);
 		if (!strcmp("kf2k2mp2d", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("kf2k2mp2p", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("kof2003d", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("kof2003f", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kof2k3d", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kf2k3bd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kof2k3hd", s))			        AddGame(lpFolder, jj);
@@ -2619,7 +2617,6 @@ void CreateDECRYPTEDFolders(int parent_index)
 		if (!strcmp("kf2k3pcd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kf2k3pd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kf2k3upd", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("kf2k3uplp", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("kogd", s))			            AddGame(lpFolder, jj);
 		if (!strcmp("kogplusd", s))		            AddGame(lpFolder, jj);
 		if (!strcmp("kof10thd", s))			        AddGame(lpFolder, jj);
@@ -2635,7 +2632,6 @@ void CreateDECRYPTEDFolders(int parent_index)
 		if (!strcmp("kf2k4plse", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("kf2k4plsd", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("kf2k4plsp", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("lans2004p", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("lans2k4d", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("matrimd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("matrimbd", s))			        AddGame(lpFolder, jj);
