@@ -172,6 +172,26 @@ void neogeo_state::init_svcdd()
     m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
 }
 
+void neogeo_state::init_vlinerdd()
+{
+	m_banked_cart->install_banks(machine(), m_maincpu, m_region_maincpu->base(), m_region_maincpu->bytes());
+
+	m_sprgen->m_fixed_layer_bank_type = 0;
+
+	m_sprgen->set_sprite_region(m_region_sprites->base(), m_region_sprites->bytes());
+	m_sprgen->set_fixed_regions(m_region_fixed->base(), m_region_fixed->bytes(), m_region_fixedbios);
+    
+	m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
+	
+	m_extra_ram = std::make_unique<uint16_t[]>(0x1000);
+	m_maincpu->space(AS_PROGRAM).install_ram(0x200000, 0x201fff, m_extra_ram.get());
+	save_pointer(NAME(m_extra_ram), 0x1000);
+
+	m_maincpu->space(AS_PROGRAM).install_read_port(0x300000, 0x300001, 0x01ff7e, "DSW");
+	m_maincpu->space(AS_PROGRAM).install_read_port(0x280000, 0x280001, "IN5");
+	m_maincpu->space(AS_PROGRAM).install_read_port(0x2c0000, 0x2c0001, "IN6");
+}
+
 /********************
   Decrypted Darksoft 
  *********************/
@@ -4258,6 +4278,76 @@ ROM_START( viewpoindd )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
 	ROM_LOAD( "crom0", 0x0000000, 0x600000, CRC(f5e7133b) SHA1(bf871334170dc92782ab4164a1cf01a494a925a2) )
+ROM_END
+
+ROM_START( vlinerdd )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "prom", 0x000000, 0x080000, CRC(052f93ed) SHA1(3a5330073d21fd068d44956680cfae7faa4f3951) )
+
+	NEO_SFIX_128K( "srom", CRC(972d8c31) SHA1(41f09ef28a3791668ea304c74b8b06c117a50e9a) )
+
+	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
+
+	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+
+	ROM_REGION( 0x100000, "sprites", 0 )
+	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
+ROM_END
+
+ROM_START( vliner7edd )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "prom7e", 0x000000, 0x080000, CRC(49a94db5) SHA1(5e3066ebe3afde9e59444b8c6e092a3713a173c0) )
+
+	NEO_SFIX_128K( "srom", CRC(972d8c31) SHA1(41f09ef28a3791668ea304c74b8b06c117a50e9a) )
+
+	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
+
+	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+
+	ROM_REGION( 0x100000, "sprites", 0 )
+	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
+ROM_END
+
+ROM_START( vliner6edd )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "prom6e", 0x000000, 0x080000, CRC(72a2c043) SHA1(b34bcc10ff33e4465126a6865fe8bf6b6a3d6cee) )
+
+	NEO_SFIX_128K( "srom", CRC(972d8c31) SHA1(41f09ef28a3791668ea304c74b8b06c117a50e9a) )
+
+	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
+
+	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+
+	ROM_REGION( 0x100000, "sprites", 0 )
+	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
+ROM_END
+
+ROM_START( vliner54dd )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "prom54", 0x000000, 0x080000, CRC(172efc18) SHA1(8ca739f8780a9e6fa19ac2c3e931d75871603f58) )
+
+	NEO_SFIX_128K( "srom", CRC(972d8c31) SHA1(41f09ef28a3791668ea304c74b8b06c117a50e9a) )
+
+	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
+
+	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+
+	ROM_REGION( 0x100000, "sprites", 0 )
+	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
+ROM_END
+
+ROM_START( vliner53dd )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "prom53", 0x000000, 0x080000, CRC(e263dce8) SHA1(c95e5b77c99828ee1b849d000a69fdd6bde502f8) )
+
+	NEO_SFIX_128K( "srom", CRC(972d8c31) SHA1(41f09ef28a3791668ea304c74b8b06c117a50e9a) )
+
+	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
+
+	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+
+	ROM_REGION( 0x100000, "sprites", 0 )
+	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
 ROM_END
 
 ROM_START( wakuwak7dd )
@@ -9047,6 +9137,86 @@ ROM_START( viewpoinnds )
 	ROM_LOAD( "crom0", 0x0000000, 0x600000, CRC(f5e7133b) SHA1(bf871334170dc92782ab4164a1cf01a494a925a2) )
 ROM_END
 
+ROM_START( vlinernds )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "vliner.neo", 0x000000, 0x001000, CRC(363d490e) SHA1(1c9e4f8666cec88f99359b2b3bf677f0e5f03d68) )
+    ROM_CONTINUE( 0x000000, 0x081000 )
+	ROM_IGNORE( 0x12F000 )
+
+	NEO_SFIX_128K( "srom", CRC(972d8c31) SHA1(41f09ef28a3791668ea304c74b8b06c117a50e9a) )
+
+	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
+
+	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+
+	ROM_REGION( 0x100000, "sprites", 0 )
+	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
+ROM_END
+
+ROM_START( vliner7ends )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "vliner7e.neo", 0x000000, 0x001000, CRC(12282039) SHA1(1ba475bbd34ab21ae97cae135a4c1cd27ab9f926) )
+    ROM_CONTINUE( 0x000000, 0x081000 )
+	ROM_IGNORE( 0x12F000 )
+
+	NEO_SFIX_128K( "srom", CRC(972d8c31) SHA1(41f09ef28a3791668ea304c74b8b06c117a50e9a) )
+
+	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
+
+	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+
+	ROM_REGION( 0x100000, "sprites", 0 )
+	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
+ROM_END
+
+ROM_START( vliner6ends )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "vliner6e.neo", 0x000000, 0x001000, CRC(ed63faf0) SHA1(057ef9fba7c351dae9f3a47bd1337a4dc41b8c4c) )
+    ROM_CONTINUE( 0x000000, 0x081000 )
+	ROM_IGNORE( 0x12F000 )
+
+	NEO_SFIX_128K( "srom", CRC(972d8c31) SHA1(41f09ef28a3791668ea304c74b8b06c117a50e9a) )
+
+	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
+
+	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+
+	ROM_REGION( 0x100000, "sprites", 0 )
+	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
+ROM_END
+
+ROM_START( vliner54nds )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "vliner54.neo", 0x000000, 0x001000, CRC(97d4306f) SHA1(e1affdfcaaed0765c20d1f535ea308a52aebc727) )
+    ROM_CONTINUE( 0x000000, 0x081000 )
+	ROM_IGNORE( 0x12F000 )
+
+	NEO_SFIX_128K( "srom", CRC(972d8c31) SHA1(41f09ef28a3791668ea304c74b8b06c117a50e9a) )
+
+	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
+
+	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+
+	ROM_REGION( 0x100000, "sprites", 0 )
+	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
+ROM_END
+
+ROM_START( vliner53nds )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "vliner53.neo", 0x000000, 0x001000, CRC(ee7758d1) SHA1(59ef0b73df6fe7b183c76b490e733d1cfd7655a1) )
+    ROM_CONTINUE( 0x000000, 0x081000 )
+	ROM_IGNORE( 0x12F000 )
+
+	NEO_SFIX_128K( "srom", CRC(972d8c31) SHA1(41f09ef28a3791668ea304c74b8b06c117a50e9a) )
+
+	NEO_BIOS_AUDIO_64K( "m1rom", CRC(9b92b7d1) SHA1(2c9b777feb9a8e43fa1bd942aba5afe3b5427d94) )
+
+	ROM_REGION( 0x200000, "ymsnd:adpcma", ROMREGION_ERASE00 )
+
+	ROM_REGION( 0x100000, "sprites", 0 )
+	ROM_LOAD( "crom0", 0x0000000, 0x100000, CRC(1414704e) SHA1(cc62a21b2fbd023c8dd2366ed2d619260d911190) )
+ROM_END
+
 ROM_START( wakuwak7nds )
 	ROM_REGION( 0x400000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "wakuwak7.neo", 0x000000, 0x001000, CRC(81b7ad16) SHA1(4fc08fc1e023e55e53842e4a167069901d858705) )
@@ -9519,7 +9689,11 @@ GAME( 1996, turfmastdd,   turfmast, neogeo_noslot,   neogeo, neogeo_state,   ini
 GAME( 1996, twinspridd,   twinspri, neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "ADK / SNK",        "Twinkle Star Sprites (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, twsoc96dd,    twsoc96,  neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Tecmo", "Tecmo World Soccer '96 (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, viewpoindd,   viewpoin, neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Sammy / Aicom", "Viewpoint (Darksoft)", MACHINE_SUPPORTS_SAVE )
-// vlinerdd (The Roms Does Not Work On This Version Of The NeoGeo System)
+GAME( 2001, vlinerdd,     neogeo,   neogeo_noctrl,   vliner, neogeo_state,   init_vlinerdd,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.7a) (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, vliner7edd,   vliner,   neogeo_noctrl,   vliner, neogeo_state,   init_vlinerdd,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.7e) (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, vliner6edd,   vliner,   neogeo_noctrl,   vliner, neogeo_state,   init_vlinerdd,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.6e) (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, vliner54dd,   vliner,   neogeo_noctrl,   vliner, neogeo_state,   init_vlinerdd,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.54) (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, vliner53dd,   vliner,   neogeo_noctrl,   vliner, neogeo_state,   init_vlinerdd,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.53) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, wakuwak7dd,   wakuwak7, neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Sunsoft", "Waku Waku 7 (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, wh1dd,        wh1,      neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Alpha Denshi Co.", "World Heroes (ALM-005) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, wh1hdd,       wh1,      neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Alpha Denshi Co.", "World Heroes (ALH-005) (Darksoft)", MACHINE_SUPPORTS_SAVE )
@@ -9789,7 +9963,11 @@ GAME( 1996, turfmastnds,   turfmast, neogeo_noslot,   neogeo, neogeo_state,   in
 GAME( 1996, twinsprinds,   twinspri, neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "ADK / SNK",        "Twinkle Star Sprites (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, twsoc96nds,    twsoc96,  neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Tecmo", "Tecmo World Soccer '96 (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, viewpoinnds,   viewpoin, neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Sammy / Aicom", "Viewpoint (Neo SD)", MACHINE_SUPPORTS_SAVE )
-//vlinernds (The Roms Does Not Work On This Version Of The NeoGeo System)
+GAME( 2001, vlinernds,     neogeo,   neogeo_noctrl,   vliner, neogeo_state,   init_vlinerdd,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.7a) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, vliner7ends,   vliner,   neogeo_noctrl,   vliner, neogeo_state,   init_vlinerdd,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.7e) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, vliner6ends,   vliner,   neogeo_noctrl,   vliner, neogeo_state,   init_vlinerdd,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.6e) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, vliner54nds,   vliner,   neogeo_noctrl,   vliner, neogeo_state,   init_vlinerdd,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.54) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, vliner53nds,   vliner,   neogeo_noctrl,   vliner, neogeo_state,   init_vlinerdd,   ROT0, "Dyna / BrezzaSoft", "V-Liner (v0.53) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, wakuwak7nds,   wakuwak7, neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Sunsoft", "Waku Waku 7 (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, wh1nds,        wh1,      neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Alpha Denshi Co.", "World Heroes (ALM-005) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, wh1hnds,       wh1,      neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Alpha Denshi Co.", "World Heroes (ALH-005) (Neo SD)", MACHINE_SUPPORTS_SAVE )

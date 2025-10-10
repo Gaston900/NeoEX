@@ -215,6 +215,7 @@ public:
     void init_mslug4dd();
 	void init_mslug5dd();
 	void init_svcdd();
+	void init_vlinerdd();
 
 	DECLARE_CUSTOM_INPUT_MEMBER(get_memcard_status);
 	DECLARE_CUSTOM_INPUT_MEMBER(get_audio_result);

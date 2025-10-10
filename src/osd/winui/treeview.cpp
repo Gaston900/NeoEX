@@ -2449,7 +2449,6 @@ void CreateHOMEBREWFolders(int parent_index)
 		if (!strcmp("240ptest", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("4play", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("abyssal", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("abyssal1", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("amazonn", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("badapple", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("bdudes", s))		            AddGame(lpFolder, jj);
@@ -2457,7 +2456,6 @@ void CreateHOMEBREWFolders(int parent_index)
 		if (!strcmp("bpanicdx", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("bonusstage", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("cabalng", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("cabalng1", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("cakefght", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("caravan", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("cbarrel", s))			        AddGame(lpFolder, jj);
@@ -2465,13 +2463,11 @@ void CreateHOMEBREWFolders(int parent_index)
 		if (!strcmp("cnbe2018", s))		            AddGame(lpFolder, jj);
 		if (!strcmp("cphd", s))			            AddGame(lpFolder, jj);
 		if (!strcmp("columnsn", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("columnsncd", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("cyborg", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("doubled1", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("flapchck", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ffeast", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("gladmort", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("gladmortd", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("goldaxen", s))		            AddGame(lpFolder, jj);
 		if (!strcmp("horekidb3", s))	            AddGame(lpFolder, jj);
 		if (!strcmp("hypernoid", s))			    AddGame(lpFolder, jj);
