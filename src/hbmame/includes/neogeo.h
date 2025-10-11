@@ -193,6 +193,10 @@ public:
 	void init_vliner();
 	void init_zupapa();
 
+	// Fixed Neo CD conversion MVS Software Configurations
+	void init_cd();
+	void init_fr2cd();
+
 	// Fixed MVS/AES Decrypted Darksoft Software Configurations
 	void init_darksoft();
 	void init_ct2k3sadd();

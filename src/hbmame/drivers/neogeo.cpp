@@ -3276,6 +3276,85 @@ void neogeo_state::init_shockt2w()
 	mem16[0x11c64/2] = 0x4e71;
 }
 
+void neogeo_state::init_cd()
+{
+	u8 a,b,c,d;
+	init_neogeo();
+	// decrypt sprites extracted from CD to MVS format
+	for (u32 i = 0; i < spr_region_size; i+=4)
+	{
+		a = spr_region[i];
+		b = spr_region[i+1];
+		c = spr_region[i+2];
+		d = spr_region[i+3];
+		spr_region[i] = b;
+		spr_region[i+1] = d;
+		spr_region[i+2] = a;
+		spr_region[i+3] = c;
+	}
+}
+
+void neogeo_state::init_fr2cd()
+{
+//// Fix rebooting at start
+
+	uint16_t *mem16 = (uint16_t*)cpuregion;
+
+	// change jsr to C004DA
+	mem16[0x01AF8 /2] = 0x04DA; // C00552 (Not used?)
+	mem16[0x01BF6 /2] = 0x04DA; // C0056A (fixes crash)
+	mem16[0x01ED8 /2] = 0x04DA; // C00570 (Not used?)
+	mem16[0x1C384 /2] = 0x04DA; // C00552 (fixes crash)
+
+	// 0x001C06 - this routine can cause a loop/freeze
+	mem16[0x01C06 /2] = 0x4E75;
+
+//// Fix text on bottom line
+
+	uint8_t *dst = fix_region;
+
+	// Move text for credit + coin info (Thanks to Kanyero), overwrites "MA" in neogeo logo
+	memcpy(dst, dst + 0x600, 0x140);
+
+	// Patch out neogeo intro (because of above line)
+//  mem16[0x114 /2]=0x200;
+
+
+//// Optional stuff
+
+
+	// Hack in the proper identification (see setup menu [F2])
+	mem16[0x3a6 / 2] = 0x4649;
+	mem16[0x3a8 / 2] = 0x4e41;
+	mem16[0x3aa / 2] = 0x4c20;
+	mem16[0x3ac / 2] = 0x524f;
+	mem16[0x3ae / 2] = 0x4d41;
+	mem16[0x3b0 / 2] = 0x4e43;
+	mem16[0x3b2 / 2] = 0x4520;
+	mem16[0x3b4 / 2] = 0x3220;
+	uint8_t  *mem8 = cpuregion;
+	memcpy(mem8+0x61e, mem8+0x3a6, 16);
+	memcpy(mem8+0x896, mem8+0x3a6, 16);
+
+	// Album Fix
+	mem16[0x1C382 /2] = 0x0008; // C00552
+	mem16[0x1C384 /2] = 0x0000;
+	mem16[0x80000 /2] = 0x33FC;
+	mem16[0x80002 /2] = 0x0001;
+	mem16[0x80004 /2] = 0x0020;
+	mem16[0x80006 /2] = 0x0002;
+	mem16[0x80008 /2] = 0x4E75;
+
+	init_neogeo();
+
+	/* old fr2cd code:
+	uint16_t *mem16 = (uint16_t*)memory_region(machine, "maincpu");
+	mem16[0x1BF2/2] = 0x4E71;
+	mem16[0x1BF4/2] = 0x4E71;
+	mem16[0x1BF6/2] = 0x4E71;
+	init_neogeo();  */
+}
+
 void neogeo_state::install_banked_bios()
 {
 	m_maincpu->space(AS_PROGRAM).install_read_bank(0xc00000, 0xc1ffff, 0x0e0000, m_bios_bank);

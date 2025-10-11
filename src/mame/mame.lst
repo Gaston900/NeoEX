@@ -518,7 +518,8 @@ wh1d                            // Multi Game Doctor 2
 
 @source:neogeo.cpp
 2020bbcd                        // CD conversion
-crswd2bl                        // CD conversion
+columnsncd                      // CD conversion
+fr2cd                           // CD conversion
 gpilotcd                        // CD conversion
 ironcladcd                      // CD conversion
 joyjoycd                        // CD conversion
@@ -1082,12 +1083,13 @@ zupapands                       // NEO SD
 @source:neogeo.cpp
 19yy                            // HomeBrew
 19yyo                           // HomeBrew
+68kng                           // HomeBrew
 240ptest                        // HomeBrew
 4play                           // HomeBrew
 abyssal                         // HomeBrew
 amazonn                         // HomeBrew
 badapple                        // HomeBrew
-bdudes                          // HomeBrew
+baddudesn                       // HomeBrew
 beast                           // HomeBrew
 bpanicdx                        // HomeBrew
 bonusstage                      // HomeBrew
@@ -1095,66 +1097,99 @@ cabalng                         // HomeBrew
 cakefght                        // HomeBrew
 caravan                         // HomeBrew
 cbarrel                         // HomeBrew
+chelnovn                        // HomeBrew
 cnbe                            // HomeBrew
 cnbe2018                        // HomeBrew
 cphd                            // HomeBrew
 columnsn                        // HomeBrew
 cyborg                          // HomeBrew
+ddsprdmo                        // HomeBrew
+didemo                          // HomeBrew
 doubled1                        // HomeBrew
 flapchck                        // HomeBrew
 ffeast                          // HomeBrew
+fr2                             // HomeBrew
 foodfn                          // HomeBrew
+galaxiann                       // HomeBrew
 gladmort                        // HomeBrew
 goldaxen                        // HomeBrew
+gxg                             // HomeBrew
 horekidb3                       // HomeBrew
 hypernoid                       // HomeBrew
+igla                            // HomeBrew
 inthehunt                       // HomeBrew
 iocero                          // HomeBrew
+jumpnrund                       // HomeBrew
 jurl                            // HomeBrew
 karnovn                         // HomeBrew
 knightsch                       // HomeBrew
+lernit                          // HomeBrew
 lhcdb                           // HomeBrew
 looptris                        // HomeBrew
 looptrsp                        // HomeBrew
 ltorb                           // HomeBrew
 mslug3x                         // HomeBrew
 nblktiger                       // HomeBrew
+knacki                          // HomeBrew
+ndo_a_td                        // HomeBrew
 neo2500                         // HomeBrew
 neo2048                         // HomeBrew
 neopang                         // HomeBrew
 neo3d                           // HomeBrew
 neocstlv                        // HomeBrew
 neodemo                         // HomeBrew
+neofight                        // HomeBrew
 neogal1                         // HomeBrew
 neogal1t                        // HomeBrew
 neonopon                        // HomeBrew
+neopl                           // HomeBrew
 neopong                         // HomeBrew
 neoponga                        // HomeBrew
+neoromjb                        // HomeBrew
+neotest                         // HomeBrew
 neothund                        // HomeBrew
 neotris                         // HomeBrew
 ngcdtdd0                        // HomeBrew
+ng4ptest                        // HomeBrew
 ngem2k                          // HomeBrew
 ngftdemo                        // HomeBrew
 ngmontst                        // HomeBrew
+ngtd2                           // HomeBrew
 ngtetris                        // HomeBrew
+ngym2610                        // HomeBrew
 nsmbd                           // HomeBrew
 nsmb                            // HomeBrew
+nyan                            // HomeBrew
+pcmademo                        // HomeBrew
+pcmbdemo                        // HomeBrew
 poknight                        // HomeBrew
+pown                            // HomeBrew
+raroggame                       // HomeBrew
+samantha                        // HomeBrew
 santabll                        // HomeBrew
 sgz                             // HomeBrew
+shaman24                        // HomeBrew
 shinobin                        // HomeBrew
 seafight                        // HomeBrew
+snddemo                         // HomeBrew
+spkick                          // HomeBrew
+spriteex                        // HomeBrew
 syscheck                        // HomeBrew
 teot                            // HomeBrew
 timesup                         // HomeBrew
 timesupd                        // HomeBrew
 totc                            // HomeBrew
+twister                         // HomeBrew
+vaporous                        // HomeBrew
+vlad2000                        // HomeBrew
 ww2demo                         // HomeBrew
 yoyoshkn                        // HomeBrew
 xeviousn                        // HomeBrew
 xeno                            // HomeBrew
+xmas2017                        // HomeBrew
 
 @source:neogeo.cpp
+akiradmo                        // Intro Demo Music
 cndi                            // Intro Demo Music
 dti                             // Intro Demo Music
 dwi                             // Intro Demo Music
