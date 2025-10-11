@@ -2716,13 +2716,11 @@ void CreateDECRYPTEDFolders(int parent_index)
 		if (!strcmp("samsh5d", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("samsh5hd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("samsh5nd", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("ssh5spn", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("sams5spd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("sams5sod", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("sams5shd", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("samsh5sphd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("samsh5spnd", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("samsh5spp", s))			    AddGame(lpFolder, jj);
+		if (!strcmp("sams5sond", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("sams5shnd", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("sengok3d", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("svcda", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("svcd", s))			            AddGame(lpFolder, jj);
