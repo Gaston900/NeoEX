@@ -1736,9 +1736,9 @@ void neogeo_kf2k2ps2::ps2_map(address_map &map)
 	//map(0x300000, 0x300001).mirror(0x01ff7e).portr("IN0");
 	//map(0x340000, 0x340001).mirror(0x01fffe).portr("IN1");
 	//map(0x3a0000, 0x3a001f).mirror(0x01ffe0).w(FUNC(neogeo_kf2k2ps2::system_control_w_m4));
-	map(0xba0000, 0xba0001).mirror(0x01fffe).rw(FUNC(neogeo_kf2k2ps2::audio4_result_r),FUNC(neogeo_kf2k2ps2::audio4_command_w));
-	map(0xbc0000, 0xbc0001).mirror(0x01fffe).rw(FUNC(neogeo_kf2k2ps2::audio3_result_r),FUNC(neogeo_kf2k2ps2::audio3_command_w));
-	map(0xbe0000, 0xbe0001).mirror(0x01fffe).rw(FUNC(neogeo_kf2k2ps2::audio2_result_r),FUNC(neogeo_kf2k2ps2::audio2_command_w));
+	map(0xba0000, 0xba0001).rw(FUNC(neogeo_kf2k2ps2::audio4_result_r),FUNC(neogeo_kf2k2ps2::audio4_command_w));
+	map(0xbc0000, 0xbc0001).rw(FUNC(neogeo_kf2k2ps2::audio3_result_r),FUNC(neogeo_kf2k2ps2::audio3_command_w));
+	map(0xbe0000, 0xbe0001).rw(FUNC(neogeo_kf2k2ps2::audio2_result_r),FUNC(neogeo_kf2k2ps2::audio2_command_w));
 	//map(0xba0000,0xba0001).w(FUNC(neogeo_kf2k2ps2::audio4_command_w)).umask16(0xff00);
 	//map(0xbc0000,0xbc0001).w(FUNC(neogeo_kf2k2ps2::audio3_command_w)).umask16(0xff00);
 	//map(0xbe0000,0xbe0001).w(FUNC(neogeo_kf2k2ps2::audio2_command_w)).umask16(0xff00);
@@ -1987,7 +1987,7 @@ void neogeo_state::init_mslug3e()
 	m_sma_prot->mslug3_install_protection(m_maincpu,m_banked_cart);
 }
 
-void neogeo_state::init_mslug3b6d()
+void neogeo_state::init_mslug3b6()
 {
 	init_mslug3();
 	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,2);
@@ -2066,7 +2066,7 @@ void neogeo_state::init_mslug4()
 	}
 }
 
-void neogeo_state::init_mslug4p()
+void neogeo_state::init_mslug4e()
 {
 	init_mslug4();
 	m_cmc_prot->cmc50_neogeo_gfx_decrypt(spr_region, spr_region_size, MSLUG4_GFX_KEY);
@@ -2971,18 +2971,6 @@ void neogeo_state::init_ms5plus()
 	}
 }
 
-void neogeo_state::init_ms5plusd()
-{
-	init_ms5plus();
-	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,0);
-}
-
-void neogeo_state::init_ms5plush()
-{
-	init_mslug5();
-	m_bootleg_prot->install_ms5plus_protection(m_maincpu,m_banked_cart);
-}
-
 void neogeo_state::init_svcboot()
 {
 	init_neogeo();
@@ -3195,12 +3183,6 @@ void neogeo_state::init_kof96ep()
 		if (rom[j] - rom[i] == 8) rom[j]=rom[i];
 	}
 	memcpy(rom, rom+0x300000, 0x080000);
-}
-
-void neogeo_state::init_kof97pla()
-{
-	init_neogeo();
-	m_bootleg_prot->neogeo_bootleg_sx_decrypt(fix_region, fix_region_size,1);
 }
 
 void neogeo_state::init_kf2k1pa()

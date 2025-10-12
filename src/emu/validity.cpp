@@ -1460,6 +1460,8 @@ void validity_checker::validate_rgb()
 
 void validity_checker::validate_driver(device_t &root)
 {
+// 修改的 代码来源 (加斯顿90)
+/*******************************************************************************************************
 	// check for duplicate names
 	if (!m_names_map.insert(std::make_pair(m_current_driver->name, m_current_driver)).second)
 	{
@@ -1473,6 +1475,7 @@ void validity_checker::validate_driver(device_t &root)
 		const game_driver *match = m_descriptions_map.find(m_current_driver->type.fullname())->second;
 		osd_printf_error("Driver description is a duplicate of %s(%s)\n", core_filename_extract_base(match->type.source()), match->name);
 	}
+*******************************************************************************************************/
 
 	// determine if we are a clone
 	bool is_clone = (strcmp(m_current_driver->parent, "0") != 0);
@@ -1483,7 +1486,7 @@ void validity_checker::validate_driver(device_t &root)
 	// if we have at least 100 drivers, validate the clone
 	// (100 is arbitrary, but tries to avoid tiny.mak dependencies)
 
-// 修改的 代码来源 (EKMAME)
+// 修改的 代码来源 (加斯顿90)
 /*******************************************************************************************************/
 	/* if (driver_list::total() > 100 && clone_of == -1 && is_clone)
 		osd_printf_error("Driver is a clone of nonexistent driver %s\n", m_current_driver->parent); */

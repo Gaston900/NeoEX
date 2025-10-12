@@ -2604,8 +2604,7 @@ void CreateDECRYPTEDFolders(int parent_index)
 		if (!strcmp("garouhd", s))		            AddGame(lpFolder, jj);
 		if (!strcmp("jckeygpd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kof96ep", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("kof97pla", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("kof97orop", s))	            AddGame(lpFolder, jj);
+		if (!strcmp("kof97orod", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("kof99d", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kof99kd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kof2kd", s))			        AddGame(lpFolder, jj);
