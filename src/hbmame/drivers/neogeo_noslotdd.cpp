@@ -132,13 +132,6 @@ void neogeo_state::init_matrimdd()
     m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
 }
 
-void neogeo_state::init_ms5plusdd()
-{
-	init_neogeo();
-    m_bootleg_prot->neogeo_darksoft_cx_decrypt(spr_region, spr_region_size);
-    m_bootleg_prot->install_ms5plus_protection(m_maincpu,m_banked_cart);
-}
-
 void neogeo_state::init_mslug3dd()
 {
 	init_neogeo();
@@ -2416,7 +2409,7 @@ ROM_END
 
 ROM_START( ms5plusdd )
 	ROM_REGION( 0x500000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "promp", 0x000000, 0x500000, CRC(4677f2ad) SHA1(6a708620c1aa18c7a00c7a2840e6c79f5f5df430) )
+	ROM_LOAD16_WORD_SWAP( "promp", 0x000000, 0x500000, CRC(65ee5f6d) SHA1(2620b05ad086f49fb573b32a2611759b7cb485ad) )
     MSLUG5ND_ESSENTIALPATCH_MODS_FILL
 
 	NEO_SFIX_128K("sromp", CRC(99ef577b) SHA1(82f30b61ea4439a6673e0b70b7a9aceaaafd8943) )
@@ -7041,7 +7034,7 @@ ROM_END
 
 ROM_START( ms5plusnsd )
 	ROM_REGION( 0x600000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "ms5plus.neo", 0x000000, 0x001000, CRC(0271c9c4) SHA1(139f06c393e2b7804af20e0b59de96c699e8a145) )
+	ROM_LOAD16_WORD_SWAP( "ms5plus.neo", 0x000000, 0x001000, CRC(504a5234) SHA1(259d9d333d8813be1f899bae2c2e54aa50da44ad) )
     ROM_CONTINUE( 0x000000, 0x501000 )
 	ROM_IGNORE( 0x509F000 )
     MSLUG5ND_ESSENTIALPATCH_MODS_FILL
@@ -9571,7 +9564,7 @@ GAME( 1995, marukodqdd,   marukodq, neogeo_noslot,   neogeo, neogeo_state,   ini
 GAME( 2003, matrimdd,     matrim,   neogeo_noslot,   neogeo, neogeo_state,   init_matrimdd,   ROT0, "Noise Factory / Atlus", "Matrimelee / Shin Gouketsuji Ichizoku Toukon (NGM-2660 ~ NGH-2660) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 1997, miexchngdd,   miexchng, neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Face", "Money Puzzle Exchanger / Money Idol Exchanger (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, ms4plusdd,    mslug4,   neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Bootleg", "Metal Slug 4 Plus (Bootleg) (Darksoft)", MACHINE_SUPPORTS_SAVE )
-GAME( 2003, ms5plusdd,    mslug5,   neogeo_noslot,   neogeo, neogeo_state,   init_ms5plusdd,  ROT0, "Bootleg", "Metal Slug 5 Plus (Bootleg) (Darksoft)", MACHINE_SUPPORTS_SAVE )
+GAME( 2003, ms5plusdd,    mslug5,   neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Bootleg", "Metal Slug 5 Plus (Bootleg) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, ms5pcbdd,     mslug5,   neogeo_noslot,   neogeo, neogeo_state,   init_mslug5dd,   ROT0, "SNK Playmore", "Metal Slug 5 (JAMMA PCB) (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, mslugdd,      mslug,    neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Nazca", "Metal Slug (Darksoft)", MACHINE_SUPPORTS_SAVE )
 GAME( 1998, mslug2dd,     mslug2,   neoclock_noslot, neogeo, neogeo_state,   init_darksoft,   ROT0, "SNK", "Metal Slug 2 (Darksoft)", MACHINE_SUPPORTS_SAVE )
@@ -9845,7 +9838,7 @@ GAME( 1995, marukodqnds,   marukodq, neogeo_noslot,   neogeo, neogeo_state,   in
 GAME( 2003, matrimnds,     matrim,   neogeo_noslot,   neogeo, neogeo_state,   init_matrimdd,   ROT0, "Noise Factory / Atlus", "Matrimelee / Shin Gouketsuji Ichizoku Toukon (NGM-2660 ~ NGH-2660) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 1997, miexchngnds,   miexchng, neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Face", "Money Puzzle Exchanger / Money Idol Exchanger (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, ms4plusnsd,    mslug4,   neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Bootleg", "Metal Slug 4 Plus (Bootleg) (Neo SD)", MACHINE_SUPPORTS_SAVE )
-GAME( 2003, ms5plusnsd,    mslug5,   neogeo_noslot,   neogeo, neogeo_state,   init_ms5plusdd,  ROT0, "Bootleg", "Metal Slug 5 Plus (Bootleg) (Neo SD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2003, ms5plusnsd,    mslug5,   neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Bootleg", "Metal Slug 5 Plus (Bootleg) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, ms5pcbdnsd,    mslug5,   neogeo_noslot,   neogeo, neogeo_state,   init_mslug5dd,   ROT0, "SNK Playmore", "Metal Slug 5 (JAMMA PCB) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, mslugnsd,      mslug,    neogeo_noslot,   neogeo, neogeo_state,   init_darksoft,   ROT0, "Nazca", "Metal Slug (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 1998, mslug2nsd,     mslug2,   neoclock_noslot, neogeo, neogeo_state,   init_darksoft,   ROT0, "SNK", "Metal Slug 2 (Neo SD)", MACHINE_SUPPORTS_SAVE )

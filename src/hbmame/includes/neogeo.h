@@ -211,7 +211,6 @@ public:
 	void init_kof98dd();
 	void init_kof99dd();
 	void init_matrimdd();
-	void init_ms5plusdd();
 	void init_mslug3dd();
     void init_mslug4dd();
 	void init_mslug5dd();
