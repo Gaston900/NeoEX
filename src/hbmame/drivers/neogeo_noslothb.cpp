@@ -71,7 +71,7 @@ ROM_START( aofhc01 )
 	ROM_CONTINUE( 0x600001, 0x100000 )
 ROM_END
 
-ROM_START( aofhc02 )
+ROM_START( aofhc02 ) //aofbr
 	ROM_REGION( 0x100000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "044_hc02.p1", 0x000000, 0x080000, CRC(ea8577a1) SHA1(3cdf1302893620a09d5796059009915d55da5edf) )
     AOFBR_ESSENTIALPATCH_MODS_FILL
@@ -595,7 +595,7 @@ ROM_START( doubledrhc04 ) //doubledryj
 	ROM_LOAD16_BYTE( "082.c8", 0xc00001, 0x100000, CRC(69a5fa37) SHA1(020e70e0e8b3c5d00a40fe97e418115a3187e50a) )
 ROM_END
 
-ROM_START( doubledrhc05 )
+ROM_START( doubledrhc05 ) //doubldsp
 	ROM_REGION( 0x200000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "082_hc05.p1", 0x000000, 0x100000, CRC(616cbffc) SHA1(562092875455f7b37b7c1e4f8ad4a64ef678aef2) )
 	ROM_LOAD16_WORD_SWAP( "082_hc05.p2", 0x100000, 0x100000, CRC(0e2616ab) SHA1(cfe5ed1ec76e21dd833e8297a6dbb30ce407ab2d) )
@@ -1197,7 +1197,7 @@ ROM_START( gowcaizrhc03 ) //gowcaiet
 	ROM_LOAD16_BYTE( "094.c5", 0x800000, 0x200000, CRC(ff9cf48c) SHA1(5f46fb5d0812275b0006919d8540f22be7c16492) )
 	ROM_LOAD16_BYTE( "094.c6", 0x800001, 0x200000, CRC(31bbd918) SHA1(7ff8c5e3f17d40e7a8a189ad8f8026de55368810) )
 	ROM_LOAD16_BYTE( "094.c7", 0xc00000, 0x200000, CRC(2091ec04) SHA1(a81d4bdbef1ac6ea49845dc30e31bf9745694100) )
-	ROM_LOAD16_BYTE( "094_hc02.c8", 0xc00001, 0x200000, CRC(0d31dee6) SHA1(4979aa3daa7e490fbe39e7b3c70cbb2ef7551c5f) )
+	ROM_LOAD16_BYTE( "094.c8", 0xc00001, 0x200000, CRC(d80dd241) SHA1(1356a64e4d4e271f62cd0d83f79ee9c906440810) )
 ROM_END
 
 ROM_START( gpilotshc01 )
@@ -1689,7 +1689,7 @@ ROM_END
 
 ROM_START( kof10thhc07 ) //kof10thuo
 	ROM_REGION( 0x800000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "5007_hc14.p1", 0x000000, 0x800000, CRC(0c486eca) SHA1(8812bc460d7fe73cf83d9967e73cff51884a892b) )
+	ROM_LOAD16_WORD_SWAP( "5007_hc07.p1", 0x000000, 0x800000, CRC(0c486eca) SHA1(8812bc460d7fe73cf83d9967e73cff51884a892b) )
     KOF2002_ESSENTIALPATCH_MODS_FILL
 
 	NEO_SFIX_128K( "5007_hc06.s1", CRC(312bf34b) SHA1(308037c274a491ec974cd9a1be9bda30e55fd25d) )
@@ -1709,6 +1709,30 @@ ROM_START( kof10thhc07 ) //kof10thuo
 	ROM_LOAD16_BYTE( "265d.c6", 0x2000001, 0x800000, CRC(e20d2216) SHA1(5d28eea7b581e780b78f391a8179f1678ee0d9a5) )
 	ROM_LOAD16_BYTE( "265d.c7", 0x3000000, 0x800000, CRC(8a5b561c) SHA1(a19697d4c2cc8edebc669c95ae1db4c8c2a70b2c) )
 	ROM_LOAD16_BYTE( "265d.c8", 0x3000001, 0x800000, CRC(bef667a3) SHA1(d5e8bc185dcf63343d129c31d2ddab9f723f1a12) )
+ROM_END
+
+ROM_START( kof10thhc08 ) //kf10thup
+	ROM_REGION( 0x800000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "5007_hc08.p1", 0x000000, 0x800000, CRC(637dfdce) SHA1(65f13013eaea3c8d328f75c6afc8cd0a9ebcdcc5) )
+    KOF2002_ESSENTIALPATCH_MODS_FILL
+
+	NEO_SFIX_128K( "5007_hc04.s1", CRC(614db6b7) SHA1(11c65a37e3eb1441a13ce68c6db7367270b0e65b) )
+
+	NEO_BIOS_AUDIO_128K( "5007.m1", CRC(f6fab859) SHA1(0184aa1394b9f9946d610278b53b846020dd88dc) )
+
+	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "265d.v1", 0x000000, 0x800000, CRC(0fc9a58d) SHA1(9d79ef00e2c2abd9f29af5521c2fbe5798bf336f) )
+	ROM_LOAD( "265d.v2", 0x800000, 0x800000, CRC(b8c475a4) SHA1(10caf9c69927a223445d2c4b147864c02ce520a8) )
+
+	ROM_REGION( 0x4000000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "5007_hc06.c1", 0x0000000, 0x800000, CRC(2c59db66) SHA1(67af8d7b31098ffc71b302bc48384689ad02e706) )
+	ROM_LOAD16_BYTE( "5007_hc06.c2", 0x0000001, 0x800000, CRC(024ffd69) SHA1(10282a65a1fac990ede1333a44d225be1b0d6950) )
+	ROM_LOAD16_BYTE( "265d.c3", 0x1000000, 0x800000, CRC(959fad0b) SHA1(63ab83ddc5f688dc8165a7ff8d262df3fcd942a2) )
+	ROM_LOAD16_BYTE( "265d.c4", 0x1000001, 0x800000, CRC(efe6a468) SHA1(2a414285e48aa948b5b0d4a9333bab083b5fb853) )
+	ROM_LOAD16_BYTE( "265d.c5", 0x2000000, 0x800000, CRC(74bba7c6) SHA1(e01adc7a4633bc0951b9b4f09abc07d728e9a2d9) )
+	ROM_LOAD16_BYTE( "265d.c6", 0x2000001, 0x800000, CRC(e20d2216) SHA1(5d28eea7b581e780b78f391a8179f1678ee0d9a5) )
+	ROM_LOAD16_BYTE( "5007_hc08.c7", 0x3000000, 0x800000, CRC(2bb52a73) SHA1(925c19d9ee2e474b6a27371d828822364f8c46e5) )
+	ROM_LOAD16_BYTE( "5007_hc08.c8", 0x3000001, 0x800000, CRC(26586fc1) SHA1(425647284a99321b3885222d7210624354c0beaf) )
 ROM_END
 
 ROM_START( kof94hc01 ) //kof94plus
@@ -1763,7 +1787,7 @@ ROM_START( kof94hc02 )
 	ROM_LOAD16_BYTE( "055.c8", 0xc00001, 0x200000, CRC(fe0a235d) SHA1(a45c66836e4e3c77dfef9d4c6cc422cb59169149) )
 ROM_END
 
-ROM_START( kof94hc03 )
+ROM_START( kof94hc03 ) //kof94bs
 	ROM_REGION( 0x200000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "055_hc03.p1", 0x100000, 0x100000, CRC(1b4528e8) SHA1(241248df8cfbb2979ec55849018c509bf3355628) )
 	ROM_CONTINUE( 0x000000, 0x100000 )
@@ -1892,7 +1916,7 @@ ROM_START( kof94hc07 )//kof94te
 	ROM_LOAD16_BYTE( "055_hc07.c8", 0xc00001, 0x200000, CRC(7f680a75) SHA1(adc547d23d9f11412871b463202908120bb5bccf) )
 ROM_END
 
-ROM_START( kof94hc08 )//kof94tea
+ROM_START( kof94hc08 ) //kof94tea
 	ROM_REGION( 0x200000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "055_hc08.p1", 0x100000, 0x100000, CRC(26650715) SHA1(9109cdd3965f0a33c4c875f79288d1459a8a3bf0) )
 	ROM_CONTINUE( 0x000000, 0x100000 )
@@ -2025,7 +2049,7 @@ ROM_START( kof95hc03 )
 	ROM_LOAD16_BYTE( "084.c8", 0x1800001, 0x100000, CRC(78eb0f9b) SHA1(2925ea21ed2ce167f08a25589e94f28643379034) )
 ROM_END
 
-ROM_START( kof95hc04 ) //kof95b
+ROM_START( kof95hc04 ) //kof95bs
 	ROM_REGION( 0x200000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "084_hc04.p1",0x100000, 0x100000, CRC(64d9aa39) SHA1(2f1f1adf33e4944bd4d1ae913bb48c73a97d6ea2) )
 	ROM_CONTINUE( 0x000000, 0x100000 )
@@ -2378,6 +2402,57 @@ ROM_START( kof96hc09 ) //kof96cn
 	ROM_LOAD16_BYTE( "214.c8", 0x1800001, 0x400000, CRC(fa1461ad) SHA1(6c71a7f08e4044214223a6bf80984582ab5e0328) )
 	ROM_LOAD16_BYTE( "214_hc06.c9",  0x2000000, 0x400000, CRC(a9f811d2) SHA1(abd1bd95d2f44fc4b604294c12c5509b41509ed7) )
 	ROM_LOAD16_BYTE( "214_hc06.c10", 0x2000001, 0x400000, CRC(1147406a) SHA1(2bccbd2f38f15c13eb7d5a89fd9d85f595e23bc3) )
+ROM_END
+
+ROM_START( kof96hc10 ) //kof96r
+	ROM_REGION( 0x500000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "214_hc10.p1", 0x000000, 0x100000, CRC(c36be9c7) SHA1(c8204c2b6044c009db9cb4afdc7aaaf4929f29b7) )
+	ROM_LOAD16_WORD_SWAP( "214_hc10.p2", 0x100000, 0x200000, CRC(7ec1c31e) SHA1(4db183ef0a7df0aa0ad3c864d2787fc6c0acab4f) )
+    KOF96_ESSENTIALPATCH_MODS_FILL
+
+	NEO_SFIX_128K( "214_hc10.s1", CRC(08811ec1) SHA1(4a2f20999e8333763897b3b5d852b693a8c81c3e) )
+
+	NEO_BIOS_AUDIO_128K( "214.m1", CRC(dabc427c) SHA1(b76722ed142ee7addceb4757424870dbd003e8b3) )
+
+	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "214.v1", 0x000000, 0x400000, CRC(63f7b045) SHA1(1353715f1a8476dca6f8031d9e7a401eacab8159) )
+	ROM_LOAD( "214.v2", 0x400000, 0x400000, CRC(25929059) SHA1(6a721c4cb8f8dc772774023877d4a9f50d5a9e31) )
+	ROM_LOAD( "214.v3", 0x800000, 0x200000, CRC(92a2257d) SHA1(5064aec78fa0d104e5dd5869b95382aa170214ee) )
+
+	ROM_REGION( 0x2000000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "214.c1", 0x0000000, 0x400000, CRC(7ecf4aa2) SHA1(f773c4c1f05d58dd37e7bb2ac1d1e0ec43998a71) )
+	ROM_LOAD16_BYTE( "214.c2", 0x0000001, 0x400000, CRC(05b54f37) SHA1(cc31653fe4cb05201fba234e080cb9c7a7592b1b) )
+	ROM_LOAD16_BYTE( "214.c3", 0x0800000, 0x400000, CRC(64989a65) SHA1(e6f3749d43be0afa9dad7b085cb782ba694252ca) )
+	ROM_LOAD16_BYTE( "214.c4", 0x0800001, 0x400000, CRC(afbea515) SHA1(ae875052728de33174827705646bd14cf3937b5c) )
+	ROM_LOAD16_BYTE( "214.c5", 0x1000000, 0x400000, CRC(2a3bbd26) SHA1(7c1a7e50a10a1b082e0d0d515c34135ee9f995ac) )
+	ROM_LOAD16_BYTE( "214.c6", 0x1000001, 0x400000, CRC(44d30dc7) SHA1(c8ae001e37224b55d9e4a4d99f6578b4f6eb055f) )
+	ROM_LOAD16_BYTE( "214.c7", 0x1800000, 0x400000, CRC(3687331b) SHA1(2be95caab76d7af51674f93884330ba73a6053e4) )
+	ROM_LOAD16_BYTE( "214.c8", 0x1800001, 0x400000, CRC(fa1461ad) SHA1(6c71a7f08e4044214223a6bf80984582ab5e0328) )
+ROM_END
+
+ROM_START( kof96hc11 ) //kof96rss
+	ROM_REGION( 0x500000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "214_hc11.p1", 0x000000, 0x300000, CRC(93abe27c) SHA1(478032f51ebd0b6f22d9ce4cbe17a4808218dd70) )
+    KOF96_ESSENTIALPATCH_MODS_FILL
+
+	NEO_SFIX_128K( "214_hc04.s1", CRC(f304df75) SHA1(f696aed96dba4a086415374c7bbdf8c3b4f5b457) )
+
+	NEO_BIOS_AUDIO_128K( "214.m1", CRC(dabc427c) SHA1(b76722ed142ee7addceb4757424870dbd003e8b3) )
+
+	ROM_REGION( 0xa00000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "214.v1", 0x000000, 0x400000, CRC(63f7b045) SHA1(1353715f1a8476dca6f8031d9e7a401eacab8159) )
+	ROM_LOAD( "214.v2", 0x400000, 0x400000, CRC(25929059) SHA1(6a721c4cb8f8dc772774023877d4a9f50d5a9e31) )
+	ROM_LOAD( "214.v3", 0x800000, 0x200000, CRC(92a2257d) SHA1(5064aec78fa0d104e5dd5869b95382aa170214ee) )
+
+	ROM_REGION( 0x2000000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "214.c1", 0x0000000, 0x400000, CRC(7ecf4aa2) SHA1(f773c4c1f05d58dd37e7bb2ac1d1e0ec43998a71) )
+	ROM_LOAD16_BYTE( "214.c2", 0x0000001, 0x400000, CRC(05b54f37) SHA1(cc31653fe4cb05201fba234e080cb9c7a7592b1b) )
+	ROM_LOAD16_BYTE( "214.c3", 0x0800000, 0x400000, CRC(64989a65) SHA1(e6f3749d43be0afa9dad7b085cb782ba694252ca) )
+	ROM_LOAD16_BYTE( "214.c4", 0x0800001, 0x400000, CRC(afbea515) SHA1(ae875052728de33174827705646bd14cf3937b5c) )
+	ROM_LOAD16_BYTE( "214.c5", 0x1000000, 0x400000, CRC(2a3bbd26) SHA1(7c1a7e50a10a1b082e0d0d515c34135ee9f995ac) )
+	ROM_LOAD16_BYTE( "214.c6", 0x1000001, 0x400000, CRC(44d30dc7) SHA1(c8ae001e37224b55d9e4a4d99f6578b4f6eb055f) )
+	ROM_LOAD16_BYTE( "214.c7", 0x1800000, 0x400000, CRC(3687331b) SHA1(2be95caab76d7af51674f93884330ba73a6053e4) )
+	ROM_LOAD16_BYTE( "214.c8", 0x1800001, 0x400000, CRC(fa1461ad) SHA1(6c71a7f08e4044214223a6bf80984582ab5e0328) )
 ROM_END
 
 ROM_START( kof97hc01 ) //kof97orh
@@ -4236,10 +4311,10 @@ ROM_START( kof97hc75 ) //kof97inv21
 	ROM_LOAD16_BYTE( "232_hc47.c2", 0x0000001, 0x800000, CRC(ff3fde05) SHA1(4fbd4dd74de4f8efc0298eafe28075398951478d) )
 	ROM_LOAD16_BYTE( "232_hc47.c3", 0x1000000, 0x800000, CRC(46db93d9) SHA1(89ac7942c843e053d1619f7782185b34dd898ed5) )
 	ROM_LOAD16_BYTE( "232_hc47.c4", 0x1000001, 0x800000, CRC(b1a4ac4a) SHA1(2de3c6ab24a415107bc2d5f51b6bc80d2346f97d) )
-	ROM_LOAD16_BYTE( "232_hc47.c5",  0x2000000, 0x800000, CRC(1a921988) SHA1(7c01bfa415e3ccafa681dfd1bc566aa4bc610085) )
-	ROM_LOAD16_BYTE( "232_hc47.c6",  0x2000001, 0x800000, CRC(07630b58) SHA1(27cc0eb09c39b6114f57ec3cdd6700ce7ff36a09) )
-    ROM_LOAD16_BYTE( "232_hc75.c7",  0x3000000, 0x400000, CRC(c71dcab9) SHA1(058d7dbb4a6b70fae1dda1d371ae19afb69526db) )
-	ROM_LOAD16_BYTE( "232_hc75.c8",  0x3000001, 0x400000, CRC(c6d74eaf) SHA1(64fd60576b731b104b4d3114abe838d855136fab) )
+	ROM_LOAD16_BYTE( "232_hc47.c5", 0x2000000, 0x800000, CRC(1a921988) SHA1(7c01bfa415e3ccafa681dfd1bc566aa4bc610085) )
+	ROM_LOAD16_BYTE( "232_hc47.c6", 0x2000001, 0x800000, CRC(07630b58) SHA1(27cc0eb09c39b6114f57ec3cdd6700ce7ff36a09) )
+    ROM_LOAD16_BYTE( "232_hc75.c7", 0x3000000, 0x400000, CRC(c71dcab9) SHA1(058d7dbb4a6b70fae1dda1d371ae19afb69526db) )
+	ROM_LOAD16_BYTE( "232_hc75.c8", 0x3000001, 0x400000, CRC(c6d74eaf) SHA1(64fd60576b731b104b4d3114abe838d855136fab) )
 ROM_END
 
 ROM_START( kof97hc76 ) //kof97inv21
@@ -8645,7 +8720,6 @@ ROM_START( kof98hc47 ) //kof98pfe
 	ROM_LOAD16_WORD_SWAP( "242_hc47.p1", 0x000000, 0x100000, CRC(23876d95) SHA1(1e3bcd98d861618fa8b02503f1c8d342d6d45768) )
 	ROM_LOAD16_WORD_SWAP( "242_hc47.p2", 0x100000, 0x400000, CRC(dfa686e9) SHA1(2cbcbb7907e934ee743fe4dbb40f70a1962b9eea) )
     ROM_DEFAULT_BIOS("console_mode")
-
  /* Crash memory when making changes */
 
 	ROM_REGION( 0x020000, "gsc", ROMREGION_BE | ROMREGION_16BIT )
@@ -8864,7 +8938,7 @@ ROM_START( kof98hc54 ) //kof98tlr
 	ROM_LOAD16_BYTE( "242.c8", 0x3000001, 0x800000, CRC(c823e045) SHA1(886fbf64bcb58bc4eabb1fc9262f6ac9901a0f28) )
 ROM_END
 
-ROM_START( kof98hc55 ) //kof98bc2
+ROM_START( kof98hc55 ) //kof98bc2nd
 	ROM_REGION( 0x500000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "242_hc55.p1", 0x000000, 0x100000, CRC(bd45dd5f) SHA1(4701dcc2be867ac67080a530d1410971ba3cd6ec) )
 	ROM_LOAD16_WORD_SWAP( "242.p2", 0x100000, 0x400000, CRC(980aba4c) SHA1(5e735929ec6c3ca5b2efae3c7de47bcbb8ade2c5) )
@@ -10629,7 +10703,7 @@ ROM_START( kof2000hc18 ) //kof2kbs02um
 	ROM_LOAD16_BYTE( "257_hc03.c8", 0x3000001, 0x800000, CRC(4347f6af) SHA1(fc744d68e04905af1fa8d39d8772fba67e14777f) )
 ROM_END
 
-ROM_START( kof2000hc19 ) //kof2000bcm, kof2000spbc
+ROM_START( kof2000hc19 ) //kof2ksp
 	ROM_REGION( 0x500000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "257_hc19.p1", 0x000000, 0x100000, CRC(a9742061) SHA1(a0ab3bbc1d8439846d0112171132be03a2141121) )
 	ROM_LOAD16_WORD_SWAP( "257_hc03.p2", 0x100000, 0x400000, CRC(48a1a381) SHA1(c32a7303c351422f66a3c0a535b01dbbdfca7d91) )
@@ -10810,7 +10884,7 @@ ROM_START( kof2001hc03 ) //kf2k1pkz
 	ROM_LOAD16_WORD_SWAP( "262_hc03.p2", 0x100000, 0x400000, CRC(4cb062de) SHA1(1ab0659354cb85ef98322e25932567c0d172001b) )
     KOF2001_ESSENTIALPATCH_MODS_FILL
 
-	NEO_SFIX_128K( "262d.s1", CRC(6d209796) SHA1(95fdb865e47d37916573ba12e8ba4a4aaece1cba) )
+	NEO_SFIX_128K( "262_hc03.s1", CRC(73efb81d) SHA1(9d294c5ecd658c2133a7d9f8c61c29715db33810) )
 
 	NEO_BIOS_AUDIO_128K( "262_hc03.m1", CRC(6d5a43db) SHA1(996d1e1bb53a745f15c315b7368532a9e924ab62) )
 
@@ -10818,7 +10892,7 @@ ROM_START( kof2001hc03 ) //kf2k1pkz
 	ROM_LOAD( "262.v1", 0x000000, 0x400000, CRC(83d49ecf) SHA1(2f2c116e45397652e77fcf5d951fa5f71b639572) )
 	ROM_LOAD( "262.v2", 0x400000, 0x400000, CRC(003f1843) SHA1(bdd58837ad542548bd4053c262f558af88e3b989) )
 	ROM_LOAD( "262.v3", 0x800000, 0x400000, CRC(2ae38dbe) SHA1(4e82b7dd3b899d61907620517a5a27bdaba0725d) )
-	ROM_LOAD( "262.v4", 0xc00000, 0x400000, CRC(26ec4dd9) SHA1(8bd68d95a2d913be41a51f51e48dbe3bff5924fb) )
+	ROM_LOAD( "262_hc03.v4", 0xc00000, 0x400000, CRC(912f3f3b) SHA1(e25a9f1284e6fb080102042c627487b53d63c47c) )
 
 	ROM_REGION( 0x5000000, "sprites", 0 )
 	ROM_LOAD16_BYTE( "262d.c1", 0x0000000, 0x800000, CRC(103225b1) SHA1(41486c7bb421b6b54f3ca07621aabd907bf10e15) )
@@ -12057,7 +12131,7 @@ ROM_START( kof2002hc31 ) //kof2k2c
 	ROM_LOAD16_BYTE( "265d.c8", 0x3000001, 0x800000, CRC(bef667a3) SHA1(d5e8bc185dcf63343d129c31d2ddab9f723f1a12) )
 ROM_END
 
-ROM_START( kof2002hc32 ) //kf2k2plsyz
+ROM_START( kof2002hc32 ) //kf2k2plh
 	ROM_REGION( 0x500000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "265_hc32.p1", 0x000000, 0x100000, CRC(32cc568f) SHA1(ab2cead619e2dc0a1632f47a383df8023d5b43cb) )
 	ROM_LOAD16_WORD_SWAP( "265_hc32.p2", 0x100000, 0x400000, CRC(4c91603b) SHA1(f9db61348220a4a626dee5fbd0498b24aa74f77d) )
@@ -12698,7 +12772,7 @@ ROM_START( kof2002hc55 ) //kof2k2rugal
 	ROM_LOAD16_BYTE( "265_hc36.c8", 0x3000001, 0x800000, CRC(9961799E) SHA1(cf5d43bbd90269155ac41fe9a31328654784351f) )
 ROM_END
 
-ROM_START( kof2002hc56 ) //kof2k2plus
+ROM_START( kof2002hc56 ) //kf2k2p17
 	ROM_REGION( 0x600000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "265_hc56.p1", 0x000000, 0x100000, CRC(059da6f9) SHA1(f581d018cac7e25a89f16c8c14d629f7f766dfee) )
 	ROM_LOAD16_WORD_SWAP( "265_hc56.p2", 0x100000, 0x500000, CRC(7ad26451) SHA1(2a594d91a73bd857505934eb3fbad35310a1e55a) )
@@ -14011,7 +14085,7 @@ ROM_START( kof2003hc08 )
 	ROM_LOAD16_BYTE( "271_hc08.c8", 0x3000001, 0x800000, CRC(5310c6dc) SHA1(e9cb89392fa5604d3ac3ba58acdb1b739d1267be) )
 ROM_END
 
-ROM_START( kof2003hc09 ) //kf2k3ps2sp
+ROM_START( kof2003hc09 ) //kf2k3p2s
 	ROM_REGION( 0x900000, "maincpu", 0 )
 	ROM_LOAD32_WORD_SWAP( "271_hc09.p1", 0x000000, 0x400000, CRC(a2b1cd0b) SHA1(08fd67e9cd35c110eaa6e5fe8af2e9bccb17e8ae) )
 	ROM_LOAD32_WORD_SWAP( "271_hc09.p2", 0x000002, 0x400000, CRC(c2321f79) SHA1(aba7b4a9757e76f1a839f43b59e402d329c4a226) )
@@ -19818,9 +19892,9 @@ ROM_START( samshohc04 )
 	ROM_LOAD16_BYTE( "045h.c6", 0x800001, 0x080000, CRC(4fa71252) SHA1(afe374a9d1f2d955a59efe7b6196b89e021b164c) )
 ROM_END
 
-ROM_START( samshohc05 )
+ROM_START( samshohc05 ) //samshobs
 	ROM_REGION( 0x180000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "045_hc05.p1",  0x000000, 0x100000, CRC(8e4310a8) SHA1(ff35819ce9ed1d9bdda1b1c4c15e2c402b91728b) )
+	ROM_LOAD16_WORD_SWAP( "045_hc05.p1",  0x000000, 0x100000, CRC(24389683) SHA1(539c080b1dfe2ad7dc732c695edccc4b19a8b757) )
 	ROM_LOAD16_WORD_SWAP( "045h.p2", 0x100000, 0x080000, CRC(38ee9ba9) SHA1(48190699a6be83cb6257365ae81f93fdd23abe09) )
     SAMSHO_ESSENTIALPATCH_MODS_FILL
 
@@ -20675,7 +20749,7 @@ ROM_START( samsho5hc06 ) //samsho5x
 
 	NEO_SFIX_128K( "270d.s1", CRC(2ad6048b) SHA1(173c8561f0633e0d6e4a9750e632f2e46766e674) )
 
-	NEO_BIOS_AUDIO_512K( "270d.m1", CRC(5218a10a) SHA1(da4968e55d4a56249d85d6742a6acffcff4ad65d) )
+	NEO_BIOS_AUDIO_128K( "270_hc06.m1", CRC(f119997c) SHA1(eec6cef49a7d5280e77359c0522299c3d3984149) )
 
 	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
 	ROM_LOAD( "270d.v1", 0x000000, 0x800000, CRC(809c7617) SHA1(b6b542eb4c1078016fcd78d050433dc8e3029329) )
@@ -20692,7 +20766,7 @@ ROM_START( samsho5hc06 ) //samsho5x
 	ROM_LOAD16_BYTE( "270_hc06.c8", 0x3000001, 0x800000, CRC(e2a2c546) SHA1(c870acb090606ae185fa9d7b4932949abacb0705) )
 ROM_END
 
-ROM_START( samsho5hc07 )
+ROM_START( samsho5hc07 ) //samsh5bs
 	ROM_REGION( 0x800000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "270_hc07.p1", 0x000000, 0x400000, CRC(21ef1871) SHA1(5ae2e475fa2f88e5a23d373e7c7d15ebdcc60149) )
 	ROM_LOAD16_WORD_SWAP( "270.p2", 0x400000, 0x400000, CRC(e0c74c85) SHA1(DF24A4EE76438E40C2F04A714175A7F85CACDFE0) )
@@ -21257,7 +21331,8 @@ ROM_END
 
 ROM_START( sengoku3hc05 )
 	ROM_REGION( 0x200000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "261_hc05.p1", 0x000000, 0x200000, CRC(5a1b5e85) SHA1(239617385b40ae6a86f737195ec6017171157bef) )
+	ROM_LOAD16_WORD_SWAP( "261_hc05.p1", 0x100000, 0x100000, CRC(52f02b93) SHA1(8a92fbd67b64417d1a5289696254984c9c6f91c6) )
+	ROM_CONTINUE( 0x000000, 0x100000 )
     SENGOKU3_ESSENTIALPATCH_MODS_FILL
 
 	NEO_SFIX_128K( "261d.s1", CRC(c1e27cc7) SHA1(7d38319f517059f60287a8ce393a4901719db8a9) )
@@ -21277,7 +21352,7 @@ ROM_START( sengoku3hc05 )
 	ROM_LOAD16_BYTE( "261d.c4", 0x1000001, 0x800000, CRC(18926df6) SHA1(a4859c9166ef7abec1f3e6af3292051a63a81f93) )
 ROM_END
 
-ROM_START( sengoku3hc06 ) //sengoku3eb
+ROM_START( sengoku3hc06 ) //sengk3eb
 	ROM_REGION( 0x200000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "261_hc06.p1", 0x100000, 0x100000, CRC(821b7a95) SHA1(1c9759dbf3c7987074f09335305f4fa70d88ac4a) )
 	ROM_CONTINUE( 0x000000, 0x100000 )
@@ -21303,6 +21378,52 @@ ROM_END
 ROM_START( sengoku3hc07 ) //sengoku3fs
 	ROM_REGION( 0x200000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "261_hc07.p1", 0x100000, 0x100000, CRC(1242fa34) SHA1(8887b8f5627a453606e356349dc891f335b8f4e3) )
+	ROM_CONTINUE( 0x000000, 0x100000 )
+    SENGOKU3_ESSENTIALPATCH_MODS_FILL
+
+	NEO_SFIX_128K( "261d.s1", CRC(c1e27cc7) SHA1(7d38319f517059f60287a8ce393a4901719db8a9) )
+
+	NEO_BIOS_AUDIO_512K( "261.m1", CRC(7d501c39) SHA1(8e6bcc428f5ac7532d9c9be7e07ad0821461a080) )
+
+	ROM_REGION( 0x0e00000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "261.v1", 0x000000, 0x400000, CRC(64c30081) SHA1(f9ebd20cf59b72e864b7274c1bdb6d99ecaf4595) )
+	ROM_LOAD( "261.v2", 0x400000, 0x400000, CRC(392a9c47) SHA1(7ab90a54089236ca6c3ef1af8e566a8025d38159) )
+	ROM_LOAD( "261.v3", 0x800000, 0x400000, CRC(c1a7ebe3) SHA1(1d7bb481451f5ee0457e954bb5210300182c3c9c) )
+	ROM_LOAD( "261.v4", 0xc00000, 0x200000, CRC(9000d085) SHA1(11157b355ab4eb6627e9f322ed875332d3d77349) )
+
+	ROM_REGION( 0x2000000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "261d.c1", 0x0000000, 0x800000, CRC(9af7cbca) SHA1(cf2fe3e5265861369f2878140ef33a6715b031aa) )
+	ROM_LOAD16_BYTE( "261d.c2", 0x0000001, 0x800000, CRC(2a1f874d) SHA1(26923ec0bedba56f25e6222aa107b45ccb3def7b) )
+	ROM_LOAD16_BYTE( "261d.c3", 0x1000000, 0x800000, CRC(5403adb5) SHA1(5614ee892e810dc49758f5985b3dc4f227e01b56) )
+	ROM_LOAD16_BYTE( "261d.c4", 0x1000001, 0x800000, CRC(18926df6) SHA1(a4859c9166ef7abec1f3e6af3292051a63a81f93) )
+ROM_END
+
+ROM_START( sengoku3hc08 ) //sengoku3s
+	ROM_REGION( 0x200000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "261_hc08.p1", 0x100000, 0x100000, CRC(d0e620eb) SHA1(5579c26f9b72fda27adf6bc83e811324e4843857) )
+	ROM_CONTINUE( 0x000000, 0x100000 )
+    SENGOKU3_ESSENTIALPATCH_MODS_FILL
+
+	NEO_SFIX_128K( "261d.s1", CRC(c1e27cc7) SHA1(7d38319f517059f60287a8ce393a4901719db8a9) )
+
+	NEO_BIOS_AUDIO_512K( "261.m1", CRC(7d501c39) SHA1(8e6bcc428f5ac7532d9c9be7e07ad0821461a080) )
+
+	ROM_REGION( 0x0e00000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "261.v1", 0x000000, 0x400000, CRC(64c30081) SHA1(f9ebd20cf59b72e864b7274c1bdb6d99ecaf4595) )
+	ROM_LOAD( "261.v2", 0x400000, 0x400000, CRC(392a9c47) SHA1(7ab90a54089236ca6c3ef1af8e566a8025d38159) )
+	ROM_LOAD( "261.v3", 0x800000, 0x400000, CRC(c1a7ebe3) SHA1(1d7bb481451f5ee0457e954bb5210300182c3c9c) )
+	ROM_LOAD( "261.v4", 0xc00000, 0x200000, CRC(9000d085) SHA1(11157b355ab4eb6627e9f322ed875332d3d77349) )
+
+	ROM_REGION( 0x2000000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "261d.c1", 0x0000000, 0x800000, CRC(9af7cbca) SHA1(cf2fe3e5265861369f2878140ef33a6715b031aa) )
+	ROM_LOAD16_BYTE( "261d.c2", 0x0000001, 0x800000, CRC(2a1f874d) SHA1(26923ec0bedba56f25e6222aa107b45ccb3def7b) )
+	ROM_LOAD16_BYTE( "261d.c3", 0x1000000, 0x800000, CRC(5403adb5) SHA1(5614ee892e810dc49758f5985b3dc4f227e01b56) )
+	ROM_LOAD16_BYTE( "261d.c4", 0x1000001, 0x800000, CRC(18926df6) SHA1(a4859c9166ef7abec1f3e6af3292051a63a81f93) )
+ROM_END
+
+ROM_START( sengoku3hc09 ) //sgk3ebe
+	ROM_REGION( 0x200000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "261_hc09.p1", 0x100000, 0x100000, CRC(87a65e84) SHA1(0475d81c1fb4e4df7a3773522aa2958fd550e8ad) )
 	ROM_CONTINUE( 0x000000, 0x100000 )
     SENGOKU3_ESSENTIALPATCH_MODS_FILL
 
@@ -22372,7 +22493,7 @@ GAME( 2015, breakrevhc01,     breakrev, neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2018, breakrevhc02,     breakrev, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Breakers Revenge (Boss With Simple Attack Edition 2018-07-17)", MACHINE_SUPPORTS_SAVE )
 GAME( 1998, breakrevhc03,     breakrev, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Breakers Revenge (Enable Hidden Character)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, breakrevhc04,     breakrev, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Breakers Revenge (Extra Mode 2018)", MACHINE_SUPPORTS_SAVE )
-GAME( 2018, breakrevhc05,     breakrev, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Breakers Revenge (Enhanced 2022-11-03)", MACHINE_SUPPORTS_SAVE )
+GAME( 2018, breakrevhc05,     breakrev, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "Breakers Revenge (Enhanced 2022-11-03)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, cthd2k3bhc01,     kof2001,  neogeo_noslot,   neogeo, neogeo_state,    init_cthd2003, ROT0, "hack",         "Crouching Tiger Hidden Dragon 2003 (Simplified 2016-03-15) (The King of Fighters 2001 bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, cthd2k3bhc02,     kof2001,  neogeo_noslot,   neogeo, neogeo_state,    init_cthd2003, ROT0, "hack",         "Crouching Tiger Hidden Dragon 2003 (Simplified Color Variant Edition 2016-03-15) (The King of Fighters 2001 bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 1999, ctomadayhc01,     ctomaday, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Captain Tomaday (Ex Super Version)", MACHINE_SUPPORTS_SAVE )
@@ -22381,9 +22502,9 @@ GAME( 2020, doubledrhc01,     doubledr, neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2009, doubledrhc02,     doubledr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Double Dragon (Perfectly simplified Edition 2009-09-19)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, doubledrhc03,     doubledr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Double Dragon (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, doubledrhc04,     doubledr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Double Dragon (One Key Edition 2021-01-20)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, doubledrhc05,     doubledr, gsc,             neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Double Dragon (Special 2017 v1.0.0311 2023)", MACHINE_SUPPORTS_SAVE ) // 2023-09-11
-GAME( 2015, doubledrhc06,     doubledr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Double Dragon (Plus 2015-03-11)", MACHINE_SUPPORTS_SAVE )
-GAME( 2014, doubledrhc07,     doubledr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Double Dragon (Optimized 2014-09-17)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, doubledrhc05,     doubledr, gsc,             neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "Double Dragon (Special 2017 v1.0.0311 2023)", MACHINE_SUPPORTS_SAVE ) // 2023-09-11
+GAME( 2015, doubledrhc06,     doubledr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "Double Dragon (Plus 2015-03-11)", MACHINE_SUPPORTS_SAVE )
+GAME( 2014, doubledrhc07,     doubledr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "Double Dragon (Optimized 2014-09-17)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, eightmanhc01,     eightman, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Eight Man (Ex Super Version 2009-08-22)", MACHINE_SUPPORTS_SAVE )
 GAME( 2015, fatfursphc01,     fatfursp, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Fatal Fury Special / Garou Densetsu Special (Easy Special Attacks 2015-03-15)", MACHINE_SUPPORTS_SAVE )
 GAME( 1993, fatfursphc02,     fatfursp, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Fatal Fury Special / Garou Densetsu Special (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
@@ -22401,14 +22522,14 @@ GAME( 2014, galaxyfghc01,     galaxyfg, neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 1999, garouhc01,        garou,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Garou - Mark of the Wolves (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 2015, garouhc02,        garou,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Garou - Mark of the Wolves (Resurgence Lite 2015-03-10)", MACHINE_SUPPORTS_SAVE )
 GAME( 1999, garouhc03,        garou,    neogeo_noslot,   neogeo, neogeo_state,    init_garou,    ROT0, "hack",         "Garou - Mark of the Wolves (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, garouhc04,        garou,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Garou - Mark of the Wolves (Enhanced 2023-06-06)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, garouhc04,        garou,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "Garou - Mark of the Wolves (Enhanced 2023-06-06)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, ganryuhc01,       ganryu,   neogeo_noslot,   neogeo, neogeo_state,    init_ganryu,   ROT0, "hack",         "Ganryu / Musashi Ganryuki (Flying Ball Version 2022-04-11)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, gowcaizrhc01,     gowcaizr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Voltage Fighter - Gowcaizer / Choujin Gakuen Gowcaizer (Add Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, gowcaizrhc02,     gowcaizr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Voltage Fighter - Gowcaizer / Choujin Gakuen Gowcaizer (Easy Moves)", MACHINE_SUPPORTS_SAVE)
 GAME( 2025, gowcaizrhc03,     gowcaizr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Voltage Fighter - Gowcaizer / Choujin Gakuen Gowcaizer (Eternal 2025-04-19)", MACHINE_SUPPORTS_SAVE)
 GAME( 2014, gpilotshc01,      gpilots,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Ghost Pilots (Ex Super version 2014-10-24)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, kabukiklhc01,     kabukikl, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Far East of Eden - Kabuki Klash / Tengai Makyou - Shin Den (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, kabukiklhc02,     kabukikl, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Far East of Eden - Kabuki Klash / Tengai Makyou - Shin Den (Enhanced 2023-03-22)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, kabukiklhc02,     kabukikl, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "Far East of Eden - Kabuki Klash / Tengai Makyou - Shin Den (Enhanced 2023-03-22)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, karnovrhc01,      karnovr,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Karnov's Revenge / Fighter's History Dynamite (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, karnovrhc02,      karnovr,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Karnov's Revenge / Fighter's History Dynamite (Hack, v0.2)", MACHINE_SUPPORTS_SAVE )
 GAME( 2014, kizunahc01,       kizuna,   neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Kizuna Encounter - Super Tag Battle / Fu'un Super Tag Battle (Arrange Ver. 1.7 2014-07-16)", MACHINE_SUPPORTS_SAVE )
@@ -22426,9 +22547,10 @@ GAME( 2020, kof10thhc04,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2020, kof10thhc05,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters 10th Anniversary 2005 Unique (Omega Edition Simplified 2020-02-27) (The King of Fighters 2002 bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof10thhc06,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters 10th Anniversary 2005 Unique (Optimized Edition Original 2020-10-25) (The King of Fighters 2002 bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof10thhc07,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters 10th Anniversary 2005 Unique (Optimized Edition Simplify 2020-10-25) (The King of Fighters 2002 bootleg)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, kof10thhc08,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters 10th Anniversary 2005 Unique (Optimized 2025-03-28) (The King of Fighters 2002 bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof94hc01,        kof94,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '94 (Enhanced Edition 2022-10-07)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, kof94hc02,        kof94,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '94 (Rebout)", MACHINE_SUPPORTS_SAVE )
-GAME( 2015, kof94hc03,        kof94,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '94 (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
+GAME( 2015, kof94hc03,        kof94,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '94 (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE ) //2015-03-31
 GAME( 2006, kof94hc04,        kof94,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '94 (Traduction Portuguese)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, kof94hc05,        kof94,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '94 (Boss With Simple Attack Edition)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, kof94hc06,        kof94,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '94 (Clothes Version 2023-02-15)", MACHINE_SUPPORTS_SAVE )
@@ -22438,10 +22560,10 @@ GAME( 1994, kof94hc09,        kof94,    neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 1995, kof95hc01,        kof95,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '95 (Translation Korean)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof95hc02,        kof95,    gsc,             neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '95 (Special v1.0 2020-02-22)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, kof95hc03,        kof95,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '95 (Clothes Version 2023-02-19)", MACHINE_SUPPORTS_SAVE )
-GAME( 1995, kof95hc04,        kof95,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '95 (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, kof95hc05,        kof95,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '95 (Infinite Energy 2023-11-01)", MACHINE_SUPPORTS_SAVE )
+GAME( 2022, kof95hc04,        kof95,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '95 (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE ) //2022-06-29
+GAME( 2023, kof95hc05,        kof95,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '95 (Infinite Energy 2023-11-01)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, kof95hc06,        kof95,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '95 (Super Remix V3 2018)", MACHINE_SUPPORTS_SAVE )
-GAME( 2024, kof95hc07,        kof95,    gsc,             neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '95 (Optimized 2024-05-13)", MACHINE_SUPPORTS_SAVE )
+GAME( 2024, kof95hc07,        kof95,    gsc,             neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '95 (Optimized 2024-05-13)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, kof96hc01,        kof96,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '96 (Translation Korean)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof96hc02,        kof96,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '96 (The Aniversary Edition 2.3 Final Version 2020-05-27)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof96hc03,        kof96,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '96 (The Aniversary Edition 2.3 Final Version Simplify The Move 2020-05-27)", MACHINE_SUPPORTS_SAVE )
@@ -22451,6 +22573,8 @@ GAME( 2020, kof96hc06,        kof96,    neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2022, kof96hc07,        kof96,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '96 (Hybrid Enhanced Original 2008SP 2022-09-02)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof96hc08,        kof96,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '96 (Ultimate Edition Simplified 2021-06-20)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, kof96hc09,        kof96,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '96 (Chinese Edition)", MACHINE_SUPPORTS_SAVE )
+GAME( 2005, kof96hc10,        kof96,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '96 (Remix Final Revised)", MACHINE_SUPPORTS_SAVE )
+GAME( 2005, kof96hc11,        kof96,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '96 (Remix Spring Special, Version 1.5)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof97hc01,        kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (The Kingdom of Gods Original 2022-07-01)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof97hc02,        kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (The Kingdom of Gods Simplified 2022-07-01)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof97hc03,        kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Pinnacle Definitive Edition 2022-06-28)", MACHINE_SUPPORTS_SAVE )
@@ -22525,7 +22649,7 @@ GAME( 2021, kof97hc71,        kof97,    neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2021, kof97hc72,        kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Ultimate Battle Plus 2020 Simplified 2021-09-13)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof97hc73,        kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Dragon Subduing Ice Blue Edition Original 2021-07-30)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof97hc74,        kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Dragon Subduing Ice Blue Edition Simplified 2021-07-30)", MACHINE_SUPPORTS_SAVE )
-GAME( 2021, kof97hc75,        kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Invincible 2.1 Original 2021-07-09)", MACHINE_SUPPORTS_SAVE )
+GAME( 2021, kof97hc75,        kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '97 (Invincible 2.1 Original 2021-07-09)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof97hc76,        kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Invincible 2.1 Simplified 2021-07-09)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof97hc77,        kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Evolutionary Balance Original 2021 2022-01-10)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof97hc78,        kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Evolutionary Balance Simplified 2021 2022-01-10)", MACHINE_SUPPORTS_SAVE )
@@ -22560,15 +22684,15 @@ GAME( 2014, kof97hc106,       kof97,    neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2022, kof97hc107,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Super BC 3rd Update Original 2022-11-19)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof97hc108,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Super BC 3rd Update Simplified 2022-11-19)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof97hc109,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Invincible Plus 2.1 Enhanced 2022 2022-07-09)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, kof97hc110,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Boss 2023-11-28)", MACHINE_SUPPORTS_SAVE )
-GAME( 1997, kof97hc111,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Balanced & Optimized)", MACHINE_SUPPORTS_SAVE )
-GAME( 2024, kof97hc112,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Champion Edition 2024-02-08)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, kof97hc110,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '97 (Boss 2023-11-28)", MACHINE_SUPPORTS_SAVE )
+GAME( 1997, kof97hc111,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '97 (Balanced & Optimized 2023-12-25)", MACHINE_SUPPORTS_SAVE )
+GAME( 2024, kof97hc112,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '97 (Champion Edition 2024-02-08)", MACHINE_SUPPORTS_SAVE )
 GAME( 2019, kof97hc113,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Iori with Cloak Original 2019-01-31)", MACHINE_SUPPORTS_SAVE )
 GAME( 2019, kof97hc114,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Iori with Cloak Simplified 2019-02-03)", MACHINE_SUPPORTS_SAVE )
 GAME( 2014, kof97hc115,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 Plus (Rerise Of Chaos 2014-08-28)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, kof97hc116,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 Plus (Enhanced 2023-11-13)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, kof97hc116,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '97 Plus (Enhanced 2023-11-13)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, kof97hc117,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Mugen Slug 2024-02-17)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, kof97hc118,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Strengthen Innovation 2023-12-18)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, kof97hc118,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '97 (Strengthen Innovation 2023-12-18)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof97hc119,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Angry Athena-Snake Slayer War Original 2020-09-16)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof97hc120,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Angry Athena-Snake Slayer War Simplified 2020-09-16)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof97hc121,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Crazy Crane BC Edition Original 2020-07-31)", MACHINE_SUPPORTS_SAVE )
@@ -22621,7 +22745,7 @@ GAME( 2015, kof97hc167,       kof97,    neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2018, kof97hc168,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Mythical Martial Arts Dark Snakes Edition Plus 2018-04-08)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof97hc169,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (ST Innovation 2020-01-21)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof97hc170,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Windbreaker Eight Gods Second Shock 2020-06-02)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, kof97hc171,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Evolution & Balance 2023-12-17)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, kof97hc171,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '97 (Evolution & Balance 2023-12-17)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, kof97hc172,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Plus Battle Of The Strong 2018-06-07)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, kof97hc173,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (3 Hard Questions 2016-12-21)", MACHINE_SUPPORTS_SAVE )
 GAME( 2019, kof97hc174,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Finals Summer Palace 2019-02-14)", MACHINE_SUPPORTS_SAVE )
@@ -22635,10 +22759,10 @@ GAME( 2020, kof97hc181,       kof97,    neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2020, kof97hc182,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (World Armed Forces 83 Modified Version 2020-05-22)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof97hc183,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (World Armed Forces 85 Modified Version 2020-05-22)", MACHINE_SUPPORTS_SAVE )
 GAME( 2007, kof97hc184,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Final Battle)", MACHINE_SUPPORTS_SAVE )
-GAME( 2020, kof97hc185,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Ultimate Battle Plus 2020-03-27)", MACHINE_SUPPORTS_SAVE )
+GAME( 2020, kof97hc185,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '97 (Ultimate Battle Plus 2020-03-27)", MACHINE_SUPPORTS_SAVE )
 GAME( 2019, kof97hc186,       kof97,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '97 (Battle with Orochi v1.2 2019-11-03)", MACHINE_SUPPORTS_SAVE )
-GAME( 2024, kof98hc01,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (ECK Dragon Edition 2024-12-02)", MACHINE_SUPPORTS_SAVE )
-GAME( 2019, kof98hc02,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (ECK Dragon Edition Energy enhancement 2019-01-15)", MACHINE_SUPPORTS_SAVE )
+GAME( 2024, kof98hc01,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Easy Combo Edition 2024-12-02)", MACHINE_SUPPORTS_SAVE )
+GAME( 2019, kof98hc02,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Easy Combo Edition Energy enhancement 2019-01-15)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof98hc03,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Evolution Original Version 2022-05-27)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof98hc04,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Evolution Simplified Version 2022-05-27)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, kof98hc05,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Ultimate Invincible Lucar 2023-01-03)", MACHINE_SUPPORTS_SAVE )
@@ -22649,7 +22773,7 @@ GAME( 2021, kof98hc09,        kof98,    neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2021, kof98hc10,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Golden Dragon II Unlimited Sand Kick Simplified 2021-02-14)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof98hc11,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Floating Edition 2021-01-29)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof98hc12,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (EX Simplified Edition 2020 2021-01-22)", MACHINE_SUPPORTS_SAVE )
-GAME( 2019, kof98hc13,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Rising Chinese Edition 2023-06-18)", MACHINE_SUPPORTS_SAVE )
+GAME( 2019, kof98hc13,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Rising Chinese Edition 2023-06-18)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, kof98hc14,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Rising Chinese Original Version 2023-01-09)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, kof98hc15,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Rising Chinese Simplified Version 2023-01-09)", MACHINE_SUPPORTS_SAVE )
 //kof98hc16
@@ -22667,7 +22791,7 @@ GAME( 2021, kof98hc27,        kof98,    neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2021, kof98hc28,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Haoxue Temple Characters Random Entry Version Original 2021-03-08)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof98hc29,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Haoxue Temple Characters Random Entry Version Simplified 2021-03-08)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof98hc30,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (True Lucar 2021-11-28)", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )
-GAME( 2023, kof98hc31,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Boss Chinese Edition 2023-05-01)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, kof98hc31,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Boss Chinese Edition 2023-05-01)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof98hc32,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Fury Combo Version Original 2021-05-22)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof98hc33,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Fury Combo Version Simplified 2021-05-22)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, kof98hc34,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Ultra Rugal 2016-12-18)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE ) //Some character has bug
@@ -22683,7 +22807,7 @@ GAME( 2014, kof98hc43,        kof98,    neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2014, kof98hc44,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Rivalry Chinese Version Simplified 2014-12-07)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, kof98hc45,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Powerful Magic 2018-10-24)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof98hc46,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Gold Enhanced Edition Simplified 2019-03-16)", MACHINE_SUPPORTS_SAVE )
-GAME( 2021, kof98hc47,        kof98,    gsc,             neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Plus Final Edition 2019-09-10)", MACHINE_SUPPORTS_SAVE )
+GAME( 2021, kof98hc47,        kof98,    gsc,             neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Plus Final Edition 2019-09-10)", MACHINE_SUPPORTS_SAVE )
 GAME( 2019, kof98hc48,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Alpha 1.0 2019-02-06)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof98hc49,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (BC Combo Version Simplified 2020-03-21)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof98hc50,        kof98,    neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (C Dragon Edition Simplified 2020-03-16)", MACHINE_SUPPORTS_SAVE )
@@ -22701,18 +22825,18 @@ GAME( 2021, kof99hc02,        kof99,    neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2021, kof99hc03,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Ultimate Match Edition Original 2021-08-28)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof99hc04,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Ultimate Match Edition Simplified 2021-08-28)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, kof99hc05,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Evolution Ultra Remix 2016-01-04)", MACHINE_SUPPORTS_SAVE )
-GAME( 2022, kof99hc06,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Remix Pro v2.01 Final 2022)", MACHINE_SUPPORTS_SAVE )
+GAME( 2022, kof99hc06,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Remix Pro v2.01 Final 2022-02-15)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof99hc07,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Remix Pro V2.0 Final Original 2021-02-23)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof99hc08,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Remix Pro V2.0 Final Simplified 2021-02-23)", MACHINE_SUPPORTS_SAVE )
-GAME( 2021, kof99hc09,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (The Anniversary Edition Original 2020-04-07)", MACHINE_SUPPORTS_SAVE )
+GAME( 2021, kof99hc09,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "GOTVG",        "The King of Fighters '99 - Millennium Battle (The Anniversary Edition Original 2020-04-07)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof99hc10,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (The Anniversary Edition Simplified 2020-04-07)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof99hc11,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Evo The Strongest Iori 2022-11-05)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, kof99hc12,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Smooth And Refreshing Original Version 2023-01-31)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, kof99hc13,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Smooth And Refreshing Simplified Version 2023-01-31)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, kof99hc14,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Evolution Edition Simplified Edition 2023-02-13)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, kof99hc15,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Evolution Edition Original Edition 2023-02-13)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, kof99hc15,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "GOTVG",        "The King of Fighters '99 - Millennium Battle (Evolution Edition Original Edition 2023-02-13)", MACHINE_SUPPORTS_SAVE )
 GAME( 2008, kof99hc16,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Combo 2008-12-23)", MACHINE_SUPPORTS_SAVE )
-GAME( 2024, kof99hc17,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Infinite Energy 2024-01-01)", MACHINE_SUPPORTS_SAVE )
+GAME( 2024, kof99hc17,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "GOTVG",        "The King of Fighters '99 - Millennium Battle (Infinite Energy 2024-01-01)", MACHINE_SUPPORTS_SAVE )
 GAME( 1999, kof99hc18,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle Plus", MACHINE_SUPPORTS_SAVE )
 GAME( 2007, kof99hc19,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Summer Revolution 2007-07-07)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof99hc20,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Cruel Edition Original Version 2022-05-15)", MACHINE_SUPPORTS_SAVE )
@@ -22721,7 +22845,7 @@ GAME( 2022, kof99hc22,        kof99,    neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2022, kof99hc23,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (EVO 2009 Simplified Version 2022-05-16)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof99hc24,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (EVO Ultimate Evolution Hybrid 2015 Original 2022-05-01)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof99hc25,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (EVO Ultimate Evolution Hybrid 2015 Simplified 2022-05-01)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, kof99hc26,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (LC+SK 2025-03-09)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, kof99hc26,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "GOTVG",        "The King of Fighters '99 - Millennium Battle (LC+SK 2025-03-09)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof99hc27,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Combo Original 2020-08-06)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, kof99hc28,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (Combo Simplify 2018-09-03)", MACHINE_SUPPORTS_SAVE )
 GAME( 2013, kof99hc29,        kof99,    neogeo_noslot,   neogeo, neogeo_state,    init_kof99,    ROT0, "hack",         "The King of Fighters '99 - Millennium Battle (RPG Original 2013-12-30)", MACHINE_SUPPORTS_SAVE )
@@ -22755,7 +22879,7 @@ GAME( 2000, kof2000hc15,      kof2000,  neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2022, kof2000hc16,      kof2000,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2000,  ROT0, "hack",         "The King of Fighters 2000 (SP Special Edition Original 2021-03-04)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof2000hc17,      kof2000,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2000,  ROT0, "hack",         "The King of Fighters 2000 (SP Special Edition Simplified 2021-03-04)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof2000hc18,      kof2000,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2000,  ROT0, "hack",         "The King of Fighters 2000 (Fake Zero Imitation Version Simplified 2021-02-26)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, kof2000hc19,      kof2000,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2000,  ROT0, "hack",         "The King of Fighters 2000 (Special 2023-03-06)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, kof2000hc19,      kof2000,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2000,  ROT0, "GOTVG",        "The King of Fighters 2000 (Special 2023-03-06)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, kof2000hc20,      kof2000,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2000,  ROT0, "hack",         "The King of Fighters 2000 (SP XXX Edition Original 2016-01-04)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof2000hc21,      kof2000,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2000,  ROT0, "hack",         "The King of Fighters 2000 (SP XXX Edition Simplified 2022-04-16)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, kof2000hc22,      kof2000,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2000,  ROT0, "hack",         "The King of Fighters 2000 (Plus Blue Edition 2018-03-09)", MACHINE_SUPPORTS_SAVE )
@@ -22776,7 +22900,7 @@ GAME( 2022, kof2001hc14,      kof2001,  neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2022, kof2001hc15,      kof2001,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2001,  ROT0, "hack",         "The King of Fighters 2001 (Investment Skills 2020-02-26)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof2001hc16,      kof2001,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2001,  ROT0, "hack",         "The King of Fighters 2001 (Hybrid Enhanced Edition v1.02 Final Edition Original 2020-02-26)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof2001hc17,      kof2001,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2001,  ROT0, "hack",         "The King of Fighters 2001 (Hybrid Enhanced Edition v1.02 Final Edition Simplified 2020-02-26)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, kof2002hc01,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Unlimited Original V0.26 2023-01-20)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, kof2002hc01,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "GOTVG",        "The King of Fighters 2002 (Unlimited Original V0.26 2023-01-20)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, kof2002hc02,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Unlimited Simplified V0.26 2023-01-20)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, kof2002hc03,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Unlimited Simplified+ V0.26 2023-01-20)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof2002hc04,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Imitation Enhanced Original V3.3 2022-10-15)", MACHINE_SUPPORTS_SAVE )
@@ -22805,7 +22929,7 @@ GAME( 2021, kof2002hc26,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2021, kof2002hc27,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Magic Enhanced Edition Simplified 2021-09-12)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof2002hc28,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Windbreaker Runaway Iori Original 2021-10-08)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, kof2002hc29,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Windbreaker Runaway Iori Simplified 2021-10-08)", MACHINE_SUPPORTS_SAVE )
-GAME( 2022, kof2002hc30,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Infinite Energy 2022-05-02)", MACHINE_SUPPORTS_SAVE )
+GAME( 2022, kof2002hc30,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "GOTVG",        "The King of Fighters 2002 (Infinite Energy 2022-05-02)", MACHINE_SUPPORTS_SAVE )
 GAME( 2013, kof2002hc31,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Combo 2013-10-12)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof2002hc32,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (The Rise of The World War Edition Original 2022-09-23)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof2002hc33,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (The Rise of The World War Edition Simplified 2022-09-23)", MACHINE_SUPPORTS_SAVE )
@@ -22831,7 +22955,7 @@ GAME( 2020, kof2002hc52,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2020, kof2002hc53,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Third Edition of the Kingdom of Gods 2020-06-14)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof2002hc54,      kof2002,  ps2,             neogeo, neogeo_kf2k2ps2, init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Resurrection 2017 2020-07-17)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof2002hc55,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Lucar Enhanced Edition 2020-08-09)", MACHINE_SUPPORTS_SAVE )
-GAME( 2020, kof2002hc56,      kof2002,  gsc,             neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Come Back 2017 2020-10-22)", MACHINE_SUPPORTS_SAVE )
+GAME( 2020, kof2002hc56,      kof2002,  gsc,             neogeo, neogeo_state,    init_kof2002,  ROT0, "GOTVG",        "The King of Fighters 2002 (Plus 2017 2020-10-22)", MACHINE_SUPPORTS_SAVE )
 GAME( 2015, kof2002hc57,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Remix 2015-11-06)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, kof2002hc58,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Tongtian Edition 2018-11-25)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, kof2002hc59,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Remix Ultra 3.5 Original 2006-09-13)", MACHINE_SUPPORTS_SAVE )
@@ -22842,7 +22966,7 @@ GAME( 2018, kof2002hc63,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2018, kof2002hc64,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (The 20th Anniversary Omega Merry Christmas Edition 2018-11-25)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, kof2002hc65,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (The 20th Anniversary Omega Black Edition 2018-05-02)", MACHINE_SUPPORTS_SAVE )
 GAME( 2017, kof2002hc66,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (The 20th Anniversary Omega Edition 2017-12-28)", MACHINE_SUPPORTS_SAVE )
-GAME( 2021, kof2002hc67,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Snake Slayer Tongtian Ultimate Enhanced Edition 2021-03-30)", MACHINE_SUPPORTS_SAVE )
+GAME( 2021, kof2002hc67,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "GOTVG",        "The King of Fighters 2002 (Snake Slayer Tongtian Ultimate Enhanced Edition 2021-03-30)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof2002hc68,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Kof All Mix Omega)", MACHINE_SUPPORTS_SAVE )
 GAME( 2019, kof2002hc69,      kof2002,  gsc,             neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 Plus (2019-01-06)", MACHINE_SUPPORTS_SAVE )
 GAME( 2014, kof2002hc70,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 Plus (Optimised 2014-12-01)", MACHINE_SUPPORTS_SAVE )
@@ -22891,16 +23015,16 @@ GAME( 1997, lastbladhc01,     lastblad, neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 1997, lastbladhc02,     lastblad, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "DDJ",          "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Easy Move)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, lastbladhc03,     lastblad, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Ex Super Version 2018-03-20)", MACHINE_SUPPORTS_SAVE )
 GAME( 1997, lastbladhc04,     lastblad, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
-GAME( 2017, lastbladhc05,     lastblad, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Infinite Energy 2023-04-17)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, lastbladhc06,     lastblad, gsc,             neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Special v2.5 Final)", MACHINE_SUPPORTS_SAVE )
+GAME( 2017, lastbladhc05,     lastblad, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Infinite Energy 2023-04-17)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, lastbladhc06,     lastblad, gsc,             neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Special v2.5 Final)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, lastbladhc07,     lastblad, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Plus 2014-01-12)", MACHINE_SUPPORTS_SAVE )
 GAME( 1998, lastbld2hc01,     lastbld2, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "DDJ",          "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Always Have Super Move)", MACHINE_SUPPORTS_SAVE )
 GAME( 1998, lastbld2hc02,     lastbld2, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "DDJ",          "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Easy Move)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, lastbld2hc03,     lastbld2, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Team Edition Ver 1.1 2018-05-09)", MACHINE_SUPPORTS_SAVE )
 GAME( 1998, lastbld2hc04,     lastbld2, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, lastbld2hc05,     lastbld2, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Simplified Edition 2021-05-18)", MACHINE_SUPPORTS_SAVE )
-GAME( 2014, lastbld2hc06,     lastbld2, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Enhanced Edition 2014-04-09)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, lastbld2hc07,     lastbld2, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Infinite Energy 2023-02-02)", MACHINE_SUPPORTS_SAVE )
+GAME( 2014, lastbld2hc06,     lastbld2, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Enhanced Edition 2014-04-09)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, lastbld2hc07,     lastbld2, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Infinite Energy 2023-02-02)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, lresorthc01,      lresort,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Last Resort (Ex Super Version)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, magdrop3hc01,     magdrop3, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Magical Drop III (Tournament Edition 2022-08-10)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, magdrop3hc02,     magdrop3, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Magical Drop III (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
@@ -23118,7 +23242,7 @@ GAME( 2018, samshohc01,       samsho,   neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2018, samshohc02,       samsho,   neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Samurai Shodown / Samurai Spirits (Boss With Simple Attack Edition 2018-07-24)", MACHINE_SUPPORTS_SAVE )
 GAME( 2014, samshohc03,       samsho,   neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Samurai Shodown / Samurai Spirits (Twelve Swordsman 2014-11-24)", MACHINE_SUPPORTS_SAVE )
 GAME( 1993, samshohc04,       samsho,   neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "DDJ",          "Samurai Shodown / Samurai Spirits (Easy Move)", MACHINE_SUPPORTS_SAVE )
-GAME( 1993, samshohc05,       samsho,   neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Samurai Shodown / Samurai Spirits (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
+GAME( 2003, samshohc05,       samsho,   neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "Samurai Shodown / Samurai Spirits (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE ) // 2003-04-16
 GAME( 2014, samsho2hc01,      samsho2,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Samurai Shodown II / Shin Samurai Spirits - Haohmaru Jigokuhen (Bawangmaru Hell Becomes Stormy 2014-11-24)", MACHINE_SUPPORTS_SAVE )
 GAME( 2017, samsho2hc02,      samsho2,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Samurai Shodown II / Shin Samurai Spirits - Haohmaru Jigokuhen (Simplify Edition 2018-06-04)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, samsho2hc03,      samsho2,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Samurai Shodown II / Shin Samurai Spirits - Haohmaru Jigokuhen (Color Change Boss With Simple Attack Edition 2018-11-10)", MACHINE_SUPPORTS_SAVE )
@@ -23128,7 +23252,7 @@ GAME( 2017, samsho2hc06,      samsho2,  gsc,             neogeo, neogeo_state,  
 GAME( 1994, samsho2hc07,      samsho2,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Samurai Shodown II / Shin Samurai Spirits - Haohmaru Jigokuhen (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, samsho2hc08,      samsho2,  gsc,             neogeo, neogeo_state,    init_neogeo,   ROT0, "Bear",         "Samurai Shodown II / Shin Samurai Spirits - Haohmaru Jigokuhen (Perfect v2.4)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, samsho2hc09,      samsho2,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Samurai Shodown II / Shin Samurai Spirits - Haohmaru Jigokuhen (Infinite Power 2023-04-10)", MACHINE_SUPPORTS_SAVE )
-GAME( 2020, samsho2hc10,      samsho2,  gsc,             neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Samurai Shodown II / Shin Samurai Spirits - Haohmaru Jigokuhen (Optimized 2020-09-23)", MACHINE_SUPPORTS_SAVE )
+GAME( 2020, samsho2hc10,      samsho2,  gsc,             neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "Samurai Shodown II / Shin Samurai Spirits - Haohmaru Jigokuhen (Optimized 2020-09-23)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, samsho3hc01,      samsho3,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Samurai Shodown III / Samurai Spirits - Zankurou Musouken (Simplify Edition 2018-06-04)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, samsho3hc02,      samsho3,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Samurai Shodown III / Samurai Spirits - Zankurou Musouken (Zankurou Musouken Color Change Boss With Simple Attack Edition 2018-11-11)", MACHINE_SUPPORTS_SAVE )
 GAME( 2014, samsho3hc03,      samsho3,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Samurai Shodown III / Samurai Spirits - Zankurou Musouken (Chop Hong Lang Warriors Sword 2014-11-27)", MACHINE_SUPPORTS_SAVE )
@@ -23151,7 +23275,7 @@ GAME( 2003, samsho5hc03,      samsho5,  neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2003, samsho5hc04,      samsho5,  neogeo_noslot,   neogeo, neogeo_state,    init_samsho5,  ROT0, "DDJ",          "Samurai Shodown V / Samurai Spirits Zero (Easy Move)", MACHINE_SUPPORTS_SAVE )
 GAME( 2014, samsho5hc05,      samsho5,  neogeo_noslot,   neogeo, neogeo_state,    init_samsho5,  ROT0, "hack",         "Samurai Shodown V / Samurai Spirits Zero (Samurai Zero Resurgence 2014-11-28)", MACHINE_SUPPORTS_SAVE )
 GAME( 2013, samsho5hc06,      samsho5,  neogeo_noslot,   neogeo, neogeo_state,    init_samsho5,  ROT0, "hack",         "Samurai Shodown V / Samurai Spirits Zero (XBOX version 2013-12-29)", MACHINE_SUPPORTS_SAVE )
-GAME( 2003, samsho5hc07,      samsho5,  neogeo_noslot,   neogeo, neogeo_state,    init_samsho5,  ROT0, "hack",         "Samurai Shodown V / Samurai Spirits Zero (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
+GAME( 2004, samsho5hc07,      samsho5,  neogeo_noslot,   neogeo, neogeo_state,    init_samsho5,  ROT0, "GOTVG",        "Samurai Shodown V / Samurai Spirits Zero (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE ) //2004-06-10
 GAME( 2019, samsho5hc08,      samsho5,  neogeo_noslot,   neogeo, neogeo_state,    init_samsho5,  ROT0, "hack",         "Samurai Shodown V / Samurai Spirits Zero (Moves Simplified 2019-12-23)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, samsh5sphc01,     samsh5sp, neogeo_noslot,   neogeo, neogeo_state,    init_samsh5sp, ROT0, "hack",         "Samurai Shodown V Special / Samurai Spirits Zero Special (Simplify Edition 2018-06-04)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, samsh5sphc02,     samsh5sp, neogeo_noslot,   neogeo, neogeo_state,    init_samsh5sp, ROT0, "hack",         "Samurai Shodown V Special / Samurai Spirits Zero Special (Simple Attack Edition 2018-11-14)", MACHINE_SUPPORTS_SAVE )
@@ -23166,7 +23290,7 @@ GAME( 2009, samsh5sphc10,     samsh5sp, neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 1995, savagerehc01,     savagere, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Savage Reign / Fu'un Mokushiroku - Kakutou Sousei (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, savagerehc02,     savagere, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Savage Reign / Fu'un Mokushiroku - Kakutou Sousei (Unlimited Super Moves)", MACHINE_SUPPORTS_SAVE )
 GAME( 2015, savagerehc03,     savagere, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Savage Reign / Fu'un Mokushiroku - Kakutou Sousei (Super kill Command System 2015-03-20)", MACHINE_SUPPORTS_SAVE )
-GAME( 2015, savagerehc04,     savagere, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Savage Reign / Fu'un Mokushiroku - Kakutou Sousei (Plus 2015-03-20)", MACHINE_SUPPORTS_SAVE )
+GAME( 2015, savagerehc04,     savagere, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "Savage Reign / Fu'un Mokushiroku - Kakutou Sousei (Plus 2015-03-20)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, savagerehc05,     savagere, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Savage Reign / Fu'un Mokushiroku - Kakutou Sousei (Simplify Edition 2018-06-04)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, sdodgebhc01,      sdodgeb,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Super Dodge Ball / Kunio no Nekketsu Toukyuu Densetsu (Ex Super Version)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, sdodgebhc02,      sdodgeb,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Super Dodge Ball / Kunio no Nekketsu Toukyuu Densetsu (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
@@ -23175,8 +23299,10 @@ GAME( 2001, sengoku3hc02,     sengoku3, neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2001, sengoku3hc03,     sengoku3, neogeo_noslot,   neogeo, neogeo_state,    init_sengoku3, ROT0, "DDJ",          "Sengoku 3 / Sengoku Densho 2001 (Easy Move)", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, sengoku3hc04,     sengoku3, neogeo_noslot,   neogeo, neogeo_state,    init_sengoku3, ROT0, "hack",         "Sengoku 3 / Sengoku Densho 2001 (Unlock All Stages And Hidden Character)", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, sengoku3hc05,     sengoku3, neogeo_noslot,   neogeo, neogeo_state,    init_sengoku3, ROT0, "hack",         "Sengoku 3 / Sengoku Densho 2001 (Evolution v1.0)", MACHINE_SUPPORTS_SAVE )
-GAME( 2013, sengoku3hc06,     sengoku3, neogeo_noslot,   neogeo, neogeo_state,    init_sengoku3, ROT0, "hack",         "Sengoku 3 / Sengoku Densho 2001 (Green Blue 2013-02-27)", MACHINE_SUPPORTS_SAVE )
+GAME( 2013, sengoku3hc06,     sengoku3, neogeo_noslot,   neogeo, neogeo_state,    init_sengoku3, ROT0, "GOTVG",        "Sengoku 3 / Sengoku Densho 2001 (Green Blue 2013-02-27)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, sengoku3hc07,     sengoku3, neogeo_noslot,   neogeo, neogeo_state,    init_sengoku3, ROT0, "hack",         "Sengoku 3 / Sengoku Densho 2001 (Fengshen Edition 2020-04-10)", MACHINE_SUPPORTS_SAVE )
+GAME( 2020, sengoku3hc08,     sengoku3, neogeo_noslot,   neogeo, neogeo_state,    init_sengoku3, ROT0, "GOTVG",        "Sengoku 3 / Sengoku Densho 2001 (Infinite Power 2020-04-05)", MACHINE_SUPPORTS_SAVE )
+GAME( 2010, sengoku3hc09,     sengoku3, neogeo_noslot,   neogeo, neogeo_state,    init_sengoku3, ROT0, "GOTVG",        "Sengoku 3 / Sengoku Densho 2001 (Green Blue 2010-05-30) (Earlier)", MACHINE_SUPPORTS_SAVE )
 GAME( 2009, shocktrohc01,     shocktro, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Shock Troopers (Ex Super Version 2009-08-18)", MACHINE_SUPPORTS_SAVE )
 GAME( 2014, shocktr2hc01,     shocktr2, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Shock Troopers - 2nd Squad (Ex Super Version 2014-01-27)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, shocktr2hc02,     shocktr2, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Shock Troopers - 2nd Squad (Strongest Firepower 2022-12-17)", MACHINE_SUPPORTS_SAVE )
@@ -23197,7 +23323,7 @@ GAME( 2022, svchc08,          svc,      neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2021, svchc09,          svc,      neogeo_noslot,   neogeo, neogeo_state,    init_svc,      ROT0, "hack",         "SNK vs. Capcom - SVC Chaos (New Wave Flash Edition Original 2021-02-10)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, svchc10,          svc,      neogeo_noslot,   neogeo, neogeo_state,    init_svc,      ROT0, "hack",         "SNK vs. Capcom - SVC Chaos (New Wave Flash Edition Simplified 2021-02-10)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, svchc11,          svc,      neogeo_noslot,   neogeo, neogeo_state,    init_svc,      ROT0, "hack",         "SNK vs. Capcom - SVC Chaos (Remix Ultra Edition 2020-03-01)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, svchc12,          svc,      neogeo_noslot,   neogeo, neogeo_state,    init_svcsplus, ROT0, "hack",         "SNK vs. Capcom - SVC Chaos Super Plus (Enhanced 2023-06-21)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, svchc12,          svc,      neogeo_noslot,   neogeo, neogeo_state,    init_svcsplus, ROT0, "GOTVG",        "SNK vs. Capcom - SVC Chaos Super Plus (Enhanced 2023-06-21)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, tophuntrhc01,     tophuntr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Top Hunter - Roddy & Cathy (Ex Super Version)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, tophuntrhc02,     tophuntr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Top Hunter - Roddy & Cathy (Korean Translation)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, twinsprihc01,     twinspri, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Twinkle Star Sprites (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
@@ -23217,6 +23343,6 @@ GAME( 1993, wh2hc03,          wh2,      neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 1994, wh2jhc01,         wh2j,     neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes 2 Jet (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, wh2jhc02,         wh2j,     neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes 2 Jet (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, whphc01,          whp,      neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes Perfect (Simplify Edition 2018-06-04)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, whphc02,          whp,      neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes Perfect (Enhanced 2023-06-02)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, whphc02,          whp,      neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "World Heroes Perfect (Enhanced 2023-06-02)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, whphc03,          whp,      neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes Perfect (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2009, zintrckbhc01,     zintrckb, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Zintrick / Oshidashi Zentrix (Enable hidden characters)", MACHINE_SUPPORTS_SAVE )

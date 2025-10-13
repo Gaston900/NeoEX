@@ -319,6 +319,7 @@ kof2knd                         // Decrypted / Bootleg
 kof2k1d                         // Decrypted / Bootleg
 kof2k1hd                        // Decrypted / Bootleg
 kof2k1nd                        // Decrypted / Bootleg
+kf2k1bh                         // Decrypted / Bootleg
 kf2k1pls                        // Decrypted / Bootleg
 kf2k1plse                       // Encrypted / Bootleg
 kf2k1plsd                       // Decrypted / Bootleg
@@ -1267,6 +1268,7 @@ kof10thhc04                     // Hack
 kof10thhc05                     // Hack
 kof10thhc06                     // Hack
 kof10thhc07                     // Hack
+kof10thhc08                     // Hack
 kof94hc01                       // Hack
 kof94hc02                       // Hack
 kof94hc03                       // Hack
@@ -1292,6 +1294,8 @@ kof96hc06                       // Hack
 kof96hc07                       // Hack
 kof96hc08                       // Hack
 kof96hc09                       // Hack
+kof96hc10                       // Hack
+kof96hc11                       // Hack
 kof97hc01                       // Hack
 kof97hc02                       // Hack
 kof97hc03                       // Hack
@@ -2018,6 +2022,8 @@ sengoku3hc04                    // Hack
 sengoku3hc05                    // Hack
 sengoku3hc06                    // Hack
 sengoku3hc07                    // Hack
+sengoku3hc08                    // Hack
+sengoku3hc09                    // Hack
 shocktrohc01                    // Hack
 shocktr2hc01                    // Hack
 shocktr2hc02                    // Hack

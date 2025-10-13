@@ -9117,6 +9117,33 @@ ROM_START( kof2k1nd )
 	ROM_LOAD16_BYTE( "262d.c8", 0x3000001, 0x800000, CRC(954d0e16) SHA1(975803c130df3a6e835b9bf0f8532d6586058c54) )
 ROM_END
 
+ROM_START( kf2k1bh )
+	ROM_REGION( 0x500000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "262bh.p1", 0x000000, 0x100000, CRC(d8b7a627) SHA1(ac0a9e7643e2f595391b793860068748757d1c4e) )
+	ROM_LOAD16_WORD_SWAP( "262h.p2", 0x100000, 0x400000, CRC(91eea062) SHA1(82bae42bbeedb9f3aa0c7c0b0a7a69be499cf98f) )
+    KOF2001_ESSENTIALPATCH_MODS_FILL
+
+	NEO_SFIX_MT_128K
+
+	NEO_BIOS_AUDIO_ENCRYPTED_256K( "262.m1", CRC(a7f8119f) SHA1(71805b39b8b09c32425cf39f9de59b2f755976c2) )
+
+	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "262.v1", 0x000000, 0x400000, CRC(83d49ecf) SHA1(2f2c116e45397652e77fcf5d951fa5f71b639572) )
+	ROM_LOAD( "262.v2", 0x400000, 0x400000, CRC(003f1843) SHA1(bdd58837ad542548bd4053c262f558af88e3b989) )
+	ROM_LOAD( "262.v3", 0x800000, 0x400000, CRC(2ae38dbe) SHA1(4e82b7dd3b899d61907620517a5a27bdaba0725d) )
+	ROM_LOAD( "262.v4", 0xc00000, 0x400000, CRC(26ec4dd9) SHA1(8bd68d95a2d913be41a51f51e48dbe3bff5924fb) )
+
+	ROM_REGION( 0x4000000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "262.c1", 0x0000000, 0x800000, CRC(99cc785a) SHA1(374f0674871d0196fa274aa6c5956d7b3848d5da) )
+	ROM_LOAD16_BYTE( "262.c2", 0x0000001, 0x800000, CRC(50368cbf) SHA1(5d9e206e98e0b0c7735b72ea46b45058fdec2352) )
+	ROM_LOAD16_BYTE( "262.c3", 0x1000000, 0x800000, CRC(fb14ff87) SHA1(445a8db2fc69eff54a252700f2d3a89244c58e75) )
+	ROM_LOAD16_BYTE( "262.c4", 0x1000001, 0x800000, CRC(4397faf8) SHA1(6752b394f6647502a649a3e62bd3442f936b733e) )
+	ROM_LOAD16_BYTE( "262.c5", 0x2000000, 0x800000, CRC(91f24be4) SHA1(88190c41f7d4a0f4b1982149fc9acfc640af498d) )
+	ROM_LOAD16_BYTE( "262.c6", 0x2000001, 0x800000, CRC(a31e4403) SHA1(5cd1a14703aa58810e2377dfb7353c61e9dc9c1f) )
+	ROM_LOAD16_BYTE( "262.c7", 0x3000000, 0x800000, CRC(54d9d1ec) SHA1(80c3a8ec39130dd5d3da561f287709da6b8abcf4) )
+	ROM_LOAD16_BYTE( "262.c8", 0x3000001, 0x800000, CRC(59289a6b) SHA1(ddfce7c85b2a144975db5bb14b4b51aaf881880e) )
+ROM_END
+
 ROM_START( kf2k1pls )
 	ROM_REGION( 0x500000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "262pls.p1", 0x000000, 0x100000, CRC(758529a7) SHA1(cefdc7049772dcb77d658ac8571a12eedabda3c9) )
@@ -17722,6 +17749,7 @@ GAME( 2000, kof2knd,    kof2000,  neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 2001, kof2k1d,    kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "Eolith / SNK", "The King of Fighters 2001 (NGM-2621) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, kof2k1hd,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "Eolith / SNK", "The King of Fighters 2001 (NGH-2621) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, kof2k1nd,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "Eolith / SNK", "The King of Fighters 2001 (Fully Decrypted)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, kf2k1bh,    kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "Eolith / SNK", "The King of Fighters 2001 (bootleg / hack)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k1pls,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2001 Plus (Set 1, bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k1plse,  kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "bootleg", "The King of Fighters 2001 Plus (Set 1, bootleg) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k1plsd,  kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "bootleg", "The King of Fighters 2001 Plus (Set 1, bootleg) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
