@@ -22955,7 +22955,7 @@ GAME( 2020, kof2002hc52,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2020, kof2002hc53,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Third Edition of the Kingdom of Gods 2020-06-14)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof2002hc54,      kof2002,  ps2,             neogeo, neogeo_kf2k2ps2, init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Resurrection 2017 2020-07-17)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof2002hc55,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Lucar Enhanced Edition 2020-08-09)", MACHINE_SUPPORTS_SAVE )
-GAME( 2020, kof2002hc56,      kof2002,  gsc,             neogeo, neogeo_state,    init_kof2002,  ROT0, "GOTVG",        "The King of Fighters 2002 (Plus 2017 2020-10-22)", MACHINE_SUPPORTS_SAVE )
+GAME( 2020, kof2002hc56,      kof2002,  gsc,             neogeo, neogeo_state,    init_kof2002,  ROT0, "GOTVG",        "The King of Fighters 2002 (Come Back 2017 2020-10-22)", MACHINE_SUPPORTS_SAVE )
 GAME( 2015, kof2002hc57,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Remix 2015-11-06)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, kof2002hc58,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Tongtian Edition 2018-11-25)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, kof2002hc59,      kof2002,  neogeo_noslot,   neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (Remix Ultra 3.5 Original 2006-09-13)", MACHINE_SUPPORTS_SAVE )
