@@ -1097,6 +1097,7 @@ void neogeo_state::neogeo_kiz4p(machine_config &config)
 void neogeo_state::neogeo_noctrl(machine_config &config)
 {
 	neogeo_noslot(config);
+	config.device_remove("edge");
 	config.device_remove("ctrl1");
 	config.device_remove("ctrl2");
 }
