@@ -14771,6 +14771,30 @@ ROM_START( maglordhc01 )
 	ROM_LOAD16_BYTE( "005.c6", 0x200001, 0x80000, CRC(ab7ac142) SHA1(e6ad2843947d35d8e913d2666f87946c1ba7944f) )
 ROM_END
 
+ROM_START( maglordhc02 )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "005_hc02.p1", 0x000000, 0x080000, CRC(9486bcf4) SHA1(7edde8d2929196e3e3b2b8ec82d5d5de826081d1) )
+
+	NEO_SFIX_128K( "005_hc02.s1", CRC(0e1839b2) SHA1(2c833521b70635c90af4e3301b564e7901ab60a7) )
+
+	NEO_BIOS_AUDIO_256K( "005.m1", CRC(26259f0f) SHA1(4f3e500093d61585048767dbd9fa09b3911a05d6) )
+
+	ROM_REGION( 0x080000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "005.v11", 0x000000, 0x080000, CRC(cc0455fd) SHA1(a8ff4270e7705e263d25ff0b301f503bccea7e59) )
+
+	ROM_REGION( 0x100000, "ymsnd:adpcmb", 0 )
+	ROM_LOAD( "005.v21", 0x000000, 0x080000, CRC(f94ab5b7) SHA1(2c16985102e3585e08622d8c54ac5c60425b9ff8) )
+	ROM_LOAD( "005.v22", 0x080000, 0x080000, CRC(232cfd04) SHA1(61b66a9decbbd1f500a8c186615e7fd077c6861e) )
+
+	ROM_REGION( 0x300000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "005.c1", 0x000000, 0x80000, CRC(806aee34) SHA1(3c32a0edbbddb694495b510c13979c44b83de8bc) )
+	ROM_LOAD16_BYTE( "005.c2", 0x000001, 0x80000, CRC(34aa9a86) SHA1(cec97e1ff7f91158040c629ba75742db82c4ae5e) )
+	ROM_LOAD16_BYTE( "005.c3", 0x100000, 0x80000, CRC(c4c2b926) SHA1(478bfafca21f5a1338808251a06ab405e6a9e65f) )
+	ROM_LOAD16_BYTE( "005.c4", 0x100001, 0x80000, CRC(9c46dcf4) SHA1(4c05f3dc25777a87578ce09a6cefb3a4cebf3266) )
+	ROM_LOAD16_BYTE( "005.c5", 0x200000, 0x80000, CRC(69086dec) SHA1(7fa47f4a765948813ebf366168275dcc3c42e951) )
+	ROM_LOAD16_BYTE( "005.c6", 0x200001, 0x80000, CRC(ab7ac142) SHA1(e6ad2843947d35d8e913d2666f87946c1ba7944f) )
+ROM_END
+
 ROM_START( matrimhc01 )
 	ROM_REGION( 0x500000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "266_hc01.p1",  0x000000, 0x100000, CRC(cd86e143) SHA1(64189aeabc5ec0f38bc286b6c88a57b30d3f8c30) )
@@ -19289,7 +19313,7 @@ ROM_START( pbobblenhc01 )
 	NEO_BIOS_AUDIO_64K( "462.m1", CRC(5e378316) SHA1(fa9a904583e00614762ad91bab83e86d52237777) )
 
 	ROM_REGION( 0x180000, "ymsnd:adpcma", 0 )
-	ROM_LOAD( "083ch.v3", 0x000000, 0x100000, CRC(30ce579e) SHA1(635f7ab2178981ba38cc0080f4f97e954e552440) )
+	ROM_LOAD( "083cd.v3", 0x000000, 0x100000, CRC(30ce579e) SHA1(635f7ab2178981ba38cc0080f4f97e954e552440) )
 	ROM_LOAD( "083.v4", 0x100000, 0x080000, CRC(0a548948) SHA1(e1e4afd17811cb60401c14fbcf0465035165f4fb) )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
@@ -19309,12 +19333,30 @@ ROM_START( pbobblenhc02 )
 	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
 	ROM_LOAD( "461.v1",   0x000000, 0x100000, CRC(3d59ad53) SHA1(b09b860cb385616c1649e68474d71bf3399cedc6) )
 	ROM_LOAD( "461.v2",   0x100000, 0x100000, CRC(56d0c568) SHA1(d38d4eea7b50026dfc1e9839865243a83ce11d5b) )
-	ROM_LOAD( "083ch.v3", 0x200000, 0x100000, CRC(30ce579e) SHA1(635f7ab2178981ba38cc0080f4f97e954e552440) )
+	ROM_LOAD( "083cd.v3", 0x200000, 0x100000, CRC(30ce579e) SHA1(635f7ab2178981ba38cc0080f4f97e954e552440) )
 	ROM_LOAD( "083.v4",   0x300000, 0x080000, CRC(0a548948) SHA1(e1e4afd17811cb60401c14fbcf0465035165f4fb) )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
 	ROM_LOAD16_BYTE( "461.c1", 0x000000, 0x080000, CRC(f8d39bdc) SHA1(3a36b4be73e04955adb41214fbbf9ea6a6a218d3) )
 	ROM_LOAD16_BYTE( "461.c2", 0x000001, 0x080000, CRC(40b2ad28) SHA1(ce29406727710b23c7aacb3babf724d808c0e975) )
+ROM_END
+
+ROM_START( pbobblenhc03 )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "462_hc03.p1", 0x000000, 0x080000, CRC(2cf95fad) SHA1(7ba3c152832096507e4c25157beb32054861d469) )
+    PBOBBLEN_ESSENTIALPATCH_MODS_FILL
+
+	NEO_SFIX_128K( "083.s1", CRC(9caae538) SHA1(cf2d90a7c1a42107c0bb8b9a61397634286dbe0a) )
+
+	NEO_BIOS_AUDIO_128K( "083.m1", CRC(f424368a) SHA1(5e5bbcaeb82bed2ee17df08f005ca20ad1030723) )
+
+	ROM_REGION( 0x380000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "083.v3", 0x200000, 0x100000, CRC(0840cbc4) SHA1(1adbd7aef44fa80832f63dfb8efdf69fd7256a57) )
+	ROM_LOAD( "083.v4", 0x300000, 0x080000, CRC(0a548948) SHA1(e1e4afd17811cb60401c14fbcf0465035165f4fb) )
+
+	ROM_REGION( 0x500000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "083.c5", 0x400000, 0x080000, CRC(e89ad494) SHA1(69c9ea415773af94ac44c48af05d55ada222b138) )
+	ROM_LOAD16_BYTE( "083.c6", 0x400001, 0x080000, CRC(4b42d7eb) SHA1(042ae50a528cea21cf07771d3915c57aa16fd5af) )
 ROM_END
 
 ROM_START( preisle2hc01 )
@@ -22024,6 +22066,27 @@ ROM_START( tophuntrhc02 )
 	ROM_LOAD16_BYTE( "046_hc02.c8", 0x600001, 0x100000, CRC(a3d7ad03) SHA1(9d2c6ae60dc266b746b836fff72907c5af119d35) )
 ROM_END
 
+ROM_START( turfmasthc01 )
+	ROM_REGION( 0x200000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "200_hc01.p1", 0x100000, 0x100000, CRC(dee6f081) SHA1(4c456a08fb2ee3cb2ee36813a5dcc86fae87053c) )
+	ROM_CONTINUE( 0x000000, 0x100000)
+    TURFMAST_ESSENTIALPATCH_MODS_FILL
+
+	NEO_SFIX_128K( "200.s1", CRC(9a5402b2) SHA1(ae1a0b5450869d61b2bb23671c744d3dda8769c4) )
+
+	NEO_BIOS_AUDIO_128K( "200.m1", CRC(9994ac00) SHA1(7bded797f3b80fd00bcbe451ac0abe6646b19a14) )
+
+	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "200.v1", 0x000000, 0x200000, CRC(00fd48d2) SHA1(ddfee09328632e598fd51537b3ae8593219b2111) )
+	ROM_LOAD( "200.v2", 0x200000, 0x200000, CRC(082acb31) SHA1(2f1c053040e9d50a6d45fd7bea1b96742bae694f) )
+	ROM_LOAD( "200.v3", 0x400000, 0x200000, CRC(7abca053) SHA1(e229bc0ea82a371d6ee8fd9fe442b0fd141d0a71) )
+	ROM_LOAD( "200.v4", 0x600000, 0x200000, CRC(6c7b4902) SHA1(d55e0f542d928a9a851133ff26763c8236cbbd4d) )
+
+	ROM_REGION( 0x800000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "200.c1", 0x000000, 0x400000, CRC(8e7bf41a) SHA1(148eb747f2f4d8e921eb0411c88a636022ceab80) )
+	ROM_LOAD16_BYTE( "200.c2", 0x000001, 0x400000, CRC(5a65a8ce) SHA1(d6c7afe035411f3eacdf6868d36f91572dd593e0) )
+ROM_END
+
 ROM_START( twinsprihc01 )
 	ROM_REGION( 0x200000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "224_hc01.p1", 0x100000, 0x100000, CRC(df71c8cd) SHA1(1e49205b46c59c7f4ca6ee1dc06f555320d3b9af) )
@@ -22217,6 +22280,28 @@ ROM_START( wjammershc02 )
 	ROM_REGION( 0x400000, "sprites", 0 )
 	ROM_LOAD16_BYTE( "065_hc02.c1", 0x000000, 0x100000, CRC(ebded27e) SHA1(574a0086bf13a5ac5d27de90c4d4611a19668cf8) )
 	ROM_LOAD16_BYTE( "065_hc02.c2", 0x000001, 0x100000, CRC(f5483767) SHA1(756dd8e161bf428659c642b5056aa0bcf5e0d9a8) )
+	ROM_LOAD16_BYTE( "065.c3", 0x200000, 0x100000, CRC(40986386) SHA1(65795a50197049681265946713d416c9cdb68f08) )
+	ROM_LOAD16_BYTE( "065.c4", 0x200001, 0x100000, CRC(715e15ff) SHA1(ac8b8b01f5c7384b883afbe0cf977430378e3fef) )
+ROM_END
+
+ROM_START( wjammershc03 )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "065_hc03.p1", 0x000000, 0x100000, CRC(bd442f8f) SHA1(cfea13fa5567637ebcc913c288c22455d53606ef) )
+    WJAMMERS_ESSENTIALPATCH_MODS_FILL
+
+	NEO_SFIX_128K( "065_hc03.s1", CRC(d282ba6d) SHA1(749565f96aad882a1c235eec92a135715d669e1e) )
+
+	NEO_BIOS_AUDIO(0x20000, "065.m1", CRC(52c23cfc) SHA1(809a7e072ad9acbffc25e9bd27cdb97638d09d07) )
+
+	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "065.v1", 0x000000, 0x100000, CRC(ce8b3698) SHA1(7d75e2a5cf8c90be422f8b425447e81597fe145a) )
+	ROM_LOAD( "065.v2", 0x100000, 0x100000, CRC(659f9b96) SHA1(62f40365212153bc3b92a1187fa44f6cdc7f7b83) )
+	ROM_LOAD( "065.v3", 0x200000, 0x100000, CRC(39f73061) SHA1(ec57cd58e7f8569cff925d11e2320d588ce4fe49) )
+	ROM_LOAD( "065.v4", 0x300000, 0x100000, CRC(5dee7963) SHA1(f8e6de73d65dd80b29c711f00835a574a770cb4e) )
+
+	ROM_REGION( 0x400000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "065.c1", 0x000000, 0x100000, CRC(c7650204) SHA1(42918d700d59864f8ab15caf968a062a563c9b09) )
+	ROM_LOAD16_BYTE( "065.c2", 0x000001, 0x100000, CRC(d9f3e71d) SHA1(fad1f64061eac1bf85bf6d75d2eae974a8c94069) )
 	ROM_LOAD16_BYTE( "065.c3", 0x200000, 0x100000, CRC(40986386) SHA1(65795a50197049681265946713d416c9cdb68f08) )
 	ROM_LOAD16_BYTE( "065.c4", 0x200001, 0x100000, CRC(715e15ff) SHA1(ac8b8b01f5c7384b883afbe0cf977430378e3fef) )
 ROM_END
@@ -23031,6 +23116,7 @@ GAME( 2022, magdrop3hc01,     magdrop3, neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2018, magdrop3hc02,     magdrop3, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Magical Drop III (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, magdrop3hc03,     magdrop3, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Magical Drop III (Translation French)", MACHINE_SUPPORTS_SAVE )
 GAME( 1990, maglordhc01,      maglord,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Magician Lord (Ex Super Version)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, maglordhc02,      maglord,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "Boomchild",    "Magician Lord (Again Changes From Hell v1.0.0)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, matrimhc01,       matrim,   neogeo_noslot,   neogeo, neogeo_state,    init_matrimd,  ROT0, "hack",         "Matrimelee / Shin Gouketsuji Ichizoku Toukon (Simplification Edition 2018-06-04)", MACHINE_SUPPORTS_SAVE )
 GAME( 2015, matrimhc02,       matrim,   neogeo_noslot,   neogeo, neogeo_state,    init_matrima,  ROT0, "hack",         "Matrimelee / Shin Gouketsuji Ichizoku Toukon (Great Blood Temple Simplification 2015-12-05)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, matrimhc03,       matrim,   neogeo_noslot,   neogeo, neogeo_state,    init_matrimd,  ROT0, "hack",         "Matrimelee / Shin Gouketsuji Ichizoku Toukon (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
@@ -23219,6 +23305,7 @@ GAME( 2000, nitdhc02,         nitd,     neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2000, nitdhc03,         nitd,     neogeo_noslot,   neogeo, neogeo_state,    init_nitd,     ROT0, "hack",         "Nightmare in the Dark (Ex Super Version)", MACHINE_SUPPORTS_SAVE )
 GAME( 2009, pbobblenhc01,     pbobblen, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Puzzle Bobble / Bust-A-Move (Crazy beta 2 2009-07-23)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, pbobblenhc02,     pbobblen, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Puzzle Bobble / Bust-A-Move Crazy", MACHINE_SUPPORTS_SAVE )
+GAME( 2024, pbobblenhc03,     pbobblen, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Puzzle Bobble / Bust-A-Move (Precise Controls)", MACHINE_SUPPORTS_SAVE )
 GAME( 1999, preisle2hc01,     preisle2, neogeo_noslot,   neogeo, neogeo_state,    init_preisle2, ROT0, "hack",         "Prehistoric Isle 2 (Ex Super Version)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, puzzledphc01,     puzzledp, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Puzzle De Pon! (Translation Korean)", MACHINE_SUPPORTS_SAVE )
 GAME( 1997, puzzldprhc01,     puzzledp, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Puzzle De Pon! R (Translation Korean)", MACHINE_SUPPORTS_SAVE )
@@ -23327,6 +23414,7 @@ GAME( 2020, svchc11,          svc,      neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2023, svchc12,          svc,      neogeo_noslot,   neogeo, neogeo_state,    init_svcsplus, ROT0, "GOTVG",        "SNK vs. Capcom - SVC Chaos Super Plus (Enhanced 2023-06-21)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, tophuntrhc01,     tophuntr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Top Hunter - Roddy & Cathy (Ex Super Version)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, tophuntrhc02,     tophuntr, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Top Hunter - Roddy & Cathy (Korean Translation)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, turfmasthc01,     turfmast, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "StiNKz",       "Neo Turf Masters / Big Tournament Golf (Course and Pin Randomiser v0.1)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, twinsprihc01,     twinspri, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Twinkle Star Sprites (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, viewpoinhc01,     viewpoin, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Viewpoint (Translation French)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, viewpoinhc02,     viewpoin, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Viewpoint (Ex Super Version)", MACHINE_SUPPORTS_SAVE )
@@ -23336,6 +23424,7 @@ GAME( 2023, wakuwak7hc03,     wakuwak7, neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 1996, wakuwak7hc04,     wakuwak7, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Waku Waku 7 (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, wjammershc01,     wjammers, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Windjammers / Flying Power Disc (Translation French)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, wjammershc02,     wjammers, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Windjammers / Flying Power Disc (Translation Korean)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, wjammershc03,     wjammers, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "Boomchild",    "Windjammers / Flying Power Disc (Let me play longer)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, wh1hc01,          wh1,      neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes (Simple Attack Edition 2018-09-12)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, wh1hc02,          wh1,      neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, wh2hc01,          wh2,      neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes 2 (Boss With Simple Attack Edition 2018-09-12)", MACHINE_SUPPORTS_SAVE )
