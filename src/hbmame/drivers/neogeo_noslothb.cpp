@@ -10839,8 +10839,8 @@ ROM_START( kof2001hc01 ) //kf2k1allboss
 	ROM_LOAD16_BYTE( "262_hc01.c8",  0x3000001, 0x800000, CRC(2e8b6c67) SHA1(017f91945534d7e2345845a3e19759175c173749) )
 	ROM_LOAD16_BYTE( "262_hc01.c9",  0x4000000, 0x800000, CRC(40f7bd65) SHA1(ec10f3d775a4e254755b4d0cb578d0dd63bc6341) )
 	ROM_LOAD16_BYTE( "262_hc01.c10", 0x4000001, 0x800000, CRC(2471c450) SHA1(7d41fc4c5537eaf4b0fdd24ade67ab2914e09215) )
-    ROM_LOAD16_BYTE( "262_hc01.c11", 0x5000000, 0x800000, CRC(8a5b561c) SHA1(a19697d4c2cc8edebc669c95ae1db4c8c2a70b2c) )
-	ROM_LOAD16_BYTE( "262_hc01.c12", 0x5000001, 0x800000, CRC(bef667a3) SHA1(d5e8bc185dcf63343d129c31d2ddab9f723f1a12) )
+    ROM_LOAD16_BYTE( "265d.c7", 0x5000000, 0x800000, CRC(8a5b561c) SHA1(a19697d4c2cc8edebc669c95ae1db4c8c2a70b2c) )
+	ROM_LOAD16_BYTE( "265d.c8", 0x5000001, 0x800000, CRC(bef667a3) SHA1(d5e8bc185dcf63343d129c31d2ddab9f723f1a12) )
 	ROM_LOAD16_BYTE( "262_hc01.c13", 0x6000000, 0x800000, CRC(e7b1bd94) SHA1(e4d8e678725083ddc45b00ea31053e0ab8c0fa89) )
 	ROM_LOAD16_BYTE( "262_hc01.c14", 0x6000001, 0x800000, CRC(85cbdd3b) SHA1(b3719eba286c81f94e06b417570c81726a3e98fb) )
 ROM_END
@@ -10872,8 +10872,8 @@ ROM_START( kof2001hc02 ) //kf2k1allboss
 	ROM_LOAD16_BYTE( "262_hc01.c8", 0x3000001, 0x800000, CRC(2e8b6c67) SHA1(017f91945534d7e2345845a3e19759175c173749) )
 	ROM_LOAD16_BYTE( "262_hc01.c9", 0x4000000, 0x800000, CRC(40f7bd65) SHA1(ec10f3d775a4e254755b4d0cb578d0dd63bc6341) )
 	ROM_LOAD16_BYTE( "262_hc01.c10", 0x4000001, 0x800000, CRC(2471c450) SHA1(7d41fc4c5537eaf4b0fdd24ade67ab2914e09215) )
-    ROM_LOAD16_BYTE( "262_hc01.c11", 0x5000000, 0x800000, CRC(8a5b561c) SHA1(a19697d4c2cc8edebc669c95ae1db4c8c2a70b2c) )
-	ROM_LOAD16_BYTE( "262_hc01.c12", 0x5000001, 0x800000, CRC(bef667a3) SHA1(d5e8bc185dcf63343d129c31d2ddab9f723f1a12) )
+    ROM_LOAD16_BYTE( "265d.c7", 0x5000000, 0x800000, CRC(8a5b561c) SHA1(a19697d4c2cc8edebc669c95ae1db4c8c2a70b2c) )
+	ROM_LOAD16_BYTE( "265d.c8", 0x5000001, 0x800000, CRC(bef667a3) SHA1(d5e8bc185dcf63343d129c31d2ddab9f723f1a12) )
 	ROM_LOAD16_BYTE( "262_hc01.c13", 0x6000000, 0x800000, CRC(e7b1bd94) SHA1(e4d8e678725083ddc45b00ea31053e0ab8c0fa89) )
 	ROM_LOAD16_BYTE( "262_hc01.c14", 0x6000001, 0x800000, CRC(85cbdd3b) SHA1(b3719eba286c81f94e06b417570c81726a3e98fb) )
 ROM_END
@@ -10996,8 +10996,8 @@ ROM_START( kof2001hc06 ) //kf2k1ult u kf2k1allboss
 	ROM_LOAD16_BYTE( "262_hc06.c8", 0x3000001, 0x800000, CRC(04c029ec) SHA1(73c8d46c8e519e604b315d43f4b81d66da6e2f21) )
 	ROM_LOAD16_BYTE( "262_hc06.c9", 0x4000000, 0x800000, CRC(b0bba382) SHA1(4ef1f0ac9235b62c7ee13c11d73209391bf3d6bb) )
 	ROM_LOAD16_BYTE( "262_hc06.c10", 0x4000001, 0x800000, CRC(056b86e0) SHA1(f72d0fc197c970e1964f47523fc2d6c11c7eb576) )
-    ROM_LOAD16_BYTE( "262_hc01.c11", 0x5000000, 0x800000, CRC(8a5b561c) SHA1(a19697d4c2cc8edebc669c95ae1db4c8c2a70b2c) )
-	ROM_LOAD16_BYTE( "262_hc01.c12", 0x5000001, 0x800000, CRC(bef667a3) SHA1(d5e8bc185dcf63343d129c31d2ddab9f723f1a12) )
+    ROM_LOAD16_BYTE( "265d.c7", 0x5000000, 0x800000, CRC(8a5b561c) SHA1(a19697d4c2cc8edebc669c95ae1db4c8c2a70b2c) )
+	ROM_LOAD16_BYTE( "265d.c8", 0x5000001, 0x800000, CRC(bef667a3) SHA1(d5e8bc185dcf63343d129c31d2ddab9f723f1a12) )
     ROM_LOAD16_BYTE( "262_hc06.c13", 0x6000000, 0x800000, CRC(421998ab) SHA1(c3f0ab7fed704cbb54fc4b7442279606c565319d) )
 	ROM_LOAD16_BYTE( "262_hc06.c14", 0x6000001, 0x800000, CRC(9b169e23) SHA1(cb8c63ea0907e786898b9805252597c76f7bbe77) )
 ROM_END
@@ -11056,8 +11056,8 @@ ROM_START( kof2001hc08 ) //kf2k1cmx1
 	ROM_LOAD16_BYTE( "262_hc05.c8", 0x3000001, 0x800000, CRC(9c89c168) SHA1(ddc6a93c3ba766cfded63ee9355fa86835ead3b1) )
 	ROM_LOAD16_BYTE( "262_hc08.c9", 0x4000000, 0x800000, CRC(c5f7e40a) SHA1(7826d8ebfcace88f2cecca7c20878f6783b98f1c) )
 	ROM_LOAD16_BYTE( "262_hc08.c10", 0x4000001, 0x800000, CRC(f0cc6db8) SHA1(8db1578527b242c2fd15d808cb43afc3ee63c8ca) )
-    ROM_LOAD16_BYTE( "262_hc01.c11", 0x5000000, 0x800000, CRC(8a5b561c) SHA1(a19697d4c2cc8edebc669c95ae1db4c8c2a70b2c) )
-	ROM_LOAD16_BYTE( "262_hc01.c12", 0x5000001, 0x800000, CRC(bef667a3) SHA1(d5e8bc185dcf63343d129c31d2ddab9f723f1a12) )
+    ROM_LOAD16_BYTE( "265d.c7", 0x5000000, 0x800000, CRC(8a5b561c) SHA1(a19697d4c2cc8edebc669c95ae1db4c8c2a70b2c) )
+	ROM_LOAD16_BYTE( "265d.c8", 0x5000001, 0x800000, CRC(bef667a3) SHA1(d5e8bc185dcf63343d129c31d2ddab9f723f1a12) )
 ROM_END
 
 ROM_START( kof2001hc09 ) //kof2001ab
@@ -11087,8 +11087,8 @@ ROM_START( kof2001hc09 ) //kof2001ab
 	ROM_LOAD16_BYTE( "262_hc05.c8", 0x3000001, 0x800000, CRC(9c89c168) SHA1(ddc6a93c3ba766cfded63ee9355fa86835ead3b1) )
 	ROM_LOAD16_BYTE( "262_hc09.c9", 0x4000000, 0x800000, CRC(e4ffc49c) SHA1(004da98e44cb73485fe57ef5bf9e2c0196e68233) )
 	ROM_LOAD16_BYTE( "262_hc09.c10", 0x4000001, 0x800000, CRC(420449a3) SHA1(b2717697522516c0b8b04b2655d54501057e8a00) )
-    ROM_LOAD16_BYTE( "262_hc01.c11", 0x5000000, 0x800000, CRC(8a5b561c) SHA1(a19697d4c2cc8edebc669c95ae1db4c8c2a70b2c) )
-	ROM_LOAD16_BYTE( "262_hc01.c12", 0x5000001, 0x800000, CRC(bef667a3) SHA1(d5e8bc185dcf63343d129c31d2ddab9f723f1a12) )
+    ROM_LOAD16_BYTE( "265d.c7", 0x5000000, 0x800000, CRC(8a5b561c) SHA1(a19697d4c2cc8edebc669c95ae1db4c8c2a70b2c) )
+	ROM_LOAD16_BYTE( "265d.c8", 0x5000001, 0x800000, CRC(bef667a3) SHA1(d5e8bc185dcf63343d129c31d2ddab9f723f1a12) )
 ROM_END
 
 ROM_START( kof2001hc10 ) //kof2k1bs
@@ -14776,6 +14776,30 @@ ROM_START( maglordhc02 )
 	ROM_LOAD16_WORD_SWAP( "005_hc02.p1", 0x000000, 0x080000, CRC(9486bcf4) SHA1(7edde8d2929196e3e3b2b8ec82d5d5de826081d1) )
 
 	NEO_SFIX_128K( "005_hc02.s1", CRC(0e1839b2) SHA1(2c833521b70635c90af4e3301b564e7901ab60a7) )
+
+	NEO_BIOS_AUDIO_256K( "005.m1", CRC(26259f0f) SHA1(4f3e500093d61585048767dbd9fa09b3911a05d6) )
+
+	ROM_REGION( 0x080000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "005.v11", 0x000000, 0x080000, CRC(cc0455fd) SHA1(a8ff4270e7705e263d25ff0b301f503bccea7e59) )
+
+	ROM_REGION( 0x100000, "ymsnd:adpcmb", 0 )
+	ROM_LOAD( "005.v21", 0x000000, 0x080000, CRC(f94ab5b7) SHA1(2c16985102e3585e08622d8c54ac5c60425b9ff8) )
+	ROM_LOAD( "005.v22", 0x080000, 0x080000, CRC(232cfd04) SHA1(61b66a9decbbd1f500a8c186615e7fd077c6861e) )
+
+	ROM_REGION( 0x300000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "005.c1", 0x000000, 0x80000, CRC(806aee34) SHA1(3c32a0edbbddb694495b510c13979c44b83de8bc) )
+	ROM_LOAD16_BYTE( "005.c2", 0x000001, 0x80000, CRC(34aa9a86) SHA1(cec97e1ff7f91158040c629ba75742db82c4ae5e) )
+	ROM_LOAD16_BYTE( "005.c3", 0x100000, 0x80000, CRC(c4c2b926) SHA1(478bfafca21f5a1338808251a06ab405e6a9e65f) )
+	ROM_LOAD16_BYTE( "005.c4", 0x100001, 0x80000, CRC(9c46dcf4) SHA1(4c05f3dc25777a87578ce09a6cefb3a4cebf3266) )
+	ROM_LOAD16_BYTE( "005.c5", 0x200000, 0x80000, CRC(69086dec) SHA1(7fa47f4a765948813ebf366168275dcc3c42e951) )
+	ROM_LOAD16_BYTE( "005.c6", 0x200001, 0x80000, CRC(ab7ac142) SHA1(e6ad2843947d35d8e913d2666f87946c1ba7944f) )
+ROM_END
+
+ROM_START( maglordhc03 ) // French and English, use Shift to choose
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "005_hc03.p1", 0x000000, 0x080000, CRC(f201c65a) SHA1(61173b0922bb0c1386d6312a819b492d402b4b7f) )
+
+	NEO_SFIX_128K( "005_hc03.s1", CRC(0e1839b2) SHA1(2c833521b70635c90af4e3301b564e7901ab60a7) )
 
 	NEO_BIOS_AUDIO_256K( "005.m1", CRC(26259f0f) SHA1(4f3e500093d61585048767dbd9fa09b3911a05d6) )
 
@@ -22617,7 +22641,7 @@ GAME( 2014, gpilotshc01,      gpilots,  neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 1995, kabukiklhc01,     kabukikl, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Far East of Eden - Kabuki Klash / Tengai Makyou - Shin Den (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, kabukiklhc02,     kabukikl, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "Far East of Eden - Kabuki Klash / Tengai Makyou - Shin Den (Enhanced 2023-03-22)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, karnovrhc01,      karnovr,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Karnov's Revenge / Fighter's History Dynamite (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
-GAME( 2024, karnovrhc02,      karnovr,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Karnov's Revenge / Fighter's History Dynamite (Hack, v0.2)", MACHINE_SUPPORTS_SAVE )
+GAME( 2024, karnovrhc02,      karnovr,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Karnov's Revenge / Fighter's History Dynamite (Revolution v0.2)", MACHINE_SUPPORTS_SAVE )
 GAME( 2014, kizunahc01,       kizuna,   neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Kizuna Encounter - Super Tag Battle / Fu'un Super Tag Battle (Arrange Ver. 1.7 2014-07-16)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, kizunahc02,       kizuna,   neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Kizuna Encounter - Super Tag Battle / Fu'un Super Tag Battle (Simplify Edition 2018-06-04)", MACHINE_SUPPORTS_SAVE )
 GAME( 2011, kof2k4sehc01,     kof2k4se, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The King of Fighters Special Edition 2004 Magic Plus (Crazy Edition 2018-10-26) (The King of Fighters 2002 bootleg)", MACHINE_SUPPORTS_SAVE )
@@ -23117,6 +23141,7 @@ GAME( 2018, magdrop3hc02,     magdrop3, neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2004, magdrop3hc03,     magdrop3, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Magical Drop III (Translation French)", MACHINE_SUPPORTS_SAVE )
 GAME( 1990, maglordhc01,      maglord,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Magician Lord (Ex Super Version)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, maglordhc02,      maglord,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "Boomchild",    "Magician Lord (Again Changes From Hell v1.0.0)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, maglordhc03,      maglord,  neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "Boomchild",    "Magician Lord (Again Changes From Hell v1.0.0, Translation French)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, matrimhc01,       matrim,   neogeo_noslot,   neogeo, neogeo_state,    init_matrimd,  ROT0, "hack",         "Matrimelee / Shin Gouketsuji Ichizoku Toukon (Simplification Edition 2018-06-04)", MACHINE_SUPPORTS_SAVE )
 GAME( 2015, matrimhc02,       matrim,   neogeo_noslot,   neogeo, neogeo_state,    init_matrima,  ROT0, "hack",         "Matrimelee / Shin Gouketsuji Ichizoku Toukon (Great Blood Temple Simplification 2015-12-05)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, matrimhc03,       matrim,   neogeo_noslot,   neogeo, neogeo_state,    init_matrimd,  ROT0, "hack",         "Matrimelee / Shin Gouketsuji Ichizoku Toukon (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
