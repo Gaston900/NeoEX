@@ -8860,7 +8860,7 @@ ROM_START( garouhd )
 	ROM_LOAD16_BYTE( "253d.c8", 0x3000001, 0x800000, CRC(ddbd1096) SHA1(634cfb61398b3f1b983f7f3966b53f4cc3a78671) )
 ROM_END
 
-ROM_START( jckeygpd )
+ROM_START( jockygpd )
 	ROM_REGION( 0x200000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "008.p1", 0x000000, 0x100000, CRC(2fb7f388) SHA1(e3c9b03944b4c10cf5081caaf9c8be1f08c06493) )
 	ROM_FILL( 0x100000, 0x100000, 0xff )
@@ -17569,7 +17569,7 @@ GAME( 2004, ct2k3spd,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 1999, ganryud,    ganryu,   neogeo_noslot,   neogeo, neogeo_state,   init_ganryu,   ROT0, "Visco", "Ganryu / Musashi Ganryuki (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 1999, garoud,     garou,    neogeo_noslot,   neogeo, neogeo_state,   init_garou,    ROT0, "SNK", "Garou - Mark of the Wolves (NGM-2530) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 1999, garouhd,    garou,    neogeo_noslot,   neogeo, neogeo_state,   init_garouh,   ROT0, "SNK", "Garou - Mark of the Wolves (NGM-2530 ~ NGH-2530) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2001, jckeygpd,   jockeygp, neogeo_noslot,   jockeygp, neogeo_state, init_jockeygp, ROT0, "Sun Amusement / BrezzaSoft", "Jockey Grand Prix (Decrypted C)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, jockygpd,   jockeygp, neogeo_noslot,   jockeygp, neogeo_state, init_jockeygp, ROT0, "Sun Amusement / BrezzaSoft", "Jockey Grand Prix (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, kof96ep,    kof96,    neogeo_noslot,   neogeo, neogeo_state,   init_kof96ep,  ROT0, "bootleg", "The King of Fighters '96 (bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, kof97pla,   kof97,    neogeo_noslot,   neogeo, neogeo_state,   init_kof97pla, ROT0, "bootleg", "The King of Fighters '97 Chongchu Jianghu Plus 2003 (bootleg set 1)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, kof97orod,  kof97,    neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters '97 Chongchu Jianghu Plus 2003 (bootleg) (Decrypted S)", MACHINE_SUPPORTS_SAVE )
