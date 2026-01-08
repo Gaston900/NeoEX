@@ -311,6 +311,7 @@ garoud                          // Decrypted / Bootleg
 garouhd                         // Decrypted / Bootleg
 jckeygpd                        // Decrypted / Bootleg
 kof96ep                         // Decrypted / Bootleg
+kof97pla                        // Decrypted / Bootleg
 kof97orod                       // Decrypted / Bootleg
 kof99d                          // Decrypted / Bootleg
 kof99kd                         // Decrypted / Bootleg
@@ -318,7 +319,6 @@ kof2kd                          // Decrypted / Bootleg
 kof2knd                         // Decrypted / Bootleg
 kof2k1d                         // Decrypted / Bootleg
 kof2k1hd                        // Decrypted / Bootleg
-kof2k1nd                        // Decrypted / Bootleg
 kf2k1bh                         // Decrypted / Bootleg
 kf2k1pls                        // Decrypted / Bootleg
 kf2k1plse                       // Encrypted / Bootleg
@@ -362,7 +362,6 @@ kf2k3upd                        // Decrypted / Bootleg
 kogd                            // Decrypted / Bootleg
 kogplusd                        // Decrypted / Bootleg
 kof10thd                        // Decrypted / Bootleg
-kof10thp                        // Predecrypted / Bootleg
 kf10thepp                       // Predecrypted / Bootleg
 kof10thu                        // Decrypted / Bootleg
 kf2k5unid                       // Decrypted / Bootleg
@@ -377,21 +376,19 @@ kf2k4plsp                       // Predecrypted / Bootleg
 lans2k4d                        // Decrypted / Bootleg
 matrimd                         // Decrypted / Bootleg
 matrimbd                        // Decrypted / Bootleg
-matrimnd                        // Decrypted / Bootleg
 msboot                          // Bootleg
 ms3b6boot                       // Bootleg
 ms4boot                         // Bootleg
 ms5boot                         // Bootleg
 ms5pcbd                         // SNK Playmore
-ms4plusa                        // Bootleg
+ms4pluse                        // Bootleg
 ms4plusd                        // Bootleg
-ms5plusa                        // Bootleg
-ms5plusc                        // Bootleg
+ms5pluse                        // Bootleg
 ms5plusd                        // Bootleg
+ms5plusnd                       // Bootleg
 mslug2t                         // Bootleg
 mslug3d                         // SNK
 mslug3hd                        // SNK
-mslug3nd                        // SNK
 mslug3b6d                       // Bootleg
 mslug3b6e                       // Bootleg
 mslug4d                         // Mega / Playmore
@@ -399,7 +396,6 @@ mslug4hd                        // Mega / Playmore
 mslug4nd                        // Mega / Playmore
 mslug5d                         // SNK Playmore
 mslug5hd                        // SNK Playmore
-mslug5n                         // SNK Playmore
 mslug5nd                        // SNK Playmore
 mslug5b2                        // Bootleg
 mslug5b3                        // Bootleg
@@ -415,8 +411,7 @@ pnyaad                          // Decrypted / Bootleg
 pnyaand                         // Decrypted / Bootleg
 preisl2d                        // Decrypted / Bootleg
 rotdd                           // Decrypted / Bootleg
-rotdnd                          // Decrypted / Bootleg
-rotdndd                         // Decrypted / Bootleg
+rotdhd                          // Decrypted / Bootleg
 s1945pd                         // Decrypted / Bootleg
 samsh3hb                        // Decrypted / Bootleg
 samsh5bd                        // Decrypted / Bootleg
@@ -429,18 +424,13 @@ sams5shd                        // Decrypted / Bootleg
 sams5sond                       // Decrypted / Bootleg
 sams5shnd                       // Decrypted / Bootleg
 sengok3d                        // Decrypted / Bootleg
-svcda                           // Decrypted / Bootleg
 svcd                            // Decrypted / Bootleg
 svcnd                           // Decrypted / Bootleg
 svcbp                           // Decrypted / Bootleg
-svcplusb                        // Decrypted / Bootleg
-svcplusd                        // Decrypted / Bootleg
 svcplusp                        // Predecrypted / Bootleg
-svcplusap                       // Predecrypted / Bootleg
 svcsplusp                       // Predecrypted / Bootleg
 svcpcbd                         // Decrypted / Bootleg
 zupapad                         // Decrypted / Bootleg
-zupapand                        // Decrypted / Bootleg
 
 @source:neogeo.cpp
 2020bbe                         // Earlier
@@ -519,11 +509,9 @@ wh1d                            // Multi Game Doctor 2
 columnsncd                      // CD conversion
 fr2cd                           // CD conversion
 gpilotcd                        // CD conversion
-ironcladcd                      // CD conversion
 joyjoycd                        // CD conversion
 lbowlingcd                      // CD conversion
 pbobblencd                      // CD conversion
-pspikes2cd                      // CD conversion
 sengokucd                       // CD conversion
 ssidekicd                       // CD conversion
 strhoopcd                       // CD conversion
