@@ -9345,7 +9345,7 @@ ROM_START( kof2k2d )
 	ROM_LOAD16_WORD_SWAP( "265.p2", 0x100000, 0x400000, CRC(327266b8) SHA1(98f445cc0a94f8744d74bca71cb420277622b034) )
     KOF2002_ESSENTIALPATCH_MODS_FILL
 
-	NEO_SFIX_MT_128K
+	NEO_SFIX_128K( "265d.s1", CRC(e0eaaba3) SHA1(831b642da9fe7617498cdb1c86475b3b3d3043bc) )
 
 	NEO_BIOS_AUDIO_128K( "265d.m1", CRC(1c661a4b) SHA1(4e5aa862a0a182a806d538996ddc68d9f2dffaf7) )
 
@@ -10708,7 +10708,7 @@ ROM_END
 
 ROM_START( ms4pluse )
 	ROM_REGION( 0x500000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "263pe.p1", 0x000000, 0x100000, CRC(806a6e04) SHA1(df503772d607271ea51285154c9fd68e18b143ce) )
+	ROM_LOAD16_WORD_SWAP( "263p.p1", 0x000000, 0x100000, CRC(806a6e04) SHA1(df503772d607271ea51285154c9fd68e18b143ce) )
 	ROM_LOAD16_WORD_SWAP( "263.p2",  0x100000, 0x400000, CRC(fdb7aed8) SHA1(dbeaec38f44e58ffedba99e70fa1439c2bf0dfa3) )
     MSLUG4_ESSENTIALPATCH_MODS_FILL
 	
@@ -11394,23 +11394,6 @@ ROM_START( pnyaad )
 	ROM_REGION( 0x1000000, "sprites", 0 )
 	ROM_LOAD16_BYTE( "267d.c1", 0x0000000, 0x800000, CRC(75fa4f27) SHA1(05f39dc5bedfecff67a9e5bd0bb8d09d93168f58) )
 	ROM_LOAD16_BYTE( "267d.c2", 0x0000001, 0x800000, CRC(02345689) SHA1(d40c425e73fd8dc0b0f66bf72a79f66b3bf390e1) )
-ROM_END
-
-ROM_START( pnyaand )
-	ROM_REGION( 0x100000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "267nd.p1", 0x000000, 0x80000, CRC(400fd762) SHA1(c03e96b3629de92c2ccde11d6e879dad85a36078) )
-    PNYAA_ESSENTIALPATCH_MODS_FILL
-
-	NEO_SFIX_128K( "267d.s1", CRC(88ffbb15) SHA1(e5b97c17167c44f6425006e939149c9fb4e6b1b2) )
-
-	NEO_BIOS_AUDIO_512K( "267d.m1", CRC(d58eaa8e) SHA1(4c4faf1da671a41b4d854790eb623a40cb35f256) )
-
-	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
-	ROM_LOAD( "267d.v1", 0x000000, 0x400000, CRC(1ac7db71) SHA1(98ef758181da1632f9ba4aed70e8bd1f338976d7) )
-
-	ROM_REGION( 0x1000000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "267dd.c1", 0x0000000, 0x800000, CRC(2bd02a33) SHA1(77771ace5c27679f09454d3b3c5aa4f761259263) )
-	ROM_LOAD16_BYTE( "267dd.c2", 0x0000001, 0x800000, CRC(8fb27b0b) SHA1(84c9e7994f00e44841e6324219fd5f2e6ab5ca15) )
 ROM_END
 
 ROM_START( preisl2d )
@@ -17685,7 +17668,6 @@ GAME( 1999, mslugxb,    mslugx,   neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 2000, nitdd,      nitd,     neogeo_noslot,   neogeo, neogeo_state,   init_nitd,     ROT0, "Eleven / Gavaking",  "Nightmare in the Dark (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, pbobblendx, pbobblen, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Puzzle Bobble / Bust-A-Move Deluxe (bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, pnyaad,     pnyaa,    neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Aiky", "Pochi and Nyaa (Ver 2.02) (Decrypted)", MACHINE_SUPPORTS_SAVE )
-GAME( 2003, pnyaand,    pnyaa,    neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Aiky", "Pochi and Nyaa (Fully Decrypted)", MACHINE_SUPPORTS_SAVE )
 GAME( 1999, preisl2d,   preisle2, neogeo_noslot,   neogeo, neogeo_state,   init_preisle2, ROT0, "Yumekobo / Saurus", "Prehistoric Isle 2 (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, rotdd,      rotd,     neogeo_noslot,   neogeo, neogeo_state,   init_rotdnd,   ROT0, "Evoga / Playmore", "Rage of the Dragons (NGM-2640?) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, rotdhd,     rotd,     neogeo_noslot,   neogeo, neogeo_state,   init_rotdnd,   ROT0, "Evoga / Playmore", "Rage of the Dragons (NGH-2640?) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
