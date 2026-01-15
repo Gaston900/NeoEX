@@ -2106,6 +2106,7 @@ void CreateEARLIERFolders(int parent_index)
 		if (!strcmp("aof3e", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("bangbeade", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("blazstre", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("fatfury3e", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("goalx3e", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kabukikle", s))	            AddGame(lpFolder, jj);
 		if (!strcmp("lastbladhe", s))		        AddGame(lpFolder, jj);
@@ -2123,12 +2124,15 @@ void CreateEARLIERFolders(int parent_index)
 		if (!strcmp("pulstare", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ragnagrde", s))	            AddGame(lpFolder, jj);
 		if (!strcmp("rbffspece", s))			    AddGame(lpFolder, jj);
+		if (!strcmp("pgoale", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("panicbome", s))			    AddGame(lpFolder, jj);
+		if (!strcmp("rbff1e", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("roboarme", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("samsho3e", s))		            AddGame(lpFolder, jj);
 		if (!strcmp("samsho4e", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("shocktrae", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("strhoope", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("sengoku2e", s))    	        AddGame(lpFolder, jj);
 		if (!strcmp("sonicw3e", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ssidek4e", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("turfmste", s))			        AddGame(lpFolder, jj);
@@ -2458,6 +2462,7 @@ void CreateHOMEBREWFolders(int parent_index)
 		if (!strcmp("amazonn", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("badapple", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("baddudesn", s))		        AddGame(lpFolder, jj);
+		if (!strcmp("bbb2", s))		    	        AddGame(lpFolder, jj);
 		if (!strcmp("beast", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("bpanicdx", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("bonusstage", s))			    AddGame(lpFolder, jj);
@@ -2472,6 +2477,7 @@ void CreateHOMEBREWFolders(int parent_index)
 		if (!strcmp("columnsn", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("cyborg", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ddsprdmo", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("didemo", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("doubled1", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("flapchck", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ffeast", s))			        AddGame(lpFolder, jj);
@@ -2518,6 +2524,7 @@ void CreateHOMEBREWFolders(int parent_index)
 		if (!strcmp("neotris", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ngcdtdd0", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ng4ptest", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("ng4psyschk", s))		        AddGame(lpFolder, jj);
 		if (!strcmp("ngem2k", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ngftdemo", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ngmontst", s))			        AddGame(lpFolder, jj);
@@ -2548,13 +2555,15 @@ void CreateHOMEBREWFolders(int parent_index)
 		if (!strcmp("totc", s))			            AddGame(lpFolder, jj);
 		if (!strcmp("twister", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("vaporous", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("venuswars", s))			    AddGame(lpFolder, jj);
-		if (!strcmp("vlad2000", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("violentv", s))			        AddGame(lpFolder, jj);
+        if (!strcmp("vlad2000", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("wrldracr", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ww2demo", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("yoyoshkn", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("xeviousn", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("xeviousng", s))		        AddGame(lpFolder, jj);
 		if (!strcmp("xeno", s))			            AddGame(lpFolder, jj);
 		if (!strcmp("xmas2017", s))			        AddGame(lpFolder, jj);
+	    if (!strcmp("zetsuxeving", s))		        AddGame(lpFolder, jj);
 	}
 }
 
@@ -2602,8 +2611,9 @@ void CreateDECRYPTEDFolders(int parent_index)
 		if (!strcmp("ganryud", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("garoud", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("garouhd", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("jckeygpd", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("jockygpd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kof96ep", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("kof97pla", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kof97orod", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("kof99d", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kof99kd", s))			        AddGame(lpFolder, jj);
@@ -2611,7 +2621,7 @@ void CreateDECRYPTEDFolders(int parent_index)
 		if (!strcmp("kof2knd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kof2k1d", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kof2k1hd", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("kof2k1nd", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("kf2k1bh", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kf2k1pls", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kf2k1plse", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("kf2k1plsd", s))		        AddGame(lpFolder, jj);
@@ -2654,7 +2664,6 @@ void CreateDECRYPTEDFolders(int parent_index)
 		if (!strcmp("kogd", s))			            AddGame(lpFolder, jj);
 		if (!strcmp("kogplusd", s))		            AddGame(lpFolder, jj);
 		if (!strcmp("kof10thd", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("kof10thp", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kf10thepp", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("kof10thu", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("kf2k5unid", s))			    AddGame(lpFolder, jj);
@@ -2669,21 +2678,19 @@ void CreateDECRYPTEDFolders(int parent_index)
 		if (!strcmp("lans2k4d", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("matrimd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("matrimbd", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("matrimnd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("msboot", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ms3b6boot", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("ms4boot", s))		            AddGame(lpFolder, jj);
 		if (!strcmp("ms5boot", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ms5pcbd", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("ms4plusa", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("ms4pluse", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ms4plusd", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("ms5plusa", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("ms5plusc", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("ms5pluse", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("ms5plusd", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("ms5plusnd", s))	            AddGame(lpFolder, jj);
 		if (!strcmp("mslug2t", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("mslug3d", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("mslug3hd", s))		            AddGame(lpFolder, jj);
-		if (!strcmp("mslug3nd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("mslug3b6d", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("mslug3b6e", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("mslug4d", s))			        AddGame(lpFolder, jj);
@@ -2691,7 +2698,6 @@ void CreateDECRYPTEDFolders(int parent_index)
 		if (!strcmp("mslug4nd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("mslug5d", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("mslug5hd", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("mslug5n", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("mslug5nd", s))		            AddGame(lpFolder, jj);
 		if (!strcmp("mslug5b2", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("mslug5b3", s))			        AddGame(lpFolder, jj);
@@ -2704,11 +2710,9 @@ void CreateDECRYPTEDFolders(int parent_index)
 		if (!strcmp("nitdd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("pbobblendx", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("pnyaad", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("pnyaand", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("preisl2d", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("rotdd", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("rotdnd", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("rotdndd", s))			        AddGame(lpFolder, jj);
+		if (!strcmp("rotdhd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("s1945pd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("samsh3hb", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("samsh5bd", s))			        AddGame(lpFolder, jj);
@@ -2721,18 +2725,13 @@ void CreateDECRYPTEDFolders(int parent_index)
 		if (!strcmp("sams5sond", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("sams5shnd", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("sengok3d", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("svcda", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("svcd", s))			            AddGame(lpFolder, jj);
 		if (!strcmp("svcnd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("svcbp", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("svcplusb", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("svcplusd", s))		            AddGame(lpFolder, jj);
 		if (!strcmp("svcplusp", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("svcplusap", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("svcsplusp", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("svcpcbd", s))			        AddGame(lpFolder, jj);
 		if (!strcmp("zupapad", s))			        AddGame(lpFolder, jj);
-		if (!strcmp("zupapand", s))			        AddGame(lpFolder, jj);
 	}
 }
 
