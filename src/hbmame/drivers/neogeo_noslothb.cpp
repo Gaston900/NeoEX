@@ -16647,7 +16647,7 @@ ROM_END
 ROM_START( mslug3hc37 ) //mslug3chuanqi
 	ROM_REGION( 0xa00000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "256_hc37.p1", 0x000000, 0x100000, CRC(8e877210) SHA1(f3e8841bd47cb8a5f5d32ad8a7d3a9ea9a07c093) )
-	ROM_LOAD16_WORD_SWAP( "256_hc37.p2", 0x100000, 0x800000, CRC(92bee3f6) SHA1(561de4bf0ab56fe700f287a03b8da0019a2ddf69) )
+	ROM_LOAD16_WORD_SWAP( "256_hc37.p2", 0x100000, 0x800000, CRC(8b06f167) SHA1(08342da1b4efeeb2d6cc450f9f63245cac531478) )
     MSLUG3CQI_ESSENTIALPATCH_MODS_FILL
 	
 	NEO_SFIX_128K( "256hd.s1", CRC(8458fff9) SHA1(b120d096deae8abf0ad98362ce230b66e7315a14) )
@@ -16673,8 +16673,8 @@ ROM_END
 
 ROM_START( mslug3hc38 ) //mslug3hamy
 	ROM_REGION( 0xa00000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "256_hc38.p1", 0x000000, 0x100000, CRC(08af5bc7) SHA1(008fc38bab060bba6926e3aacbd77fb56699c12e) )
-	ROM_LOAD16_WORD_SWAP( "256_hc38.p2", 0x100000, 0x800000, CRC(b79cdfb6) SHA1(dceffd97d3c2b725b2599167c49c010e148b4408) )
+	ROM_LOAD16_WORD_SWAP( "256_hc38.p1", 0x000000, 0x100000, CRC(8a1af079) SHA1(e706cc314e423e5a42500f0d941c9b4f86bdc48f) )
+	ROM_LOAD16_WORD_SWAP( "256_hc38.p2", 0x100000, 0x800000, CRC(63383e18) SHA1(9f4b6622246884b94cd1cbd82f2ad13e79d76318) )
     MSLUG3CQI_ESSENTIALPATCH_MODS_FILL
 
 	NEO_SFIX_128K( "256hd.s1", CRC(8458fff9) SHA1(b120d096deae8abf0ad98362ce230b66e7315a14) )
@@ -17725,7 +17725,7 @@ ROM_END
 
 ROM_START( mslug5hc13 ) //mslug5cq
 	ROM_REGION( 0xa00000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "268_hc13.p1", 0x000000, 0xa00000, CRC(5417dbcd) SHA1(9638c855cf53a0c0bc1b2fa6730359ef75729fdf) )
+	ROM_LOAD16_WORD_SWAP( "268_hc13.p1", 0x000000, 0xa00000, CRC(86ac155a) SHA1(5d4893ebfa4bb592c36c803e9e92f5b995e7382f) )
     MSLUG5CQ_ESSENTIALPATCH_MODS_FILL
     
 	NEO_SFIX_128K( "268d.s1", CRC(64952683) SHA1(88ec728c2fe18a11fdd218bed5d73bb3affe2ec1) )
@@ -18983,7 +18983,7 @@ ROM_START( mslugxhc33 ) //mslugxcq
 	ROM_LOAD16_BYTE( "250_hc33.c6",  0x2000001, 0x800000, CRC(ec2f6882) SHA1(35835faf840ee358df06aaef89244dbb04a6fca1) )
 ROM_END
 
-ROM_START( mslugxhc34 ) //mslugxchuanqi old / mslugxmdjdfc
+ROM_START( mslugxhc34 ) //mslugxchuanqi
 	ROM_REGION( 0x900000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "250_hc34.p1", 0x000000, 0x100000, CRC(d004ed8b) SHA1(37be51908f9457fc9fff34e7cf1a06cfed307ad6) )
 	ROM_LOAD16_WORD_SWAP( "250_hc34.p2", 0x100000, 0x800000, CRC(f8a2bb8b) SHA1(bc6afdfa51adb5bfd63f51e0e6a0f8a7ca0fba1f) )
@@ -19009,7 +19009,7 @@ ROM_START( mslugxhc34 ) //mslugxchuanqi old / mslugxmdjdfc
 	ROM_LOAD16_BYTE( "250_hc34.c8",  0x3000001, 0x800000, CRC(b9710e89) SHA1(f837e22433b3ede0928f46c481f3154028f5a1a7) )
 ROM_END
 
-ROM_START( mslugxhc35 ) //mslugxchuanqi old / mslugxmdjdfc
+ROM_START( mslugxhc35 ) // mslugxmdjdfc
 	ROM_REGION( 0x900000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "250_hc35.p1", 0x000000, 0x100000, CRC(e6a77a75) SHA1(8a7f493adf754fee260f7997a345996dac98e8a8) )
 	ROM_LOAD16_WORD_SWAP( "250_hc35.p2", 0x100000, 0x800000, CRC(7e1a51c9) SHA1(d288d7d12ede33f024648807b001f850c5315dad) )
@@ -23120,7 +23120,7 @@ GAME( 2020, kof2003hc13,      kof2003,  neogeo_noslot,   neogeo, neogeo_state,  
 GAME( 2022, koghc01,          kof97,    neogeo_kog,      neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "King of Gladiator (Mix Plus Original EX 2022-09-23) (bootleg of The King of Fighters '97)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, koghc02,          kof97,    neogeo_kog,      neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "King of Gladiator (Mix Plus Simplified EX 2022-09-23) (bootleg of The King of Fighters '97)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, koghc03,          kof97,    neogeo_kog,      neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "King of Gladiator (Resurgence Plus Dog Slaughter Edition 2020-01-23) (bootleg of The King of Fighters '97)", MACHINE_SUPPORTS_SAVE )
-GAME( 2022, lans2004hc01,     shocktr2, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Lansquenet 2004 (Strongest Firepower 2022-12-17) (bootleg of Shock Troopers - 2nd Squad)", MACHINE_SUPPORTS_SAVE )
+GAME( 2022, lans2004hc01,     shocktr2, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Lansquenet 2004 (Strongest Firepower 2022-12-17)", MACHINE_SUPPORTS_SAVE )
 GAME( 1997, lastbladhc01,     lastblad, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "DDJ",          "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Always Have Super Move)", MACHINE_SUPPORTS_SAVE )
 GAME( 1997, lastbladhc02,     lastblad, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "DDJ",          "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Easy Move)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, lastbladhc03,     lastblad, neogeo_noslot,   neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Ex Super Version 2018-03-20)", MACHINE_SUPPORTS_SAVE )
@@ -23218,8 +23218,8 @@ GAME( 2018, mslug3hc33,       mslug3,   neoclock_noslot, neogeo, neogeo_state,  
 GAME( 2023, mslug3hc34,       mslug3,   neoclock_noslot, neogeo, neogeo_state,    init_mslug3,   ROT0, "hack",         "Metal Slug 3 (Enemy Speed Up 2023-03-14)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, mslug3hc35,       mslug3,   neoclock_noslot, neogeo, neogeo_state,    init_mslug3,   ROT0, "GOTVG",        "Metal Slug 3 (Survival 2023-03-01)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslug3hc36,       mslug3,   neoclock_noslot, mslugsc,neogeo_state,    init_mslug3,   ROT0, "GOTVG",        "Metal Slug 3 (Legendary 4.5 2025-07-14)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, mslug3hc37,       mslug3,   neoclock_noslot, mslugsc,neogeo_state,    init_mslug3,   ROT0, "GOTVG",        "Metal Slug 3 (Legendary Firepower Showdown 7.5 2025-09-23)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, mslug3hc38,       mslug3,   neoclock_noslot, mslugsc,neogeo_state,    init_mslug3,   ROT0, "GOTVG",        "Metal Slug 3 (Dark Fate 7.5H 2025-09-23)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug3hc37,       mslug3,   neoclock_noslot, mslugsc,neogeo_state,    init_mslug3,   ROT0, "GOTVG",        "Metal Slug 3 (Legendary Firepower Showdown 7.5 2025-11-06)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug3hc38,       mslug3,   neoclock_noslot, mslugsc,neogeo_state,    init_mslug3,   ROT0, "GOTVG",        "Metal Slug 3 (Dark Fate 7.5H 2025-11-07)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslug3hc39,       mslug3,   neogeo_68kram,   mslugcq,neogeo_state,    init_mslug3,   ROT0, "GOTVG",        "Metal Slug 3 (Legendary Tower Defense 6.0 2025-06-10)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, mslug3hc40,       mslug3,   neoclock_noslot, mslugcq,neogeo_state,    init_mslug3,   ROT0, "GOTVG",        "Metal Slug 3 (Legendary Journey 2024-11-14)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslug3hc41,       mslug3,   neoclock_noslot, neogeo, neogeo_state,    init_mslug3d,  ROT0, "Soldier Rebel","Metal Slug 3 (Enemy Survival v0.4 2025-02-09)", MACHINE_SUPPORTS_SAVE )
@@ -23261,7 +23261,7 @@ GAME( 2021, mslug5hc09,       mslug5,   neoclock_noslot, neogeo, neogeo_state,  
 GAME( 2023, mslug5hc10,       mslug5,   neoclock_noslot, mslugcq,neogeo_state,    init_mslug5,   ROT0, "GOTVG",        "Metal Slug 5 (The Longest Battle 2023-02-08)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, mslug5hc11,       mslug5,   neoclock_noslot, neogeo, neogeo_state,    init_mslug5,   ROT0, "PPXCLUB",      "Metal Slug 5 (Burst Enhanced 2022-11-03)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, mslug5hc12,       mslug5,   neoclock_noslot, mslugcq,neogeo_state,    init_mslug5,   ROT0, "GOTVG",        "Metal Slug 5 (Survival 2023-06-12)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, mslug5hc13,       mslug5,   neoclock_noslot, mslugsc,neogeo_state,    init_mslug5,   ROT0, "GOTVG",        "Metal Slug 5 (Legendary Firepower Showdown 7.5 2025-09-29)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mslug5hc13,       mslug5,   neoclock_noslot, mslugsc,neogeo_state,    init_mslug5,   ROT0, "GOTVG",        "Metal Slug 5 (Legendary Firepower Showdown 7.5 2025-10-20)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mslug5hc14,       mslug5,   neoclock_noslot, mslugsc,neogeo_state,    init_mslug5,   ROT0, "GOTVG",        "Metal Slug 5 (Rise of the Ptolemaic Army 7.5T 2025-09-29)", MACHINE_SUPPORTS_SAVE )
 GAME( 2019, mslug5hc15,       mslug5,   neoclock_noslot, neogeo, neogeo_state,    init_mslug5,   ROT0, "GOTVG",        "Metal Slug 5 (1v2 Mode 2019-05-11)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, mslug5hc16,       mslug5,   neoclock_noslot, neogeo, neogeo_state,    init_mslug5,   ROT0, "GOTVG",        "Metal Slug 5 (Vehicle Slug 2018-09-18)", MACHINE_SUPPORTS_SAVE )
