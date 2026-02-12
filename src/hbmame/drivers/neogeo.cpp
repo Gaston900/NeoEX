@@ -2825,6 +2825,8 @@ void neogeo_state::init_vliner()
 	m_maincpu->space(AS_PROGRAM).install_read_port(0x2c0000, 0x2c0001, "IN6");
 }
 
+
+/*********************************************** bootlegs */
 void neogeo_state::init_garoubl()
 {
 	init_neogeo();
@@ -2950,6 +2952,11 @@ void neogeo_state::init_kog()
 	m_kog_prot->kog_install_protection(m_maincpu);
 }
 
+
+
+/*********************************************** bootlegs - can use original prot */
+
+/*********************************************** bootleg hybrid */
 void neogeo_state::init_kof2002b()
 {
 	init_neogeo();
@@ -3416,6 +3423,8 @@ void neogeo_state::init_fr2cd()
 	mem16[0x1BF6/2] = 0x4E71;
 	init_neogeo();  */
 }
+
+/*********************************************** non-carts */
 
 void neogeo_state::install_banked_bios()
 {
