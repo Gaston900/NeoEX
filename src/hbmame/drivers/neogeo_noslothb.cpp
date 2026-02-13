@@ -2,6 +2,8 @@
 // Copyright-Holders:Gaston90
 // Thanks To The Collaborators Who Have Made A Great Contribution To The Project: GXB And Robbert.
 
+#include "includes/neogeo.h"
+
 /***********************************
    Game specific input definitions
  ************************************/
