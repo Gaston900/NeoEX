@@ -519,46 +519,9 @@ ROM_START( jojohc01 ) //jojonbss
 	ROM_LOAD( "50",  0x2000000, 0x400000, CRC(1c749cc7) SHA1(23df741360476d8035c68247e645278fbab53b59) )
 ROM_END
 
-ROM_START( redeartnhc01 ) //redearex
-	ROM_REGION32_BE( 0x080000, "bios", 0 )
-	ROM_LOAD( "redearthn_asia_nocd.29f400.u2", 0x000000, 0x080000, CRC(db09f27c) SHA1(f2d299cda7cda175b4218526a15f12560654d97f) )
-
-	ROM_REGION( 0x200000, "simm1.0", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm1.1", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm1.2", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm1.3", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm3.0", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm3.1", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm3.2", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm3.3", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm3.4", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm3.5", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm3.6", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm3.7", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm4.0", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm4.1", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm4.2", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm4.3", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm4.4", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm4.5", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm4.6", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm4.7", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm5.0", ROMREGION_ERASEFF )
-	ROM_REGION( 0x200000, "simm5.1", ROMREGION_ERASEFF )
-
-	ROM_REGION32_BE( USER4REGION_LENGTH, "old4", 0 )
-	ROM_LOAD( "10_hc01",  0x000000,  0x800000, CRC(e44131ad) SHA1(1b395edd8c0cb2705a1bdbb8df75e6d218d8e379) )
-	ROM_REGION16_BE( USER5REGION_LENGTH, "old5", 0 )
-	ROM_LOAD( "30",  0x0000000, 0x800000, CRC(074cab4d) SHA1(4cb6cc9cce3b1a932b07058a5d723b3effa23fcf) )
-	ROM_LOAD( "31",  0x0800000, 0x800000, CRC(14e2cad4) SHA1(9958a4e315e4476e4791a6219b93495413c7b751) )
-	ROM_LOAD( "40",  0x1000000, 0x800000, CRC(72d98890) SHA1(f40926c52cb7a71b0ef0027a0ea38bbc7e8b31b0) )
-	ROM_LOAD( "41",  0x1800000, 0x800000, CRC(88ccb33c) SHA1(1e7af35d186d0b4e45b6c27458ddb9cfddd7c9bc) )
-	ROM_LOAD( "50",  0x2000000, 0x400000, CRC(2f5b44bd) SHA1(7ffdbed5b6899b7e31414a0828e04543d07435e4) )
-ROM_END
-
 ROM_START( sfiiihc01 )
 	ROM_REGION32_BE( 0x080000, "bios", 0 )
-	ROM_LOAD( "sfiii_asia_nocd.29f400.u2", 0x000000, 0x080000, CRC(ca2b715f) SHA1(86319987f9af4afd272a2488e73de8382743cb37) ) // this is a different VERSION of the bios compared to all other sets, not just an alt region code
+	ROM_LOAD( "sfiii_asia_nocd.29f401.u2", 0x000000, 0x080000, CRC(ca2b715f) SHA1(86319987f9af4afd272a2488e73de8382743cb37) ) // this is a different VERSION of the bios compared to all other sets, not just an alt region code
 
 	ROM_REGION( 0x500000, "simm1.0", 0 )
 	ROM_LOAD( "sfiii-simm1_hc01.0", 0x00000, 0x454F4D, CRC(2858434c) SHA1(528b9b3716a8384bca1206a6a3863dde5a4c06f4) )
@@ -611,7 +574,7 @@ ROM_END
 
 ROM_START( sfiiihc02 ) //sfiiibhp
 	ROM_REGION32_BE( 0x080000, "bios", 0 )
-	ROM_LOAD( "sfiii_asia_nocdo.29f400.u2", 0x000000, 0x080000, CRC(73e32463) SHA1(45d144e533e4b20cc5a744ca4f618e288430c601) )
+	ROM_LOAD( "sfiii_asia_nocdo.29f402.u2", 0x000000, 0x080000, CRC(73e32463) SHA1(45d144e533e4b20cc5a744ca4f618e288430c601) )
 
 	ROM_REGION( 0x200000, "simm1.0", ROMREGION_ERASEFF )
 	ROM_REGION( 0x200000, "simm1.1", ROMREGION_ERASEFF )
@@ -1440,7 +1403,7 @@ ROM_END
 
 ROM_START( sfiiild )
 	ROM_REGION32_BE( 0x080000, "bios", 0 )
-	ROM_LOAD( "sfiii_asia_nocdo.29f400.u2", 0x000000, 0x080000, CRC(73e32463) SHA1(45d144e533e4b20cc5a744ca4f618e288430c601) )
+	ROM_LOAD( "sfiii_asia_nocdo.29f402.u2", 0x000000, 0x080000, CRC(73e32463) SHA1(45d144e533e4b20cc5a744ca4f618e288430c601) )
 
 	ROM_REGION( 0x200000, "simm1.0", ROMREGION_ERASEFF )
 	ROM_REGION( 0x200000, "simm1.1", ROMREGION_ERASEFF )
@@ -1586,17 +1549,16 @@ ROM_END
 /*    YEAR  NAME            PARENT    MACHINE        INPUT       CLASS                INIT      MONITOR     COMPANY        FULLNAME FLAGS */
 // Hack
 GAME( 2018, jojobahc01,     jojoba,   jojoba,        cps3_jojo,  cps3_hbmame,     init_jojoban,  ROT0,      "hack",        "JoJo's Bizarre Adventure (Enable Hidden Characters)", 0 ) // Hack Old Roms
-GAME( 2018, jojobahc02,     jojoba,   jojoba,        cps3_jojo,  cps3_state,      init_jojoba,   ROT0,      "hack",        "JoJo's Bizarre Adventure (Easy Move)", 0 )
-GAME( 2021, jojobahc03,     jojoba,   jojoba,        cps3_jojo,  cps3_state,      init_jojoba,   ROT0,      "hack",        "JoJo's Bizarre Adventure (Rainbow Edition v1.0.1 2021)", 0 )
+GAME( 2018, jojobahc02,     jojoba,   jojoba,        cps3_jojo,  cps3_state,      init_jojoba,   ROT0,      "hack",        "JoJo's Bizarre Adventure (Easy Special Attacks)", 0 )
+GAME( 2021, jojobahc03,     jojoba,   jojoba,        cps3_jojo,  cps3_state,      init_jojoba,   ROT0,      "hack",        "JoJo's Bizarre Adventure (Rainbow v1.0.1 2021)", 0 )
 GAME( 2009, jojohc01,       jojo,     jojo,          cps3_jojo,  cps3_hbmame,     init_jojon,    ROT0,      "hack",        "JoJo's Venture (Enable Hidden Characters)", 0 ) // Hack Old Roms
-GAME( 2009, redeartnhc01,   redearth, redeartn,      cps3_ren,   cps3_hbmame,     init_redeartno,ROT0,      "hack",        "Red Earth (Ex Super Version 2009-09-08)", 0 ) // Hack Old Roms
-GAME( 2016, sfiiihc01,      sfiii,    sfiii,         cps3,       cps3_state,      init_sfiii,    ROT0,      "hack",        "Street Fighter III: New Generation (Easy Move)", 0 )
+GAME( 2016, sfiiihc01,      sfiii,    sfiii,         cps3,       cps3_state,      init_sfiii,    ROT0,      "hack",        "Street Fighter III: New Generation (Easy Special Attacks)", 0 )
 GAME( 2009, sfiiihc02,      sfiii,    sfiii,         cps3,       cps3_hbmame,     init_sfiiin,   ROT0,      "hack",        "Street Fighter III: New Generation (Enable Hidden Characters)", 0 ) // Hack Old Roms
 GAMEL(1997, sfiii2hc01,     sfiii2,   sfiii2,        cps3,       cps3_state,      init_sfiii2,   ROT0,      "hack",        "Street Fighter III 2nd Impact: Giant Attack (Enable Hidden Characters)", 0, layout_sfiii2 )
-GAMEL(2016, sfiii2hc02,     sfiii2,   sfiii2,        cps3,       cps3_state,      init_sfiii2,   ROT0,      "hack",        "Street Fighter III 2nd Impact: Giant Attack (Easy Move)", 0, layout_sfiii2 )
+GAMEL(2016, sfiii2hc02,     sfiii2,   sfiii2,        cps3,       cps3_state,      init_sfiii2,   ROT0,      "hack",        "Street Fighter III 2nd Impact: Giant Attack (Easy Special Attacks)", 0, layout_sfiii2 )
 GAME( 2011, sfiii3hc01,     sfiii3,   sfiii3,        cps3,       cps3_state,      init_sfiii3,   ROT0,      "hack",        "Street Fighter III 3rd Strike: Fight for the Future (4rd Strike 2011-07-17)", 0 )
 GAME( 2022, sfiii3hc02,     sfiii3,   sfiii3,        cps3,       cps3_state,      init_sfiii3,   ROT0,      "hack",        "Street Fighter III 3rd Strike: Fight for the Future (Widescreen 2022-09-08)", 0 )
-GAME( 2014, sfiii3hc03,     sfiii3,   sfiii3,        cps3,       cps3_state,      init_sfiii3,   ROT0,      "hack",        "Street Fighter III 3rd Strike: Fight for the Future (Easy Move)", 0 )
+GAME( 2014, sfiii3hc03,     sfiii3,   sfiii3,        cps3,       cps3_state,      init_sfiii3,   ROT0,      "hack",        "Street Fighter III 3rd Strike: Fight for the Future (Easy Special Attacks)", 0 )
 GAME( 2013, sfiii3hc04,     sfiii3,   sfiii3,        cps3,       cps3_state,      init_sfiii3,   ROT0,      "hack",        "Street Fighter III 3rd Strike: Fight for the Future (4rd Arrange 2013-07-16)", 0 )
 GAME( 1999, sfiii3hc05,     sfiii3,   sfiii3,        cps3,       cps3_hbmame,     init_sfiii3n,  ROT0,      "hack",        "Street Fighter III 3rd Strike: Fight for the Future (Enable Hidden Characters)", 0 ) // Hack Old Roms
 GAME( 2021, sfiii3hc06,     sfiii3,   sfiii3,        cps3,       cps3_state,      init_sfiii3,   ROT0,      "hack",        "Street Fighter III 3rd Strike: Fight for the Future (re:THIRD update 2021)", 0 )

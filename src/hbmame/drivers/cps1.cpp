@@ -13970,35 +13970,6 @@ ROM_START( captcoud )
 	ROM_LOAD ( "captcoud.key", 0x00, 0x80, CRC(6a4c8ad9) SHA1(56912fc3387cf977e602d3e8dad31b64dadc6b4a) )
 ROM_END
 
-ROM_START( captcocn )
-	ROM_REGION( CODE_SIZE, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "cc_23cn.8f", 0x000000, 0x80000, CRC(a5e73e49) SHA1(7bb75fa0e1122a85a421c50607c0ad57a387783e) )
-	ROM_LOAD16_WORD_SWAP( "cc_22cn.7f", 0x080000, 0x80000, CRC(919777c5) SHA1(2bd9b1527e8486ae89ddcdb0694c63c5859080b6) )
-	ROM_LOAD16_BYTE( "cc_24cn.9e", 0x100000, 0x20000, CRC(f3d6f147) SHA1(937822148c0f6f295d468024ce7887ee0353e669) )
-	ROM_LOAD16_BYTE( "cc_28cn.9f", 0x100001, 0x20000, CRC(f1c9bf8a) SHA1(545f494106ccce6ccbbe6fa042cf0ee6df03e8dc) )
-
-	ROM_REGION( 0x400000, "gfx", 0 )
-	ROM_LOAD64_WORD( "cc-5m.3a",     0x000000, 0x80000, CRC(7261d8ba) SHA1(4b66292e42d20d0b79a756f0e445492ddb9c6bbc) )
-	ROM_LOAD64_WORD( "cc-7m.5a",     0x000002, 0x80000, CRC(6a60f949) SHA1(87391ff92abaf3e451f70d789a938cffbd1fd222) )
-	ROM_LOAD64_WORD( "cc-1m.4a",     0x000004, 0x80000, CRC(00637302) SHA1(2c554b59cceec2de67a9a4bc6281fe846d3c8cd2) )
-	ROM_LOAD64_WORD( "cc-3m.6a",     0x000006, 0x80000, CRC(cc87cf61) SHA1(7fb1f49494cc1a08aded20754bb0cefb1c323198) )
-	ROM_LOAD64_WORD( "cc-6mcn.7a",   0x200000, 0x80000, CRC(e4282bc0) SHA1(fe6012a8afcaec5747194bedfa73284bb28300a4) )
-	ROM_LOAD64_WORD( "cc-8mcn.9a",   0x200002, 0x80000, CRC(8b0ef34c) SHA1(13a696856432b2f345cd2b2059e95179c78bd70a) )
-	ROM_LOAD64_WORD( "cc-2mcn.8a",   0x200004, 0x80000, CRC(2d7bee50) SHA1(a25bcfa99c4dda52469f7dc8fec24287c97deb84) )
-	ROM_LOAD64_WORD( "cc-4mcn.10a",   0x200006, 0x80000, CRC(0106bf6a) SHA1(8e23418c58c4ffb8dd4dac93b92b23c406d60a62) )
-
-	ROM_REGION( 0x18000, "audiocpu", 0 )
-	ROM_LOAD( "cc_09.11a",    0x00000, 0x08000, CRC(698e8b58) SHA1(b7a3d905a7ed2c430426ca2e185e3d7e75e752a1) )
-	ROM_CONTINUE(              0x10000, 0x08000 )
-
-	ROM_REGION( 0x40000, "oki", 0 )
-	ROM_LOAD( "cc_18.11c",    0x00000, 0x20000, CRC(6de2c2db) SHA1(9a1eaba8d104f59a5e61f89679bb5de0c0c64364) )
-	ROM_LOAD( "cc_19.12c",    0x20000, 0x20000, CRC(b99091ae) SHA1(b19197c7ad3aeaf5f41c26bf853b0c9b502ecfca) )
-
-	ROM_REGION( 0x80, "control", 0 )
-	ROM_LOAD ( "captcomm.key", 0x00, 0x80, CRC(3bd9c940) SHA1(8964479f402ce7e000f1da8b3f6386e6915269e1) )
-ROM_END
-
 ROM_START( daimakaib )
 	ROM_REGION( CODE_SIZE, "maincpu", 0 )
 	ROM_LOAD16_BYTE( "dmjb2.bin", 0x00000, 0x80000, CRC(7d5f9f84) SHA1(b334b3af610892ef4efe4764017659b8541a10c6) )
@@ -16434,7 +16405,6 @@ ROM_END
 GAME( 1991, 3wondrud,        3wonders, cps1_10MHz, 3wonders, cps_state, init_cps1,     ROT0,   "bootleg",         "Three Wonders (US 910520 Phoenix Edition)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, 3wondersha,      3wonders, cps1_10MHz, 3wonders, cps_state, init_cps1,     ROT0,   "bootleg",         "Three Wonders (bootleg set 3, 910520 etc)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, captcoud,        captcomm, cps1_10MHz, captcomm, cps_state, init_cps1,     ROT0,   "bootleg",         "Captain Commando (US 910928 Phoenix Edition)", MACHINE_SUPPORTS_SAVE )
-GAME( 1991, captcocn,        captcomm, cps1_10MHz, captcomm, cps_state, init_cps1,     ROT0,   "bootleg",         "Captain Commando (Chineese Translation 911014)", MACHINE_SUPPORTS_SAVE )
 GAME( 1988, daimakaib,       ghouls,   daimakb,    daimakai, cps_state, init_cps1,     ROT0,   "bootleg",         "Dai Makai-Mura (bootleg, Japan)" , MACHINE_SUPPORTS_SAVE )
 GAME( 1993, dinoh,           dino,     qsound,     dinohz,   cps_state, init_dinoh,    ROT0,   "bootleg",         "Cadillacs and Dinosaurs (bootleg set 2, 930223 Asia TW)" , MACHINE_SUPPORTS_SAVE )
 GAME( 1993, dinoha,          dino,     qsound,     dinohz,   cps_state, init_dinoh,    ROT0,   "bootleg",         "Cadillacs and Dinosaurs (bootleg set 1, 930223 Asia TW)", MACHINE_SUPPORTS_SAVE )
