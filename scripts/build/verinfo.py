@@ -99,25 +99,25 @@ if build == "mess":
     bundle_identifier = "org.mamedev.mess"
 elif build == "hbmame":
     # HBMAME
-    author = "Gaston90"
+    author = "Robbbert and the MAME team"
     legal_copyright = author
-    comments = "Proyecto Shadow Arcade Classic+"
+    comments = "Homebrew MAME"
     company_name = "MAME Team"
-    file_description = "PSArcade Classic+"
-    internal_name = "PSArcade Classic+"
-    original_filename = "PSArcade Classic+"
-    product_name = "PSArcade Classic+"
-    bundle_identifier = "org.mamedev.PSArcade Classic+"
+    file_description = "HBMAME"
+    internal_name = "HBMAME"
+    original_filename = "HBMAME"
+    product_name = "HBMAME"
+    bundle_identifier = "org.mamedev.hbmame"
 else:
     # MAME
     author = "Gaston90"
     comments = "Proyecto Shadow Arcade Classic+"
     company_name = "MAME Team"
-    file_description = "PSArcade Classic+"
-    internal_name = "PSArcade Classic+"
-    original_filename = "PSArcade Classic+"
-    product_name = "PSArcade Classic+"
-    bundle_identifier = "org.mamedev.Arcade Classic+"
+    file_description = "NeoEX"
+    internal_name = "NeoEX"
+    original_filename = "NeoEX"
+    product_name = "NeoEX"
+    bundle_identifier = "org.mamedev.NeoEX"
 
 if outfmt == 'rc':
     fp.write('VS_VERSION_INFO VERSIONINFO\n')

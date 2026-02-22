@@ -14382,6 +14382,78 @@ ROM_START( knightsb5 )
 	ROM_LOAD( "knightsh.key", 0x00, 0x80, CRC(68d9786b) SHA1(8721cda836d88c48ab07b96d66015832b5e561f7) )
 ROM_END
 
+ROM_START( pang3r1a )
+	ROM_REGION( CODE_SIZE, "maincpu", 0 )      /* 68000 code */
+	ROM_LOAD16_WORD_SWAP( "pa3e_17.11l", 0x00000, 0x80000, CRC(d7041d32) SHA1(b021f3defe7fc58030ba907125c713f987724187) )
+	ROM_LOAD16_WORD_SWAP( "pa3e_16.10l", 0x80000, 0x80000, CRC(1be9a483) SHA1(6cff1dd15ca163237bc82fb4a3e1d469d35e7be8) )
+
+    ROM_REGION( 0x400000, "gfx", 0 )
+    ROM_LOAD64_WORD( "1.2c",  0x000000, 0x80000, CRC(22c934c4) SHA1(93a3c3cfdbfd1321b785f08d1da30d9b1445e14b) )
+    ROM_LOAD64_WORD( "7.2f",  0x000002, 0x80000, CRC(51031180) SHA1(a38a77da2ca452843a3b0cb02baaaf7df2e3d9a4) )
+    ROM_LOAD64_WORD( "3.4c",  0x000004, 0x80000, CRC(ac119a46) SHA1(e8a07349b6106f712a7543ab52e9d5ced756fdbd) )
+    ROM_LOAD64_WORD( "9.4f",  0x000006, 0x80000, CRC(2e1d35f2) SHA1(1b4a9cf9ed91fed532d44582c598982dae06253c) )
+    ROM_LOAD64_WORD( "2.3c",  0x200000, 0x80000, CRC(07c85e9b) SHA1(5b9bc1f5708d03c2458a1dbb781084c2af8f91ee) )
+    ROM_LOAD64_WORD( "8a.3f", 0x200002, 0x80000, CRC(e9cd657a) SHA1(98738158992e813c6a9c3806fed0a7e02b859ad3) )     ROM_LOAD64_WORD( "4.5c",  0x200004, 0x80000, CRC(4ad13297) SHA1(59565f9819e1cdd405103d5e3621c747116f653c) )
+    ROM_LOAD64_WORD( "10.5f", 0x200006, 0x80000, CRC(026d0cd2) SHA1(44f7718851e0b1f43682afafcbd844e6b1ce3430) )
+
+    ROM_REGION( 0x18000, "audiocpu", 0 ) /* 64k for the audio CPU (+banks) */
+    ROM_LOAD( "pa3_11.11f",  0x00000, 0x08000, CRC(cb1423a2) SHA1(3191bf5d340168647881738cb2aed09b1d86146e) )  // == 11.11f has the same content of pa3w_16.10l from pang3 romset
+    ROM_IGNORE( 0x18000 )
+
+    ROM_REGION( 0x40000, "oki", 0 ) /* Samples */
+    ROM_LOAD( "pa3_05.10d",  0x00000, 0x20000, CRC(73a10d5d) SHA1(999465e4fbc35a34746d2db61ad49f61403d5af7) ) // 5.10c has the same content of pa3_05.10d from pang3 romset
+    ROM_LOAD( "pa3_06.11d",  0x20000, 0x20000, CRC(affa4f82) SHA1(27b9292bbc121cf585f53297a79fe8f0d0a729ae) ) // 6.11c has the same content of pa3_06.11d from pang3 romset
+
+	ROM_REGION( 0x80, "control", 0 )
+	ROM_LOAD( "pang3.key", 0x00, 0x80, CRC(4865539e) SHA1(44637e699e02ebbfcae323d0ae6693a393d7330f) )
+ROM_END
+
+ROM_START( pang3b6 )
+    ROM_REGION( CODE_SIZE, "maincpu", 0 )
+    ROM_LOAD16_WORD_SWAP( "pa3_17bl.11l", 0x00000, 0x80000, CRC(3b5d99de) SHA1(d3cb222f30d3a45de6114e4377f9934f33bf6bcf) ) // 17.11l has the same content of pa3e_17.11l from pang3r1 romset
+    ROM_LOAD16_WORD_SWAP( "u10l1_16.bin", 0x80000, 0x80000, CRC(1be9a483) SHA1(6cff1dd15ca163237bc82fb4a3e1d469d35e7be8) )  // == pa3e_16.10l
+
+	ROM_REGION( 0x400000, "gfx", 0 )
+	ROM_LOAD64_WORD( "pa3-01m.2c", 0x000000, 0x100000, CRC(068a152c) SHA1(fa491874068924c39bcc7de93dfda3b27f5d9613) )
+	ROM_CONTINUE(                  0x000004, 0x100000 )
+	ROM_LOAD64_WORD( "pa3-07m.2f", 0x000002, 0x100000, CRC(3a4a619d) SHA1(cfe68e24632b53fb6cd6d03b2166d6b5ba28b778) )
+	ROM_CONTINUE(                  0x000006, 0x100000 )
+
+	ROM_REGION( 0x18000, "audiocpu", 0 )
+	ROM_LOAD( "pa3_11.11f",  0x00000, 0x08000, CRC(cb1423a2) SHA1(3191bf5d340168647881738cb2aed09b1d86146e) )
+	ROM_IGNORE( 0x18000 )
+
+	ROM_REGION( 0x40000, "oki", 0 )
+	ROM_LOAD( "pa3_05.10d",  0x00000, 0x20000, CRC(73a10d5d) SHA1(999465e4fbc35a34746d2db61ad49f61403d5af7) )
+	ROM_LOAD( "pa3_06.11d",  0x20000, 0x20000, CRC(affa4f82) SHA1(27b9292bbc121cf585f53297a79fe8f0d0a729ae) )
+
+	ROM_REGION( 0x80, "control", 0 )
+	ROM_LOAD( "pang3b6.key", 0x00, 0x80, CRC(161f6a61) SHA1(09afaa981b7c4a3f0df0c1c500dc516bd45e6ec1) )
+ROM_END
+
+ROM_START( pang3b7 )
+    ROM_REGION( CODE_SIZE, "maincpu", 0 )
+    ROM_LOAD16_WORD_SWAP( "17.11l", 0x00000, 0x80000, CRC(f62425e9) SHA1(658b60efc0467a173a1dd9bd5ac88f49f02f5de2) ) // 17.11l has the same content of pa3e_17.11l from pang3r1 romset
+	ROM_LOAD16_WORD_SWAP( "pa3e_16a.10l", 0x80000, 0x80000, CRC(7169ea67) SHA1(1076afaff7b05c9009798a0cea13e71fa27f2b7e) )
+
+	ROM_REGION( 0x400000, "gfx", 0 )
+	ROM_LOAD64_WORD( "pa3-01m.2c", 0x000000, 0x100000, CRC(068a152c) SHA1(fa491874068924c39bcc7de93dfda3b27f5d9613) )
+	ROM_CONTINUE(                  0x000004, 0x100000 )
+	ROM_LOAD64_WORD( "pa3-07m.2f", 0x000002, 0x100000, CRC(3a4a619d) SHA1(cfe68e24632b53fb6cd6d03b2166d6b5ba28b778) )
+	ROM_CONTINUE(                  0x000006, 0x100000 )
+
+	ROM_REGION( 0x18000, "audiocpu", 0 )
+	ROM_LOAD( "pa3_11.11f",  0x00000, 0x08000, CRC(cb1423a2) SHA1(3191bf5d340168647881738cb2aed09b1d86146e) )
+	ROM_IGNORE( 0x18000 )
+
+	ROM_REGION( 0x40000, "oki", 0 )
+	ROM_LOAD( "pa3_05.10d",  0x00000, 0x20000, CRC(73a10d5d) SHA1(999465e4fbc35a34746d2db61ad49f61403d5af7) )
+	ROM_LOAD( "06.11d",  0x20000, 0x20000, CRC(6266d1df) SHA1(8800a48c3201b7a47aa3a083884402550201ecb7) )
+
+	ROM_REGION( 0x80, "control", 0 )
+	ROM_LOAD( "pang3b6.key", 0x00, 0x80, CRC(161f6a61) SHA1(09afaa981b7c4a3f0df0c1c500dc516bd45e6ec1) )
+ROM_END
+
 ROM_START( pnicku )
 	ROM_REGION( CODE_SIZE, "maincpu", 0 )
 	ROM_LOAD16_BYTE( "pnij_36.12f",  0x00000, 0x20000, CRC(2d4ffb2b) SHA1(6e49cf89a36834fd1de8b4b860fe66f3d7d67a84) )
@@ -16418,6 +16490,9 @@ GAME( 2002, kodh,            kod,      cps1_10MHz, kodh,     cps_state, init_cps
 GAME( 1991, kodda,           kod,      cps1_10MHz, kod,      cps_state, init_cps1,     ROT0,   "bootleg",         "The King of Dragons (World 910731 Phoenix Edition)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, knightsh2,       knights,  cps1_10MHz, knightsh2,cps_state, init_cps1,     ROT0,   "bootleg",         "Knights of the Round (bootleg, World 911127 alt)" , MACHINE_SUPPORTS_SAVE )
 GAME( 1991, knightsb5,       knights,  cps1_10MHz, knightsh2,cps_state, init_cps1,     ROT0,   "bootleg",         "Knights of the Round (bootleg, Japan 911127)" , MACHINE_SUPPORTS_SAVE )
+GAME( 1995, pang3r1a,        pang3,    pang3,      pang3,    cps_state, init_pang3,    ROT0,   "Mitchell",        "Pang! 3 (Euro 950511, alt)", MACHINE_SUPPORTS_SAVE )
+GAME( 1995, pang3b6,         pang3,    pang3,      pang3,    cps_state, init_pang3,    ROT0,   "bootleg",         "Pang! 3 (bootleg, set 6)", MACHINE_SUPPORTS_SAVE )
+GAME( 1995, pang3b7,         pang3,    pang3,      pang3,    cps_state, init_pang3,    ROT0,   "bootleg",         "Pang! 3 (bootleg, set 7)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, pnicku,          pnickj,   cps1_10MHz, pnicku,   cps_state, init_cps1,     ROT0,   "bootleg",         "Pnickies Loca Test Version (US 940608)", MACHINE_SUPPORTS_SAVE )
 GAME( 1993, punisherud1,     punisher, qsound,     punisher, cps_state, init_punisher, ROT0,   "bootleg",         "The Punisher (US 930422 Phoenix Edition (8b/32p))", MACHINE_SUPPORTS_SAVE )
 GAME( 1993, punisherud2,     punisher, qsound,     punisher, cps_state, init_punisher, ROT0,   "bootleg",         "The Punisher (US 930422 Phoenix Edition (16b/40p))", MACHINE_SUPPORTS_SAVE )

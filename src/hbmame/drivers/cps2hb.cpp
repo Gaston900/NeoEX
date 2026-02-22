@@ -1186,18 +1186,18 @@ ROM_START( hsf2hc07 ) //hsf2pp
 	ROM_LOAD( "phoenix.key",    0x00, 0x14, CRC(2cf772b0) SHA1(eff33c65a4f3862c231f9e4d6fefa7b34398dbf2) )
 ROM_END
 
-ROM_START( hsf2hc08 ) // v0.66 - press 9 to insert coin
+ROM_START( hsf2hc08 ) // v0.71 - press 9 to insert coin
 	ROM_REGION( CODE_SIZE, "maincpu", ROMREGION_ERASEFF )
-	ROM_LOAD16_WORD_SWAP( "hs2_hc08.03", 0x000000, 0x80000, CRC(27b6ac88) SHA1(becdc139f0af175fbbc91c230753d095253d0acc) )
-	ROM_LOAD16_WORD_SWAP( "hs2_hc08.04", 0x080000, 0x80000, CRC(8d9baac1) SHA1(3b302e2483f72a8a0f7327089de0c86620890ee3) )
-	ROM_LOAD16_WORD_SWAP( "hs2_hc08.05", 0x100000, 0x80000, CRC(15f6c1b9) SHA1(66c8ae49a05ce50dd606867ff7ab5d08a02f1314) )
-	ROM_LOAD16_WORD_SWAP( "hs2_hc08.06", 0x180000, 0x80000, CRC(095ee372) SHA1(644e756e2a1280c573b348632a8d3b77994b15dc) )
+	ROM_LOAD16_WORD_SWAP( "hs2_hc08.03", 0x000000, 0x80000, CRC(7ce61f91) SHA1(dbed9276b93b4e83a5813e2cc3aa97c9c2b435d6) )
+	ROM_LOAD16_WORD_SWAP( "hs2_hc08.04", 0x080000, 0x80000, CRC(5c5cd805) SHA1(0c9a58eb89f0e6d9f7fb94049ee0002e54111ee1) )
+	ROM_LOAD16_WORD_SWAP( "hs2_hc08.05", 0x100000, 0x80000, CRC(9828b2f9) SHA1(cc1caf277cdd6b8d9b9c9b53519a90a53d8d2794) )
+	ROM_LOAD16_WORD_SWAP( "hs2_hc08.06", 0x180000, 0x80000, CRC(cabc33b4) SHA1(7bfa927673147102189797276fdb98fc1c5a6ea6) )
 
 	ROM_REGION( 0x2000000, "gfx", 0 )
-	ROM_LOAD64_WORD( "hs2_hc08.13m",   0x0000000, 0x800000, CRC(51b072ab) SHA1(5bc384ea17aa2826904aa2f7b4be2f0905cc6383) )
-	ROM_LOAD64_WORD( "hs2_hc08.15m",   0x0000002, 0x800000, CRC(f236c5da) SHA1(4d30ff915447a4933f19f375be9116d34f80ef17) )
-	ROM_LOAD64_WORD( "hs2_hc08.17m",   0x0000004, 0x800000, CRC(ea223314) SHA1(0d49439eb0103b38e7c283b6c43fb77e39337dbf) )
-	ROM_LOAD64_WORD( "hs2_hc08.19m",   0x0000006, 0x800000, CRC(623b6cb3) SHA1(1427bcb56b62df3870e627b9f245b5864a8d26be) )
+	ROM_LOAD64_WORD( "hs2_hc08.13m",   0x0000000, 0x800000, CRC(0ab76f89) SHA1(e159fce55bb36ce0d00eabaea78aaaa481e3fb50) )
+	ROM_LOAD64_WORD( "hs2_hc08.15m",   0x0000002, 0x800000, CRC(33b919d6) SHA1(937e7967afd4ffedf46a8c26e9660f11711d157e) )
+	ROM_LOAD64_WORD( "hs2_hc08.17m",   0x0000004, 0x800000, CRC(5fbdf235) SHA1(28db0198e44c465816d6707b0f67c3c606793596) )
+	ROM_LOAD64_WORD( "hs2_hc08.19m",   0x0000006, 0x800000, CRC(b76e01da) SHA1(ffd36068d189c29bf1e0d9dba807db86a8567301) )
 
 	ROM_REGION( QSOUND_SIZE, "audiocpu", 0 )
 	ROM_LOAD( "hs2_hc08.01",   0x00000, 0x08000, CRC(6ce233a7) SHA1(5ff00de2fa8f31e66c9518049828d532554cb316) )
@@ -3053,7 +3053,7 @@ GAME( 2004, hsf2hc04,    hsf2,         cps2,         cps2_2p6b, cps2_state, init
 GAME( 2024, hsf2hc05,    hsf2,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Hyper Street Fighter II: The Anniversary Edition (Difficulty Fix)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, hsf2hc06,    hsf2,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Hyper Street Fighter II: The Anniversary Edition (30% Blood)", MACHINE_SUPPORTS_SAVE )
 GAME( 2017, hsf2hc07,    hsf2,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Hyper Street Fighter II: The Anniversary Edition (Plus Plus 2017-06-25)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, hsf2hc08,    hsf2,         dead_cps2,    cps2_2p6b, cps2_state, init_cps2,     ROT0,   "Zero800",     "Street Fighter II': Prime (v0.66)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, hsf2hc08,    hsf2,         dead_cps2,    cps2_2p6b, cps2_state, init_cps2,     ROT0,   "Zero800",     "Street Fighter II': Prime (v0.71)", MACHINE_SUPPORTS_SAVE )
 GAME( 2009, mvschc01,    mvsc,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Marvel Vs. Capcom: Clash of Super Heroes (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 1998, mvschc02,    mvsc,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Marvel Vs. Capcom: Clash of Super Heroes (Enable Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, mvschc03,    mvsc,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "GOTVG",       "Marvel Vs. Capcom: Clash of Super Heroes (Plus 2023-04-18)", MACHINE_SUPPORTS_SAVE )

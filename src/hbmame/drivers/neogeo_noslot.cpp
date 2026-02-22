@@ -11407,7 +11407,7 @@ ROM_START( s1945pd )
 	ROM_LOAD16_BYTE( "254d.c8", 0x3000001, 0x800000, CRC(178d4684) SHA1(3cbf379209c189ee48260a044dc2754035f57e14) )
 ROM_END
 
-ROM_START( samsh3hb )
+ROM_START( samsho3en )
 	ROM_REGION( 0x300000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "087hb.p1", 0x000000, 0x100000, CRC(15e021ca) SHA1(78aba32741d2e4b5bc4c641a4166f4405ab240e2) )
 	ROM_LOAD16_WORD_SWAP( "087hb.p2", 0x100000, 0x200000, CRC(1cc2c370) SHA1(01fba8d315d684652fb506aa833fa0e8e3e350df) )
@@ -16377,22 +16377,22 @@ ROM_START( venuswars )
 ROM_END
 
 // 516: Violent Vengeance: the Universe Hero by Balek Corp
-ROM_START( violentv )
+ROM_START( violentv ) // beta 3.28
 	ROM_REGION( 0x900000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "516.p1", 0x000000, 0x100000, CRC(fc6852b8) SHA1(fa53caf10f603e912d7fcd1429d9d866bcf6a0f1) )
-	ROM_LOAD16_WORD_SWAP( "516.p2", 0x100000, 0x800000, CRC(a810b0ab) SHA1(2c1b650da40882cccb6c0d76e2d59652c6ee02b5) )
+	ROM_LOAD16_WORD_SWAP( "516.p1", 0x000000, 0x100000, CRC(59b78bc5) SHA1(12dbf637041a9b0b16a24b830a035407e76798bd) )
+	ROM_LOAD16_WORD_SWAP( "516.p2", 0x100000, 0x800000, CRC(fdad36d7) SHA1(8d8af3bb540185fc25d459608b0c67fd587f49fb) )
 
 	NEO_SFIX_128K( "516.s1", CRC(f7302142) SHA1(5812ff4a2fedaf33ad085d09673ce2a42fda34fb) )
 
-	NEO_BIOS_AUDIO_64K( "516.m1", CRC(988f0366) SHA1(cf6c5068445b8f5f1720c90cb45d7836f090e7ab) )
+	NEO_BIOS_AUDIO_64K( "516.m1", CRC(2cf78121) SHA1(e29f9787a98513a5ae3fd4c1ffb374ec1c0b7634) )
 
 	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
-	ROM_LOAD( "516.v1", 0x000000, 0x800000, CRC(f8def124) SHA1(36d5f473c35e8b5288ed4091214b740abc041af4) )
-	ROM_LOAD( "516.v2", 0x800000, 0x800000, CRC(357babe6) SHA1(3767aec1f11b2e53e66739287ca15684946daecf) )
+	ROM_LOAD( "516.v1", 0x000000, 0x800000, CRC(dd128a57) SHA1(d3431e9aa946c3aa294477b46a01e4454ccaf855) )
+	ROM_LOAD( "516.v2", 0x800000, 0x800000, CRC(b6ff9217) SHA1(da84a7ee79cfad282f8ed7b8763604a814edb2fc) )
 
 	ROM_REGION( 0x2000000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "516.c1", 0x000000, 0x1000000, CRC(a5b714a5) SHA1(3577db302103b34d360ec9c26826cacb4d6baf3c) )
-	ROM_LOAD16_BYTE( "516.c2", 0x000001, 0x1000000, CRC(9c9b726c) SHA1(df484179642c09ff5d131d32647e74695cb64fdd) )
+	ROM_LOAD16_BYTE( "516.c1", 0x000000, 0x1000000, CRC(5b3ef4e1) SHA1(7c9a8b22c994d25880e36bb493a16a6b321f950d) )
+	ROM_LOAD16_BYTE( "516.c2", 0x000001, 0x1000000, CRC(970ba8c2) SHA1(c75444236de9aba99f9415f8ab0748376435046e) )
 ROM_END
 
 // 684 : Vladivostok 2000 by Vasily Familiya
@@ -16414,20 +16414,20 @@ ROM_START( vlad2000 )
 ROM_END
 
 // 417 : World Racer by Blastar
-ROM_START( wrldracr ) // 2025-12-14
+ROM_START( wrldracr ) // 2025-12-26
 	ROM_REGION( 0x100000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "417.p1", 0x000000, 0x100000, CRC(d9f8921c) SHA1(52d6057a3a550bbec533b44db0228de93d1304e3) )
+	ROM_LOAD16_WORD_SWAP( "417.p1", 0x000000, 0x100000, CRC(3350fa1b) SHA1(1e5f4f3713797e0aeb4daaf0b337f9c61ef5e2e8) )
 
-	NEO_SFIX_128K( "417.s1", CRC(312508af) SHA1(4370a16fc089dd01ff00d3096a9a97cb1ad6359a) )
+	NEO_SFIX_128K( "417.s1", CRC(2290a5b3) SHA1(2684864f48be7772a80a3e34d00aa85f52f428f3) )
 
-	NEO_BIOS_AUDIO_64K( "417.m1", CRC(6178075b) SHA1(1cfb82931b74868460f864fc2756dfded68d36b7) )
+	NEO_BIOS_AUDIO_64K( "417.m1", CRC(f10683ac) SHA1(bf607cbc6eaaab9924b035b7f64fe5cd4e8aa97d) )
 
 	ROM_REGION( 0x80000, "ymsnd:adpcma", 0 )
 	ROM_LOAD( "417.v1", 0x000000, 0x80000, CRC(a4763f5d) SHA1(bf518f70c4248b4934163bc44cc1c94ff445dcf0) )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "417.c1", 0x000000, 0x80000, CRC(ec05e878) SHA1(2874add101c3131694d657a5c905466b01acac3c) )
-	ROM_LOAD16_BYTE( "417.c2", 0x000001, 0x80000, CRC(ff4755b9) SHA1(3199e67ab5cd69fd71ec4926f0da83eddff65f7a) )
+	ROM_LOAD16_BYTE( "417.c1", 0x000000, 0x80000, CRC(51858e96) SHA1(2404e3369f5fabe480b55bf86d117feda779ec21) )
+	ROM_LOAD16_BYTE( "417.c2", 0x000001, 0x80000, CRC(43dc168f) SHA1(5cd34c935a36b8c544f0337ea998ca5612299d6e) )
 ROM_END
 
 // 613 : WW2 demo by Rastersoft
@@ -17691,7 +17691,7 @@ GAME( 1999, preisl2d,   preisle2, neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 2002, rotdd,      rotd,     neogeo_noslot,   neogeo, neogeo_state,   init_rotdnd,   ROT0, "Evoga / Playmore", "Rage of the Dragons (NGM-2640?) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, rotdhd,     rotd,     neogeo_noslot,   neogeo, neogeo_state,   init_rotdnd,   ROT0, "Evoga / Playmore", "Rage of the Dragons (NGH-2640?) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 1999, s1945pd,    s1945p,   neogeo_noslot,   neogeo, neogeo_state,   init_s1945p,   ROT0, "Psikyo", "Strikers 1945 Plus (Decrypted C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2010, samsh3hb,   samsho3,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Samurai Shodown III / Samurai Spirits - Zankurou Musouken (Enhanced, bootleg, Hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 2010, samsho3en,  samsho3,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Samurai Shodown III / Samurai Spirits - Zankurou Musouken (Enhanced, bootleg, Hack)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, samsh5bd,   samsho5,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Samurai Shodown V / Samurai Spirits Zero (bootleg, Fully Decrypted)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, samsh5d,    samsho5,  neogeo_noslot,   neogeo, neogeo_state,   init_samsho5,  ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V / Samurai Spirits Zero (NGM-2700, set 1) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, samsh5hd,   samsho5,  neogeo_noslot,   neogeo, neogeo_state,   init_samsho5,  ROT0, "Yuki Enterprise / SNK Playmore", "Samurai Shodown V / Samurai Spirits Zero (NGH-2700) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
@@ -17916,7 +17916,7 @@ GAME( 2025, vaporous,   neogeo,   neogeo_noslot,   neogeo,   neogeo_state, init_
 GAME( 2019, venuswars,  neogeo,   neogeo_noslot,   neogeo,   neogeo_state, init_neogeo,   ROT0, "Vasily Familiya", "Venus Wars Demo (HB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2025, violentv,   neogeo,   neogeo_noslot,   neogeo,   neogeo_state, init_neogeo,   ROT0, "Balek Corp", "Violent Vengeance: The Universe Hero Beta (HB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2018, vlad2000,   neogeo,   neogeo_noslot,   neogeo,   neogeo_state, init_neogeo,   ROT0, "Vasily Familiya", "Vladivostok 2000 Demo (HB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
-GAME( 2025, wrldracr,   neogeo,   neogeo_noslot,   neogeo,   neogeo_state, init_neogeo,   ROT0, "Blastar", "World Racer (HB)", MACHINE_SUPPORTS_SAVE ) // 2025-11-14
+GAME( 2025, wrldracr,   neogeo,   neogeo_noslot,   neogeo,   neogeo_state, init_neogeo,   ROT0, "Blastar", "World Racer (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, ww2demo,    neogeo,   neogeo_noslot,   neogeo,   neogeo_state, init_neogeo,   ROT0, "Rastersoft", "WW2 - Arcade Development Project Demo (HB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2023, yoyoshkn,   neogeo,   neogeo_noslot,   neogeo,   neogeo_state, init_neogeo,   ROT0, "Dr Ludos", "Yo-Yo Shuriken (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, xeviousng,  neogeo,   neogeo_noslot,   neogeo,   neogeo_state, init_neogeo,   ROT270, "tcdev", "Xevious - Neo Geo Conversion (HB)", MACHINE_SUPPORTS_SAVE )

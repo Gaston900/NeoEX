@@ -412,7 +412,7 @@ preisl2d                        // Decrypted / Bootleg
 rotdd                           // Decrypted / Bootleg
 rotdhd                          // Decrypted / Bootleg
 s1945pd                         // Decrypted / Bootleg
-samsh3hb                        // Decrypted / Bootleg
+samsho3en                       // Decrypted / Bootleg
 samsh5bd                        // Decrypted / Bootleg
 samsh5d                         // Decrypted / Bootleg
 samsh5hd                        // Decrypted / Bootleg
@@ -1262,6 +1262,7 @@ kof95hc02                       // Hack
 kof95hc03                       // Hack
 kof95hc04                       // Hack
 kof95hc05                       // Hack
+kof95hc06                       // Hack
 kof96hc01                       // Hack
 kof96hc02                       // Hack
 kof96hc03                       // Hack
@@ -1782,7 +1783,6 @@ pang3j                          // 11/05/1995 (c) 1995 Mitchell (Japan) not list
 pang3r1                         // 11/05/1995 (c) 1995 Mitchell (Euro) not listed on Capcom's site
 pang3b4                         // bootleg
 pang3b5                         // bootleg
-pmonster                        // 19/05/1999 (c) 1999 (Japan)
 pnickj                          // 08/06/1994 (c) 1994 Compile + Capcom license (Japan) not listed on Capcom's site
 punisher                        // 22/04/1993 (c) 1993 (World) (CPS1 + QSound)
 punisherbz                      // bootleg
@@ -1798,7 +1798,7 @@ sf2                             // 22/05/1991 (c) 1991 (World)
 sf2acc                          // hack
 sf2acca                         // hack
 sf2accp2                        // hack
-sf2amf                          // bootleg
+//sf2amf                          // bootleg (Deactivated)
 sf2amf2                         // bootleg
 sf2amf3                         // bootleg
 sf2bhh                          // hack
@@ -1859,7 +1859,7 @@ sf2reda                         // bootleg
 sf2redp2                        // hack
 sf2rk                           // bootleg
 sf2rules                        // bootleg
-sf2stt                          // bootleg
+//sf2stt                          // bootleg (Deactivated)
 sf2thndr                        // hack
 sf2thndr2                       // bootleg
 sf2ua                           // 06/02/1991 (c) 1991 (USA)
@@ -1892,7 +1892,6 @@ strideruc                       // conversion
 unsquad                         // 8/1989 (c) 1989 (USA)
 varth                           // 14/07/1992 (c) 1992 (World)
 varthb2                         // bootleg
-varthb3                         // bootleg
 varthj                          // 14/07/1992 (c) 1992 (Japan)
 varthjr                         // 14/07/1992 (c) 1992 (Japan)
 varthr1                         // 12/06/1992 (c) 1992 (World)
@@ -1914,7 +1913,7 @@ wonder3                         // 20/05/1991 (c) 1991 (Japan)
 captcommb2                      // bootleg
 knightsb                        // bootleg
 knightsb3                       // bootleg
-knightsb4
+knightsb4                       // bootleg
 sf2b                            // bootleg
 sf2b2                           // bootleg
 sf2ceb                          // bootleg
@@ -2330,7 +2329,9 @@ ffightbla                       // bootleg
 ffightblb                       // bootleg
 kodb                            // bootleg
 mtwinsb                         // bootleg
+sf2ceeabl                       // bootleg
 sf2ceeab2                       // bootleg
+sf2ceeab3
 sf2md                           // bootleg
 sgyxz                           // bootleg (All-In Electronics)
 sgyxza                          // bootleg (All-In Electronics)
@@ -2344,7 +2345,6 @@ wofr1bl                         // bootleg
 3wondrud	                    // Bootleg
 3wondersha	                    // Bootleg
 captcoud	                    // Bootleg
-captcocn	                    // Bootleg
 daimakaib	                    // Bootleg
 dinoh	                        // Bootleg
 dinoha	                        // Bootleg
@@ -2364,6 +2364,9 @@ punisherud2	                    // Bootleg
 sf2cejabl	                    // Bootleg
 sf2rb5	                        // Bootleg
 sf2rb6	                        // Bootleg
+pang3r1a                        // Capcom
+pang3b6	                        // Bootleg
+pang3b7	                        // Bootleg
 sf2mega2	                    // Bootleg
 sf2amf5	                        // Bootleg
 sf2amf6	                        // Bootleg
@@ -2436,6 +2439,7 @@ captcommhc14                    // Hack
 captcommhc15                    // Hack
 captcommhc16                    // Hack
 captcommhc17                    // Hack
+captcommhc18                    // Hack
 daimakaihc01                    // Hack
 dinohc01                        // Hack
 dinohc02                        // Hack
@@ -2465,16 +2469,13 @@ dinohc25                        // Hack
 dinohc26                        // Hack
 dinohc27                        // Hack
 dinohc28                        // Hack
-dinohc29                        // Hack
-dinohc30                        // Hack
-dinohc31                        // Hack
-dinohc32                        // Hack
 forgottnhc01                    // Hack
 ffighthc01                      // Hack
 ffighthc02                      // Hack
 ffighthc03                      // Hack
 ffighthc04                      // Hack
 ffighthc05                      // Hack
+ffighthc06                      // Hack
 ghoulshc01                      // Hack
 kodhc01                         // Hack
 kodhc02                         // Hack
@@ -2521,6 +2522,8 @@ sf2cehc16                       // Hack
 sf2cehc17                       // Hack
 sf2cehc18                       // Hack
 sf2cehc19                       // Hack
+sf2cehc20                       // Hack
+sf2cehc21                       // Hack
 sf2hc01                         // Hack
 sf2hc02                         // Hack
 sf2hc03                         // Hack
@@ -2552,30 +2555,11 @@ tk2hc18                         // Hack
 tk2hc19                         // Hack
 tk2hc20                         // Hack
 tk2hc21                         // Hack
-tk2hc22                         // Hack
-tk2hc23                         // Hack
-tk2hc24                         // Hack
-tk2hc25                         // Hack
-tk2hc26                         // Hack
-tk2hc27                         // Hack
-tk2hc28                         // Hack
-tk2hc29                         // Hack
-tk2hc30                         // Hack
-tk2hc31                         // Hack
-tk2hc32                         // Hack
-tk2hc33                         // Hack
-tk2hc34                         // Hack
-tk2hc35                         // Hack
-tk2hc36                         // Hack
 tk2chc01                        // Hack
-tk2chc02                        // Hack
-tk2chc03                        // Hack
-tk2chc04                        // Hack
 sk2hc01                         // Hack
 sk3hc01                         // Hack
 varthhc01                       // Hack
 willowhc01                      // Hack
-willowhc02                      // Hack
 wofhc01                         // Hack
 wofhc02                         // Hack
 
@@ -2585,7 +2569,6 @@ wofhc02                         // Hack
 1944hc01                        // Hack
 avsphc01                        // Hack
 avsphc02                        // Hack
-avsphc03                        // Hack
 batcirhc01                      // Hack
 csclubhc01                      // Hack
 cybotshc01                      // Hack
@@ -2612,19 +2595,20 @@ hsf2hc07                        // Hack
 hsf2hc08                        // Hack
 mvschc01                        // Hack
 mvschc02                        // Hack
+mvschc03                        // Hack
+mvschc04                        // Hack
 mshhc01                         // Hack
 mshhc02                         // Hack
-mshhc03                         // Hack
 mshvsfhc01                      // Hack
 mshvsfhc02                      // Hack
 mshvsfhc03                      // Hack
 mshvsfhc04                      // Hack
 pfghthc01                       // Hack
 pfghthc02                       // Hack
-pfghthc03                       // Hack
 progearhc01                     // Hack
 progearhc02                     // Hack
 rmancp2hc01                     // Hack
+ringdesthc01                    // Hack
 rockman2hc01                    // Hack
 sfahc01                         // Hack
 sfahc02                         // Hack
@@ -2634,6 +2618,7 @@ sfa2hc01                        // Hack
 sfa2hc02                        // Hack
 sfa2hc03                        // Hack
 sfa2hc04                        // Hack
+sfa2hc05                        // Hack
 sfa3hc01                        // Hack
 sfa3hc02                        // Hack
 sfa3hc03                        // Hack
@@ -2657,8 +2642,10 @@ spf2thc01                       // Hack
 spf2thc02                       // Hack
 spf2xhc01                       // Hack
 spf2xhc02                       // Hack
+vsavhc01                        // Hack
 xmcotahc01                      // Hack
 xmcotahc02                      // Hack
+xmcotahc03                      // Hack
 xmvsfhc01                       // Hack
 xmvsfhc02                       // Hack
 xmvsfhc03                       // Hack
@@ -2674,7 +2661,6 @@ jojobahc01                      // Hack
 jojobahc02                      // Hack
 jojobahc03                      // Hack
 jojohc01                        // Hack
-redeartnhc01                    // Hack
 sfiiihc01                       // Hack
 sfiiihc02                       // Hack
 sfiii2hc01                      // Hack
