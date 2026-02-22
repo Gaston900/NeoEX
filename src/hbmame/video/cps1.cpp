@@ -1678,12 +1678,11 @@ static const struct CPS1config cps1_config_table[]=
 #endif
 	// HBMAME end
 	
-    // PSARCADE CCLASSIC+
+    // NEOEX
 	{"captcommb2",  CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },        //works
 	{"dinopic",     CPS_B_21_QS2, mapper_CD63B },   /* layer enable never used */
 	{"dinopic2",    CPS_B_21_QS2, mapper_CD63B },   /* layer enable never used */
 	{"dinopic3",    CPS_B_21_QS2, mapper_CD63B },   /* layer enable never used */
-	{"dinopic3hc01", CPS_B_21_QS2, mapper_CD63B },  /* layer enable never used */
     {"cawingbl",    CPS_B_16,     mapper_CA22B },   // equivalent to CA24B
 	{"cawingb2",    CPS_B_16,     mapper_CA22B },   // equivalent to CA24B
 	{"jurassic99",  CPS_B_21_QS2, mapper_CD63B },   /* layer enable never used */
@@ -1696,14 +1695,13 @@ static const struct CPS1config cps1_config_table[]=
 	{"sf2ceb3",     CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },
 	{"sf2ceb4",     CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },
 	{"sf2ceb5",     CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },
-	{"sf2m1",       CPS_B_21_DEF, mapper_S9263B, 0x36 },
-    {"sf2m9",       CPS_B_21_DEF, mapper_S9263B, 0x36 },
+	{"sf2ceeabl",   CPS_B_21_DEF, mapper_S9263B, 0x36 },
+	{"sf2ceeab2",   CPS_B_21_DEF, mapper_S9263B, 0x36 },
+	{"sf2ceeab3",   CPS_B_21_DEF, mapper_S9263B, 0x36 },
+    {"sf2md",       CPS_B_21_DEF, mapper_S9263B, 0x36 },
 	{"sf2mdt",      CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },        //works
 	{"sf2mdta",     CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },        //works
 	{"sf2mdtb",     CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },        //works
-	{"sf2mdthc01",  CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },        //works
-	{"sf2mdthc02",  CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },        //works
-	{"sf2mdthc03",  CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },        //works
 	{"slampic",     CPS_B_21_QS4, mapper_MB63B },
 	{"slampic2",    CPS_B_21_QS4, mapper_sfzch },  // default cps2 mapper breaks scroll layers
 	{"punipic",     CPS_B_21_QS3, mapper_PS63B },

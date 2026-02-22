@@ -168,17 +168,10 @@
 // 修改的 代码来源 (Gaston90)
 /*******************************************/
 #define IDB_KLIST						285
-#define IDI_FOLDER_NEOGEOCD				286
-#define IDI_FOLDER_DARKSOFT		        287
-#define IDI_FOLDER_DECRYPTED			288
-#define IDI_FOLDER_MUSIC			    289
-#define IDI_FOLDER_EARLIER 				290
-#define IDI_FOLDER_HACK 				291
-#define IDI_FOLDER_HOMEBREW				292
-#define IDI_FOLDER_MGD2				    293
-#define IDI_FOLDER_NEOSD				294
-#define IDI_HEADER_UP                   295
-#define IDI_HEADER_DOWN                 296
+#define IDI_FOLDER_NEOGEO				286
+#define IDI_FOLDER_CAPCOM		        287
+#define IDI_HEADER_UP                   288
+#define IDI_HEADER_DOWN                 289
 /*******************************************/
 #define IDC_LIST                        1000
 #define IDC_JOYSTICK                    1003

@@ -72,15 +72,8 @@ enum
 	FOLDER_DUMPING,
 // Modified Code Source (Gaston90)
 /******************/
-//	FOLDER_NEOGEOCD,
-//	FOLDER_DARKSOFT,
-//	FOLDER_DECRYPTED,
-//	FOLDER_MUSIC,
-//	FOLDER_EARLIER,
-//	FOLDER_HACK,
-//	FOLDER_HOMEBREW,
-//	FOLDER_MGD2,
-//	FOLDER_NEOSD,
+	FOLDER_NEOGEO,
+	FOLDER_CAPCOM,
 /******************/
 	MAX_FOLDERS
 };
@@ -160,14 +153,7 @@ void ResetTreeViewFolders(void);
 void SelectTreeViewFolder(int folder_id);
 // Modified Code Source (Gaston90)
 /**********************************************/
-void CreateNEOGEOCDFolders(int parent_index);
-void CreateDARKSOFTFolders(int parent_index);
-void CreateDECRYPTEDFolders(int parent_index);
-void CreateMUSICFolders(int parent_index);
-void CreateEARLIERFolders(int parent_index);
-void CreateHACKFolders(int parent_index);
-void CreateHOMEBREWFolders(int parent_index);
-void CreateMGD2Folders(int parent_index);
-void CreateNEOSDFolders(int parent_index);
+void CreateNEOGEOFolders(int parent_index);
+void CreateCAPCOMFolders(int parent_index);
 /**********************************************/
 #endif

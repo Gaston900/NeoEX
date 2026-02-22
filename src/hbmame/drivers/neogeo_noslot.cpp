@@ -17580,7 +17580,7 @@ GAME( 1994, wh2ja,      wh2j,     neogeo_noslot,   neogeo, neogeo_state,   init_
 
 /*    YEAR  NAME        PARENT    MACHINE          INPUT   INIT            MONITOR */
 /* SNK Predecrypted, Decrypted And Bootleg */
-GAME( 2000, bangbedd,   bangbead, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Bang Bead (Decrypted C)", MACHINE_SUPPORTS_SAVE )
+GAME( 2000, bangbedd,   bangbead, neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "Visco", "Bang Bead (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, cthd2k3d,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Crouching Tiger Hidden Dragon 2003 (hack of The King of Fighters 2001, Fully Decrypted / set 1)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, cthd2k3da,  kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "Crouching Tiger Hidden Dragon 2003 (hack of The King of Fighters 2001, Fully Decrypted / set 2)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, cthd2k3a,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_cthd2k3a, ROT0, "bootleg", "Crouching Tiger Hidden Dragon 2003 (hack of The King of Fighters 2001, set 2)", MACHINE_SUPPORTS_SAVE )
@@ -17598,7 +17598,7 @@ GAME( 2000, kof2kd,     kof2000,  neogeo_noslot,   neogeo, neogeo_state,   init_
 GAME( 2000, kof2knd,    kof2000,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2000,  ROT0, "SNK", "The King of Fighters 2000 (not encrypted) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, kof2k1d,    kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "Eolith / SNK", "The King of Fighters 2001 (NGM-2621) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, kof2k1hd,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "Eolith / SNK", "The King of Fighters 2001 (NGH-2621) (Decrypted C)", MACHINE_SUPPORTS_SAVE )
-GAME( 2001, kf2k1bh,    kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "Eolith / SNK", "The King of Fighters 2001 (bootleg / hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, kf2k1bh,    kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "bootleg", "The King of Fighters 2001 (bootleg / hack)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k1pls,   kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_neogeo,   ROT0, "bootleg", "The King of Fighters 2001 Plus (Set 1, bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k1plse,  kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "bootleg", "The King of Fighters 2001 Plus (Set 1, bootleg) (Encrypted C)", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kf2k1plsd,  kof2001,  neogeo_noslot,   neogeo, neogeo_state,   init_kof2001,  ROT0, "bootleg", "The King of Fighters 2001 Plus (Set 1, bootleg) (Decrypted C)", MACHINE_SUPPORTS_SAVE )

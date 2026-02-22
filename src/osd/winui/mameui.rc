@@ -319,15 +319,8 @@ IDI_MISC2SHEET          ICON                    "res\\debug.ico"
 IDI_SNAPSHEET           ICON                    "res\\snapshot.ico"
 // Modified Code Source (Gaston90)
 /****************************************************************************/
-IDI_FOLDER_NEOGEOCD		ICON					"res\\fold_neogeocd.ico"
-IDI_FOLDER_DARKSOFT		ICON				    "res\\fold_darksoft.ico"
-IDI_FOLDER_DECRYPTED	ICON	 				"res\\fold_decrypted.ico"
-IDI_FOLDER_MUSIC 		ICON	 				"res\\fold_music.ico"
-IDI_FOLDER_EARLIER		ICON					"res\\fold_earlier.ico"
-IDI_FOLDER_HACK		    ICON				 	"res\\fold_hack.ico"
-IDI_FOLDER_HOMEBREW	    ICON				    "res\\fold_hb.ico"
-IDI_FOLDER_MGD2		    ICON				    "res\\fold_mgd2.ico"
-IDI_FOLDER_NEOSD		ICON				    "res\\fold_neosd.ico"
+IDI_FOLDER_NEOGEO		ICON					"res\\fold_neo.ico"
+IDI_FOLDER_CAPCOM		ICON				    "res\\fold_cps.ico"
 /****************************************************************************/
 /////////////////////////////////////////////////////////////////////////////
 //
