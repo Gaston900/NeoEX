@@ -298,15 +298,8 @@ void neosprite_device::draw_sprites( bitmap_rgb32 &bitmap, int scanline )
 	if (m_region_sprites_size == 0)
 		return;
 
-	int sprite_index;
-	int max_sprite_index;
-
-	int y = 0;
-	int x = 0;
-	int rows = 0;
-	int zoom_y = 0;
-	int zoom_x = 0;
 	uint16_t *sprite_list;
+	int max_sprite_index = 0, x = 0, y = 0, zoom_x = 0, zoom_y = 0, rows = 0;
 
 	/* select the active list */
 	if (scanline & 0x01)
@@ -327,7 +320,7 @@ void neosprite_device::draw_sprites( bitmap_rgb32 &bitmap, int scanline )
 	if (max_sprite_index != (MAX_SPRITES_PER_LINE - 1))
 		max_sprite_index = max_sprite_index + 1;
 
-	for (sprite_index = 0; sprite_index <= max_sprite_index; sprite_index++)
+	for (int sprite_index = 0; sprite_index <= max_sprite_index; sprite_index++)
 	{
 		uint16_t sprite_number = sprite_list[sprite_index] & 0x01ff;
 		uint16_t y_control = m_videoram_drawsource[0x8200 | sprite_number];
@@ -482,7 +475,6 @@ void neosprite_device::draw_sprites( bitmap_rgb32 &bitmap, int scanline )
 
 void neosprite_device::parse_sprites( int scanline )
 {
-	uint16_t sprite_number;
 	int y = 0;
 	int rows = 0;
 	uint16_t *sprite_list;
@@ -496,7 +488,7 @@ void neosprite_device::parse_sprites( int scanline )
 		sprite_list = &m_videoram_drawsource[0x8600];
 
 	/* scan all sprites */
-	for (sprite_number = 0; sprite_number < MAX_SPRITES_PER_SCREEN; sprite_number++)
+	for (u16 sprite_number = 0; sprite_number < MAX_SPRITES_PER_SCREEN; sprite_number++)
 	{
 		uint16_t y_control = m_videoram_drawsource[0x8200 | sprite_number];
 
@@ -598,7 +590,7 @@ void neosprite_device::set_pens(const pen_t* pens)
 void neosprite_device::optimize_sprite_data()
 {
 	uint32_t mask = 0xffffffff, len = m_region_sprites_size * 2 - 1;
-	uint8_t bit;
+	s8 bit = 0;
 
 	for (bit = 31; bit != 0; bit--)
 		if (BIT(len, bit))

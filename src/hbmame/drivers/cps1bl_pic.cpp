@@ -1259,6 +1259,57 @@ ROM_START( dinopic3 )
 	ROM_LOAD( "6_palce16v8.bin", 0xa00, 0x117, CRC(9ae375ba) SHA1(6f227c2a5b1170a41e6419f12d1e1f98edc6f8e5) )  // dinopic2
 ROM_END
 
+ROM_START( dinopic4 )
+	ROM_REGION( CODE_SIZE, "maincpu", 0 )      /* 68000 code */
+	ROM_LOAD16_BYTE( "27c4000-m12374r-2.bin", 0x000001, 0x80000, CRC(13dfeb08) SHA1(cd2f9dd64f4fabe93901247e36dff3763169716d) )
+	ROM_LOAD16_BYTE( "27c4000-m12481.bin",    0x000000, 0x80000, CRC(96dfcbf1) SHA1(a8bda6edae2c1b79db7ae8a8976fd2457f874373) )
+	ROM_LOAD16_BYTE( "27c4000-m12374r-1.bin", 0x100001, 0x80000, CRC(0e4058ba) SHA1(346f9e34ea53dd1bf5cdafa1e38bf2edb09b9a7f) )
+	ROM_LOAD16_BYTE( "27c4000-m12374r-3.bin", 0x100000, 0x80000, CRC(6133f349) SHA1(d13af99910623f62c090d25372a2253dbc2f8cbe) )
+
+	ROM_REGION( 0x400000, "gfx", 0 )
+	ROM_LOAD64_BYTE( "27c4000-m12481-4.bin", 0x000000, 0x40000, CRC(f3c2c98d) SHA1(98ae51a67fa4159456a4a205eebdd8d1775888d1) )
+	ROM_CONTINUE(                            0x000004, 0x40000)
+	ROM_LOAD64_BYTE( "27c4000-m12481-3.bin", 0x000001, 0x40000, CRC(a0e1f6e0) SHA1(119af72fb6e75933b6d39bc4a8030823ce9b7611) ) // this one is a perfect match, unlike dinopic set
+	ROM_CONTINUE(                            0x000005, 0x40000)
+	ROM_LOAD64_BYTE( "27c4000-m12481-2.bin", 0x000002, 0x40000, CRC(55ef0adc) SHA1(3b5551ae76ae80882d37fc70a1031a57885d6840) )
+	ROM_CONTINUE(                            0x000006, 0x40000)
+	ROM_LOAD64_BYTE( "27c4000-m12481-1.bin", 0x000003, 0x40000, CRC(cc0805fc) SHA1(c512734c28b878a30a0de249929f69784d5d77a1) )
+	ROM_CONTINUE(                            0x000007, 0x40000)
+	ROM_LOAD64_BYTE( "27c4000-m12481-8.bin", 0x200000, 0x40000, CRC(1371f714) SHA1(d2c98096fab08e3d4fd2482e6ebfc970ead656ee) )
+	ROM_CONTINUE(                            0x200004, 0x40000)
+	ROM_LOAD64_BYTE( "27c4000-m12481-7.bin", 0x200001, 0x40000, CRC(b284c4a7) SHA1(166f571e0afa115f8e38ba427b40e30abcfd70ee) )
+	ROM_CONTINUE(                            0x200005, 0x40000)
+	ROM_LOAD64_BYTE( "27c4000-m12481-6.bin", 0x200002, 0x40000, CRC(b7ad3394) SHA1(58dec34d9d991ff2817c8a7847749716abae6c77) )
+	ROM_CONTINUE(                            0x200006, 0x40000)
+	ROM_LOAD64_BYTE( "27c4000-m12481-5.bin", 0x200003, 0x40000, CRC(88847705) SHA1(05dc90067921960e417b7436056a5e1f86abaa1a) )
+	ROM_CONTINUE(                            0x200007, 0x40000)
+
+//	ROM_REGION( 0x2000, "audiocpu", 0 ) /* PIC16c57 - protected, dump isn't valid */
+//	ROM_LOAD( "pic16c57-rc.bin", 0x00000, 0x1030, BAD_DUMP CRC(4d262eaa) SHA1(d659cfa9c9909eec9013b3dc164ba92dd2146479) )
+
+	ROM_REGION( 0x30000, "audiocpu", 0 ) /* QSound Z80 code */
+	ROM_LOAD( "pic16c57-rc.bin", 0x00000, 0x1030, BAD_DUMP CRC(4d262eaa) SHA1(d659cfa9c9909eec9013b3dc164ba92dd2146479) )
+
+	ROM_LOAD( "cd_q.5k",    0x00000, 0x08000, CRC(605fdb0b) SHA1(9da90ddc6513aaaf2260f0c69719c6b0e585ba8c) )
+	ROM_CONTINUE(           0x10000, 0x18000 )
+
+	ROM_REGION( 0x280000, "qsound", 0 ) /* QSound samples */
+	ROM_LOAD( "ti-i_27c040.bin", 0x000000, 0x80000, CRC(7d921309) SHA1(d51e60e904d302c2516b734189e141aa171b2b82) )  // = dinopic, dinopic2
+	ROM_LOAD( "cd-q1.1k",   0x080000, 0x80000, CRC(60927775) SHA1(f8599bc84c38573ebbe8685822c58b6a38b50462) )
+	ROM_LOAD( "cd-q2.2k",   0x100000, 0x80000, CRC(770f4c47) SHA1(fec8ef00a6669d4d5e37787ecc7b58ee46709326) )
+	ROM_LOAD( "cd-q3.3k",   0x180000, 0x80000, CRC(2f273ffc) SHA1(f0de462f6c4d251911258e0ebd886152c14d1586) )
+	ROM_LOAD( "cd-q4.4k",   0x200000, 0x80000, CRC(2c67821d) SHA1(6e2528d0b22508300a6a142a796dd3bf53a66946) )
+
+	ROM_REGION( 0xe00, "plds", 0 )
+	ROM_LOAD( "cat93c46p.bin",    0x000, 0x80,  CRC(d49fa351) SHA1(e6dfaff1c6aa962d34ae8e82b71e6f394d82e19c) )
+	ROM_LOAD( "gal20v8a-1.bin",   0x200, 0x157, CRC(cd99ca47) SHA1(ee1d990fd294aa46f56f31264134251569f6792e) )
+	ROM_LOAD( "gal20v8a-2.bin",   0x400, 0x157, CRC(60d016b9) SHA1(add42c763c819f3fe6d7cf3adc7123a52c2a3be9) )
+	ROM_LOAD( "gal20v8a-3.bin",   0x600, 0x157, CRC(049b7f4f) SHA1(6c6ea03d9a293db69a8bd10e042ee75e3c01313c) )
+	ROM_LOAD( "palce16v8h-1.bin", 0x800, 0x117, CRC(48253c66) SHA1(8c94e655b768c45c3edf6ef39e62e3b7a4e57530) )
+	ROM_LOAD( "palce16v8h-2.bin", 0xa00, 0x117, CRC(9ae375ba) SHA1(6f227c2a5b1170a41e6419f12d1e1f98edc6f8e5) )
+	ROM_LOAD( "palce16v8h-3.bin", 0xc00, 0x117, CRC(b0f10adf) SHA1(5136e9495ef6c37edb0ddf1fe70c0d48c4785c80) )
+ROM_END
+
 /*
     Jurassic 99 (Cadillacs and Dinosaurs bootleg)
     pcb marking: H11F6
@@ -1739,6 +1790,7 @@ ROM_END
 GAME( 1993,  dinopic,    dino,      dinopic,   dino,      dinopic_state,     init_dinopic,   ROT0,  "bootleg",  "Cadillacs and Dinosaurs (bootleg with PIC16C57, set 1)",  MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE )     // 930201 ETC
 GAME( 1993,  dinopic2,   dino,      dinopic,   dino,      dinopic_state,     init_dinopic,   ROT0,  "bootleg",  "Cadillacs and Dinosaurs (bootleg with PIC16C57, set 2)",  MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE )  // 930201 ETC
 GAME( 1993,  dinopic3,   dino,      dinopic,   dino,      dinopic_state,     init_dinopic,   ROT0,  "bootleg",  "Cadillacs and Dinosaurs (bootleg with PIC16C57, set 3)",  MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE )     // 930201 ETC
+GAME( 1993,  dinopic4,   dino,      dinopic,   dino,      dinopic_state,     init_dinopic,   ROT0,  "bootleg",  "Cadillacs and Dinosaurs (bootleg with PIC16C57, set 4)",  MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE )     // 930201 ETC
 GAME( 1993,  jurassic99, dino,      dinopic,   dino,      dinopic_state,     init_dinopic,   ROT0,  "bootleg",  "Jurassic 99 (Cadillacs and Dinosaurs bootleg with EM78P447AP)",  MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE )     // 930201 ?
 
 GAME( 1993,  punipic,    punisher,  punipic,   punisher,  cps1bl_pic_state,  init_punipic,   ROT0,  "bootleg",  "The Punisher (bootleg with PIC16C57, set 1)",  MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE )  // 930422 ETC

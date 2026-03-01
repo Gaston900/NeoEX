@@ -1,5 +1,5 @@
 // license:BSD-3-Clause
-// copyright-holders:Chris Kirmse, Mike Haaland, Ren� Single, Mamesick
+// For licensing and usage information, read docs/release/winui_license.txt
 
 #ifndef MUI_OPTS_H
 #define MUI_OPTS_H
@@ -59,6 +59,11 @@
 #define MUIOPTION_SORT_COLUMN					"sort_column"
 #define MUIOPTION_SORT_REVERSED					"sort_reversed"
 #define MUIOPTION_FLYER_DIRECTORY				"flyer_directory"
+
+// 修改的 (Eziochiu)
+/********************************************************************/
+#define MUIOPTION_IPS_DIRECTORY					"ips_directory"
+/********************************************************************/
 #define MUIOPTION_CABINET_DIRECTORY				"cabinet_directory"
 #define MUIOPTION_MARQUEE_DIRECTORY				"marquee_directory"
 #define MUIOPTION_TITLE_DIRECTORY				"title_directory"
@@ -99,7 +104,12 @@
 #define INTERNAL_UI_INI_FILENAME 				"ui"
 #define PLUGINS_INI_FILENAME 					"plugin"
 
-// Modified Code Source (EKMAME)
+// 修改的 (Eziochiu)
+/********************************************************************/
+#define MUIOPTION_IPS_LANG						"ips_lang"
+/********************************************************************/
+
+// 修改的 代码来源 (EKMAME)
 /********************************************************************/
 #define MUIOPTION_USEKOREAN_GAMELIST			"Korean GAME List"
 /********************************************************************/
@@ -201,8 +211,8 @@ public:
 	void play_time(int index, int val)  { assert(0 <= index && index < driver_list::total()); m_list[index].play_time = val; }
 
 	void add_entries(void);
-	osd_file::error load_options(const std::string &filename);
-	osd_file::error save_options(const std::string &filename);
+	std::error_condition load_options(const std::string &filename);
+	std::error_condition save_options(const std::string &filename);
 	void load_settings(void);
 	void save_settings(void);
 	void load_settings(const char *str, int index);
@@ -358,6 +368,13 @@ const char* GetArtDir(void);
 void SetArtDir(const char* path);
 const char* GetFlyerDir(void);
 void SetFlyerDir(const char* path);
+
+// 修改的 (Eziochiu)
+/************************************/
+const char* GetIpsDir(void);
+void SetIpsDir(const char* path);
+/************************************/
+
 const char* GetCabinetDir(void);
 void SetCabinetDir(const char* path);
 const char* GetMarqueeDir(void);
@@ -457,7 +474,14 @@ uint32_t GetDriverCacheLower(int driver_index);
 uint32_t GetDriverCacheUpper(int driver_index);
 void SetDriverCache(int driver_index, uint32_t val);
 BOOL RequiredDriverCache(void);
-//Modified Code Source (EKMAME)
+
+// 修改的 (Eziochiu)
+/*********************************/
+int GetIPSLang(void);
+void SetIPSLang(int val);
+/*********************************/
+
+// 修改的 代码来源 (EKMAME)
 /*********************************/
 bool GetUsekoreanList(void);
 void SetUsekoreanList(bool val);

@@ -81,6 +81,7 @@
 
 #include "corestr.h"
 #include "emuopts.h"
+#include "fileio.h"
 
 #include <cstring>
 #include <iterator>
@@ -207,7 +208,7 @@ const char *cheat_parameter::text()
 //  save - save a single cheat parameter
 //-------------------------------------------------
 
-void cheat_parameter::save(emu_file &cheatfile) const
+void cheat_parameter::save(util::core_file &cheatfile) const
 {
 	// output the parameter tag
 	cheatfile.printf("\t\t<parameter");
@@ -370,7 +371,7 @@ void cheat_script::execute(cheat_manager &manager, uint64_t &argindex)
 //  save - save a single cheat script
 //-------------------------------------------------
 
-void cheat_script::save(emu_file &cheatfile) const
+void cheat_script::save(util::core_file &cheatfile) const
 {
 	// output the script tag
 	cheatfile.printf("\t\t<script");
@@ -421,6 +422,10 @@ cheat_script::script_entry::script_entry(
 			if (!expression || !expression[0])
 				throw emu_fatalerror("%s.xml(%d): missing expression in action tag\n", filename, entrynode.line);
 			m_expression.parse(expression);
+
+			// initialise these to defautlt values
+			m_line = 0;
+			m_justify = ui::text_layout::text_justify::LEFT;
 		}
 		else
 		{
@@ -434,12 +439,12 @@ cheat_script::script_entry::script_entry(
 
 			// extract other attributes
 			m_line = entrynode.get_attribute_int("line", 0);
-			m_justify = ui::text_layout::LEFT;
+			m_justify = ui::text_layout::text_justify::LEFT;
 			char const *const align(entrynode.get_attribute_string("align", "left"));
 			if (!std::strcmp(align, "center"))
-				m_justify = ui::text_layout::CENTER;
+				m_justify = ui::text_layout::text_justify::CENTER;
 			else if (!std::strcmp(align, "right"))
-				m_justify = ui::text_layout::RIGHT;
+				m_justify = ui::text_layout::text_justify::RIGHT;
 			else if (std::strcmp(align, "left"))
 				throw emu_fatalerror("%s.xml(%d): invalid alignment '%s' specified\n", filename, entrynode.line, align);
 
@@ -530,7 +535,7 @@ void cheat_script::script_entry::execute(cheat_manager &manager, uint64_t &argin
 //  save - save a single action or output
 //-------------------------------------------------
 
-void cheat_script::script_entry::save(emu_file &cheatfile) const
+void cheat_script::script_entry::save(util::core_file &cheatfile) const
 {
 	if (m_format.empty())
 	{
@@ -543,16 +548,16 @@ void cheat_script::script_entry::save(emu_file &cheatfile) const
 	else
 	{
 		// output an output
-		cheatfile.printf("\t\t\t<output format=\"%s\"", m_format.c_str());
+		cheatfile.printf("\t\t\t<output format=\"%s\"", m_format);
 		if (!m_condition.is_empty())
 			cheatfile.printf(" condition=\"%s\"", cheat_manager::quote_expression(m_condition));
 
 		if (m_line != 0)
 			cheatfile.printf(" line=\"%d\"", m_line);
 
-		if (m_justify == ui::text_layout::CENTER)
+		if (m_justify == ui::text_layout::text_justify::CENTER)
 			cheatfile.printf(" align=\"center\"");
-		else if (m_justify == ui::text_layout::RIGHT)
+		else if (m_justify == ui::text_layout::text_justify::RIGHT)
 			cheatfile.printf(" align=\"right\"");
 
 		if (m_arglist.size() == 0)
@@ -661,7 +666,7 @@ int cheat_script::script_entry::output_argument::values(uint64_t &argindex, uint
 //  save - save a single output argument
 //-------------------------------------------------
 
-void cheat_script::script_entry::output_argument::save(emu_file &cheatfile) const
+void cheat_script::script_entry::output_argument::save(util::core_file &cheatfile) const
 {
 	cheatfile.printf("\t\t\t\t<argument");
 	if (m_count != 1)
@@ -761,7 +766,7 @@ cheat_entry::~cheat_entry()
 //  save - save a single cheat entry
 //-------------------------------------------------
 
-void cheat_entry::save(emu_file &cheatfile) const
+void cheat_entry::save(util::core_file &cheatfile) const
 {
 	// determine if we have scripts
 	bool const has_scripts(m_off_script || m_on_script || m_run_script || m_change_script);
@@ -1078,6 +1083,9 @@ constexpr int cheat_manager::CHEAT_VERSION;
 
 cheat_manager::cheat_manager(running_machine &machine)
 	: m_machine(machine)
+	, m_framecount(0)
+	, m_numlines(0)
+	, m_lastline(0)
 	, m_disabled(true)
 	, m_symtable(machine)
 {
@@ -1195,10 +1203,10 @@ void cheat_manager::reload()
 	}
 
 	// if we haven't found the cheats yet, load by basename
-	if (m_cheatlist.empty())
 
 // 修改的 代码来源 (EKMAME)
 /******************************************************************************************/
+	if (m_cheatlist.empty())
 	{
 		//const char *parentname = GetParentName(machine().basename());
 		//if(parentname !=NULL)
@@ -1234,10 +1242,10 @@ bool cheat_manager::save_all(std::string const &filename)
 {
 	// open the file with the proper name
 	emu_file cheatfile(machine().options().cheat_path(), OPEN_FLAG_WRITE | OPEN_FLAG_CREATE | OPEN_FLAG_CREATE_PATHS);
-	osd_file::error const filerr(cheatfile.open(filename + ".xml"));
+	std::error_condition const filerr(cheatfile.open(filename + ".xml"));
 
 	// if that failed, return nothing
-	if (filerr != osd_file::error::NONE)
+	if (filerr)
 		return false;
 
 	// wrap the rest of catch errors
@@ -1279,10 +1287,13 @@ void cheat_manager::render_text(mame_ui_manager &mui, render_container &containe
 		if (!m_output[linenum].empty())
 		{
 			// output the text
-			mui.draw_text_full(container, m_output[linenum],
+			mui.draw_text_full(
+					container,
+					m_output[linenum],
 					0.0f, float(linenum) * mui.get_line_height(), 1.0f,
-					m_justify[linenum], ui::text_layout::NEVER, mame_ui_manager::OPAQUE_,
-					rgb_t::white(), rgb_t::black(), nullptr, nullptr);
+					m_justify[linenum], ui::text_layout::word_wrapping::NEVER,
+					mame_ui_manager::OPAQUE_, rgb_t::white(), rgb_t::black(),
+					nullptr, nullptr);
 		}
 	}
 }
@@ -1307,7 +1318,8 @@ std::string &cheat_manager::get_output_string(int row, ui::text_layout::text_jus
 	row = (row < 0) ? (m_numlines + row) : (row - 1);
 
 	// clamp within range
-	row = std::min(std::max(row, 0), m_numlines - 1);
+	assert(m_numlines > 0);
+	row = std::clamp(row, 0, m_numlines - 1);
 
 	// return the appropriate string
 	m_justify[row] = justify;
@@ -1432,8 +1444,8 @@ void cheat_manager::load_cheats(std::string const &filename)
 	emu_file cheatfile(std::move(searchstr), OPEN_FLAG_READ);
 	try
 	{
-		// loop over all instrances of the files found in our search paths
-		for (osd_file::error filerr = cheatfile.open(filename + ".xml"); filerr == osd_file::error::NONE; filerr = cheatfile.open_next())
+		// loop over all instances of the files found in our search paths
+		for (std::error_condition filerr = cheatfile.open(filename + ".xml"); !filerr; filerr = cheatfile.open_next())
 		{
 			osd_printf_verbose("Loading cheats file from %s\n", cheatfile.fullpath());
 

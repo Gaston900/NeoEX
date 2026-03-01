@@ -1034,12 +1034,8 @@ void ngbootleg_prot_device::matrimbl_decrypt(u8* sprrom, u32 sprrom_size, u8* au
 /* Fixed by remikare */
 void ngbootleg_prot_device::neogeo_darksoft_cx_decrypt(u8*sprrom, u32 sprrom_size)
 {
-	//int i;
 	int cx_size = sprrom_size;
 	u8 *rom = sprrom;
-	//std::vector <u8> buf( cx_size );
-
-	//memcpy( &buf[0], rom, cx_size );
 
 	for (int i = 0; i < cx_size; i+=4)
 		std::swap(rom[i+1], rom[i+2]);

@@ -1,5 +1,5 @@
 // license:BSD-3-Clause
-// copyright-holders:Chris Kirmse, Mike Haaland, Ren� Single, Mamesick
+// For licensing and usage information, read docs/release/winui_license.txt
 
 #ifndef TREEVIEW_H
 #define TREEVIEW_H
@@ -70,7 +70,7 @@ enum
 	FOLDER_SOURCE,
 	FOLDER_SAVESTATE,
 	FOLDER_DUMPING,
-// Modified Code Source (Gaston90)
+// 修改的 代码来源 (加斯顿90)
 /******************/
 	FOLDER_NEOGEO,
 	FOLDER_CAPCOM,
@@ -151,7 +151,7 @@ HIMAGELIST GetTreeViewIconList(void);
 int GetTreeViewIconIndex(int icon_id);
 void ResetTreeViewFolders(void);
 void SelectTreeViewFolder(int folder_id);
-// Modified Code Source (Gaston90)
+// 修改的 代码来源 (加斯顿90)
 /**********************************************/
 void CreateNEOGEOFolders(int parent_index);
 void CreateCAPCOMFolders(int parent_index);

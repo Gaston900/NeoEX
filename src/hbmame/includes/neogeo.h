@@ -303,52 +303,52 @@ private:
 
 	virtual void machine_reset() override;
 
-	memory_bank           *m_bank_audio_cart[4];
+	memory_bank           *m_bank_audio_cart[4]{};
 
 	// configuration
 	enum {NEOGEO_MVS, NEOGEO_AES, NEOGEO_CD} m_type;
 
 	// internal state
-	bool       m_recurse;
-	bool       m_audio_cpu_nmi_enabled;
-	bool       m_audio_cpu_nmi_pending;
+	bool       m_recurse = 0;
+	bool       m_audio_cpu_nmi_enabled = 0;
+	bool       m_audio_cpu_nmi_pending = 0;
 
 	// MVS-specific state
-	u8      m_save_ram_unlocked;
-	u8      m_output_data;
-	u8      m_output_latch;
-	u8      m_el_value;
-	u8      m_led1_value;
-	u8      m_led2_value;
+	u8      m_save_ram_unlocked = 0U;
+	u8      m_output_data = 0U;
+	u8      m_output_latch = 0U;
+	u8      m_el_value = 0U;
+	u8      m_led1_value = 0U;
+	u8      m_led2_value = 0U;
 
 	virtual void video_start() override;
 
-	emu_timer  *m_display_position_interrupt_timer;
-	emu_timer  *m_display_position_vblank_timer;
-	emu_timer  *m_vblank_interrupt_timer;
-	u32     m_display_counter;
-	u8      m_vblank_interrupt_pending;
-	u8      m_display_position_interrupt_pending;
-	u8      m_irq3_pending;
-	u8      m_display_position_interrupt_control;
-	u8      m_vblank_level;
-	u8      m_raster_level;
+	emu_timer  *m_display_position_interrupt_timer = nullptr;
+	emu_timer  *m_display_position_vblank_timer = nullptr;
+	emu_timer  *m_vblank_interrupt_timer = nullptr;
+	u32     m_display_counter = 0U;
+	u8      m_vblank_interrupt_pending = 0U;
+	u8      m_display_position_interrupt_pending = 0U;
+	u8      m_irq3_pending = 0U;
+	u8      m_display_position_interrupt_control = 0U;
+	u8      m_vblank_level = 0U;
+	u8      m_raster_level = 0U;
 
 	u16  get_video_control(  );
 
 	// color/palette related
-	std::vector<u16 > m_paletteram;
-	u8        m_palette_lookup[32][4];
+	std::vector<u16 > m_paletteram{};
+	u8        m_palette_lookup[32][4]{};
 	const pen_t *m_bg_pen;
-	int          m_screen_shadow;
-	int          m_palette_bank;
+	int          m_screen_shadow = 0;
+	int          m_palette_bank = 0;
 
 	u16 neogeo_slot_rom_low_r();
 	u16 neogeo_slot_rom_low_vectors_r(offs_t offset);
 
 	void install_banked_bios();
 
-	int m_use_cart_vectors;
+	int m_use_cart_vectors = 0;
 	optional_device<neogeo_banked_cart_device> m_banked_cart;
 	required_device<cpu_device> m_audiocpu;
 	required_device<ym2610_device> m_ym;
@@ -516,7 +516,7 @@ INPUT_PORTS_EXTERN(dualbios);
 */
 
 #define ROM_LOAD16_WORD_SWAP_BIOS(bios,name,offset,length,hash) \
-		ROMX_LOAD(name, offset, length, hash, ROM_GROUPWORD | ROM_REVERSE | ROM_BIOS(bios))
+	ROMX_LOAD(name, offset, length, hash, ROM_GROUPWORD | ROM_REVERSE | ROM_BIOS(bios))
 
 #define NEOGEO_BIOS \
 	ROM_REGION16_BE( 0x80000, "mainbios", 0 ) \
@@ -559,7 +559,7 @@ INPUT_PORTS_EXTERN(dualbios);
 	ROM_SYSTEM_BIOS( x+14, "unibios10", "Universe Bios (Hack, Ver. 1.0)" ) \
 	ROM_LOAD16_WORD_SWAP_BIOS( x+14, "uni-bios_1_0.rom",  0x00000, 0x020000, CRC(0ce453a0) SHA1(3b4c0cd26c176fc6b26c3a2f95143dd478f6abf9) ) /* Universe Bios v1.0 (hack) */
 
-#define MULTIMVS_BIOS  \
+#define MULTIMVS_BIOS \
 	ROM_REGION16_BE( 0x80000, "mainbios", 0 ) \
 	ROMX_LOAD( "sp-s2.sp1", 0x00000, 0x020000, CRC(9036d879) SHA1(4f5ed7105b7128794654ce82b51723e16e389543), ROM_GROUPWORD | ROM_REVERSE ) \
 	ROM_SYSTEM_BIOS( 0, "euro", "Europe MVS (Ver. 2)" ) \
@@ -653,6 +653,15 @@ INPUT_PORTS_EXTERN(dualbios);
 
 #define NEO_BIOS_AUDIO_ENCRYPTED_512K(name, hash) \
 	NEO_BIOS_AUDIO_ENCRYPTED(0x80000, name, hash)
+
+#define NEO_JAPAN_BIOS_AUDIO_ENCRYPTED(size, name, hash) \
+	ROM_REGION16_BE( 0x20000, "mainbios", 0 ) \
+	ROM_LOAD16_WORD_SWAP("vs-bios.rom",  0x00000, 0x20000, CRC(f0e8f27d) SHA1(ecf01eda815909f1facec62abf3594eaa8d11075) ) \
+	ROM_REGION( 0x20000, "audiobios", 0 ) \
+	ROM_LOAD( "sm1.sm1", 0x00000, 0x20000, CRC(94416d67) SHA1(42f9d7ddd6c0931fd64226a60dc73602b2819dcf) ) \
+	ROM_REGION( 0x90000, "audiocpu", ROMREGION_ERASEFF ) \
+	ROM_REGION( 0x80000, "audiocrypt", 0 ) \
+	ROM_LOAD( name, 0x00000, size, hash )
 
 #define ROM_Y_ZOOM \
 	ROM_REGION( 0x20000, "zoomy", 0 ) \
@@ -1030,8 +1039,7 @@ INPUT_PORTS_EXTERN(dualbios);
 	ROM_FILL(0X08B5,1,0X12)
 
 #define FSWORDS_MVS_FILL \
-	ROM_FILL(0X7436F,1,0X58)\
-	ROM_FILL(0X74372,1,0X12)
+	ROM_FILL(0X7436F,1,0X58)
 
 #define GALAXYFG_MVS_FILL \
 	ROM_FILL(0X04B8,1,0X63)\

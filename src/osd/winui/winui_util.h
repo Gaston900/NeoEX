@@ -1,5 +1,5 @@
 // license:BSD-3-Clause
-// copyright-holders:Chris Kirmse, Mike Haaland, Ren� Single, Mamesick
+// For licensing and usage information, read docs/release/winui_license.txt
 
 #ifndef MUI_UTIL_H
 #define MUI_UTIL_H
@@ -9,7 +9,6 @@ void dprintf(const char *fmt, ...);
 void ShellExecuteCommon(HWND hWnd, const char *cName);
 char * MyStrStrI(const char *pFirst, const char *pSrch);
 char * ConvertToWindowsNewlines(const char *source);
-const char * GetVersionString(void);
 const char * GetDriverGameTitle(int nIndex);
 const char * GetDriverGameName(int nIndex);
 const char * GetDriverGameManufacturer(int nIndex);
@@ -42,5 +41,22 @@ HANDLE winui_find_first_file_utf8(const char* filename, WIN32_FIND_DATA *findfil
 bool winui_move_file_utf8(const char* existingfilename, const char* newfilename);
 void CenterWindow(HWND hWnd);
 bool IsWindowsSevenOrHigher(void);
+
+// 修改的 (Eziochiu)
+/**************************************************************************************************************/
+int   GetPatchCount(int nGame, int nParentIndex);
+char* GetPatchFilename(int nGame, int nParentIndex, int nPatchIndex);
+char* GetPatchDesc(int nGame, int nParentIndex, int nPatchIndex);
+char* GetPatchTitle(int nGame, int nParentIndex, int nPatchIndex);
+char* GetPatchCategory(int nGame, int nParentIndex, int nPatchIndex);
+char* GetPatchImagePath(int nGame, int nParentIndex, int nPatchIndex);
+
+void SetIPSLangOverride(int langIndex);
+
+void IPSLoadRelations(int nGame, int nParentIndex);
+void IPSSetPatchState(const char* patch_name, bool checked);
+bool IPSGetPatchState(const char* patch_name);
+void IPSGetAllPatchStates(int nGame, int nParentIndex, bool* states, int max_count);
+/**************************************************************************************************************/
 
 #endif

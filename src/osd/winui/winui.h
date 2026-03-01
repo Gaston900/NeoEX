@@ -27,7 +27,6 @@
 #include "drivenum.h"
 #include "options.h"
 #include "png.h"
-#include "pool.h"
 #include "sound\samples.h"
 #include "screen.h"
 #include "speaker.h"
@@ -44,6 +43,7 @@
 #include "ui/info.h"
 #include "romload.h"
 #include "corestr.h"
+#include "path.h"
 
 // special Windows headers, after MAME ones
 #include <dinput.h>
@@ -78,15 +78,12 @@
 #define TVM_SETEXTENDEDSTYLE		(TV_FIRST + 44)
 #endif
 
-#ifdef PTR64
+#ifdef _M_X64
 #define MAMEUINAME			"NeoEX (NeoEvolution X MVS/AES Collection)"
 #else
 #define MAMEUINAME			"NeoEX (NeoEvolution X MVS/AES Collection)"
 #endif
 #define MAMENAME			"NeoEX"
-
-#define MAME_VERSION		"1.0"
-#define MAMEUIFX_VERSION	MAME_VERSION " (" __DATE__")"
 
 #define SEARCH_PROMPT		"<search here>"
 
@@ -136,7 +133,7 @@
 #define MIN_VIEW_WIDTH		10
 
 #define NUM_TOOLBUTTONS     std::size(tbb)
-#define NUM_TOOLTIPS 		(16) // Modified Code Source (EKMAME)
+#define NUM_TOOLTIPS		(16) // Modified Code Source (EKMAME)
 
 enum
 {
@@ -188,13 +185,11 @@ void MamePlayGame(void);
 int FindIconIndex(int nIconResource);
 int FindIconIndexByName(const char *icon_name);
 int GetSelectedPick(void);
-object_pool *GetMameUIMemoryPool(void);
 void UpdateListView(void);
 int GetMinimumScreenShotWindowWidth(void);
 // we maintain an array of drivers sorted by name, useful all around
 int GetParentIndex(const game_driver *driver);
 int GetParentRomSetIndex(const game_driver *driver);
-int GetSrcDriverIndex(const char *name);
 // sets text in part of the status bar on the main window
 void SetStatusBarText(int part_index, const char *message);
 void SetStatusBarTextF(int part_index, const char *fmt, ...);

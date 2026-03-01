@@ -11,11 +11,17 @@
 #include "emu.h"
 #include "romload.h"
 
-#include "corestr.h"
-#include "emuopts.h"
+// 修改的 (Eziochiu) 
+/***********************/
+#include "ips.h"
+/***********************/
 #include "drivenum.h"
+#include "emuopts.h"
+#include "fileio.h"
 #include "softlist_dev.h"
 #include "ui/uimain.h"
+
+#include "corestr.h"
 
 #include <algorithm>
 #include <set>
@@ -101,15 +107,15 @@ std::vector<std::string> make_software_searchpath(software_list_device &swlist, 
 }
 
 
-chd_error do_open_disk(const emu_options &options, std::initializer_list<std::reference_wrapper<const std::vector<std::string> > > searchpath, const rom_entry *romp, chd_file &chd, std::function<const rom_entry * ()> next_parent)
+std::error_condition do_open_disk(const emu_options &options, std::initializer_list<std::reference_wrapper<const std::vector<std::string> > > searchpath, const rom_entry *romp, chd_file &chd, std::function<const rom_entry * ()> next_parent)
 {
 	// hashes are fixed, but we might need to try multiple filenames
 	std::set<std::string> tried;
 	const util::hash_collection hashes(romp->hashdata());
 	std::string filename, fullpath;
 	const rom_entry *parent(nullptr);
-	chd_error result(CHDERR_FILE_NOT_FOUND);
-	while (romp && (CHDERR_NONE != result))
+	std::error_condition result(std::errc::no_such_file_or_directory);
+	while (romp && result)
 	{
 		filename = romp->name() + ".chd";
 		if (tried.insert(filename).second)
@@ -120,8 +126,8 @@ chd_error do_open_disk(const emu_options &options, std::initializer_list<std::re
 			{
 				imgfile.reset(new emu_file(options.media_path(), paths, OPEN_FLAG_READ));
 				imgfile->set_restrict_to_mediapath(1);
-				const osd_file::error filerr(imgfile->open(filename, OPEN_FLAG_READ));
-				if (osd_file::error::NONE == filerr)
+				const std::error_condition filerr(imgfile->open(filename, OPEN_FLAG_READ));
+				if (!filerr)
 					break;
 				else
 					imgfile.reset();
@@ -132,12 +138,12 @@ chd_error do_open_disk(const emu_options &options, std::initializer_list<std::re
 			{
 				fullpath = imgfile->fullpath();
 				imgfile.reset();
-				result = chd.open(fullpath.c_str());
+				result = chd.open(fullpath);
 			}
 		}
 
 		// walk the parents looking for a CHD with the same hashes but a different name
-		if (CHDERR_NONE != result)
+		if (result)
 		{
 			while (romp)
 			{
@@ -345,11 +351,11 @@ chd_file *rom_load_manager::get_disk_handle(std::string_view region)
     file associated with the given region
 -------------------------------------------------*/
 
-int rom_load_manager::set_disk_handle(std::string_view region, const char *fullpath)
+std::error_condition rom_load_manager::set_disk_handle(std::string_view region, const char *fullpath)
 {
 	auto chd = std::make_unique<open_chd>(region);
 	auto err = chd->orig_chd().open(fullpath);
-	if (err == CHDERR_NONE)
+	if (!err)
 		m_chd_list.push_back(std::move(chd));
 	return err;
 }
@@ -365,10 +371,12 @@ void rom_load_manager::determine_bios_rom(device_t &device, const char *specbios
 	if (specbios && *specbios && core_stricmp(specbios, "default"))
 	{
 		bool found(false);
+		int count = 0;  // MESSUI
 		for (const rom_entry &rom : device.rom_region_vector())
 		{
 			if (ROMENTRY_ISSYSTEM_BIOS(&rom))
 			{
+				count++;  // MESSUI
 				char const *const biosname = ROM_GETNAME(&rom);
 				int const bios_flags = ROM_GETBIOSFLAGS(&rom);
 				char bios_number[20];
@@ -385,7 +393,7 @@ void rom_load_manager::determine_bios_rom(device_t &device, const char *specbios
 		}
 
 		// if we got neither an empty string nor 'default' then warn the user
-		if (!found)
+		if (!found && count)  // MESSUI (only applies to command-line, i.e. MESS)
 		{
 			m_errorstring.append(util::string_format("%s: invalid BIOS \"%s\", reverting to default\n", device.tag(), specbios));
 			m_warnings++;
@@ -439,7 +447,7 @@ void rom_load_manager::fill_random(u8 *base, u32 length)
     for missing files
 -------------------------------------------------*/
 
-void rom_load_manager::handle_missing_file(const rom_entry *romp, const std::vector<std::string> &tried_file_names, chd_error chderr)
+void rom_load_manager::handle_missing_file(const rom_entry *romp, const std::vector<std::string> &tried_file_names, std::error_condition chderr)
 {
 	std::string tried;
 	if (!tried_file_names.empty())
@@ -453,12 +461,12 @@ void rom_load_manager::handle_missing_file(const rom_entry *romp, const std::vec
 		tried += ')';
 	}
 
-	const bool is_chd(chderr != CHDERR_NONE);
+	const bool is_chd(chderr);
 	const std::string name(is_chd ? romp->name() + ".chd" : romp->name());
 
-	const bool is_chd_error(is_chd && chderr != CHDERR_FILE_NOT_FOUND);
+	const bool is_chd_error(is_chd && chderr != std::errc::no_such_file_or_directory);
 	if (is_chd_error)
-		m_errorstring.append(string_format("%s CHD ERROR: %s\n", name, chd_file::error_string(chderr)));
+		m_errorstring.append(string_format("%s CHD ERROR: %s\n", name, chderr.message()));
 
 	if (ROM_ISOPTIONAL(romp))
 	{
@@ -504,7 +512,7 @@ void rom_load_manager::dump_wrong_and_correct_checksums(const util::hash_collect
 
 void rom_load_manager::verify_length_and_hash(emu_file *file, std::string_view name, u32 explength, const util::hash_collection &hashes)
 {
-// 禁用 修改的 (加斯顿90)
+// 修改的 (加斯顿90)
 /****************************************************************************************************************************************
 	// we've already complained if there is no file
 	if (!file)
@@ -545,8 +553,9 @@ void rom_load_manager::verify_length_and_hash(emu_file *file, std::string_view n
 			m_knownbad++;
 		}
 	}
- *****************************************************************************************************************************************/
+*****************************************************************************************************************************************/
 }
+
 
 /*-------------------------------------------------
     display_loading_rom_message - display
@@ -555,7 +564,7 @@ void rom_load_manager::verify_length_and_hash(emu_file *file, std::string_view n
 
 void rom_load_manager::display_loading_rom_message(const char *name, bool from_list)
 {
-// 禁用 修改的 (加斯顿90)
+// 修改的 (加斯顿90)
 /****************************************************************************************************************************************
 	std::string buffer;
 	if (name)
@@ -565,7 +574,7 @@ void rom_load_manager::display_loading_rom_message(const char *name, bool from_l
 
 	if (!machine().ui().is_menu_active())
 		machine().ui().set_startup_text(buffer.c_str(), false);
- *****************************************************************************************************************************************/
+*****************************************************************************************************************************************/
 }
 
 
@@ -643,7 +652,7 @@ void rom_load_manager::region_post_process(memory_region *region, bool invert)
 
 std::unique_ptr<emu_file> rom_load_manager::open_rom_file(std::initializer_list<std::reference_wrapper<const std::vector<std::string> > > searchpath, const rom_entry *romp, std::vector<std::string> &tried_file_names, bool from_list)
 {
-	osd_file::error filerr = osd_file::error::NOT_FOUND;
+	std::error_condition filerr = std::errc::no_such_file_or_directory;
 	u32 const romsize = rom_file_size(romp);
 	tried_file_names.clear();
 
@@ -664,19 +673,27 @@ std::unique_ptr<emu_file> rom_load_manager::open_rom_file(std::initializer_list<
 			break;
 	}
 
+// 修改的 (Eziochiu) 
+/***************************************************************************************************************************/
+	m_ips_patch = ips::assign_patch(ROM_GETNAME(romp));
+	osd_printf_info("IPS: assign_patch('%s') returned %s\n", ROM_GETNAME(romp), m_ips_patch ? "PATCH FOUND" : "nullptr");
+	if (m_ips_patch)
+		osd_printf_info("IPS: ROM '%s' has IPS patch assigned\n", ROM_GETNAME(romp));
+/***************************************************************************************************************************/
+
 	// update counters
 	m_romsloaded++;
 	m_romsloadedsize += romsize;
 
 	// return the result
-	if (osd_file::error::NONE != filerr)
+	if (filerr)
 		return nullptr;
 	else
 		return result;
 }
 
 
-std::unique_ptr<emu_file> rom_load_manager::open_rom_file(const std::vector<std::string> &paths, std::vector<std::string> &tried, bool has_crc, u32 crc, std::string_view name, osd_file::error &filerr)
+std::unique_ptr<emu_file> rom_load_manager::open_rom_file(const std::vector<std::string> &paths, std::vector<std::string> &tried, bool has_crc, u32 crc, std::string_view name, std::error_condition &filerr)
 {
 	// record the set names we search
 	tried.insert(tried.end(), paths.begin(), paths.end());
@@ -690,7 +707,7 @@ std::unique_ptr<emu_file> rom_load_manager::open_rom_file(const std::vector<std:
 		filerr = result->open(name);
 
 	// don't return anything if unsuccessful
-	if (osd_file::error::NONE != filerr)
+	if (filerr)
 		return nullptr;
 	else
 		return result;
@@ -704,13 +721,22 @@ std::unique_ptr<emu_file> rom_load_manager::open_rom_file(const std::vector<std:
 
 int rom_load_manager::rom_fread(emu_file *file, u8 *buffer, int length, const rom_entry *parent_region)
 {
-	if (file) // files just pass through
-		return file->read(buffer, length);
+// 修改的 (Eziochiu) 
+/********************************************************************************************************************************/
+	int bytes_read = length;
 
-	if (!ROMREGION_ISERASE(parent_region)) // otherwise, fill with randomness unless it was already specifically erased
+	if (file) // files just pass through
+		bytes_read = file->read(buffer, length);
+	else if (!ROMREGION_ISERASE(parent_region)) // otherwise, fill with randomness unless it was already specifically erased
 		fill_random(buffer, length);
 
-	return length;
+	if (m_ips_patch)
+	{
+		ips::apply_patch(m_ips_patch, buffer, bytes_read);
+	}
+
+	return bytes_read;
+/********************************************************************************************************************************/
 }
 
 
@@ -735,8 +761,8 @@ int rom_load_manager::read_rom_data(emu_file *file, const rom_entry *parent_regi
 	LOG("Loading ROM data: offs=%X len=%X mask=%02X group=%d skip=%d reverse=%d\n", ROM_GETOFFSET(romp), numbytes, datamask, groupsize, skip, reversed);
 
 	/* make sure the length was an even multiple of the group size */
-	if (numbytes % groupsize != 0)
-		osd_printf_warning("Warning in RomModule definition: %s length not an even multiple of group size\n", romp->name());
+//	if (numbytes % groupsize != 0)
+//		osd_printf_warning("Warning in RomModule definition: %s length not an even multiple of group size\n", romp->name()); // HBMAME
 
 	/* make sure we only fill within the region space */
 	if (ROM_GETOFFSET(romp) + numgroups * groupsize + (numgroups - 1) * skip > m_region->bytes())
@@ -944,7 +970,7 @@ void rom_load_manager::process_rom_entries(std::initializer_list<std::reference_
 			{
 				file = open_rom_file(searchpath, romp, tried_file_names, from_list);
 				if (!file)
-					handle_missing_file(romp, tried_file_names, CHDERR_NONE);
+					handle_missing_file(romp, tried_file_names, std::error_condition());
 			}
 
 			// loop until we run out of reloads
@@ -1005,44 +1031,44 @@ void rom_load_manager::process_rom_entries(std::initializer_list<std::reference_
     open_disk_diff - open a DISK diff file
 -------------------------------------------------*/
 
-chd_error rom_load_manager::open_disk_diff(emu_options &options, const rom_entry *romp, chd_file &source, chd_file &diff_chd)
+std::error_condition rom_load_manager::open_disk_diff(emu_options &options, const rom_entry *romp, chd_file &source, chd_file &diff_chd)
 {
 	// TODO: use system name and/or software list name in the path - the current setup doesn't scale
 	std::string fname = romp->name() + ".dif";
 
-	/* try to open the diff */
+	// try to open the diff
 	LOG("Opening differencing image file: %s\n", fname.c_str());
 	emu_file diff_file(options.diff_directory(), OPEN_FLAG_READ | OPEN_FLAG_WRITE);
-	osd_file::error filerr = diff_file.open(fname);
-	if (filerr == osd_file::error::NONE)
+	std::error_condition filerr = diff_file.open(fname);
+	if (!filerr)
 	{
 		std::string fullpath(diff_file.fullpath());
 		diff_file.close();
 
 		LOG("Opening differencing image file: %s\n", fullpath.c_str());
-		return diff_chd.open(fullpath.c_str(), true, &source);
+		return diff_chd.open(fullpath, true, &source);
 	}
 
-	/* didn't work; try creating it instead */
+	// didn't work; try creating it instead
 	LOG("Creating differencing image: %s\n", fname.c_str());
 	diff_file.set_openflags(OPEN_FLAG_READ | OPEN_FLAG_WRITE | OPEN_FLAG_CREATE | OPEN_FLAG_CREATE_PATHS);
 	filerr = diff_file.open(fname);
-	if (filerr == osd_file::error::NONE)
+	if (!filerr)
 	{
 		std::string fullpath(diff_file.fullpath());
 		diff_file.close();
 
-		/* create the CHD */
+		// create the CHD
 		LOG("Creating differencing image file: %s\n", fullpath.c_str());
 		chd_codec_type compression[4] = { CHD_CODEC_NONE };
-		chd_error err = diff_chd.create(fullpath.c_str(), source.logical_bytes(), source.hunk_bytes(), compression, source);
-		if (err != CHDERR_NONE)
+		std::error_condition err = diff_chd.create(fullpath, source.logical_bytes(), source.hunk_bytes(), compression, source);
+		if (err)
 			return err;
 
 		return diff_chd.clone_all_metadata(source);
 	}
 
-	return CHDERR_FILE_NOT_FOUND;
+	return std::errc::no_such_file_or_directory;
 }
 
 
@@ -1064,7 +1090,7 @@ void rom_load_manager::process_disk_entries(std::initializer_list<std::reference
 		if (ROMENTRY_ISFILE(romp))
 		{
 			auto chd = std::make_unique<open_chd>(regiontag);
-			chd_error err;
+			std::error_condition err;
 
 			/* make the filename of the source */
 			const std::string filename = romp->name() + ".chd";
@@ -1073,9 +1099,15 @@ void rom_load_manager::process_disk_entries(std::initializer_list<std::reference
 			// FIXME: we've lost the ability to search parents here
 			LOG("Opening disk image: %s\n", filename.c_str());
 			err = do_open_disk(machine().options(), searchpath, romp, chd->orig_chd(), next_parent);
-			if (err != CHDERR_NONE)
+			if (err)
 			{
-				handle_missing_file(romp, std::vector<std::string>(), err);
+				std::vector<std::string> tried;
+				for (auto const &paths : searchpath)
+				{
+					for (std::string const &path : paths.get())
+						tried.emplace_back(path);
+				}
+				handle_missing_file(romp, tried, err);
 				chd = nullptr;
 				continue;
 			}
@@ -1103,9 +1135,9 @@ void rom_load_manager::process_disk_entries(std::initializer_list<std::reference
 			{
 				/* try to open or create the diff */
 				err = open_disk_diff(machine().options(), romp, chd->orig_chd(), chd->diff_chd());
-				if (err != CHDERR_NONE)
+				if (err)
 				{
-					m_errorstring.append(string_format("%s DIFF CHD ERROR: %s\n", filename, chd_file::error_string(err)));
+					m_errorstring.append(string_format("%s DIFF CHD ERROR: %s\n", filename, err.message()));
 					m_errors++;
 					chd = nullptr;
 					continue;
@@ -1137,7 +1169,7 @@ std::vector<std::string> rom_load_manager::get_software_searchpath(software_list
     device
 -------------------------------------------------*/
 
-chd_error rom_load_manager::open_disk_image(const emu_options &options, const device_t &device, const rom_entry *romp, chd_file &image_chd)
+std::error_condition rom_load_manager::open_disk_image(const emu_options &options, const device_t &device, const rom_entry *romp, chd_file &image_chd)
 {
 	const std::vector<std::string> searchpath(device.searchpath());
 
@@ -1156,7 +1188,7 @@ chd_error rom_load_manager::open_disk_image(const emu_options &options, const de
     software item
 -------------------------------------------------*/
 
-chd_error rom_load_manager::open_disk_image(const emu_options &options, software_list_device &swlist, const software_info &swinfo, const rom_entry *romp, chd_file &image_chd)
+std::error_condition rom_load_manager::open_disk_image(const emu_options &options, software_list_device &swlist, const software_info &swinfo, const rom_entry *romp, chd_file &image_chd)
 {
 	std::vector<software_info const *> parents;
 	std::vector<std::string> searchpath = make_software_searchpath(swlist, swinfo, parents);
@@ -1205,7 +1237,7 @@ void rom_load_manager::normalize_flags_for_device(std::string_view rgntag, u8 &w
 /*-------------------------------------------------
     load_software_part_region - load a software part
 
-    This is used by MESS when loading a piece of
+    This is used by MAME when loading a piece of
     software. The code should be merged with
     process_region_list or updated to use a slight
     more general process_region_list.
@@ -1225,15 +1257,14 @@ void rom_load_manager::load_software_part_region(device_t &device, software_list
 	const software_info *const swinfo = swlist.find(std::string(swname));
 	if (swinfo)
 	{
-		// dispay a warning for unsupported software
+		// display a warning for unsupported software
 		// TODO: list supported clones like we do for machines?
-		const u32 supported(swinfo->supported());
-		if (supported == SOFTWARE_SUPPORTED_PARTIAL)
+		if (swinfo->supported() == software_support::PARTIALLY_SUPPORTED)
 		{
 			m_errorstring.append(string_format("WARNING: support for software %s (in list %s) is only partial\n", swname, swlist.list_name()));
 			m_softwarningstring.append(string_format("Support for software %s (in list %s) is only partial\n", swname, swlist.list_name()));
 		}
-		if (supported == SOFTWARE_SUPPORTED_NO)
+		else if (swinfo->supported() == software_support::UNSUPPORTED)
 		{
 			m_errorstring.append(string_format("WARNING: support for software %s (in list %s) is only preliminary\n", swname, swlist.list_name()));
 			m_softwarningstring.append(string_format("Support for software %s (in list %s) is only preliminary\n", swname, swlist.list_name()));
@@ -1435,6 +1466,11 @@ rom_load_manager::rom_load_manager(running_machine &machine)
 	, m_region(nullptr)
 	, m_errorstring()
 	, m_softwarningstring()
+
+// 修改的 (Eziochiu) 
+/********************************/
+	, m_ips_patch(nullptr)
+/********************************/
 {
 	// figure out which BIOS we are using
 	std::map<std::string_view, std::string> card_bios;
@@ -1472,6 +1508,16 @@ rom_load_manager::rom_load_manager(running_machine &machine)
 	// count the total number of ROMs
 	count_roms();
 
+// 修改的 (Eziochiu) 
+/*********************************************************************************************************/
+	const char *patch_name = machine.options().value(OPTION_IPS);
+	if (patch_name && *patch_name && !ips::open_entry(machine, patch_name, this, machine.system().rom))
+	{
+		// Error handling if patch specified but failed to load
+		osd_printf_warning("IPS: Failed to load IPS patch: %s\n", patch_name);
+	}
+/*********************************************************************************************************/
+
 	// reset the disk list
 	m_chd_list.clear();
 
@@ -1480,6 +1526,11 @@ rom_load_manager::rom_load_manager(running_machine &machine)
 
 	// display the results and exit
 	display_rom_load_results(false);
+
+// 修改的 (Eziochiu) 
+/********************************/
+	ips::close_entry(this);
+/********************************/
 }
 
 

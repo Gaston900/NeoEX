@@ -1699,6 +1699,7 @@ captcommjr1                     // 28/09/1991 (c) 1991 (Japan)
 captcommr1                      // 14/10/1991 (c) 1991 (World)
 captcommu                       // 28/09/1991 (c) 1991 (USA)
 cawing                          // 12/10/1990 (c) 1990 (World)
+cawingjr
 cawingj                         // 12/10/1990 (c) 1990 (Japan)
 cawingr1                        // 09/10/1990 (c) 1990 (World)
 cawingu                         // 30/11/1990 (c) 1990 (USA)
@@ -1798,7 +1799,7 @@ sf2                             // 22/05/1991 (c) 1991 (World)
 sf2acc                          // hack
 sf2acca                         // hack
 sf2accp2                        // hack
-//sf2amf                          // bootleg (Deactivated)
+sf2amf                          // bootleg (Deactivated)
 sf2amf2                         // bootleg
 sf2amf3                         // bootleg
 sf2bhh                          // hack
@@ -1859,7 +1860,7 @@ sf2reda                         // bootleg
 sf2redp2                        // hack
 sf2rk                           // bootleg
 sf2rules                        // bootleg
-//sf2stt                          // bootleg (Deactivated)
+sf2stt                          // bootleg (Deactivated)
 sf2thndr                        // hack
 sf2thndr2                       // bootleg
 sf2ua                           // 06/02/1991 (c) 1991 (USA)
@@ -1911,11 +1912,13 @@ wonder3                         // 20/05/1991 (c) 1991 (Japan)
 
 @source:cps1bl_5205.cpp
 captcommb2                      // bootleg
+//captcommb3                      // bootleg
 knightsb                        // bootleg
 knightsb3                       // bootleg
 knightsb4                       // bootleg
 sf2b                            // bootleg
 sf2b2                           // bootleg
+sf2b5                           // bootleg
 sf2ceb                          // bootleg
 sf2ceb2                         // bootleg
 sf2ceb3                         // bootleg
@@ -1929,6 +1932,7 @@ sf2mdtb                         // bootleg
 dinopic                         // bootleg
 dinopic2                        // bootleg
 dinopic3                        // bootleg
+dinopic4                        // bootleg
 jurassic99                      // bootleg
 punipic                         // bootleg
 punipic2                        // bootleg
@@ -1974,6 +1978,7 @@ batcira                         // 19/03/1997 (c) 1997 (Asia)
 batcird                         //
 batcirj                         // 19/03/1997 (c) 1997 (Japan)
 choko                           // 20/08/2001 (c) 2001 Mitchell (Japan)
+chokop                          //
 csclub                          // 17/10/1997 (c) 1997 (Euro)
 csclub1                         // 22/07/1997 (c) 1997 (Euro)
 csclub1d                        //
@@ -2042,6 +2047,7 @@ hsf2a                           // 02/02/2004 (c) 2003, 2004 (Asia)
 hsf2d                           //
 hsf2j                           // 02/02/2004 (c) 2003, 2004 (Japan)
 hsf2j1                          // 22/12/2003 (c) 2003, 2004 (Japan)
+hsf2j2                          //
 jyangoku                        // 27/05/1999 (c) 1999 (Japan)
 megaman2                        // 08/07/1996 (c) 1996 (USA)
 megaman2a                       // 08/07/1996 (c) 1996 (Asia)
@@ -2112,6 +2118,7 @@ pzloop2                         // 02/03/2001 (c) 2001 Mitchell (Euro)
 pzloop2j                        // 26/02/2001 (c) 2001 Mitchell (Japan)
 pzloop2jd                       //
 pzloop2jr1                      // 05/02/2001 (c) 2001 Mitchell (Japan)
+pzloop2jp                       //
 qndream                         // 26/08/1996 (c) 1996 (Japan)
 ringdest                        // 02/09/1994 (c) 1994 (Euro)
 ringdesta                       // 31/08/1994 (c) 1994 (Asia)
@@ -2258,6 +2265,7 @@ xmvsfj                          // 23/10/1996 (c) 1996 (Japan)
 xmvsfjr1                        // 04/10/1996 (c) 1996 (Japan)
 xmvsfjr2                        // 10/09/1996 (c) 1996 (Japan)
 xmvsfjr3                        // 09/09/1996 (c) 1996 (Japan)
+xmvsfjr4                        //
 xmvsfr1                         // 10/09/1996 (c) 1996 (Euro)
 xmvsfu                          // 23/10/1996 (c) 1996 (USA)
 xmvsfu1d                        //
@@ -2265,52 +2273,58 @@ xmvsfur1                        // 04/10/1996 (c) 1996 (USA)
 xmvsfur2                        // 10/09/1996 (c) 1996 (USA)
 
 @source:cps3.cpp
-jojo                            // 28/01/1999 (c) 1998 (Euro)
-jojoa                           // 28/01/1999 (c) 1998 (Asia)
-jojoar1                         // 08/01/1999 (c) 1998 (Asia)
-jojoar2                         // 02/12/1998 (c) 1998 (Asia)
-jojoba                          // 27/09/1999 (c) 1999 (Euro)
-jojobaj                         // 27/09/1999 (c) 1999 (Japan)
-jojobajr1                       // 13/09/1999 (c) 1999 (Japan)
-jojoban                         // 27/09/1999 (c) 1999 (Japan)
-jojobane                        // 27/09/1999 (c) 1999 (Euro)
-jojobaner1                      // 13/09/1999 (c) 1999 (Euro)
-jojobanr1                       // 13/09/1999 (c) 1999 (Japan)
-jojobar1                        // 13/09/1999 (c) 1999 (Euro)
-jojoj                           // 28/01/1999 (c) 1998 (Japan)
-jojojr1                         // 08/01/1999 (c) 1998 (Japan)
-jojojr2                         // 02/12/1998 (c) 1998 (Japan)
-jojon                           // 28/01/1999 (c) 1998 (Asia)
-jojonr1                         // 08/01/1999 (c) 1998 (Asia)
-jojonr2                         // 02/12/1998 (c) 1998 (Asia)
-jojor1                          // 08/01/1999 (c) 1998 (Euro)
-jojor2                          // 02/12/1998 (c) 1998 (Euro)
-jojou                           // 28/01/1999 (c) 1998 (USA)
-jojour1                         // 08/01/1999 (c) 1998 (USA)
-jojour2                         // 02/12/1998 (c) 1998 (USA)
-redearth                        // 21/11/1996 (c) 1996 (Euro)
-redearthr1                      // 23/10/1996 (c) 1996 (Euro)
-sfiii                           // 04/02/1997 (c) 1997 (Euro)
-sfiii2                          // 30/09/1997 (c) 1997 (USA)
-sfiii2h                         // 30/09/1997 (c) 1997 (Hispanic)
-sfiii2j                         // 30/09/1997 (c) 1997 (Japan)
-sfiii2n                         // 30/09/1997 (c) 1997 (Asia)
-sfiii3                          // 08/06/1999 (c) 1999 (Euro)
-sfiii3j                         // 08/06/1999 (c) 1999 (Japan)
-sfiii3jr1                       // 12/05/1999 (c) 1999 (Japan)
-sfiii3n                         // 08/06/1999 (c) 1999 (Japan)
-sfiii3nr1                       // 12/05/1999 (c) 1999 (Japan)
-sfiii3r1                        // 12/05/1999 (c) 1999 (Euro)
-sfiii3u                         // 08/06/1999 (c) 1999 (USA)
-sfiii3ur1                       // 12/05/1999 (c) 1999 (USA)
-sfiiia                          // 04/02/1997 (c) 1997 (Asia)
-sfiiih                          // 04/02/1997 (c) 1997 (Hispanic)
-sfiiij                          // 04/02/1997 (c) 1997 (Japan)
-sfiiin                          // 04/02/1997 (c) 1997 (Asia)
-sfiiina                         // 04/02/1997 (c) 1997 (Asia)
-sfiiiu                          // 04/02/1997 (c) 1997 (USA)
-warzard                         // 21/11/1996 (c) 1996 (Japan)
-warzardr1                       // 23/10/1996 (c) 1996 (Japan)
+jojo                            //
+jojoa                           //
+jojoar1                         //
+jojoar2                         //
+jojoba                          //
+jojoban                         //
+jojobar1                        //
+jojobajr1                       //
+jojobajr2                       //
+jojobanr1                       //
+jojobaner1                      //
+jojobaner2                      //
+jojobanr2                       //
+jojobar2                        //
+jojoj                           //
+jojojr1                         //
+jojojr2                         //
+jojon                           //
+jojonr1                         //
+jojonr2                         //
+jojor1                          //
+jojor2                          //
+jojou                           //
+jojour1                         //
+jojour2                         //
+redearth                        //
+redearthn                       //
+redearthnr1                     //
+redearthr1                      //
+sfiii                           //
+sfiii2                          //
+sfiii2h                         //
+sfiii2j                         //
+sfiii2n                         //
+sfiii3                          //
+sfiii3j                         //
+sfiii3jr1                       //
+sfiii3n                         //
+sfiii3na                        //
+sfiii3nr1                       //
+sfiii3nar1                      //
+sfiii3r1                        //
+sfiii3u                         //
+sfiii3ur1                       //
+sfiiia                          //
+sfiiih                          //
+sfiiij                          //
+sfiiin                          //
+sfiiina                         //
+sfiiiu                          //
+warzard                         //
+warzardr1                       //
 
 @source:cps3.cpp
 jojobald                        // Capcom
@@ -2331,14 +2345,14 @@ kodb                            // bootleg
 mtwinsb                         // bootleg
 sf2ceeabl                       // bootleg
 sf2ceeab2                       // bootleg
-sf2ceeab3
+sf2ceeab3                       // bootleg
 sf2md                           // bootleg
 sgyxz                           // bootleg (All-In Electronics)
 sgyxza                          // bootleg (All-In Electronics)
 sgyxzb                          // bootleg (All-In Electronics)
 varthb                          // bootleg
 wofabl                          // bootleg
-wofabla
+wofabla                         // bootleg
 wofr1bl                         // bootleg
 
 @source:cps1.cpp
@@ -2350,7 +2364,7 @@ dinoh	                        // Bootleg
 dinoha	                        // Bootleg
 dinotpic	                    // Bootleg
 dinohc	                        // Bootleg
-dinopic4	                    // Bootleg
+dinopic5	                    // Bootleg
 dinod	                        // Bootleg
 dikd	                        // Bootleg
 cawingh                         // Bootleg
@@ -2361,6 +2375,12 @@ knightsb5                       // Bootleg
 pnicku	                        // Bootleg
 punisherud1	                    // Bootleg
 punisherud2	                    // Bootleg
+sf2ceuab3                       // bootleg
+sf2ceuab4                       // bootleg
+//sf2ceuab5                     // bootleg
+//sf2ceuab6                       // bootleg
+//sf2ceuab7                       // bootleg
+//sf2ceuab9                       // bootleg
 sf2cejabl	                    // Bootleg
 sf2rb5	                        // Bootleg
 sf2rb6	                        // Bootleg
@@ -2372,6 +2392,7 @@ sf2amf5	                        // Bootleg
 sf2amf6	                        // Bootleg
 sf2amf7	                        // Bootleg
 sf2amf8	                        // Bootleg
+sf2amf11                        // Bootleg
 sf2amf12	                    // Bootleg
 sf2amf13	                    // Bootleg
 sf2amf14	                    // Bootleg
@@ -2389,13 +2410,15 @@ sf2koryua	                    // Bootleg
 sf2tlona2	                    // Bootleg
 sf2tlonb2	                    // Bootleg
 sf2tlonc2	                    // Bootleg
+sf2ceucbl                       // bootleg
+sf2rk2                          // bootleg
 sf2b3                           // Bootleg
 sf2b4                           // Bootleg
+sf2ebbl4                        // bootleg
 sf2mkot2                        // Bootleg
 sf2ly                           // Capcom
 sf2hfjb	                        // Bootleg
 sf2hfjb2                        // Bootleg
-sfzcha                          // Capcom
 //sf2hfub                         // Bootleg (It has a graphics problem)
 slammastud	                    // Bootleg
 wofah	                        // Bootleg

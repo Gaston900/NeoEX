@@ -107,7 +107,7 @@ files {
 	MAME_DIR .. "src/hbmame/drivers/cps1bl_pic.cpp",
 	MAME_DIR .. "src/hbmame/drivers/cps2.cpp",
 	MAME_DIR .. "src/hbmame/video/cps2.cpp",
-	MAME_DIR .. "src/hbmame/drivers/cps3.cpp",
+	MAME_DIR .. "src/hbmame/drivers/cps3hb.cpp",
 	MAME_DIR .. "src/mame/audio/cps3.cpp",
 	MAME_DIR .. "src/hbmame/drivers/fcrash.cpp",
 	MAME_DIR .. "src/mame/machine/kabuki.cpp",

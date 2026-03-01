@@ -123,7 +123,7 @@ static void PollGUIJoystick(void);
 static bool MameCommand(HWND hwnd,int id, HWND hwndCtl, UINT codeNotify);
 static void UpdateStatusBar(void);
 static bool TreeViewNotify(NMHDR *nm);
-static int CLIB_DECL SrcDriverDataCompareFunc(const void *arg1, const void *arg2);
+//static int CLIB_DECL SrcDriverDataCompareFunc(const void *arg1, const void *arg2);
 static void DisableSelection(void);
 static void EnableSelection(int nGame);
 static HICON GetSelectedPickItemIconSmall(void);
@@ -191,7 +191,8 @@ enum
 };
 
 static bool CommonListDialog(common_file_dialog_proc cfd, int filetype);
-static void SaveGameListToFile(char *szFile, int filetype);
+static void SaveGameListToFile(char *szFile);
+static void SaveROMListToFile(char *szFile);
 
 // 修改的 代码来源 (EKMAME)
 /**********************************************************/
@@ -348,8 +349,6 @@ static bool in_emulation = false;
 static bool game_launched = false;
 /* idle work at startup */
 static bool idle_work = false;
-/* object pool in use */
-static object_pool *mameui_pool;
 static int game_index = 0;
 static int game_total = 0;
 static int oldpercent = 0;
@@ -389,7 +388,7 @@ static HDC hDC = NULL;
 static HIMAGELIST hLarge = NULL;
 static HIMAGELIST hSmall = NULL;
 static HICON hIcon = NULL;
-static int *icon_index = NULL; 	/* for custom per-game icons */
+static std::unique_ptr<int[]> icon_index; // for custom per-game icons
 
 // 修改的 代码来源 (EKMAME)
 /********************************************************************************/
@@ -511,7 +510,6 @@ static HIMAGELIST himl_drag = NULL;
 static int game_dragged = 0; 					/* which game started the drag */
 static HTREEITEM prev_drag_drop_target = NULL; 	/* which tree view item we're currently highlighting */
 static bool g_in_treeview_edit = false;
-static srcdriver_data_type *sorted_srcdrivers = NULL;
 
 /***************************************************************************
     Global variables
@@ -537,6 +535,35 @@ extern const wchar_t* const column_names[COLUMN_MAX] =
 /***************************************************************************
     External functions
  ***************************************************************************/
+static void load_translation(emu_options &m_options)
+{
+	util::unload_translation();
+
+	std::string name = m_options.language();
+	if (name.empty())
+		return;
+
+	strreplace(name, " ", "_");
+	strreplace(name, "(", "");
+	strreplace(name, ")", "");
+
+	// MESSUI: See if language file exists. If not, try English, see if that exists. If not, use inbuilt default.
+	emu_file file(m_options.language_path(), OPEN_FLAG_READ);
+	if (file.open(name + PATH_SEPARATOR "strings.mo"))
+	{
+		osd_printf_verbose("Error opening translation file %s\n", name);
+		name = "English";
+		if (file.open(name + PATH_SEPARATOR "strings.mo"))
+		{
+			osd_printf_verbose("Error opening translation file %s\n", name);
+			return;
+		}
+	}
+
+	osd_printf_verbose("Loading translation file %s\n", file.fullpath());
+	util::load_translation(file);
+}
+
 class mameui_output_error : public osd_output
 {
 public:
@@ -633,7 +660,7 @@ static void RunMAME(int nGameIndex, const play_options *playopts)
 	// load interface language
 	load_translation(mame_opts);
 	// start LUA engine & http server
-	manager->start_http_server();
+	//manager->start_http_server();
 	manager->start_luaengine();
 
 	// set any specified play options
@@ -771,11 +798,6 @@ HWND GetProgressBar(void)
 	return hProgress;
 }
 
-object_pool *GetMameUIMemoryPool(void)
-{
-	return mameui_pool;
-}
-
 void GetRealColumnOrder(int order[])
 {
 	int tmpOrder[COLUMN_MAX];
@@ -888,7 +910,7 @@ HICON LoadIconFromFile(const char *iconname)
 			tmpStr = std::string(s1).append(PATH_SEPARATOR).append("icons.zip");
 			std::string tmpIcoName = std::string(iconname).append(".ico");
 
-			if (util::archive_file::open_zip(tmpStr, zip) == util::archive_file::error::NONE)
+			if (!util::archive_file::open_zip(tmpStr, zip))
 			{
 				if (zip->search(tmpIcoName, false) >= 0)
 				{
@@ -896,7 +918,7 @@ HICON LoadIconFromFile(const char *iconname)
 
 					if (bufferPtr)
 					{
-						if (zip->decompress(bufferPtr, zip->current_uncompressed_length()) == util::archive_file::error::NONE)
+						if (!zip->decompress(bufferPtr, zip->current_uncompressed_length()))
 							hIcon = FormatICOInMemoryToHICON(bufferPtr, zip->current_uncompressed_length());
 
 						free(bufferPtr);
@@ -910,7 +932,7 @@ HICON LoadIconFromFile(const char *iconname)
 				tmpStr = std::string(s1).append(PATH_SEPARATOR).append("icons.7z");
 				tmpIcoName = std::string(iconname).append(".ico");
 
-				if (util::archive_file::open_7z(tmpStr, zip) == util::archive_file::error::NONE)
+				if (!util::archive_file::open_7z(tmpStr, zip))
 				{
 					if (zip->search(tmpIcoName, false) >= 0)
 					{
@@ -918,7 +940,7 @@ HICON LoadIconFromFile(const char *iconname)
 
 						if (bufferPtr)
 						{
-							if (zip->decompress(bufferPtr, zip->current_uncompressed_length()) == util::archive_file::error::NONE)
+							if (!zip->decompress(bufferPtr, zip->current_uncompressed_length()))
 								hIcon = FormatICOInMemoryToHICON(bufferPtr, zip->current_uncompressed_length());
 
 							free(bufferPtr);
@@ -1162,7 +1184,7 @@ const char *funcGetParentName(const char *name)
 {
 	int index = GetGameNameIndex(name);// get current game index
 	int parentindex = GetParentIndex(&driver_list::driver(index));
-	//int parentindex = GetParentIndex_2(index);		   // get Parent current game
+
 	if( parentindex >= 0)
 	{
 		const char *parentname =  GetDriverGameName(parentindex);
@@ -1191,41 +1213,17 @@ int GetParentRomSetIndex(const game_driver *driver)
 	return -1;
 }
 
-int GetSrcDriverIndex(const char *name)
-{
-	srcdriver_data_type *srcdriver_index_info;
-	srcdriver_data_type key;
-	key.name = name;
-
-	srcdriver_index_info = (srcdriver_data_type *)bsearch(&key, sorted_srcdrivers, driver_list::total(), sizeof(srcdriver_data_type), SrcDriverDataCompareFunc);
-
-	if (srcdriver_index_info == NULL)
-		return -1;
-
-	return srcdriver_index_info->index;
-}
 
 /***************************************************************************
     Internal functions
  ***************************************************************************/
 
-static int CLIB_DECL SrcDriverDataCompareFunc(const void *arg1, const void *arg2)
-{
-	return strcmp(((srcdriver_data_type *)arg1)->name, ((srcdriver_data_type *)arg2)->name);
-}
-
 static void SetMainTitle(void)
 {
 	char buffer[256];
 
-	snprintf(buffer, std::size(buffer), "%s %s", MAMEUINAME, GetVersionString());
+	snprintf(buffer, std::size(buffer), "%s %s", MAMEUINAME, build_version);
 	winui_set_window_text_utf8(hMain, buffer);
-}
-
-static void memory_error(const char *message)
-{
-	ErrorMessageBox(message);
-	exit(-1);
 }
 
 static void Win32UI_init(void)
@@ -1256,24 +1254,9 @@ static void Win32UI_init(void)
 /******************************************/
 
 	srand((unsigned)time(NULL));
-	// create the memory pool
-	mameui_pool = pool_alloc_lib(memory_error);
 	// custom per-game icons
-	icon_index = (int*)pool_malloc_lib(mameui_pool, sizeof(int) * driver_list::total());
-	memset(icon_index, 0, sizeof(int) * driver_list::total());
-	// sorted list of source drivers by name
-	sorted_srcdrivers = (srcdriver_data_type *) pool_malloc_lib(mameui_pool, sizeof(srcdriver_data_type) * driver_list::total());
-	memset(sorted_srcdrivers, 0, sizeof(srcdriver_data_type) * driver_list::total());
+	icon_index = make_unique_clear<int[]>(driver_list::total());
 
-	for (int i = 0; i < driver_list::total(); i++)
-	{
-		const char *driver_name = core_strdup(GetDriverFileName(i));
-		sorted_srcdrivers[i].name = driver_name;
-		sorted_srcdrivers[i].index = i;
-		driver_name = NULL;
-	}
-
-	qsort(sorted_srcdrivers, driver_list::total(), sizeof(srcdriver_data_type), SrcDriverDataCompareFunc);
 	/* initialize tab control */
 	memset(&opts, 0, sizeof(opts));
 	opts.pCallbacks = &s_tabviewCallbacks;
@@ -1501,8 +1484,6 @@ static void Win32UI_exit(void)
 	SaveGameDefaults();
 	FreeFolders();
 	FreeScreenShot();
-	pool_free_lib(mameui_pool);
-	mameui_pool = NULL;
 	DestroyWindow(hMain);
 }
 
@@ -1582,6 +1563,7 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 		case WM_CLOSE:
 			if (GetExitDialog())
 			{
+
 // 修改的 (加斯顿90)
 /**********************************************************
 				if (winui_message_box_utf8(hMain, "Are you sure you want to quit?", MAMEUINAME, MB_ICONQUESTION | MB_YESNO) == IDNO)
@@ -1589,7 +1571,7 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 					SetFocus(hWndList);
 					return true;
 				}
-**********************************************************/
+ **********************************************************/
 			}
 
 			Win32UI_exit();
@@ -1774,7 +1756,7 @@ static bool GameCheck(void)
 		ProgressBarShow();
 	}
 /***********************************/
-
+	
 	if (bFolderCheck == true)
 	{
 		LVITEM lvi;
@@ -1870,7 +1852,6 @@ bool OnIdle(HWND hWnd)
 /*******************************************************************/
 
 	SetStatusBarText(0, pDescription);
-
 
 // 修改的 代码来源 (EKMAME)
 /*******************************************************************/
@@ -2467,6 +2448,12 @@ static void DisableSelection(void)
 
 	SetMenuItemInfo(hMenu, ID_FILE_PLAY, false, &mmi);
 	EnableMenuItem(hMenu, ID_FILE_PLAY, MF_GRAYED);
+
+// 修改的 (Eziochiu)
+/**************************************************/
+	EnableMenuItem(hMenu, ID_PLAY_IPS, MF_GRAYED);
+/**************************************************/
+
 	EnableMenuItem(hMenu, ID_FILE_PLAY_RECORD, MF_GRAYED);
 	EnableMenuItem(hMenu, ID_GAME_PROPERTIES, MF_GRAYED);
 	SetStatusBarText(0, "No selection");
@@ -2511,7 +2498,7 @@ static void EnableSelection(int nGame)
 /***************************************************************/
     pText = GetDescriptionByIndex(nGame, GetUsekoreanList());
 /***************************************************************/
-
+	
 	SetStatusBarText(0, pText);
 
 // 修改的 代码来源 (EKMAME)
@@ -2530,7 +2517,6 @@ static void EnableSelection(int nGame)
 	EnableMenuItem(hMenu, ID_GAME_PROPERTIES, 	MF_ENABLED);
 
 	if (bProgressShown && bListReady == true)
-		SetDefaultGame(GetDriverGameName(nGame));
 
 // 修改的 代码来源 (EKMAME)
 /************************************************************************/
@@ -2747,6 +2733,7 @@ static void SetView(int menu_id)
 // 修改的 代码来源 (EKMAME)
 /*******************************************************************************************/
 	// Associate the image lists with the list view control.
+
 	if (Picker_GetViewID(hWndList) == VIEW_GROUPED || menu_id == ID_VIEW_GROUPED)
 	{
 		// this changes the sort order, so redo everything
@@ -3079,6 +3066,20 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			MamePlayGame();
 			SetFocus(hWndList);
 			return true;
+
+// 修改的 (Eziochiu)
+/**********************************************************/
+		case ID_PLAY_IPS:
+		{
+			int game = Picker_GetSelectedItem(hWndList);
+			if (game >= 0)
+			{
+				ShowIPSDialog(hInst, hWnd, game);
+			}
+			SetFocus(hWndList);
+			return true;
+		}
+/**********************************************************/
 
 		case ID_FILE_PLAY_RECORD:
 			MamePlayRecordGame();
@@ -3933,9 +3934,10 @@ const wchar_t *GamePicker_GetItemString(HWND hwndPicker, int nItem, int nColumn,
 	switch(nColumn)
 	{
 		case COLUMN_GAMES:
+			/* Driver description */
+
 // 修改的 代码来源 (EKMAME)
 /*************************************************************************/
-			/* Driver description */
 			utf8_s = GetDescriptionByIndex(nItem, GetUsekoreanList());
 			break;
 /*************************************************************************/
@@ -4042,6 +4044,7 @@ static void AddDriverIcon(int nItem, int default_icon_index)
 	HICON hIcon = 0;
 	int nParentIndex = -1;
 
+	/* if already set to rom or clone icon, we've been here before */
 	if (icon_index[nItem] == 1 || icon_index[nItem] == 3)
 		return;
 
@@ -4051,6 +4054,7 @@ static void AddDriverIcon(int nItem, int default_icon_index)
 	{
           nParentIndex = GetParentIndex(&driver_list::driver(nItem));
 /**************************************************************************/
+
 		if( nParentIndex >= 0)
 		{
 			hIcon = LoadIconFromFile((char *)GetDriverGameName(nParentIndex));
@@ -4122,6 +4126,7 @@ static void ReloadIcons(void)
 	}
 }
 
+
 // 修改的 代码来源 (EKMAME)
 /********************************************************************************************************/
 static DWORD GetShellLargeIconSize(void)
@@ -4164,6 +4169,7 @@ static DWORD GetShellLargeIconSize(void)
 	return dwSize;
 }
 
+
 static DWORD GetShellSmallIconSize(void)
 {
 	DWORD dwSize = ICONMAP_WIDTH;
@@ -4192,10 +4198,10 @@ static void CreateIcons(void)
 	DWORD dwLargeIconSize = GetShellLargeIconSize();
 	HICON hIcon;
 	DWORD dwStyle;
-/********************************************************/
-	int icon_count = 0;
-	int grow = 5000; // 修改的 代码来源 (EKMAME)
 
+	int icon_count = 0;
+	int grow = 5000;
+/********************************************************/
 	while(g_iconData[icon_count].icon_name)
 		icon_count++;
 
@@ -4568,7 +4574,6 @@ static void MamePlayBackGame(void)
 
 	if (CommonFileDialog(GetOpenFileName, filename, FILETYPE_INPUT_FILES, false))
 	{
-		osd_file::error filerr;
 		wchar_t *t_filename = win_wstring_from_utf8(filename);
 		wchar_t *tempname = PathFindFileName(t_filename);
 		char *fname = win_utf8_from_wstring(tempname);
@@ -4577,9 +4582,9 @@ static void MamePlayBackGame(void)
 		free(fname);
 
 		emu_file check(GetInpDir(), OPEN_FLAG_READ);
-		filerr = check.open(name);
+		std::error_condition filerr = check.open(name);
 
-		if (filerr != osd_file::error::NONE)
+		if (filerr)
 		{
 			ErrorMessageBox("Could not open '%s' as a valid input file.", name);
 			return;
@@ -5019,7 +5024,6 @@ static void UpdateMenu(HMENU hMenu)
 
 // 修改的 代码来源 (EKMAME)
 /*************************************************************************************************************************/
-
 		wchar_t *t_description;
 
 		t_description= win_wstring_from_utf8(ConvertAmpersandString(GetDescriptionByIndex(nGame, GetUsekoreanList())));
@@ -5037,12 +5041,31 @@ static void UpdateMenu(HMENU hMenu)
 		mItem.cch = _tcslen(mItem.dwTypeData);
 
 		SetMenuItemInfo(hMenu, ID_FILE_PLAY, false, &mItem);
+
+// 修改的 (Eziochiu)
+/*******************************************************************************/
+		{
+			int nParentIndex = -1;
+			if (DriverIsClone(nGame))
+				nParentIndex = GetParentIndex(&driver_list::driver(nGame));
+			if (GetPatchCount(nGame, nParentIndex) > 0)
+				EnableMenuItem(hMenu, ID_PLAY_IPS, MF_ENABLED);
+			else
+				EnableMenuItem(hMenu, ID_PLAY_IPS, MF_GRAYED);
+		}
 		EnableMenuItem(hMenu, ID_CONTEXT_SELECT_RANDOM, MF_ENABLED);
 		free(t_description);
+/*******************************************************************************/
 	}
 	else
 	{
 		EnableMenuItem(hMenu, ID_FILE_PLAY, MF_GRAYED);
+
+// 修改的 (Eziochiu)
+/********************************************************/
+		EnableMenuItem(hMenu, ID_PLAY_IPS, MF_GRAYED);
+/********************************************************/
+
 		EnableMenuItem(hMenu, ID_FILE_PLAY_RECORD, MF_GRAYED);
 		EnableMenuItem(hMenu, ID_GAME_PROPERTIES, MF_GRAYED);
 		EnableMenuItem(hMenu, ID_CONTEXT_SELECT_RANDOM, MF_GRAYED);
@@ -5166,6 +5189,12 @@ void InitMainMenu(HMENU hMainMenu)
 	SetMenuItemBitmaps(hMainMenu, ID_HELP_CONTENTS, MF_BYCOMMAND, hHelp, hHelp);
 	SetMenuItemBitmaps(hMainMenu, ID_MAME_HOMEPAGE, MF_BYCOMMAND, hMameHome, hMameHome);
 	SetMenuItemBitmaps(hMainMenu, ID_FILE_PLAY, MF_BYCOMMAND, hPlay, hPlay);
+
+// 修改的 (Eziochiu)
+/***********************************************************************************/
+	SetMenuItemBitmaps(hMainMenu, ID_PLAY_IPS, MF_BYCOMMAND, hFolders, hFolders);
+/***********************************************************************************/
+
 	SetMenuItemBitmaps(hMainMenu, ID_VIDEO_SNAP, MF_BYCOMMAND, hVideo, hVideo);
 	SetMenuItemBitmaps(hMainMenu, ID_PLAY_M1, MF_BYCOMMAND, hPlayM1, hPlayM1);
 	SetMenuItemBitmaps(hMainMenu, ID_OPTIONS_DEFAULTS, MF_BYCOMMAND, hOptions, hOptions);
@@ -5304,6 +5333,12 @@ void InitBodyContextMenu(HMENU hBodyContextMenu)
 	SetMenuItemInfo(hBodyContextMenu, ID_FOLDER_SOURCEPROPERTIES, false, &mii);
 	SetMenuItemBitmaps(hBodyContextMenu, ID_CONTEXT_ADD_CUSTOM, MF_BYCOMMAND, hCustom, hCustom);
 	SetMenuItemBitmaps(hBodyContextMenu, ID_FILE_PLAY, MF_BYCOMMAND, hPlay, hPlay);
+
+// 修改的 (Eziochiu)
+/*****************************************************************************************/
+	SetMenuItemBitmaps(hBodyContextMenu, ID_PLAY_IPS, MF_BYCOMMAND, hFolders, hFolders);
+/*****************************************************************************************/
+
 	SetMenuItemBitmaps(hBodyContextMenu, ID_VIDEO_SNAP, MF_BYCOMMAND, hVideo, hVideo);
 	SetMenuItemBitmaps(hBodyContextMenu, ID_PLAY_M1, MF_BYCOMMAND, hPlayM1, hPlayM1);
 	SetMenuItemBitmaps(hBodyContextMenu, ID_VIEW_ZIP, MF_BYCOMMAND, hZip, hZip);
@@ -5623,7 +5658,7 @@ void UpdateListView(void)
     if( (GetViewMode() == VIEW_GROUPED) || (GetViewMode() == VIEW_REPORT ) )
 	    (void)ListView_RedrawItems(hWndList, ListView_GetTopIndex(hWndList), ListView_GetTopIndex(hWndList) + ListView_GetCountPerPage(hWndList));
 /***************************************************************************************************************************************************/
-	
+
 	SetFocus(hWndList);
 }
 
@@ -5878,11 +5913,20 @@ static bool CommonListDialog(common_file_dialog_proc cfd, int filetype)
 	of.hInstance = NULL;
 
 	if (filetype == FILETYPE_GAME_LIST)
+	{
 		of.lpstrTitle  = TEXT("Enter a name for the game list file");
+		of.lpstrFilter = TEXT("Standard text file (*.txt)\0*.txt\0");
+		of.lpstrInitialDir = list_directory;
+		of.lpstrDefExt = TEXT("txt");
+	}
 	else
-		of.lpstrTitle  = TEXT("Enter a name for the ROMs list file");
+	{
+		of.lpstrTitle  = TEXT("Enter a filter name");
+		of.lpstrFilter = TEXT("Filter file (*.ini)\0*.ini\0");
+		of.lpstrInitialDir = win_wstring_from_utf8(GetFolderDir());
+		of.lpstrDefExt = TEXT("ini");
+	}
 
-	of.lpstrFilter = TEXT("Standard text file (*.txt)\0*.txt\0");
 	of.lpstrCustomFilter = NULL;
 	of.nMaxCustFilter = 0;
 	of.nFilterIndex = 1;
@@ -5890,10 +5934,8 @@ static bool CommonListDialog(common_file_dialog_proc cfd, int filetype)
 	of.nMaxFile = sizeof(szFile);
 	of.lpstrFileTitle = NULL;
 	of.nMaxFileTitle = 0;
-	of.lpstrInitialDir = list_directory;
 	of.nFileOffset = 0;
 	of.nFileExtension = 0;
-	of.lpstrDefExt = TEXT("txt");
 	of.lCustData = 0;
 	of.lpfnHook = &OFNHookProc;
 	of.lpTemplateName = NULL;
@@ -5913,7 +5955,10 @@ static bool CommonListDialog(common_file_dialog_proc cfd, int filetype)
 				SetFileAttributes(szFile, FILE_ATTRIBUTE_NORMAL);
 			}
 
-			SaveGameListToFile(win_utf8_from_wstring(szFile), filetype);
+			if (filetype == FILETYPE_GAME_LIST)
+				SaveGameListToFile(win_utf8_from_wstring(szFile));
+			else
+				SaveROMListToFile(win_utf8_from_wstring(szFile));
 			// Save current directory (avoids mame file creation further failure)
 			GetCurrentDirectory(MAX_PATH, list_directory);
 			// Restore current file path
@@ -5926,13 +5971,10 @@ static bool CommonListDialog(common_file_dialog_proc cfd, int filetype)
 			break;
 	}
 
-	if (success)
-		return true;
-	else
-		return false;
+	return success;
 }
 
-static void SaveGameListToFile(char *szFile, int filetype)
+static void SaveGameListToFile(char *szFile)
 {
 	int nListCount = ListView_GetItemCount(hWndList);
 	const char *CrLf = "\n\n";
@@ -5948,12 +5990,8 @@ static void SaveGameListToFile(char *szFile, int filetype)
 	}
 
 	// Title
-	fprintf(f, "%s %s.%s", MAMEUINAME, GetVersionString(), CrLf);
-
-	if (filetype == FILETYPE_GAME_LIST)
-		fprintf(f, "This is the current list of games.%s", CrLf);
-	else
-		fprintf(f, "This is the current list of ROMs.%s", CrLf);
+	fprintf(f, "%s %s.%s", MAMEUINAME, build_version, CrLf);
+	fprintf(f, "This is the current list of games.%s", CrLf);
 
 	// Current folder
 	fprintf(f, "Current folder : <");
@@ -5964,14 +6002,11 @@ static void SaveGameListToFile(char *szFile, int filetype)
 		LPTREEFOLDER lpF = GetFolder(lpFolder->m_nParent);
 
 		if (lpF->m_nParent == -1)
-				fprintf(f, "\\");
- 
+			fprintf(f, "\\");
+
 		fprintf(f, "%s", lpF->m_lpTitle);
-		fprintf(f, "\\");
 	}
-	else
-		fprintf(f, "\\");
- 
+	fprintf(f, "\\");
 	fprintf(f, "%s>%s.%s", lpFolder->m_lpTitle, (lpFolder->m_dwFlags & F_CUSTOM) ? " (custom folder)" : "", CrLf);
 
 	// Sorting
@@ -5994,12 +6029,41 @@ static void SaveGameListToFile(char *szFile, int filetype)
 		{
 			int nGameIndex  = lvi.lParam;
 
-			if (filetype == FILETYPE_GAME_LIST)
-				fprintf(f, "%s", GetDriverGameTitle(nGameIndex));
-			else
-				fprintf(f, "%s", GetDriverGameName(nGameIndex));
+			fprintf(f, "%s%s", GetDriverGameTitle(nGameIndex),"\n");
+		}
+	}
 
-			fprintf(f, "\n");
+	fclose(f);
+	winui_message_box_utf8(hMain, "File saved successfully.", MAMEUINAME, MB_ICONINFORMATION | MB_OK);
+}
+
+static void SaveROMListToFile(char *szFile)
+{
+	int nListCount = ListView_GetItemCount(hWndList);
+	LVITEM lvi;
+
+	FILE *f = fopen(szFile, "w");
+
+	if (f == NULL)
+	{
+		ErrorMessageBox("Error : unable to open file");
+		return;
+	}
+
+	// Header
+	fprintf(f, "[ROOT_FOLDER]\n");
+
+	// Games
+	for (int nIndex = 0; nIndex < nListCount; nIndex++)
+	{
+		lvi.iItem = nIndex;
+		lvi.iSubItem = 0;
+		lvi.mask = LVIF_PARAM;
+
+		if (ListView_GetItem(hWndList, &lvi))
+		{
+			int nGameIndex  = lvi.lParam;
+			fprintf(f, "%s%s", driver_list::driver(nGameIndex).name,"\n");
 		}
 	}
 

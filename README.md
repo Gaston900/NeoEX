@@ -3,7 +3,7 @@ What is NeoEX?
 
 It is a project that implements all the features of the [SLUGNEO](https://github.com/Gaston900/SlugNeo) emulator, dedicated to preserving the entire NeoGeo "MVS/AES" system (Predecrypted, Decrypted, HomeBrew, Earlier, Bootleg, Multi Game Doctor 2, CD Conversion, Darksoft, NeoSD And Hack)
 
-Version 0.232 [[HBMAME](https://github.com/Robbbert/hbmame)] is being used as the base system.
+Version 0.245 [[HBMAME](https://github.com/Robbbert/hbmame)] is being used as the base system.
 
 I am only supporting the operating systems, Windows 7, Windows 8, Windows 10 and Windows 11.
 
@@ -15,7 +15,7 @@ And we will apply this command to start the compilation, this command is for Win
 ```
 make PTR64=1 SUBTARGET=arcade OSD=winui NOWERROR=1 STRIP_SYMBOLS=1
 ```
-The compilation [TOOL](https://github.com/mamedev/buildtools/releases) is suggested to be version msys64 2019-03-26.
+The compilation [TOOL](https://github.com/mamedev/buildtools/releases) is suggested to be version msys64 2022-01-11.
 
 Open Source Software Projects
 ------------------------------

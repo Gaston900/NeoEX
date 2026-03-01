@@ -1,5 +1,5 @@
 // license:BSD-3-Clause
-// copyright-holders:Bryan McPhail, Ernesto Corvi,Andrew Prime, Zsolt Vasvari, Gaston90
+// copyright-holders:Bryan McPhail,Ernesto Corvi,Andrew Prime,Zsolt Vasvari
 // thanks-to:Fuzz
 /***************************************************************************
 
@@ -85,6 +85,8 @@
  *  Main CPU interrupt generation
  *
  *************************************/
+
+
 
 // The display counter is automatically reloaded with the load register contents on scanline 224,
 // 1146 mclks from the rising edge of /HSYNC.
@@ -308,7 +310,7 @@ void neogeo_state::io_control_w(offs_t offset, u8 data)
 
 u16 neogeo_state::neogeo_unmapped_r(address_space &space)
 {
-	u16  ret;
+	u16  ret = 0U;
 
 	/* unmapped memory returns the last word on the data bus, which is almost always the opcode
 	   of the next instruction due to prefetch */
@@ -365,7 +367,7 @@ u16 neogeo_state::memcard_r(offs_t offset)
 {
 	m_maincpu->eat_cycles(2); // insert waitstate
 
-	u16  ret;
+	u16  ret = 0U;
 
 	if (m_memcard->present() != -1)
 		ret = m_memcard->read(offset) | 0xff00;
@@ -455,12 +457,7 @@ void neogeo_state::neogeo_audio_cpu_banking_init(int set_entry)
 {
 	if (m_type == NEOGEO_CD) return;
 
-	int region;
-	int bank;
-	u8 *rgn;
-	u32 address_mask;
-
-	rgn = memregion("audiocpu")->base();
+	u8 *rgn = memregion("audiocpu")->base();
 
 	/* audio bios/cartridge selection */
 	m_bank_audio_main->configure_entry(1, memregion("audiocpu")->base());
@@ -477,12 +474,12 @@ void neogeo_state::neogeo_audio_cpu_banking_init(int set_entry)
 	m_bank_audio_cart[2] = membank("audio_c000");
 	m_bank_audio_cart[3] = membank("audio_8000");
 
-	address_mask = (memregion("audiocpu")->bytes() - 0x10000 - 1) & 0x3ffff;
+	u32 address_mask = (memregion("audiocpu")->bytes() - 0x10000 - 1) & 0x3ffff;
 
 
-	for (region = 0; region < 4; region++)
+	for (u8 region = 0; region < 4; region++)
 	{
-		for (bank = 0xff; bank >= 0; bank--)
+		for (int bank = 0xff; bank >= 0; bank--)
 		{
 			u32 bank_address = 0x10000 + ((bank << (11 + region)) & address_mask);
 			m_bank_audio_cart[region]->configure_entry(bank, &rgn[bank_address]);
@@ -629,8 +626,8 @@ void neogeo_state::init_neogeo()
 	m_maincpu->space(AS_PROGRAM).install_read_handler(0x300000, 0x300001, 0, 0x01ff7e, 0, read16smo_delegate(*this, FUNC(neogeo_state::in0_r)));
 	m_maincpu->space(AS_PROGRAM).install_read_handler(0x340000, 0x340001, 0, 0x01fffe, 0, read16smo_delegate(*this, FUNC(neogeo_state::in1_r)));
     m_maincpu->space(AS_PROGRAM).install_read_port(0x300000, 0x300001, 0x01ff7e, "DSW");
-	m_maincpu->space(AS_PROGRAM).install_read_port(0x340000, 0x340001, 0x01fffe, "P2");
-    m_sprgen->set_sprite_region(m_region_sprites->base(), m_region_sprites->bytes());
+    m_maincpu->space(AS_PROGRAM).install_read_port(0x340000, 0x340001, 0x01fffe, "P2");
+	m_sprgen->set_sprite_region(m_region_sprites->base(), m_region_sprites->bytes());
 	m_sprgen->set_fixed_regions(m_region_fixed->base(), m_region_fixed->bytes(), m_region_fixedbios);
 }
 
@@ -759,6 +756,7 @@ u16 neogeo_state::neogeo_slot_rom_low_vectors_r(offs_t offset)
 
 }
 
+
 /*************************************
  *
  *  Main CPU memory handlers
@@ -814,6 +812,8 @@ void neogeo_state::audio_map(address_map &map)
 	map(0xf800,0xffff).ram();
 }
 
+
+
 /*************************************
  *
  *  Audio CPU port handlers
@@ -828,6 +828,8 @@ void neogeo_state::audio_io_map(address_map &map)
 	map(0x08,0x0b).mirror(0x00f0).select(0xff00).r(FUNC(neogeo_state::audio_cpu_bank_select_r));
 	map(0x0c,0x0c).mirror(0xff00).w("soundlatch2",FUNC(generic_latch_8_device::write));
 }
+
+
 
 /*************************************
  *
@@ -861,25 +863,47 @@ INPUT_PORTS_START( neogeo )
 	PORT_DIPNAME( 0x80, 0x80, "Freeze" ) PORT_DIPLOCATION("SW:8")
 	PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP ) PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0x0100)
-	PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN ) PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0x0200)
-	PORT_BIT( 0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT ) PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0x0400)
-	PORT_BIT( 0x0800, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT ) PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0x0800)
+	PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP )
+	PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN )
+	PORT_BIT( 0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT )
+	PORT_BIT( 0x0800, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT )
 	PORT_BIT( 0x1000, IP_ACTIVE_LOW, IPT_BUTTON1 ) PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0x1000)
 	PORT_BIT( 0x2000, IP_ACTIVE_LOW, IPT_BUTTON2 ) PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0x2000)
 	PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 ) PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0x4000)
 	PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON4 ) PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0x8000)
+	PORT_BIT( 0x3000, IP_ACTIVE_LOW, IPT_BUTTON_AB ) PORT_NAME("P1 Button Combokey (Button 1 + Button 2)") PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0x3000)	
+	PORT_BIT( 0x5000, IP_ACTIVE_LOW, IPT_BUTTON_AC ) PORT_NAME("P1 Button Combokey (Button 1 + Button 3)") PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0x5000)
+	PORT_BIT( 0x9000, IP_ACTIVE_LOW, IPT_BUTTON_AD ) PORT_NAME("P1 Button Combokey (Button 1 + Button 4)") PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0x9000)	
+	PORT_BIT( 0x2000+0x4000, IP_ACTIVE_LOW, IPT_BUTTON_BC ) PORT_NAME("P1 Button Combokey (Button 2 + Button 3)") PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0x6000)
+	PORT_BIT( 0x2000+0x8000, IP_ACTIVE_LOW, IPT_BUTTON_BD ) PORT_NAME("P1 Button Combokey (Button 2 + Button 4)") PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0xA000)
+	PORT_BIT( 0x4000+0x8000, IP_ACTIVE_LOW, IPT_BUTTON_CD ) PORT_NAME("P1 Button Combokey (Button 3 + Button 4)") PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0xC000)
+	PORT_BIT( 0x1000+0x2000+0x4000, IP_ACTIVE_LOW, IPT_BUTTON_ABC ) PORT_NAME("P1 Button Combokey (Button 1 + Button 2 + Button 3)") PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0x7000)	
+	PORT_BIT( 0x1000+0x2000+0x8000, IP_ACTIVE_LOW, IPT_BUTTON_ABD ) PORT_NAME("P1 Button Combokey (Button 1 + Button 2 + Button 4)") PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0xB000)
+	PORT_BIT( 0x1000+0x4000+0x8000, IP_ACTIVE_LOW, IPT_BUTTON_ACD ) PORT_NAME("P1 Button Combokey (Button 1 + Button 3 + Button 4)") PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0xD000)
+	PORT_BIT( 0x2000+0x4000+0x8000, IP_ACTIVE_LOW, IPT_BUTTON_BCD ) PORT_NAME("P1 Button Combokey (Button 2 + Button 3 + Button 4)") PORT_CONDITION("DSW", 0xF000, NOTEQUALS, 0xE000)
+	PORT_BIT( 0x1000+0x2000+0x4000+0x8000, IP_ACTIVE_LOW, IPT_BUTTON_ABCD ) PORT_NAME("P1 Button Combokey (Button 1 + Button 2 + Button 3 + Button 4)") PORT_CONDITION("DSW", 0xF000, EQUALS, 0xF000)
 
 	PORT_START("P2")
 	PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNUSED )
-	PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP ) PORT_PLAYER(2) PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0x0100)
-	PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN ) PORT_PLAYER(2) PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0x0200)
-	PORT_BIT( 0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT ) PORT_PLAYER(2) PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0x0400)
-	PORT_BIT( 0x0800, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT ) PORT_PLAYER(2) PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0x0800)
+	PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP ) PORT_PLAYER(2)
+	PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN ) PORT_PLAYER(2)
+	PORT_BIT( 0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT ) PORT_PLAYER(2)
+	PORT_BIT( 0x0800, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT ) PORT_PLAYER(2)
 	PORT_BIT( 0x1000, IP_ACTIVE_LOW, IPT_BUTTON1 ) PORT_PLAYER(2) PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0x1000)
 	PORT_BIT( 0x2000, IP_ACTIVE_LOW, IPT_BUTTON2 ) PORT_PLAYER(2) PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0x2000)
 	PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 ) PORT_PLAYER(2) PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0x4000)
 	PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON4 ) PORT_PLAYER(2) PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0x8000)
+	PORT_BIT( 0x3000, IP_ACTIVE_LOW, IPT_BUTTON_AB ) PORT_PLAYER(2) PORT_NAME("P2 Button Combokey (Button 1 + Button 2)") PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0x3000)
+	PORT_BIT( 0x5000, IP_ACTIVE_LOW, IPT_BUTTON_AC ) PORT_PLAYER(2) PORT_NAME("P2 Button Combokey (Button 1 + Button 3)") PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0x5000)
+	PORT_BIT( 0x9000, IP_ACTIVE_LOW, IPT_BUTTON_AD ) PORT_PLAYER(2) PORT_NAME("P2 Button Combokey (Button 1 + Button 4)") PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0x9000)	
+	PORT_BIT( 0x2000+0x4000, IP_ACTIVE_LOW, IPT_BUTTON_BC ) PORT_PLAYER(2) PORT_NAME("P2 Button Combokey (Button 2 + Button 3)") PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0x6000)
+	PORT_BIT( 0x2000+0x8000, IP_ACTIVE_LOW, IPT_BUTTON_BD ) PORT_PLAYER(2) PORT_NAME("P2 Button Combokey (Button 2 + Button 4)") PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0xA000)
+	PORT_BIT( 0x4000+0x8000, IP_ACTIVE_LOW, IPT_BUTTON_CD ) PORT_PLAYER(2) PORT_NAME("P2 Button Combokey (Button 3 + Button 4)") PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0xC000)
+	PORT_BIT( 0x1000+0x2000+0x4000, IP_ACTIVE_LOW, IPT_BUTTON_ABC ) PORT_PLAYER(2) PORT_NAME("P2 Button Combokey (Button 1 + Button 2 + Button 3)") PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0x7000)
+	PORT_BIT( 0x1000+0x2000+0x8000, IP_ACTIVE_LOW, IPT_BUTTON_ABD ) PORT_PLAYER(2) PORT_NAME("P2 Button Combokey (Button 1 + Button 2 + Button 4)") PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0xB000)
+	PORT_BIT( 0x1000+0x4000+0x8000, IP_ACTIVE_LOW, IPT_BUTTON_ACD ) PORT_PLAYER(2) PORT_NAME("P2 Button Combokey (Button 1 + Button 3 + Button 4)") PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0xD000)
+	PORT_BIT( 0x2000+0x4000+0x8000, IP_ACTIVE_LOW, IPT_BUTTON_BCD ) PORT_PLAYER(2) PORT_NAME("P2 Button Combokey (Button 2 + Button 3 + Button 4)") PORT_CONDITION("P2", 0xF000, NOTEQUALS, 0xE000)
+	PORT_BIT( 0x1000+0x2000+0x4000+0x8000, IP_ACTIVE_LOW, IPT_BUTTON_ABCD ) PORT_PLAYER(2) PORT_NAME("P2 Button Combokey (Button 1 + Button 2 + Button 3 + Button 4)") PORT_CONDITION("P2", 0xF000, EQUALS, 0xF000)
 
 	PORT_START("SYSTEM")
 	PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNUSED )
@@ -916,28 +940,30 @@ static INPUT_PORTS_START( neogeo_6slot )
 INPUT_PORTS_END
 
 
+
+
 // Fixed
 const gfx_layout charlayout =
 {
-	8,8,			/* 8 x 8 chars */
+	8,8,            /* 8 x 8 chars */
 	RGN_FRAC(1,1),
-	4,				/* 4 bits per pixel */
+	4,              /* 4 bits per pixel */
 	{ 0, 1, 2, 3 },    /* planes are packed in a nibble */
 	{ 33*4, 32*4, 49*4, 48*4, 1*4, 0*4, 17*4, 16*4 },
 	{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
-	32*8	/* 32 bytes per char */
+	32*8    /* 32 bytes per char */
 };
 
 // Sprites
 const gfx_layout tilelayout =
 {
-	16,16,	 /* 16*16 sprites */
+	16,16,   /* 16*16 sprites */
 	RGN_FRAC(1,1),
 	4,
 	{ GFX_RAW },
-	{ 0 },		/* org displacement */
-	{ 8*8 },	/* line modulo */
-	128*8		/* char modulo */
+	{ 0 },      /* org displacement */
+	{ 8*8 },    /* line modulo */
+	128*8       /* char modulo */
 };
 
 GFXDECODE_START( gfx_neogeo )
@@ -1236,7 +1262,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 {
 	if (image.length() < 0x60000)
 	{
-		image.seterror(IMAGE_ERROR_INVALIDIMAGE, "File too short");
+		image.seterror(image_error::INVALIDIMAGE, "File too short");
 		printf("File too short\n");
 		image.message("File too short");
 		return image_init_result::FAIL;
@@ -1251,7 +1277,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 	}
 	else
 	{
-		image.seterror(IMAGE_ERROR_INVALIDIMAGE, "NEO header missing");
+		image.seterror(image_error::INVALIDIMAGE, "NEO header missing");
 		printf("NEO header missing\n");
 		image.message("NEO header missing");
 		return image_init_result::FAIL;
@@ -1269,7 +1295,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 	u64 total = 0x1000 + psize + ssize + msize + vsize + v2size + csize;
 	if (total > image.length())
 	{
-		image.seterror(IMAGE_ERROR_INVALIDIMAGE, "File is corrupt");
+		image.seterror(image_error::INVALIDIMAGE, "File is corrupt");
 		printf("File is corrupt.\n");
 		image.message("File is corrupt");
 		return image_init_result::FAIL;
@@ -1278,7 +1304,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 	// Make sure regions are big enough
 	if (psize > cpuregion_size)
 	{
-		image.seterror(IMAGE_ERROR_INVALIDIMAGE, "CPU region in NEO file is larger than supported");
+		image.seterror(image_error::INVALIDIMAGE, "CPU region in NEO file is larger than supported");
 		printf("CPU size requested (%08X) is greater than available (%08X)\n",psize,cpuregion_size);
 		image.message("CPU region in NEO file is larger than supported");
 		return image_init_result::FAIL;
@@ -1286,7 +1312,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 
 	if (ssize > fix_region_size)
 	{
-		image.seterror(IMAGE_ERROR_INVALIDIMAGE, "FIX region in NEO file is larger than supported");
+		image.seterror(image_error::INVALIDIMAGE, "FIX region in NEO file is larger than supported");
 		printf("FIX size requested (%08X) is greater than available (%08X)\n",ssize,fix_region_size);
 		image.message("FIX region in NEO file is larger than supported");
 		return image_init_result::FAIL;
@@ -1294,7 +1320,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 
 	if (vsize > ym_region_size)
 	{
-		image.seterror(IMAGE_ERROR_INVALIDIMAGE, "ADPCMA region in NEO file is larger than supported");
+		image.seterror(image_error::INVALIDIMAGE, "ADPCMA region in NEO file is larger than supported");
 		printf("ADPCMA size requested (%08X) is greater than available (%08X)\n",vsize,ym_region_size);
 		image.message("ADPCMA region in NEO file is larger than supported");
 		return image_init_result::FAIL;
@@ -1303,7 +1329,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 	u32 ym2_region_size = memregion("ymsnd:adpcmb")->bytes();
 	if ((v2size > ym2_region_size) || (ym_region_size > ym2_region_size))
 	{
-		image.seterror(IMAGE_ERROR_INVALIDIMAGE, "ADPCMB region in NEO file is larger than supported");
+		image.seterror(image_error::INVALIDIMAGE, "ADPCMB region in NEO file is larger than supported");
 		printf("ADPCMB size requested (%08X) is greater than available (%08X)\n",v2size,ym2_region_size);
 		image.message("ADPCMB region in NEO file is larger than supported");
 		return image_init_result::FAIL;
@@ -1311,7 +1337,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 
 	if (msize > (audio_region_size - 0x10000))
 	{
-		image.seterror(IMAGE_ERROR_INVALIDIMAGE, "AUDIO region in NEO file is larger than supported");
+		image.seterror(image_error::INVALIDIMAGE, "AUDIO region in NEO file is larger than supported");
 		printf("AUDIO region (%08X) in NEO file is larger than supported\n",msize);
 		image.message("AUDIO region in NEO file is larger than supported");
 		return image_init_result::FAIL;
@@ -1319,7 +1345,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 
 	if (csize > spr_region_size)
 	{
-		image.seterror(IMAGE_ERROR_INVALIDIMAGE, "SPR region in NEO file is larger than supported");
+		image.seterror(image_error::INVALIDIMAGE, "SPR region in NEO file is larger than supported");
 		printf("SPR size requested (%08X) is greater than available (%08X)\n",csize,spr_region_size);
 		image.message("SPR region in NEO file is larger than supported");
 		return image_init_result::FAIL;
@@ -1383,13 +1409,13 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 u32 neogeo_state::mvs_open7z(std::string zip_name, std::string filename, uint8_t *region_name, u32 region_size)
 {
 	u32 file_size = 0U;
-	util::archive_file::error ziperr = util::archive_file::error::NONE;
 	util::archive_file::ptr zip;
+	std::error_condition ziperr{};
 
 	// look into 7z file
 	ziperr = util::archive_file::open_7z(zip_name, zip);
 
-	if (ziperr == util::archive_file::error::NONE)
+	if (!ziperr)
 	{
 		int found = zip->search(filename, false);
 
@@ -1397,7 +1423,7 @@ u32 neogeo_state::mvs_open7z(std::string zip_name, std::string filename, uint8_t
 		{
 			ziperr = zip->decompress(&region_name[0], region_size);
 
-			if (ziperr == util::archive_file::error::NONE)
+			if (!ziperr)
 				file_size = zip->current_uncompressed_length();
 		}
 
@@ -1435,7 +1461,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::mvs_q_cb)
 	}
 	if (!psize)
 	{
-		image.seterror(IMAGE_ERROR_INVALIDIMAGE, "File is missing or unusable");
+		image.seterror(image_error::INVALIDIMAGE, "File is missing or unusable");
 		printf("File is missing or unusable\n");
 		image.message("File is missing or unusable");
 		return image_init_result::FAIL;
@@ -3438,6 +3464,7 @@ INPUT_CHANGED_MEMBER(neogeo_state::select_bios)
 	m_bios_bank->set_entry(newval ? 0 : 1);
 }
 
+
 /* dummy entry for the dummy bios driver */
 ROM_START( neogeo )
 	NEOGEO_BIOS
@@ -3512,5 +3539,5 @@ ROM_END
 
 /*    YEAR  NAME         PARENT    MACHINE      INPUT           CLASS         INIT    */
 GAME( 1990, neogeo,      0,        mvs,         neogeo_6slot,   neogeo_state, init_neogeo,  ROT0, "SNK", "Neo-Geo", MACHINE_IS_BIOS_ROOT | MACHINE_SUPPORTS_SAVE )
-GAME( 1990, neosd,       neogeo,   neosd,       neogeo,         neogeo_state, init_neogeo,  ROT0, "SNK", "Neo-Geo SD .neo Support", MACHINE_IS_BIOS_ROOT | MACHINE_SUPPORTS_SAVE )
-GAME( 1990, multimvs,    neogeo,   multimvs,    neogeo,         neogeo_state, init_neogeo,  ROT0, "SNK", "Neo-Geo MultiMVS Support", MACHINE_IS_BIOS_ROOT | MACHINE_SUPPORTS_SAVE )
+GAME( 1990, neosd,       neogeo,   neosd,       neogeo,         neogeo_state, empty_init,   ROT0, "SNK", "Neo-Geo SD .neo Support", MACHINE_IS_BIOS_ROOT | MACHINE_SUPPORTS_SAVE )
+GAME( 1990, multimvs,    neogeo,   multimvs,    neogeo,         neogeo_state, empty_init,   ROT0, "SNK", "Neo-Geo MultiMVS Support", MACHINE_IS_BIOS_ROOT | MACHINE_SUPPORTS_SAVE )

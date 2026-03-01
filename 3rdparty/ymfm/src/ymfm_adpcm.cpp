@@ -32,7 +32,6 @@
 
 namespace ymfm
 {
-
 //*********************************************************
 // ADPCM "A" REGISTERS
 //*********************************************************
@@ -121,7 +120,6 @@ void adpcm_a_channel::save_restore(ymfm_saved_state &state)
 
 void adpcm_a_channel::keyonoff(bool on)
 {
-	// QUESTION: repeated key ons restart the sample?
 	m_playing = on;
 	if (m_playing)
 	{

@@ -974,6 +974,33 @@ ROM_START( captcommb2 )
 	// ic116  tpc1020afn-084c  no dump
 ROM_END
 
+ROM_START( captcommb3 )
+	ROM_REGION( CODE_SIZE, "maincpu", 0 ) // = captcommr1 + additional code mapped on top
+	ROM_LOAD16_BYTE( "5.bin", 0x000000, 0x80000, CRC(c3a6ed28) SHA1(f79fed35f7b0dc383837a2ead846acc686dd3487) )
+	ROM_LOAD16_BYTE( "3.bin", 0x000001, 0x80000, CRC(28729335) SHA1(6dd23c2d41e4e182434fe80c03d5c90785e6c0ce) )
+	ROM_LOAD16_BYTE( "4.bin", 0x100000, 0x20000, CRC(1b526d73) SHA1(3dd8dec61db4f4f5546937602a8fb01c639d72f8) )
+	ROM_CONTINUE(             0x000000, 0x04000)
+	ROM_CONTINUE(             0x018000, 0x04000)
+	ROM_IGNORE(                         0x18000)
+	ROM_LOAD16_BYTE( "2.bin", 0x100001, 0x20000, CRC(73c99709) SHA1(e122e3771b698c44fb998589af0542b1f2a3876a) )
+	ROM_CONTINUE(             0x000001, 0x04000)
+	ROM_CONTINUE(             0x018001, 0x04000)
+	ROM_IGNORE(                         0x18000)
+
+	ROM_REGION( 0x400000, "gfx", 0 )
+	ROM_LOAD64_WORD( "cc-5m.3a",  0x000000, 0x80000, CRC(7261d8ba) SHA1(4b66292e42d20d0b79a756f0e445492ddb9c6bbc) )
+	ROM_LOAD64_WORD( "cc-7m.5a",  0x000002, 0x80000, CRC(6a60f949) SHA1(87391ff92abaf3e451f70d789a938cffbd1fd222) )
+	ROM_LOAD64_WORD( "cc-1m.4a",  0x000004, 0x80000, CRC(00637302) SHA1(2c554b59cceec2de67a9a4bc6281fe846d3c8cd2) )
+	ROM_LOAD64_WORD( "cc-3m.6a",  0x000006, 0x80000, CRC(cc87cf61) SHA1(7fb1f49494cc1a08aded20754bb0cefb1c323198) )
+	ROM_LOAD64_WORD( "cc-6m.7a",  0x200000, 0x80000, CRC(28718bed) SHA1(dfdc4dd14dc609783bad94d608a9e9b137dea944) )
+	ROM_LOAD64_WORD( "cc-8m.9a",  0x200002, 0x80000, CRC(d4acc53a) SHA1(d03282ebbde362e679cc97f772aa9baf163d7606) )
+	ROM_LOAD64_WORD( "cc-2m.8a",  0x200004, 0x80000, CRC(0c69f151) SHA1(a170b8e568439e4a26d84376d53560e4248e4e2f) )
+	ROM_LOAD64_WORD( "cc-4m.10a", 0x200006, 0x80000, CRC(1f9ebb97) SHA1(023d00cb7b6a52d1b29e2052abe08ef34cb0c55c) )
+
+	ROM_REGION( 0x50000, "audiocpu", 0 )
+	ROM_LOAD( "1.bin", 0x00000, 0x40000, CRC(aed2f4bd) SHA1(3bd567dc350bf6ac3a349548790ad49eb5bd8307) )
+	ROM_RELOAD(        0x10000, 0x40000 )
+ROM_END
 
 // ************************************************************************* KNIGHTSB, KNIGHTSB3
 
@@ -1162,6 +1189,36 @@ ROM_START( sf2b2 )
 	ROM_REGION( 0x30000, "audiocpu", 0 ) /* Sound program + samples  */
 	ROM_LOAD( "3.bin", 0x00000, 0x20000, CRC(17d5ba8a) SHA1(6ff3b8860d7e1fdee3561846f645eb4d3a8965ec) )
 	ROM_RELOAD(        0x10000, 0x20000 )
+ROM_END
+
+// this PCB has stickers in Spanish. It's extremely similar to sf2b, but audiocpu ROM is identical to sf2mdt and 11.bin is slightly different.
+ROM_START( sf2b5 )
+	ROM_REGION( CODE_SIZE, "maincpu", 0 )      /* 68000 code */
+	ROM_LOAD16_BYTE( "2.bin", 0x000000, 0x80000, CRC(42809e5a) SHA1(ee91ecfce29bc50cf3f492ff646109c60bf65551) )
+	ROM_LOAD16_BYTE( "1.bin", 0x000001, 0x80000, CRC(e58db26c) SHA1(da1a4e063fa770257fd3df5fdb3785c1856511a5) )
+
+	ROM_REGION( 0x600000, "gfx", 0 ) /* rearranged in init */
+	ROM_LOAD64_WORD( "5a.bin",  0x000000, 0x80000, CRC(47fab9ed) SHA1(1709becbe189b21f2c1920acef96f9412eb954e2) )
+	ROM_LOAD64_WORD( "8.bin",  0x000002, 0x80000, CRC(b8c39d56) SHA1(ee2939f42e95c926bdd88adf326eee02cba3f37a) )
+	ROM_LOAD64_WORD( "11a.bin", 0x000004, 0x80000, CRC(6e8c98d8) SHA1(fbd7d788349fd418c48aedd906c40960e41c20f1) )
+	ROM_LOAD64_WORD( "14.bin", 0x000006, 0x80000, CRC(672d4f85) SHA1(511a8878d14d3fd39c9a22efb983550098ea8760) )
+	ROM_LOAD64_WORD( "4.bin",  0x200000, 0x80000, CRC(69d7b06b) SHA1(b428a0b5dfdee20d4d198673fe3b0147cad2d5bd) )
+	ROM_LOAD64_WORD( "7a.bin",  0x200002, 0x80000, CRC(ded88f5f) SHA1(71c63fed5a15f6ce1df878dca7aa5d53868e68ee) )
+	ROM_LOAD64_WORD( "10a.bin", 0x200004, 0x80000, CRC(8c2fca3c) SHA1(a84399e91dbf5790c3fe003385f6d9f4bc9d3366) )
+	ROM_LOAD64_WORD( "13.bin", 0x200006, 0x80000, CRC(26f09d38) SHA1(3babc4f502ea9e07f79306b1abc9c94f484f9cc1) )
+	ROM_LOAD64_WORD( "6.bin",  0x400000, 0x80000, CRC(b6215991) SHA1(5e20632e1a2d6eebe3b5d314cf2549bb74d7118e) )
+	ROM_LOAD64_WORD( "9.bin",  0x400002, 0x80000, CRC(b6a71ed7) SHA1(1850b4b4aa4b5cafc594b174322afefbdf215221) )
+	ROM_LOAD64_WORD( "12a.bin", 0x400004, 0x80000, CRC(971903fa) SHA1(849ee7200815ef73f75456e656f061f1e852af59) )
+	ROM_LOAD64_WORD( "15.bin", 0x400006, 0x80000, CRC(00983914) SHA1(4ead6bbce6ca8c4cc884d55c1f821242d0e67fae) )
+
+	ROM_REGION( 0x30000, "audiocpu", 0 ) /* Sound program + samples  */
+	ROM_LOAD( "3snd.ic28", 0x00000, 0x20000, CRC(d5bee9cc) SHA1(e638cb5ce7a22c18b60296a7defe8b03418da56c) )
+	ROM_RELOAD(            0x10000, 0x20000 )
+
+	ROM_REGION( 0x600, "plds", 0 )
+	ROM_LOAD( "palce16v8h-1.bin",0x000, 0x117, CRC(48253c66) SHA1(8c94e655b768c45c3edf6ef39e62e3b7a4e57530) )
+	ROM_LOAD( "4_gal16v8.ic80",  0x200, 0x117, CRC(2c43c330) SHA1(7df648b63bc0c845a579a29722004f28d3e04a10) )
+	ROM_LOAD( "6_gal20v8.ic120", 0x400, 0x157, CRC(6a55a974) SHA1(f4df5a45409eca84c1ac36f7f8dbb218b79b57ac) )
 ROM_END
 
 // ************************************************************************* SF2CEB
@@ -1388,6 +1445,7 @@ ROM_END
 // ************************************************************************* DRIVER MACROS
 
 GAME( 1991,  captcommb2,  captcomm, captcommb2,  captcommb2,  captcommb2_state,   init_captcommb2,  ROT0,  "bootleg",  "Captain Commando (bootleg with 2xMSM5205)",  MACHINE_SUPPORTS_SAVE )  // 911014 ETC
+//GAME( 1991,  captcommb3,  captcomm, captcommb2,  captcommb2,  captcommb2_state,   init_captcommb2,  ROT0,  "bootleg",  "Captain Commando (bootleg with YM2151 + 2xMSM5205)",  MACHINE_SUPPORTS_SAVE )  // 911014 ETC
 
 GAME( 1991,  knightsb,    knights,  knightsb,    knights,     captcommb2_state,   init_knightsb,    ROT0,  "bootleg",  "Knights of the Round (bootleg with 2xMSM5205, set 1)",  MACHINE_SUPPORTS_SAVE )  // 911127 ETC
 GAME( 1991,  knightsb3,   knights,  knightsb,    knights,     captcommb2_state,   init_knightsb,    ROT0,  "bootleg",  "Knights of the Round (bootleg with 2xMSM5205, set 2)",  MACHINE_SUPPORTS_SAVE )  // 911127 ETC
@@ -1395,6 +1453,7 @@ GAME( 1991,  knightsb4,   knights,  knightsb,    knights,     captcommb2_state, 
 
 GAME( 1992,  sf2b,        sf2,      sf2b,        sf2mdt,      cps1bl_5205_state,  init_sf2b,        ROT0,  "bootleg (Playmark)",  "Street Fighter II: The World Warrior (bootleg, set 1)",  MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )  // 910204 ETC
 GAME( 1992,  sf2b2,       sf2,      sf2b,        sf2mdt,      cps1bl_5205_state,  init_sf2mdtb,     ROT0,  "bootleg", "Street Fighter II: The World Warrior (bootleg, set 2)",  MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )              // 910204 ETC
+GAME( 1992,  sf2b5,       sf2,      sf2b,        sf2mdt,      cps1bl_5205_state,  init_sf2mdtb,     ROT0,  "bootleg", "Street Fighter II: The World Warrior (bootleg, set 5)",  MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )              // 910204 ETC
 
 GAME( 1992,  sf2ceb,      sf2ce,    sf2mdt,      sf2mdt,      cps1bl_5205_state,  init_sf2mdta,     ROT0,  "bootleg (Playmark)",  "Street Fighter II': Champion Edition (Playmark bootleg, set 1)",  MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )  // 920313 ETC
 GAME( 1992,  sf2ceb2,     sf2ce,    sf2mdt,      sf2mdt,      cps1bl_5205_state,  init_sf2mdtb,     ROT0,  "bootleg",  "Street Fighter II': Champion Edition (bootleg, set 1)",  MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )  // 920313 ETC
