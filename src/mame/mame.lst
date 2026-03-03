@@ -2463,6 +2463,7 @@ captcommhc15                    // Hack
 captcommhc16                    // Hack
 captcommhc17                    // Hack
 captcommhc18                    // Hack
+captcommhc19                    // Hack
 daimakaihc01                    // Hack
 dinohc01                        // Hack
 dinohc02                        // Hack
@@ -2492,6 +2493,7 @@ dinohc25                        // Hack
 dinohc26                        // Hack
 dinohc27                        // Hack
 dinohc28                        // Hack
+dinohc29                        // Hack
 forgottnhc01                    // Hack
 ffighthc01                      // Hack
 ffighthc02                      // Hack
@@ -2578,7 +2580,11 @@ tk2hc18                         // Hack
 tk2hc19                         // Hack
 tk2hc20                         // Hack
 tk2hc21                         // Hack
+tk2hc22                         // Hack
+tk2hc23                         // Hack
+tk2hc24                         // Hack
 tk2chc01                        // Hack
+tk2chc02                        // Hack
 sk2hc01                         // Hack
 sk3hc01                         // Hack
 varthhc01                       // Hack
