@@ -74,6 +74,7 @@ enum
 /******************/
 	FOLDER_NEOGEO,
 	FOLDER_CAPCOM,
+	FOLDER_MISC,
 /******************/
 	MAX_FOLDERS
 };
@@ -155,5 +156,6 @@ void SelectTreeViewFolder(int folder_id);
 /**********************************************/
 void CreateNEOGEOFolders(int parent_index);
 void CreateCAPCOMFolders(int parent_index);
+void CreateMISCFolders(int parent_index);
 /**********************************************/
 #endif

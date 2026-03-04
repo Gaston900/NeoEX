@@ -1674,12 +1674,6 @@ whphc02                         // Hack
 whphc03                         // Hack
 zintrckbhc01                    // Hack
 
-
-
-/*****************************************************
-    List of all enabled drivers extras in the system.
-********************************************************/
-
 @source:cps1.cpp
 1941                            // 27/02/1990 (c) 1990 (World)
 1941j                           // 2/1990 (c) 1990 (Japan)
@@ -2698,3 +2692,97 @@ sfiii3hc03                      // Hack
 sfiii3hc04                      // Hack
 sfiii3hc05                      // Hack
 sfiii3hc06                      // Hack
+
+
+
+/*****************************************************
+    List of all enabled drivers extras in the system.
+********************************************************/
+
+@source:cave.cpp
+sailormn                        // (c) 1995 Banpresto (Ver. 95/03/22B, country is in EEPROM)
+sailormnh                       // (c) 1995 Banpresto (Ver. 95/03/22B, country is in EEPROM)
+sailormnj                       // (c) 1995 Banpresto (Ver. 95/03/22B, country is in EEPROM)
+sailormnk                       // (c) 1995 Banpresto (Ver. 95/03/22B, country is in EEPROM)
+sailormnn                       // (c) 1995 Banpresto (Ver. 95/03/22, country is in EEPROM)
+sailormnnh                      // (c) 1995 Banpresto (Ver. 95/03/22, country is in EEPROM)
+sailormnnj                      // (c) 1995 Banpresto (Ver. 95/03/22, country is in EEPROM)
+sailormnnk                      // (c) 1995 Banpresto (Ver. 95/03/22, country is in EEPROM)
+sailormnnt                      // (c) 1995 Banpresto (Ver. 95/03/22, country is in EEPROM)
+sailormnnu                      // (c) 1995 Banpresto (Ver. 95/03/22, country is in EEPROM)
+sailormno                       // (c) 1995 Banpresto (Ver. 95/03/21, country is in EEPROM)
+sailormnoh                      // (c) 1995 Banpresto (Ver. 95/03/21, country is in EEPROM)
+sailormnoj                      // (c) 1995 Banpresto (Ver. 95/03/21, country is in EEPROM)
+sailormnok                      // (c) 1995 Banpresto (Ver. 95/03/21, country is in EEPROM)
+sailormnot                      // (c) 1995 Banpresto (Ver. 95/03/21, country is in EEPROM)
+sailormnou                      // (c) 1995 Banpresto (Ver. 95/03/21, country is in EEPROM)
+sailormnt                       // (c) 1995 Banpresto (Ver. 95/03/22B, country is in EEPROM)
+sailormnu                       // (c) 1995 Banpresto (Ver. 95/03/22B, country is in EEPROM)
+
+@source:m92.cpp
+hook                            // (c) 1992 Irem (World)
+hookj                           // (c) 1992 Irem (Japan)
+hooku                           // (c) 1992 Irem America (US)
+nbbatman                        // (c) 1993 Irem (World)
+nbbatman2bl                     // bootleg
+nbbatmanu                       // (c) 1993 Irem America (US)
+uccops                          // (c) 1992 Irem (World)
+uccopsar                        // (c) 1992 Irem (World)
+uccopsaru                       // (c) 1992 Irem America (US)
+uccopsj                         // (c) 1992 Irem (Japan)
+uccopsu                         // (c) 1992 Irem America (US)
+
+@source:midtunit.cpp
+mk                              // (c) 1992 Midway
+mk2                             // (c) 1993 Midway
+mk2chal                         // hack
+mk2r11                          // (c) 1993 Midway
+mk2r14                          // (c) 1993 Midway
+mk2r20                          // (c) 1993 Midway
+mk2r21                          // (c) 1993 Midway
+mk2r30                          // (c) 1993 Midway
+mk2r31e                         // (c) 1993 Midway
+mk2r32e                         // (c) 1993 Midway
+mk2r42                          // hack
+mk2r91                          // hack
+mkr4                            // (c) 1992 Midway
+mktturbo                        // hack
+
+@source:midyunit.cpp
+mkla1                           // (c) 1992 Midway
+mkla2                           // (c) 1992 Midway
+mkla3                           // (c) 1992 Midway
+mkla4                           // (c) 1992 Midway
+mknifty                         // hack
+mknifty666                      // hack
+mkrep                           // hack
+mkprot4                         // (c) 1992 Midway
+mkprot8                         // (c) 1992 Midway
+mkprot9                         // (c) 1992 Midway
+mkyawdim                        // bootleg
+mkyawdim2                       // bootleg
+mkyawdim3                       // bootleg
+mkyawdim4                       // bootleg
+mkyturbo                        // hack
+mkyturboe                       // hack
+
+@source:midwunit.cpp
+mk3                             // (c) 1994 Midway
+mk3p40                          // (c) 1994 Midway
+mk3r10                          // (c) 1994 Midway
+mk3r20                          // (c) 1994 Midway
+umk3                            // (c) 1994 Midway
+umk3r10                         // (c) 1994 Midway
+umk3r11                         // (c) 1994 Midway
+
+@source:pgm2.cpp
+kof98umh                        // (c) 2009
+
+@source:powerins.cpp
+powerins                        // (c) 1993 Atlus (USA)
+powerinsa                       // (c) 1993 Atlus (bootleg of USA version)
+powerinsb                       // (c) 1993 Atlus (bootleg of USA version)
+powerinsc                       // (c) 1993 Atlus (bootleg of USA version)
+powerinsj                       // (c) 1993 Atlus (Japan)
+powerinspj                      // prototype (Japan)
+powerinspu                      // prototype (USA)

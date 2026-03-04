@@ -80,6 +80,7 @@ extern const FOLDERDATA g_folderData[] =
 	{"Source",          "source",            FOLDER_SOURCE,       IDI_FOLDER_SOURCE,        0,             0,            0, CreateSourceFolders },
 	{"NeoGeo",          "neogeo", 	         FOLDER_NEOGEO,       IDI_FOLDER_NEOGEO,		0,			   0, 		     0, CreateNEOGEOFolders },
     {"Capcom",		    "Capcom",		     FOLDER_CAPCOM,	      IDI_FOLDER_CAPCOM, 	    0,			   0,            0,	CreateCAPCOMFolders },
+	{"Misc",		    "misc",		         FOLDER_MISC,	      IDI_FOLDER_MISC, 	        0,			   0,            0,	CreateMISCFolders },
 	{"Vertical",        "vertical",          FOLDER_VERTICAL,     IDI_FOLDER_VERTICAL,      F_VERTICAL,    F_HORIZONTAL, 0, NULL,                       DriverIsVertical,        true },
 	{"Horizontal",      "horizontal",        FOLDER_HORIZONTAL,   IDI_FOLDER_HORIZONTAL,    F_HORIZONTAL,  F_VERTICAL,   0, NULL,                       DriverIsVertical,        false },
 	{"Working",         "working",           FOLDER_WORKING,      IDI_FOLDER_WORKING,       F_WORKING,     F_NONWORKING, 0, NULL,                       DriverIsBroken,          false },	
@@ -154,6 +155,7 @@ static const TREEICON treeIconNames[] =
 /**********************************************/
 	{ IDI_FOLDER_NEOGEO,       "fold_neogeo" },
     { IDI_FOLDER_CAPCOM,	   "fold_cps"},
+    { IDI_FOLDER_MISC,	       "fold_misc"},
 /**********************************************/
 	{ IDI_FOLDER_TRACKBALL,    "foldball" },
 	{ IDI_FOLDER_UNAVAILABLE,  "foldunav" },
@@ -4373,6 +4375,32 @@ void CreateCAPCOMFolders(int parent_index)
 		if (!strcmp("cps3hb.cpp", s))              AddGame(lpCps3HC, jj);
 	}
 
+}
+
+void CreateMISCFolders(int parent_index)
+{
+	int jj;
+	int nGames = GetNumGames();
+	LPTREEFOLDER lpFolder = treeFolders[parent_index];
+
+	// no games in top level folder
+	SetAllBits(lpFolder->m_lpGameBits,FALSE);
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("cave.cpp", s))			       AddGame(lpFolder, jj);
+		if (!strcmp("m92.cpp", s))			       AddGame(lpFolder, jj);
+		if (!strcmp("midtunit.cpp", s))			   AddGame(lpFolder, jj);
+		if (!strcmp("midyunit.cpp", s))			   AddGame(lpFolder, jj);
+		if (!strcmp("midwunit.cpp", s))			   AddGame(lpFolder, jj);
+		if (!strcmp("pgm2.cpp", s))				   AddGame(lpFolder, jj);
+		if (!strcmp("powerins.cpp", s)) 	       AddGame(lpFolder, jj);
+	}
 }
 
 /****************************************************************************/

@@ -5,3 +5,10 @@ cps1bl_pic.cpp
 cps2.cpp
 cps3.cpp
 fcrash.cpp
+cave.cpp
+m92.cpp
+midtunit.cpp
+midyunit.cpp
+midwunit.cpp
+pgm2.cpp
+powerins.cpp

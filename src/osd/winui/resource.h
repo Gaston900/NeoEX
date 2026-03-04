@@ -178,8 +178,9 @@
 #define IDB_KLIST						285
 #define IDI_FOLDER_NEOGEO				286
 #define IDI_FOLDER_CAPCOM				287
-#define IDI_HEADER_UP                   288
-#define IDI_HEADER_DOWN                 289
+#define IDI_FOLDER_MISC	    			288
+#define IDI_HEADER_UP                   289
+#define IDI_HEADER_DOWN                 290
 /*******************************************/
 
 // 修改的 (Eziochiu)

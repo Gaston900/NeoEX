@@ -323,6 +323,7 @@ IDI_SNAPSHEET           ICON                    "res\\snapshot.ico"
 /****************************************************************************/
 IDI_FOLDER_NEOGEO		ICON					"res\\fold_neo.ico"
 IDI_FOLDER_CAPCOM		ICON				    "res\\fold_cps.ico"
+IDI_FOLDER_MISC	    	ICON				    "res\\fold_misc.ico"
 /****************************************************************************/
 /////////////////////////////////////////////////////////////////////////////
 //

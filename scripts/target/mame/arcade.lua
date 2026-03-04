@@ -14,6 +14,14 @@ CPUS["DSP16"] = true -- CPS1
 CPUS["I386"] = true -- CPS1
 CPUS["PIC16C5X"] = true -- CPS1
 CPUS["SH"] = true -- CPS3
+CPUS["ADSP21XX"] = true -- MIDTUNIT
+CPUS["M6800"] = true -- MIDTUNIT
+CPUS["M6809"] = true -- MIDTUNIT
+CPUS["TMS340X0"] = true -- MIDTUNIT
+CPUS["TMS32031"] = true -- MIDWUNIT
+CPUS["NEC"] = true -- M92
+CPUS["TLCS90"] = true -- POWERINS
+CPUS["ARM7"] = true -- PGM2
 
 --------------------------------------------------
 -- specify available sound cores
@@ -26,6 +34,20 @@ SOUNDS["MSM5205"] = true -- CPS1
 SOUNDS["OKIM6295"] = true -- CPS1
 SOUNDS["QSOUND"] = true -- CPS1
 SOUNDS["YM2151"] = true -- CPS1
+SOUNDS["DMADAC"] = true -- MIDTUNIT
+SOUNDS["HC55516"] = true -- MIDTUNIT
+SOUNDS["DAC"] = true -- MIDTUNIT
+SOUNDS["YMZ280B"] = true -- CAVE
+SOUNDS["IREMGA20"] = true -- M92
+SOUNDS["YM3812"] = true -- POWERINS
+SOUNDS["MPEG_AUDIO"] = true --PGM2
+SOUNDS["YMZ770"] = true --PGM2
+
+--------------------------------------------------
+-- specify available video cores
+--------------------------------------------------
+
+VIDEOS["BUFSPRITE"] = true -- M92
 
 --------------------------------------------------
 -- specify available machine cores
@@ -43,11 +65,16 @@ MACHINES["UPD4701"] = true --CPS1
 MACHINES["INTELFLASH"] = true -- cps3
 MACHINES["NSCSI"] = true -- cps3
 MACHINES["WD33C9X"] = true -- cps3
+MACHINES["6821PIA"] = true -- MIDTUNIT
+MACHINES["BANKDEV"] = true -- MIDTUNIT
+MACHINES["ADC0844"] = true -- MIDYUNIT
+MACHINES["PIC8259"] = true -- M92
+MACHINES["ARM_AIC"] = true -- PGM2
 
 --------------------------------------------------
 -- specify available bus cores
 --------------------------------------------------
-BUSES["NSCSI"] = true --CPS3
+BUSES["NSCSI"] = true -- CPS3
 
 --------------------------------------------------
 -- this is the list of driver libraries that
@@ -58,7 +85,12 @@ BUSES["NSCSI"] = true --CPS3
 function linkProjects_mame_arcade(_target, _subtarget)
 	links {
 		"capcom",
+		"cave",
+		"irem",
+		"igs",
+		"midway",
 		"neogeo",
+		"nmk",		
 	}
 end
 
@@ -113,6 +145,51 @@ files {
 	MAME_DIR .. "src/mame/machine/kabuki.cpp",
 }
 
+createMAMEProjects(_target, _subtarget, "cave")
+files {
+	MAME_DIR .. "src/mame/drivers/cave.cpp",
+	MAME_DIR .. "src/mame/video/cave.cpp",
+	MAME_DIR .. "src/mame/machine/nmk112.cpp",
+	MAME_DIR .. "src/mame/video/tmap038.cpp",
+}
+
+createMAMEProjects(_target, _subtarget, "igs")
+files {
+	MAME_DIR .. "src/mame/drivers/pgm2.cpp",
+	MAME_DIR .. "src/mame/video/pgm2.cpp",
+	MAME_DIR .. "src/mame/includes/pgm2.h",
+	MAME_DIR .. "src/mame/machine/pgm2_memcard.cpp",
+	MAME_DIR .. "src/mame/machine/pgm2_memcard.h",
+	MAME_DIR .. "src/mame/machine/igs036crypt.cpp",
+	MAME_DIR .. "src/mame/machine/igs036crypt.h",
+}
+
+createMAMEProjects(_target, _subtarget, "irem")
+files {
+	MAME_DIR .. "src/mame/drivers/m92.cpp",
+	MAME_DIR .. "src/mame/video/m92.cpp",
+	MAME_DIR .. "src/mame/machine/irem_cpu.cpp",
+}
+
+createMAMEProjects(_target, _subtarget, "midway")
+files {
+	MAME_DIR .. "src/mame/drivers/midtunit.cpp",
+	MAME_DIR .. "src/mame/machine/midtunit.cpp",
+	MAME_DIR .. "src/mame/video/midtunit.cpp",
+	MAME_DIR .. "src/mame/drivers/midwunit.cpp",
+	MAME_DIR .. "src/mame/machine/midwunit.cpp",
+	MAME_DIR .. "src/mame/drivers/midyunit.cpp",
+	MAME_DIR .. "src/mame/machine/midyunit.cpp",
+	MAME_DIR .. "src/mame/video/midyunit.cpp",
+	MAME_DIR .. "src/mame/machine/midwayic.cpp",
+	MAME_DIR .. "src/mame/audio/midway.cpp",
+	MAME_DIR .. "src/mame/audio/williams.cpp",
+	MAME_DIR .. "src/mame/audio/cage.cpp",
+	MAME_DIR .. "src/mame/audio/dcs.cpp",
+	MAME_DIR .. "src/mame/audio/csd.cpp",
+	MAME_DIR .. "src/mame/audio/bally.cpp",
+}
+
 createMAMEProjects(_target, _subtarget, "neogeo")
 files {
 	MAME_DIR .. "src/hbmame/drivers/neogeo.cpp",
@@ -130,6 +207,17 @@ files {
 	MAME_DIR .. "src/hbmame/bus/neogeo_ctrl/dial.cpp",
 	MAME_DIR .. "src/hbmame/bus/neogeo_ctrl/irrmaze.cpp",
 	MAME_DIR .. "src/hbmame/bus/neogeo_ctrl/kizuna4p.cpp",
+}
+
+createMAMEProjects(_target, _subtarget, "nmk")
+files {
+	MAME_DIR .. "src/mame/drivers/powerins.cpp",
+	MAME_DIR .. "src/mame/video/powerins.cpp",
+	MAME_DIR .. "src/mame/drivers/nmk16.cpp",
+	MAME_DIR .. "src/mame/video/nmk16.cpp",
+	MAME_DIR .. "src/mame/video/nmk16spr.cpp",
+	MAME_DIR .. "src/mame/machine/nmk004.cpp",
+	MAME_DIR .. "src/mame/audio/seibu.cpp",
 }
 
 end
