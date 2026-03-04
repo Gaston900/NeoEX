@@ -4297,6 +4297,22 @@ void cps_state::cps1_12MHz(machine_config &config)
 	m_maincpu->set_clock(XTAL(12'000'000));    /* verified on pcb */
 }
 
+void cps_state::cps1_16MHz(machine_config &config)
+{
+	cps1_10MHz(config);
+
+	/* basic machine hardware */
+	m_maincpu->set_clock(XTAL(16'000'000));    /* verified on pcb */
+}
+
+void cps_state::cps1_20MHz(machine_config &config)
+{
+	cps1_10MHz(config);
+
+	/* basic machine hardware */
+	m_maincpu->set_clock(XTAL(20'000'000));    /* verified on pcb */
+}
+
 void cps_state::pang3(machine_config &config)
 {
 	cps1_12MHz(config);
@@ -4342,6 +4358,14 @@ void cps_state::qsound(machine_config &config)
 	qsound_device &qsound(QSOUND(config, "qsound"));
 	qsound.add_route(0, "lspeaker", 1.0);
 	qsound.add_route(1, "rspeaker", 1.0);
+}
+
+void cps_state::qsound_20MHz(machine_config &config)
+{
+	qsound(config);
+
+	/* basic machine hardware */
+	m_maincpu->set_clock(XTAL(20'000'000));    /* verified on pcb */
 }
 
 void cps_state::wofhfh(machine_config &config)
@@ -15985,9 +16009,9 @@ ROM_START( sf2ceucbl )
 	ROM_LOAD16_WORD_SWAP( "ym.u23", 0x180000, 0x40000, CRC(d6b39cc3) SHA1(079505b0f1cbaff597dfd691128ba00fb46191a0) )
 	ROM_LOAD16_WORD_SWAP( "ym.u22", 0x1C0000, 0x40000, CRC(efa0a775) SHA1(f8805f3198c09a215ef15569c0c96954787eade3) )
 	ROM_LOAD16_WORD_SWAP( "ym.u21", 0x200000, 0x40000, CRC(c812b7b2) SHA1(23ed0e1bd8b2015b39ad5e452dff0e372df0d5c9) )
-	ROM_CONTINUE( 0x000000, 0x180000 )
-	ROM_CONTINUE( 0x080000, 0x1c0000 )
-	ROM_CONTINUE( 0x100000, 0x200000 )
+//	ROM_CONTINUE( 0x000000, 0x40000 )
+//	ROM_CONTINUE( 0x080000, 0x40000 )
+//	ROM_CONTINUE( 0x100000, 0x40000 )
 
 	ROM_REGION( 0x600000, "gfx", 0 )
 	ROM_LOAD64_WORD( "s92-1m.3a",  0x000000, 0x80000, CRC(03b0d852) SHA1(f370f25c96ad2b94f8c53d6b7139100285a25bef) )

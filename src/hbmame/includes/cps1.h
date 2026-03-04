@@ -389,6 +389,9 @@ public:
 	void ganbare(machine_config &config);
 	void qsound(machine_config &config);
 	void cps1_12MHz(machine_config &config);
+	void cps1_16MHz(machine_config &config);
+	void cps1_20MHz(machine_config &config);
+	void qsound_20MHz(machine_config &config);
 	void wofhfh(machine_config &config);
 	void cps1_10MHz(machine_config &config);
 	void pang3(machine_config &config);
