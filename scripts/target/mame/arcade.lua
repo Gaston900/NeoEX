@@ -173,10 +173,10 @@ files {
 
 createMAMEProjects(_target, _subtarget, "midway")
 files {
-	MAME_DIR .. "src/mame/drivers/midtunit.cpp",
+	MAME_DIR .. "src/hbmame/drivers/midtunithb.cpp",
 	MAME_DIR .. "src/mame/machine/midtunit.cpp",
 	MAME_DIR .. "src/mame/video/midtunit.cpp",
-	MAME_DIR .. "src/mame/drivers/midwunit.cpp",
+	MAME_DIR .. "src/hbmame/drivers/midwunithb.cpp",
 	MAME_DIR .. "src/mame/machine/midwunit.cpp",
 	MAME_DIR .. "src/mame/drivers/midyunit.cpp",
 	MAME_DIR .. "src/mame/machine/midyunit.cpp",

@@ -2748,6 +2748,17 @@ mk2r91                          // hack
 mkr4                            // (c) 1992 Midway
 mktturbo                        // hack
 
+@source:midtunit.cpp
+mkhc01                          // hack
+mkhc02                          // hack
+mkhc03                          // hack
+mkhc04                          // hack
+mk2hc01                         // hack
+mk2hc02                         // hack
+mk2hc03                         // hack
+mk2hc04                         // hack
+mk2hc05                         // hack
+
 @source:midyunit.cpp
 mkla1                           // (c) 1992 Midway
 mkla2                           // (c) 1992 Midway
@@ -2774,6 +2785,18 @@ mk3r20                          // (c) 1994 Midway
 umk3                            // (c) 1994 Midway
 umk3r10                         // (c) 1994 Midway
 umk3r11                         // (c) 1994 Midway
+
+@source:midwunit.cpp
+mk3hc01                         // hack
+umk3hc01                        // hack
+umk3hc02                        // hack
+umk3hc03                        // hack
+umk3hc04                        // hack
+umk3hc05                        // hack
+umk3hc06                        // hack
+umk3hc07                        // hack
+umk3hc08                        // hack
+umk3hc09                        // hack
 
 @source:pgm2.cpp
 kof98umh                        // (c) 2009

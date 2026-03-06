@@ -4393,13 +4393,18 @@ void CreateMISCFolders(int parent_index)
 		if (s == NULL || s[0] == '\0')
 			continue;
 
-		if (!strcmp("cave.cpp", s))			       AddGame(lpFolder, jj);
-		if (!strcmp("m92.cpp", s))			       AddGame(lpFolder, jj);
-		if (!strcmp("midtunit.cpp", s))			   AddGame(lpFolder, jj);
+        if (!strcmp("cave.cpp", s))	    		   AddGame(lpFolder, jj);
+		if (!strcmp("cavehb.cpp", s))			   AddGame(lpFolder, jj);
+		if (!strcmp("m92.cpp", s))		           AddGame(lpFolder, jj);
+		if (!strcmp("m92hb.cpp", s))		       AddGame(lpFolder, jj);
+		if (!strcmp("midtunit.cpp", s))		       AddGame(lpFolder, jj);
+		if (!strcmp("midtunithb.cpp", s))		   AddGame(lpFolder, jj);
 		if (!strcmp("midyunit.cpp", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("midwunit.cpp", s))			   AddGame(lpFolder, jj);
+		if (!strcmp("midwunit.cpp", s))	     	   AddGame(lpFolder, jj);
+		if (!strcmp("midwunithb.cpp", s))		   AddGame(lpFolder, jj);
 		if (!strcmp("pgm2.cpp", s))				   AddGame(lpFolder, jj);
 		if (!strcmp("powerins.cpp", s)) 	       AddGame(lpFolder, jj);
+		if (!strcmp("powerinshb.cpp", s)) 	       AddGame(lpFolder, jj);
 	}
 }
 
