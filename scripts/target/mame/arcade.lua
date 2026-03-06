@@ -166,7 +166,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "irem")
 files {
-	MAME_DIR .. "src/mame/drivers/m92.cpp",
+	MAME_DIR .. "src/hbmame/drivers/m92hb.cpp",
 	MAME_DIR .. "src/mame/video/m92.cpp",
 	MAME_DIR .. "src/mame/machine/irem_cpu.cpp",
 }

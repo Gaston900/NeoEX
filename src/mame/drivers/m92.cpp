@@ -1021,6 +1021,13 @@ void m92_state::hook(machine_config &config)
 	m_soundcpu->set_decryption_table(hook_decryption_table);
 }
 
+void m92_state::hook_2XCLOCK(machine_config &config)
+{
+	hook(config);
+
+	m_maincpu->set_clock(XTAL(20'000'000)/2);
+}
+
 void m92_state::ppan(machine_config &config)
 {
 	m92(config);
@@ -1056,6 +1063,13 @@ void m92_state::nbbatman(machine_config &config)
 {
 	m92_banked(config);
 	m_soundcpu->set_decryption_table(leagueman_decryption_table);
+}
+
+void m92_state::nbbatman_2XCLOCK(machine_config &config)
+{
+	hook(config);
+
+	m_maincpu->set_clock(XTAL(20'000'000)/2);
 }
 
 void m92_state::nbbatman2bl(machine_config &config)

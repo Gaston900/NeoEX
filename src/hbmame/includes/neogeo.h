@@ -105,8 +105,6 @@ public:
 	void neosd(machine_config &config);
 
 	// Mainboard Configurations CPUX2
-    void neoclock_arcade(machine_config &config);
-	void neoclock_base(machine_config &config);
 	void neoclock_noslot(machine_config &config);
 
 	// Fixed MVS/AES Software Configurations

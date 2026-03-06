@@ -65,6 +65,10 @@ public:
 	void majtitl2a(machine_config &config);
 	void mysticri(machine_config &config);
 
+	// Mainboard Configurations CPUX2
+	void hook_2XCLOCK(machine_config &config);
+	void nbbatman_2XCLOCK(machine_config &config);
+
 	void init_bank();
 
 	DECLARE_READ_LINE_MEMBER(sprite_busy_r);

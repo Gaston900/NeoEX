@@ -2723,14 +2723,55 @@ sailormnu                       // (c) 1995 Banpresto (Ver. 95/03/22B, country i
 hook                            // (c) 1992 Irem (World)
 hookj                           // (c) 1992 Irem (Japan)
 hooku                           // (c) 1992 Irem America (US)
+ppan                            // bootleg
 nbbatman                        // (c) 1993 Irem (World)
 nbbatman2bl                     // bootleg
 nbbatmanu                       // (c) 1993 Irem America (US)
-uccops                          // (c) 1992 Irem (World)
-uccopsar                        // (c) 1992 Irem (World)
-uccopsaru                       // (c) 1992 Irem America (US)
-uccopsj                         // (c) 1992 Irem (Japan)
-uccopsu                         // (c) 1992 Irem America (US)
+leaguemn                        // (c) 1993 Irem (Japan)
+
+@source:m92.cpp
+hookhc01                        // Hack
+hookhc02                        // Hack
+hookhc03                        // Hack
+hookhc04                        // Hack
+hookhc05                        // Hack
+hookhc06                        // Hack
+hookhc07                        // Hack
+hookhc08                        // Hack
+hookhc09                        // Hack
+hookhc10                        // Hack
+hookhc11                        // Hack
+hookhc12                        // Hack
+hookhc13                        // Hack
+hookhc14                        // Hack
+hookhc15                        // Hack
+hookhc16                        // Hack
+hookhc17                        // Hack
+hookhc18                        // Hack
+hookhc19                        // Hack
+hookhc20                        // Hack
+hookhc21                        // Hack
+hookhc22                        // Hack
+hookhc23                        // Hack
+hookhc24                        // Hack
+hookhc25                        // Hack
+hookhc26                        // Hack
+hookhc27                        // Hack
+hookhc28                        // Hack
+hookhc29                        // Hack
+hookhc30                        // Hack
+hookhc31                        // Hack
+hookhc32                        // Hack
+hookhc33                        // Hack
+hookhc34                        // Hack
+hookhc35                        // Hack
+nbbatmanhc01                    // Hack
+nbbatmanhc02                    // Hack
+nbbatmanhc03                    // Hack
+nbbatmanhc04                    // Hack
+nbbatmanhc05                    // Hack
+nbbatmanhc06                    // Hack
+nbbatmanhc07                    // Hack
 
 @source:midtunit.cpp
 mk                              // (c) 1992 Midway
@@ -2774,6 +2815,7 @@ mkyawdim                        // bootleg
 mkyawdim2                       // bootleg
 mkyawdim3                       // bootleg
 mkyawdim4                       // bootleg
+mkyawdim5                       // bootleg
 mkyturbo                        // hack
 mkyturboe                       // hack
 
