@@ -1067,7 +1067,7 @@ void m92_state::nbbatman(machine_config &config)
 
 void m92_state::nbbatman_2XCLOCK(machine_config &config)
 {
-	hook(config);
+	nbbatman(config);
 
 	m_maincpu->set_clock(XTAL(20'000'000)/2);
 }

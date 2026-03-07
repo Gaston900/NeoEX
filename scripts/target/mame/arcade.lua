@@ -147,7 +147,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "cave")
 files {
-	MAME_DIR .. "src/mame/drivers/cave.cpp",
+	MAME_DIR .. "src/hbmame/drivers/cavehb.cpp",
 	MAME_DIR .. "src/mame/video/cave.cpp",
 	MAME_DIR .. "src/mame/machine/nmk112.cpp",
 	MAME_DIR .. "src/mame/video/tmap038.cpp",
@@ -211,7 +211,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "nmk")
 files {
-	MAME_DIR .. "src/mame/drivers/powerins.cpp",
+	MAME_DIR .. "src/hbmame/drivers/powerinshb.cpp",
 	MAME_DIR .. "src/mame/video/powerins.cpp",
 	MAME_DIR .. "src/mame/drivers/nmk16.cpp",
 	MAME_DIR .. "src/mame/video/nmk16.cpp",

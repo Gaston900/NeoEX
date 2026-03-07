@@ -2700,36 +2700,48 @@ sfiii3hc06                      // Hack
 ********************************************************/
 
 @source:cave.cpp
-sailormn                        // (c) 1995 Banpresto (Ver. 95/03/22B, country is in EEPROM)
-sailormnh                       // (c) 1995 Banpresto (Ver. 95/03/22B, country is in EEPROM)
-sailormnj                       // (c) 1995 Banpresto (Ver. 95/03/22B, country is in EEPROM)
-sailormnk                       // (c) 1995 Banpresto (Ver. 95/03/22B, country is in EEPROM)
-sailormnn                       // (c) 1995 Banpresto (Ver. 95/03/22, country is in EEPROM)
-sailormnnh                      // (c) 1995 Banpresto (Ver. 95/03/22, country is in EEPROM)
-sailormnnj                      // (c) 1995 Banpresto (Ver. 95/03/22, country is in EEPROM)
-sailormnnk                      // (c) 1995 Banpresto (Ver. 95/03/22, country is in EEPROM)
-sailormnnt                      // (c) 1995 Banpresto (Ver. 95/03/22, country is in EEPROM)
-sailormnnu                      // (c) 1995 Banpresto (Ver. 95/03/22, country is in EEPROM)
-sailormno                       // (c) 1995 Banpresto (Ver. 95/03/21, country is in EEPROM)
-sailormnoh                      // (c) 1995 Banpresto (Ver. 95/03/21, country is in EEPROM)
-sailormnoj                      // (c) 1995 Banpresto (Ver. 95/03/21, country is in EEPROM)
-sailormnok                      // (c) 1995 Banpresto (Ver. 95/03/21, country is in EEPROM)
-sailormnot                      // (c) 1995 Banpresto (Ver. 95/03/21, country is in EEPROM)
-sailormnou                      // (c) 1995 Banpresto (Ver. 95/03/21, country is in EEPROM)
-sailormnt                       // (c) 1995 Banpresto (Ver. 95/03/22B, country is in EEPROM)
-sailormnu                       // (c) 1995 Banpresto (Ver. 95/03/22B, country is in EEPROM)
+agallet                         // Parents
+agallethc01                     // Hack
+ddonpach                        // Parents
+ddonpachhc01                    // Hack
+esprade                         // Parents
+espradehc01                     // Hack
+feversos                        // Parents
+feversoshc01                    // Hack
+gaia                            // Parents
+gaiahc01                        // Hack
+guwange                         // Parents
+guwangehc01                     // Hack
+metmqstr                        // Parents
+metmqstrhc01                    // Hack
+metmqstrhc02                    // Hack
+metmqstrhc03                    // Hack
+plegends                        // Parents
+plegendshc01                    // Hack
+plegendshc02                    // Hack
+plegendshc03                    // Hack
+pwrinst2                        // Parents
+pwrinst2hc01                    // Hack
+sailormn                        // Parents
+sailormnhc01                    // Hack
+sailormnhc02                    // Hack
+sailormnhc03                    // Hack
+sailormnhc04                    // Hack
+sailormnhc05                    // Hack
+sailormnhc06                    // Hack
+sailormnhc07                    // Hack
+sailormnhc08                    // Hack
+sailormnhc09                    // Hack
+sailormnhc10                    // Hack
+sailormnhc11                    // Hack
+sailormnhc12                    // Hack
+sailormnhc13                    // Hack
+sailormnhc14                    // Hack
+theroes                         // Parents
+theroeshc01                     // Hack
 
 @source:m92.cpp
-hook                            // (c) 1992 Irem (World)
-hookj                           // (c) 1992 Irem (Japan)
-hooku                           // (c) 1992 Irem America (US)
-ppan                            // bootleg
-nbbatman                        // (c) 1993 Irem (World)
-nbbatman2bl                     // bootleg
-nbbatmanu                       // (c) 1993 Irem America (US)
-leaguemn                        // (c) 1993 Irem (Japan)
-
-@source:m92.cpp
+hook                            // Parents
 hookhc01                        // Hack
 hookhc02                        // Hack
 hookhc03                        // Hack
@@ -2765,6 +2777,7 @@ hookhc32                        // Hack
 hookhc33                        // Hack
 hookhc34                        // Hack
 hookhc35                        // Hack
+nbbatman                        // Parents
 nbbatmanhc01                    // Hack
 nbbatmanhc02                    // Hack
 nbbatmanhc03                    // Hack
@@ -2772,28 +2785,20 @@ nbbatmanhc04                    // Hack
 nbbatmanhc05                    // Hack
 nbbatmanhc06                    // Hack
 nbbatmanhc07                    // Hack
+uccops                          // Parents
+uccopshc01                      // Hack
 
 @source:midtunit.cpp
-mk                              // (c) 1992 Midway
-mk2                             // (c) 1993 Midway
-mk2chal                         // hack
-mk2r11                          // (c) 1993 Midway
-mk2r14                          // (c) 1993 Midway
-mk2r20                          // (c) 1993 Midway
-mk2r21                          // (c) 1993 Midway
-mk2r30                          // (c) 1993 Midway
-mk2r31e                         // (c) 1993 Midway
-mk2r32e                         // (c) 1993 Midway
-mk2r42                          // hack
-mk2r91                          // hack
-mkr4                            // (c) 1992 Midway
+mk                              // Parents
 mktturbo                        // hack
-
-@source:midtunit.cpp
 mkhc01                          // hack
 mkhc02                          // hack
 mkhc03                          // hack
 mkhc04                          // hack
+mk2                             // Parents
+mk2chal                         // hack
+mk2r42                          // hack
+mk2r91                          // hack
 mk2hc01                         // hack
 mk2hc02                         // hack
 mk2hc03                         // hack
@@ -2801,35 +2806,13 @@ mk2hc04                         // hack
 mk2hc05                         // hack
 
 @source:midyunit.cpp
-mkla1                           // (c) 1992 Midway
-mkla2                           // (c) 1992 Midway
-mkla3                           // (c) 1992 Midway
-mkla4                           // (c) 1992 Midway
 mknifty                         // hack
-mknifty666                      // hack
-mkrep                           // hack
-mkprot4                         // (c) 1992 Midway
-mkprot8                         // (c) 1992 Midway
-mkprot9                         // (c) 1992 Midway
-mkyawdim                        // bootleg
-mkyawdim2                       // bootleg
-mkyawdim3                       // bootleg
-mkyawdim4                       // bootleg
-mkyawdim5                       // bootleg
 mkyturbo                        // hack
-mkyturboe                       // hack
 
 @source:midwunit.cpp
-mk3                             // (c) 1994 Midway
-mk3p40                          // (c) 1994 Midway
-mk3r10                          // (c) 1994 Midway
-mk3r20                          // (c) 1994 Midway
-umk3                            // (c) 1994 Midway
-umk3r10                         // (c) 1994 Midway
-umk3r11                         // (c) 1994 Midway
-
-@source:midwunit.cpp
+mk3                             // Parents
 mk3hc01                         // hack
+umk3                            // Parents
 umk3hc01                        // hack
 umk3hc02                        // hack
 umk3hc03                        // hack
@@ -2841,13 +2824,11 @@ umk3hc08                        // hack
 umk3hc09                        // hack
 
 @source:pgm2.cpp
-kof98umh                        // (c) 2009
+kof98umh                        // Parents
 
 @source:powerins.cpp
-powerins                        // (c) 1993 Atlus (USA)
-powerinsa                       // (c) 1993 Atlus (bootleg of USA version)
-powerinsb                       // (c) 1993 Atlus (bootleg of USA version)
-powerinsc                       // (c) 1993 Atlus (bootleg of USA version)
-powerinsj                       // (c) 1993 Atlus (Japan)
-powerinspj                      // prototype (Japan)
-powerinspu                      // prototype (USA)
+powerins                        // Parents
+powerinshc01                    // hack
+powerinshc02                    // hack
+powerinshc03                    // hack
+powerinshc04                    // hack
