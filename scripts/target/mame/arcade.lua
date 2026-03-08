@@ -22,6 +22,11 @@ CPUS["TMS32031"] = true -- MIDWUNIT
 CPUS["NEC"] = true -- M92
 CPUS["TLCS90"] = true -- POWERINS
 CPUS["ARM7"] = true -- PGM2
+CPUS["MCS51"] = true -- 1943
+CPUS["M6805"] = true -- ARKANOID
+CPUS["UPD7810"] = true -- ASUKA
+CPUS["Z180"] = true -- ASUKA
+CPUS["MCS48"] = true -- BUBLBOBL
 
 --------------------------------------------------
 -- specify available sound cores
@@ -42,6 +47,7 @@ SOUNDS["IREMGA20"] = true -- M92
 SOUNDS["YM3812"] = true -- POWERINS
 SOUNDS["MPEG_AUDIO"] = true --PGM2
 SOUNDS["YMZ770"] = true --PGM2
+SOUNDS["UPD7759"] = true -- AEROFGT
 
 --------------------------------------------------
 -- specify available video cores
@@ -70,6 +76,11 @@ MACHINES["BANKDEV"] = true -- MIDTUNIT
 MACHINES["ADC0844"] = true -- MIDYUNIT
 MACHINES["PIC8259"] = true -- M92
 MACHINES["ARM_AIC"] = true -- PGM2
+MACHINES["NETLIST"] = true -- 1942
+MACHINES["MB3773"] = true -- AEROFGT
+MACHINES["TTL74157"] = true -- ASUKA
+MACHINES["INPUT_MERGER"] = true -- BUBLBOBL
+MACHINES["K053252"] = true -- DBZ
 
 --------------------------------------------------
 -- specify available bus cores
@@ -88,9 +99,13 @@ function linkProjects_mame_arcade(_target, _subtarget)
 		"cave",
 		"irem",
 		"igs",
+		"konami",
 		"midway",
 		"neogeo",
-		"nmk",		
+		"nmk",
+		"taito",
+		"tehkan",
+		"vsystem",
 	}
 end
 
@@ -133,6 +148,15 @@ function createProjects_mame_arcade(_target, _subtarget)
 
 createMAMEProjects(_target, _subtarget, "capcom")
 files {
+	MAME_DIR .. "src/mame/drivers/1942.cpp",
+	MAME_DIR .. "src/mame/includes/1942.h",
+	MAME_DIR .. "src/mame/video/1942.cpp",
+	MAME_DIR .. "src/mame/audio/nl_1942.cpp",
+	MAME_DIR .. "src/mame/audio/nl_1942.h",
+	MAME_DIR .. "src/mame/drivers/1943.cpp",
+	MAME_DIR .. "src/mame/includes/1943.h",
+	MAME_DIR .. "src/mame/video/1943.cpp",
+	MAME_DIR .. "src/mame/drivers/blktiger.cpp",
 	MAME_DIR .. "src/hbmame/drivers/cps1.cpp",
 	MAME_DIR .. "src/hbmame/video/cps1.cpp",
 	MAME_DIR .. "src/hbmame/drivers/cps1bl_5205.cpp",
@@ -169,6 +193,30 @@ files {
 	MAME_DIR .. "src/hbmame/drivers/m92hb.cpp",
 	MAME_DIR .. "src/mame/video/m92.cpp",
 	MAME_DIR .. "src/mame/machine/irem_cpu.cpp",
+}
+
+createMAMEProjects(_target, _subtarget, "konami")
+files {
+	MAME_DIR .. "src/mame/drivers/dbz.cpp",
+	MAME_DIR .. "src/mame/includes/dbz.h",
+	MAME_DIR .. "src/mame/video/dbz.cpp",
+	MAME_DIR .. "src/mame/video/k053246_k053247_k055673.cpp",
+	MAME_DIR .. "src/mame/video/k053246_k053247_k055673.h",
+	MAME_DIR .. "src/mame/video/k053251.cpp",
+	MAME_DIR .. "src/mame/video/k053251.h",
+	MAME_DIR .. "src/mame/video/k053936.cpp",
+	MAME_DIR .. "src/mame/video/k053936.h",
+	MAME_DIR .. "src/mame/video/k054156_k054157_k056832.cpp",
+	MAME_DIR .. "src/mame/video/k054156_k054157_k056832.h",
+	MAME_DIR .. "src/mame/video/k055555.cpp",
+	MAME_DIR .. "src/mame/video/k055555.h",
+	MAME_DIR .. "src/mame/drivers/contra.cpp",
+	MAME_DIR .. "src/mame/machine/k007452.cpp",
+	MAME_DIR .. "src/mame/machine/k007452.h",
+	MAME_DIR .. "src/mame/video/k007121.cpp",
+	MAME_DIR .. "src/mame/video/k007121.h",
+	MAME_DIR .. "src/mame/video/konami_helper.cpp",
+	MAME_DIR .. "src/mame/video/konami_helper.h",
 }
 
 createMAMEProjects(_target, _subtarget, "midway")
@@ -218,6 +266,55 @@ files {
 	MAME_DIR .. "src/mame/video/nmk16spr.cpp",
 	MAME_DIR .. "src/mame/machine/nmk004.cpp",
 	MAME_DIR .. "src/mame/audio/seibu.cpp",
+}
+
+createMAMEProjects(_target, _subtarget, "taito")
+files {
+	MAME_DIR .. "src/mame/drivers/bublbobl.cpp",
+	MAME_DIR .. "src/mame/includes/bublbobl.h",
+	MAME_DIR .. "src/mame/machine/bublbobl.cpp",
+	MAME_DIR .. "src/mame/video/bublbobl.cpp",
+	MAME_DIR .. "src/mame/drivers/asuka.cpp",
+	MAME_DIR .. "src/mame/audio/taitosnd.cpp",
+	MAME_DIR .. "src/mame/audio/taitosnd.h",
+	MAME_DIR .. "src/mame/machine/taitocchip.cpp",
+	MAME_DIR .. "src/mame/machine/taitocchip.h",
+	MAME_DIR .. "src/mame/machine/taitoio.cpp",
+	MAME_DIR .. "src/mame/machine/taitoio.h",
+	MAME_DIR .. "src/mame/video/pc090oj.cpp",
+	MAME_DIR .. "src/mame/video/pc090oj.h",
+	MAME_DIR .. "src/mame/video/tc0100scn.cpp",
+	MAME_DIR .. "src/mame/video/tc0100scn.h",
+	MAME_DIR .. "src/mame/video/tc0110pcr.cpp",
+	MAME_DIR .. "src/mame/video/tc0110pcr.h",
+	MAME_DIR .. "src/mame/drivers/arkanoid.cpp",
+	MAME_DIR .. "src/mame/includes/arkanoid.h",
+	MAME_DIR .. "src/mame/machine/arkanoid.cpp",
+	MAME_DIR .. "src/mame/video/arkanoid.cpp",
+	MAME_DIR .. "src/mame/machine/taito68705interface.cpp",
+	MAME_DIR .. "src/mame/machine/taito68705interface.h",
+}
+
+createMAMEProjects(_target, _subtarget, "tehkan")
+files {
+	MAME_DIR .. "src/mame/drivers/bombjack.cpp",
+	MAME_DIR .. "src/mame/includes/bombjack.h",
+	MAME_DIR .. "src/mame/video/bombjack.cpp",
+}
+
+createMAMEProjects(_target, _subtarget, "vsystem")
+files {
+	MAME_DIR .. "src/mame/machine/vs9209.cpp",
+	MAME_DIR .. "src/mame/machine/vs9209.h",
+	MAME_DIR .. "src/mame/video/vsystem_gga.cpp",
+	MAME_DIR .. "src/mame/video/vsystem_gga.h",
+	MAME_DIR .. "src/mame/video/vsystem_spr.cpp",
+	MAME_DIR .. "src/mame/video/vsystem_spr.h",
+	MAME_DIR .. "src/mame/video/vsystem_spr2.cpp",
+	MAME_DIR .. "src/mame/video/vsystem_spr2.h",
+	MAME_DIR .. "src/mame/drivers/aerofgt.cpp",
+	MAME_DIR .. "src/mame/includes/aerofgt.h",
+	MAME_DIR .. "src/mame/video/aerofgt.cpp",
 }
 
 end

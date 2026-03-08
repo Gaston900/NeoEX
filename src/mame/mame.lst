@@ -2832,3 +2832,34 @@ powerinshc01                    // hack
 powerinshc02                    // hack
 powerinshc03                    // hack
 powerinshc04                    // hack
+
+@source:1942.cpp
+1942                            // Parents
+
+@source:1943.cpp
+1943                            // Parents
+
+@source:aerofgt.cpp
+aerofgt                         // Parents
+
+@source:arkanoid.cpp
+arkanoid                        // Parents
+
+@source:asuka.cpp
+asuka                           // Parents
+
+@source:blktiger.cpp
+blktiger                        // Parents
+
+@source:bombjack.cpp
+bombjack                        // Parents
+
+@source:bublbobl.cpp
+bublbobl                        // Parents
+
+@source:contra.cpp
+contra                          // Parents
+
+@source:dbz.cpp
+dbz                             // Parents
+dbz2                            // Parents
