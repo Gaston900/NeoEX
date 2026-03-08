@@ -2863,3 +2863,56 @@ contra                          // Parents
 @source:dbz.cpp
 dbz                             // Parents
 dbz2                            // Parents
+
+@source:dec0.cpp
+baddudes                        // Parents
+
+@source:deco_mlc.cpp
+avengrgs                        // Parents
+
+@source:deco32.cpp
+fghthist                        // Parents
+
+@source:dkong.cpp
+dkong                           // Parents
+
+@source:exerion.cpp
+exerion                         // Parents
+
+@source:flstory.cpp
+flstory                         // Parents
+
+@source:fuukifg3.cpp
+asurabld                        // Parents
+asurabus                        // Parents
+
+@source:galaxian.cpp
+galaxian                        // Parents
+
+@source:gauntlet.cpp
+gauntlet                        // Parents
+
+@source:ginganin.cpp
+ginganin                        // Parents
+
+@source:gottlieb.cpp
+qbert                           // Parents
+
+@source:kaneko16.cpp
+bloodwar                        // Parents
+
+@source:kikikai.cpp
+kikikai                         // Parents
+
+@source:konamigx.cpp
+dragoona                        // Parents
+
+@source:kyugo.cpp
+airwolf                         // Parents
+
+@source:lkage.cpp
+lkage                           // Parents
+
+
+
+

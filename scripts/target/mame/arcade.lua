@@ -27,6 +27,15 @@ CPUS["M6805"] = true -- ARKANOID
 CPUS["UPD7810"] = true -- ASUKA
 CPUS["Z180"] = true -- ASUKA
 CPUS["MCS48"] = true -- BUBLBOBL
+CPUS["H6280"] = true -- DEC0
+CPUS["M6502"] = true -- DEC0
+CPUS["ARM"] = true -- DECO_MLC
+CPUS["SH"] = true -- DECO_MLC
+CPUS["TMS32010"] = true -- DECO32
+CPUS["S2650"] = true -- DKONG
+CPUS["I86"] = true -- GOTTLIEB
+CPUS["TMS57002"] = true -- KONAMIGX
+
 
 --------------------------------------------------
 -- specify available sound cores
@@ -48,6 +57,22 @@ SOUNDS["YM3812"] = true -- POWERINS
 SOUNDS["MPEG_AUDIO"] = true --PGM2
 SOUNDS["YMZ770"] = true --PGM2
 SOUNDS["UPD7759"] = true -- AEROFGT
+SOUNDS["C6280"] = true -- DEC0
+SOUNDS["BSMT2000"] = true -- DECO32
+SOUNDS["LC7535"] = true -- DECO32
+SOUNDS["DISCRETE"] = true -- DKONG
+SOUNDS["NES_APU"] = true -- DKONG
+SOUNDS["TMS5110"] = true -- DKONG
+SOUNDS["MSM5232"] = true -- FLSTORY
+SOUNDS["TA7630"] = true -- FLSTORY
+SOUNDS["DIGITALKER"] = true -- GALAXIAN
+SOUNDS["SN76496"] = true -- GALAXIAN
+SOUNDS["SP0250"] = true -- GALAXIAN
+SOUNDS["POKEY"] = true -- GAUNTLET
+SOUNDS["TMS5220"] = true  -- GAUNTLET
+SOUNDS["VOTRAX"] = true -- GOTTLIEB
+SOUNDS["K054539"] = true -- KONAMIGX
+SOUNDS["K056800"] = true -- KONAMIGX
 
 --------------------------------------------------
 -- specify available video cores
@@ -59,18 +84,18 @@ VIDEOS["BUFSPRITE"] = true -- M92
 -- specify available machine cores
 --------------------------------------------------
 
-MACHINES["ALPHA_8921"] = true --NEOGEO
-MACHINES["GEN_LATCH"] = true --NEOGEO
-MACHINES["UPD1990A"] = true --NEOGEO
-MACHINES["WATCHDOG"] = true --NEOGEO
-MACHINES["Z80DAISY"] = true --NEOGEO
-MACHINES["TTL74157"] = true --CPS1
-MACHINES["EEPROMDEV"] = true --CPS1
-MACHINES["TIMEKPR"] = true --CPS1
-MACHINES["UPD4701"] = true --CPS1
-MACHINES["INTELFLASH"] = true -- cps3
-MACHINES["NSCSI"] = true -- cps3
-MACHINES["WD33C9X"] = true -- cps3
+MACHINES["ALPHA_8921"] = true -- NEOGEO
+MACHINES["GEN_LATCH"] = true -- NEOGEO
+MACHINES["UPD1990A"] = true -- NEOGEO
+MACHINES["WATCHDOG"] = true -- NEOGEO
+MACHINES["Z80DAISY"] = true -- NEOGEO
+MACHINES["TTL74157"] = true -- CPS1
+MACHINES["EEPROMDEV"] = true -- CPS1
+MACHINES["TIMEKPR"] = true -- CPS1
+MACHINES["UPD4701"] = true -- CPS1
+MACHINES["INTELFLASH"] = true -- CPS3
+MACHINES["NSCSI"] = true -- CPS3
+MACHINES["WD33C9X"] = true -- CPS3
 MACHINES["6821PIA"] = true -- MIDTUNIT
 MACHINES["BANKDEV"] = true -- MIDTUNIT
 MACHINES["ADC0844"] = true -- MIDYUNIT
@@ -81,6 +106,21 @@ MACHINES["MB3773"] = true -- AEROFGT
 MACHINES["TTL74157"] = true -- ASUKA
 MACHINES["INPUT_MERGER"] = true -- BUBLBOBL
 MACHINES["K053252"] = true -- DBZ
+MACHINES["MB8421"] = true -- DEC0
+MACHINES["UPD4701"] = true -- DEC0
+MACHINES["I8257"] = true -- DKONG
+MACHINES["LATCH8"] = true -- DKONG
+MACHINES["TMS6100"] = true -- DKONG
+MACHINES["Z80DMA"] = true -- DKONG
+MACHINES["I8255"] = true -- GALAXIAN
+MACHINES["TTL74259"] = true -- GAUNTLET
+MACHINES["6840PTM"] = true -- GINGANIN
+MACHINES["RIOT6532"] = true -- GOTTLIEB
+MACHINES["LDPR8210"] = true -- GOTTLIEB
+MACHINES["MIOT6530"] = true -- GOTTLIEB
+MACHINES["ADC083X"] = true -- KONAMIGX
+
+
 
 --------------------------------------------------
 -- specify available bus cores
@@ -95,17 +135,26 @@ BUSES["NSCSI"] = true -- CPS3
 
 function linkProjects_mame_arcade(_target, _subtarget)
 	links {
+		"atari",
+		"dataeast",
 		"capcom",
 		"cave",
-		"irem",
+		"fuuki",
+		"gottlieb",
 		"igs",
+		"irem",
+		"jaleco",
+		"kaneko",
 		"konami",
 		"midway",
+		"namco",
 		"neogeo",
+		"nintendo",
 		"nmk",
 		"taito",
 		"tehkan",
 		"vsystem",
+		"misc",
 	}
 end
 
@@ -146,6 +195,55 @@ function createProjects_mame_arcade(_target, _subtarget)
 -- shared across a number of drivers
 --------------------------------------------------
 
+createMAMEProjects(_target, _subtarget, "atari")
+files {
+	MAME_DIR .. "src/mame/drivers/gauntlet.cpp",
+	MAME_DIR .. "src/mame/includes/gauntlet.h",
+	MAME_DIR .. "src/mame/video/gauntlet.cpp",
+	MAME_DIR .. "src/mame/machine/slapstic.cpp",
+	MAME_DIR .. "src/mame/machine/slapstic.h",
+	MAME_DIR .. "src/mame/video/atarimo.cpp",
+	MAME_DIR .. "src/mame/video/atarimo.h",
+}
+
+createMAMEProjects(_target, _subtarget, "dataeast")
+files {
+	MAME_DIR .. "src/mame/audio/decobsmt.cpp",
+	MAME_DIR .. "src/mame/audio/decobsmt.h",
+	MAME_DIR .. "src/mame/drivers/deco32.cpp",
+	MAME_DIR .. "src/mame/includes/deco32.h",
+	MAME_DIR .. "src/mame/video/deco32.cpp",
+	MAME_DIR .. "src/mame/machine/deco104.cpp",
+	MAME_DIR .. "src/mame/machine/deco104.h",
+	MAME_DIR .. "src/mame/machine/deco_irq.cpp",
+	MAME_DIR .. "src/mame/machine/deco_irq.h",
+	MAME_DIR .. "src/mame/machine/decocrpt.cpp",
+	MAME_DIR .. "src/mame/machine/decocrpt.h",
+	MAME_DIR .. "src/mame/video/deco16ic.cpp",
+	MAME_DIR .. "src/mame/video/deco16ic.h",
+	MAME_DIR .. "src/mame/video/deco_ace.cpp",
+	MAME_DIR .. "src/mame/video/deco_ace.h",
+	MAME_DIR .. "src/mame/video/decospr.cpp",
+	MAME_DIR .. "src/mame/video/decospr.h",
+	MAME_DIR .. "src/mame/video/namco_c355spr.cpp",
+	MAME_DIR .. "src/mame/video/namco_c355spr.h",
+	MAME_DIR .. "src/mame/drivers/deco_mlc.cpp",
+	MAME_DIR .. "src/mame/includes/deco_mlc.h",
+	MAME_DIR .. "src/mame/video/deco_mlc.cpp",
+	MAME_DIR .. "src/mame/machine/deco146.cpp",
+	MAME_DIR .. "src/mame/machine/deco146.h",
+	MAME_DIR .. "src/mame/machine/deco156.cpp",
+	MAME_DIR .. "src/mame/machine/deco156.h",
+	MAME_DIR .. "src/mame/drivers/dec0.cpp",
+	MAME_DIR .. "src/mame/includes/dec0.h",
+	MAME_DIR .. "src/mame/machine/dec0.cpp",
+	MAME_DIR .. "src/mame/video/dec0.cpp",
+	MAME_DIR .. "src/mame/video/decbac06.cpp",
+	MAME_DIR .. "src/mame/video/decbac06.h",
+	MAME_DIR .. "src/mame/video/decmxc06.cpp",
+	MAME_DIR .. "src/mame/video/decmxc06.h",
+}
+
 createMAMEProjects(_target, _subtarget, "capcom")
 files {
 	MAME_DIR .. "src/mame/drivers/1942.cpp",
@@ -177,6 +275,24 @@ files {
 	MAME_DIR .. "src/mame/video/tmap038.cpp",
 }
 
+createMAMEProjects(_target, _subtarget, "fuuki")
+files {
+	MAME_DIR .. "src/mame/drivers/fuukifg3.cpp",
+	MAME_DIR .. "src/mame/includes/fuukifg3.h",
+	MAME_DIR .. "src/mame/video/fuukifg3.cpp",
+	MAME_DIR .. "src/mame/video/fuukifg.cpp",
+	MAME_DIR .. "src/mame/video/fuukifg.h",
+}
+
+createMAMEProjects(_target, _subtarget, "gottlieb")
+files {
+	MAME_DIR .. "src/mame/drivers/gottlieb.cpp",
+	MAME_DIR .. "src/mame/includes/gottlieb.h",
+	MAME_DIR .. "src/mame/audio/gottlieb.cpp",
+	MAME_DIR .. "src/mame/audio/gottlieb.h",
+	MAME_DIR .. "src/mame/video/gottlieb.cpp",
+}
+
 createMAMEProjects(_target, _subtarget, "igs")
 files {
 	MAME_DIR .. "src/mame/drivers/pgm2.cpp",
@@ -195,8 +311,43 @@ files {
 	MAME_DIR .. "src/mame/machine/irem_cpu.cpp",
 }
 
+createMAMEProjects(_target, _subtarget, "jaleco")
+files {
+	MAME_DIR .. "src/mame/drivers/ginganin.cpp",
+	MAME_DIR .. "src/mame/includes/ginganin.h",
+	MAME_DIR .. "src/mame/video/ginganin.cpp",
+	MAME_DIR .. "src/mame/drivers/exerion.cpp",
+	MAME_DIR .. "src/mame/includes/exerion.h",
+	MAME_DIR .. "src/mame/video/exerion.cpp",
+}
+
+createMAMEProjects(_target, _subtarget, "kaneko")
+files {
+	MAME_DIR .. "src/mame/drivers/kaneko16.cpp",
+	MAME_DIR .. "src/mame/includes/kaneko16.h",
+	MAME_DIR .. "src/mame/video/kaneko16.cpp",
+	MAME_DIR .. "src/mame/machine/kaneko_calc3.cpp",
+	MAME_DIR .. "src/mame/machine/kaneko_calc3.h",
+	MAME_DIR .. "src/mame/machine/kaneko_hit.cpp",
+	MAME_DIR .. "src/mame/machine/kaneko_hit.h",
+	MAME_DIR .. "src/mame/machine/kaneko_toybox.cpp",
+	MAME_DIR .. "src/mame/machine/kaneko_toybox.h",
+	MAME_DIR .. "src/mame/video/kaneko_tmap.cpp",
+	MAME_DIR .. "src/mame/video/kaneko_tmap.h",
+	MAME_DIR .. "src/mame/video/kaneko_spr.cpp",
+	MAME_DIR .. "src/mame/video/kaneko_spr.h",
+}
+
 createMAMEProjects(_target, _subtarget, "konami")
 files {
+	MAME_DIR .. "src/mame/drivers/konamigx.cpp",
+	MAME_DIR .. "src/mame/includes/konamigx.h",
+	MAME_DIR .. "src/mame/machine/konamigx.cpp",
+	MAME_DIR .. "src/mame/video/konamigx.cpp",
+	MAME_DIR .. "src/mame/video/k053250.cpp",
+	MAME_DIR .. "src/mame/video/k053250.h",
+	MAME_DIR .. "src/mame/video/k054338.cpp",
+	MAME_DIR .. "src/mame/video/k054338.h",
 	MAME_DIR .. "src/mame/drivers/dbz.cpp",
 	MAME_DIR .. "src/mame/includes/dbz.h",
 	MAME_DIR .. "src/mame/video/dbz.cpp",
@@ -238,6 +389,19 @@ files {
 	MAME_DIR .. "src/mame/audio/bally.cpp",
 }
 
+createMAMEProjects(_target, _subtarget, "namco")
+files {
+	MAME_DIR .. "src/mame/audio/cclimber.cpp",
+	MAME_DIR .. "src/mame/audio/cclimber.h",
+	MAME_DIR .. "src/mame/drivers/galaxian.cpp",
+	MAME_DIR .. "src/mame/includes/galaxian.h",
+	MAME_DIR .. "src/mame/audio/galaxian.cpp",
+	MAME_DIR .. "src/mame/audio/galaxian.h",
+	MAME_DIR .. "src/mame/video/galaxian.cpp",
+	MAME_DIR .. "src/mame/audio/nl_konami.h",
+	MAME_DIR .. "src/mame/audio/nl_konami.cpp",
+}
+
 createMAMEProjects(_target, _subtarget, "neogeo")
 files {
 	MAME_DIR .. "src/hbmame/drivers/neogeo.cpp",
@@ -257,6 +421,14 @@ files {
 	MAME_DIR .. "src/hbmame/bus/neogeo_ctrl/kizuna4p.cpp",
 }
 
+createMAMEProjects(_target, _subtarget, "nintendo")
+files {
+	MAME_DIR .. "src/mame/drivers/dkong.cpp",
+	MAME_DIR .. "src/mame/includes/dkong.h",
+	MAME_DIR .. "src/mame/audio/dkong.cpp",
+	MAME_DIR .. "src/mame/video/dkong.cpp",
+}
+
 createMAMEProjects(_target, _subtarget, "nmk")
 files {
 	MAME_DIR .. "src/hbmame/drivers/powerinshb.cpp",
@@ -270,6 +442,16 @@ files {
 
 createMAMEProjects(_target, _subtarget, "taito")
 files {
+	MAME_DIR .. "src/mame/drivers/lkage.cpp",
+	MAME_DIR .. "src/mame/includes/lkage.h",
+	MAME_DIR .. "src/mame/video/lkage.cpp",
+	MAME_DIR .. "src/mame/drivers/kikikai.cpp",
+	MAME_DIR .. "src/mame/includes/kikikai.h",
+	MAME_DIR .. "src/mame/machine/kikikai.cpp",
+	MAME_DIR .. "src/mame/video/kikikai.cpp",
+	MAME_DIR .. "src/mame/drivers/flstory.cpp",
+	MAME_DIR .. "src/mame/includes/flstory.h",
+	MAME_DIR .. "src/mame/video/flstory.cpp",
 	MAME_DIR .. "src/mame/drivers/bublbobl.cpp",
 	MAME_DIR .. "src/mame/includes/bublbobl.h",
 	MAME_DIR .. "src/mame/machine/bublbobl.cpp",
@@ -317,4 +499,14 @@ files {
 	MAME_DIR .. "src/mame/video/aerofgt.cpp",
 }
 
+--------------------------------------------------
+-- remaining drivers
+--------------------------------------------------
+
+createMAMEProjects(_target, _subtarget, "misc")
+files {
+	MAME_DIR .. "src/mame/drivers/kyugo.cpp",
+	MAME_DIR .. "src/mame/includes/kyugo.h",
+	MAME_DIR .. "src/mame/video/kyugo.cpp",
+}
 end
