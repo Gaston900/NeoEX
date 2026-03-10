@@ -1,7 +1,7 @@
 // license:BSD-3-Clause
 // copyright-holders:Gaston90
 /***************************************************************
-   List of all enabled Neogeo (MVS/AES) drivers in the system.
+   List of all enabled drivers in the system.
 ******************************************************************/
 
 @source:neogeo.cpp
@@ -2913,6 +2913,171 @@ airwolf                         // Parents
 @source:lkage.cpp
 lkage                           // Parents
 
+@source:lordgun.cpp
+aliencha                        // Parents
+
+@source:mappy.cpp
+mappy                           // Parents
+
+@source:mystwarr.cpp
+mtlchamp                        // Parents
+
+@source:namcona1.cpp
+knckhead                        // Parents
+
+@source:namcos2.cpp
+valkyrie                        // Parents
+
+@source:nemesis.cpp
+salamand                        // Parents
+
+@source:pcktgal.cpp
+pcktgal                         // Parents
+
+@source:pgm.cpp
+pgm                             // Bios
+orlegend                        // Parents
+
+@source:psikyo.cpp
+gunbird                         // Parents
+
+@source:psikyosh.cpp
+daraku                          // Parents
+
+@source:r2dx_v33.cpp
+nzeroteam                       // Parents
+
+@source:rabbit.cpp
+rabbit                          // Parents
+
+@source:raiden2.cpp
+zeroteam                        // Parents
+
+@source:rallyx.cpp
+rallyx                          // Parents
+
+@source:rastan.cpp
+rastan                          // Parents
+
+@source:segas16b.cpp
+altbeast                        // Parents
+
+@source:segas32.cpp
+brival                          // Parents
+
+@source:seta.cpp
+blandia                         // Parents
+
+@source:seta2.cpp
+grdians                         // Parents
+
+@source:shadfrce.cpp
+shadfrce                        // Parents
+
+@source:silkroad.cpp
+silkroad                        // Parents
+
+@source:snowbros.cpp
+snowbros                        // Parents
+
+@source:solomon.cpp
+solomon                         // Parents
+
+@source:ssv.cpp
+survarts                        // Parents
+
+@source:stv.cpp
+gaxeduel                        // Parents
+
+@source:system1.cpp
+wbml                            // Parents
+
+@source:taito_f2.cpp
+cameltry                        // Parents
+
+@source:taito_f3.cpp
+spcinv95                        // Parents
+
+@source:taito_l.cpp
+evilston                        // Parents
+
+@source:taitosj.cpp
+alpine                          // Parents
+
+@source:taotaido.cpp
+taotaido                        // Parents
+
+@source:tecmo.cpp
+gemini                          // Parents
+
+@source:tecmo16.cpp
+fstarfrc                        // Parents
+
+@source:tecmosys.cpp
+tkdensho                        // Parents
+
+@source:tmnt.cpp
+ssriders                        // Parents
+
+@source:tnzs.cpp
+insectx                         // Parents
+
+@source:toaplan2.cpp
+batsugun                        // Parents
+
+@source:vamphalf.cpp
+aoh                             // Parents
+
+@source:volfied.cpp
+volfied                         // Parents
+
+@source:vsnes.cpp
+suprmrio                        // Parents
+
+@source:zn.cpp
+doapp                           // Parents
+
+@source:galaga.cpp
+galaga                          // Parents
+
+
+
+/*****************************************************
+    List of all enabled drivers console in the system.
+********************************************************/
+
+@source:nes.cpp
+famicom                         // Nintendo Family Computer (a.k.a. Famicom)
+nes                             // Nintendo Entertainment System
+nespal                          // Nintendo Entertainment System PAL
+
+@source:snes.cpp
+snes                            // Nintendo Super Nintendo NTSC
+snespal                         // Nintendo Super Nintendo PAL
+
+@source:gb.cpp
+gameboy                         // Nintendo Game Boy Handheld
+gbcolor                         // Nintendo Game Boy Color Handheld
+
+@source:gba.cpp
+gba                             // Nintendo Game Boy Advance Handheld
+
+@source:megadriv.cpp
+32x                             // 1994 Sega 32X (USA)
+32xe                            //
+32xj                            //
+genesis                         // 1989 Sega Genesis (USA)
+genesis_tmss                    //
+megadrij                        // 1988 Sega Mega Drive (Japan)
+megadriv                        // 1990 Sega Mega Drive (Europe)
+
+@source:sms.cpp
+gamegeaj                        // Sega GameGear (Japan)
+gamegear                        // Sega GameGear
+sms                             // Sega Master System II (NTSC)
+sms1                            // Sega Master System I (NTSC)
+sms1pal                         // Sega Master System I (PAL)
+smsj                            // Sega Master System (Japan) with FM Chip
 
 
 

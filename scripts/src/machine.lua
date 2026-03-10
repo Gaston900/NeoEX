@@ -35,8 +35,8 @@ files {
 	MAME_DIR .. "src/devices/machine/timer.h",
 }
 files {
---	MAME_DIR .. "src/devices/imagedev/bitbngr.cpp",
---	MAME_DIR .. "src/devices/imagedev/bitbngr.h",
+	MAME_DIR .. "src/devices/imagedev/bitbngr.cpp", -- SMS
+	MAME_DIR .. "src/devices/imagedev/bitbngr.h", -- SMS
 	MAME_DIR .. "src/devices/imagedev/cartrom.cpp",
 --	MAME_DIR .. "src/devices/imagedev/cartrom.h",
 	MAME_DIR .. "src/devices/imagedev/cassette.cpp",
@@ -59,10 +59,10 @@ files {
 --	MAME_DIR .. "src/devices/imagedev/mfmhd.h",
 --	MAME_DIR .. "src/devices/imagedev/microdrv.cpp",
 --	MAME_DIR .. "src/devices/imagedev/microdrv.h",
---	MAME_DIR .. "src/devices/imagedev/midiin.cpp",
---	MAME_DIR .. "src/devices/imagedev/midiin.h",
---	MAME_DIR .. "src/devices/imagedev/midiout.cpp",
---	MAME_DIR .. "src/devices/imagedev/midiout.h",
+	MAME_DIR .. "src/devices/imagedev/midiin.cpp", -- NES
+	MAME_DIR .. "src/devices/imagedev/midiin.h", -- NES
+	MAME_DIR .. "src/devices/imagedev/midiout.cpp", -- NES
+	MAME_DIR .. "src/devices/imagedev/midiout.h", -- NES
 --	MAME_DIR .. "src/devices/imagedev/papertape.cpp",
 --	MAME_DIR .. "src/devices/imagedev/papertape.h",
 --	MAME_DIR .. "src/devices/imagedev/picture.cpp",
