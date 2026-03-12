@@ -321,6 +321,7 @@ IDI_MISC2SHEET          ICON                    "res\\debug.ico"
 IDI_SNAPSHEET           ICON                    "res\\snapshot.ico"
 // 修改的 代码来源 (加斯顿90)
 /****************************************************************************/
+IDI_FOLDER_CONSOLE      ICON                    "res\\foldavail.ico"
 IDI_FOLDER_NEOGEO		ICON					"res\\fold_neo.ico"
 IDI_FOLDER_CAPCOM		ICON				    "res\\fold_cps.ico"
 IDI_FOLDER_MISC	    	ICON				    "res\\fold_misc.ico"

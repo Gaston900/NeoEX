@@ -3216,7 +3216,7 @@ GAME( 1991, pspikesc,  pspikes,   pspikesc,   pspikesc,  aerofgt_state, empty_in
 GAME( 1997, wbbc97,    0,         wbbc97,     wbbc97,    aerofgt_state, empty_init,      ROT0,   "Comad",               "Beach Festival World Championship 1997", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL ) // based on power spikes codebase
 GAME( 1998, kickball,  0,         kickball,   pspikes,   aerofgt_state, init_kickball,   ROT0,   "Seoung Youn",    "Kick Ball", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL | MACHINE_IMPERFECT_GRAPHICS ) // based on power spikes codebase, wrong priorities
 
-GAME( 1991, karatblz,   0,        karatblz,   karatblz,  aerofgt_state, empty_init,      ROT0,   "Video System Co.",                 "Karate Blazers (World, set 1)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
+GAME( 1991, karatblz,   0,        karatblz,   karatblz,  aerofgt_state, empty_init,      ROT0,   "Video System Co.",                 "Karate Blazers (World, set 1)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1991, karatblza,  karatblz, karatblz,   karatblz,  aerofgt_state, empty_init,      ROT0,   "Video System Co.",                 "Karate Blazers (World, set 2)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
 GAME( 1991, karatblzt,  karatblz, karatblz,   karatblz,  aerofgt_state, empty_init,      ROT0,   "Video System Co. (Tecmo license)", "Karate Blazers (World, Tecmo license)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
 GAME( 1991, karatblzu,  karatblz, karatblz,   karatblzu, aerofgt_state, empty_init,      ROT0,   "Video System Co.",                 "Karate Blazers (US)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
@@ -3230,7 +3230,7 @@ GAME( 1991, turbofrco,  turbofrc, turbofrc,   turbofrc,  aerofgt_state, empty_in
 GAME( 1991, turbofrcu,  turbofrc, turbofrc,   turbofrc,  aerofgt_state, empty_init,      ROT270, "Video System Co.",    "Turbo Force (US)",    MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
 
 // the tiles on these also contain an alt title 'The Final War' for both the title screen and attract logo was it ever used?
-GAME( 1992, aerofgt,    0,        aerofgt,    aerofgt,   aerofgt_state, empty_init,      ROT270, "Video System Co.",    "Aero Fighters (World / USA + Canada / Korea / Hong Kong / Taiwan) (newer hardware)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL ) // this has the newer sprite chip etc. unlike all other games in this driver..
+GAME( 1992, aerofgt,    0,        aerofgt,    aerofgt,   aerofgt_state, empty_init,      ROT270, "Video System Co.",    "Aero Fighters (World / USA + Canada / Korea / Hong Kong / Taiwan) (newer hardware)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE ) // this has the newer sprite chip etc. unlike all other games in this driver..
 GAME( 1992, aerofgtb,   aerofgt,  aerofgtb,   aerofgtb,  aerofgt_state, empty_init,      ROT270, "Video System Co.",    "Aero Fighters (Taiwan / Japan, set 1)", MACHINE_SUPPORTS_SAVE ) // probably intended for Taiwan because the Japanese name is Sonic Wings (below)
 GAME( 1992, aerofgtc,   aerofgt,  aerofgtb,   aerofgtb,  aerofgt_state, empty_init,      ROT270, "Video System Co.",    "Aero Fighters (Taiwan / Japan, set 2)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, sonicwi,    aerofgt,  aerofgtb,   aerofgtb,  aerofgt_state, empty_init,      ROT270, "Video System Co.",    "Sonic Wings (Japan)",                   MACHINE_SUPPORTS_SAVE )

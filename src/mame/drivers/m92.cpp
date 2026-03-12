@@ -2285,7 +2285,7 @@ GAME( 1991, crossbld, bmaster,  bmaster,       bmaster,   m92_state, empty_init,
 GAME( 1991, lethalth, 0,        lethalth,      lethalth,  m92_state, empty_init,  ROT270,   "Irem",         "Lethal Thunder (World)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
 GAME( 1991, thndblst, lethalth, lethalth,      thndblst,  m92_state, empty_init,  ROT270,   "Irem",         "Thunder Blaster (Japan)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
 
-GAME( 1992, uccops,   0,        uccops,        uccops,    m92_state, empty_init,    ROT0,   "Irem",         "Undercover Cops (World)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
+GAME( 1992, uccops,   0,        uccops,        uccops,    m92_state, empty_init,    ROT0,   "Irem",         "Undercover Cops (World)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1992, uccopsu,  uccops,   uccops,        uccops,    m92_state, empty_init,    ROT0,   "Irem",         "Undercover Cops (US)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
 GAME( 1992, uccopsj,  uccops,   uccops,        uccops,    m92_state, empty_init,    ROT0,   "Irem",         "Undercover Cops (Japan)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
 GAME( 1992, uccopsar, uccops,   uccops,        uccops,    m92_state, empty_init,    ROT0,   "Irem",         "Undercover Cops - Alpha Renewal Version (World)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
@@ -2304,7 +2304,7 @@ GAME( 1992, majtitl2j,majtitl2, majtitl2,      majtitl2,  m92_state, init_bank, 
 GAME( 1992, skingame, majtitl2, majtitl2,      majtitl2,  m92_state, init_bank,     ROT0,   "Irem America", "The Irem Skins Game (US set 1)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
 GAME( 1992, skingame2,majtitl2, majtitl2,      majtitl2,  m92_state, init_bank,     ROT0,   "Irem America", "The Irem Skins Game (US set 2)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
 
-GAME( 1992, hook,     0,        hook,          hook,      m92_state, empty_init,    ROT0,   "Irem",         "Hook (World)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL)
+GAME( 1992, hook,     0,        hook,          hook,      m92_state, empty_init,    ROT0,   "Irem",         "Hook (World)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1992, hooku,    hook,     hook,          hook,      m92_state, empty_init,    ROT0,   "Irem America", "Hook (US)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL)
 GAME( 1992, hookj,    hook,     hook,          hook,      m92_state, empty_init,    ROT0,   "Irem",         "Hook (Japan)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL)
 GAME( 1992, ppan,     hook,     ppan,          hook,      m92_state, empty_init,    ROT0,   "bootleg",      "Peter Pan (bootleg of Hook)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_COCKTAIL) // PCB marked 'Peter Pan', no title screen, made in Italy?
@@ -2316,7 +2316,7 @@ GAME( 1993, inthunt,  0,        inthunt,       inthunt,   m92_state, empty_init,
 GAME( 1993, inthuntu, inthunt,  inthunt,       inthunt,   m92_state, empty_init,    ROT0,   "Irem America", "In The Hunt (US)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL)
 GAME( 1993, kaiteids, inthunt,  inthunt,       inthunt,   m92_state, empty_init,    ROT0,   "Irem",         "Kaitei Daisensou (Japan)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL )
 
-GAME( 1993, nbbatman, 0,        nbbatman,      nbbatman,  m92_state, init_bank,     ROT0,   "Irem",         "Ninja Baseball Bat Man (World)", MACHINE_SUPPORTS_SAVE | MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_COCKTAIL )
+GAME( 1993, nbbatman, 0,        nbbatman,      nbbatman,  m92_state, init_bank,     ROT0,   "Irem",         "Ninja Baseball Bat Man (World)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1993, nbbatmanu,nbbatman, nbbatman,      nbbatman,  m92_state, init_bank,     ROT0,   "Irem America", "Ninja Baseball Bat Man (US)", MACHINE_SUPPORTS_SAVE | MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_COCKTAIL)
 GAME( 1993, leaguemn, nbbatman, nbbatman,      nbbatman,  m92_state, init_bank,     ROT0,   "Irem",         "Yakyuu Kakutou League-Man (Japan)", MACHINE_SUPPORTS_SAVE | MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_COCKTAIL )
 GAME( 1993, nbbatman2bl,nbbatman,nbbatman2bl,  nbbatman,  m92_state, init_bank,     ROT0,   "bootleg",      "Ninja Baseball Bat Man II (bootleg)", MACHINE_NO_SOUND | MACHINE_NOT_WORKING | MACHINE_NO_COCKTAIL ) // different sprite system, MCU as soundcpu, OKI samples for music/sound

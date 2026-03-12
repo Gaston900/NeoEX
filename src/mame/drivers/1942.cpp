@@ -1027,7 +1027,7 @@ void _1942_state::driver_init()
 }
 
 
-GAME( 1984, 1942,    0,    _1942,  1942,  _1942_state,  driver_init, ROT270, "Capcom", "1942 (Revision B)", MACHINE_SUPPORTS_SAVE)
+GAME( 1984, 1942,    0,    _1942,  1942,  _1942_state,  driver_init, ROT270, "Capcom", "1942 (Revision B)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1984, 1942a,   1942, _1942,  1942,  _1942_state,  driver_init, ROT270, "Capcom", "1942 (Revision A)", MACHINE_SUPPORTS_SAVE)
 GAME( 1984, 1942abl, 1942, _1942,  1942,  _1942_state,  driver_init, ROT270, "bootleg", "1942 (Revision A, bootleg)", MACHINE_SUPPORTS_SAVE) // data is the same as 1942a set, different rom format
 GAME( 1991, 1942h,   1942, _1942,  1942,  _1942_state,  driver_init, ROT270, "hack (Two Bit Score)", "Supercharger 1942", MACHINE_SUPPORTS_SAVE)

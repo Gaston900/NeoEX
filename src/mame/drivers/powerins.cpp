@@ -796,7 +796,7 @@ ROM_START( powerinsc )
 ROM_END
 
 /* all supported sets give a 93.10.20 date */
-GAME( 1993, powerins,   0,        powerins,  powerins, powerins_state, empty_init,     ROT0, "Atlus",   "Power Instinct (USA)", MACHINE_SUPPORTS_SAVE )
+GAME( 1993, powerins,   0,        powerins,  powerins, powerins_state, empty_init,     ROT0, "Atlus",   "Power Instinct (USA)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1993, powerinsj,  powerins, powerins,  powerinj, powerins_state, empty_init,     ROT0, "Atlus",   "Gouketsuji Ichizoku (Japan)", MACHINE_SUPPORTS_SAVE )
 GAME( 1993, powerinspu, powerins, powerins,  powerinj, powerins_state, empty_init,     ROT0, "Atlus",   "Power Instinct (USA, prototype)", MACHINE_SUPPORTS_SAVE ) // boots as 93.10.20 just like the other sets, but code is different
 GAME( 1993, powerinspj, powerins, powerins,  powerinj, powerins_state, empty_init,     ROT0, "Atlus",   "Gouketsuji Ichizoku (Japan, prototype)", MACHINE_SUPPORTS_SAVE ) // boots as 93.10.20 just like the other sets, but code is different

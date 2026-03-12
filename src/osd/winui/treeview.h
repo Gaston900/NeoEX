@@ -72,6 +72,7 @@ enum
 	FOLDER_DUMPING,
 // 修改的 代码来源 (加斯顿90)
 /******************/
+    FOLDER_CONSOLE,
 	FOLDER_NEOGEO,
 	FOLDER_CAPCOM,
 	FOLDER_MISC,

@@ -176,11 +176,12 @@
 // 修改的 代码来源 (EKMAME)
 /*******************************************/
 #define IDB_KLIST						285
-#define IDI_FOLDER_NEOGEO				286
-#define IDI_FOLDER_CAPCOM				287
-#define IDI_FOLDER_MISC	    			288
-#define IDI_HEADER_UP                   289
-#define IDI_HEADER_DOWN                 290
+#define IDI_FOLDER_CONSOLE              286
+#define IDI_FOLDER_NEOGEO				287
+#define IDI_FOLDER_CAPCOM				288
+#define IDI_FOLDER_MISC	    			289
+#define IDI_HEADER_UP                   290
+#define IDI_HEADER_DOWN                 291
 /*******************************************/
 
 // 修改的 (Eziochiu)

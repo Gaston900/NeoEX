@@ -74,13 +74,14 @@ extern const FOLDERDATA g_folderData[] =
 	{"All Games",       "allgames",          FOLDER_ALLGAMES,     IDI_FOLDER_ALLGAMES,      0,             0,            0, NULL,                       NULL,                    true },
 	{"Available",       "available",         FOLDER_AVAILABLE,    IDI_FOLDER_AVAILABLE,     F_AVAILABLE,   0,            0, NULL,                       FilterAvailable,         true },
 	{"Unavailable",     "unavailable",       FOLDER_UNAVAILABLE,  IDI_FOLDER_UNAVAILABLE,   0,             F_AVAILABLE,  0, NULL,                       FilterAvailable,         false },
+	{"Console",         "console",           FOLDER_CONSOLE,      IDI_FOLDER_CONSOLE,       0,             0,            0, NULL,                       DriverIsConsole,         true },
 	{"BIOS",            "bios",              FOLDER_BIOS,         IDI_FOLDER_BIOS,          0,             0,            1, CreateBIOSFolders,          DriverIsBios,            true },
     {"Parents",         "originals",         FOLDER_ORIGINAL,     IDI_FOLDER_ORIGINALS,     F_ORIGINALS,   F_CLONES,     0, NULL,                       DriverIsClone,           false },
     {"Clones",          "clones",            FOLDER_CLONES,       IDI_FOLDER_CLONES,        F_CLONES,      F_ORIGINALS,  0, NULL,                       DriverIsClone,           true },
 	{"Source",          "source",            FOLDER_SOURCE,       IDI_FOLDER_SOURCE,        0,             0,            0, CreateSourceFolders },
 	{"NeoGeo",          "neogeo", 	         FOLDER_NEOGEO,       IDI_FOLDER_NEOGEO,		0,			   0, 		     0, CreateNEOGEOFolders },
     {"Capcom",		    "Capcom",		     FOLDER_CAPCOM,	      IDI_FOLDER_CAPCOM, 	    0,			   0,            0,	CreateCAPCOMFolders },
-	{"Misc",		    "misc",		         FOLDER_MISC,	      IDI_FOLDER_MISC, 	        0,			   0,            0,	CreateMISCFolders },
+	{"Misc",		    "misc",		         FOLDER_MISC,	      IDI_FOLDER_MISC, 	        0,			   0,            0,	NULL,                       DriverIsMisc,            true },
 	{"Vertical",        "vertical",          FOLDER_VERTICAL,     IDI_FOLDER_VERTICAL,      F_VERTICAL,    F_HORIZONTAL, 0, NULL,                       DriverIsVertical,        true },
 	{"Horizontal",      "horizontal",        FOLDER_HORIZONTAL,   IDI_FOLDER_HORIZONTAL,    F_HORIZONTAL,  F_VERTICAL,   0, NULL,                       DriverIsVertical,        false },
 	{"Working",         "working",           FOLDER_WORKING,      IDI_FOLDER_WORKING,       F_WORKING,     F_NONWORKING, 0, NULL,                       DriverIsBroken,          false },	
@@ -153,6 +154,7 @@ static const TREEICON treeIconNames[] =
 	{ IDI_SOURCE,              "source" },
 // 修改的 代码来源 (加斯顿90)
 /**********************************************/
+	{ IDI_FOLDER_CONSOLE,      "fold_console" },
 	{ IDI_FOLDER_NEOGEO,       "fold_neogeo" },
     { IDI_FOLDER_CAPCOM,	   "fold_cps"},
     { IDI_FOLDER_MISC,	       "fold_misc"},
@@ -316,6 +318,22 @@ bool GameFiltered(int nGame, DWORD dwMask)
 	if(lpFolder && lpFolder->m_nFolderId != FOLDER_BIOS)
 	{
 		if(DriverIsBios(nGame))
+			return true;
+	}
+
+// (cache, 0 = cache, 1)
+/* Add games "MACHINE_TYPE_CONSOLE" "MACHINE_TYPE_COMPUTER" "MACHINE_TYPE_OTHER"*/
+	if(lpFolder && lpFolder->m_nFolderId != FOLDER_CONSOLE)
+	{
+		if(DriverIsConsole(nGame))
+			return true;
+	}
+
+// (cache, 8)
+/* Add games "MACHINE_NO_COCKTAIL"*/
+	if(lpFolder && lpFolder->m_nFolderId != FOLDER_MISC)
+	{
+		if(DriverIsMisc(nGame))
 			return true;
 	}
 

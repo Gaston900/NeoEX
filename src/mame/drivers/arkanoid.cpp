@@ -2266,7 +2266,7 @@ void arkanoid_state::init_brixian()
 
 // original sets of Arkanoid
 //    YEAR, NAME,         PARENT,   MACHINE,  INPUT,     STATE,          INIT,           MONITOR,COMPANY,                                      FULLNAME,                                      FLAGS
-GAME( 1986, arkanoid,     0,        arkanoid, arkanoid,  arkanoid_state, empty_init,     ROT90, "Taito Corporation Japan",                     "Arkanoid (World, older)",                     MACHINE_SUPPORTS_SAVE )
+GAME( 1986, arkanoid,     0,        arkanoid, arkanoid,  arkanoid_state, empty_init,     ROT90, "Taito Corporation Japan",                     "Arkanoid (World, older)",                     MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1986, arkanoidu,    arkanoid, arkanoid, arkanoid,  arkanoid_state, empty_init,     ROT90, "Taito America Corporation (Romstar license)", "Arkanoid (US, newer)",                        MACHINE_SUPPORTS_SAVE )
 GAME( 1986, arkanoiduo,   arkanoid, arkanoid, arkanoid,  arkanoid_state, empty_init,     ROT90, "Taito America Corporation (Romstar license)", "Arkanoid (US, older)",                        MACHINE_SUPPORTS_SAVE )
 GAME( 1986, arkanoidj,    arkanoid, arkanoid, arkanoidj, arkanoid_state, empty_init,     ROT90, "Taito Corporation",                           "Arkanoid (Japan, newer)",                     MACHINE_SUPPORTS_SAVE )

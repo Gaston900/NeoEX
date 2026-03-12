@@ -2778,8 +2778,6 @@ hookhc32                        // hack
 hookhc33                        // hack
 hookhc34                        // hack
 hookhc35                        // hack
-mysticri                        // Parents
-mysticrib                       // bootleg
 nbbatman                        // Parents
 nbbatmanhc01                    // hack
 nbbatmanhc02                    // hack
@@ -2810,12 +2808,7 @@ mk2hc05                         // hack
 
 @source:midyunit.cpp
 mknifty                         // hack
-mknifty666                      // hack
 mkyturbo                        // hack
-mkyawdim                        // bootleg
-mkyawdim2                       // bootleg
-mkyawdim3                       // bootleg
-mkyawdim4                       // bootleg
 
 @source:midwunit.cpp
 mk3                             // Parents
@@ -2840,51 +2833,27 @@ powerinshc01                    // hack
 powerinshc02                    // hack
 powerinshc03                    // hack
 powerinshc04                    // hack
-powerinsa                       // bootleg
-powerinsb                       // bootleg
 
 @source:1942.cpp
 1942                            // Parents
-1942abl                         // bootleg
-1942p                           // bootleg
 1942h                           // hack
 1942hc01                        // hack
 1942hc02                        // hack
 
 @source:1943.cpp
-1943                            // Parents
-1943b                           // bootleg
-1943bj                          // bootleg
 1943kai                         // Parents
 1943kaihc01                     // hack
 
 @source:aerofgt.cpp
 aerofgt                         // Parents
 aerofgthc01                     // hack
-aerfboot                        // bootleg
-aerfboo2                        // bootleg
 karatblz                        // Parents
 karatblzhc01                    // hack
-karatblzbl                      // bootleg
 
 @source:arkanoid.cpp
 arkanoid                        // Parents
 arkanoidhc01                    // hack
 arkanoidhc02                    // hack
-arkanoidjbl                     // bootleg
-arkanoidjbl2                    // bootleg
-ark1ball                        // bootleg
-arkangc                         // bootleg
-arkangc2                        // bootleg
-arkblock                        // bootleg
-arkbloc2                        // bootleg
-arkbloc3                        // bootleg
-block2                          // bootleg
-arkgcbl                         // bootleg
-arkgcbla                        // bootleg
-paddle2                         // bootleg
-arkatayt                        // bootleg
-arktayt2                        // bootleg
 
 @source:asuka.cpp
 asuka                           // Parents
@@ -2893,8 +2862,6 @@ asukahc01                       // hack
 @source:blktiger.cpp
 blktiger                        // Parents
 blkdrgonhc01                    // hack
-blkdrgonb                       // bootleg
-blktigerb3                      // bootleg
 
 @source:bombjack.cpp
 bombjack                        // Parents
@@ -2910,39 +2877,18 @@ bublboblhc04                    // hack
 bublboblhc05                    // hack
 bublboblhc06                    // hack
 bublcave                        // hack
-boblbobl                        // bootleg
-sboblbobl                       // bootleg
-sboblbobla                      // bootleg
-sboblboblb                      // bootleg
-sboblbobld                      // bootleg
-sboblboble                      // bootleg
-sboblboblf                      // bootleg
-sboblboblc                      // bootleg
-bub68705                        // bootleg
-bub8749                         // bootleg
-dland                           // bootleg
-bbredux                         // bootleg
-bublboblb                       // bootleg
 
 @source:contra.cpp
 contra                          // Parents
 contrahc01                      // hack
-contrab                         // bootleg
-contrabj                        // bootleg
-contrabj1                       // bootleg
 
 @source:dbz.cpp
 dbz2                            // Parents
 dbz2hc01                        // hack
-dbz2bl                          // bootleg
 
 @source:dec0.cpp
 baddudes                        // Parents
 baddudeshc01                    // hack
-drgninjab                       // bootleg
-drgninjab2                      // bootleg
-robocop                         // Parents
-robocopb                        // bootleg
 
 @source:deco_mlc.cpp
 avengrgs                        // Parents
@@ -2995,30 +2941,10 @@ dktrain                         // hack
 dkong19                         // hack
 dkremix                         // hack
 dkongx                          // hack
-dkongf                          // hack
-dkonghs                         // hack
-dkongike                        // hack
-dkongjrc                        // hack
-dkongpe                         // hack
-dkong3                          // Parents
-dkong3hs                        // hack
-dkong3b                         // bootleg
-dkongjr                         // Parents
-dkongjrhs                       // hack
-dkongddk                        // hack
-dkongjrb                        // bootleg
-dkongjrpb                       // bootleg
-jrking                          // bootleg
-dkingjr                         // bootleg
-maguila                         // bootleg
 
 @source:exerion.cpp
 exerion                         // Parents
 exerionhc01                     // hack
-exerionb                        // bootleg
-exerionb2                       // bootleg
-exerionba                       // bootleg
-irion                           // bootleg
 
 @source:flstory.cpp
 flstory                         // Parents
@@ -3058,36 +2984,12 @@ supergs                         // hack
 galturbo                        // hack
 galap1                          // hack
 galap4                          // hack
-zerotime                        // bootleg
-galaktron                       // bootleg
-galkamika                       // bootleg
-zerotimed                       // bootleg
-zerotimemc                      // bootleg
-zerotimeu                       // bootleg
-galaxcirsa                      // bootleg
-starfght                        // bootleg
-galaxbsf                        // bootleg
-galaxianbl                      // bootleg
-galaxbsf2                       // bootleg
-galaxianbl2                     // bootleg
-galaxianbl3                     // bootleg
-galaxianem                      // bootleg
-galaxrf                         // bootleg
-galaxrfgg                       // bootleg
-galaxrcgg                       // bootleg
-galaxianrp                      // bootleg
-galaxyx                         // bootleg
-galartic                        // bootleg
-zigzagb                         // Parents / bootleg
-zigzagb2                        // bootleg
-gmgalax                         // Parents / bootleg
 
 @source:gauntlet.cpp
 gaunt2                          // Parents
 gaunt2hc01                      // hack
 gaunt2hc02                      // hack
 gaunt2hc03                      // hack
-gauntlet                        // Parents (Personal Choice)
 
 @source:ginganin.cpp
 ginganin                        // Parents
@@ -3103,38 +3005,24 @@ bloodwar                        // Parents
 bloodwarhc01                    // hack
 shogwarr                        // Parents
 shogwarrhc01                    // hack
-berlwall                        // Parents
-berlwallt                       // bootleg
 
 @source:kikikai.cpp
 kikikai                         // Parents
 kikikaihc01                     // hack
-knightb                         // bootleg
 
 @source:konamigx.cpp
 dragoona                        // Parents
 dragoonahc01                    // hack
 dragoonahc02                    // hack
 dragoonahc03                    // hack
-fantjour                        // Parents (Personal Choice)
-sexyparo                        // Parents (Personal Choice)
-tbyahhoo                        // Parents (Personal Choice)
-salmndr2                        // Parents (Personal Choice)
 
 @source:kyugo.cpp
 airwolf                         // Parents
 airwolfhc01                     // hack 
-skywolf                         // bootleg
-skywolf2                        // bootleg
-skywolf3                        // bootleg
 
 @source:lkage.cpp
 lkage                           // Parents
 lkagehc01                       // hack
-lkageb                          // bootleg
-lkageb2                         // bootleg
-lkageb3                         // bootleg
-lkageb4                         // bootleg
 
 @source:lordgun.cpp
 aliencha                        // Parents
@@ -3153,18 +3041,30 @@ superpachc04                    // hack
 
 @source:mystwarr.cpp
 mtlchamp                        // Parents
+mtlchamhc01                     // hack
+mmaulers                        // Parents
+mmaulershc01                    // hack
+viostorm                        // Parents
+viostormhc01                    // hack
+viostormhc02                    // hack
+viostormhc03                    // hack
 
 @source:namcona1.cpp
 knckhead                        // Parents
+knckheadhc01                    // hack
 
 @source:namcos2.cpp
 valkyrie                        // Parents
+valkyriehc01                    // hack
 
 @source:nemesis.cpp
 salamand                        // Parents
+salamandhc01                    // hack
 
 @source:pcktgal.cpp
 pcktgal                         // Parents
+pcktgalhc01                     // hack
+pcktgalhc02                     // hack
 
 @source:pgm.cpp
 pgm                             // Bios
@@ -3172,9 +3072,21 @@ orlegend                        // Parents
 
 @source:psikyo.cpp
 gunbird                         // Parents
+gunbirdhc01                     // hack
+samuraia                        // Parents
+samuraiahc01                    // hack
+tengai                          // Parents
+tengaihc01                      // hack
+tengaihc02                      // hack
 
 @source:psikyosh.cpp
 daraku                          // Parents
+s1945iihc01                     // hack
+s1945iii                        // Parents
+s1945iiihc01                    // hack
+s1945iiihc02                    // hack
+soldivid                        // Parents
+soldividhc01                    // hack
 
 @source:puckman.cpp
 puckman                         // (c) 1980 Namco
@@ -3561,96 +3473,237 @@ superabc                        // hack
 
 @source:r2dx_v33.cpp
 nzeroteam                       // Parents
+nzeroteamhc01                   // hack
 
 @source:rabbit.cpp
 rabbit                          // Parents
+rabbithc01                      // hack
+rabbithc02                      // hack
 
 @source:raiden2.cpp
 zeroteam                        // Parents
+zeroteamhc01                    // hack
+zeroteamhc02                    // hack
+zeroteamhc03                    // hack
+zeroteamhc04                    // hack
+zeroteamhc05                    // hack
+zeroteamhc06                    // hack
+zeroteamhc07                    // hack
+zeroteamhc08                    // hack
+zeroteamhc09                    // hack
+zeroteamhc10                    // hack
+zeroteamhc11                    // hack
+zeroteamhc12                    // hack
+zeroteamhc13                    // hack
+zeroteamhc14                    // hack
+zeroteamhc15                    // hack
+zeroteamhc16                    // hack
 
 @source:rallyx.cpp
 rallyx                          // Parents
+rallyxhc01                      // hack
+rallyxhc02                      // hack
 
 @source:rastan.cpp
 rastan                          // Parents
+rastanhc01                      // hack
+rastanhc02                      // hack
+rastanhc03                      // hack
 
 @source:segas16b.cpp
 altbeast                        // Parents
+altbeasthc01                    // hack
+altbeasthc02                    // hack
+altbeasthc03                    // hack
 
 @source:segas32.cpp
 brival                          // Parents
+brivalhc01                      // hack
 
 @source:seta.cpp
 blandia                         // Parents
+blandiahc01                     // hack
+blandiahc02                     // hack
+msgundam                        // Parents
+msgundamhc01                    // hack
 
 @source:seta2.cpp
 grdians                         // Parents
+grdianshc01                     // hack
+grdianshc02                     // hack
+grdianshc03                     // hack
+grdianshc04                     // hack
+grdianshc05                     // hack
+grdianshc06                     // hack
 
 @source:shadfrce.cpp
 shadfrce                        // Parents
+shadfrcehc01                    // hack
 
 @source:silkroad.cpp
 silkroad                        // Parents
+silkroadhc01                    // hack
+silkroadhc02                    // hack
+silkroadhc03                    // hack
 
 @source:snowbros.cpp
 snowbros                        // Parents
+snowbroshc01                    // hack
 
 @source:solomon.cpp
 solomon                         // Parents
+solomonhc01                     // hack
 
 @source:ssv.cpp
 survarts                        // Parents
+survartshc01                    // hack
 
 @source:stv.cpp
 gaxeduel                        // Parents
+gaxeduelhc01                    // hack
+groovef                         // Parents
+groovefhc01                     // hack
+suikoenb                        // Parents
+suikoenbhc01                    // hack
 
 @source:system1.cpp
 wbml                            // Parents
+wbmlhc01                        // hack
+wbmlhc02                        // hack
 
 @source:taito_f2.cpp
 cameltry                        // Parents
+cameltryhc01                    // hack
+deadconx                        // Parents
+deadconxhc01                    // hack
+dinorex                         // Parents
+dinorexhc01                     // hack
+dondokod                        // Parents
+dondokodhc01                    // hack
+gunfront                        // Parents
+gunfronthc01                    // hack
+megablst                        // Parents
+megablsthc01                    // hack
+liquidk                         // Parents
+mizubakuhc01                    // hack
+growl                           // Parents
+runarkhc01                      // hack
+thundfox                        // Parents
+thundfoxhc01                    // hack
 
 @source:taito_f3.cpp
 spcinv95                        // Parents
+akkanvdrhc01                    // hack
+arabianm                        // Parents
+arabianmhc01                    // hack
+bublbob2                        // Parents
+bubsymphhc01                    // hack
+cleopatr                        // Parents
+cleopatrhc01                    // hack
+dankuga                         // Parents
+dankugahc01                     // hack
+elvactr                         // Parents
+elvactrhc01                     // hack
+gekiridn                        // Parents
+gekiridnhc01                    // hack
+gseeker                         // Parents
+gseekerhc01                     // hack
+kaiserkn                        // Parents
+kaiserknhc01                    // hack
+landmakr                        // Parents
+landmakrhc01                    // hack
+lightbr                         // Parents
+lightbrhc01                     // hack
 
 @source:taito_l.cpp
 evilston                        // Parents
+evilstonhc01                    // hack
+kurikint                        // Parents
+kurikinthc01                    // hack
+plotting                        // Parents
+plottinghc01                    // hack
 
 @source:taitosj.cpp
 alpine                          // Parents
+alpinehc01                      // hack
+frontlin                        // Parents
+frontlinhc01                    // hack
 
 @source:taotaido.cpp
 taotaido                        // Parents
+taotaidohc01                    // hack
 
 @source:tecmo.cpp
 gemini                          // Parents
+geminihc01                      // hack
+rygar                           // Parents
+rygarhc01                       // hack
+rygarhc02                       // hack
+silkworm                        // Parents
+silkwormhc01                    // hack
 
 @source:tecmo16.cpp
 fstarfrc                        // Parents
+fstarfrchc01                    // hack
 
 @source:tecmosys.cpp
 tkdensho                        // Parents
+tkdenshohc01                    // hack
+tkdenshohc02                    // hack
+tkdenshohc03                    // hack
 
 @source:tmnt.cpp
 ssriders                        // Parents
+ssridershc01                    // hack
+ssridershc02                    // hack
+ssridershc03                    // hack
+tmnt2                           // Parents
+tmnt2hc01                       // hack
 
 @source:tnzs.cpp
 insectx                         // Parents
+insectxhc01                     // hack
 
 @source:toaplan2.cpp
-batsugun                        // Parents
+bgaregga                        // Parents
+bgareggahc01                    // hack
+sstriker                        // Parents
+mahoudaihc01                    // hack
+snowbro2                        // Parents
+snowbro2hc01                    // hack
+snowbro2hc02                    // hack
 
 @source:vamphalf.cpp
 aoh                             // Parents
+aohhc01                         // hack
 
 @source:volfied.cpp
 volfied                         // Parents
+volfiedhc01                     // hack
 
 @source:vsnes.cpp
 suprmrio                        // Parents
+mrio2002                        // hack
+suprsktr                        // hack
+frombelow                       // hack
+drmario                         // Parents
+drmarioch                       // hack
+vs_urban                        // hack
 
 @source:zn.cpp
+coh1000c                        // BIOS
+coh1002m                        // BIOS
+coh3002c                        // BIOS
 doapp                           // Parents
+doapphc01                       // hack
+sfex                            // Parents
+sfexhc01                        // hack
+sfex2                           // Parents
+sfex2hc01                       // hack
+sfex2p                          // Parents
+sfex2phc01                      // hack
+sfexp                           // Parents
+sfexphc01                       // hack
 
 @source:galaga.cpp
 galaga                          // Parents
