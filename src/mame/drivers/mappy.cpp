@@ -2055,7 +2055,7 @@ void mappy_state::init_digdug2()
 
 
 /* 2x6809, static tilemap, 2bpp sprites (Super Pacman type)  */
-GAME( 1982, superpac,  0,        superpac, superpac,  mappy_state, empty_init,   ROT90, "Namco", "Super Pac-Man", MACHINE_SUPPORTS_SAVE )
+GAME( 1982, superpac,  0,        superpac, superpac,  mappy_state, empty_init,   ROT90, "Namco", "Super Pac-Man", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1982, superpacm, superpac, superpac, superpac,  mappy_state, empty_init,   ROT90, "Namco (Bally Midway license)", "Super Pac-Man (Midway)", MACHINE_SUPPORTS_SAVE )
 GAME( 1983, pacnpal,   0,        pacnpal,  pacnpal,   mappy_state, empty_init,   ROT90, "Namco", "Pac & Pal", MACHINE_SUPPORTS_SAVE )
 GAME( 1983, pacnpal2,  pacnpal,  pacnpal,  pacnpal,   mappy_state, empty_init,   ROT90, "Namco", "Pac & Pal (older)", MACHINE_SUPPORTS_SAVE )
@@ -2069,7 +2069,7 @@ GAME( 1983, phozon,    0,        phozon,    phozon,   mappy_state, empty_init,  
 GAME( 1983, phozons,   phozon,   phozon,    phozon,   mappy_state, empty_init,   ROT90, "Namco (Sidam license)", "Phozon (Sidam)", MACHINE_SUPPORTS_SAVE )
 
 /* 2x6809, scroling tilemap, 4bpp sprites (Super Pacman type) */
-GAME( 1983, mappy,     0,        mappy,     mappy,    mappy_state, empty_init,   ROT90, "Namco", "Mappy (US)", MACHINE_SUPPORTS_SAVE )
+GAME( 1983, mappy,     0,        mappy,     mappy,    mappy_state, empty_init,   ROT90, "Namco", "Mappy (US)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1983, mappyj,    mappy,    mappy,     mappy,    mappy_state, empty_init,   ROT90, "Namco", "Mappy (Japan)", MACHINE_SUPPORTS_SAVE )
 GAME( 1984, todruaga,  0,        todruaga,  todruaga, mappy_state, empty_init,   ROT90, "Namco", "The Tower of Druaga (New Ver.)", MACHINE_SUPPORTS_SAVE )
 GAME( 1984, todruagao, todruaga, todruaga,  todruaga, mappy_state, empty_init,   ROT90, "Namco", "The Tower of Druaga (Old Ver.)", MACHINE_SUPPORTS_SAVE )

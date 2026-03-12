@@ -700,7 +700,7 @@ ROM_END
 
 /******************************************************************************/
 
-GAME( 1992, fstarfrc,   0,        base,     fstarfrc, tecmo16_state, empty_init, ROT90, "Tecmo",    "Final Star Force (US)",           MACHINE_SUPPORTS_SAVE ) // Has 'Recycle it, don't trash it"  and 'Winners don't use drugs' screens after first attract cycle
+GAME( 1992, fstarfrc,   0,        base,     fstarfrc, tecmo16_state, empty_init, ROT90, "Tecmo",    "Final Star Force (US)",           MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE ) // Has 'Recycle it, don't trash it"  and 'Winners don't use drugs' screens after first attract cycle
 GAME( 1992, fstarfrcj,  fstarfrc, base,     fstarfrc, tecmo16_state, empty_init, ROT90, "Tecmo",    "Final Star Force (Japan, set 1)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, fstarfrcja, fstarfrc, base,     fstarfrc, tecmo16_state, empty_init, ROT90, "Tecmo",    "Final Star Force (Japan, set 2)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, fstarfrcw,  fstarfrc, base,     fstarfrc, tecmo16_state, empty_init, ROT90, "Tecmo",    "Final Star Force (World?)",       MACHINE_SUPPORTS_SAVE ) // more similar the to the Japanese version than to the US one, not the parent because not sure it's the world version

@@ -1544,7 +1544,7 @@ GAME(1993, emeraldaja, emeralda, namcona1,  namcona1_joy,  namcona1_state, init_
 GAME(1993, tinklpit,   0,        namcona1,  namcona1_joy,  namcona1_state, init_tinklpit, ROT0, "Namco", "Tinkle Pit (Japan)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL)
 
 // NA-2 (C70 MCU)
-GAME(1992, knckhead,   0,        namcona2,  namcona1_joy,  namcona2_state, init_knckhead, ROT0, "Namco", "Knuckle Heads (World)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL)
+GAME(1992, knckhead,   0,        namcona2,  namcona1_joy,  namcona2_state, init_knckhead, ROT0, "Namco", "Knuckle Heads (World)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE)
 GAME(1992, knckheadj,  knckhead, namcona2,  namcona1_joy,  namcona2_state, init_knckhead, ROT0, "Namco", "Knuckle Heads (Japan)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL)
 GAME(1992, knckheadjp, knckhead, namcona2,  namcona1_joy,  namcona2_state, init_knckhead, ROT0, "Namco", "Knuckle Heads (Japan, Prototype?)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL)
 GAME(1993, emeralda,   0,        namcona2,  namcona1_joy,  namcona2_state, init_emeralda, ROT0, "Namco", "Emeraldia (World)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_COCKTAIL)

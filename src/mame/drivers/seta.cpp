@@ -12614,7 +12614,7 @@ GAME( 1991, stg,       0,        stg,       stg,       seta_state,     empty_ini
 
 GAME( 1991, pairlove,  0,        pairlove,  pairlove,  pairlove_state, empty_init,     ROT270, "Athena",                    "Pairs Love", 0 )
 
-GAME( 1992, blandia,   0,        blandia,   blandia,   seta_state,     init_bankx1,    ROT0,   "Allumer",                   "Blandia", MACHINE_IMPERFECT_GRAPHICS )
+GAME( 1992, blandia,   0,        blandia,   blandia,   seta_state,     init_bankx1,    ROT0,   "Allumer",                   "Blandia", MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1992, blandiap,  blandia,  blandiap,  blandia,   seta_state,     init_bankx1,    ROT0,   "Allumer",                   "Blandia (prototype)", MACHINE_IMPERFECT_GRAPHICS )
 
 GAME( 1992, blockcar,  0,        blockcar,  blockcar,  seta_state,     empty_init,     ROT90,  "Visco",                     "Block Carnival / Thunder & Lightning 2" , 0) // Title: DSW
@@ -12648,7 +12648,7 @@ GAME( 1993, kamenrid,  0,        kamenrid,  kamenrid,  seta_state,     empty_ini
 GAME( 1993, madshark,  0,        madshark,  madshark,  seta_state,     empty_init,     ROT270, "Allumer",                   "Mad Shark", 0 )
 
 // end credits shows Allumer as developer.
-GAME( 1993, msgundam,  0,        msgundam,  msgundam,  seta_state,     empty_init,     ROT0,   "Banpresto / Allumer",       "Mobile Suit Gundam", 0 )
+GAME( 1993, msgundam,  0,        msgundam,  msgundam,  seta_state,     empty_init,     ROT0,   "Banpresto / Allumer",       "Mobile Suit Gundam", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1993, msgundam1, msgundam, msgundam,  msgundam1, seta_state,     empty_init,     ROT0,   "Banpresto / Allumer",       "Mobile Suit Gundam (Japan)", 0 )
 GAME( 1993, msgundamb, msgundam, msgundamb, msgundam,  seta_state,     empty_init,     ROT0,   "bootleg",                   "Mobile Suit Gundam (bootleg)", 0 )
 

@@ -2212,13 +2212,13 @@ GAME( 1989, champwr,   0,        champwr,   champwr,   champwr_state,     empty_
 GAME( 1989, champwru,  champwr,  champwr,   champwru,  champwr_state,     empty_init,     ROT0,   "Taito America Corporation", "Champion Wrestler (US)", MACHINE_IMPERFECT_SOUND )
 GAME( 1989, champwrj,  champwr,  champwr,   champwrj,  champwr_state,     empty_init,     ROT0,   "Taito Corporation", "Champion Wrestler (Japan)", MACHINE_IMPERFECT_SOUND )
 
-GAME( 1988, kurikint,  0,        kurikint,  kurikint,  taitol_2cpu_state, empty_init,     ROT0,   "Taito Corporation Japan", "Kuri Kinton (World)", 0 )
+GAME( 1988, kurikint,  0,        kurikint,  kurikint,  taitol_2cpu_state, empty_init,     ROT0,   "Taito Corporation Japan", "Kuri Kinton (World)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1988, kurikintw, kurikint, kurikint,  kurikintj, taitol_2cpu_state, empty_init,     ROT0,   "Taito Corporation (World Games, Inc. license)", "Kuri Kinton (US, World Games license)", 0 )
 GAME( 1988, kurikintu, kurikint, kurikint,  kurikintj, taitol_2cpu_state, empty_init,     ROT0,   "Taito America Corporation", "Kuri Kinton (US)", 0 )
 GAME( 1988, kurikintj, kurikint, kurikint,  kurikintj, taitol_2cpu_state, empty_init,     ROT0,   "Taito Corporation", "Kuri Kinton (Japan)", 0 )
 GAME( 1988, kurikinta, kurikint, kurikint,  kurikinta, taitol_2cpu_state, empty_init,     ROT0,   "Taito Corporation Japan", "Kuri Kinton (World, prototype?)", 0 )
 
-GAME( 1989, plotting,  0,        plotting,  plotting,  taitol_1cpu_state, empty_init,     ROT0,   "Taito Corporation Japan", "Plotting (World set 1)", 0 )
+GAME( 1989, plotting,  0,        plotting,  plotting,  taitol_1cpu_state, empty_init,     ROT0,   "Taito Corporation Japan", "Plotting (World set 1)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1989, plottinga, plotting, plotting,  plotting,  taitol_1cpu_state, init_plottinga, ROT0,   "Taito Corporation Japan", "Plotting (World set 2, protected)", 0 )
 GAME( 1989, plottingb, plotting, plotting,  plotting,  taitol_1cpu_state, empty_init,     ROT0,   "Taito Corporation Japan", "Plotting (World set 3, earliest version)", 0 )
 GAME( 1989, plottingu, plotting, plotting,  plottingu, taitol_1cpu_state, empty_init,     ROT0,   "Taito America Corporation", "Plotting (US)", 0 )
@@ -2247,4 +2247,4 @@ GAME( 1992, lagirl,    plgirls,  cachat,    plgirls,   taitol_1cpu_state, empty_
 GAME( 1993, plgirls2,  0,        cachat,    plgirls2,  taitol_1cpu_state, empty_init,     ROT270, "Hot-B Co., Ltd.", "Play Girls 2", 0 )
 GAME( 1993, plgirls2b, plgirls2, cachat,    plgirls2,  taitol_1cpu_state, empty_init,     ROT270, "bootleg", "Play Girls 2 (bootleg)", MACHINE_IMPERFECT_GRAPHICS ) // bootleg hardware (regular Z80 etc. instead of TC0090LVC, but acts almost the same - scroll offset problems)
 
-GAME( 1990, evilston,  0,        evilston,  evilston,  taitol_2cpu_state, empty_init,     ROT270, "Spacy Industrial, Ltd.", "Evil Stone", 0 )
+GAME( 1990, evilston,  0,        evilston,  evilston,  taitol_2cpu_state, empty_init,     ROT270, "Spacy Industrial, Ltd.", "Evil Stone", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

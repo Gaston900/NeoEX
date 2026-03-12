@@ -5937,7 +5937,7 @@ GAME( 1991, arabfgt,   0,        sega_system32_arf,         arabfgt,  segas32_ne
 GAME( 1991, arabfgtu,  arabfgt,  sega_system32_arf,         arabfgtu, segas32_new_state, init_arabfgt,  ROT0, "Sega",   "Arabian Fight (US)", MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1991, arabfgtj,  arabfgt,  sega_system32_arf,         arabfgt,  segas32_new_state, init_arabfgt,  ROT0, "Sega",   "Arabian Fight (Japan)", MACHINE_IMPERFECT_GRAPHICS )
 
-GAME( 1992, brival,    0,        sega_system32_4p,          brival,   segas32_new_state, init_brival,   ROT0, "Sega",   "Burning Rival (World)", MACHINE_IMPERFECT_GRAPHICS )
+GAME( 1992, brival,    0,        sega_system32_4p,          brival,   segas32_new_state, init_brival,   ROT0, "Sega",   "Burning Rival (World)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1992, brivalj,   brival,   sega_system32_4p,          brival,   segas32_new_state, init_brival,   ROT0, "Sega",   "Burning Rival (Japan)", MACHINE_IMPERFECT_GRAPHICS )
 
 GAME( 1992, darkedge,  0,        sega_system32_4p,          darkedge, segas32_new_state, init_darkedge, ROT0, "Sega",   "Dark Edge (World)", MACHINE_IMPERFECT_GRAPHICS )

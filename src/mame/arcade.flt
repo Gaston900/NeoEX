@@ -80,6 +80,7 @@ volfied.cpp
 vsnes.cpp
 zn.cpp
 galaga.cpp
+puckman.cpp
 nes.cpp
 snes.cpp
 gb.cpp

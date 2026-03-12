@@ -1084,5 +1084,5 @@ void lordgun_state::init_aliencha()
 ***************************************************************************/
 
 GAME( 1994, lordgun,   0,        lordgun,  lordgun,  lordgun_state, init_lordgun,  ROT0, "IGS", "Lord of Gun (USA)",       MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
-GAME( 1994, aliencha,  0,        aliencha, aliencha, lordgun_state, init_aliencha, ROT0, "IGS", "Alien Challenge (World)", MACHINE_SUPPORTS_SAVE )
+GAME( 1994, aliencha,  0,        aliencha, aliencha, lordgun_state, init_aliencha, ROT0, "IGS", "Alien Challenge (World)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1994, alienchac, aliencha, aliencha, aliencha, lordgun_state, init_aliencha, ROT0, "IGS", "Alien Challenge (China)", MACHINE_SUPPORTS_SAVE )

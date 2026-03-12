@@ -1158,7 +1158,7 @@ ROM_START( rumba )
 ROM_END
 
 
-GAME( 1985, flstory,   0,        flstory,      flstory,  flstory_state, empty_init, ROT180, "Taito", "The FairyLand Story",                    MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )
+GAME( 1985, flstory,   0,        flstory,      flstory,  flstory_state, empty_init, ROT180, "Taito", "The FairyLand Story",                    MACHINE_IMPERFECT_SOUND | MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1985, flstoryj,  flstory,  flstory,      flstory,  flstory_state, empty_init, ROT180, "Taito", "The FairyLand Story (Japan)",            MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )
 GAME( 1985, onna34ro,  0,        onna34ro_mcu, onna34ro, flstory_state, empty_init, ROT0,   "Taito", "Onna Sanshirou - Typhoon Gal",           MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )
 GAME( 1985, onna34roa, onna34ro, onna34ro,     onna34ro, flstory_state, empty_init, ROT0,   "Taito", "Onna Sanshirou - Typhoon Gal (bootleg)", MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )

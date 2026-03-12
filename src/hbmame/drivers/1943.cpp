@@ -66,4 +66,4 @@ ROM_END
 
 /*    YEAR    NAME          PARENT        MACHINE  INPUT                 INIT      MONITOR   COMPANY       FULLNAME FLAGS */
 /* 1943 Hack */
-GAME( 2009,  1943kaihc01,   1943kai,      _1943,   1943, _1943_state,   init_1943, ROT270,   "hack",       "1943 Kai: Midway Kaisen (Infinite Power 2009-02-10)", MACHINE_SUPPORTS_SAVE )
+GAME( 2009,  1943kaihc01,   1943kai,      _1943,   1943, _1943_state,   init_1943, ROT270,   "hack",       "1943 Kai: Midway Kaisen (Infinite Power 2009-02-10)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

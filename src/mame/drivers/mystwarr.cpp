@@ -2321,10 +2321,10 @@ GAME( 1993, mystwarrj,    mystwarr, mystwarr,   mystwarr, mystwarr_state, empty_
 GAME( 1993, mystwarra,    mystwarr, mystwarr,   mystwarr, mystwarr_state, empty_init, ROT0,  "Konami",  "Mystic Warriors (ver AAB)", MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1993, mystwarraa,   mystwarr, mystwarr,   mystwarr, mystwarr_state, empty_init, ROT0,  "Konami",  "Mystic Warriors (ver AAA)", MACHINE_IMPERFECT_GRAPHICS )
 
-GAME( 1993, mmaulers,     0,        dadandrn,   dadandrn, mystwarr_state, empty_init, ROT0,  "Konami",  "Monster Maulers (ver EAA)", MACHINE_IMPERFECT_GRAPHICS )
+GAME( 1993, mmaulers,     0,        dadandrn,   dadandrn, mystwarr_state, empty_init, ROT0,  "Konami",  "Monster Maulers (ver EAA)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1993, dadandrn,     mmaulers, dadandrn,   dadandrn, mystwarr_state, empty_init, ROT0,  "Konami",  "Kyukyoku Sentai Dadandarn (ver JAA)", MACHINE_IMPERFECT_GRAPHICS )
 
-GAME( 1993, viostorm,     0,        viostorm,   viostorm, mystwarr_state, empty_init, ROT0,  "Konami",  "Violent Storm (ver EAC)", MACHINE_IMPERFECT_GRAPHICS )
+GAME( 1993, viostorm,     0,        viostorm,   viostorm, mystwarr_state, empty_init, ROT0,  "Konami",  "Violent Storm (ver EAC)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1993, viostormeb,   viostorm, viostorm,   viostorm, mystwarr_state, empty_init, ROT0,  "Konami",  "Violent Storm (ver EAB)", MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1993, viostormu,    viostorm, viostorm,   viostorm, mystwarr_state, empty_init, ROT0,  "Konami",  "Violent Storm (ver UAC)", MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1993, viostormub,   viostorm, viostorm,   viostorm, mystwarr_state, empty_init, ROT0,  "Konami",  "Violent Storm (ver UAB)", MACHINE_IMPERFECT_GRAPHICS )
@@ -2339,7 +2339,7 @@ GAME( 1993, metamrphu,    metamrph, metamrph,   metamrph, mystwarr_state, empty_
 GAME( 1993, metamrphj,    metamrph, metamrph,   metamrph, mystwarr_state, empty_init, ROT0,  "Konami",  "Metamorphic Force (ver JAA)", MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1993, metamrpha,    metamrph, metamrph,   metamrph, mystwarr_state, empty_init, ROT0,  "Konami",  "Metamorphic Force (ver AAA)", MACHINE_IMPERFECT_GRAPHICS )
 
-GAME( 1993, mtlchamp,     0,        martchmp,   martchmp, mystwarr_state, empty_init, ROT0,  "Konami",  "Martial Champion (ver EAB)", MACHINE_IMPERFECT_GRAPHICS )
+GAME( 1993, mtlchamp,     0,        martchmp,   martchmp, mystwarr_state, empty_init, ROT0,  "Konami",  "Martial Champion (ver EAB)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1993, mtlchamp1,    mtlchamp, martchmp,   martchmp, mystwarr_state, empty_init, ROT0,  "Konami",  "Martial Champion (ver EAA)", MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1993, mtlchampu,    mtlchamp, martchmp,   martchmp, mystwarr_state, empty_init, ROT0,  "Konami",  "Martial Champion (ver UAE)", MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1993, mtlchampu1,   mtlchamp, martchmp,   martchmp, mystwarr_state, empty_init, ROT0,  "Konami",  "Martial Champion (ver UAD)", MACHINE_IMPERFECT_GRAPHICS )

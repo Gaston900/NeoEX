@@ -2919,7 +2919,7 @@ GAME( 1985, btlecity, 0,         vsnes,         btlecity, vsnes_state, init_vsno
 GAME( 1985, starlstr, 0,         vsnes,         starlstr, vsnes_state, init_vsnormal, ROT0, "Namco",                  "Vs. Star Luster",                 0 )
 GAME( 1987, cstlevna, 0,         vsnes,         cstlevna, vsnes_state, init_vsvram,   ROT0, "Konami",                 "Vs. Castlevania",                 0 )
 GAME( 1984, cluclu,   0,         vsnes,         cluclu,   vsnes_state, init_vsnormal, ROT0, "Nintendo",               "Vs. Clu Clu Land",                0 )
-GAME( 1990, drmario,  0,         vsnes,         drmario,  vsnes_state, init_drmario,  ROT0, "Nintendo",               "Vs. Dr. Mario",                   0 )
+GAME( 1990, drmario,  0,         vsnes,         drmario,  vsnes_state, init_drmario,  ROT0, "Nintendo",               "Vs. Dr. Mario",                   MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1984, excitebk, 0,         vsnes,         excitebk, vsnes_state, init_vsnormal, ROT0, "Nintendo",               "Vs. Excitebike (set EB4-3 E)",    0 )
 GAME( 1984, excitebko,excitebk,  vsnes,         excitebk, vsnes_state, init_vsnormal, ROT0, "Nintendo",               "Vs. Excitebike (set EB4-3 ?)",    0 ) // older
 GAME( 1984, excitebkj,excitebk,  vsnes,         excitebk, vsnes_state, init_vsnormal, ROT0, "Nintendo",               "Vs. Excitebike (set EB4-4 A)",    0 ) // likely Japan
@@ -2930,7 +2930,7 @@ GAME( 1985, nvs_machrider, 0,    vsnes,         machridr, vsnes_state, init_vsno
 GAME( 1985, nvs_machridera,nvs_machrider,vsnes, machridj, vsnes_state, init_vsnormal, ROT0, "Nintendo",               "Vs. Mach Rider (Fighting Course Version, set MR4-1 A)", MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1986, rbibb,    0,         vsnes,         rbibb,    vsnes_state, init_rbibb,    ROT0, "Namco",                  "Vs. Atari R.B.I. Baseball (set 1)", 0 )
 GAME( 1986, rbibba,   rbibb,     vsnes,         rbibb,    vsnes_state, init_rbibb,    ROT0, "Namco",                  "Vs. Atari R.B.I. Baseball (set 2)", 0 )
-GAME( 1986, suprmrio, 0,         vsnes,         suprmrio, vsnes_state, init_vsnormal, ROT0, "Nintendo",               "Vs. Super Mario Bros. (set SM4-4 E)", 0 )
+GAME( 1986, suprmrio, 0,         vsnes,         suprmrio, vsnes_state, init_vsnormal, ROT0, "Nintendo",               "Vs. Super Mario Bros. (set SM4-4 E)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1986, suprmrioa,suprmrio,  vsnes,         suprmrio, vsnes_state, init_vsnormal, ROT0, "Nintendo",               "Vs. Super Mario Bros. (set ?, harder)", 0 )
 GAME( 1986, suprmriobl,suprmrio, vsnes_bootleg, suprmrio, vsnes_state, init_bootleg,  ROT0, "bootleg",                "Vs. Super Mario Bros. (bootleg with Z80, set 1)", 0 ) // timer starts at 200(!)
 GAME( 1986, suprmriobl2,suprmrio,vsnes_bootleg, suprmrio, vsnes_state, init_bootleg,  ROT0, "bootleg",                "Vs. Super Mario Bros. (bootleg with Z80, set 2)", 0 ) // timer starts at 300

@@ -628,5 +628,5 @@ void dbz_state::init_dbz2()
 
 GAME( 1993, dbz,    0,    dbz,    dbz,  dbz_state, init_dbz,  ROT0, "Banpresto", "Dragon Ball Z (rev B)",                    MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE ) // crashes MAME in tile/PSAC2 ROM test
 GAME( 1993, dbza,   dbz,  dbz,    dbza, dbz_state, init_dbza, ROT0, "Banpresto", "Dragon Ball Z (rev A)",                    MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
-GAME( 1994, dbz2,   0,    dbz,    dbz2, dbz_state, init_dbz2, ROT0, "Banpresto", "Dragon Ball Z 2 - Super Battle",           MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE ) // crashes MAME in tile/PSAC2 ROM test
+GAME( 1994, dbz2,   0,    dbz,    dbz2, dbz_state, init_dbz2, ROT0, "Banpresto", "Dragon Ball Z 2 - Super Battle",           MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE ) // crashes MAME in tile/PSAC2 ROM test
 GAME( 1994, dbz2bl, dbz2, dbz2bl, dbz2, dbz_state, init_dbz2, ROT0, "bootleg",   "Dragon Ball Z 2 - Super Battle (bootleg)", MACHINE_NOT_WORKING | MACHINE_NO_SOUND | MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE ) // heavy priority / GFX issues, no sound

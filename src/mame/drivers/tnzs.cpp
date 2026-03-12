@@ -2997,6 +2997,6 @@ GAME( 1988, tnzsop,    tnzs,     tnzs,     tnzsop,   tnzs_state,     empty_init,
 GAME( 1988, kabukiz,   0,        kabukiz,  kabukiz,  kabukiz_state,  empty_init, ROT0,   "Kaneko / Taito Corporation Japan", "Kabuki-Z (World)", MACHINE_SUPPORTS_SAVE )
 GAME( 1988, kabukizj,  kabukiz,  kabukiz,  kabukizj, kabukiz_state,  empty_init, ROT0,   "Kaneko / Taito Corporation",       "Kabuki-Z (Japan)", MACHINE_SUPPORTS_SAVE )
 
-GAME( 1989, insectx,   0,        insectx,  insectx,  insectx_state,  empty_init, ROT0,   "Taito Corporation Japan",   "Insector X (World)",   MACHINE_SUPPORTS_SAVE )
+GAME( 1989, insectx,   0,        insectx,  insectx,  insectx_state,  empty_init, ROT0,   "Taito Corporation Japan",   "Insector X (World)",   MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1989, insectxj,  insectx,  insectx,  insectxj, insectx_state,  empty_init, ROT0,   "Taito Corporation",         "Insector X (Japan)",   MACHINE_SUPPORTS_SAVE )
 GAME( 1990, insectxbl, insectx,  insectx,  insectxj, insectx_state,  empty_init, ROT0,   "bootleg (Nagoya Kaihatsu)", "Insector X (bootleg)", MACHINE_SUPPORTS_SAVE )

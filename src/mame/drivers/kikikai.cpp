@@ -968,7 +968,7 @@ ROM_END
  *
  *************************************/
 
-GAME( 1986, kikikai,  0,        kikikai,        kikikai,  kikikai_simulation_state, empty_init, ROT90, "Taito Corporation",  "KiKi KaiKai",                                 MACHINE_SUPPORTS_SAVE )
+GAME( 1986, kikikai,  0,        kikikai,        kikikai,  kikikai_simulation_state, empty_init, ROT90, "Taito Corporation",  "KiKi KaiKai",                                 MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1986, knightb,  kikikai,  knightb,        kikikai,  mexico86_state,           empty_init, ROT90, "bootleg",            "Knight Boy",                                  MACHINE_SUPPORTS_SAVE )
 
 GAME( 1986, kicknrun, 0,        kicknrun,       kicknrun, kikikai_state,            empty_init, ROT0,  "Taito Corporation",  "Kick and Run (World)",                        MACHINE_SUPPORTS_SAVE )

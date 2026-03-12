@@ -1604,7 +1604,7 @@ GAME( 1986, srdmissn,  0,        srdmissn,  srdmissn, kyugo_state, empty_init,  
 GAME( 1986, fx,        srdmissn, srdmissn,  srdmissn, kyugo_state, empty_init,    ROT90, "bootleg",                                 "F-X (bootleg of S.R.D. Mission)",      MACHINE_SUPPORTS_SAVE )
 GAME( 1986, legend,    0,        legend,    legend,   kyugo_state, empty_init,    ROT0,  "Kyugo / Sega",                            "Legend",                               MACHINE_SUPPORTS_SAVE ) // no copyright (maybe also a bootleg?)
 GAME( 1986, legendb,   legend,   legend,    legend,   kyugo_state, empty_init,    ROT0,  "bootleg",                                 "Legion (bootleg of Legend)",           MACHINE_SUPPORTS_SAVE ) // no copyright
-GAME( 1987, airwolf,   0,        srdmissn,  airwolf,  kyugo_state, empty_init,    ROT0,  "Kyugo",                                   "Airwolf",                              MACHINE_SUPPORTS_SAVE )
+GAME( 1987, airwolf,   0,        srdmissn,  airwolf,  kyugo_state, empty_init,    ROT0,  "Kyugo",                                   "Airwolf",                              MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1987, airwolfa,  airwolf,  srdmissn,  airwolf,  kyugo_state, empty_init,    ROT0,  "Kyugo (United Amusements license)",       "Airwolf (US)",                         MACHINE_SUPPORTS_SAVE )
 GAME( 1987, skywolf,   airwolf,  srdmissn,  skywolf,  kyugo_state, empty_init,    ROT0,  "bootleg",                                 "Sky Wolf (set 1)",                     MACHINE_SUPPORTS_SAVE )
 GAME( 1987, skywolf2,  airwolf,  srdmissn,  airwolf,  kyugo_state, empty_init,    ROT0,  "bootleg",                                 "Sky Wolf (set 2)",                     MACHINE_SUPPORTS_SAVE )

@@ -3721,7 +3721,7 @@ GAME( 1980, radarscp,  0,        radarscp,  radarscp, dkong_state, empty_init,  
 GAME( 1980, radarscpc, radarscp, radarscp,  radarscp, dkong_state, empty_init,    ROT270, "Nintendo", "Radar Scope (TRS02?, rev. C)", MACHINE_SUPPORTS_SAVE )
 GAME( 1980, radarscp1, radarscp, radarscp1, radarscp, dkong_state, empty_init,    ROT270, "Nintendo", "Radar Scope (TRS01)", MACHINE_SUPPORTS_SAVE )
 
-GAME( 1981, dkong,     0,        dkong2b,   dkong,    dkong_state, empty_init,    ROT270, "Nintendo of America", "Donkey Kong (US set 1)",    MACHINE_SUPPORTS_SAVE )
+GAME( 1981, dkong,     0,        dkong2b,   dkong,    dkong_state, empty_init,    ROT270, "Nintendo of America", "Donkey Kong (US set 1)",    MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1981, dkonghrd,  dkong,    dkong2b,   dkong,    dkong_state, empty_init,    ROT270, "Nintendo of America", "Donkey Kong (hard kit)",    MACHINE_SUPPORTS_SAVE ) // not sure if original or bootleg (see notes on top of driver file)
 GAME( 1981, dkongo,    dkong,    dkong2b,   dkong,    dkong_state, empty_init,    ROT270, "Nintendo",            "Donkey Kong (US set 2)",    MACHINE_SUPPORTS_SAVE )
 GAME( 1981, dkongj,    dkong,    dkong2b,   dkong,    dkong_state, empty_init,    ROT270, "Nintendo",            "Donkey Kong (Japan set 1)", MACHINE_SUPPORTS_SAVE )

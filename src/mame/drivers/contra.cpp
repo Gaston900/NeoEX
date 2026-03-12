@@ -956,7 +956,7 @@ ROM_END
 } // anonymous namespace
 
 
-GAME( 1987, contra,    0,      contra, contra, contra_state, empty_init, ROT90, "Konami",  "Contra (US / Asia, set 1)",     MACHINE_SUPPORTS_SAVE )
+GAME( 1987, contra,    0,      contra, contra, contra_state, empty_init, ROT90, "Konami",  "Contra (US / Asia, set 1)",     MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1987, contra1,   contra, contra, contra, contra_state, empty_init, ROT90, "Konami",  "Contra (US / Asia, set 2)",     MACHINE_SUPPORTS_SAVE )
 GAME( 1987, contrae,   contra, contra, contra, contra_state, empty_init, ROT90, "Konami",  "Contra (US / Asia, set 3)",     MACHINE_SUPPORTS_SAVE )
 GAME( 1987, contraj,   contra, contra, contra, contra_state, empty_init, ROT90, "Konami",  "Contra (Japan, set 1)",         MACHINE_SUPPORTS_SAVE )

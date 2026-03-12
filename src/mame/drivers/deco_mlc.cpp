@@ -1051,7 +1051,7 @@ void deco_mlc_state::init_acchi() // sound ROMs don't appear to be scrambled
 
 /***************************************************************************/
 
-GAME( 1995, avengrgs,   0,        avengrgs, mlc, deco_mlc_state, init_avengrgs, ROT0,   "Data East Corporation", "Avengers In Galactic Storm (US/Europe 1.0)", MACHINE_IMPERFECT_GRAPHICS )
+GAME( 1995, avengrgs,   0,        avengrgs, mlc, deco_mlc_state, init_avengrgs, ROT0,   "Data East Corporation", "Avengers In Galactic Storm (US/Europe 1.0)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1995, avengrgsj,  avengrgs, avengrgs, mlc, deco_mlc_state, init_avengrgs, ROT0,   "Data East Corporation", "Avengers In Galactic Storm (Japan 1.2)",     MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1996, stadhr96,   0,        stadhr96, mlc, deco_mlc_state, init_mlc,      ROT0,   "Data East Corporation", "Stadium Hero '96 (Europe, EAJ)",             MACHINE_IMPERFECT_GRAPHICS ) // Rom labels are EAJ  ^^
 GAME( 1996, stadhr96u,  stadhr96, stadhr96, mlc, deco_mlc_state, init_mlc,      ROT0,   "Data East Corporation", "Stadium Hero '96 (USA, EAH)",                MACHINE_IMPERFECT_GRAPHICS ) // Rom labels are EAH  ^^

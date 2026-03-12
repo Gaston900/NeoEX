@@ -1834,7 +1834,7 @@ GAME( 1985, gauntlet2pr3, gauntlet, gaunt2p,   gauntlet, gauntlet_state, init_ga
 GAME( 1985, gauntlet2pj2, gauntlet, gaunt2p,   gauntlet, gauntlet_state, init_gauntlet, ROT0, "Atari Games", "Gauntlet (2 Players, Japanese, rev 2)", 0 )
 GAME( 1985, gauntlet2pg1, gauntlet, gaunt2p,   gauntlet, gauntlet_state, init_gauntlet, ROT0, "Atari Games", "Gauntlet (2 Players, German, rev 1)", 0 )
 
-GAME( 1986, gaunt2,       0,        gauntlet2, gauntlet, gauntlet_state, init_gauntlet, ROT0, "Atari Games", "Gauntlet II", 0 )
+GAME( 1986, gaunt2,       0,        gauntlet2, gauntlet, gauntlet_state, init_gauntlet, ROT0, "Atari Games", "Gauntlet II", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1986, gaunt2g,      gaunt2,   gauntlet2, gauntlet, gauntlet_state, init_gauntlet, ROT0, "Atari Games", "Gauntlet II (German)", 0 )
 
 GAME( 1986, gaunt22p,     gaunt2,   gauntlet2, gauntlet, gauntlet_state, init_gauntlet, ROT0, "Atari Games", "Gauntlet II (2 Players, rev 2)", 0 )

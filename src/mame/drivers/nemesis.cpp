@@ -2661,7 +2661,7 @@ GAME(  1985, rf2,       konamigt,  rf2_gx400,  rf2,      nemesis_state, empty_in
 GAME(  1985, twinbee,   0,         gx400,      twinbee,  nemesis_state, empty_init, ROT90,  "Konami", "TwinBee (ROM version)",          MACHINE_SUPPORTS_SAVE )
 GAME(  1985, gradius,   nemesis,   gx400,      gradius,  nemesis_state, empty_init, ROT0,   "Konami", "Gradius (Japan, ROM version)",   MACHINE_SUPPORTS_SAVE )
 GAME(  1985, gwarrior,  0,         gx400,      gwarrior, nemesis_state, empty_init, ROT0,   "Konami", "Galactic Warriors",              MACHINE_SUPPORTS_SAVE )
-GAME(  1986, salamand,  0,         salamand,   salamand, nemesis_state, empty_init, ROT0,   "Konami", "Salamander (version D)",         MACHINE_SUPPORTS_SAVE )
+GAME(  1986, salamand,  0,         salamand,   salamand, nemesis_state, empty_init, ROT0,   "Konami", "Salamander (version D)",         MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME(  1986, salamandj, salamand,  salamand,   salamand, nemesis_state, empty_init, ROT0,   "Konami", "Salamander (version J)",         MACHINE_SUPPORTS_SAVE )
 GAME(  1986, lifefrce,  salamand,  salamand,   salamand, nemesis_state, empty_init, ROT0,   "Konami", "Lifeforce (US)",                 MACHINE_SUPPORTS_SAVE )
 GAME(  1987, lifefrcej, salamand,  salamand,   lifefrcj, nemesis_state, empty_init, ROT0,   "Konami", "Lifeforce (Japan)",              MACHINE_SUPPORTS_SAVE )

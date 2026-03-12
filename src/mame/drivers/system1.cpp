@@ -5751,7 +5751,7 @@ GAME( 1986, wboysys2,   wboy,     sys2_315_5177,     wboysys2,  system1_state, i
 GAME( 1986, wboysys2a,  wboy,     sys2_315_5176,     wboysys2,  system1_state, init_bank0c,       ROT0,   "Escape (Sega license)", "Wonder Boy (system 2, set 2, 315-5176)", MACHINE_SUPPORTS_SAVE )
 GAME( 1987, tokisens,   0,        sys2xb,            tokisens,  system1_state, init_tokisens,     ROT90,  "Sega", "Toki no Senshi - Chrono Soldier (MC-8123, 317-0040)", MACHINE_SUPPORTS_SAVE )
 GAME( 1987, tokisensa,  tokisens, sys2,              tokisensa, system1_state, init_bank0c,       ROT90,  "Sega", "Toki no Senshi - Chrono Soldier (prototype?)", MACHINE_SUPPORTS_SAVE ) // or bootleg?
-GAME( 1987, wbml,       0,        sys2xb,            wbml,      system1_state, init_wbml,         ROT0,   "Sega / Westone", "Wonder Boy - Monster Land (Japan New Ver., MC-8123, 317-0043)", MACHINE_SUPPORTS_SAVE )
+GAME( 1987, wbml,       0,        sys2xb,            wbml,      system1_state, init_wbml,         ROT0,   "Sega / Westone", "Wonder Boy - Monster Land (Japan New Ver., MC-8123, 317-0043)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1987, wbmljo,     wbml,     sys2xb,            wbml,      system1_state, init_wbml,         ROT0,   "Sega / Westone", "Wonder Boy - Monster Land (Japan Old Ver., MC-8123, 317-0043)", MACHINE_SUPPORTS_SAVE )
 GAME( 1987, wbmljb,     wbml,     sys2xboot,         wbml,      system1_state, init_bootsys2,     ROT0,   "bootleg", "Wonder Boy - Monster Land (Japan bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 1987, wbmlb,      wbml,     sys2xboot,         wbml,      system1_state, init_bootsys2,     ROT0,   "bootleg", "Wonder Boy - Monster Land (English bootleg set 1)", MACHINE_SUPPORTS_SAVE)
