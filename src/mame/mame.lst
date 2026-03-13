@@ -3030,7 +3030,8 @@ airwolf                         // Parents
 airwolfhc01                     // hack 
 
 @source:legionna.cpp
-legionna                        // Parents
+denjinmk                        // Parents
+denjinmkhc01                    // hack
 
 @source:lkage.cpp
 lkage                           // Parents

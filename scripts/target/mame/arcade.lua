@@ -758,7 +758,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "seibu")
 files {
-	MAME_DIR .. "src/mame/drivers/legionna.cpp",
+	MAME_DIR .. "src/hbmame/drivers/legionna.cpp",
 	MAME_DIR .. "src/mame/includes/legionna.h",
 	MAME_DIR .. "src/mame/video/legionna.cpp",
 	MAME_DIR .. "src/hbmame/drivers/r2dx_v33.cpp",
