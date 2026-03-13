@@ -3734,7 +3734,7 @@ GAME( 2001, dkongike,  dkong,    dk_braze,  dkongike, dkong_state, init_dkonghs,
 GAME( 2001, dkongjrhs, dkongjr,  dkj_braze, dkongx,   dkong_state, init_dkonghs,  ROT270, "hack (Braze Technologies)",         "Donkey Junior High Score Kit (hack,V1.2)",        MACHINE_SUPPORTS_SAVE )
 GAME( 2001, dkongjrc,  dkong,    dkj_braze, dkongike, dkong_state, init_dkonghs,  ROT270, "hack (Braze Technologies)",         "Donkey Kong/JR (combo) (hack,V1.2)",              MACHINE_SUPPORTS_SAVE | MACHINE_NOT_WORKING) /* Graphic roms not switched */
 GAME( 2001, dkongddk,  dkongjr,  ddk_braze, dkongx,   dkong_state, init_dkonghs,  ROT270, "hack (Braze Technologies)",         "Double Donkey Kong (hack,V1.2)",                  MACHINE_SUPPORTS_SAVE | MACHINE_NOT_WORKING) /* Graphic roms not switched */
-GAME( 2006, dkongx,    dkong,    dk_braze,  dkongx,   dkong_state, init_dkongx,   ROT270, "hack (Braze Technologies)",         "Donkey Kong II: Jumpman Returns (hack, V1.2)",    MACHINE_SUPPORTS_SAVE )
+GAME( 2006, dkongx,    dkong,    dk_braze,  dkongx,   dkong_state, init_dkongx,   ROT270, "hack (Braze Technologies)",         "Donkey Kong II: Jumpman Returns (hack, V1.2)",    MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2006, dkongx11,  dkong,    dk_braze,  dkongx,   dkong_state, init_dkongx,   ROT270, "hack (Braze Technologies)",         "Donkey Kong II: Jumpman Returns (hack, V1.1)",    MACHINE_SUPPORTS_SAVE )
 GAME( 2013, dkongpe,   dkong,    dkong2b,   dkong,    dkong_state, empty_init,    ROT270, "hack (Clay Cowgill and Mike Mika)", "Donkey Kong: Pauline Edition Rev 5 (2013-04-22)", MACHINE_SUPPORTS_SAVE )
 
