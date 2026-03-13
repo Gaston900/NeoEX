@@ -396,10 +396,10 @@ ROM_START( metmqstrhc03 )
 	ROM_CONTINUE(           0x000000, 0x100000             )
 ROM_END
 
-ROM_START( plegendshc01 ) //plegendsjq
+ROM_START( plegendshc01 ) //plegendsjjq
 	ROM_REGION( 0xA00000, "maincpu", 0 )
-	ROM_LOAD16_BYTE( "prog_hc01.u45", 0x000000, 0x80000, CRC(f0141a4f) SHA1(ee0cdfab78e55b5a723621f25cffe40b011b58fb) )
-	ROM_LOAD16_BYTE( "prog_hc01.u44", 0x000001, 0x80000, CRC(82f55c8f) SHA1(2e6b464162e2d3f50722fe533828b40f0148c22f) )
+	ROM_LOAD16_BYTE( "prog_hc01.u45", 0x000000, 0x80000, CRC(82f55c8f) SHA1(2e6b464162e2d3f50722fe533828b40f0148c22f) )
+	ROM_LOAD16_BYTE( "prog_hc01.u44", 0x000001, 0x80000, CRC(f0141a4f) SHA1(ee0cdfab78e55b5a723621f25cffe40b011b58fb) )
 	ROM_LOAD16_BYTE( "pr12.u2",  0x100000, 0x80000, CRC(0e202559) SHA1(217a8e47d5c679aff02ca43de1641230e4f78b01) )
 	ROM_LOAD16_BYTE( "pr12.u3",  0x100001, 0x80000, CRC(54742f21) SHA1(fae7bb7381478eb077f0409acd521f77417aa968) )
 
@@ -486,10 +486,10 @@ ROM_START( plegendshc02 )
 	ROM_LOAD( "g02.u56", 0x240000, 0x200000, CRC(9ff50dda) SHA1(1121685e387c20e228032f2b0f5cbb606376fc15) )
 ROM_END
 
-ROM_START( plegendshc03 ) //plegendsjl
+ROM_START( plegendshc03 )
 	ROM_REGION( 0x200000, "maincpu", 0 )
-	ROM_LOAD16_BYTE( "prog_hc03.u45", 0x000000, 0x80000, CRC(fd042fa5) SHA1(a3677d750d7baab56baf5e2f55a987fb99d8f3ac) )
-	ROM_LOAD16_BYTE( "prog_hc03.u44", 0x000001, 0x80000, CRC(72210eb7) SHA1(63dc4cd63bd308e2f6a95cea78c9ba5c45c2baf3) )
+	ROM_LOAD16_BYTE( "prog_hc03.u45", 0x000000, 0x80000, CRC(3d83c5ad) SHA1(45dd39e2b32e0f6e6162d30693cdb1e302e81432) )
+	ROM_LOAD16_BYTE( "prog_hc03.u44", 0x000001, 0x80000, CRC(b2fc90a8) SHA1(78c4f7fe8aa00a4066bff4aacdd9535cea7b0997) )
 	ROM_LOAD16_BYTE( "pr12.u2",  0x100000, 0x80000, CRC(0e202559) SHA1(217a8e47d5c679aff02ca43de1641230e4f78b01) )
 	ROM_LOAD16_BYTE( "pr12.u3",  0x100001, 0x80000, CRC(54742f21) SHA1(fae7bb7381478eb077f0409acd521f77417aa968) )
 
@@ -1203,9 +1203,9 @@ GAME( 1999, guwangehc01,    guwange,        guwange,      guwange,  cave_state, 
 GAME( 1995, metmqstrhc01,   metmqstr,       metmqstr,     metmqstr, cave_state, init_metmqstr,  ROT0,   "hack",       "Metamoqester (Translation Korean)",   MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1995, metmqstrhc02,   metmqstr,       metmqstr,     metmqstr, cave_state, init_metmqstr,  ROT0,   "DDJ",        "Metamoqester (Always Have Super Move)",   MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1995, metmqstrhc03,   metmqstr,       metmqstr,     metmqstr, cave_state, init_metmqstr,  ROT0,   "DDJ",        "Metamoqester (Easy Special Attacks)",   MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2023, plegendshc01,   plegends,       pwrinst2,     metmqstr, cave_state, init_pwrinst2,  ROT0,   "GOTVG",      "Gouketsuji Gaiden (Infinite Energy 2023-08-21)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1995, plegendshc02,   plegends,       pwrinst2,     metmqstr, cave_state, init_pwrinst2,  ROT0,   "DDJ",        "Gouketsuji Gaiden (Always Have Super Moves)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2018, plegendshc03,   plegends,       pwrinst2,     metmqstr, cave_state, init_pwrinst2,  ROT0,   "hack",       "Gouketsuji Gaiden (Easy Special Attacks)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2023, plegendshc01,   plegends,       pwrinst2,     metmqstr, cave_state, init_pwrinst2j, ROT0,   "GOTVG",      "Gouketsuji Gaiden (Infinite Energy 2023-08-21)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1995, plegendshc02,   plegends,       pwrinst2,     metmqstr, cave_state, init_pwrinst2j, ROT0,   "DDJ",        "Gouketsuji Gaiden (Always Have Super Moves)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1995, plegendshc03,   plegends,       pwrinst2,     metmqstr, cave_state, init_pwrinst2j, ROT0,   "DDJ",        "Gouketsuji Gaiden (Easy Special Attacks)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2018, pwrinst2hc01,   pwrinst2,       pwrinst2,     metmqstr, cave_state, init_pwrinst2,  ROT0,   "hack",       "Power Instinct 2 (Easy Special Attacks)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2018, sailormnhc01,   sailormn,       sailormn,     cave,     cave_state, init_sailormn,  ROT0,   "GOTVG",      "Pretty Soldier Sailor Moon (Optimised 2018-04-19)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2021, sailormnhc02,   sailormn,       sailormn,     cave,     cave_state, init_sailormn,  ROT0,   "GOTVG",      "Pretty Soldier Sailor Moon (Serena Tsukino 2021-03-22)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

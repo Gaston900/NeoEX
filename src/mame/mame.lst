@@ -2839,6 +2839,7 @@ powerinshc01                    // hack
 powerinshc02                    // hack
 powerinshc03                    // hack
 powerinshc04                    // hack
+powerinshc05                    // hack
 
 @source:1942.cpp
 1942                            // Parents
@@ -2960,8 +2961,10 @@ flstoryhc01                     // hack
 asurabld                        // Parents
 asurabldhc01                    // hack
 asurabldhc02                    // hack
+asurabldhc03                    // hack
 asurabus                        // Parents
 asurabushc01                    // hack
+asurabushc02                    // hack
 
 @source:galaxian.cpp
 galaxian                        // Parents
@@ -3089,6 +3092,7 @@ martmasthc01                    // hack
 martmasthc02                    // hack
 martmasthc03                    // hack
 orlegend                        // Parents
+orlegendhc01                    // hack
 
 @source:psikyo.cpp
 gunbird                         // Parents
@@ -3559,6 +3563,7 @@ grdianshc03                     // hack
 grdianshc04                     // hack
 grdianshc05                     // hack
 grdianshc06                     // hack
+grdianshc07                     // hack
 
 @source:shadfrce.cpp
 shadfrce                        // Parents

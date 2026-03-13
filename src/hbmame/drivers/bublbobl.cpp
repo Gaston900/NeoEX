@@ -134,7 +134,7 @@ ROM_END
 ROM_START( bublboblhc04 ) //sboblboblh
 	ROM_REGION( 0x30000, "maincpu", 0 )
 	ROM_LOAD( "redux_bb3_hc04",  0x00000, 0x08000, CRC(c23cd704) SHA1(a389ecc8d55d1b0c915fd3814d93338b9e402701) )
-	ROM_LOAD( "redux_bb5",  0x10000, 0x08000, CRC(13118eb1) SHA1(5a5da40c2cc82420f70bc58ffa32de1088c6c82f) )
+	ROM_LOAD( "redux_bb5_hc04",  0x10000, 0x08000, CRC(13118eb1) SHA1(5a5da40c2cc82420f70bc58ffa32de1088c6c82f) )
 	ROM_LOAD( "a3.bin",     0x18000, 0x08000, CRC(94c75591) SHA1(7698bc4b7d20e554a73a489cd3a15ae61b350e37) )
 
 	ROM_REGION( 0x10000, "subcpu", 0 )
