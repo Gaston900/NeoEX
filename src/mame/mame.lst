@@ -2697,9 +2697,10 @@ sfiii3hc06                      // hack
 
 
 
-/*****************************************************
+/***********************************************************
+ Synchronized with the current version of HBMAME 0.245.21
     List of all enabled drivers extras in the system.
-********************************************************/
+**************************************************************/
 
 @source:cave.cpp
 agallet                         // Parents
@@ -2815,8 +2816,12 @@ mk2hc05                         // hack
 @source:midyunit.cpp
 mknifty                         // hack
 mkyturbo                        // hack
+smashtv                         // Parents
+y_test                          // HomeBrew
 
 @source:midwunit.cpp
+mkhc05                          // Ported From Midtunit
+mk2hc06                         // Ported From Midtunit
 mk3                             // Parents
 mk3hc01                         // hack
 umk3                            // Parents
@@ -2850,6 +2855,11 @@ powerinshc05                    // hack
 @source:1943.cpp
 1943kai                         // Parents
 1943kaihc01                     // hack
+
+@source:atarigt.cpp
+primrage                        // Parents
+primragehc01                    // hack
+primragehc02                    // hack
 
 @source:aerofgt.cpp
 aerofgt                         // Parents
@@ -2941,6 +2951,8 @@ dktrain2                        // hack
 dkong19                         // hack
 dkremix                         // hack
 dkongx                          // hack
+dkong24                         // hack
+dkong25                         // hack
 
 @source:exerion.cpp
 exerion                         // Parents
@@ -3198,6 +3210,7 @@ lazybug1                        //
 wavybug                         //
 crashh                          //
 piranha                         //
+pacupacu1                       //
 
 @source:puckman.cpp
 mspacman                        // Parents
@@ -3297,6 +3310,7 @@ rastan                          // Parents
 rastanhc01                      // hack
 rastanhc02                      // hack
 rastanhc03                      // hack
+rastanhc04                      // hack
 
 @source:segas16b.cpp
 altbeast                        // Parents
@@ -3324,6 +3338,10 @@ grdianshc04                     // hack
 grdianshc05                     // hack
 grdianshc06                     // hack
 grdianshc07                     // hack
+
+@source:sonson.cpp
+sonson                          // Parents
+sonsonhc01                      // hack
 
 @source:shadfrce.cpp
 shadfrce                        // Parents
@@ -3442,6 +3460,10 @@ tkdenshohc01                    // hack
 tkdenshohc02                    // hack
 tkdenshohc03                    // hack
 
+@source:toki.cpp
+toki                            // Parents
+tokihc01                        // hack
+
 @source:tmnt.cpp
 ssriders                        // Parents
 ssridershc01                    // hack
@@ -3463,6 +3485,10 @@ snowbro2                        // Parents
 snowbro2hc01                    // hack
 snowbro2hc02                    // hack
 
+@source:twin16.cpp
+vulcan                          // Parents
+gradius2hc01                    // hack
+
 @source:vamphalf.cpp
 aoh                             // Parents
 aohhc01                         // hack
@@ -3479,6 +3505,9 @@ frombelow                       // hack
 drmario                         // Parents
 drmarioch                       // hack
 vs_urban                        // hack
+drluigi                         // hack
+nvs_mightybj                    // Parents
+mightybjgk                      // hack
 
 @source:zn.cpp
 coh1000c                        // BIOS

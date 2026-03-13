@@ -83,4 +83,4 @@ ROM_END
 /*    YEAR    NAME       PARENT   MACHINE  INPUT                    INIT    MONITOR   COMPANY       FULLNAME FLAGS */
 /* Rabbit Hack */
 GAME( 1997, rabbithc01,   rabbit, rabbit,  rabbit, rabbit_state, empty_init, ROT0,    "hack",      "Rabbit (Enable Hidden Character)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1997, rabbithc02,   rabbit, rabbit,  rabbit, rabbit_state, empty_init, ROT0,    "hack",      "Rabbit (Easy Special Attacks)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1997, rabbithc02,   rabbit, rabbit,  rabbit, rabbit_state, empty_init, ROT0,    "DDJ",       "Rabbit (Easy Special Attacks)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

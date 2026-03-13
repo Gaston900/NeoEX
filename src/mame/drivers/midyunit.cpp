@@ -3552,7 +3552,7 @@ GAME( 1990, trogpa5,    trog,     yunit_cvsd_4bit_slow,    trog,     midyunit_st
 GAME( 1990, trogpa4,    trog,     yunit_cvsd_4bit_slow,    trogpa4,  midyunit_state, init_trog,     ROT0, "Midway",   "Trog (prototype, rev 4.00 7/27/90)", MACHINE_SUPPORTS_SAVE )
 GAME( 1990, mazebl,     trog,     yunit_cvsd_4bit_slow,    trog,     midyunit_state, init_trog,     ROT0, "bootleg",  "Maze (Trog rev LA4 3/11/91 bootleg)", MACHINE_SUPPORTS_SAVE )
 
-GAME( 1990, smashtv,    0,        yunit_cvsd_6bit_slow,    smashtv,  midyunit_state, init_smashtv,  ROT0, "Williams", "Smash T.V. (rev 8.00)", MACHINE_SUPPORTS_SAVE )
+GAME( 1990, smashtv,    0,        yunit_cvsd_6bit_slow,    smashtv,  midyunit_state, init_smashtv,  ROT0, "Williams", "Smash T.V. (rev 8.00)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1990, smashtv6,   smashtv,  yunit_cvsd_6bit_slow,    smashtv,  midyunit_state, init_smashtv,  ROT0, "Williams", "Smash T.V. (rev 6.00)", MACHINE_SUPPORTS_SAVE )
 GAME( 1990, smashtv5,   smashtv,  yunit_cvsd_6bit_slow,    smashtv,  midyunit_state, init_smashtv,  ROT0, "Williams", "Smash T.V. (rev 5.00)", MACHINE_SUPPORTS_SAVE )
 GAME( 1990, smashtv4,   smashtv,  yunit_cvsd_6bit_slow,    smashtv,  midyunit_state, init_smashtv,  ROT0, "Williams", "Smash T.V. (rev 4.00)", MACHINE_SUPPORTS_SAVE )

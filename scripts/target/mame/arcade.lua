@@ -330,6 +330,13 @@ function createProjects_mame_arcade(_target, _subtarget)
 
 createMAMEProjects(_target, _subtarget, "atari")
 files {
+	MAME_DIR .. "src/hbmame/drivers/atarigt.cpp",
+	MAME_DIR .. "src/mame/includes/atarigt.h",
+	MAME_DIR .. "src/mame/video/atarigt.cpp",
+	MAME_DIR .. "src/mame/machine/atarigen.cpp",
+	MAME_DIR .. "src/mame/machine/atarigen.h",
+	MAME_DIR .. "src/mame/video/atarirle.cpp",
+	MAME_DIR .. "src/mame/video/atarirle.h",
 	MAME_DIR .. "src/hbmame/drivers/gauntlet.cpp",
 	MAME_DIR .. "src/mame/includes/gauntlet.h",
 	MAME_DIR .. "src/mame/video/gauntlet.cpp",
@@ -382,6 +389,9 @@ files {
 
 createMAMEProjects(_target, _subtarget, "capcom")
 files {
+	MAME_DIR .. "src/hbmame/drivers/sonson.cpp",
+	MAME_DIR .. "src/mame/includes/sonson.h",
+	MAME_DIR .. "src/mame/video/sonson.cpp",
 	MAME_DIR .. "src/hbmame/drivers/1942.cpp",
 	MAME_DIR .. "src/mame/includes/1942.h",
 	MAME_DIR .. "src/mame/video/1942.cpp",
@@ -521,6 +531,9 @@ files {
 
 createMAMEProjects(_target, _subtarget, "konami")
 files {
+	MAME_DIR .. "src/hbmame/drivers/twin16.cpp",
+	MAME_DIR .. "src/mame/includes/twin16.h",
+	MAME_DIR .. "src/mame/video/twin16.cpp",
 	MAME_DIR .. "src/hbmame/drivers/tmnt.cpp",
 	MAME_DIR .. "src/mame/includes/tmnt.h",
 	MAME_DIR .. "src/mame/video/tmnt.cpp",
@@ -585,7 +598,7 @@ files {
 	MAME_DIR .. "src/mame/video/midtunit.cpp",
 	MAME_DIR .. "src/hbmame/drivers/midwunit.cpp",
 	MAME_DIR .. "src/mame/machine/midwunit.cpp",
-	MAME_DIR .. "src/mame/drivers/midyunit.cpp",
+	MAME_DIR .. "src/hbmame/drivers/midyunit.cpp",
 	MAME_DIR .. "src/mame/machine/midyunit.cpp",
 	MAME_DIR .. "src/mame/video/midyunit.cpp",
 	MAME_DIR .. "src/mame/machine/midwayic.cpp",
@@ -741,9 +754,6 @@ createMAMEProjects(_target, _subtarget, "pacman")
 files {
 	MAME_DIR .. "src/hbmame/drivers/puckman.cpp",
 	MAME_DIR .. "src/hbmame/video/puckman.cpp",
---	MAME_DIR .. "src/mame/includes/pacman.h",
---	MAME_DIR .. "src/mame/machine/pacman.cpp",
---	MAME_DIR .. "src/mame/video/pacman.cpp",
 }
 
 createMAMEProjects(_target, _subtarget, "psikyo")
@@ -758,6 +768,9 @@ files {
 
 createMAMEProjects(_target, _subtarget, "seibu")
 files {
+	MAME_DIR .. "src/hbmame/drivers/toki.cpp",
+	MAME_DIR .. "src/mame/includes/toki.h",
+	MAME_DIR .. "src/mame/video/toki.cpp",
 	MAME_DIR .. "src/hbmame/drivers/legionna.cpp",
 	MAME_DIR .. "src/mame/includes/legionna.h",
 	MAME_DIR .. "src/mame/video/legionna.cpp",

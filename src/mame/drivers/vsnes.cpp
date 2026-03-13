@@ -2950,7 +2950,7 @@ GAME( 1985, vssoccera,vssoccer,  vsnes,         vssoccer, vsnes_state, init_bngl
 GAME( 1986, vsgradus, 0,         vsnes,         vsgradus, vsnes_state, init_vskonami, ROT0, "Konami",                 "Vs. Gradius (US, set GR E)", 0 )
 GAME( 1987, nvs_platoon,  0,     vsnes,         platoon,  vsnes_state, init_platoon,  ROT0, "Ocean Software Limited", "Vs. Platoon", 0 )
 GAME( 1987, vstetris, 0,         vsnes,         vstetris, vsnes_state, init_vsnormal, ROT0, "Academysoft-Elorg",      "Vs. Tetris" , 0 )
-GAME( 1986, nvs_mightybj, 0,     mightybj,      mightybj, vsnes_state, init_vsnormal, ROT0, "Tecmo",                  "Vs. Mighty Bomb Jack (Japan)", 0 )
+GAME( 1986, nvs_mightybj, 0,     mightybj,      mightybj, vsnes_state, init_vsnormal, ROT0, "Tecmo",                  "Vs. Mighty Bomb Jack (Japan)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1985, jajamaru, 0,         jajamaru,      jajamaru, vsnes_state, init_vsnormal, ROT0, "Jaleco",                 "Vs. Ninja Jajamaru Kun (Japan)", 0 )
 GAME( 1987, topgun,   0,         topgun,        topgun,   vsnes_state, init_vsvram,   ROT0, "Konami",                 "Vs. Top Gun", 0)
 GAME( 1985, bnglngby, 0,         vsnes,         bnglngby, vsnes_state, init_bnglngby, ROT0, "Nintendo / Broderbund Software Inc.",  "Vs. Raid on Bungeling Bay (RD4-2 B)", 0 )

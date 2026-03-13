@@ -90,8 +90,37 @@ ROM_START( rastanhc03 ) //rastand2
 	ROM_LOAD( "b04-20.76", 0x0000, 0x10000, CRC(fd1a34cc) SHA1(b1682959521fa295769207b75cf7d839e9ec95fd) )
 ROM_END
 
+ROM_START( rastanhc04 )
+	ROM_REGION( 0x60000, "maincpu", 0 )
+	ROM_LOAD16_BYTE( "b04-14_hc04.19",   0x00000, 0x10000, CRC(f33adf4d) SHA1(b916ef7f8268b2ebbf0b486ec801db929a1a63c1) )
+	ROM_LOAD16_BYTE( "b04-13_hc04.7",    0x00001, 0x10000, CRC(dcc16c00) SHA1(d188d5cc054a80b5a7f0860f6d8ddeb5c356f81a) )
+	ROM_LOAD16_BYTE( "b04-16_hc04.20",   0x20000, 0x10000, CRC(8375d5a3) SHA1(f6c3e6ded5242ab7e73399104fdd2b31ecde2d29) )
+	ROM_LOAD16_BYTE( "b04-15_hc04.8",    0x20001, 0x10000, CRC(602ccf6d) SHA1(778ee5dc1a7a59542a456786c359d28159a0d4b9) )
+	ROM_LOAD16_BYTE( "b04-18-1_hc04.21", 0x40000, 0x10000, CRC(1846353b) SHA1(cfe64e34d35407ff5d58d9c30e0b03615451efa8) )
+	ROM_LOAD16_BYTE( "b04-17-1_hc04.9",  0x40001, 0x10000, CRC(8f4414b8) SHA1(ad55ff4b1ad336cb9f39f66236c7c8efe95bd95f) )
+
+	ROM_REGION( 0x10000, "audiocpu", 0 )
+	ROM_LOAD( "b04-19.49", 0x00000, 0x10000, CRC(ee81fdd8) SHA1(fa59dac2583a7d2979550dffc6f9c6c2bd67bfd5) )
+
+	ROM_REGION( 0x080000, "pc080sn", 0 )
+	ROM_LOAD16_BYTE( "b04-01_hc04.40", 0x00000, 0x20000, CRC(56494cce) SHA1(c5a7a2f28e079a5436d0b2faacfd9ba51cb19b3e) )
+	ROM_LOAD16_BYTE( "b04-02_hc04.67", 0x00001, 0x20000, CRC(e4beeb34) SHA1(63209de854b3aaabae96f710f6dc4d7ac9b88c2d) )
+	ROM_LOAD16_BYTE( "b04-03.39", 0x40000, 0x20000, CRC(ab67e064) SHA1(5c49f0ff9221cba9f2bb8da86eb4448c73012410) )
+	ROM_LOAD16_BYTE( "b04-04.66", 0x40001, 0x20000, CRC(94737e93) SHA1(3df7f085fe6468bda11fab2e86252df6f74f7a99) )
+
+	ROM_REGION( 0x080000, "pc090oj", 0 )
+	ROM_LOAD16_BYTE( "b04-05_hc04.15", 0x00000, 0x20000, CRC(d0de533f) SHA1(80874f3febbc8c64c4ba79133eb2e2febfdc62dc) )
+	ROM_LOAD16_BYTE( "b04-06_hc04.28", 0x00001, 0x20000, CRC(78510eed) SHA1(14230a5d0d16a3c61b9425ff574b1fc9808f00cb) )
+	ROM_LOAD16_BYTE( "b04-07_hc04.14", 0x40000, 0x20000, CRC(7521af01) SHA1(4d510ac719d64b650fc61b317d570183fdcdfdcf) )
+	ROM_LOAD16_BYTE( "b04-08_hc04.27", 0x40001, 0x20000, CRC(ca183d63) SHA1(b19a7fdcff91e74789bc0f6682c5f7d1646a5919) )
+
+	ROM_REGION( 0x10000, "adpcm", 0 )
+	ROM_LOAD( "b04-20.76", 0x0000, 0x10000, CRC(fd1a34cc) SHA1(b1682959521fa295769207b75cf7d839e9ec95fd) )
+ROM_END
+
 /*    YEAR  NAME        PARENT   MACHINE  INPUT                    INIT    MONITOR COMPANY       FULLNAME FLAGS */
 /* Rastan Hack */
 GAME( 2000, rastanhc01, rastan,  rastan, rastsaga, rastan_state, empty_init, ROT0, "hack",       "Wacky Rastan", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2001, rastanhc02, rastan,  rastan, rastsaga, rastan_state, empty_init, ROT0, "hack",       "Rastan (2X Eenemy Edition)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2001, rastanhc03, rastan,  rastan, rastsaga, rastan_state, empty_init, ROT0, "hack",       "Rastan (Zinc Children's Edition)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2001, rastanhc02, rastan,  rastan, rastsaga, rastan_state, empty_init, ROT0, "hack",       "Rastan (2X Eenemy)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2001, rastanhc03, rastan,  rastan, rastsaga, rastan_state, empty_init, ROT0, "hack",       "Rastan (Zinc Children's)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2001, rastanhc04, rastan,  rastan, rastsaga, rastan_state, empty_init, ROT0, "hack",       "Rastan (Portuguese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

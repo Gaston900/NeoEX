@@ -74,6 +74,19 @@ ROM_START( mrio2002 )
 	PALETTE_2C04_0004("ppu1:palette")
 ROM_END
 
+ROM_START( mightybjgk )
+	ROM_REGION( 0x8000, "prg", 0 )
+	ROM_LOAD( "mbj01.1d",  0x0000, 0x2000, CRC(cbb4bcd0) SHA1(d02d8289b1c9232db454000638d60743b9e5783a) )
+	ROM_LOAD( "mbj01.1c",  0x2000, 0x2000, CRC(336b71d9) SHA1(e9a9079e5040b79e418c0364c401a2fa37aefb4f) )
+	ROM_LOAD( "mbj01.1b",  0x4000, 0x2000, CRC(9501ccf0) SHA1(1f2675898c939e79236e4ec300fab7fc060058ff) )
+	ROM_LOAD( "mbj01.1a",  0x6000, 0x2000, CRC(25832a5b) SHA1(dda726855c6446a7f4f8c40363f14e9fb3b9e452) )
+
+	ROM_REGION( 0x2000, "gfx1", 0 )
+	ROM_LOAD( "mbj01.2b",  0x0000, 0x2000, CRC(f98394b3) SHA1(6e274cd015fe5304df02a79bd0dec55658f64e50) )
+
+	PALETTE_STANDARD("ppu1:palette")
+ROM_END
+
 ROM_START( suprsktr )
 	ROM_REGION( 0x8000, "prg", 0 )
 	ROM_LOAD( "mds-sm4-4__1dor6d_e.1d or 6d",  0x0000, 0x2000, CRC(be4d5436) SHA1(08162a7c987f1939d09bebdb676f596c86abf465) )
@@ -96,6 +109,17 @@ ROM_START( drmarioch )
 	ROM_LOAD( "dmhc01-u3chr",                  0x0000, 0x8000, CRC(ac94c651) SHA1(9ac7c97501d915c6f0041de3be421423f5de0448) )
 
 	PALETTE_2C04_0003("ppu1:palette")
+ROM_END
+
+ROM_START( drluigi )
+	ROM_REGION( 0x10000, "prg", 0 )
+	ROM_LOAD( "dl-uiprg",                  0x00000, 0x10000, CRC(bcef3c87) SHA1(797f09e3c7b07a1b0828d44b0302a81a9d62a0e8) )
+
+	ROM_REGION( 0x8000, "gfx1", 0 )
+	ROM_LOAD( "dl-u3chr",                  0x0000, 0x8000, CRC(07f8d222) SHA1(f6a0e418ab6da29eda25d0b871df072c16ded4fe) )
+
+	ROM_REGION( 0xc0, "ppu1:palette", 0 )
+	ROM_LOAD( "dl_rp2c04-0003.pal", 0x00, 0xc0, CRC(c40eea5f) SHA1(2b4a03f709441e8d4344d6e39060b8d9a376074f) )
 ROM_END
 
 ROM_START( frombelow ) // vs.frombelowgame.com
@@ -125,10 +149,12 @@ ROM_START( vs_urban )
 	PALETTE_2C04_0003("ppu1:palette")
 ROM_END
 
-/*    YEAR  NAME          PARENT       MACHINE         INPUT                   INIT        MONITOR   COMPANY       FULLNAME FLAGS */
+/*    YEAR  NAME          PARENT       MACHINE     INPUT                   INIT        MONITOR   COMPANY       FULLNAME FLAGS */
 /* vsnes Hack */
-GAME( 2002, mrio2002,    suprmrio, vsnes, suprmrio,  vsnes_state, init_vsnormal, ROT0, "Nintendo",  "Vs. Super Mario Bros. 2002", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1986, suprsktr,    suprmrio, vsnes, suprmrio,  vsnes_state, init_vsnormal, ROT0, "Nintendo",  "Vs. Super Skater Bros.", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2002, drmarioch,   drmario,  vsnes, drmario,   vsnes_state, init_drmario,  ROT0, "liujunusa", "Vs. Dr. Mario (Translation Chinese, 2002-10)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2020, frombelow,   suprmrio, vsnes, frombelow, vsnes_state, init_vsnormal, ROT0, "Matt Hughson", "Vs. From Below (beta 0.8.0, 2020-12-21)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2020, vs_urban,    drmario,  vsnes, vs_urban,  vsnes_state, init_vsnormal, ROT0, "Nintendo", "Vs. Urban Champion", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2002, mrio2002,    suprmrio,     vsnes,    suprmrio,  vsnes_state, init_vsnormal, ROT0, "Nintendo",  "Vs. Super Mario Bros. 2002", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mightybjgk,  nvs_mightybj, mightybj, mightybj,  vsnes_state, init_vsnormal, ROT0, "Vag",       "Mighty Bomb Jack (Translation Greek)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1986, suprsktr,    suprmrio,     vsnes,    suprmrio,  vsnes_state, init_vsnormal, ROT0, "Nintendo",  "Vs. Super Skater Bros.", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2002, drmarioch,   drmario,      vsnes,    drmario,   vsnes_state, init_drmario,  ROT0, "liujunusa", "Vs. Dr. Mario (Translation Chinese, 2002-10)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2019, drluigi,     drmario,      vsnes,    drmario,   vsnes_state, init_drmario,  ROT0, "Szemigi",   "Dr. Luigi", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2020, frombelow,   suprmrio,     vsnes,    frombelow, vsnes_state, init_vsnormal, ROT0, "Matt Hughson", "Vs. From Below (beta 0.8.0, 2020-12-21)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2020, vs_urban,    drmario,      vsnes,    vs_urban,  vsnes_state, init_vsnormal, ROT0, "Nintendo",  "Vs. Urban Champion", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
