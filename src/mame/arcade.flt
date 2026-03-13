@@ -37,6 +37,7 @@ kaneko16.cpp
 kikikai.cpp
 konamigx.cpp
 kyugo.cpp
+legionna.cpp
 lkage.cpp
 lordgun.cpp
 mappy.cpp
@@ -87,3 +88,8 @@ gb.cpp
 gba.cpp
 megadriv.cpp
 sms.cpp
+channelf.cpp
+coleco.cpp
+ngp.cpp
+pce.cpp
+

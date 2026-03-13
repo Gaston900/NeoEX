@@ -54,6 +54,8 @@ CPUS["LR35902"] = true -- SNES
 CPUS["SPC700"] = true -- SNES
 CPUS["SUPERFX"] = true -- SNES
 CPUS["SSP1601"] = true -- MEGADRIVE
+CPUS["F8"] = true -- CHANNELF
+CPUS["TLCS900"] = true -- NGP
 
 --------------------------------------------------
 -- specify available sound cores
@@ -117,6 +119,7 @@ SOUNDS["RP2C33_SOUND"] = true -- NES
 SOUNDS["VRC6"] = true -- NES
 SOUNDS["GB_SOUND"] = true -- SNES
 SOUNDS["S_DSP"] = true -- SNES
+SOUNDS["T6W28"] = true -- NGP
 
 --------------------------------------------------
 -- specify available video cores
@@ -130,6 +133,10 @@ VIDEOS["SNES_PPU"] = true -- SNES
 VIDEOS["GBA_LCD"] = true -- GBA
 VIDEOS["SEGA315_5124"] = true -- MEGADRIVE
 VIDEOS["SEGA315_5313"] = true -- MEGADRIVE
+VIDEOS["TMS9928A"] = true -- COLECO
+VIDEOS["HUC6202"] = true -- NEC
+VIDEOS["HUC6260"] = true -- NEC
+VIDEOS["HUC6270"] = true -- NEC
 
 --------------------------------------------------
 -- specify available machine cores
@@ -226,6 +233,10 @@ BUSES["SEGA8"] = true -- SMS
 BUSES["SG1000_EXP"] = true -- SMS
 BUSES["SMS_CTRL"] = true -- SMS
 BUSES["SMS_EXP"] = true -- SMS
+BUSES["CHANNELF"] = true -- CHANNELF
+BUSES["COLECO_CART"] = true -- COLECO
+BUSES["PCE"] = true -- NEC
+BUSES["PCE_CTRL"] = true -- NEC
 
 --------------------------------------------------
 -- specify used file formats
@@ -247,6 +258,8 @@ function linkProjects_mame_arcade(_target, _subtarget)
 		"dataeast",
 		"capcom",
 		"cave",
+		"coleco",
+		"fairch",
 		"fuuki",
 		"gottlieb",
 		"igs",
@@ -257,6 +270,7 @@ function linkProjects_mame_arcade(_target, _subtarget)
 		"metro",
 		"midway",
 		"namco",
+		"nec",
 		"neogeo",
 		"nintendo",
 		"nmk",
@@ -265,6 +279,7 @@ function linkProjects_mame_arcade(_target, _subtarget)
 		"seibu",
 		"seta",
 		"sega",
+		"snk",
 		"sony",
 		"taito",
 		"technos",
@@ -394,6 +409,23 @@ files {
 	MAME_DIR .. "src/mame/video/cave.cpp",
 	MAME_DIR .. "src/mame/machine/nmk112.cpp",
 	MAME_DIR .. "src/mame/video/tmap038.cpp",
+}
+
+createMAMEProjects(_target, _subtarget, "coleco")
+files {
+	MAME_DIR .. "src/mame/drivers/coleco.cpp",
+	MAME_DIR .. "src/mame/includes/coleco.h",
+	MAME_DIR .. "src/mame/machine/coleco.cpp",
+	MAME_DIR .. "src/mame/machine/coleco.h",
+}
+
+createMAMEProjects(_target, _subtarget, "fairch")
+files {
+	MAME_DIR .. "src/mame/drivers/channelf.cpp",
+	MAME_DIR .. "src/mame/includes/channelf.h",
+	MAME_DIR .. "src/mame/audio/channelf.cpp",
+	MAME_DIR .. "src/mame/audio/channelf.h",
+	MAME_DIR .. "src/mame/video/channelf.cpp",
 }
 
 createMAMEProjects(_target, _subtarget, "fuuki")
@@ -637,6 +669,15 @@ files {
 	MAME_DIR .. "src/mame/audio/nl_konami.cpp",
 }
 
+createMAMEProjects(_target, _subtarget, "nec")
+files {
+	MAME_DIR .. "src/mame/drivers/pce.cpp",
+	MAME_DIR .. "src/mame/includes/pce.h",
+	MAME_DIR .. "src/mame/machine/pce.cpp",
+	MAME_DIR .. "src/mame/machine/pce_cd.cpp",
+	MAME_DIR .. "src/mame/machine/pce_cd.h",
+}
+
 createMAMEProjects(_target, _subtarget, "neogeo")
 files {
 	MAME_DIR .. "src/hbmame/drivers/neogeo.cpp",
@@ -717,6 +758,9 @@ files {
 
 createMAMEProjects(_target, _subtarget, "seibu")
 files {
+	MAME_DIR .. "src/mame/drivers/legionna.cpp",
+	MAME_DIR .. "src/mame/includes/legionna.h",
+	MAME_DIR .. "src/mame/video/legionna.cpp",
 	MAME_DIR .. "src/hbmame/drivers/r2dx_v33.cpp",
 	MAME_DIR .. "src/hbmame/drivers/raiden2.cpp",
 	MAME_DIR .. "src/mame/includes/raiden2.h",
@@ -817,6 +861,13 @@ files {
 	MAME_DIR .. "src/mame/video/sega16sp.h",
 	MAME_DIR .. "src/mame/video/segaic16.cpp",
 	MAME_DIR .. "src/mame/video/segaic16.h",
+}
+
+createMAMEProjects(_target, _subtarget, "snk")
+files {
+	MAME_DIR .. "src/mame/drivers/ngp.cpp",
+	MAME_DIR .. "src/mame/video/k1ge.cpp",
+	MAME_DIR .. "src/mame/video/k1ge.h",
 }
 
 createMAMEProjects(_target, _subtarget, "sony")

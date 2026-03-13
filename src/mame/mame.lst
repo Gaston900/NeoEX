@@ -3029,6 +3029,9 @@ dragoonahc03                    // hack
 airwolf                         // Parents
 airwolfhc01                     // hack 
 
+@source:legionna.cpp
+legionna                        // Parents
+
 @source:lkage.cpp
 lkage                           // Parents
 lkagehc01                       // hack
@@ -3506,6 +3509,7 @@ sfexphc01                       // hack
 
 @source:nes.cpp
 famicom                         // Nintendo Family Computer (a.k.a. Famicom)
+fds                             // Nintendo Family Computer (a.k.a. Famicom) + Disk System add-on
 nes                             // Nintendo Entertainment System
 nespal                          // Nintendo Entertainment System PAL
 
@@ -3515,6 +3519,8 @@ snespal                         // Nintendo Super Nintendo PAL
 
 @source:gb.cpp
 gameboy                         // Nintendo Game Boy Handheld
+supergb                         // Nintendo Super Game Boy SNES Cartridge
+supergb2                        //
 gbcolor                         // Nintendo Game Boy Color Handheld
 
 @source:gba.cpp
@@ -3533,9 +3539,22 @@ megadriv                        // 1990 Sega Mega Drive (Europe)
 gamegeaj                        // Sega GameGear (Japan)
 gamegear                        // Sega GameGear
 sms                             // Sega Master System II (NTSC)
+smspal                          // Sega Master System II (PAL)
+smsj                            // Sega Master System (Japan) with FM Chip
 sms1                            // Sega Master System I (NTSC)
 sms1pal                         // Sega Master System I (PAL)
-smsj                            // Sega Master System (Japan) with FM Chip
 
+@source:channelf.cpp
+channelf                        // Fairchild Channel F VES - 1976
 
+@source:coleco.cpp
+coleco                          // ColecoVision (Original BIOS)
 
+@source:ngp.cpp
+ngp                             // NeoGeo Pocket
+ngpc                            // NeoGeo Pocket Color
+
+@source:pce.cpp
+pce                             // PC/Engine NEC 1987-1993
+sgx                             // SuperGrafX NEC 1989
+tg16                            // Turbo Grafix-16  NEC 1989-1993
