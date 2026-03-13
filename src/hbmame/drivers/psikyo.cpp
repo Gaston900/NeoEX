@@ -33,6 +33,64 @@ ROM_START( gunbirdhc01 ) //gunbirdkp
 	ROM_LOAD( "u3.bin",  0x000000, 0x040000, CRC(0905aeb2) SHA1(8cca09f7dfe3f804e77515f7b1b1bdbeb7bb3d80) )
 ROM_END
 
+ROM_START( gunbirdhc02 ) //gunbird10
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD32_WORD_SWAP( "4_hc02.u46", 0x000000, 0x040000, CRC(b78ec99d) SHA1(ff0731c74b6b2ef8a3e59372cad434bd56a1175f) )
+	ROM_LOAD32_WORD_SWAP( "5_hc02.u39", 0x000002, 0x040000, CRC(925f095d) SHA1(4d075982d5a1508db14c8309ed867fc65f825b16) )
+
+	ROM_REGION( 0x020000, "audiocpu", 0 )
+	ROM_LOAD( "3.u71",     0x00000, 0x20000, CRC(2168e4ba) SHA1(ca7ad6acb5f806ce2528e7b52c19e8cceecb8543) )
+
+	ROM_REGION( 0x700000, "gfx1", 0 )
+	ROM_LOAD16_WORD_SWAP( "u14_hc01.bin",  0x000000, 0x200000, CRC(5f22e518) SHA1(9b1b5a72c699907ffbf4121693ed652e9210afdf) )
+	ROM_LOAD16_WORD_SWAP( "u24.bin",  0x200000, 0x200000, CRC(5e3ffc9d) SHA1(c284eb9ef56c8e6261fe11f91a10c5c5a56c9803) )
+	ROM_LOAD16_WORD_SWAP( "u15.bin",  0x400000, 0x200000, CRC(a827bfb5) SHA1(6e02436e12085016cf1982c9ae07b6c6dec82f1b) )
+	ROM_LOAD16_WORD_SWAP( "u25.bin",  0x600000, 0x100000, CRC(ef652e0c) SHA1(6dd994a15ced31d1bbd1a3b0e9d8d86eca33e217) )
+
+	ROM_REGION( 0x200000, "gfx2", 0 )
+	ROM_LOAD16_WORD_SWAP( "u33.bin",  0x000000, 0x200000, CRC(54494e6b) SHA1(f5d090d2d34d908b56b53a246def194929eba990) )
+
+	ROM_REGION( 0x100000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "u56.bin",  0x000000, 0x100000, CRC(9e07104d) SHA1(3bc54cb755bb3194197706965b532d62b48c4d12) )
+
+	ROM_REGION( 0x080000, "ymsnd:adpcmb", 0 )
+	ROM_LOAD( "u64.bin",  0x000000, 0x080000, CRC(e187ed4f) SHA1(05060723d89b1d05714447a14b5f5888ff3c2306) )
+
+	ROM_REGION16_LE( 0x040000, "spritelut", 0 )
+	ROM_LOAD( "u3.bin",  0x000000, 0x040000, CRC(0905aeb2) SHA1(8cca09f7dfe3f804e77515f7b1b1bdbeb7bb3d80) )
+
+	ROM_REGION( 0x0002, "pals", 0 )
+	ROM_LOAD( "3021.u69", 0x0000, 0x0001, NO_DUMP )
+	ROM_LOAD( "3020.u19", 0x0000, 0x0001, NO_DUMP )
+ROM_END
+
+ROM_START( s1945hc01 ) // s194510luo
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD32_WORD_SWAP( "2s_hc01.u40", 0x000000, 0x040000, CRC(9b10062a) SHA1(d929f37142336b923c3a78e2a74773a501a43ac7) )
+	ROM_LOAD32_WORD_SWAP( "3s_hc01.u41", 0x000002, 0x040000, CRC(f87e871a) SHA1(8fab8fbe69fc0362f37002a3ae4a840c5f18e3b9) )
+
+	ROM_REGION( 0x020000, "audiocpu", 0 )
+	ROM_LOAD( "3-u63.bin", 0x00000, 0x20000, CRC(42d40ae1) SHA1(530a5a3f78ac489b84a631ea6ce21010a4f4d31b) )
+
+	ROM_REGION( 0x001000, "mcu", 0 )
+	ROM_LOAD( "4-u59.bin", 0x00000, 0x01000, NO_DUMP )
+
+	ROM_REGION( 0x800000, "gfx1", 0 )
+	ROM_LOAD16_WORD_SWAP( "u20_hc01.bin",  0x000000, 0x200000, CRC(10058d67) SHA1(4f9cca2f93657f54ba166cd28a6215eed668af05) )
+	ROM_LOAD16_WORD_SWAP( "u22.bin",  0x200000, 0x200000, CRC(ca152a32) SHA1(63efee83cb5982c77ca473288b3d1a96b89e6388) )
+	ROM_LOAD16_WORD_SWAP( "u21.bin",  0x400000, 0x200000, CRC(c5d60ea9) SHA1(e5ce90788211c856172e5323b01b2c7ab3d3fe50) )
+	ROM_LOAD16_WORD_SWAP( "u23.bin",  0x600000, 0x200000, CRC(48710332) SHA1(db38b732a09b31ce55a96ec62987baae9b7a00c1) )
+
+	ROM_REGION( 0x200000, "gfx2", 0 )
+	ROM_LOAD16_WORD_SWAP( "u34.bin",  0x000000, 0x200000, CRC(aaf83e23) SHA1(1c75d09ff42c0c215f8c66c699ca75688c95a05e) )
+
+	ROM_REGION( 0x400000, "ymf", 0 )
+	ROM_LOAD( "u61.bin",  0x000000, 0x200000, CRC(a839cf47) SHA1(e179eb505c80d5bb3ccd9e228f2cf428c62b72ee) )    // 8 bit signed pcm (16KHz)
+
+	ROM_REGION16_LE( 0x040000, "spritelut", 0 )
+	ROM_LOAD( "u1.bin",  0x000000, 0x040000, CRC(dee22654) SHA1(5df05b0029ff7b1f7f04b41da7823d2aa8034bd2) )
+ROM_END
+
 ROM_START( samuraiahc01 ) //sngkacek
 	ROM_REGION( 0x100000, "maincpu", 0 )
 	ROM_LOAD32_WORD_SWAP( "1-u127_hc01.bin", 0x000000, 0x040000, CRC(f78906ff) SHA1(2c4bb76a4c5a5917459d335c6a42b915d9f18469) )
@@ -109,9 +167,39 @@ ROM_START( tengaihc02 ) //tengaik
 	ROM_LOAD( "u1.bin",  0x000000, 0x040000, CRC(681d7d55) SHA1(b0b28471440d747adbc4d22d1918f89f6ede1615) )
 ROM_END
 
+ROM_START( tengaihc03 ) //tengai10
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD32_WORD_SWAP( "5-u40_hc03.bin", 0x000000, 0x080000, CRC(90088195) SHA1(294e2e60c5d9dcde7b4e67219fbbc23dca773971) )
+	ROM_LOAD32_WORD_SWAP( "4-u40_hc03.bin", 0x000002, 0x080000, CRC(0d53196c) SHA1(30aade2386136b9d1a16e2bfb7634a43d44c0686) )
+
+	ROM_REGION( 0x020000, "audiocpu", 0 )
+	ROM_LOAD( "1-u63.bin", 0x00000, 0x20000, CRC(2025e387) SHA1(334b0eb3b416d46ccaadff3eee6f1abba63285fb) )
+
+	ROM_REGION( 0x001000, "mcu", 0 )
+	ROM_LOAD( "4-u59.bin", 0x00000, 0x01000, NO_DUMP )
+
+	ROM_REGION( 0x600000, "gfx1", 0 )
+	ROM_LOAD( "u20_hc03.bin",  0x000000, 0x200000, CRC(a0e63144) SHA1(bf6af9e46ec439e1754d79c5aba6d72dc7a26621) )
+	ROM_LOAD( "u22.bin",  0x200000, 0x200000, CRC(8d21caee) SHA1(2a68af8b2be2158dcb152c434e91a75871478d41) )
+	ROM_LOAD( "u21.bin",  0x400000, 0x200000, CRC(efe34eed) SHA1(7891495b443a5acc7b2f17fe694584f6cb0afacc) )
+
+	ROM_REGION( 0x400000, "gfx2", 0 )
+	ROM_LOAD( "u34.bin",  0x000000, 0x400000, CRC(2a2e2eeb) SHA1(f1d99353c0affc5c908985e6f2a5724e5223cccc) )
+
+	ROM_REGION( 0x400000, "ymf", 0 )
+	ROM_LOAD( "u61.bin",  0x000000, 0x200000, CRC(a63633c5) SHA1(89e75a40518926ebcc7d88dea86c01ba0bb496e5) )
+	ROM_LOAD( "u62.bin",  0x200000, 0x200000, CRC(3ad0c357) SHA1(35f78cfa2eafa93ab96b24e336f569ee84af06b6) )
+
+	ROM_REGION16_LE( 0x040000, "spritelut", 0 )
+	ROM_LOAD( "u1.bin",  0x000000, 0x040000, CRC(681d7d55) SHA1(b0b28471440d747adbc4d22d1918f89f6ede1615) )
+ROM_END
+
 /*    YEAR    NAME         PARENT   MACHINE    INPUT                      INIT      MONITOR   COMPANY       FULLNAME FLAGS */
 /* Psikyo Hack */
 GAME( 1994, gunbirdhc01,   gunbird,  gunbird,  gunbirdj, psikyo_state, init_gunbird,  ROT270, "hack",       "Gunbird (Korean Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2024, gunbirdhc02,   gunbird,  gunbird,  gunbird,  psikyo_state, init_gunbird,  ROT270, "GOTVG",      "Gunbird (Ten-Roh 2024-01-05)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE | MACHINE_IMPERFECT_TIMING )
+GAME( 2024, s1945hc01,     s1945,    s1945,    s1945,    psikyo_state, init_s1945,    ROT270, "GOTVG",      "Strikers 1945 (Ten-Dream 2024-01-09)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE | MACHINE_IMPERFECT_TIMING )
 GAME( 1993, samuraiahc01,  samuraia, sngkace,  sngkace,  psikyo_state, init_sngkace,  ROT270, "hack",       "Sengoku Ace (Korean Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2009, tengaihc01,    tengai,   s1945,    tengai,   psikyo_state, init_tengai,   ROT0,   "hack",       "Tengai (Infinite Power 2009-10-31)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1996, tengaihc02,    tengai,   s1945,    tengaij,  psikyo_state, init_tengai,   ROT0,   "hack",       "Tengai (Korean Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2024, tengaihc03,    tengai,   s1945,    tengaij,  psikyo_state, init_tengai,   ROT0,   "GOTVG",      "Tengai (Ten-Roh 2024-01-08)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

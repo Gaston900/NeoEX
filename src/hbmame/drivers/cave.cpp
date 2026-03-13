@@ -98,10 +98,119 @@ ROM_START( espradehc01 ) //espradejo
 	ROM_LOAD16_WORD( "eeprom-esprade.bin", 0x0000, 0x0080, CRC(315fb546) SHA1(7f597107d1610fc286413e0e93c794c80c0c554f) )
 ROM_END
 
+ROM_START( espradehc02 ) //espradehf
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_BYTE( "u42_hc02.int", 0x000000, 0x080000, CRC(3b510a73) SHA1(c0aa2cbdd2df81f363cf41561877394b3a24dfaa) )
+	ROM_LOAD16_BYTE( "u41_hc02.int", 0x000001, 0x080000, CRC(97c1b649) SHA1(bd129c0f099509b693c71dc7a46ac54a3c9e8372) )
+
+	ROM_REGION( 0x1000000, "sprites0", 0 )
+	ROM_LOAD32_WORD_SWAP( "esp_u63.u63", 0x000000, 0x400000, CRC(2f2fe92c) SHA1(9519e365248bcec8419786eabb16fe4aae299af5) )
+	ROM_LOAD32_WORD_SWAP( "esp_u64.u64", 0x000002, 0x400000, CRC(491a3da4) SHA1(53549a2bd3edc7b5e73fb46e1421b156bb0c190f) )
+	ROM_LOAD32_WORD_SWAP( "esp_u65.u65", 0x800000, 0x400000, CRC(06563efe) SHA1(94e72da1f542b4e0525b4b43994242816b43dbdc) )
+	ROM_LOAD32_WORD_SWAP( "esp_u66.u66", 0x800002, 0x400000, CRC(7bbe4cfc) SHA1(e77d0ed7a11b5abca1df8a0eb20ac9360cf79e76) )
+
+	ROM_REGION( 0x800000, "layer0", 0 )
+	ROM_LOAD( "esp_u54.u54", 0x000000, 0x400000, CRC(e7ca6936) SHA1(b7f5ab67071a1d9dd3d2c1cd2304d9cdad68850c) )
+	ROM_LOAD( "esp_u55.u55", 0x400000, 0x400000, CRC(f53bd94f) SHA1(d0a74fb3d36fe522ef075e5ae44a9980da8abe2f) )
+
+	ROM_REGION( 0x800000, "layer1", 0 )
+	ROM_LOAD( "esp_u52.u52", 0x000000, 0x400000, CRC(e7abe7b4) SHA1(e98da45497e1aaf0d6ab352ec3e43c7438ed792a) )
+	ROM_LOAD( "esp_u53.u53", 0x400000, 0x400000, CRC(51a0f391) SHA1(8b7355cbad119f4e1add14e5cd5e343ec6706104) )
+
+	ROM_REGION( 0x400000, "layer2", 0 )
+	ROM_LOAD( "esp_u51.u51", 0x000000, 0x400000, CRC(0b9b875c) SHA1(ef05447cd8565ae24bb71db42342724622ad1e3e) )
+
+	ROM_REGION( 0x400000, "ymz", 0 )
+	ROM_LOAD( "esp_u19.u19", 0x000000, 0x400000, CRC(f54b1cab) SHA1(34d70bb5798de85d892c062001d9ac1d6604fd9f) )
+
+	ROM_REGION16_BE( 0x80, "eeprom", 0 )
+	ROM_LOAD16_WORD( "eeprom-esprade.bin", 0x0000, 0x0080, CRC(315fb546) SHA1(7f597107d1610fc286413e0e93c794c80c0c554f) )
+ROM_END
+
+ROM_START( espradehc03 ) //espradehx
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_BYTE( "u42_hc02.int", 0x000000, 0x080000, CRC(3b510a73) SHA1(c0aa2cbdd2df81f363cf41561877394b3a24dfaa) )
+	ROM_LOAD16_BYTE( "u41_hc03.int", 0x000001, 0x080000, CRC(97c1b649) SHA1(468522d1d89829a84e4dc37970a960b9184609fa) )
+
+	ROM_REGION( 0x1000000, "sprites0", 0 )
+	ROM_LOAD32_WORD_SWAP( "esp_u63.u63", 0x000000, 0x400000, CRC(2f2fe92c) SHA1(9519e365248bcec8419786eabb16fe4aae299af5) )
+	ROM_LOAD32_WORD_SWAP( "esp_u64.u64", 0x000002, 0x400000, CRC(491a3da4) SHA1(53549a2bd3edc7b5e73fb46e1421b156bb0c190f) )
+	ROM_LOAD32_WORD_SWAP( "esp_u65.u65", 0x800000, 0x400000, CRC(06563efe) SHA1(94e72da1f542b4e0525b4b43994242816b43dbdc) )
+	ROM_LOAD32_WORD_SWAP( "esp_u66.u66", 0x800002, 0x400000, CRC(7bbe4cfc) SHA1(e77d0ed7a11b5abca1df8a0eb20ac9360cf79e76) )
+
+	ROM_REGION( 0x800000, "layer0", 0 )
+	ROM_LOAD( "esp_u54.u54", 0x000000, 0x400000, CRC(e7ca6936) SHA1(b7f5ab67071a1d9dd3d2c1cd2304d9cdad68850c) )
+	ROM_LOAD( "esp_u55.u55", 0x400000, 0x400000, CRC(f53bd94f) SHA1(d0a74fb3d36fe522ef075e5ae44a9980da8abe2f) )
+
+	ROM_REGION( 0x800000, "layer1", 0 )
+	ROM_LOAD( "esp_u52.u52", 0x000000, 0x400000, CRC(e7abe7b4) SHA1(e98da45497e1aaf0d6ab352ec3e43c7438ed792a) )
+	ROM_LOAD( "esp_u53.u53", 0x400000, 0x400000, CRC(51a0f391) SHA1(8b7355cbad119f4e1add14e5cd5e343ec6706104) )
+
+	ROM_REGION( 0x400000, "layer2", 0 )
+	ROM_LOAD( "esp_u51.u51", 0x000000, 0x400000, CRC(0b9b875c) SHA1(ef05447cd8565ae24bb71db42342724622ad1e3e) )
+
+	ROM_REGION( 0x400000, "ymz", 0 )
+	ROM_LOAD( "esp_u19.u19", 0x000000, 0x400000, CRC(f54b1cab) SHA1(34d70bb5798de85d892c062001d9ac1d6604fd9f) )
+
+	ROM_REGION16_BE( 0x80, "eeprom", 0 )
+	ROM_LOAD16_WORD( "eeprom-esprade.bin", 0x0000, 0x0080, CRC(315fb546) SHA1(7f597107d1610fc286413e0e93c794c80c0c554f) )
+ROM_END
+
+ROM_START( espradehc04 ) //espradesl
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_BYTE( "u42_hc02.int", 0x000000, 0x080000, CRC(3b510a73) SHA1(c0aa2cbdd2df81f363cf41561877394b3a24dfaa) )
+	ROM_LOAD16_BYTE( "u41_hc04.int", 0x000001, 0x080000, CRC(97c1b649) SHA1(35d04edf9d9fd2096b8b1d838b9d143f9556ac2f) )
+
+	ROM_REGION( 0x1000000, "sprites0", 0 )
+	ROM_LOAD32_WORD_SWAP( "esp_u63.u63", 0x000000, 0x400000, CRC(2f2fe92c) SHA1(9519e365248bcec8419786eabb16fe4aae299af5) )
+	ROM_LOAD32_WORD_SWAP( "esp_u64.u64", 0x000002, 0x400000, CRC(491a3da4) SHA1(53549a2bd3edc7b5e73fb46e1421b156bb0c190f) )
+	ROM_LOAD32_WORD_SWAP( "esp_u65.u65", 0x800000, 0x400000, CRC(06563efe) SHA1(94e72da1f542b4e0525b4b43994242816b43dbdc) )
+	ROM_LOAD32_WORD_SWAP( "esp_u66.u66", 0x800002, 0x400000, CRC(7bbe4cfc) SHA1(e77d0ed7a11b5abca1df8a0eb20ac9360cf79e76) )
+
+	ROM_REGION( 0x800000, "layer0", 0 )
+	ROM_LOAD( "esp_u54.u54", 0x000000, 0x400000, CRC(e7ca6936) SHA1(b7f5ab67071a1d9dd3d2c1cd2304d9cdad68850c) )
+	ROM_LOAD( "esp_u55.u55", 0x400000, 0x400000, CRC(f53bd94f) SHA1(d0a74fb3d36fe522ef075e5ae44a9980da8abe2f) )
+
+	ROM_REGION( 0x800000, "layer1", 0 )
+	ROM_LOAD( "esp_u52.u52", 0x000000, 0x400000, CRC(e7abe7b4) SHA1(e98da45497e1aaf0d6ab352ec3e43c7438ed792a) )
+	ROM_LOAD( "esp_u53.u53", 0x400000, 0x400000, CRC(51a0f391) SHA1(8b7355cbad119f4e1add14e5cd5e343ec6706104) )
+
+	ROM_REGION( 0x400000, "layer2", 0 )
+	ROM_LOAD( "esp_u51.u51", 0x000000, 0x400000, CRC(0b9b875c) SHA1(ef05447cd8565ae24bb71db42342724622ad1e3e) )
+
+	ROM_REGION( 0x400000, "ymz", 0 )
+	ROM_LOAD( "esp_u19.u19", 0x000000, 0x400000, CRC(f54b1cab) SHA1(34d70bb5798de85d892c062001d9ac1d6604fd9f) )
+
+	ROM_REGION16_BE( 0x80, "eeprom", 0 )
+	ROM_LOAD16_WORD( "eeprom-esprade.bin", 0x0000, 0x0080, CRC(315fb546) SHA1(7f597107d1610fc286413e0e93c794c80c0c554f) )
+ROM_END
+
 ROM_START( feversoshc01 ) //feversosddj
 	ROM_REGION( 0x100000, "maincpu", 0 )
 	ROM_LOAD16_BYTE( "cv01-u34_hc01.sos", 0x000000, 0x080000, CRC(0243de22) SHA1(746963279f9a665cf1cc7c47e58389b41b3a582e) )
 	ROM_LOAD16_BYTE( "cv01-u33_hc01.sos", 0x000001, 0x080000, CRC(1033b945) SHA1(ec01c1cc400ec6a66e6b36c59014f3f55507c7cb) )
+
+	ROM_REGION( 0x800000, "sprites0", 0 )
+	ROM_LOAD( "cv01-u25.bin", 0x000000, 0x400000, CRC(a6f6a95d) SHA1(e1eb45cb5d0e6163edfd9d830633b913fb53c6ca) )
+	ROM_LOAD( "cv01-u26.bin", 0x400000, 0x400000, CRC(32edb62a) SHA1(3def74e1316b80cc25a8c3ac162cd7bcb8cc807c) )
+
+	ROM_REGION( 0x200000, "layer0", 0 )
+	ROM_LOAD( "cv01-u50.bin", 0x000000, 0x200000, CRC(7a344417) SHA1(828bd8f95d2fcc34407e17629ccafc904a4ea12d) )
+
+	ROM_REGION( 0x200000, "layer1", 0 )
+	ROM_LOAD( "cv01-u49.bin", 0x000000, 0x200000, CRC(d21cdda7) SHA1(cace4650de580c3c4a037f1f5c32bfc1846b383c) )
+
+	ROM_REGION( 0x400000, "ymz", 0 )
+	ROM_LOAD( "cv01-u19.bin", 0x000000, 0x400000, CRC(5f5514da) SHA1(53f27364aee544572a82649c9ff29bacc642b732) )
+
+	ROM_REGION16_BE( 0x80, "eeprom", 0 )
+	ROM_LOAD16_WORD( "eeprom-feversos.bin", 0x0000, 0x0080, CRC(d80303aa) SHA1(8580f7c2223c72614516d800a98465e362c333ef) )
+ROM_END
+
+ROM_START( feversoshc02 ) //feversossf
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_BYTE( "cv01-u34_hc02.sos", 0x000000, 0x080000, CRC(24ef3ce6) SHA1(da062885ad0480e537f310f8a3957880afde12d4) )
+	ROM_LOAD16_BYTE( "cv01-u33_hc02.sos", 0x000001, 0x080000, CRC(64ff73fd) SHA1(01e1d925dea06aa37fa7671faceb563b2d9f7371) )
 
 	ROM_REGION( 0x800000, "sprites0", 0 )
 	ROM_LOAD( "cv01-u25.bin", 0x000000, 0x400000, CRC(a6f6a95d) SHA1(e1eb45cb5d0e6163edfd9d830633b913fb53c6ca) )
@@ -1081,12 +1190,16 @@ ROM_END
 
 /*    YEAR     NAME         PARENT          MACHINE      INPUT                       INIT      MONITOR   COMPANY      FULLNAME FLAGS */
 /* Cave Hack */
-GAME( 2022, agallethc01,    agallet,        sailormn,     cave,     cave_state, init_agallet,   ROT270, "DDJ",        "Air Gallet (Infinite Power)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2022, ddonpachhc01,   ddonpach,       ddonpach,     cave,     cave_state, init_ddonpach,  ROT270, "DDJ",        "DoDonPachi (Infinite Power)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2022, espradehc01,    esprade,        esprade,      cave,     cave_state, init_esprade,   ROT270, "DDJ",        "ESP Ra.De. (Infinite Power)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2022, feversoshc01,   feversos,       dfeveron,     cave,     cave_state, init_feversos,  ROT270, "DDJ",        "Fever SOS (Infinite Power)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1999, gaiahc01,       gaia,           gaia,         gaia,     cave_state, init_gaia,      ROT0,   "hack",       "Gaia Crusaders (Enable Hidden Characters)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1999, guwangehc01,    guwange,        guwange,      guwange,  cave_state, init_guwange,   ROT270, "DDJ",        "Guwange (Infinite Power)",  MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2022, agallethc01,    agallet,        sailormn,     cave,     cave_state, init_agallet,   ROT270, "DDJ",        "Air Gallet (Infinite Power 2022-08-07)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2022, ddonpachhc01,   ddonpach,       ddonpach,     cave,     cave_state, init_ddonpach,  ROT270, "DDJ",        "DoDonPachi (Infinite Power 2022-08-07)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2022, espradehc01,    esprade,        esprade,      cave,     cave_state, init_esprade,   ROT270, "DDJ",        "ESP Ra.De. (Infinite Power 2022-08-07)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2023, espradehc02,    esprade,        esprade,      cave,     cave_state, init_esprade,   ROT270, "GOTVG",      "ESP Ra.De. (Korean/French 2023-11-29)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2023, espradehc03,    esprade,        esprade,      cave,     cave_state, init_esprade,   ROT270, "GOTVG",      "ESP Ra.De. (Hybrid 2023-11-29)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2023, espradehc04,    esprade,        esprade,      cave,     cave_state, init_esprade,   ROT270, "GOTVG",      "ESP Ra.De. (Ten-Loli 2023-11-29)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2022, feversoshc01,   feversos,       dfeveron,     cave,     cave_state, init_feversos,  ROT270, "DDJ",        "Fever SOS (Infinite Power 2022-08-07)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2023, feversoshc02,   feversos,       dfeveron,     cave,     cave_state, init_feversos,  ROT270, "GOTVG",      "Fever SOS (Korean/French Ten-Loli 2023-12-13)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1999, gaiahc01,       gaia,           gaia,         gaia,     cave_state, init_gaia,      ROT0,   "GOTVG",      "Gaia Crusaders (Enable Hidden Characters)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1999, guwangehc01,    guwange,        guwange,      guwange,  cave_state, init_guwange,   ROT270, "DDJ",        "Guwange (Infinite Power 2022-08-07)",  MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1995, metmqstrhc01,   metmqstr,       metmqstr,     metmqstr, cave_state, init_metmqstr,  ROT0,   "hack",       "Metamoqester (Translation Korean)",   MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1995, metmqstrhc02,   metmqstr,       metmqstr,     metmqstr, cave_state, init_metmqstr,  ROT0,   "DDJ",        "Metamoqester (Always Have Super Move)",   MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1995, metmqstrhc03,   metmqstr,       metmqstr,     metmqstr, cave_state, init_metmqstr,  ROT0,   "DDJ",        "Metamoqester (Easy Special Attacks)",   MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

@@ -419,7 +419,7 @@ files {
 	MAME_DIR .. "src/hbmame/drivers/lordgun.cpp",
 	MAME_DIR .. "src/mame/includes/lordgun.h",
 	MAME_DIR .. "src/mame/video/lordgun.cpp",
-	MAME_DIR .. "src/mame/drivers/pgm.cpp",
+	MAME_DIR .. "src/hbmame/drivers/pgm.cpp",
 	MAME_DIR .. "src/mame/includes/pgm.h",
 	MAME_DIR .. "src/mame/video/pgm.cpp",
 	MAME_DIR .. "src/mame/machine/pgmcrypt.cpp",

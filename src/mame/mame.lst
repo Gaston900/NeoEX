@@ -1604,6 +1604,8 @@ rotdhc03                        // hack
 rotdhc04                        // hack
 s1945phc01                      // hack
 s1945phc02                      // hack
+s1945phc03                      // hack
+s1945phc04                      // hack
 samshohc01                      // hack
 samshohc02                      // hack
 samshohc03                      // hack
@@ -2707,8 +2709,12 @@ ddonpacha                       // hack
 ddonpachhc01                    // hack
 esprade                         // Parents
 espradehc01                     // hack
+espradehc02                     // hack
+espradehc03                     // hack
+espradehc04                     // hack
 feversos                        // Parents
 feversoshc01                    // hack
+feversoshc02                    // hack
 gaia                            // Parents
 gaiahc01                        // hack
 guwange                         // Parents
@@ -2950,7 +2956,6 @@ exerionhc01                     // hack
 flstory                         // Parents
 flstoryhc01                     // hack
 
-
 @source:fuukifg3.cpp
 asurabld                        // Parents
 asurabldhc01                    // hack
@@ -3011,6 +3016,7 @@ kikikai                         // Parents
 kikikaihc01                     // hack
 
 @source:konamigx.cpp
+konamigx                        // BIOS
 dragoona                        // Parents
 dragoonahc01                    // hack
 dragoonahc02                    // hack
@@ -3068,19 +3074,37 @@ pcktgalhc02                     // hack
 
 @source:pgm.cpp
 pgm                             // Bios
+ddp2                            // Parents
+ddp2hc01                        // hack
+ddp3                            // Parents
+ddp3hc01                        // hack
+killbld                         // Parents
+killbldhc01                     // hack
+killbldhc02                     // hack
+killbldhc03                     // hack
+killbldhc04                     // hack
+killbldhc05                     // hack
+martmast                        // Parents
+martmasthc01                    // hack
+martmasthc02                    // hack
+martmasthc03                    // hack
 orlegend                        // Parents
 
 @source:psikyo.cpp
 gunbird                         // Parents
 gunbirdhc01                     // hack
+gunbirdhc02                     // hack
+s1945                           // Parents
+s1945hc01                       // hack
 samuraia                        // Parents
 samuraiahc01                    // hack
 tengai                          // Parents
 tengaihc01                      // hack
 tengaihc02                      // hack
+tengaihc03                      // hack
 
 @source:psikyosh.cpp
-daraku                          // Parents
+s1945ii                         // Parents
 s1945iihc01                     // hack
 s1945iii                        // Parents
 s1945iiihc01                    // hack
@@ -3559,6 +3583,7 @@ survarts                        // Parents
 survartshc01                    // hack
 
 @source:stv.cpp
+stvbios                         // Bios
 gaxeduel                        // Parents
 gaxeduelhc01                    // hack
 groovef                         // Parents
