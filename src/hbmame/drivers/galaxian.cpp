@@ -849,18 +849,18 @@ GAME( 2019, scobtest,   scobra,   scobra,   scobra,   galaxian_state,  init_scob
 
 
 // Galaxian
-GAME( 1979, andromd,    galnamco, galaxian, superg,   galaxian_hbmame, init_galaxian, ROT90, "hack", "Andromeda", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE)
-GAME( 1998, buglaxn,    galnamco, galaxian, galaxian, galaxian_hbmame, init_galaxian, ROT90, "The Dog", "Galaxian (Bug sprites)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1981, galaxiabh,  galnamco, galaxian, galaxiab, galaxian_hbmame, init_galaxian, ROT90, "bootleg", "Galaxian (Edition Hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1979, galaxkyo,   galnamco, galaxian, superg,   galaxian_hbmame, init_galaxian, ROT90, "hack", "Galaxian (Kyoko)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1980, galaxni,    galnamco, galaxian, superg,   galaxian_hbmame, init_galaxian, ROT90, "Petaco S.A.", "Galaxian (New Invasion)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1998, galinvad,   galnamco, galaxian, galaxian, galaxian_hbmame, init_galaxian, ROT90, "T-Bone", "Galaxian (Space Invaders sprites)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1979, andromd,    galaxian, galaxian, superg,   galaxian_hbmame, init_galaxian, ROT90, "hack", "Andromeda", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE)
+GAME( 1998, buglaxn,    galaxian, galaxian, galaxian, galaxian_hbmame, init_galaxian, ROT90, "The Dog", "Galaxian (Bug sprites)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, galaxiabh,  galaxian, galaxian, galaxiab, galaxian_hbmame, init_galaxian, ROT90, "bootleg", "Galaxian (Hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1979, galaxkyo,   galaxian, galaxian, superg,   galaxian_hbmame, init_galaxian, ROT90, "hack", "Galaxian (Kyoko)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1980, galaxni,    galaxian, galaxian, superg,   galaxian_hbmame, init_galaxian, ROT90, "Petaco S.A.", "Galaxian (New Invasion)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1998, galinvad,   galaxian, galaxian, galaxian, galaxian_hbmame, init_galaxian, ROT90, "T-Bone", "Galaxian (Space Invaders sprites)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1979, galnamco,   0,        galaxian, galaxian, galaxian_hbmame, init_galaxian, ROT90, "Namco", "Galaxians", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1998, gaylaxn,    galnamco, galaxian, superg,   galaxian_hbmame, init_galaxian, ROT90, "The Dog", "Gaylaxian", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1998, gaylaxn,    galaxian, galaxian, superg,   galaxian_hbmame, init_galaxian, ROT90, "The Dog", "Gaylaxian", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2003, mrdonm,     0,        galaxian, mrdonm,   galaxian_hbmame, init_galaxian, ROT90, "Krazy Ivan", "Mr. Do's Nightmare", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 19??, galxtest1,  galnamco, galaxian, galaxian, galaxian_state,  init_galaxian, ROT90, "<unknown>", "Galaxian Test Rom", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2017, galxtest2,  galnamco, galaxian, galaxian, galaxian_state,  init_galaxian, ROT90, "Phil Murray", "Galaxian Test Rom (2017-12-07)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1998, vectrgal,   galnamco, galaxian, galaxian, galaxian_hbmame, init_galaxian, ROT90, "T-Bone", "Galaxian (Vector Sim)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 19??, galxtest1,  galaxian, galaxian, galaxian, galaxian_state,  init_galaxian, ROT90, "<unknown>", "Galaxian Test Rom", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2017, galxtest2,  galaxian, galaxian, galaxian, galaxian_state,  init_galaxian, ROT90, "Phil Murray", "Galaxian Test Rom (2017-12-07)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1998, vectrgal,   galaxian, galaxian, galaxian, galaxian_hbmame, init_galaxian, ROT90, "T-Bone", "Galaxian (Vector Sim)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 
 
 // Moon Cresta

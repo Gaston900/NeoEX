@@ -389,15 +389,43 @@ ROM_START( martmasthc03 )
 	ROM_LOAD( "m1001.rom",    0xc00000, 0x400000, CRC(662d2d48) SHA1(2fcc3099d9c04456cae3b13035fb28eaf709e7d8) )
 ROM_END
 
+ROM_START( orlegendhc01 )
+	ROM_REGION( 0x600000, "maincpu", 0 )
+	PGM_68K_BIOS
+	ROM_LOAD16_WORD_SWAP( "p0103_hc01.u2",    0x100000, 0x200000, CRC(ea17155c) SHA1(39c2c1fe3cb84587eae46a7ce58ceed5bd40eab5) )
+
+	ROM_REGION( 0xa00000, "tiles",  0 )
+	PGM_VIDEO_BIOS
+	ROM_LOAD( "pgm_t0100.u8",     0x180000, 0x400000, CRC(61425e1e) SHA1(20753b86fc12003cfd763d903f034dbba8010b32) )
+
+	ROM_REGION16_LE( 0x2000000, "sprcol", 0 )
+	ROM_LOAD( "pgm_a0100-1.u5",   0x0000000, 0x400000, BAD_DUMP CRC(8b3bd88a) SHA1(42db3a60c6ba9d83ebe2008c8047d094027f65a7) )
+	ROM_LOAD( "pgm_a0101-1.u6",   0x0400000, 0x400000, BAD_DUMP CRC(3b9e9644) SHA1(5b95ec1d25c3bc3504c93547f5adb5ce24376405) )
+	ROM_LOAD( "pgm_a0102-1.u7",   0x0800000, 0x400000, BAD_DUMP CRC(069e2c38) SHA1(9bddca8c2f5bd80f4abe4e1f062751736dc151dd) )
+	ROM_LOAD( "pgm_a0103-1.u8",   0x0c00000, 0x400000, BAD_DUMP CRC(4460a3fd) SHA1(cbebdb65c17605853f7d0b298018dd8801a25a58) )
+	ROM_LOAD( "pgm_a0104-1.u11",  0x1000000, 0x400000, BAD_DUMP CRC(5f8abb56) SHA1(6c1ddc0309862a141aa0c0f63b641aec9257aaee) )
+	ROM_LOAD( "pgm_a0105-1.u12",  0x1400000, 0x400000, BAD_DUMP CRC(a17a7147) SHA1(44eeb43c6b0ebb829559a20ae357383fbdeecd82) )
+
+	ROM_REGION16_LE( 0x1000000, "sprmask", 0 )
+	ROM_LOAD( "pgm_b0100-1.u9",   0x0000000, 0x400000, BAD_DUMP CRC(69d2e48c) SHA1(5b5f759007264c07b3b39be8e03a713698e1fc2a) )
+	ROM_LOAD( "pgm_b0101-1.u10",  0x0400000, 0x400000, BAD_DUMP CRC(0d587bf3) SHA1(5347828b0a6e4ddd7a263663d2c2604407e4d49c) )
+	ROM_LOAD( "pgm_b0102.u15",    0x0800000, 0x400000, CRC(43823c1e) SHA1(e10a1a9a81b51b11044934ff702e35d8d7ab1b08) )
+
+	ROM_REGION( 0x600000, "ics", 0 )
+	PGM_AUDIO_BIOS
+	ROM_LOAD( "pgm_m0100.u1",     0x400000, 0x200000, CRC(e5c36c83) SHA1(50c6f66770e8faa3df349f7d68c407a7ad021716) )
+ROM_END
+
 /*    YEAR  NAME              PARENT            MACHINE            INPUT                              INIT           MONITOR COMPANY       FULLNAME FLAGS */
 /* Pgm Hack */
 GAME( 2022, ddp2hc01,         ddp2,        pgm_arm_type2,          pgm,       pgm_arm_type2_state,  init_ddp2,       ROT270, "hack",       "DoDonPachi II (Infinite Power 2022-08-07)",  MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2022, ddp3hc01,         ddp3,        pgm_arm_type1_cave,     ddp3,      pgm_arm_type1_state,  init_ddp3,       ROT270, "hack",       "DoDonPachi III (Infinite Power 2022-08-07)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1998, killbldhc01,      killbld,     pgm_022_025_killbld,    killbld,   pgm_022_025_state,    init_killbld,    ROT0,   "DDJ",        "The Killing Blade (Always Have Super Move)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1998, killbldhc02,      killbld,     pgm_022_025_killbld,    killbld,   pgm_022_025_state,    init_killbld,    ROT0,   "DDJ",        "The Killing Blade (Easy Move)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1998, killbldhc03,      killbld,     pgm_022_025_killbld,    killbld,   pgm_022_025_state,    init_killbld,    ROT0,   "DDJ",        "The Killing Blade (Enable Hidden Boss)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2023, killbldhc04,      killbld,     pgm_022_025_killbld,    killbld,   pgm_022_025_state,    init_killbld,    ROT0,   "GOTVG",      "The Killing Blade (Infinite Energy 2023-05-27)", MACHINE_SUPPORTS_SAVE )
-GAME( 2018, killbldhc05,      killbld,     pgm_022_025_killbld,    killbld,   pgm_022_025_state,    init_killbld,    ROT0,   "GOTVG",      "The Killing Blade (Heroes 2018-06-22)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2001, martmasthc01,     martmast,    pgm_arm_type2,          martmast,  pgm_arm_type2_state,  init_martmast,   ROT0,   "hack",       "Martial Masters (Enable Hidden Characters)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2016, martmasthc02,     martmast,    pgm_arm_type2,          martmast,  pgm_arm_type2_state,  init_martmast,   ROT0,   "DDJ",        "Martial Masters (All Super Move)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE ) //press ac or bd
-GAME( 2016, martmasthc03,     martmast,    pgm_arm_type2,          martmast,  pgm_arm_type2_state,  init_martmast,   ROT0,   "DDJ",        "Martial Masters (Always Have Super Move)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1998, killbldhc01,      killbld,     pgm_022_025_killbld,    killbld,   pgm_022_025_state,    init_killbld,    ROT0,   "DDJ",        "The Killing Blade / Ao Jian Kuang Dao (Always Have Super Move)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1998, killbldhc02,      killbld,     pgm_022_025_killbld,    killbld,   pgm_022_025_state,    init_killbld,    ROT0,   "DDJ",        "The Killing Blade / Ao Jian Kuang Dao (Easy Special Attacks)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1998, killbldhc03,      killbld,     pgm_022_025_killbld,    killbld,   pgm_022_025_state,    init_killbld,    ROT0,   "DDJ",        "The Killing Blade / Ao Jian Kuang Dao (Enable Hidden Characters)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2023, killbldhc04,      killbld,     pgm_022_025_killbld,    killbld,   pgm_022_025_state,    init_killbld,    ROT0,   "GOTVG",      "The Killing Blade / Ao Jian Kuang Dao (Infinite Energy 2023-05-27)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2018, killbldhc05,      killbld,     pgm_022_025_killbld,    killbld,   pgm_022_025_state,    init_killbld,    ROT0,   "GOTVG",      "The Killing Blade / Ao Jian Kuang Dao (Heroes 2018-06-22)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2001, martmasthc01,     martmast,    pgm_arm_type2,          martmast,  pgm_arm_type2_state,  init_martmast,   ROT0,   "hack",       "Martial Masters / Xing Yi Quan (Enable Hidden Characters)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2016, martmasthc02,     martmast,    pgm_arm_type2,          martmast,  pgm_arm_type2_state,  init_martmast,   ROT0,   "DDJ",        "Martial Masters / Xing Yi Quan (Easy Special Attacks)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE ) //press ac or bd
+GAME( 2016, martmasthc03,     martmast,    pgm_arm_type2,          martmast,  pgm_arm_type2_state,  init_martmast,   ROT0,   "DDJ",        "Martial Masters / Xing Yi Quan (Always Have Super Move)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1997, orlegendhc01,     orlegend,    pgm_asic3,              orlegend,  pgm_asic3_state,     init_orlegend,    ROT0,   "DDJ",        "Oriental Legend / Xiyou Shi E Chuan (Easy Special Attacks)", MACHINE_IMPERFECT_SOUND | MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )                 // V0001 01/14/98 18:16:38 - runs as World

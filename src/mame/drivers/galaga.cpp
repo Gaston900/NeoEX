@@ -3489,7 +3489,7 @@ GAME( 1981, galagamw,  galaga,  galaga,  galagamw, galaga_state,  init_galaga,  
 GAME( 1981, galagamk,  galaga,  galaga,  galaga,   galaga_state,  init_galaga,  ROT90,  "Namco (Midway license)", "Galaga (Midway set 2)", MACHINE_SUPPORTS_SAVE )
 GAME( 1981, galagamf,  galaga,  galaga,  galaga,   galaga_state,  init_galaga,  ROT90,  "Namco (Midway license)", "Galaga (Midway set 1 with fast shoot hack)", MACHINE_SUPPORTS_SAVE )
 
-GAME( 1982, xevious,   0,       xevious, xevious,  xevious_state, init_xevious, ROT90,  "Namco", "Xevious (Namco)", MACHINE_SUPPORTS_SAVE )
+GAME( 1982, xevious,   0,       xevious, xevious,  xevious_state, init_xevious, ROT90,  "Namco", "Xevious (Namco)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1982, xeviousa,  xevious, xevious, xeviousa, xevious_state, init_xevious, ROT90,  "Namco (Atari license)", "Xevious (Atari, harder)", MACHINE_SUPPORTS_SAVE )
 GAME( 1982, xeviousb,  xevious, xevious, xeviousb, xevious_state, init_xevious, ROT90,  "Namco (Atari license)", "Xevious (Atari)", MACHINE_SUPPORTS_SAVE )
 GAME( 1982, xeviousc,  xevious, xevious, xeviousa, xevious_state, init_xevious, ROT90,  "Namco (Atari license)", "Xevious (Atari, Namco PCB)", MACHINE_SUPPORTS_SAVE )

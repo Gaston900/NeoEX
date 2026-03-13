@@ -2966,32 +2966,32 @@ asurabus                        // Parents
 asurabushc01                    // hack
 asurabushc02                    // hack
 
+@source:galaga.cpp
+galaga                          // Parents
+galaga84                        // hack
+galaga99                        // hack
+galagads                        // hack
+galagaef                        // hack
+galagix                         // hack
+galagost                        // hack
+galaped                         // hack
+galgaxin                        // hack
+vgalaga                         // hack
+battlesh                        // hack
+gaous                           // hack
+xevious                         // Parents
+xeviblk                         // hack
+xevious5                        // hack
+xeviousp                        // hack
+
 @source:galaxian.cpp
 galaxian                        // Parents
-kazzy                           // hack
-trukker                         // hack
-amidarf                         // hack
-amidargr                        // hack
-offender                        // hack
-superdog                        // hack
-andromd                         // hack
 buglaxn                         // hack
-galnamco                        // hack
 galaxiabh                       // hack
 galinvad                        // hack
 gaylaxn                         // hack
-mrdonm                          // hack
 vectrgal                        // hack
-mooncmst                        // hack
-mooncrs5f                       // hack
-jumpbugx                        // hack
-starfgh2                        // hack
-wbeast                          // hack
-superg                          // hack
-supergs                         // hack
 galturbo                        // hack
-galap1                          // hack
-galap4                          // hack
 
 @source:gauntlet.cpp
 gaunt2                          // Parents
@@ -3117,50 +3117,25 @@ soldivid                        // Parents
 soldividhc01                    // hack
 
 @source:puckman.cpp
-puckman                         // (c) 1980 Namco
-ctrpllrp                        // hack
-hangly                          // hack
-hangly2                         // hack
-hangly3                         // hack
+puckman                         // Parents
 joyman                          // hack
-newpuc2                         // hack
-newpuc2b                        // hack
 newpuckx                        // hack
-pacheart                        // hack
-pacman                          // (c) 1980 Midway
-pacmanf                         // hack
-pacmod                          // (c) 1981 Midway
-pacplus                         // (c) 1982 Namco (Midway license)
-puckmod                         // (c) 1981 Namco
-puckmanb                        // bootleg
-puckmana                        // hack
-puckmanf                        // hack
-hmbluep                         // hack
 hmgrenp                         // hack
 hmhearts                        // hack
 hanglyad                        // hack
 homercid                        // hack
-jackman                         // hack
-pacmar                          // hack
 mazeman                         // hack
-mcpacman                        // hack
 pacmini                         // hack
 pacmini2                        // hack
-nwpuc2b                         // hack
 pac2600                         // hack
 pm7000p                         // hack
-pmbamaz                         // hack
 pmheart                         // hack
-pplusad                         // hack
-puckmano                        // hack
 puckmoti                        // hack
 puckren                         // hack
 punleash                        // hack
 roboman                         // hack
 snakeyes                        // hack
 snowpac                         // hack
-spuckman                        // hack
-sumelton                        // hack
 tbone                           // hack
 ultra2                          // hack
 vcrunchy                        // hack
@@ -3183,48 +3158,25 @@ vpacmsa4                        // hack
 vpspeed                         // hack
 xensad                          // hack
 xensrev                         // hack
-pacmanfm                        // bootleg (FAMARE S.A.)
-pacmanso                        //
-pacmanvg                        // bootleg (Video Game SA)
-popeyeman                       // hack
-puckmanh                        // hack
-bucaner                         // hack
-bucanera                        // hack
-crockman                        // 1980 bootleg (RENE PIERRE)
-crockmnf                        // bootleg (Marti Colls / Falgas)
-pacmanug                        // bootleg (U.G.)
-baracuda                        // hack (Coinex)
-pacmanjpm                       //
-bevpac                          // hack
 invispac                        // hack
 pacforks                        // hack
-pacsmall                        // hack
 pmad6m                          // hack
 brakman                         // hack
 pacman25                        // hack
 pengman                         // hack
 crazypac                        // hack
 dizzy                           // hack
-eltonpac                        // hack
 pacman3d                        // hack
 pacmn6m2                        // hack
-pacmulti                        // hack
-pacweird                        // hack
 puckmanx                        // hack
 hanglyx                         // hack
 nwpuckxx                        // hack
 pacplusx                        // hack
 pheartx                         // hack
-abortman                        // hack
 bacman                          // hack
 bucaneerx                       // hack
 caterpil                        // hack
 europac                         // hack
-fpnleash                        // hack
-pacbaby                         // hack
-pacbaby2                        // hack
-pacbaby3                        // hack
-baby4                           // hack
 pacbell                         // hack
 pacelec                         // hack
 pacjail                         // hack
@@ -3232,206 +3184,49 @@ pacjr1                          // hack
 pacjr2                          // hack
 pacjr3                          // hack
 pacjr4                          // hack
-pacm255                         // hack
-pacminer                        // hack
 pacms1                          // hack
 pacms2                          // hack
-pacms3                          // hack
 pacms4                          // hack
 pacmsa1                         // hack
 pacmsa2                         // hack
 pacmsa3                         // hack
 pacmsa4                         // hack
-pacplusc                        // hack
 pacrab                          // hack
-pacshuf                         // hack
-pacspeed                        // hack
 pcrunchy                        // hack
 pheartb                         // hack
-pmad                            // hack
-pmad00                          // hack
-pacman25s01                     // hack
-pacman25s05                     // hack
-pacman25s06                     // hack
-pacman25s08                     // hack
-pacman25s09                     // hack
-pacman25s12                     // hack
-pacman25s13                     // hack
-pacman25s15                     // hack
-pacman25s19                     // hack
-pacman25s21                     // hack
-pacman25s22                     // hack
-pacman25s23                     // hack
-pacman25s24                     // hack
-pacman25s25                     // hack
-pacman25s26                     // hack
-pacman25s27                     // hack
-pacman25s28                     // hack
-pacman25s30                     // hack
-pacman25s33                     // hack
-pacman25s34                     // hack
-pacman25s35                     // hack
-pacman25s36                     // hack
-pacman25s37                     // hack
-pacman25s38                     // hack
-pacman25s39                     // hack
-pacman25s40                     // hack
-pacman25s41                     // hack
-pacman25s42                     // hack
-pacman25s43                     // hack
-pacman25s44                     // hack
-pacman25s46                     // hack
-pacman25s47                     // hack
-pacman25s48                     // hack
-pacman25s49                     // hack
-pacman25s50                     // hack
-pacman25s51                     // hack
-pacman25s52                     // hack
-pacman25s54                     // hack
-pacman25s55                     // hack
-pacman25s56                     // hack
-pacman25s57                     // hack
-pacman25s58                     // hack
-pacman25s59                     // hack
-pacman25s62                     // hack
-pacman25s63                     // hack
-pacman25s64                     // hack
-pacman25s65                     // hack
-pacman25s66                     // hack
-pacman25s67                     // hack
-pacman25s68                     // hack
-pacman25s69                     // hack
-pacman25s70                     // hack
-pacman25s71                     // hack
-pacman25s72                     // hack
-pacman25s73                     // hack
-pacman25s74                     // hack
-pacman25s75                     // hack
-pacman25s77                     // hack
-pacman25s78                     // hack
-pacman25s79                     // hack
-pacman25s80                     // hack
-pacman25s81                     // hack
-pacman25s82                     // hack
-pacman25s83                     // hack
-pacman25s84                     // hack
-pacman25s85                     // hack
-pacman25s86                     // hack
-pacman25s87                     // hack
-pacman25s89                     // hack
-pacman25s90                     // hack
-pacman25s91                     // hack
-pacman25s92                     // hack
-pacman25s93                     // hack
-pacman25s94                     // hack
-pacman25s95                     // hack
-pacman25s96                     // hack
-pacman25s97                     // hack
-pacman25s98                     // hack
-pacman25s99                     // hack
-pacman25s101                    // hack
-pacman25s102                    // hack
-pacman25s103                    // hack
-pacman25s104                    // hack
-pacman25s106                    // hack
-pacman25s107                    // hack
-pacman25s108                    // hack
-pacman25s109                    // hack
-pacman25s111                    // hack
-pacman25s112                    // hack
-pacman25s113                    // hack
-pacman25s114                    // hack
-pacman25s115                    // hack
-pacman25s116                    // hack
-pacman25s117                    // hack
-pacman25s118                    // hack
-pacman25s119                    // hack
-pacman25s120                    // hack
-pacman25s121                    // hack
-pacman25s122                    // hack
-pacman25s123                    // hack
-pacman25s124                    // hack
-pacman25s126                    // hack
-pacman25s127                    // hack
 
 @source:puckman.cpp
-abscam                          // hack
-eyes                            // (c) 1982 Digitrex Techstar + "Rockola presents"
-aa                              //
-bace                            //
-dderby                          //
-kangaroh                        //
 lazybug                         //
 lazybug1                        //
-ppong                           //
-rainboh                         //
 wavybug                         //
-zap                             //
-absurd                          //
-alienres                        //
 crashh                          //
-mtturbo                         //
-eyesb                           // bootleg
-ghohunt                         //
-pactetris                       //
-deathstar                       //
-deathstar2                      //
-theglobpb                       // hack
-piranha                         // GL
-piranhah                        // hack
-piranhao                        // GL
-crush                           // (c) 1981 Kural Samno Electric Ltd
-crush2                          // (c) 1981 Kural Esco Electric Ltd - bootleg?
-crush3                          // Kural Electric Ltd
-crush4                          // Kural Electric Ltd - bootleg?
-crushbl                         // bootleg
-crushrlf                        // bootleg
-eyes2                           // (c) 1982 Techstar + "Rockola presents"
-eyeszac                         // (c) 1982 Techstar / Zaccaria
-eyeszacb                        // bootleg
-eyesb2                          // hack
-maketrax                        // (c) 1981 Williams, high score table says KRL (fur Kural)
-maketrxb                        // (c) 1981 [Kural] (Williams license)
-painter                         // hack
+piranha                         //
 
 @source:puckman.cpp
-mspacman                        // (c) 1981 Midway  // made by General Computer
+mspacman                        // Parents
 mspacmat                        // hack
-mspacmab                        // bootleg
-mspacmbe                        // bootleg
 mspacmnf                        // hack
 mspacpls                        // hack
-pacgal                          // hack
 pacatk                          // hack
-mscrzyma                        // hack
-mscrzymp                        // hack
-msstrmaz                        // hack
 ms2600                          // hack
 msbaby                          // hack
 msmini                          // hack
 msminia                         // hack
-msnes4a                         // hack
 msnes62                         // hack
-msnes63                         // hack
 msnes6m                         // hack
 msnes6m2                        // hack
 msnes6m3                        // hack
 msnes6m4                        // hack
-mspacnes                        // hack
 mspacren                        // hack
 mspc6mad                        // hack
 msvctr6m                        // hack
 horizpac                        // hack
-pacgent                         // hack
 ottopz                          // hack
 superp4m                        // hack
 msgrkatk                        // hack
-mrpacman                        // hack
 mspacwf                         // hack
 msrumble                        // hack
-mselton                         // hack
 msf1pac                         // hack
-msindy                          // hack
 mspacad                         // hack
 mspacat2                        // hack
 msberzk                         // hack
@@ -3439,25 +3234,17 @@ mspacatx                        // hack
 mspacmbx                        // hack
 mspacmnx                        // hack
 mspacplx                        // hack
-chtmsatk                        // hack
 cookiem                         // hack
-fstmsatk                        // hack
 heartbn2                        // hack
 heartbrn                        // hack
 msatk2ad                        // hack
-msatkad                         // hack
-msdstorm                        // hack
 mshangly                        // hack
 mshearts                        // hack
-mspacj                          // hack
-mspacpbl                        // hack
 mspacrip                        // hack
 pacandroid                      // hack
 mssilad                         // hack
 msultra                         // hack
 msvectr                         // hack
-msyakman                        // hack
-pacgalu                         // hack
 petshops                        // hack
 piranha2                        // hack
 sueworld                        // hack
@@ -3465,38 +3252,14 @@ vectratk                        // hack
 zolaad                          // hack
 zolaatk                         // hack
 zolamaze                        // hack
-zolavect                        // hack
 mspacmadp                       // hack
 mspacatttur                     // hack
-mspacii2                        // hack
 ms2600a                         // hack
 manpac                          // hack
-mspacmab2                       // bootleg
-mspacmanbcc                     // bootleg
-mspacmanbco                     // bootleg
-mspacmanbg                      // bootleg
-mspacmanbg2                     // bootleg
-mspacmanbgd                     // bootleg
-mspacmanbhe                     // bootleg
-mspacmanblt                     // bootleg
-mspacmancr                      // bootleg on Crush Roller board
-mspacmbmc                       // bootleg (Marti Colls / Falgas)
-pacgal2                         // bootleg
-mspacii3                        // bootleg
-mspacmab4                       // bootleg
-mspacmanblt2                    // bootleg
-mspacmanlai                     // bootleg
-mspacmanbgc                     // bootleg
 
 @source:puckman.cpp
 mschamp                         // hack
 mschampx                        // hack
-96in1b                          // hack
-hackypac                        // hack
-madpac                          // hack
-mspaceur                        // hack
-multi15                         // hack 
-pm4n1e                          // hack
 superabc                        // hack
 
 @source:r2dx_v33.cpp
@@ -3734,25 +3497,6 @@ sfex2p                          // Parents
 sfex2phc01                      // hack
 sfexp                           // Parents
 sfexphc01                       // hack
-
-@source:galaga.cpp
-galaga                          // Parents
-galaga84                        // hack
-galaga99                        // hack
-galagab2                        // hack
-galagads                        // hack
-galagaef                        // hack
-galagix                         // hack
-galagost                        // hack
-galaped                         // hack
-galgaxin                        // hack
-vgalaga                         // hack
-battlesh                        // hack
-gaous                           // hack
-xeviblk                         // hack
-xevious5                        // hack
-xevioush                        // hack
-xeviousp                        // hack
 
 
 

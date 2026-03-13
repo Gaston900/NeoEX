@@ -6685,7 +6685,7 @@ GAME( 2001, hmba5000, puckman,  pacman,   pacman,   puckman_state, empty_init,  
 GAME( 2001, hmba7000, puckman,  pacman,   pacman,   puckman_state, empty_init,  ROT90, "Blue Justice", "Hangly Man Babies 7000", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, hmbabymz, puckman,  pacman,   pacman,   puckman_state, empty_init,  ROT90, "Blue Justice", "Hangly Man BabiesMaze", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, hmbluep,  puckman,  pacman,   pacman,   puckman_state, empty_init,  ROT90, "Blue Justice", "Hangly Man Blue Plus", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2001, hmgrenp,  puckman,  pacman,   pacman,   puckman_state, empty_init,  ROT90, "Blue Justice", "Hangly Man Green Plus", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2001, hmgrenp,  puckman,  pacman,   pacman,   puckman_state, empty_init,  ROT90, "Blue Justice", "Hangly Man - Green Plus", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, hmplus,   puckman,  pacman,   pacman,   puckman_state, empty_init,  ROT90, "Blue Justice", "Hangly Man Plus", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, pm1000,   puckman,  pacman,   pacman,   puckman_state, empty_init,  ROT90, "Blue Justice", "Pac Man 1000", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, pm2000,   puckman,  pacman,   pacman,   puckman_state, empty_init,  ROT90, "Blue Justice", "Pac Man 2000", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
@@ -6910,7 +6910,7 @@ GAME( 1981, puckmodx, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,  
 /* Misc Pacman Hacks */
 
 GAME( 2001, abortman, puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "Paul Copeland",  "Abortman", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2015, bacman,   puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "George Phillips",  "Bac-man (2015-08-22)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2015, bacman,   puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "George Phillips",  "Bac-man", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1981, bucaneerx,puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "Bucco", "Buccaneer", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, caterpil, puckman,  pacman,   mspacman, puckman_state, empty_init,   ROT90, "Phi", "Caterpillar", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, chtpac,   puckman,  pacman,   pacman0,  puckman_state, empty_init,   ROT90, "[Midway]", "Pacman [c]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
