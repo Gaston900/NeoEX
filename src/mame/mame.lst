@@ -3323,10 +3323,16 @@ brival                          // Parents
 brivalhc01                      // hack
 
 @source:segac2.cpp
-anpanman                        // Parents
+c2frog                         // HomeBrew
 
 @source:segaorun.cpp
 outrun                          // Parents
+outrunhc01                      // hack
+outruneh                        // hack
+outrundxeh                      // hack
+outrunt1                        // HomeBrew
+toutrun                         // Parents
+toutrundt1                      // HomeBrew
 
 @source:seta.cpp
 blandia                         // Parents

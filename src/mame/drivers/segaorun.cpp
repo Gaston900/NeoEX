@@ -3102,7 +3102,7 @@ void segaorun_state::init_shangon()
 //**************************************************************************
 
 //    YEAR, NAME,      PARENT,  MACHINE,         INPUT,      INIT,                         MONITOR,COMPANY,FULLNAME,FLAGS,                                                  LAYOUT
-GAMEL(1986, outrun,    0,       outrun,          outrun,     segaorun_state, init_outrun,  ROT0,   "Sega",    "Out Run (sitdown/upright, Rev B)", 0,                        layout_outrun ) // Upright/Sitdown determined by dipswitch settings
+GAMEL(1986, outrun,    0,       outrun,          outrun,     segaorun_state, init_outrun,  ROT0,   "Sega",    "Out Run (sitdown/upright, Rev B)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE, layout_outrun ) // Upright/Sitdown determined by dipswitch settings
 GAMEL(1986, outrunra,  outrun,  outrun,          outrun,     segaorun_state, init_outrun,  ROT0,   "Sega",    "Out Run (sitdown/upright, Rev A)", 0,                        layout_outrun ) // Upright/Sitdown determined by dipswitch settings
 GAMEL(1986, outrundx,  outrun,  outrun,          outrundx,   segaorun_state, init_outrun,  ROT0,   "Sega",    "Out Run (deluxe sitdown)", 0,                                layout_outrun )
 GAMEL(1986, outrundxj, outrun,  outrun_fd1089a,  outrundx,   segaorun_state, init_outrun,  ROT0,   "Sega",    "Out Run (Japan, deluxe sitdown) (FD1089A 317-0019)", 0,      layout_outrun ) // No Japanese text, different course order
@@ -3111,9 +3111,9 @@ GAMEL(1986, outrunb,   outrun,  outrun,          outrun,     segaorun_state, ini
 
 // aftermarket outrun modifications, these fix various issues in the game, including making the attract mode work correctly when set to Free Play.
 // see http://reassembler.blogspot.co.uk/2011/08/outrun-enhanced-edition.html and http://reassembler.blogspot.com/2020/04/outrun-enhanced-edition-201.html
-GAMEL(2020, outruneh,    outrun,  outrun,        outruneh,   segaorun_state, init_outrun,  ROT0,   "hack (Chris White)", "Out Run (sitdown/upright, Rev B) (Enhanced Edition v2.0.3)", 0, layout_outrun ) // Mar 2020 - this is not "V2"
+GAMEL(2020, outruneh,    outrun,  outrun,        outruneh,   segaorun_state, init_outrun,  ROT0,   "hack (Chris White)", "Out Run (sitdown/upright, Rev B) (Enhanced Edition v2.0.3)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE, layout_outrun ) // Mar 2020 - this is not "V2"
 GAMEL(2014, outruneha,   outrun,  outrun,        outruneh,   segaorun_state, init_outrun,  ROT0,   "hack (Chris White)", "Out Run (sitdown/upright, Rev B) (Enhanced Edition v1.1.0)", 0, layout_outrun ) // July 2014
-GAMEL(2020, outrundxeh,  outrun,  outrun,        outrundxeh, segaorun_state, init_outrun,  ROT0,   "hack (Chris White)", "Out Run (deluxe sitdown) (Enhanced Edition v2.0.3)", 0,         layout_outrun ) // Mar 2020 - this is not "V2"
+GAMEL(2020, outrundxeh,  outrun,  outrun,        outrundxeh, segaorun_state, init_outrun,  ROT0,   "hack (Chris White)", "Out Run (deluxe sitdown) (Enhanced Edition v2.0.3)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE, layout_outrun ) // Mar 2020 - this is not "V2"
 GAMEL(2013, outrundxeha, outrun,  outrun,        outrundxeh, segaorun_state, init_outrun,  ROT0,   "hack (Chris White)", "Out Run (deluxe sitdown) (Enhanced Edition v1.0.3)", 0,         layout_outrun ) // Jan 2013
 
 GAME( 1987, shangon,   0,       shangon,         shangon,    segaorun_state, init_shangon, ROT0,   "Sega",    "Super Hang-On (sitdown/upright) (unprotected)", 0 )
@@ -3123,7 +3123,7 @@ GAME( 1987, shangon1,  shangon, shangon_fd1089b, shangon,    segaorun_state, ini
 GAME( 1991, shangonle, shangon, shangon,         shangon,    segaorun_state, init_shangon, ROT0,   "Sega",    "Limited Edition Hang-On", 0 )
 GAME( 1987, shangon3d, shangon, shangon,         shangon,    segaorun_state, init_shangon, ROT0,   "bootleg", "Super Hang-On (sitdown/upright) (bootleg of FD1089B 317-0034 set)", 0 )
 
-GAMEL(1989, toutrun,   0,       outrun_fd1094,   toutrun,    segaorun_state, init_outrun,  ROT0,   "Sega",    "Turbo Out Run (Out Run upgrade) (FD1094 317-0118)", 0,        layout_outrun ) // Cabinet determined by dipswitch settings
+GAMEL(1989, toutrun,   0,       outrun_fd1094,   toutrun,    segaorun_state, init_outrun,  ROT0,   "Sega",    "Turbo Out Run (Out Run upgrade) (FD1094 317-0118)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE, layout_outrun ) // Cabinet determined by dipswitch settings
 GAMEL(1989, toutrunj,  toutrun, outrun_fd1094,   toutrun,    segaorun_state, init_outrun,  ROT0,   "Sega",    "Turbo Out Run (Japan, Out Run upgrade) (FD1094 317-0117)", 0, layout_outrun ) // Cabinet determined by dipswitch settings
 GAMEL(1989, toutrun3,  toutrun, outrun_fd1094,   toutrunc,   segaorun_state, init_outrun,  ROT0,   "Sega",    "Turbo Out Run (cockpit) (FD1094 317-0107)", 0,                layout_outrun )
 GAMEL(1989, toutrun2,  toutrun, outrun_fd1094,   toutrunct,  segaorun_state, init_outrun,  ROT0,   "Sega",    "Turbo Out Run (cockpit) (FD1094 317-0106)", 0,                layout_outrun )
