@@ -56,6 +56,7 @@ CPUS["SUPERFX"] = true -- SNES
 CPUS["SSP1601"] = true -- MEGADRIVE
 CPUS["F8"] = true -- CHANNELF
 CPUS["TLCS900"] = true -- NGP
+CPUS["IE15"] = true -- SG1000
 
 --------------------------------------------------
 -- specify available sound cores
@@ -120,6 +121,8 @@ SOUNDS["VRC6"] = true -- NES
 SOUNDS["GB_SOUND"] = true -- SNES
 SOUNDS["S_DSP"] = true -- SNES
 SOUNDS["T6W28"] = true -- NGP
+SOUNDS["BEEP"] = true -- SG1000
+SOUNDS["SEGAPCM"] = true -- SEGAORUN
 
 --------------------------------------------------
 -- specify available video cores
@@ -137,6 +140,8 @@ VIDEOS["TMS9928A"] = true -- COLECO
 VIDEOS["HUC6202"] = true -- NEC
 VIDEOS["HUC6260"] = true -- NEC
 VIDEOS["HUC6270"] = true -- NEC
+VIDEOS["MOS6566"] = true -- SG1000
+VIDEOS["MC6845"] = true -- SG1000
 
 --------------------------------------------------
 -- specify available machine cores
@@ -210,6 +215,19 @@ MACHINES["ER2055"] = true -- GALAGA
 MACHINES["I2CMEM"] = true -- NES
 MACHINES["S_SMP"] = true -- SNES
 MACHINES["LC89510"] = true -- MEGADRIVE
+MACHINES["BITMAP_PRINTER"] = true -- SG1000
+MACHINES["CHESSMACHINE"] = true -- SG1000
+MACHINES["E05A03"] = true -- SG1000
+MACHINES["E05A30"] = true -- SG1000
+MACHINES["FDC_PLL"] = true -- SG1000
+MACHINES["I8251"] = true -- SG1000
+MACHINES["IE15"] = true -- SG1000
+MACHINES["INS8250"] = true -- SG1000
+MACHINES["SENSORBOARD"] = true -- SG1000
+MACHINES["TASC_SB30"] = true -- SG1000
+MACHINES["STEPPERS"] = true -- SG1000
+MACHINES["SWTPC8212"] = true -- SG1000
+MACHINES["UPD765"] = true -- SG1000
 
 --------------------------------------------------
 -- specify available bus cores
@@ -237,6 +255,9 @@ BUSES["CHANNELF"] = true -- CHANNELF
 BUSES["COLECO_CART"] = true -- COLECO
 BUSES["PCE"] = true -- NEC
 BUSES["PCE_CTRL"] = true -- NEC
+BUSES["CENTRONICS"] = true -- SG1000
+BUSES["RS232"] = true -- SG1000
+BUSES["SUNKBD"] = true -- SG1000
 
 --------------------------------------------------
 -- specify used file formats
@@ -245,6 +266,7 @@ FORMATS["BASICDSK"] = true -- NES
 FORMATS["NES_DSK"] = true -- NES
 FORMATS["SC3000_BIT"] = true -- SMS
 FORMATS["TZX_CAS"] = true -- SMS
+FORMATS["SF7000_DSK"] = true -- SG1000
 
 --------------------------------------------------
 -- this is the list of driver libraries that
@@ -811,6 +833,14 @@ files {
 
 createMAMEProjects(_target, _subtarget, "sega")
 files {
+	MAME_DIR .. "src/mame/drivers/segaorun.cpp",
+	MAME_DIR .. "src/mame/includes/segaorun.h",
+	MAME_DIR .. "src/mame/video/segaorun.cpp",
+	MAME_DIR .. "src/mame/video/segaic16_road.cpp",
+	MAME_DIR .. "src/mame/video/segaic16_road.h",
+	MAME_DIR .. "src/mame/drivers/segac2.cpp",
+	MAME_DIR .. "src/mame/drivers/sg1000.cpp",
+	MAME_DIR .. "src/mame/includes/sg1000.h",
 	MAME_DIR .. "src/mame/drivers/sms.cpp",
 	MAME_DIR .. "src/mame/includes/sms.h",
 	MAME_DIR .. "src/mame/machine/sms.cpp",

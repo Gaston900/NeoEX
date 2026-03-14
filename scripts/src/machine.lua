@@ -67,10 +67,10 @@ files {
 --	MAME_DIR .. "src/devices/imagedev/papertape.h",
 --	MAME_DIR .. "src/devices/imagedev/picture.cpp",
 --	MAME_DIR .. "src/devices/imagedev/picture.h",
---	MAME_DIR .. "src/devices/imagedev/printer.cpp",
---	MAME_DIR .. "src/devices/imagedev/printer.h",
-	MAME_DIR .. "src/devices/imagedev/snapquik.cpp",
-	MAME_DIR .. "src/devices/imagedev/snapquik.h",
+	MAME_DIR .. "src/devices/imagedev/printer.cpp", -- SG1000
+	MAME_DIR .. "src/devices/imagedev/printer.h", -- SG1000
+	MAME_DIR .. "src/devices/imagedev/snapquik.cpp", -- NEOGEO
+	MAME_DIR .. "src/devices/imagedev/snapquik.h", -- NEOGEO
 --	MAME_DIR .. "src/devices/imagedev/wafadrive.cpp",
 --	MAME_DIR .. "src/devices/imagedev/wafadrive.h",
 --	MAME_DIR .. "src/devices/imagedev/avivideo.cpp",

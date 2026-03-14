@@ -86,6 +86,8 @@ atarigt.cpp
 sonson.cpp
 twin16.cpp
 toki.cpp
+segac2.cpp
+segaorun.cpp
 nes.cpp
 snes.cpp
 gb.cpp
@@ -96,4 +98,4 @@ channelf.cpp
 coleco.cpp
 ngp.cpp
 pce.cpp
-
+sg1000.cpp

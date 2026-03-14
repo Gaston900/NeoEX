@@ -3322,6 +3322,12 @@ altbeasthc03                    // hack
 brival                          // Parents
 brivalhc01                      // hack
 
+@source:segac2.cpp
+anpanman                        // Parents
+
+@source:segaorun.cpp
+outrun                          // Parents
+
 @source:seta.cpp
 blandia                         // Parents
 blandiahc01                     // hack
@@ -3581,3 +3587,6 @@ ngpc                            // NeoGeo Pocket Color
 pce                             // PC/Engine NEC 1987-1993
 sgx                             // SuperGrafX NEC 1989
 tg16                            // Turbo Grafix-16  NEC 1989-1993
+
+@source:sg1000.cpp
+sg1000                          // Sega SG-1000 (Japan)
