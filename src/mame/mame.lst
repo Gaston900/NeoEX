@@ -3158,12 +3158,33 @@ killbldhc02                     // hack
 killbldhc03                     // hack
 killbldhc04                     // hack
 killbldhc05                     // hack
+kovsh                           // Parents
+kovshhc01                       // hack
+kovshp                          // Parents
+kovshphc01                      // hack
+kovshphc02                      // hack
+kovshphc03                      // hack
+kovshphc04                      // hack
+kovshphc05                      // hack
+kovshphc06                      // hack
+kovshphc07                      // hack
 martmast                        // Parents
 martmasthc01                    // hack
 martmasthc02                    // hack
 martmasthc03                    // hack
+olds                            // Parents
+olds100ahc01                    // hack
+olds100ahc02                    // hack
+olds100ahc03                    // hack
+olds100ahc04                    // hack
+oldsplus                        // Parents
+oldsplushc01                    // hack
+oldsplushc02                    // hack
 orlegend                        // Parents
 orlegendhc01                    // hack
+pgemeni                         // HomeBrew
+pgmdemo                         // HomeBrew
+pgmfrog                         // HomeBrew
 
 @source:pgm2.cpp
 kof98umh                        // Parents (Personal Choice)
