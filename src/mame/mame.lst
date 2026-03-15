@@ -2698,9 +2698,69 @@ sfiii3hc06                      // hack
 
 
 /***********************************************************
- Synchronized with the current version of HBMAME 0.245.21
+ Synchronized with the current version of HBMAME 0.245.31
     List of all enabled drivers extras in the system.
 **************************************************************/
+
+@source:1942.cpp
+1942                            // Parents
+1942h                           // hack
+1942hc01                        // hack
+1942hc02                        // hack
+
+@source:1943.cpp
+1943kai                         // Parents
+1943kaihc01                     // hack
+
+@source:atarigt.cpp
+primrage                        // Parents
+primragehc01                    // hack
+primragehc02                    // hack
+
+@source:atarisy1.cpp
+atarisy1                        // Bios
+indytemp                        // Parents
+ataris1hw                       // HomeBrew
+ataris1rt                       // HomeBrew
+
+@source:aerofgt.cpp
+aerofgt                         // Parents
+aerofgthc01                     // hack
+karatblz                        // Parents
+karatblzhc01                    // hack
+
+@source:arkanoid.cpp
+arkanoid                        // Parents
+arkanoidhc01                    // hack
+arkanoidhc02                    // hack
+
+@source:astrocde.cpp
+tst_gorf                        // HomeBrew
+tst_gor1                        // HomeBrew
+tst_wow3                        // HomeBrew
+
+@source:asuka.cpp
+asuka                           // Parents
+asukahc01                       // hack
+
+@source:blktiger.cpp
+blktiger                        // Parents
+blkdrgonhc01                    // hack
+
+@source:bombjack.cpp
+bombjack                        // Parents
+bombjackhc01                    // hack
+bombjackhc02                    // hack
+
+@source:bublbobl.cpp
+bublbobl                        // Parents
+bublboblhc01                    // hack
+bublboblhc02                    // hack
+bublboblhc03                    // hack
+bublboblhc04                    // hack
+bublboblhc05                    // hack
+bublboblhc06                    // hack
+bublcave                        // hack
 
 @source:cave.cpp
 agallet                         // Parents
@@ -2748,152 +2808,9 @@ sailormnhc14                    // hack
 theroes                         // Parents
 theroeshc01                     // hack
 
-@source:m92.cpp
-hook                            // Parents
-hookhc01                        // hack
-hookhc02                        // hack
-hookhc03                        // hack
-hookhc04                        // hack
-hookhc05                        // hack
-hookhc06                        // hack
-hookhc07                        // hack
-hookhc08                        // hack
-hookhc09                        // hack
-hookhc10                        // hack
-hookhc11                        // hack
-hookhc12                        // hack
-hookhc13                        // hack
-hookhc14                        // hack
-hookhc15                        // hack
-hookhc16                        // hack
-hookhc17                        // hack
-hookhc18                        // hack
-hookhc19                        // hack
-hookhc20                        // hack
-hookhc21                        // hack
-hookhc22                        // hack
-hookhc23                        // hack
-hookhc24                        // hack
-hookhc25                        // hack
-hookhc26                        // hack
-hookhc27                        // hack
-hookhc28                        // hack
-hookhc29                        // hack
-hookhc30                        // hack
-hookhc31                        // hack
-hookhc32                        // hack
-hookhc33                        // hack
-hookhc34                        // hack
-hookhc35                        // hack
-nbbatman                        // Parents
-nbbatmanhc01                    // hack
-nbbatmanhc02                    // hack
-nbbatmanhc03                    // hack
-nbbatmanhc04                    // hack
-nbbatmanhc05                    // hack
-nbbatmanhc06                    // hack
-nbbatmanhc07                    // hack
-uccops                          // Parents
-uccopshc01                      // hack
-
-@source:midtunit.cpp
-mk                              // Parents
-mktturbo                        // hack
-mkhc01                          // hack
-mkhc02                          // hack
-mkhc03                          // hack
-mkhc04                          // hack
-mk2                             // Parents
-mk2chal                         // hack
-mk2r42                          // hack
-mk2r91                          // hack
-mk2hc01                         // hack
-mk2hc02                         // hack
-mk2hc03                         // hack
-mk2hc04                         // hack
-mk2hc05                         // hack
-
-@source:midyunit.cpp
-mknifty                         // hack
-mkyturbo                        // hack
-smashtv                         // Parents
-y_test                          // HomeBrew
-
-@source:midwunit.cpp
-mkhc05                          // Ported From Midtunit
-mk2hc06                         // Ported From Midtunit
-mk3                             // Parents
-mk3hc01                         // hack
-umk3                            // Parents
-umk3hc01                        // hack
-umk3hc02                        // hack
-umk3hc03                        // hack
-umk3hc04                        // hack
-umk3hc05                        // hack
-umk3hc06                        // hack
-umk3hc07                        // hack
-umk3hc08                        // hack
-umk3hc09                        // hack
-
-@source:pgm2.cpp
-kof98umh                        // Parents (Personal Choice)
-
-@source:powerins.cpp
-powerins                        // Parents
-powerinshc01                    // hack
-powerinshc02                    // hack
-powerinshc03                    // hack
-powerinshc04                    // hack
-powerinshc05                    // hack
-
-@source:1942.cpp
-1942                            // Parents
-1942h                           // hack
-1942hc01                        // hack
-1942hc02                        // hack
-
-@source:1943.cpp
-1943kai                         // Parents
-1943kaihc01                     // hack
-
-@source:atarigt.cpp
-primrage                        // Parents
-primragehc01                    // hack
-primragehc02                    // hack
-
-@source:aerofgt.cpp
-aerofgt                         // Parents
-aerofgthc01                     // hack
-karatblz                        // Parents
-karatblzhc01                    // hack
-
-@source:arkanoid.cpp
-arkanoid                        // Parents
-arkanoidhc01                    // hack
-arkanoidhc02                    // hack
-
-@source:asuka.cpp
-asuka                           // Parents
-asukahc01                       // hack
-
-@source:blktiger.cpp
-blktiger                        // Parents
-blkdrgonhc01                    // hack
-
-@source:bombjack.cpp
-bombjack                        // Parents
-bombjackhc01                    // hack
-bombjackhc02                    // hack
-
-@source:bublbobl.cpp
-bublbobl                        // Parents
-bublboblhc01                    // hack
-bublboblhc02                    // hack
-bublboblhc03                    // hack
-bublboblhc04                    // hack
-bublboblhc05                    // hack
-bublboblhc06                    // hack
-bublcave                        // hack
+@source:cinemat.cpp
+bbugtest                        // HomeBrew
+bbugtest1                       // HomeBrew
 
 @source:contra.cpp
 contra                          // Parents
@@ -2954,6 +2871,14 @@ dkongx                          // hack
 dkong24                         // hack
 dkong25                         // hack
 
+@source:exidy.cpp
+targ                            // Parents
+targtest                        // HomeBrew
+spectar                         // Parents
+spectest                        // HomeBrew
+teetert                         // Parents
+teetertfp                       // HomeBrew
+
 @source:exerion.cpp
 exerion                         // Parents
 exerionhc01                     // hack
@@ -2997,6 +2922,23 @@ galinvad                        // hack
 gaylaxn                         // hack
 vectrgal                        // hack
 galturbo                        // hack
+galxtest1                       // HomeBrew
+galxtest2                       // HomeBrew
+frogger                         // Parents
+kazzy                           // hack
+trukker                         // hack
+frogtest                        // HomeBrew
+frogtest2                       // HomeBrew
+amidar                          // Parents
+amidarf                         // hack
+amidargr                        // hack
+scramble                        // Parents
+superdog                        // hack
+scratest                        // HomeBrew
+scobra                          // Parents
+scobtest                        // HomeBrew
+mooncrst                        // Parents
+moontest                        // HomeBrew
 
 @source:gauntlet.cpp
 gaunt2                          // Parents
@@ -3012,6 +2954,14 @@ ginganinhc01                    // hack
 qbert                           // Parents
 qberthc01                       // hack
 qberthc02                       // hack
+
+@source:gyruss.cpp
+gyruss                          // Parents
+gyrutest                        // HomeBrew
+
+@source:hyperspt.cpp
+hyperspt                        // Parents
+hypetest                        // HomeBrew
 
 @source:kaneko16.cpp
 bloodwar                        // Parents
@@ -3046,6 +2996,54 @@ lkagehc01                       // hack
 aliencha                        // Parents
 alienchahc01                    // hack
 
+@source:m92.cpp
+hook                            // Parents
+hookhc01                        // hack
+hookhc02                        // hack
+hookhc03                        // hack
+hookhc04                        // hack
+hookhc05                        // hack
+hookhc06                        // hack
+hookhc07                        // hack
+hookhc08                        // hack
+hookhc09                        // hack
+hookhc10                        // hack
+hookhc11                        // hack
+hookhc12                        // hack
+hookhc13                        // hack
+hookhc14                        // hack
+hookhc15                        // hack
+hookhc16                        // hack
+hookhc17                        // hack
+hookhc18                        // hack
+hookhc19                        // hack
+hookhc20                        // hack
+hookhc21                        // hack
+hookhc22                        // hack
+hookhc23                        // hack
+hookhc24                        // hack
+hookhc25                        // hack
+hookhc26                        // hack
+hookhc27                        // hack
+hookhc28                        // hack
+hookhc29                        // hack
+hookhc30                        // hack
+hookhc31                        // hack
+hookhc32                        // hack
+hookhc33                        // hack
+hookhc34                        // hack
+hookhc35                        // hack
+nbbatman                        // Parents
+nbbatmanhc01                    // hack
+nbbatmanhc02                    // hack
+nbbatmanhc03                    // hack
+nbbatmanhc04                    // hack
+nbbatmanhc05                    // hack
+nbbatmanhc06                    // hack
+nbbatmanhc07                    // hack
+uccops                          // Parents
+uccopshc01                      // hack
+
 @source:mappy.cpp
 mappy                           // Parents
 mappyhc01                       // hack
@@ -3056,6 +3054,61 @@ superpachc01                    // hack
 superpachc02                    // hack
 superpachc03                    // hack
 superpachc04                    // hack
+
+@source:monaco.cpp
+monaco                          // HomeBrew
+
+@source:mrdo.cpp
+mrdo                            // Parents
+mrdigdo                         // hack
+mrdofast                        // hack
+mrdotest                        // HomeBrew
+mrpac                           // hack
+newdigdo                        // hack
+stickydo                        // hack
+
+@source:mario.cpp
+mario                           // Parents
+mariohc01                       // hack
+
+@source:midtunit.cpp
+mk                              // Parents
+mktturbo                        // hack
+mkhc01                          // hack
+mkhc02                          // hack
+mkhc03                          // hack
+mkhc04                          // hack
+mk2                             // Parents
+mk2chal                         // hack
+mk2r42                          // hack
+mk2r91                          // hack
+mk2hc01                         // hack
+mk2hc02                         // hack
+mk2hc03                         // hack
+mk2hc04                         // hack
+mk2hc05                         // hack
+
+@source:midyunit.cpp
+mknifty                         // hack
+mkyturbo                        // hack
+smashtv                         // Parents
+y_test                          // HomeBrew
+
+@source:midwunit.cpp
+mkhc05                          // Ported From Midtunit
+mk2hc06                         // Ported From Midtunit
+mk3                             // Parents
+mk3hc01                         // hack
+umk3                            // Parents
+umk3hc01                        // hack
+umk3hc02                        // hack
+umk3hc03                        // hack
+umk3hc04                        // hack
+umk3hc05                        // hack
+umk3hc06                        // hack
+umk3hc07                        // hack
+umk3hc08                        // hack
+umk3hc09                        // hack
 
 @source:mystwarr.cpp
 mtlchamp                        // Parents
@@ -3078,6 +3131,15 @@ valkyriehc01                    // hack
 @source:nemesis.cpp
 salamand                        // Parents
 salamandhc01                    // hack
+
+@source:pacland.cpp
+pacland                         // Parents
+paclandhc01                     // hack
+
+@source:pooyan.cpp
+pooyan                          // Parents
+pooytest                        // HomeBrew
+pooytest2                       // HomeBrew
 
 @source:pcktgal.cpp
 pcktgal                         // Parents
@@ -3102,6 +3164,116 @@ martmasthc02                    // hack
 martmasthc03                    // hack
 orlegend                        // Parents
 orlegendhc01                    // hack
+
+@source:pgm2.cpp
+kof98umh                        // Parents (Personal Choice)
+
+@source:phoenix.cpp
+phoenix                         // Parents
+phoenixg                        // HomeBrew
+phoetest                        // HomeBrew
+
+@source:playch10.cpp
+playch10                        //bios
+pc_bb2                          // Parents
+pc_ctfrc                        // Parents
+pc_digdg                        // Parents
+pc_krsty                        // Parents
+pc_mman5                        // Parents
+pc_parsl                        // Parents
+pc_ark                          // Parents
+pc_dk3                          // Parents
+pc_galag                        // Parents
+pc_cch                          // Parents
+pc_dk                           // Parents
+pc_pacm                         // Parents
+pc_gyrus                        // Parents
+pc_skykd                        // Parents
+pc_smb                          // Parents
+pc_smb_hc01                     // hack
+pc_smb_hc02                     // hack
+pc_smb_hc03                     // hack
+pc_smb_hc04                     // hack
+pc_smb_hc05                     // hack
+pc_smb_hc06                     // hack
+pc_smb_hc07                     // hack
+pc_smb_hc09                     // hack
+pc_smb_hc11                     // hack
+pc_smb_hc14                     // hack
+pc_smb_hc15                     // hack
+pc_smb_hc16                     // hack
+pc_smb_hc17                     // hack
+pc_smb_hc18                     // hack
+pc_smb_hc20                     // hack
+pc_smb_hc21                     // hack
+pc_smb_hc22                     // hack
+pc_smb_hc23                     // hack
+pc_smb_hc24                     // hack
+pc_smb_hc25                     // hack
+pc_smb_hc26                     // hack
+pc_smb_hc27                     // hack
+pc_smb_hc28                     // hack
+pc_smb_hc29                     // hack
+pc_smb_hc30                     // hack
+pc_smb_hc31                     // hack
+pc_smb_hc33                     // hack
+pc_smb_hc36                     // hack
+pc_smb_hc37                     // hack
+pc_smb_hc38                     // hack
+pc_smb_hc39                     // hack
+pc_smb_hc40                     // hack
+pc_smb_hc41                     // hack
+pc_smb_hc42                     // hack
+pc_smb_hc43                     // hack
+pc_smb_hc44                     // hack
+pc_smb_hc45                     // hack
+pc_smb_hc46                     // hack
+pc_smb_hc48                     // hack
+pc_smb_hc49                     // hack
+pc_smb_hc51                     // hack
+pc_smb_hc52                     // hack
+pc_smb_hc54                     // hack
+pc_smb_hc55                     // hack
+pc_smb_hc56                     // hack
+pc_smb_hc57                     // hack
+pc_smb_hc58                     // hack
+pc_smb_hc59                     // hack
+pc_smb_hc60                     // hack
+pc_smb_hc61                     // hack
+pc_smb_hc62                     // hack
+pc_smb_hc63                     // hack
+pc_smb_hc66                     // hack
+pc_smb_hc68                     // hack
+pc_smb_hc69                     // hack
+pc_smb_hc70                     // hack
+pc_smb_hc71                     // hack
+pc_smb_hc72                     // hack
+pc_smb_hc73                     // hack
+pc_smb_hc74                     // hack
+pc_smb2                         // Parents
+pc_smb2_hc01                    // hack
+pc_smb2_hc02                    // hack
+pc_smb2_hc03                    // hack
+pc_smb2_hc04                    // hack
+pc_smb2_hc05                    // hack
+pc_smb2_hc06                    // hack
+pc_smb2_hc07                    // hack
+pc_smb2_hc08                    // hack
+pc_smb3                         // Parents
+pc_smb3_hc01                    // hack
+pc_smb3_hc02                    // hack
+pc_smb3_hc03                    // hack
+pc_smb3_hc04                    // hack
+pc_smb3_hc05                    // hack
+pc_smb3_hc06                    // hack
+
+@source:powerins.cpp
+powerins                        // Parents
+powerinshc01                    // hack
+powerinshc02                    // hack
+powerinshc03                    // hack
+powerinshc04                    // hack
+powerinshc05                    // hack
 
 @source:psikyo.cpp
 gunbird                         // Parents
@@ -3211,6 +3383,9 @@ wavybug                         //
 crashh                          //
 piranha                         //
 pacupacu1                       //
+pacmtest                        // HomeBrew
+pacmtest1                       // HomeBrew
+pacmtest2                       // HomeBrew
 
 @source:puckman.cpp
 mspacman                        // Parents
@@ -3323,7 +3498,7 @@ brival                          // Parents
 brivalhc01                      // hack
 
 @source:segac2.cpp
-c2frog                         // HomeBrew
+c2frog                          // HomeBrew
 
 @source:segaorun.cpp
 outrun                          // Parents
@@ -3333,6 +3508,10 @@ outrundxeh                      // hack
 outrunt1                        // HomeBrew
 toutrun                         // Parents
 toutrundt1                      // HomeBrew
+
+@source:segaxbd.cpp
+aburner2                        // Parents
+aburtest                        // HomeBrew
 
 @source:seta.cpp
 blandia                         // Parents
@@ -3487,6 +3666,11 @@ tmnt2hc01                       // hack
 @source:tnzs.cpp
 insectx                         // Parents
 insectxhc01                     // hack
+
+@source:trackfld.cpp
+trackfld                        // Parents
+trackfldhc01                    // hack
+trkftest                        // HomeBrew
 
 @source:toaplan2.cpp
 bgaregga                        // Parents
