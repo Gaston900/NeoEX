@@ -44,7 +44,7 @@ constexpr ioport_value IP_ACTIVE_HIGH = 0x00000000;
 constexpr ioport_value IP_ACTIVE_LOW = 0xffffffff;
 
 // maximum number of players supported
-constexpr int MAX_PLAYERS = 4;
+constexpr int MAX_PLAYERS = 10;
 
 // unicode constants
 constexpr char32_t UCHAR_PRIVATE = 0x100000;
