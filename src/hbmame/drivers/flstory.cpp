@@ -32,4 +32,4 @@ ROM_END
 
 /*    YEAR    NAME        PARENT    MACHINE    INPUT                      INIT    MONITOR   COMPANY       FULLNAME FLAGS */
 /* Flstory Hack */
-GAME( 1985, flstoryhc01,  flstory,  flstory,  flstory,  flstory_state, empty_init, ROT180,  "hack",       "The FairyLand Story (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1985, flstoryhc01,  flstory,  flstory,  flstory,  flstory_state, empty_init, ROT180,  "hack",       "The FairyLand Story (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

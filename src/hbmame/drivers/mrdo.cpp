@@ -169,7 +169,7 @@ ROM_END
 /* Mrdo HomeBrew */
 GAME( 1998, mrdigdo,  mrdo,    mrdo,    mrdo, mrdo_state, empty_init, ROT270, "Justin Clark",    "Mr. Do! (Dig Dug sprites)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1982, mrdofast, mrdo,    mrdo,    mrdo, mrdo_state, empty_init, ROT270, "Evil Exidy Dump", "Mr. Do! (Speedup Hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2017, mrdotest, mrdo,    mrdo,    mrdo, mrdo_state, empty_init, ROT270, "Phil Murray",     "Mr. Do! Test Rom", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2017, mrdotest, mrdo,    mrdo,    mrdo, mrdo_state, empty_init, ROT270, "Phil Murray",     "Mr. Do! Test Rom (HB)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2002, mrpac,    mrdo,    mrdo,    mrdo, mrdo_state, empty_init, ROT270, "Twisty",          "Mr. Pac!", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1999, newdigdo, mrdo,    mrdo,    mrdo, mrdo_state, empty_init, ROT270, "Vic Twenty George, Jerky, Justin Clark", "Mr. Dig-Do!", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, stickydo, mrdo,    mrdo,    mrdo, mrdo_state, empty_init, ROT270, "Marks Hacks",     "Mr. Sticky Do!", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

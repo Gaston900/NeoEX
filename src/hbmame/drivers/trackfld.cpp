@@ -73,5 +73,5 @@ ROM_END
 GAME( 2004, trackfldhc01,   trackfld, trackfld,  trackfld, trackfld_state, init_trackfld, ROT0, "Gameland.gr",   "Athens 2004", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 
 // https://www.jammarcade.net/track-field-test-rom-beta/
-GAME( 2020, trkftest,       trackfld, trackfldu, trackfld, trackfld_state, init_trackfld, ROT0, "Shoestring",    "Track and Field Test Rom (1.2u test, 2020-02-21)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2020, trkftest,       trackfld, trackfldu, trackfld, trackfld_state, init_trackfld, ROT0, "Shoestring",    "Track and Field Test Rom (HB)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 

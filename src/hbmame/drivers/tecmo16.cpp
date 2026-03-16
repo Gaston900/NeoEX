@@ -31,4 +31,4 @@ ROM_END
 
 /*    YEAR    NAME        PARENT   MACHINE  INPUT                     INIT      MONITOR   COMPANY       FULLNAME FLAGS */
 /* Tecmo16 Hack */
-GAME( 1992, fstarfrchc01, fstarfrc, base, fstarfrc, tecmo16_state, empty_init,   ROT90,   "hack",       "Final Star Force (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1992, fstarfrchc01, fstarfrc, base, fstarfrc, tecmo16_state, empty_init,   ROT90,   "hack",       "Final Star Force (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

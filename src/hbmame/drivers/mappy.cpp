@@ -178,7 +178,7 @@ ROM_END
 GAME( 1998, mappyhc01,    mappy,    mappy,    mappy,    mappy_state, empty_init, ROT90, "hack",         "Crackhead", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE ) // transparency error
 GAME( 1998, mappyhc02,    mappy,    mappy,    mappy,    mappy_state, empty_init, ROT90, "hack",         "House Party", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, mappyhc03,    mappy,    mappy,    mappy,    mappy_state, empty_init, ROT90, "hack",         "Marpy", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE ) // transparency error
-GAME( 2011, superpachc01, superpac, superpac, superpac, mappy_state, empty_init, ROT90, "hack",         "Super Pac-Man (Super Locksmith sound and gfx hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2011, superpachc01, superpac, superpac, superpac, mappy_state, empty_init, ROT90, "hack",         "Super Pac-Man (Super Locksmith sound And GFX)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, superpachc02, superpac, superpac, superpac, mappy_state, empty_init, ROT90, "hack",         "Super Pac-Man Plus", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2011, superpachc03, superpac, superpac, superpac, mappy_state, empty_init, ROT90, "hack",         "Super Pac-Man (always small)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2000, superpachc04, superpac, superpac, superpac, mappy_state, empty_init, ROT90, "hack",         "Super Pac-Man (Vector sim)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2011, superpachc03, superpac, superpac, superpac, mappy_state, empty_init, ROT90, "hack",         "Super Pac-Man (Always Small)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2000, superpachc04, superpac, superpac, superpac, mappy_state, empty_init, ROT90, "hack",         "Super Pac-Man (Vector Sim)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

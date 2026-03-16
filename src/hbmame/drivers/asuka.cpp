@@ -33,4 +33,4 @@ ROM_END
 
 /*    YEAR  NAME          PARENT       MACHINE         INPUT                   INIT        MONITOR   COMPANY       FULLNAME FLAGS */
 /* Asuka Hack */
-GAME( 1988, asukahc01,    asuka,       asuka,          asuka,   msm_state,     empty_init, ROT270,   "hack",       "Asuka & Asuka (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1988, asukahc01,    asuka,       asuka,          asuka,   msm_state,     empty_init, ROT270,   "hack",       "Asuka & Asuka (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

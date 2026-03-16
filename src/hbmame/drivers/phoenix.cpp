@@ -56,6 +56,6 @@ ROM_END
 
 /*    YEAR  NAME      PARENT   MACHINE  INPUT               INIT      MONITOR    COMPANY         FULLNAME FLAGS */
 /* Phoenix HomeBrew */
-GAME( 1980, phoenixg, phoenix, phoenix,  phoenixt, phoenix_state, empty_init, ROT90, "GreekRoms", "Phoenix (Translation Greek)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1980, phoenixg, phoenix, phoenix,  phoenixt, phoenix_state, empty_init, ROT90, "GreekRoms", "Phoenix (Greek Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2017, phoetest, phoenix, phoenix,  phoenixt, phoenix_state, empty_init, ROT90, "Phil Murray", "Phoenix Test Rom (HB)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 

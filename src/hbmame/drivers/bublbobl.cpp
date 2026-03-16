@@ -231,5 +231,5 @@ GAME( 2000, bublboblhc01,  bublbobl, bub68705,   bublbobl, bub68705_state,  init
 GAME( 2013, bublboblhc02,  bublbobl, boblbobl,   boblbobl, bublbobl_state,  init_common,   ROT0, "hack",     "Bobble Bobble Redux (Level Skip)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2013, bublboblhc03,  bublbobl, boblbobl,   boblbobl, bublbobl_state,  init_common,   ROT0, "hack",     "Bobble Bobble Redux (Game Continue)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 19??, bublboblhc04,  bublbobl, sboblboblh, boblbobl, bublbobl_hbmame, init_common,   ROT0, "hack",     "Super Bobble Bobble (Level Select)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2007, bublboblhc05,  bublbobl, bublbobl,   bublbobl, bublbobl_state,  init_common,   ROT0, "hack",     "Bubble Bobble (Translation French)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2007, bublboblhc05,  bublbobl, bublbobl,   bublbobl, bublbobl_state,  init_common,   ROT0, "hack",     "Bubble Bobble (French Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1986, bublboblhc06,  bublbobl, bublbobl,   bublbobl, bublbobl_state,  init_common,   ROT0, "hack",     "Bubble Bobble (Ultra Version, Hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

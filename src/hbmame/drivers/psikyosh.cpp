@@ -126,4 +126,4 @@ GAME( 1998, darakuhc01,   daraku,    psikyo3v1,   daraku,   psikyosh_state, init
 GAME( 2009, s1945iihc01,  s1945ii,   psikyo3v1,   s1945ii,  psikyosh_state, init_ps3,   ROT270, "hack",        "Strikers 1945 II (Infinite Power 2009-07-29)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2009, s1945iiihc01, s1945iii,  psikyo5,     s1945iii, psikyosh_state, init_ps5,   ROT270, "hack",        "Strikers 1945 III (Enable Hidden Characters)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2014, s1945iiihc02, s1945iii,  psikyo5,     s1945iii, psikyosh_state, init_ps5,   ROT270, "hack",        "Strikers 1945 III (Infinite Power 2014-04-07)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2007, soldividhc01, soldivid,  psikyo3v1,   soldivid, psikyosh_state, init_ps3,   ROT0,   "hack",        "Sol Divide - The Sword Of Darkness (Translation French)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2007, soldividhc01, soldivid,  psikyo3v1,   soldivid, psikyosh_state, init_ps3,   ROT0,   "hack",        "Sol Divide - The Sword Of Darkness (French Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

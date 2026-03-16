@@ -6846,10 +6846,10 @@ GAME( 2021, pacman25s126, puckman,  woodpek,  pacman0,  puckman_state, empty_ini
 GAME( 2021, pacman25s127, puckman,  woodpek,  pacman0,  puckman_state, empty_init,   ROT90, "T-Bone", "Pac Man 25 - Pac Man + Tournament - Zombies", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, pacmini3, puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "T-Bone", "Pacmini (Maze 3)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, pacsmall, puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "T-Bone", "Pacman (Small Maze)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2000, pmad6m,   puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "T-Bone", "Pacman 2000 After Dark", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2000, snakeyes, puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "T-Bone", "Pacman 2000 (Snake Eyes Mazes)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2000, pmad6m,   puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "T-Bone", "Pacman 2000 - After Dark", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2000, snakeyes, puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "T-Bone", "Pacman 2000 - Snake Eyes Mazes", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, snowpac,  puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "T-Bone", "Snowy Day Pacman", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2000, tbone,    puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "T-Bone", "Pacman 2000 (T-Bone Mazes)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2000, tbone,    puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "T-Bone", "Pacman 2000 - T-Bone Mazes", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, upsidpac, puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "T-Bone", "Pacman (Upsidedown Maze)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, vectr6m,  puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "T-Bone", "Vector Pacman 2000", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, vectr6tb, puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "T-Bone", "Vector Pacman 2000 (T-Bone Mazes)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
@@ -6857,7 +6857,7 @@ GAME( 2000, vectr6tb, puckman,  woodpek,  pacman,   puckman_state, empty_init,  
 /* Jerronimo's Progs - www.umlautllama.com */
 
 GAME( 2000, brakman,  puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "Scott Lawrence", "Brakman", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE ) // http://www.csh.rit.edu/~jerry/arcade/age/
-GAME( 2004, pacman25, puckman,  woodpek,  pacman0,  puckman_state, empty_init,   ROT90, "Scott Lawrence", "25 MAP PAC [c]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, pacman25, puckman,  woodpek,  pacman0,  puckman_state, empty_init,   ROT90, "Scott Lawrence", "25 Map Pac", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2004, pacsnoop, puckman,  pacman,   pacman0,  puckman_state, empty_init,   ROT90, "Scott Lawrence", "Pac Snoop v1.3 [f]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, pengman,  puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "Scott Lawrence", "Pengo Man", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE ) // http://www.csh.rit.edu/~jerry/arcade/age/
 
@@ -6877,7 +6877,7 @@ GAME( 1998, namcosil, puckman,  pacman,   pacman0,  puckman_state, empty_init,  
 GAME( 1998, newpuck3, puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "Marcel Silvius", "New Puck-3", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1998, pacman3d, puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "Marcel Silvius", "Pacman 3D", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, pacman6,  puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "Marcel Silvius", "Pacman 6", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2000, pacmn6m2, puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "Marcel Silvius", "Pacman 2000 (Set 2)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2000, pacmn6m2, puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "Marcel Silvius", "Pacman 2000", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, pacmulti, puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "Marcel Silvius", "PacMulti (Pacman)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, pacweird, puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "Marcel Silvius", "Pacman (Six Map Weird)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 
@@ -6890,22 +6890,22 @@ GAME( 2000, pacmini2, puckman,  pacman,   pacman,   puckman_state, empty_init,  
 
 /* Hires hacks */
 
-GAME( 1981, hanglyx,  puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Hangly-Man (set 1) (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1981, hangly2x, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Hangly-Man (set 2) (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1981, hangly3x, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Hangly-Man (set 3) (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1980, newpuc2x, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Newpuc2 (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1980, nwpuc2bx, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Newpuc2 (set 2) (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1980, nwpuckxx, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "New Puck-X (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1980, pacmanx,  puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "[Namco] (Midway license)", "Pac-Man (Midway) (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1980, pacmanfx, puckmanx, pacmanx,  pacman0,  puckman_state, empty_init,   ROT90, "[Namco] (Midway license)", "Pac-Man (Midway) (hires hack) [f]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1981, pacmodx,  puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "[Namco] (Midway license)", "Pac-Man (Midway, harder) (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1982, pacplusx, puckmanx, pacmanx,  pacman,   puckman_state, init_pacplus, ROT90, "[Namco] (Midway license)", "Pac-Man Plus (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1981, pheartx,  puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Pac-Man (Hearts) (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1980, puckmanx, 0,        pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "Namco", "PuckMan (Japan set 1, Probably Bootleg) (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1980, puckmnax, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "Namco", "PuckMan (Japan set 2) (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1980, puckmnfx, puckmanx, pacmanx,  pacman0,  puckman_state, empty_init,   ROT90, "Namco", "PuckMan (Japan set 1) (hires hack) [f]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1980, puckmnhx, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Puckman (Falcom?) (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1981, puckmodx, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "Namco", "PuckMan (Japan set 3) (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, hanglyx,  puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Hangly-Man (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, hangly2x, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Hangly-Man (set 2) (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, hangly3x, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Hangly-Man (set 3) (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1980, newpuc2x, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Newpuc2 (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1980, nwpuc2bx, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Newpuc2 (set 2) (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1980, nwpuckxx, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "New Puck-X (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1980, pacmanx,  puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "[Namco] (Midway license)", "Pac-Man (Midway) (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1980, pacmanfx, puckmanx, pacmanx,  pacman0,  puckman_state, empty_init,   ROT90, "[Namco] (Midway license)", "Pac-Man (Midway) (Hires hack) [f]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, pacmodx,  puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "[Namco] (Midway license)", "Pac-Man (Midway, harder) (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1982, pacplusx, puckmanx, pacmanx,  pacman,   puckman_state, init_pacplus, ROT90, "[Namco] (Midway license)", "Pac-Man Plus (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, pheartx,  puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Pac-Man Hearts (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1980, puckmanx, 0,        pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "Namco", "PuckMan (Japan set 1, Probably Bootleg) (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1980, puckmnax, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "Namco", "PuckMan (Japan set 2) (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1980, puckmnfx, puckmanx, pacmanx,  pacman0,  puckman_state, empty_init,   ROT90, "Namco", "PuckMan (Japan set 1) (Hires hack) [f]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1980, puckmnhx, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "hack", "Puckman (Falcom?) (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, puckmodx, puckmanx, pacmanx,  pacman,   puckman_state, empty_init,   ROT90, "Namco", "PuckMan (Japan set 3) (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 
 /* Misc Pacman Hacks */
 
@@ -6923,10 +6923,10 @@ GAME( 2000, fastpop,  puckman,  pacman,   pacman0,  puckman_state, empty_init,  
 GAME( 2000, fastpuck, puckman,  pacman,   pacman0,  puckman_state, empty_init,   ROT90, "Deluxe", "New Puck-X [f]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, fpnleash, puckman,  woodpek,  pacman,   puckman_state, empty_init,   ROT90, "Peter Storey", "Pacman Unleashed (Flat)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, fstpman2, puckman,  pacman,   pacman0,  puckman_state, empty_init,   ROT90, "[Namco]", "New Puck2 [f]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2000, hanglyad, puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "[Nittoh]", "Hangly-Man (set 1) After Dark", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2000, hanglyad, puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "[Nittoh]", "Hangly-Man - After Dark", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, hearts,   puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "[Midway]", "Pacman (Hearts)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2014, hellowp,  puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "cmonkey", "Hello World (Pacman HW)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1981, hmhearts, puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "[Nittoh]", "Hangly-Man (Hearts)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, hmhearts, puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "[Nittoh]", "Hangly-Man - Hearts", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1981, hmpopey,  puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "[Nittoh]", "Hangly-Man (Popeye)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2005, homercid, puckman,  pacman,   mspacpls, puckman_state, empty_init,   ROT90, "David Widel", "Homercide", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, jackman,  puckman,  pacman,   pacman,   puckman_state, empty_init,   ROT90, "Brent Cobb", "Jackman", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

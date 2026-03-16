@@ -211,5 +211,5 @@ ROM_END
 GAME( 2006, powerinshc01,    powerins, powerins,      powerins,   powerins_state,   empty_init,  ROT0,    "hack",      "Power Instinct (Enable Hidden Character)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2023, powerinshc02,    powerins, powerins,      powerins,   powerins_state,   empty_init,  ROT0,    "GOTVG",     "Power Instinct (Dragon Subduing 2023-03-21)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2020, powerinshc03,    powerins, powerins,      powerins,   powerins_state,   empty_init,  ROT0,    "GOTVG",     "Power Instinct (Optimised 2020-05-15)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2006, powerinshc04,    powerins, powerins,      powerins,   powerins_state,   empty_init,  ROT0,    "hack",      "Power Instinct (Translation Portuguese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2006, powerinshc04,    powerins, powerins,      powerins,   powerins_state,   empty_init,  ROT0,    "hack",      "Power Instinct (Portuguese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2006, powerinshc05,    powerins, powerins,      powerins,   powerins_state,   empty_init,  ROT0,    "DDJ",       "Power Instinct (Easy Special Attacks)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

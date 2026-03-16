@@ -154,7 +154,7 @@ ROM_END
 GAME( 2002, mrio2002,    suprmrio,     vsnes,    suprmrio,  vsnes_state, init_vsnormal, ROT0, "Nintendo",  "Vs. Super Mario Bros. 2002", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mightybjgk,  nvs_mightybj, mightybj, mightybj,  vsnes_state, init_vsnormal, ROT0, "Vag",       "Mighty Bomb Jack (Translation Greek)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1986, suprsktr,    suprmrio,     vsnes,    suprmrio,  vsnes_state, init_vsnormal, ROT0, "Nintendo",  "Vs. Super Skater Bros.", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2002, drmarioch,   drmario,      vsnes,    drmario,   vsnes_state, init_drmario,  ROT0, "liujunusa", "Vs. Dr. Mario (Translation Chinese, 2002-10)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2002, drmarioch,   drmario,      vsnes,    drmario,   vsnes_state, init_drmario,  ROT0, "liujunusa", "Vs. Dr. Mario (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2019, drluigi,     drmario,      vsnes,    drmario,   vsnes_state, init_drmario,  ROT0, "Szemigi",   "Dr. Luigi", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2020, frombelow,   suprmrio,     vsnes,    frombelow, vsnes_state, init_vsnormal, ROT0, "Matt Hughson", "Vs. From Below (beta 0.8.0, 2020-12-21)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2020, vs_urban,    drmario,      vsnes,    vs_urban,  vsnes_state, init_vsnormal, ROT0, "Nintendo",  "Vs. Urban Champion", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

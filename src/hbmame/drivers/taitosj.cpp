@@ -67,5 +67,5 @@ ROM_END
 
 /*    YEAR    NAME       PARENT       MACHINE  INPUT                       INIT      MONITOR   COMPANY       FULLNAME FLAGS */
 /* Taitosj Hack */
-GAME( 1982, alpinehc01,   alpine,      nomcu,  alpine,   taitosj_state, init_alpine,  ROT270,  "hack",       "Alpine Ski (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1982, frontlinhc01, frontlin,    mcu,    frontlin, taitosj_state, init_taitosj, ROT270,  "hack",       "Front Line (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1982, alpinehc01,   alpine,      nomcu,  alpine,   taitosj_state, init_alpine,  ROT270,  "hack",       "Alpine Ski (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1982, frontlinhc01, frontlin,    mcu,    frontlin, taitosj_state, init_taitosj, ROT270,  "hack",       "Front Line (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

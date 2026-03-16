@@ -61,5 +61,5 @@ ROM_END
 
 /*    YEAR     NAME         PARENT          MACHINE      INPUT                       INIT          MONITOR   COMPANY      FULLNAME FLAGS */
 /* Aerofgt Hack */
-GAME( 2022, aerofgthc01,    aerofgt,        aerofgt,    aerofgt,   aerofgt_state, empty_init,      ROT270,   "hack",      "Aero Fighters (Infinite Power)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2022, aerofgthc01,    aerofgt,        aerofgt,    aerofgt,   aerofgt_state, empty_init,      ROT270,   "hack",      "Aero Fighters (Infinite Power 2022-08-07)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2017, karatblzhc01,   karatblz,       karatblz,   karatblz,  aerofgt_state, empty_init,      ROT0,     "GOTVG",     "Karate Blazers (1V4 2017-09-30)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

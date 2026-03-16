@@ -2691,13 +2691,13 @@ GAME( 2000, msbaby,   mspacman, woodpek,  mspacman, puckman_state, empty_init,  
 GAME( 2000, msmini,   mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pac-Mini", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, msminia,  mspacman, woodpek,  mspacpls, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pac-Attack Mini [c]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, msnes4a,  mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pacman SNES (Tall Alternate)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2000, msnes62,  mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pacman NES (Set 2)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2000, msnes62,  mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pacman NES", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, msnes63,  mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pacman NES (Set 3)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, msnes6m,  mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pacman NES (6 maps)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, msnes6m2, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pacman SNES (New Mazes)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, msnes6m3, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pacman SNES (Regular / Tall)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, msnes6m4, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pacman SNES (Regular)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1998, mspacnes, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pacman NES", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1998, mspacnes, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pacman NES (2)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, mspacren, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pacman Renaissance", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, mspc6mad, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Ms. Pacman After Dark (6 Mazes)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, msvctr6m, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "T-Bone", "Vector Ms. Pacman (6 Mazes)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
@@ -2720,7 +2720,7 @@ GAME( 2014, womanp5,  mspacman, woodpek,  mspacman, puckman_state, empty_init,  
 /* Grendal74's Hacks */
 
 GAME( 2001, msdroid,  mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "Grendal74", "Ms. Pacman Android", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2001, msgrkatk, mspacman, woodpek,  mspacpls, puckman_state, empty_init,  ROT90, "Grendal74", "Ms. Pac Attack Greek [c]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2001, msgrkatk, mspacman, woodpek,  mspacpls, puckman_state, empty_init,  ROT90, "Grendal74", "Ms. Pac Attack Greek", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2001, msgrkb,   mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "Grendal74", "Ms. Pacman Greek", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 
 /* Medragon's Hacks */
@@ -2738,7 +2738,7 @@ GAME( 2000, msindy,   mspacman, woodpek,  mspacman, puckman_state, empty_init,  
 GAME( 1999, mspac6m,  mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "Marcel Silvius", "Ms. Pacman 6M (Six Maze)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1999, mspac6m2, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "Marcel Silvius", "Ms. Pacman 6M (Six Maze) (Set 2)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, mspacad,  mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "Marcel Silvius", "Ms. Pacman After Dark", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2000, mspacat2, mspacman, woodpek,  mspacpls, puckman_state, empty_init,  ROT90, "Marcel Silvius", "Ms. Pacman Plus / Attack [c]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2000, mspacat2, mspacman, woodpek,  mspacpls, puckman_state, empty_init,  ROT90, "Marcel Silvius", "Ms. Pacman Plus / Attack", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 
 /* Bobby Tribble's Hacks */
 
@@ -2746,12 +2746,12 @@ GAME( 2000, msberzk,  mspacman, woodpek,  mspacman, puckman_state, empty_init,  
 
 /* Hires hacks */
 
-GAME( 1981, mspacatx, mspacmnx, mspacmnx, mspacpls, puckman_state, init_mspacman,    ROT90, "hack", "Ms. Pac Attack (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1981, mspacmbx, mspacmnx, woodpekx, mspacman, puckman_state, empty_init,  ROT90, "bootleg", "Ms. Pac-Man (bootleg) (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, mspacatx, mspacmnx, mspacmnx, mspacpls, puckman_state, init_mspacman,    ROT90, "hack", "Ms. Pac Attack (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, mspacmbx, mspacmnx, woodpekx, mspacman, puckman_state, empty_init,  ROT90, "bootleg", "Ms. Pac-Man (bootleg) (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1981, mspacmfx, mspacmnx, mspacmnx, mspacpls, puckman_state, init_mspacman,    ROT90, "Midway", "Ms. Pac-Man (hires hack) [f]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1981, mspacmnx, 0,        mspacmnx, mspacpls, puckman_state, init_mspacman,    ROT90, "Midway", "Ms. Pac-Man (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1981, mspacplx, mspacmnx, woodpekx, mspacpls, puckman_state, empty_init,  ROT90, "hack", "Ms. Pac-Man Plus (hires hack) [c]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1981, pacgalx,  mspacmnx, woodpekx, mspacman, puckman_state, empty_init,  ROT90, "hack", "Pac-Gal (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, mspacmnx, 0,        mspacmnx, mspacpls, puckman_state, init_mspacman,    ROT90, "Midway", "Ms. Pac-Man (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, mspacplx, mspacmnx, woodpekx, mspacpls, puckman_state, empty_init,  ROT90, "hack", "Ms. Pac-Man Plus (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, pacgalx,  mspacmnx, woodpekx, mspacman, puckman_state, empty_init,  ROT90, "hack", "Pac-Gal (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 
 /* Misc MsPacman Hacks */
 
@@ -2764,10 +2764,10 @@ GAME( 2000, fasthear, mspacman, woodpek,  mspacpls, puckman_state, empty_init,  
 GAME( 2000, fastmspa, mspacman, woodpek,  mspacpls, puckman_state, empty_init,  ROT90, "[Midway]", "Ms. Pacman [f]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, faststrm, mspacman, woodpek,  mspacpls, puckman_state, empty_init,  ROT90, "[Midway]", "Ms. Desert Storm [f]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, fstmsatk, mspacman, woodpek,  mspacpls, puckman_state, empty_init,  ROT90, "[Midway]", "Ms. Pacman Attack [f]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2000, heartbn2, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "PacHack", "Ms. Heart Burn", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2000, heartbn2, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "PacHack", "Ms. Heart Burn (set 1)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, heartbrn, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "TwoBit Score", "Ms. Heart Burn (set 2)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2021, manpac,   mspacman, woodpek,  mspacpls, puckman_state, empty_init,  ROT90, "Mr McScrewup", "Man-Pac", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2000, msatk2ad, mspacman, woodpek,  mspacpls, puckman_state, empty_init,  ROT90, "[Midway]", "Ms. Pacman Plus / Attack After Dark [c]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2000, msatk2ad, mspacman, woodpek,  mspacpls, puckman_state, empty_init,  ROT90, "[Midway]", "Ms. Pacman Plus / Attack After Dark", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, msatkad,  mspacman, woodpek,  mspacpls, puckman_state, empty_init,  ROT90, "[Midway]", "Ms. Pacman Plus After Dark [c]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, msdstorm, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "Mike Naylor", "Ms. Desert Storm", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2000, mshangly, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "[Midway]", "Ms. Hangly Man", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
@@ -2815,7 +2815,7 @@ GAME( 2017, mspacmans04, mspacman, zolapac,  mspacman, puckman_state, empty_init
 GAME( 2018, mspacmadp,   mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "MamePlus", "Ms. Pacman (Pac Droid Plus)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2018, mspacatttur, mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "MamePlus", "Ms. Pac Attack Plus Turbo", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2018, mspacii2,    mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "MamePlus", "Ms. Pacman (Pink Plus)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2018, ms2600a,     mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "MamePlus", "Ms. Pacman (Atari look)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2018, ms2600a,     mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "MamePlus", "Ms. Pacman (Atari Look)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2022, pacjrz80,    mspacman, woodpek,  mspacman, puckman_state, empty_init,  ROT90, "Pookin", "Pac-Jr on Pacman Hardware", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 
 

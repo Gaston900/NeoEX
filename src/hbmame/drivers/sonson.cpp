@@ -37,5 +37,5 @@ ROM_END
 
 /*    YEAR  NAME           PARENT      MACHINE     INPUT                   INIT       MONITOR COMPANY       FULLNAME FLAGS */
 /* Sonson Hack */
-GAME( 2024, sonsonhc01,    sonson,     sonson,    sonson, sonson_state, empty_init,    ROT0,  "Vag",       "Son Son (Translation Greek)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2024, sonsonhc01,    sonson,     sonson,    sonson, sonson_state, empty_init,    ROT0,  "Vag",       "Son Son (Greek Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 

@@ -67,5 +67,5 @@ ROM_END
 
 /*    YEAR  NAME      PARENT     MACHINE  INPUT                        INIT           MONITOR           COMPANY        FULLNAME FLAGS */
 /* Cinemat HomeBrew */
-GAME(1981, bbugtest,  0,        boxingb, boxingb, cinemat_hbmame, init_bbugtest, ORIENTATION_FLIP_Y, "Test Rom (HB)",       "Test Rom - Boxing Bugs", MACHINE_NO_SOUND_HW | MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME(2018, bbugtest1, bbugtest, boxingb, boxingb, cinemat_hbmame, init_bbugtest, ORIENTATION_FLIP_Y, "Timothy Shiels (HB)", "Test Rom - Cinematic", MACHINE_NO_SOUND_HW | MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME(1981, bbugtest,  0,        boxingb, boxingb, cinemat_hbmame, init_bbugtest, ORIENTATION_FLIP_Y, "Test Rom",       "Test Rom - Boxing Bugs (HB)", MACHINE_NO_SOUND_HW | MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME(2018, bbugtest1, bbugtest, boxingb, boxingb, cinemat_hbmame, init_bbugtest, ORIENTATION_FLIP_Y, "Timothy Shiels", "Test Rom - Cinematic (HB)", MACHINE_NO_SOUND_HW | MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

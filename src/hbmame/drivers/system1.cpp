@@ -78,5 +78,5 @@ ROM_END
 
 /*    YEAR  NAME       PARENT MACHINE  INPUT                INIT      MONITOR COMPANY        FULLNAME FLAGS */
 /* System1 Hack */
-GAME( 1987, wbmlhc01,  wbml,  sys2xb,  wbml, system1_state, init_bootsys2, ROT0, "hack",       "Wonder Boy in Monster Land (Translation Italian)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1987, wbmlhc02,  wbml,  sys2xb,  wbml, system1_state, init_bootsys2, ROT0, "hack",       "Wonder Boy in Monster Land (Translation Korean)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1987, wbmlhc01,  wbml,  sys2xb,  wbml, system1_state, init_bootsys2, ROT0, "hack",       "Wonder Boy in Monster Land (Italian Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1987, wbmlhc02,  wbml,  sys2xb,  wbml, system1_state, init_bootsys2, ROT0, "hack",       "Wonder Boy in Monster Land (Korean Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

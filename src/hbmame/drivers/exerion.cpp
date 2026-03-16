@@ -40,4 +40,4 @@ ROM_END
 
 /*    YEAR    NAME        PARENT   MACHINE   INPUT                      INIT      MONITOR   COMPANY       FULLNAME FLAGS */
 /* Exerion Hack */
-GAME( 2004, exerionhc01,  exerion, exerion, exerion, exerion_state, init_exerion,  ROT90,   "hack",       "Exerion (Greek)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2004, exerionhc01,  exerion, exerion, exerion, exerion_state, init_exerion,  ROT90,   "hack",       "Exerion (Greek Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

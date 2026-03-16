@@ -142,7 +142,7 @@ ROM_END
 
 /*    YEAR    NAME         PARENT    MACHINE   INPUT                    INIT        MONITOR   COMPANY       FULLNAME FLAGS */
 /* Tecmo Hack */
-GAME( 1987, geminihc01,    gemini,   gemini,   gemini,   tecmo_state, init_gemini,   ROT90,   "hack",       "Gemini Wing (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1986, rygarhc01,     rygar,    rygar,    rygar,    tecmo_state, init_rygar,    ROT0,    "hack",       "Argus no Senshi (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1987, geminihc01,    gemini,   gemini,   gemini,   tecmo_state, init_gemini,   ROT90,   "hack",       "Gemini Wing (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1986, rygarhc01,     rygar,    rygar,    rygar,    tecmo_state, init_rygar,    ROT0,    "hack",       "Argus no Senshi (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1986, rygarhc02,     rygar,    rygar,    rygar,    tecmo_state, init_rygar,    ROT0,    "hack",       "Argus no Senshi (Korean Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1988, silkwormhc01,  silkworm, silkworm, silkworm, tecmo_state, init_silkworm, ROT0,    "hack",       "Silk Worm (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1988, silkwormhc01,  silkworm, silkworm, silkworm, tecmo_state, init_silkworm, ROT0,    "hack",       "Silk Worm (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

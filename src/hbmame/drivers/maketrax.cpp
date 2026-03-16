@@ -1003,7 +1003,7 @@ GAME( 2002, alienresp, alienres, pacman,   pacman,   puckman_state, empty_init, 
 GAME( 2002, crashh,    0,        woodpek,  mspacpls, puckman_state, empty_init,          ROT90,  "hack", "Crash (Pac-Man)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1981, mtturbo,   0,        maketrax, maketrax, puckman_state, init_maketrax,       ROT270, "Tim Arcadecollecting", "Make Trax (Turbo Hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE ) // http://www.arcadecollecting.com/hacks/maketrax
 GAME( 1999, pacmtest1, puckman,  pacman,   mspacpls, puckman_state, empty_init,          ROT90,  "David Caldwell", "Pacman Test Rom (set 2)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE ) // http://www.porkrind.org/arcade/
-GAME( 2020, pacmtest2, puckman,  pacman,   mspacpls, puckman_state, empty_init,          ROT90,  "Phil Murray", "Pacman Test Rom (set 3)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2020, pacmtest2, puckman,  pacman,   mspacpls, puckman_state, empty_init,          ROT90,  "Phil Murray", "Pacman Test Rom (HB)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1982, eyesb,     eyes,     pacman,   eyes,     puckman_state, init_eyes,           ROT90,  "bootleg", "Eyes (unknown bootleg)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2016, ghohunt,   puckman,  pacman,   pacman0,  puckman_state, empty_init,          ROT90,  "Hurray Banana", "Ghost Hunt", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2012, pactetris, puckman,  pacman,   pacman0,  puckman_state, empty_init,          ROT90,  "Ben Leperchey", "Tetris on Pacman hardware (incomplete)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

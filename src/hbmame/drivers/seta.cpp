@@ -100,6 +100,6 @@ ROM_END
 
 /*    YEAR    NAME         PARENT     MACHINE    INPUT                         INIT        MONITOR  COMPANY      FULLNAME FLAGS */
 /* Seta Hack */
-GAME( 1992, blandiahc01,   blandia,   blandia,   blandia,   seta_state,     init_bankx1,    ROT0,   "DDJ",       "Blandia (Enable hidden characters)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1992, blandiahc01,   blandia,   blandia,   blandia,   seta_state,     init_bankx1,    ROT0,   "DDJ",       "Blandia (Enable Hidden Characters)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1992, blandiahc02,   blandia,   blandia,   blandia,   seta_state,     init_bankx1,    ROT0,   "hack",      "Blandia (Easy Special Attacks)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1993, msgundamhc01,  msgundam,  msgundam,  msgundam,  seta_state,     empty_init,     ROT0,   "DDJ",       "Mobile Suit Gundam (Easy Special Attacks)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

@@ -68,5 +68,5 @@ ROM_END
 
 /*    YEAR  NAME           PARENT     MACHINE    INPUT                       INIT   MONITOR COMPANY     FULLNAME FLAGS */
 /* Bombjack Hack */
-GAME( 1984, bombjackhc01,   bombjack, bombjack, bombjack, bombjack_state, empty_init, ROT90, "hack",    "Bomb Jack (Translation Greek)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1984, bombjackhc02,   bombjack, bombjack, bombjack, bombjack_state, empty_init, ROT90, "hack",    "Bomb Jack (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1984, bombjackhc01,   bombjack, bombjack, bombjack, bombjack_state, empty_init, ROT90, "hack",    "Bomb Jack (Greek Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1984, bombjackhc02,   bombjack, bombjack, bombjack, bombjack_state, empty_init, ROT90, "hack",    "Bomb Jack (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

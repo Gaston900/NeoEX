@@ -314,11 +314,11 @@ ROM_END
 
 /*    YEAR  NAME              PARENT            MACHINE            INPUT                       INIT       MONITOR COMPANY       FULLNAME FLAGS */
 /* Midtunit Hack */
-GAME( 1992, mkhc01,           mk,               tunit_adpcm,      mk,       midtunit_state, init_mktunit,  ROT0, "hack",       "Mortal Kombat (Translation French)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1992, mkhc01,           mk,               tunit_adpcm,      mk,       midtunit_state, init_mktunit,  ROT0, "hack",       "Mortal Kombat (French Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2012, mkhc02,           mk,               tunit_adpcm,      mk,       midtunit_state, init_mktunit,  ROT0, "hack",       "Mortal Kombat (Projectile Insanity)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2020, mkhc03,           mk,               tunit_adpcm,      mk,       midtunit_state, init_mktunit,  ROT0, "hack",       "Mortal Kombat (Revision 5.0 Kaillera Friendly SP3 2020-12-02)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2020, mkhc04,           mk,               tunit_adpcm,      mk,       midtunit_state, init_mktunit,  ROT0, "hack",       "Mortal Kombat Plus (Build 5.0.0741)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2007, mk2hc01,          mk2,              tunit_dcs,        mk2,      midtunit_state, init_mk2,      ROT0, "hack",       "Mortal Kombat II (Translation French)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2007, mk2hc01,          mk2,              tunit_dcs,        mk2,      midtunit_state, init_mk2,      ROT0, "hack",       "Mortal Kombat II (French Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2018, mk2hc02,          mk2,              tunit_dcs,        mk2,      midtunit_state, init_mk2,      ROT0, "hack",       "Mortal Kombat II Plus (Beta II 2.8.5 2018-12-23)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2017, mk2hc03,          mk2,              tunit_dcs,        mk2,      midtunit_state, init_mk2,      ROT0, "hack",       "Ultimate Mortal Kombat II (Tournament Edition r5.0.053)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2021, mk2hc04,          mk2,              tunit_dcs,        mk2,      midtunit_state, init_mk2,      ROT0, "hack",       "Mortal Kombat II (Kaillera Friendly SP4 2021-08-05)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

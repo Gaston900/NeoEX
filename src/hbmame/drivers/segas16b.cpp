@@ -104,6 +104,6 @@ ROM_END
 
 /*    YEAR    NAME         PARENT    MACHINE           INPUT                        INIT          MONITOR   COMPANY       FULLNAME FLAGS */
 /* Segas16b Hack */
-GAME( 1988, altbeasthc01,  altbeast, system16b_i8751, altbeast, segas16b_state, init_generic_5521,  ROT0,   "hack",       "Altered Beast (Translation French)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2018, altbeasthc02,  altbeast, system16b_i8751, altbeast, segas16b_state, init_generic_5521,  ROT0,   "hack",       "Altered Beast (Translation Portugues)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2018, altbeasthc03,  altbeast, system16b_i8751, altbeast, segas16b_state, init_generic_5521,  ROT0,   "hack",       "Altered Beast (Translation Español)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1988, altbeasthc01,  altbeast, system16b_i8751, altbeast, segas16b_state, init_generic_5521,  ROT0,   "hack",       "Altered Beast (French Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2018, altbeasthc02,  altbeast, system16b_i8751, altbeast, segas16b_state, init_generic_5521,  ROT0,   "hack",       "Altered Beast (Portugues Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2018, altbeasthc03,  altbeast, system16b_i8751, altbeast, segas16b_state, init_generic_5521,  ROT0,   "hack",       "Altered Beast (Español Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

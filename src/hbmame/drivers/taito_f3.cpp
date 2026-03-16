@@ -385,14 +385,14 @@ ROM_END
 
 /*    YEAR      NAME            PARENT   MACHINE  INPUT                     INIT      MONITOR COMPANY         FULLNAME FLAGS */
 // Hack/Homebrow
-GAME( 1995, akkanvdrhc01,       spcinv95, f3_224a,  f3, taito_f3_state, init_spcinv95, ROT270, "hack",         "Akkanbeder (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2017, arabianmhc01,       arabianm, f3_224a,  f3, taito_f3_state, init_arabianm, ROT0,   "hack",         "Arabian Magic (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1994, bubsymphhc01,       bublbob2, f3_224a,  f3, taito_f3_state, init_bubsymph, ROT0,   "hack",         "Bubble Symphony (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1996, cleopatrhc01,       cleopatr, f3_224a,  f3, taito_f3_state, init_cleopatr, ROT0,   "hack",         "Cleopatra Fortune (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1995, akkanvdrhc01,       spcinv95, f3_224a,  f3, taito_f3_state, init_spcinv95, ROT270, "hack",         "Akkanbeder (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2017, arabianmhc01,       arabianm, f3_224a,  f3, taito_f3_state, init_arabianm, ROT0,   "hack",         "Arabian Magic (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1994, bubsymphhc01,       bublbob2, f3_224a,  f3, taito_f3_state, init_bubsymph, ROT0,   "hack",         "Bubble Symphony (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1996, cleopatrhc01,       cleopatr, f3_224a,  f3, taito_f3_state, init_cleopatr, ROT0,   "hack",         "Cleopatra Fortune (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1994, dankugahc01,        dankuga,  f3_224a,  kn, taito_f3_state, init_kaiserkn, ROT0,   "hack",         "Dan-Ku-Ga (Enable Hidden Characters)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1994, elvactrhc01,        elvactr,  f3,       f3, taito_f3_state, init_elvactr,  ROT0,   "hack",         "Elevator Action Returns (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1995, gekiridnhc01,       gekiridn, f3,       f3, taito_f3_state, init_gekirido, ROT270, "hack",         "Gekirindan (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1992, gseekerhc01,        gseeker,  f3_224b,  f3, taito_f3_state, init_gseeker,  ROT90,  "hack",         "Grid Seeker: Project Storm Hammer (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1994, elvactrhc01,        elvactr,  f3,       f3, taito_f3_state, init_elvactr,  ROT0,   "hack",         "Elevator Action Returns (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1995, gekiridnhc01,       gekiridn, f3,       f3, taito_f3_state, init_gekirido, ROT270, "hack",         "Gekirindan (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1992, gseekerhc01,        gseeker,  f3_224b,  f3, taito_f3_state, init_gseeker,  ROT90,  "hack",         "Grid Seeker: Project Storm Hammer (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1994, kaiserknhc01,       kaiserkn, f3_224a,  kn, taito_f3_state, init_kaiserkn, ROT0,   "hack",         "Kaiser Knuckle (Enable Hidden Characters)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1998, landmakrhc01,       landmakr, f3,       f3, taito_f3_state, init_landmakr, ROT0,   "hack",         "Land Maker (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2017, lightbrhc01,        lightbr,  f3_224a,  f3, taito_f3_state, init_lightbr,  ROT0,   "hack",         "Light Bringer (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1998, landmakrhc01,       landmakr, f3,       f3, taito_f3_state, init_landmakr, ROT0,   "hack",         "Land Maker (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2017, lightbrhc01,        lightbr,  f3_224a,  f3, taito_f3_state, init_lightbr,  ROT0,   "hack",         "Light Bringer (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

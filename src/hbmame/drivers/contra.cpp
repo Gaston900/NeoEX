@@ -33,4 +33,4 @@ ROM_END
 
 /*    YEAR    NAME       PARENT   MACHINE   INPUT                  INIT      MONITOR   COMPANY       FULLNAME FLAGS */
 /* Contra Hack */
-GAME( 1987, contrahc01,  contra,  contra,  contra, contra_state, empty_init, ROT90,    "hack",       "Contra (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1987, contrahc01,  contra,  contra,  contra, contra_state, empty_init, ROT90,    "hack",       "Contra (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

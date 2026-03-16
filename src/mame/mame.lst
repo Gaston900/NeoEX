@@ -2754,6 +2754,12 @@ bombjackhc02                    // hack
 
 @source:bublbobl.cpp
 bublbobl                        // Parents
+sboblbobl                       // bootleg
+sboblbobla                      // bootleg
+sboblboblb                      // bootleg
+sboblbobld                      // bootleg
+sboblboble                      // bootleg
+sboblboblf                      // bootleg
 bublboblhc01                    // hack
 bublboblhc02                    // hack
 bublboblhc03                    // hack
@@ -2868,8 +2874,10 @@ dktrain2                        // hack
 dkong19                         // hack
 dkremix                         // hack
 dkongx                          // hack
+dkong22                         // hack
 dkong24                         // hack
 dkong25                         // hack
+dkong2m                         // hack
 
 @source:exidy.cpp
 targ                            // Parents
@@ -2907,6 +2915,7 @@ galagost                        // hack
 galaped                         // hack
 galgaxin                        // hack
 vgalaga                         // hack
+vgalagaf                        // hack
 battlesh                        // hack
 gaous                           // hack
 xevious                         // Parents
@@ -2917,12 +2926,10 @@ xeviousp                        // hack
 @source:galaxian.cpp
 galaxian                        // Parents
 buglaxn                         // hack
-galaxiabh                       // hack
 galinvad                        // hack
 gaylaxn                         // hack
 vectrgal                        // hack
 galturbo                        // hack
-galxtest1                       // HomeBrew
 galxtest2                       // HomeBrew
 frogger                         // Parents
 kazzy                           // hack
@@ -3158,9 +3165,12 @@ killbldhc02                     // hack
 killbldhc03                     // hack
 killbldhc04                     // hack
 killbldhc05                     // hack
+kovplus                         // Parents
+kovsgqyz                        // bootleg
 kovsh                           // Parents
 kovshhc01                       // hack
 kovshp                          // Parents
+kovshxas                        // bootleg
 kovshphc01                      // hack
 kovshphc02                      // hack
 kovshphc03                      // hack
@@ -3388,6 +3398,7 @@ pacjr3                          // hack
 pacjr4                          // hack
 pacms1                          // hack
 pacms2                          // hack
+pacms3                          // hack
 pacms4                          // hack
 pacmsa1                         // hack
 pacmsa2                         // hack
@@ -3404,8 +3415,6 @@ wavybug                         //
 crashh                          //
 piranha                         //
 pacupacu1                       //
-pacmtest                        // HomeBrew
-pacmtest1                       // HomeBrew
 pacmtest2                       // HomeBrew
 
 @source:puckman.cpp
@@ -3431,15 +3440,17 @@ ottopz                          // hack
 superp4m                        // hack
 msgrkatk                        // hack
 mspacwf                         // hack
+msgrkb                          // hack
 msrumble                        // hack
 msf1pac                         // hack
 mspacad                         // hack
 mspacat2                        // hack
 msberzk                         // hack
-mspacatx                        // hack
+mspacmnx                        // Parents
 mspacmbx                        // hack
-mspacmnx                        // hack
+mspacatx                        // hack
 mspacplx                        // hack
+pacgalx                         // hack
 cookiem                         // hack
 heartbn2                        // hack
 heartbrn                        // hack
@@ -3681,6 +3692,7 @@ ssriders                        // Parents
 ssridershc01                    // hack
 ssridershc02                    // hack
 ssridershc03                    // hack
+ssridershc04                    // hack
 tmnt2                           // Parents
 tmnt2hc01                       // hack
 

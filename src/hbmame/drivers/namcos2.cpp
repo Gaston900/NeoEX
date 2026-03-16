@@ -57,6 +57,6 @@ ROM_START( valkyriehc01 ) //valkyrien
 	NAMCOS2_DATA_LOAD_E_128K( "wd1voi2.bin",  0x100000, CRC(e95c5cf3) SHA1(4bfc7303bde23bcf6739c7877dd87671c33135bc) )
 ROM_END
 
-/*    YEAR  NAME            PARENT    MACHINE        INPUT       INIT             MONITOR COMPANY                 FULLNAME FLAGS */
+/*    YEAR  NAME            PARENT    MACHINE        INPUT           INIT        MONITOR COMPANY     FULLNAME FLAGS */
 /* Namcos2 Hack */
-GAME(  1989, valkyriehc01, valkyrie, base3, base, namcos2_state, init_valkyrie, ROT90,  "hack", "Valkyrie no Densetsu (Translation English)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME(  1989, valkyriehc01, valkyrie, base3, base, namcos2_state, init_valkyrie,   ROT90,  "hack",    "Valkyrie no Densetsu (English Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

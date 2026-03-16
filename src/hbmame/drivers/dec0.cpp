@@ -51,4 +51,4 @@ ROM_END
 
 /*    YEAR    NAME        PARENT    MACHINE     INPUT                 INIT         MONITOR   COMPANY       FULLNAME FLAGS */
 /* Dec0 Hack */
-GAME( 2007, baddudeshc01, baddudes, baddudes, baddudes, dec0_state, init_hbarrel,   ROT0,    "hack",       "Bad Dudes vs. Dragonninja (Translation French)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2007, baddudeshc01, baddudes, baddudes, baddudes, dec0_state, init_hbarrel,   ROT0,    "hack",       "Bad Dudes vs. Dragonninja (French Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

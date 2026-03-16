@@ -35,5 +35,5 @@ ROM_END
 
 /*    YEAR  NAME              PARENT            MACHINE            INPUT                              INIT           MONITOR COMPANY       FULLNAME FLAGS */
 /* Midyunit Hack */
-GAME( 1990, y_test,   smashtv,  yunit_cvsd_6bit_slow,    smashtv,  midyunit_state, init_smashtv,  ROT0, "Williams", "Midway Y-unit Test Rom v1.40", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1990, y_test,   smashtv,  yunit_cvsd_6bit_slow,    smashtv,  midyunit_state, init_smashtv,  ROT0, "Williams", "Midway Y-unit Test Rom v1.40 (HB)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 

@@ -1855,7 +1855,7 @@ ROM_END
  *************************************/
 
 GAME( 1995, mschamp,  mspacman, mschamp,  mschamp,  puckman_state,  empty_init,   ROT90, "hack", "Ms. Pacman Champion Edition / Super Zola Pac Gal", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1995, mschampx, mspacmnx, mschampx, mschamp,  puckman_state,  empty_init,   ROT90, "hack", "Ms. Pacman Champion Edition / Super Zola Pac Gal (hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1995, mschampx, mspacmnx, mschampx, mschamp,  puckman_state,  empty_init,   ROT90, "hack", "Ms. Pacman Champion Edition / Super Zola Pac Gal (Hires hack)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 
 /* Dave Widel's Games - http://www.widel.com */
 
@@ -1880,5 +1880,5 @@ GAME( 2007, pm4n1b,   puckman,  pm4n1,    pacman0,  puckman_state, init_pm4n1,  
 GAME( 2008, pm4n1c,   puckman,  pm4n1c,   pacman0,  puckman_state, init_pm4n1,    ROT90, "Jason Souza", "Pacman 4in1 v2.3 [c][h]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2009, pm4n1d,   puckman,  pm4n1d,   pacman0,  puckman_state, init_pm4n1,    ROT90, "Jason Souza", "Pacman 4in1 v3.0 [c][h]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2010, pm4n1e,   puckman,  pm4n1d,   pacman0,  puckman_state, init_pm4n1,    ROT90, "Jason Souza", "Pacman 4in1 v3.3 [c][h]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1999, superabc, 0,        superabc, superabc, puckman_state, init_superabc, ROT90, "TwoBit Score", "Pacman SuperABC (1999-09-03)[h]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1999, superabc, 0,        superabc, superabc, puckman_state, init_superabc, ROT90, "TwoBit Score", "Pacman SuperABC (1999-09-03)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1999, superabco,superabc, superabc, superabc, puckman_state, init_superabc, ROT90, "TwoBit Score", "Pacman SuperABC (1999-03-08)[h]", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

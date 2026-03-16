@@ -496,8 +496,8 @@ ROM_END
 
 /*    YEAR    NAME          PARENT     MACHINE      INPUT                         INIT       MONITOR COMPANY    FULLNAME FLAGS */
 /* Midwunit Hack */
-GAME( 2026, mkhc05,         mk,        wunit_picsim, mk3,      midwunit_state, empty_init,    ROT0, "Asure",    "Mortal Kombat (rev 5.1, 2026-02-06)(Wolf h/w, beta)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 2025, mk2hc06,        mk2,       wunit_picsim, mk3,      midwunit_state, empty_init,    ROT0, "Asure",    "Mortal Kombat 2 (rev 3.2W, 2025-09-05)(Wolf h/w)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2026, mkhc05,         mk,        wunit_picsim, mk3,      midwunit_state, empty_init,    ROT0, "Asure",    "Mortal Kombat (rev 5.1, 2026-02-06) (Ported From Midtunit)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2025, mk2hc06,        mk2,       wunit_picsim, mk3,      midwunit_state, empty_init,    ROT0, "Asure",    "Mortal Kombat 2 (rev 3.2W, 2025-09-05) (Ported From Midtunit)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2021, mk3hc01,        mk3,       wunit_picsim, mk3,      midwunit_state, init_mk3,      ROT0, "hack",     "Mortal Kombat 3 (Revision 2.1 Kaillera Friendly SP4 2021-08-05)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2010, umk3hc01,       umk3,      wunit_picemu, mk3,      midwunit_state, init_umk3,     ROT0, "hack",     "Ultimate Mortal Kombat 3 (Juggernauts v1.0)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2009, umk3hc02,       umk3,      wunit_picemu, mk3,      midwunit_state, init_umk3,     ROT0, "hack",     "Ultimate Mortal Kombat 3 (Zeus)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

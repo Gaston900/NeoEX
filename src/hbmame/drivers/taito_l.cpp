@@ -50,6 +50,6 @@ ROM_END
 
 /*    YEAR  NAME            PARENT    MACHINE      INPUT                        INIT          MONITOR  COMPANY     FULLNAME FLAGS */
 /* Taito_l Hack */
-GAME( 2007, evilstonhc01,  evilston, evilston,  evilston,  taitol_2cpu_state, empty_init,     ROT270, "Arkatrad", "Evil Stone (Translation French)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1988, kurikinthc01,  kurikint, kurikint,  kurikintj, taitol_2cpu_state, empty_init,     ROT0,   "hack",     "Kuri Kinton (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1989, plottinghc01,  plotting, plotting,  plotting,  taitol_1cpu_state, init_plottinga, ROT0,   "hack",     "Plotting (Translation Chinese)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2007, evilstonhc01,  evilston, evilston,  evilston,  taitol_2cpu_state, empty_init,     ROT270, "Arkatrad", "Evil Stone (French Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1988, kurikinthc01,  kurikint, kurikint,  kurikintj, taitol_2cpu_state, empty_init,     ROT0,   "hack",     "Kuri Kinton (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1989, plottinghc01,  plotting, plotting,  plotting,  taitol_1cpu_state, init_plottinga, ROT0,   "hack",     "Plotting (Chinese Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

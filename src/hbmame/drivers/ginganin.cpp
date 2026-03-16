@@ -42,4 +42,4 @@ ROM_END
 
 /*    YEAR    NAME         PARENT        MACHINE   INPUT                       INIT      MONITOR   COMPANY       FULLNAME FLAGS */
 /* Ginganin Hack */
-GAME( 1987, ginganinhc01,  ginganin,    ginganin, ginganin, ginganin_state, init_ginganin, ROT0,   "hack",      "Ginga NinkyouDen (Translation Korean)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1987, ginganinhc01,  ginganin,    ginganin, ginganin, ginganin_state, init_ginganin, ROT0,   "hack",      "Ginga NinkyouDen (Korean Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

@@ -1200,7 +1200,7 @@ GAME( 2022, feversoshc01,   feversos,       dfeveron,     cave,     cave_state, 
 GAME( 2023, feversoshc02,   feversos,       dfeveron,     cave,     cave_state, init_feversos,  ROT270, "GOTVG",      "Fever SOS (Korean/French Ten-Loli 2023-12-13)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1999, gaiahc01,       gaia,           gaia,         gaia,     cave_state, init_gaia,      ROT0,   "GOTVG",      "Gaia Crusaders (Enable Hidden Characters)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1999, guwangehc01,    guwange,        guwange,      guwange,  cave_state, init_guwange,   ROT270, "DDJ",        "Guwange (Infinite Power 2022-08-07)",  MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1995, metmqstrhc01,   metmqstr,       metmqstr,     metmqstr, cave_state, init_metmqstr,  ROT0,   "hack",       "Metamoqester (Translation Korean)",   MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1995, metmqstrhc01,   metmqstr,       metmqstr,     metmqstr, cave_state, init_metmqstr,  ROT0,   "hack",       "Metamoqester (Korean Translation)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1995, metmqstrhc02,   metmqstr,       metmqstr,     metmqstr, cave_state, init_metmqstr,  ROT0,   "DDJ",        "Metamoqester (Always Have Super Move)",   MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1995, metmqstrhc03,   metmqstr,       metmqstr,     metmqstr, cave_state, init_metmqstr,  ROT0,   "DDJ",        "Metamoqester (Easy Special Attacks)",   MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 2023, plegendshc01,   plegends,       pwrinst2,     metmqstr, cave_state, init_pwrinst2j, ROT0,   "GOTVG",      "Gouketsuji Gaiden (Infinite Energy 2023-08-21)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
