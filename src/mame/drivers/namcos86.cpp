@@ -1700,7 +1700,7 @@ GAME( 1986, skykiddxo,skykiddx, hopmappy, skykiddx,  namcos86_state, init_namco8
 
 GAME( 1986, hopmappy, 0,        hopmappy, hopmappy,  namcos86_state, init_namco86, ROT0,   "Namco",   "Hopping Mappy", MACHINE_SUPPORTS_SAVE )
 
-GAME( 1986, roishtar, 0,        roishtar, roishtar,  namcos86_state, init_namco86, ROT0,   "Namco",   "The Return of Ishtar", MACHINE_SUPPORTS_SAVE )
+GAME( 1986, roishtar, 0,        roishtar, roishtar,  namcos86_state, init_namco86, ROT0,   "Namco",   "The Return of Ishtar", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 
 GAME( 1986, genpeitd, 0,        genpeitd, genpeitd,  namcos86_state, init_namco86, ROT0,   "Namco",   "Genpei ToumaDen", MACHINE_SUPPORTS_SAVE )
 

@@ -2749,6 +2749,7 @@ blkdrgonhc01                    // hack
 
 @source:blockhl.cpp
 blockhl                         // Parents
+blockhlhc01                     // hack
 
 @source:bombjack.cpp
 bombjack                        // Parents
@@ -2756,7 +2757,13 @@ bombjackhc01                    // hack
 bombjackhc02                    // hack
 
 @source:btime.cpp
+brubber                         // Parents
+bnjr                            // hack
+lnc                             // Parents
+pnc                             // hack
 btime                           // Parents
+stictime                        // hack
+vecbtime                        // hack
 
 @source:bublbobl.cpp
 bublbobl                        // Parents
@@ -2822,6 +2829,16 @@ theroeshc01                     // hack
 
 @source:centiped.cpp
 centiped                        // Parents
+astropd2                        // hack
+astroped                        // hack
+cemescry                        // hack
+killiped                        // hack
+magworm2                        // hack
+pacipede                        // hack
+vectiped                        // hack
+vectrped                        // hack
+milliped                        // Parents
+silliped                        // hack
 
 @source:cinemat.cpp
 bbugtest                        // HomeBrew
@@ -2832,7 +2849,22 @@ contra                          // Parents
 contrahc01                      // hack
 
 @source:cv1k.cpp
+akatana                         // Parents
+deathsml                        // Parents
+deathsml01                      // hack
+ddpsdoj                         // Parents
+ddpsdojo                        // hack
+sdojak                          // Parents
+sdoja                           // hack
+sdojb                           // hack
 ibara                           // Parents
+ibaracs                         // hack
+ibarablk                        // Parents
+futari15                        // Parents
+futari15bc                      // hack
+futaribl                        // Parents
+futariblc                       // hack
+futaribljc                      // hack
 
 @source:dbz.cpp
 dbz2                            // Parents
@@ -2961,6 +2993,9 @@ scobra                          // Parents
 scobtest                        // HomeBrew
 mooncrst                        // Parents
 moontest                        // HomeBrew
+galnamco                        // Parents
+gmultic                         // hack
+smulti                          // Parents
 
 @source:gauntlet.cpp
 gaunt2                          // Parents
@@ -2979,6 +3014,7 @@ qberthc02                       // hack
 
 @source:gradius3.cpp
 gradius3                        // Parents
+gradius3hc01                    // hack
 
 @source:gyruss.cpp
 gyruss                          // Parents
@@ -2989,7 +3025,7 @@ hyperspt                        // Parents
 hypetest                        // HomeBrew
 
 @source:itech8.cpp
-gpgolf                          // Parents
+itecdemo                        // HomeBrew
 
 @source:kaneko16.cpp
 bloodwar                        // Parents
@@ -3085,12 +3121,24 @@ superpachc04                    // hack
 
 @source:mcr.cpp
 tapper                          // Parents
+tapperhc01                      // hack
+
+@source:mhavoc.cpp
+mhavoc                          // Parents
+mhavocpe                        // hack
+mhavocpefr                      // hack
+mhavocpede                      // hack
+mhavocpete                      // hack
+mhavocpefrte                    // hack
+mhavocpedete                    // hack
 
 @source:model1.cpp
 vr                              // Parents
+vr7                             // hack
 
 @source:model2.cpp
 srallyc                         // Parents
+srallyp                         // hack
 
 @source:monaco.cpp
 monaco                          // HomeBrew
@@ -3148,7 +3196,7 @@ umk3hc08                        // hack
 umk3hc09                        // hack
 
 @source:mitchell.cpp
-block                           // Parents
+mitcdemo                        // HomeBrew
 
 @source:mystwarr.cpp
 mtlchamp                        // Parents
@@ -3170,6 +3218,7 @@ valkyriehc01                    // hack
 
 @source:namcos86.cpp
 roishtar                        // Parents
+roishtarhc01                    // hack
 
 @source:nemesis.cpp
 salamand                        // Parents
@@ -3195,6 +3244,8 @@ ddp2                            // Parents
 ddp2hc01                        // hack
 ddp3                            // Parents
 ddp3hc01                        // hack
+ket                             // Parents
+ketarr                          // hack
 killbld                         // Parents
 killbldhc01                     // hack
 killbldhc02                     // hack
@@ -3336,6 +3387,7 @@ pc_smb3_hc06                    // hack
 
 @source:polepos.cpp
 polepos                         // Parents
+mmadness                        // hack
 
 @source:powerins.cpp
 powerins                        // Parents
@@ -3560,9 +3612,11 @@ rastanhc04                      // hack
 
 @source:retofinv.cpp
 retofinv                        // Parents
+retofinv4                       // hack
 
 @source:rohga.cpp
 schmeisr                        // Parents
+schmeisrhc01                    // hack
 
 @source:segas16b.cpp
 altbeast                        // Parents
@@ -3621,7 +3675,7 @@ silkroadhc02                    // hack
 silkroadhc03                    // hack
 
 @source:snk6502.cpp
-satansat                        // Parents
+vantris                         // HomeBrew
 
 @source:snowbros.cpp
 snowbros                        // Parents
@@ -3654,7 +3708,7 @@ wbmlhc01                        // hack
 wbmlhc02                        // hack
 
 @source:system16.cpp
-beautyb                         // Parents
+sys16dem                        // HomeBrew
 
 @source:taito_f2.cpp
 cameltry                        // Parents
@@ -3739,12 +3793,25 @@ tkdenshohc03                    // hack
 
 @source:tehkanwc.cpp
 tehkanwc                        // Parents
+ballonwc                        // hack
+tankwc                          // hack
+twc_gr                          // hack
 
 @source:tempest.cpp
 tempest                         // Parents
+temped                          // hack
+tempall                         // hack
+temptwst                        // hack
+temptwst2                       // hack
+temptwst3                       // hack
+temptwst4                       // hack
+tempm                           // hack
+tempmg                          // hack
+vbrakout                        // hack
 
 @source:timeplt.cpp
 timeplt                         // Parents
+timepltdiag                     // hack
 
 @source:toki.cpp
 toki                            // Parents
@@ -3783,6 +3850,7 @@ gradius2hc01                    // hack
 
 @source:twincobr.cpp
 twincobr                        // Parents
+twincobrhc01                    // hack
 
 @source:vamphalf.cpp
 aoh                             // Parents
@@ -3806,6 +3874,7 @@ mightybjgk                      // hack
 
 @source:yiear.cpp
 yiear                           // Parents
+nacho                           // hack
 
 @source:zn.cpp
 coh1000c                        // BIOS

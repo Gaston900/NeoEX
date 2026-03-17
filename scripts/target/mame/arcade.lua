@@ -383,12 +383,16 @@ function createProjects_mame_arcade(_target, _subtarget)
 
 createMAMEProjects(_target, _subtarget, "atari")
 files {
-	MAME_DIR .. "src/mame/drivers/tempest.cpp",
+	MAME_DIR .. "src/hbmame/drivers/mhavoc_hb.cpp",
+	MAME_DIR .. "src/hbmame/machine/mhavoc_hb.cpp",
+	MAME_DIR .. "src/mame/drivers/mhavoc.cpp",
+	MAME_DIR .. "src/mame/machine/mhavoc.cpp",
+	MAME_DIR .. "src/hbmame/drivers/tempest.cpp",
 	MAME_DIR .. "src/mame/machine/mathbox.cpp",
 	MAME_DIR .. "src/mame/machine/mathbox.h",
 	MAME_DIR .. "src/mame/video/avgdvg.cpp",
 	MAME_DIR .. "src/mame/video/avgdvg.h",
-	MAME_DIR .. "src/mame/drivers/centiped.cpp",
+	MAME_DIR .. "src/hbmame/drivers/centiped.cpp",
 	MAME_DIR .. "src/mame/includes/centiped.h",
 	MAME_DIR .. "src/mame/video/centiped.cpp",
 	MAME_DIR .. "src/hbmame/drivers/atarisy1.cpp",
@@ -412,12 +416,12 @@ files {
 
 createMAMEProjects(_target, _subtarget, "dataeast")
 files {
-	MAME_DIR .. "src/mame/drivers/rohga.cpp",
+	MAME_DIR .. "src/hbmame/drivers/rohga.cpp",
 	MAME_DIR .. "src/mame/includes/rohga.h",
 	MAME_DIR .. "src/mame/video/rohga.cpp",
 	MAME_DIR .. "src/mame/video/decocomn.cpp",
 	MAME_DIR .. "src/mame/video/decocomn.h",
-	MAME_DIR .. "src/mame/drivers/btime.cpp",
+	MAME_DIR .. "src/hbmame/drivers/btime.cpp",
 	MAME_DIR .. "src/mame/includes/btime.h",
 	MAME_DIR .. "src/mame/machine/btime.cpp",
 	MAME_DIR .. "src/mame/video/btime.cpp",
@@ -464,7 +468,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "capcom")
 files {
-	MAME_DIR .. "src/mame/drivers/mitchell.cpp",
+	MAME_DIR .. "src/hbmame/drivers/mitchell.cpp",
 	MAME_DIR .. "src/hbmame/drivers/sonson.cpp",
 	MAME_DIR .. "src/mame/includes/sonson.h",
 	MAME_DIR .. "src/mame/video/sonson.cpp",
@@ -525,7 +529,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "cave")
 files {
-	MAME_DIR .. "src/mame/drivers/cv1k.cpp",
+	MAME_DIR .. "src/hbmame/drivers/cv1k.cpp",
 	MAME_DIR .. "src/hbmame/drivers/cave.cpp",
 	MAME_DIR .. "src/mame/video/cave.cpp",
 	MAME_DIR .. "src/mame/machine/nmk112.cpp",
@@ -624,7 +628,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "itech")
 files {
-	MAME_DIR .. "src/mame/drivers/itech8.cpp",
+	MAME_DIR .. "src/hbmame/drivers/itech8.cpp",
 	MAME_DIR .. "src/mame/includes/itech8.h",
 	MAME_DIR .. "src/mame/machine/itech8.cpp",
 	MAME_DIR .. "src/mame/video/itech8.cpp",
@@ -659,19 +663,19 @@ files {
 
 createMAMEProjects(_target, _subtarget, "konami")
 files {
-	MAME_DIR .. "src/mame/drivers/yiear.cpp",
+	MAME_DIR .. "src/hbmame/drivers/yiear.cpp",
 	MAME_DIR .. "src/mame/includes/yiear.h",
 	MAME_DIR .. "src/mame/video/yiear.cpp",
-	MAME_DIR .. "src/mame/drivers/timeplt.cpp",
+	MAME_DIR .. "src/hbmame/drivers/timeplt.cpp",
 	MAME_DIR .. "src/mame/includes/timeplt.h",
 	MAME_DIR .. "src/mame/audio/timeplt.cpp",
 	MAME_DIR .. "src/mame/audio/timeplt.h",
 	MAME_DIR .. "src/mame/video/timeplt.cpp",
-	MAME_DIR .. "src/mame/drivers/shaolins.cpp",
+	MAME_DIR .. "src/hbmame/drivers/shaolins.cpp",
 	MAME_DIR .. "src/mame/includes/shaolins.h",
 	MAME_DIR .. "src/mame/video/shaolins.cpp",
-	MAME_DIR .. "src/mame/drivers/blockhl.cpp",
-	MAME_DIR .. "src/mame/drivers/gradius3.cpp",
+	MAME_DIR .. "src/hbmame/drivers/blockhl.cpp",
+	MAME_DIR .. "src/hbmame/drivers/gradius3.cpp",
 	MAME_DIR .. "src/mame/includes/gradius3.h",
 	MAME_DIR .. "src/mame/video/gradius3.cpp",
 	MAME_DIR .. "src/hbmame/drivers/hyperspt.cpp",
@@ -756,7 +760,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "midway")
 files {
-	MAME_DIR .. "src/mame/drivers/mcr.cpp",
+	MAME_DIR .. "src/hbmame/drivers/mcr.cpp",
 	MAME_DIR .. "src/mame/includes/mcr.h",
 	MAME_DIR .. "src/mame/machine/mcr.cpp",
 	MAME_DIR .. "src/mame/video/mcr.cpp",
@@ -782,12 +786,12 @@ files {
 
 createMAMEProjects(_target, _subtarget, "namco")
 files {
-	MAME_DIR .. "src/mame/drivers/polepos.cpp",
+	MAME_DIR .. "src/hbmame/drivers/polepos.cpp",
 	MAME_DIR .. "src/mame/includes/polepos.h",
 	MAME_DIR .. "src/mame/audio/polepos.cpp",
 	MAME_DIR .. "src/mame/audio/polepos.h",
 	MAME_DIR .. "src/mame/video/polepos.cpp",
-	MAME_DIR .. "src/mame/drivers/namcos86.cpp",
+	MAME_DIR .. "src/hbmame/drivers/namcos86.cpp",
 	MAME_DIR .. "src/mame/includes/namcos86.h",
 	MAME_DIR .. "src/mame/video/namcos86.cpp",
 	MAME_DIR .. "src/hbmame/drivers/pacland.cpp",
@@ -859,6 +863,7 @@ files {
 	MAME_DIR .. "src/mame/video/galaxian.cpp",
 	MAME_DIR .. "src/mame/audio/nl_konami.h",
 	MAME_DIR .. "src/mame/audio/nl_konami.cpp",
+	MAME_DIR .. "src/hbmame/machine/galser.cpp",
 }
 
 createMAMEProjects(_target, _subtarget, "nec")
@@ -1011,10 +1016,10 @@ files {
 
 createMAMEProjects(_target, _subtarget, "sega")
 files {
-	MAME_DIR .. "src/mame/drivers/system16.cpp",
+	MAME_DIR .. "src/hbmame/drivers/system16.cpp",
 	MAME_DIR .. "src/mame/includes/system16.h",
 	MAME_DIR .. "src/mame/video/system16.cpp",
-	MAME_DIR .. "src/mame/drivers/model2.cpp",
+	MAME_DIR .. "src/hbmame/drivers/model2.cpp",
 	MAME_DIR .. "src/mame/machine/model2.cpp",
 	MAME_DIR .. "src/mame/includes/model2.h",
 	MAME_DIR .. "src/mame/video/model2rd.hxx",
@@ -1023,7 +1028,7 @@ files {
 	MAME_DIR .. "src/mame/machine/315_5649.h",
 	MAME_DIR .. "src/mame/machine/m2comm.cpp",
 	MAME_DIR .. "src/mame/machine/m2comm.h",
-	MAME_DIR .. "src/mame/drivers/model1.cpp",
+	MAME_DIR .. "src/hbmame/drivers/model1.cpp",
 	MAME_DIR .. "src/mame/includes/model1.h",
 	MAME_DIR .. "src/mame/machine/model1.cpp",
 	MAME_DIR .. "src/mame/video/model1.cpp",
@@ -1117,7 +1122,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "snk")
 files {
-	MAME_DIR .. "src/mame/drivers/snk6502.cpp",
+	MAME_DIR .. "src/hbmame/drivers/snk6502.cpp",
 	MAME_DIR .. "src/mame/includes/snk6502.h",
 	MAME_DIR .. "src/mame/audio/snk6502.cpp",
 	MAME_DIR .. "src/mame/audio/snk6502.h",
@@ -1141,7 +1146,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "taito")
 files {
-	MAME_DIR .. "src/mame/drivers/retofinv.cpp",
+	MAME_DIR .. "src/hbmame/drivers/retofinv.cpp",
 	MAME_DIR .. "src/mame/includes/retofinv.h",
 	MAME_DIR .. "src/mame/video/retofinv.cpp",
 	MAME_DIR .. "src/hbmame/drivers/volfied.cpp",
@@ -1226,7 +1231,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "tehkan")
 files {
-	MAME_DIR .. "src/mame/drivers/tehkanwc.cpp",
+	MAME_DIR .. "src/hbmame/drivers/tehkanwc.cpp",
 	MAME_DIR .. "src/mame/includes/tehkanwc.h",
 	MAME_DIR .. "src/mame/video/tehkanwc.cpp",
 	MAME_DIR .. "src/hbmame/drivers/tecmosys.cpp",
@@ -1253,7 +1258,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "toaplan")
 files {
-	MAME_DIR .. "src/mame/drivers/twincobr.cpp",
+	MAME_DIR .. "src/hbmame/drivers/twincobr.cpp",
 	MAME_DIR .. "src/mame/includes/twincobr.h",
 	MAME_DIR .. "src/mame/machine/twincobr.cpp",
 	MAME_DIR .. "src/mame/video/twincobr.cpp",
@@ -1280,7 +1285,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "univers")
 files {
-	MAME_DIR .. "src/mame/drivers/docastle.cpp",
+	MAME_DIR .. "src/hbmame/drivers/docastle.cpp",
 	MAME_DIR .. "src/mame/includes/docastle.h",
 	MAME_DIR .. "src/mame/machine/docastle.cpp",
 	MAME_DIR .. "src/mame/video/docastle.cpp",

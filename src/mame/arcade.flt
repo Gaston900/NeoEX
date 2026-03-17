@@ -126,6 +126,7 @@ tehkanwc.cpp
 tempest.cpp
 timeplt.cpp
 yiear.cpp
+mhavoc.cpp
 nes.cpp
 snes.cpp
 gb.cpp

@@ -916,7 +916,7 @@ ROM_END
  *
  *************************************/
 
-GAME( 1980, tempest,   0,       tempest, tempest, tempest_state, empty_init, ROT270, "Atari", "Tempest (rev 3, Revised Hardware)", MACHINE_SUPPORTS_SAVE )
+GAME( 1980, tempest,   0,       tempest, tempest, tempest_state, empty_init, ROT270, "Atari", "Tempest (rev 3, Revised Hardware)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1980, tempest3,  tempest, tempest, tempest, tempest_state, empty_init, ROT270, "Atari", "Tempest (rev 3)", MACHINE_SUPPORTS_SAVE )
 GAME( 1980, tempest2,  tempest, tempest, tempest, tempest_state, empty_init, ROT270, "Atari", "Tempest (rev 2)", MACHINE_SUPPORTS_SAVE )
 GAME( 1980, tempest1,  tempest, tempest, tempest, tempest_state, empty_init, ROT270, "Atari", "Tempest (rev 1)", MACHINE_SUPPORTS_SAVE )

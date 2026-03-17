@@ -379,5 +379,5 @@ ROM_END
 //**************************************************************************
 
 //    YEAR  NAME     PARENT   MACHINE  INPUT    CLASS          INIT        ROT   COMPANY   FULLNAME          FLAGS
-GAME( 1989, blockhl, 0,       blockhl, blockhl, blockhl_state, empty_init, ROT0, "Konami", "Block Hole",     MACHINE_SUPPORTS_SAVE )
+GAME( 1989, blockhl, 0,       blockhl, blockhl, blockhl_state, empty_init, ROT0, "Konami", "Block Hole",     MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1989, quarth,  blockhl, blockhl, blockhl, blockhl_state, empty_init, ROT0, "Konami", "Quarth (Japan)", MACHINE_SUPPORTS_SAVE )
