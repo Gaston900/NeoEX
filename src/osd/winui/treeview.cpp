@@ -3344,6 +3344,18 @@ void CreateNEOGEOFolders(int parent_index)
 
 		if (!strcmp("neogeo_noslothb.cpp", s))      AddGame(lpNeoGeoHC, jj);
 	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("neogeo_noslot.cpp", s))        AddGame(lpFolder, jj);
+		if (!strcmp("neogeo_noslothb.cpp", s))      AddGame(lpFolder, jj);
+		if (!strcmp("neogeo_noslotdd.cpp", s))      AddGame(lpFolder, jj);
+	}
 }
 
 void CreateCAPCOMFolders(int parent_index)
@@ -3840,7 +3852,6 @@ void CreateCAPCOMFolders(int parent_index)
 		if (!strcmp("wonder3", s))	                AddGame(lpCps1, jj);
 
         // ADD CPS1
-        if (!strcmp("actfancr.cpp", s))			    AddGame(lpFolder, jj);
 		if (!strcmp("3wondrud", s))		            AddGame(lpCps1, jj);
 		if (!strcmp("3wondersha", s))			    AddGame(lpCps1, jj);
 		if (!strcmp("captcoud", s))	                AddGame(lpCps1, jj);
@@ -4393,6 +4404,23 @@ void CreateCAPCOMFolders(int parent_index)
 		if (!strcmp("cps3hb.cpp", s))              AddGame(lpCps3HC, jj);
 	}
 
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("cps1.cpp", s))                AddGame(lpFolder, jj);
+		if (!strcmp("cps1hb.cpp", s))              AddGame(lpFolder, jj);
+		if (!strcmp("cps2.cpp", s))                AddGame(lpFolder, jj);
+		if (!strcmp("cps2hb.cpp", s))              AddGame(lpFolder, jj);
+		if (!strcmp("cps3.cpp", s))                AddGame(lpFolder, jj);
+		if (!strcmp("cps3hb.cpp", s))              AddGame(lpFolder, jj);
+		if (!strcmp("cps1bl_5205.cpp", s))         AddGame(lpFolder, jj);
+		if (!strcmp("cps1bl_pic.cpp", s))          AddGame(lpFolder, jj);
+		if (!strcmp("fcrash.cpp", s))              AddGame(lpFolder, jj);
+	}
 }
 
 void CreateMISCFolders(int parent_index)
