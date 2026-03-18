@@ -109,9 +109,9 @@ elif build == "hbmame":
     product_name = "HBMAME"
     bundle_identifier = "org.mamedev.hbmame"
 else:
-    # MAME
+    # NeoEX
     author = "Gaston90"
-    comments = "NeoEvolution X"
+    comments = "NeoEX"
     company_name = "MAME Team"
     file_description = "NeoEX"
     internal_name = "NeoEX"

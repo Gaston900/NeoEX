@@ -79,9 +79,9 @@
 #endif
 
 #ifdef _M_X64
-#define MAMEUINAME			"NeoEX (NeoEvolution X MVS/AES Collection)"
+#define MAMEUINAME			"NeoEX"
 #else
-#define MAMEUINAME			"NeoEX (NeoEvolution X MVS/AES Collection)"
+#define MAMEUINAME			"NeoEX"
 #endif
 #define MAMENAME			"NeoEX"
 
