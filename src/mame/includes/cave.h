@@ -81,6 +81,7 @@ public:
 
 	void uopoko(machine_config &config);
 	void sailormn(machine_config &config);
+	void sailormn_2XCLOCK(machine_config &config);
 	void paceight(machine_config &config);
 	void pacslot(machine_config &config);
 	void paccarn(machine_config &config);

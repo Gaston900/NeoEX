@@ -2675,6 +2675,13 @@ void cave_state::sailormn(machine_config &config)
 
 }
 
+void cave_state::sailormn_2XCLOCK(machine_config &config)
+{
+	sailormn(config);
+
+	m_maincpu->set_clock(32_MHz_XTAL);
+}
+
 
 /***************************************************************************
                             Tekken Card World
