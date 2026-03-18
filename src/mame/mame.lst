@@ -2925,6 +2925,7 @@ dkong2m                         // hack
 
 @source:docastle.cpp
 dorunrun                        // Parents
+sdreturn
 
 @source:exidy.cpp
 targ                            // Parents
@@ -2995,7 +2996,6 @@ mooncrst                        // Parents
 moontest                        // HomeBrew
 galnamco                        // Parents
 gmultic                         // hack
-smulti                          // Parents
 
 @source:gauntlet.cpp
 gaunt2                          // Parents
@@ -3194,6 +3194,8 @@ umk3hc06                        // hack
 umk3hc07                        // hack
 umk3hc08                        // hack
 umk3hc09                        // hack
+wwfmania                        // Parents
+wwfmaniahc01                    // hack
 
 @source:mitchell.cpp
 mitcdemo                        // HomeBrew
@@ -3663,6 +3665,7 @@ grdianshc07                     // hack
 
 @source:shaolins.cpp
 kicker                          // Parents
+kfjohnny                        // hack
 
 @source:shadfrce.cpp
 shadfrce                        // Parents

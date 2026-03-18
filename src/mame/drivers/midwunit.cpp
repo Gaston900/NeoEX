@@ -1739,7 +1739,7 @@ GAME( 1994, umk3r11,     umk3,     wunit_picemu, mk3,      midwunit_state, init_
 GAME( 1994, umk3r10,     umk3,     wunit_picemu, mk3,      midwunit_state, init_umk3r11,  ROT0, "Midway", "Ultimate Mortal Kombat 3 (rev 1.0)", MACHINE_SUPPORTS_SAVE )
 // Ultimate Mortal Kombat 3 rev 2.0.35 (TE? Hack?) version known to exist
 
-GAME( 1995, wwfmania,    0,        wunit_picsim, wwfmania, midwunit_state, init_wwfmania, ROT0, "Midway", "WWF: Wrestlemania (rev 1.30 08/10/95)", MACHINE_SUPPORTS_SAVE )
+GAME( 1995, wwfmania,    0,        wunit_picsim, wwfmania, midwunit_state, init_wwfmania, ROT0, "Midway", "WWF: Wrestlemania (rev 1.30 08/10/95)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 GAME( 1995, wwfmaniab,   wwfmania, wunit_picsim, wwfmania, midwunit_state, init_wwfmania, ROT0, "Midway", "WWF: Wrestlemania (rev 1.20 08/02/95)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, wwfmaniac,   wwfmania, wunit_picsim, wwfmania, midwunit_state, init_wwfmania, ROT0, "Midway", "WWF: Wrestlemania (rev 1.1 07/11/95)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, wwfmaniap,   wwfmania, wunit_picsim, wwfmania, midwunit_state, init_wwfmania, ROT0, "Midway", "WWF: Wrestlemania (proto 2.01 06/07/95)", MACHINE_SUPPORTS_SAVE )
