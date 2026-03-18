@@ -1566,8 +1566,8 @@ GAME( 2021, sfiii3hc06,     sfiii3,   sfiii3,        cps3,       cps3_state,    
 /*    YEAR  NAME            PARENT    MACHINE        INPUT       CLASS                INIT      MONITOR     COMPANY        FULLNAME FLAGS */
 // Capcom / Not CD
 GAME( 1999, jojobald,       jojoba,    jojoba,        cps3_jojo,  cps3_hbmame,     init_jojoban,  ROT0,      "Capcom",      "JoJo's Bizarre Adventure (Euro 990913, NO CD / VER. OLD)", 0 )
-GAME( 1998, jojotld,        jojo,      jojo,          cps3_jojo,  cps3_hbmame,     init_jojon,    ROT0,      "Capcom",      "JoJo's Venture (Asia 990108, NO CD / OLD)", 0 )
-GAME( 1996, redearld,       redearth,  redeartn,      cps3_ren,   cps3_hbmame,     init_redeartno,ROT0,      "Capcom",      "Red Earth (Asia 961121, NO CD / OLD)", 0 )
+GAME( 1998, jojotld,        jojo,      jojo,          cps3_jojo,  cps3_hbmame,     init_jojon,    ROT0,      "Capcom",      "JoJo's Venture (Asia 990108, NO CD / VER. OLD)", 0 )
+GAME( 1996, redearld,       redearth,  redeartn,      cps3_ren,   cps3_hbmame,     init_redeartno,ROT0,      "Capcom",      "Red Earth (Asia 961121, NO CD / VER. OLD)", 0 )
 GAME( 1997, sfiiild,        sfiii,     sfiii,         cps3,       cps3_hbmame,     init_sfiiin,   ROT0,      "Capcom",      "Street Fighter III: New Generation (Asia 970204, NO CD / VER. OLD)", 0 )
 GAMEL(1997, sfiii2ld,       sfiii2,    sfiii2,        cps3,       cps3_hbmame,     init_sfiii2n,  ROT0,      "Capcom",      "Street Fighter III 2nd Impact: Giant Attack (Asia 970930, NO CD / VER. OLD)", 0, layout_sfiii2 )
 GAME( 1999, sfiii3ld,       sfiii3,    sfiii3,        cps3,       cps3_hbmame,     init_sfiii3n,  ROT0,      "Capcom",      "Street Fighter III 3rd Strike: Fight for the Future (Japan 990608, NO CD / VER. OLD)", 0 )
