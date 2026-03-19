@@ -106,5 +106,5 @@ ROM_END
 
 /*    YEAR    NAME       PARENT   MACHINE  INPUT                INIT      MONITOR   COMPANY       FULLNAME FLAGS */
 /* 1942 Hack */
-GAME( 2015,   1942hc01,  1942,   _1942,    1942, _1942_state, driver_init, ROT270, "hack",        "1942 (With Attract Mode In Free Play)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-GAME( 1984,   1942hc02,  1942,   _1942,    1942, _1942_state, driver_init, ROT270, "hack",        "1942 (Galaga X)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 2015,   1942hc01,  1942,   _1942,    1942, _1942_state, driver_init, ROT270, "hack",        "1942 (With Attract Mode In Free Play)", MACHINE_SUPPORTS_SAVE )
+GAME( 1984,   1942hc02,  1942,   _1942,    1942, _1942_state, driver_init, ROT270, "hack",        "1942 (Galaga X)", MACHINE_SUPPORTS_SAVE )

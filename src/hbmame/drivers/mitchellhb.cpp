@@ -27,5 +27,5 @@ ROM_END
 
 /*    YEAR  NAME      PARENT   MACHINE   INPUT                    INIT    MONITOR    COMPANY      FULLNAME FLAGS */
 /* Mitchell HomeBrew */
-GAME( 1989, mitcdemo,    0,    pang,     pang, mitchell_state, init_pangb,  ROT0, "Charles Doty", "Demo - Mitchell", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1989, mitcdemo,    0,    pang,     pang, mitchell_state, init_pangb,  ROT0, "Charles Doty", "Demo - Mitchell", MACHINE_SUPPORTS_SAVE )
 

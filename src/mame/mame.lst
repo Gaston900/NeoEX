@@ -1676,6 +1676,60 @@ whphc02                         // hack
 whphc03                         // hack
 zintrckbhc01                    // hack
 
+@source:1942.cpp
+1942                            // 12/1984 (c) 1984
+1942a                           // 12/1984 (c) 1984
+1942abl                         // bootleg
+1942b                           // 12/1984 (c) 1984
+1942h                           // hack (Two Bit Score?)
+1942p                           // prototype
+1942w                           // 12/1984 (c) 1984 + Williams Electronics license (c) 1985
+
+@source:1943.cpp
+1943                            // 6/1987 (c) 1987 (Euro)
+1943b                           // bootleg
+1943bj                          // bootleg
+1943j                           // 6/1987 (c) 1987 (Japan) Rev B
+1943ja                          // 6/1987 (c) 1987 (Japan)
+1943jah                         // 6/1987 (c) 1987 (Japan) (as above with protection removed)
+1943kai                         // 6/1988 (c) 1987 (Japan)
+1943mii                         // 6/1988 (c) 1987 (US)
+1943u                           // 6/1987 (c) 1987 (US) Rev C
+1943ua                          // 6/1987 (c) 1987 (US)
+
+@source:bionicc.cpp
+bionicc                         // 3/1987 (c) 1987 (Euro)
+bionicc1                        // 3/1987 (c) 1987 (US)
+bionicc2                        // 3/1987 (c) 1987 (US)
+bioniccbl                       // bootleg
+bioniccbl2                      // bootleg
+topsecrt                        // 3/1987 (c) 1987 (Japan)
+topsecrt2                       // 3/1987 (c) 1987 (Japan)
+
+@source:blktiger.cpp
+blkdrgon                        // 8/1987 (c) 1987 (Japan)
+blkdrgonb                       // bootleg, hacked to say Black Tiger
+blktiger                        // 8/1987 (c) 1987 (US)
+blktigera                       // 8/1987 (c) 1987 (US)
+blktigerb1                      // bootleg
+blktigerb2                      // bootleg
+blktigerb3                      // bootleg?
+
+@source:cbasebal.cpp
+cbasebal                        // 10/1989 (c) 1989 Capcom (Japan) (different hardware)
+
+@source:commando.cpp
+commando                        // 5/1985 (c) 1985 (World)
+commandob                       // bootleg
+commandob2                      // bootleg
+commandob3                      // bootleg
+commandoj                       // 5/1985 (c) 1985 (Japan)
+commandou                       // 5/1985 (c) 1985 + Data East license (US)
+commandou2                      // 5/1985 (c) 1985 + Data East license (US)
+mercenario                      // bootleg
+sinvasn                         // Europe original?
+sinvasnb                        // bootleg
+
 @source:cps1.cpp
 1941                            // 27/02/1990 (c) 1990 (World)
 1941j                           // 2/1990 (c) 1990 (Japan)
@@ -2330,6 +2384,13 @@ sfiiild                         // Capcom
 sfiii2ld                        // Capcom
 sfiii3ld                        // Capcom
 
+@source:egghunt.cpp
+egghunt                         // (c) 1995 Invi Image
+
+@source:exedexes.cpp
+exedexes                        // 2/1985 (c) 1985
+savgbees                        // 2/1985 (c) 1985 + Memetron license
+
 @source:fcrash.cpp
 cawingb2                        // bootleg
 cawingbl                        // bootleg
@@ -2350,6 +2411,173 @@ varthb                          // bootleg
 wofabl                          // bootleg
 wofabla                         // bootleg
 wofr1bl                         // bootleg
+
+@source:gng.cpp
+diamond                         // (c) 1989 KH Video (NOT A CAPCOM GAME but runs on GnG hardware)
+gng                             // 9/1985 (c) 1985
+gnga                            // 9/1985 (c) 1985
+gngbl                           // bootleg
+gngblita                        // bootleg
+gngc                            // 9/1985 (c) 1985
+gngprot                         // Capcom/Romstar Proto
+gngt                            // 9/1985 (c) 1985
+makaimur                        // 9/1985 (c) 1985
+makaimurc                       // 9/1985 (c) 1985
+makaimurg                       // 9/1985 (c) 1985
+
+@source:gunsmoke.cpp
+gunsmoke                        // 11/1985 (c) 1985 (World)
+gunsmokeb                       //
+gunsmokej                       // 11/1985 (c) 1985 (Japan)
+gunsmokeu                       // 11/1985 (c) 1985 + Romstar (US)
+gunsmokeua                      // 11/1985 (c) 1985 (US)
+gunsmokeub                      // 11/1985 (c) 1985 (US)
+gunsmokeg                       //
+
+@source:higemaru.cpp
+higemaru                        // 9/1984 (c) 1984
+
+@source:kenseim.cpp
+kenseim                         // 18/04/1994 (c) 1994 Togo/Sigma (Japan) not listed on Capcom's site
+
+@source:lastduel.cpp
+lastduel                        // 7/1988 (c) 1988 (US)
+lastduelb                       // bootleg
+lastduelj                       // 7/1988 (c) 1988 (Japan)
+lastduelo                       // 7/1988 (c) 1988 (US)
+leds2011                        // 1988 (c) 1988 (World)
+leds2011p                       // 1988 (c) 1988 (US, Prototype)
+leds2011u                       // 1988 (c) 1988 (US)
+ledstorm                        // 1988 (c) 1988 (US)
+madgear                         // 2/1989 (c) 1989 (US)
+madgearj                        // 2/1989 (c) 1989 (Japan)
+
+@source:lwings.cpp
+avengers                        // 2/1987 (c) 1987 (US)
+avengers2                       // 2/1987 (c) 1987 (US)
+buraiken                        // 2/1987 (c) 1987 (Japan)
+buraikenb                       // 2/1987 (c) 1987 (Japan)
+fball                           //
+lwings                          // 11/1986 (c) 1986
+lwings2                         // 11/1986 (c) 1986
+lwingsb                         // 11/1986 (c) 1986 (bootleg)
+lwingsj                         // 11/1986 (c) 1986
+lwingsja                        // 11/1986 (c) 1986
+sectionz                        // 12/1985 (c) 1985
+sectionza                       // 12/1985 (c) 1985
+trojan                          // 4/1986 (c) 1986 (US)
+trojana                         // 4/1986 (c) 1986 (US)
+trojanb                         // bootleg
+trojanj                         // 4/1986 (c) 1986 (Japan)
+trojanr                         // 4/1986 (c) 1986 + Romstar
+
+@source:mitchell.cpp
+7toitsu                         // (c) 1988 Yuga
+bbros                           // (c) 1989 Capcom (US) not listed on Capcom's site
+block                           // 19/12/1991 (c) 1991 Capcom (World) (Joystick version)
+blockbl                         // bootleg
+blockj                          // 10/09/1991 (c) 1991 Capcom (Japan)
+blockr1                         // 06/11/1991 (c) 1991 Capcom (World) (Joystick version)
+blockr2                         // 10/09/1991 (c) 1991 Capcom (World)
+cworld                          // 11/1989 (QUIZ 1) (c) 1989 Capcom
+dokaben                         // 3/1989 (c) 1989 Capcom (Japan)
+dokaben2                        // ?/1989 (c) 1989 Capcom (Japan)
+hatena                          // 28/02/1990 (QUIZ 2) (c) 1990 Capcom (Japan)
+marukin                         // 17/10/1990 (c) 1990 Yuga (Japan)
+mgakuen                         // (c) 1988 Yuga
+mgakuen2                        // (c) 1989 Face
+mstworld                        // (c) 1994
+mstworld2                       // (c) 1994
+pang                            // (c) 1989 Mitchell (World)
+pangb                           // bootleg
+pangb2                          // bootleg
+pangba                          // bootleg
+pangbb                          // bootleg
+pangbc                          // bootleg
+pangbold                        // bootleg
+pangbp                          // bootleg
+pkladies                        // (c) 1989 Mitchell
+pkladiesbl                      // bootleg
+pkladiesbl2                     // bootleg
+pkladiesl                       // (c) 1989 Leprechaun
+pkladiesla                      // (c) 1989 Leprechaun
+pompingw                        // (c) 1989 Mitchell (Japan)
+qsangoku                        // 07/06/1991 (QUIZ 4) (c) 1991 Capcom (Japan)
+qtono1                          // 25/12/1990 (QUIZ 3) (c) 1991 Capcom (Japan)
+sbbros                          // 01/10/1990 (c) 1990 Mitchell + Capcom (US) not listed on Capcom's site
+spang                           // 14/09/1990 (c) 1990 Mitchell (World)
+spangbl                         // bootleg
+spangbl2                        // bootleg
+spangj                          // --/--/1990 (c) 1990 Mitchell (Japan)
+
+@source:sf.cpp
+sf                              // 8/1987 (c) 1987 (US)
+sfan                            // 8/1987 (c) 1987 (World)
+sfj                             // 8/1987 (c) 1987 (Japan)
+sfjan
+sfjbl                           // bootleg
+sfp                             // 8/1987 (c) 1987
+sfua                            // 8/1987 (c) 1987 (US)
+sfw                             // 8/1987 (c) 1987 (World)
+
+@source:sidearms.cpp
+dyger                           // (c) 1989 Philko (NOT A CAPCOM GAME but runs on modified Sidearms hardware)
+dygera                          // (c) 1989 Philko (NOT A CAPCOM GAME but runs on modified Sidearms hardware)
+sidearms                        // 12/1986 (c) 1986 (World)
+sidearmsj                       // 12/1986 (c) 1986 (Japan)
+sidearmsu                       // 12/1986 (c) 1986 + Romstar license (US)
+sidearmsur1                     // 12/1986 (c) 1986 + Romstar license (US)
+turtship                        // (c) 1988 Philko (NOT A CAPCOM GAME but runs on modified Sidearms hardware)
+turtshipj                       // (c) 1988 Philko (NOT A CAPCOM GAME but runs on modified Sidearms hardware)
+turtshipk                       // (c) 1988 Philko (NOT A CAPCOM GAME but runs on modified Sidearms hardware)
+turtshipkn                      // (c) 1989 Philko (NOT A CAPCOM GAME but runs on modified Sidearms hardware)
+turtshipko                      // (c) 1988 Philko (NOT A CAPCOM GAME but runs on modified Sidearms hardware)
+twinfalc                        // (c) 1989 Philko (Poara Enterprises license) (NOT A CAPCOM GAME but runs on modified Sidearms hardware)
+whizz                           // (c) 1989 Philko (NOT A CAPCOM GAME but runs on modified Sidearms hardware)
+
+@source:sonson.cpp
+sonson                          // 7/1984 (c) 1984
+sonsonj                         // 7/1984 (c) 1984 (Japan)
+
+@source:srumbler.cpp
+rushcrsh                        // 9/1986 (c) 1986
+srumbler                        // 9/1986 (c) 1986
+srumbler2                       // 9/1986 (c) 1986
+srumbler3                       // 9/1986 (c) 1986 + Tecfri
+
+@source:supduck.cpp
+supduck                         // (c) Comad
+
+@source:tigeroad.cpp
+bballs                          // (c) 1991 Comad
+bballsa                         // (c) 1991 Comad
+f1dream                         // 4/1988 (c) 1988 + Romstar
+f1dreamb                        // bootleg
+f1dreamba                       // bootleg
+pushman                         // (c) 1990 Comad
+pushmana                        // (c) 1990 Comad
+pushmans                        // (c) 1990 Comad + American Sammy license
+pushmant                        // (c) 1990 Comad + Top Tronic license
+tigeroad                        // 11/1987 (c) 1987 (US)
+tigeroadb                       // bootleg
+tigeroadu                       // 11/1987 (c) 1987 + Romstar (US)
+toramich                        // 11/1987 (c) 1987 (Japan
+
+@source:vulgus.cpp
+mach9                           // bootleg (ITISA)
+vulgus                          // 5/1984 (c) 1984
+vulgusa                         // 5/1984 (c) 1984
+vulgusj                         // 5/1984 (c) 1984
+
+@source:1942.cpp
+1942hc01                        // hack
+1942hc02                        // hack
+
+@source:1943.cpp
+1943kaihc01                     // hack
+
+@source:blktiger.cpp
+blkdrgonhc01                    // hack
 
 @source:cps1.cpp
 3wondrud	                    // Bootleg
@@ -2695,22 +2923,16 @@ sfiii3hc04                      // hack
 sfiii3hc05                      // hack
 sfiii3hc06                      // hack
 
+@source:mitchell.cpp
+mitcdemo                        // HomeBrew
 
+@source:sonson.cpp
+sonsonhc01                      // hack
 
 /***********************************************************
  Synchronized with the current version of HBMAME 0.245.31
     List of all enabled drivers extras in the system.
 **************************************************************/
-
-@source:1942.cpp
-1942                            // Parents
-1942h                           // hack
-1942hc01                        // hack
-1942hc02                        // hack
-
-@source:1943.cpp
-1943kai                         // Parents
-1943kaihc01                     // hack
 
 @source:atarigt.cpp
 primrage                        // Parents
@@ -2742,10 +2964,6 @@ tst_wow3                        // HomeBrew
 @source:asuka.cpp
 asuka                           // Parents
 asukahc01                       // hack
-
-@source:blktiger.cpp
-blktiger                        // Parents
-blkdrgonhc01                    // hack
 
 @source:blockhl.cpp
 blockhl                         // Parents
@@ -3196,9 +3414,6 @@ umk3hc08                        // hack
 umk3hc09                        // hack
 wwfmania                        // Parents
 wwfmaniahc01                    // hack
-
-@source:mitchell.cpp
-mitcdemo                        // HomeBrew
 
 @source:mystwarr.cpp
 mtlchamp                        // Parents
@@ -3687,10 +3902,6 @@ snowbroshc01                    // hack
 @source:solomon.cpp
 solomon                         // Parents
 solomonhc01                     // hack
-
-@source:sonson.cpp
-sonson                          // Parents
-sonsonhc01                      // hack
 
 @source:ssv.cpp
 survarts                        // Parents

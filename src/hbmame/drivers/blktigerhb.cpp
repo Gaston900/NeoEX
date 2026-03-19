@@ -44,4 +44,4 @@ ROM_END
 
 /*    YEAR  NAME            PARENT    MACHINE        INPUT                            INIT    MONITOR   COMPANY         FULLNAME FLAGS */
 /* Blktiger Hack */
-GAME( 1987, blkdrgonhc01,   blktiger, mcu,           blktiger, blktiger_mcu_state, empty_init, ROT0,    "hack",         "Black Dragon (Traduction Korean)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1987, blkdrgonhc01,   blktiger, mcu,           blktiger, blktiger_mcu_state, empty_init, ROT0,    "hack",         "Black Dragon (Traduction Korean)", MACHINE_SUPPORTS_SAVE )
