@@ -500,6 +500,11 @@
 #define IDC_REWIND                      1402
 #define IDC_DRC_CORE                    1403
 #define IDC_BGFX_BACKEND                1407
+
+// 修改的 (缘来是你)
+/********************************************/
+#define IDC_SKIP_CRC_CHECK              1408
+/********************************************/
 #define ID_CONTEXT_SHOW_FOLDER_START    39000
 #define ID_CONTEXT_SHOW_FOLDER_END      39499
 #define ID_SHOW_FOLDER_START            39500
