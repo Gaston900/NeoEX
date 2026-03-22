@@ -1,5 +1,5 @@
 // license:BSD-3-Clause
-// copyright-holders:Chris Kirmse, Mike Haaland, Rene Single, Mamesick
+// For licensing and usage information, read docs/release/winui_license.txt
 
 #include "winui.h"
 #include <fstream>
@@ -1808,16 +1808,19 @@ bool OnIdle(HWND hWnd)
 {
 	static bool bFirstTime = true;
 
-// 修改的 代码来源 (熊猫侠优化版)
-/*****************************/
+// 修改的 代码来源 (EKMAME)
+/*************************/
 	const char *pDescription;
 	const char *pName; 
 
 
-//#ifdef USE_KLIST
+#ifdef USE_KLIST
 	  int		i;
 	  LV_FINDINFO lvfi;
-/****************************/
+#else
+	  int driver_index;
+#endif
+/*************************/
 
 	if (bFirstTime)
 		bFirstTime = false;
@@ -1828,23 +1831,35 @@ bool OnIdle(HWND hWnd)
 		return idle_work;
 	}
 
-// 修改的 代码来源 (熊猫侠优化版)
+// 修改的 代码来源 (EKMAME)
 /*******************************************************************/
-		lvfi.flags = LVFI_STRING;
-		lvfi.psz   = (LPCWSTR)GetDefaultGame();
-		i = ListView_FindItem(hWndList, -1, &lvfi);
-	
-		Picker_SetSelectedPick(hWndList,(i != -1) ? i : 0);
-		i = Picker_GetSelectedItem(hWndList);
+#ifdef USE_KLIST
+	lvfi.flags = LVFI_STRING;
+	lvfi.psz   = (LPCWSTR)GetDefaultGame();
+	i = ListView_FindItem(hWndList, -1, &lvfi);
 
-	  	pDescription = GetDescriptionByIndex(i, GetUsekoreanList());
+	Picker_SetSelectedPick(hWndList,(i != -1) ? i : 0);
+	i = Picker_GetSelectedItem(hWndList);
+#else	
+	driver_index = Picker_GetSelectedItem(hWndList);
+#endif
+
+#ifdef USE_KLIST
+  	pDescription = GetDescriptionByIndex(i, GetUsekoreanList());
+#else
+	pDescription = GetDriverGameTitle(driver_index);
+#endif
 /*******************************************************************/
 
 	SetStatusBarText(0, pDescription);
 
-// 修改的 代码来源 (熊猫侠优化版)
+// 修改的 代码来源 (EKMAME)
 /*******************************************************************/
+	#ifdef USE_KLIST
 	pName = GetGameNameByIndex(i, GetUsekoreanList());
+#else
+	pName = GetDriverGameName(driver_index);
+#endif
 /*******************************************************************/
 	SetStatusBarText(1, pName);
 	idle_work = false;
@@ -3990,7 +4005,6 @@ void GamePicker_EnteringItem(HWND hwndPicker, int nItem)
 
 	// decide if it is valid to load a savestate
 	EnableMenuItem(GetMenu(hMain), ID_FILE_LOADSTATE, (driver_list::driver(nItem).flags & MACHINE_SUPPORTS_SAVE) ? MFS_ENABLED : MFS_GRAYED);
-
 }
 
 int GamePicker_FindItemParent(HWND hwndPicker, int nItem)

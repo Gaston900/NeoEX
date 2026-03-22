@@ -150,6 +150,7 @@ void menu_cheat::populate(float &customtop, float &custombottom)
 	// add the autofire menu
 	item_append(_("Autofire Settings"), "", 0, (void *)ITEMREF_CHEATS_AUTOFIRE_SETTINGS);
 /****************************************************************************************/
+
 	/* add a separator */
 	item_append(menu_item_type::SEPARATOR);
 
@@ -168,9 +169,12 @@ void menu_cheat::populate(float &customtop, float &custombottom)
 		/* add a separator */
 		item_append(menu_item_type::SEPARATOR);
 
+// 修改的 代码来源 (EKMAME)
+/*************************************************************************/
 		/* add a set all option */
 		item_append(_("Set All"), "", 0, (void *)ITEMREF_CHEATS_SET_ALL);
-		
+/*************************************************************************/
+
 		/* add a reset all option */
 		item_append(_("Reset All"), 0, (void *)ITEMREF_CHEATS_RESET_ALL);
 
