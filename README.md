@@ -9,6 +9,11 @@ I am only supporting the operating systems 64x bits, Windows 7, Windows 8, Windo
 
 What has been optimized in this version?
 ---------------------------------------
+This command will help us have much easier access to the settings:
+
+* To enter the BIOS, press the "0" key.
+* To play in windowed mode, press the "Spacebar" key.
+* To accelerate the game by 3x, press the "Backspace" key.
 
 Players 1 and 2 use this controller by default:
 
@@ -27,11 +32,13 @@ Removed warning screen, startups, Loading, Decryption screen texts.
 
 Removed the following annoying messages: “WRONG LENGTH”, “NO_DUMP”, “WRONG CHECKSUMS”, “BAD_DUMP” And “THE PARENT FILE DOES NOT EXIST”.
 
+Support reading IPS (By Eziochiu)
+
 Added movement optimization V.4 for all fighting games (By GSC2007).
 
 The Arcade64 "GUI" EKMAME source code has been implemented (By KAZE).
 
-It is already pre-configured, enforce aspect ratio is disabled, full screen mode and tricks are already enabled by default.
+It is already pre-configured, video mode OpenGl, enforce aspect ratio is disabled, full screen mode and tricks are already enabled by default.
 
 The cheat reference function, if the cloned game does not have a cheat file, it will reference the cheat file of the main ROM.
 
@@ -56,11 +63,11 @@ How to compile
 --------------
 In order to compile this version we will need the source code, for this we will locate it in the folder docs / Source Code [HBMame] / hbmame-tag232.7z. 001, once located we will begin to unzip the files, it will take a few minutes, once unzipped we will have a folder with the name hbmame-tag245.7z, we will rename it to “src”, Now we will get the latest source code of this Github container once downloaded we will begin to unzip and once finished unzipping we will select the files that we had left in the folder “scripts, src and makefile” we will copy them into the src folder, the system will ask us to replace it we will say yes.
 
-And we will apply this command to start the compilation, this command is for Windows 64-Bit system:
+And we will apply this command to start the compilation:
 ```
 make PTR64=1 SUBTARGET=arcade OSD=winui NOWERROR=1 STRIP_SYMBOLS=1
 ```
-The compilation [TOOL](https://github.com/mamedev/buildtools/releases) is suggested to be version msys64 2022-01-11.
+The compilation [TOOL](https://github.com/mamedev/buildtools/releases) is suggested to be version 7.0 msys64 (Jan 11, 2022).
 
 Open Source Software Projects
 ------------------------------
