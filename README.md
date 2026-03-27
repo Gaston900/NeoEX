@@ -44,6 +44,10 @@ The cheat reference function, if the cloned game does not have a cheat file, it 
 
 Supports game list language files and multilingual title display (By 缘来是你).
 
+Supports enabling multiple IPS patches simultaneously (By 缘来是你).
+
+Supports reading IPS subdirectories (By 缘来是你).
+
 Supports Skip CRC/IPS Check (By 缘来是你).
 
 NEOGEO, driver supports key combination settings (By KAZE).
