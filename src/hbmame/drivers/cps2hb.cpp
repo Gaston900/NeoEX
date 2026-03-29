@@ -1,4 +1,4 @@
-// Proyecto Shadows Arcade Classic+
+// NeoEX
 // copyright-holders:Gaston90
 
 #include "sound/samples.h" //Zero800
