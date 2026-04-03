@@ -684,7 +684,7 @@ struct PatchInfo
 {
 	std::string filename;
 	std::string title;
-	std::string desc;      
+	std::string desc;
 	std::string category;    
 	std::string image_path;  
 };
