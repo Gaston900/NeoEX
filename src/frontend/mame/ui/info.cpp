@@ -14,8 +14,6 @@
 #include "ui/systemlist.h"
 #include "ui/ui.h"
 
-#include "infoxml.h"
-
 #include "drivenum.h"
 #include "emuopts.h"
 #include "romload.h"
