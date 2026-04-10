@@ -1,5 +1,5 @@
 // license:BSD-3-Clause
-// copyright-holders:Chris Kirmse, Mike Haaland, Ren� Single, Mamesick
+// For licensing and usage information, read docs/release/winui_license.txt
 
 #ifndef WINUI_H
 #define WINUI_H
@@ -70,6 +70,13 @@
 #include "dxdecode.h" 
 #include "screenshot.h"
 
+// 修改的 代码来源 (缘来是你)
+//============================>>>
+//导出 XML
+#include <string>
+#include <vector>
+//============================>>>
+
 #ifndef TVS_EX_DOUBLEBUFFER
 #define TVS_EX_DOUBLEBUFFER		0x0004
 #endif
@@ -96,6 +103,8 @@
 #define COLOR_WHITE			RGB(255, 255, 255)
 
 #define MM_PLAY_GAME		(WM_APP + 15000)
+
+#define WM_DPICHANGED       0x02E0
 
 #define JOYGUI_MS 			100
 
@@ -133,7 +142,7 @@
 #define MIN_VIEW_WIDTH		10
 
 #define NUM_TOOLBUTTONS     std::size(tbb)
-#define NUM_TOOLTIPS		(16) // Modified Code Source (EKMAME)
+#define NUM_TOOLTIPS		(16) // 修改的 代码来源 (EKMAME)
 
 enum
 {
@@ -189,16 +198,23 @@ void UpdateListView(void);
 int GetMinimumScreenShotWindowWidth(void);
 // we maintain an array of drivers sorted by name, useful all around
 int GetParentIndex(const game_driver *driver);
+
+// 修改的 代码来源 (EKMAME)
+/***********************************************/
+const char *funcGetParentName(const char *name);
+/***********************************************/
+
 int GetParentRomSetIndex(const game_driver *driver);
 // sets text in part of the status bar on the main window
 void SetStatusBarText(int part_index, const char *message);
 void SetStatusBarTextF(int part_index, const char *fmt, ...);
 const char * GetSearchText(void);
 
-// Modified Code Source (EKMAME)
+// 修改的 代码来源 (EKMAME)
 /***********************************************************/
 char *GetGameNameByIndex(int nIndex, bool bUse);
 char *GetDescriptionByIndex(int nIndex, bool bUse);
+const char* GetGameChineseDescription(const char* driver_name);	
 char *GetGameManufactureByIndex(int nIndex, bool bUse);
 
 int GetNumGames(void);
