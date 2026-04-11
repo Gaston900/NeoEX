@@ -38,9 +38,11 @@ Added movement optimization V.4 for all fighting games (By GSC2007).
 
 The Arcade64 "GUI" EKMAME source code has been implemented (By KAZE).
 
-It is already pre-configured, video mode OpenGl, enforce aspect ratio is disabled, full screen mode and tricks are already enabled by default.
+It is already pre-configured, enforce aspect ratio is disabled, full screen mode and tricks are already enabled by default.
 
-The cheat reference function, if the cloned game does not have a cheat file, it will reference the cheat file of the main ROM. (By KAZE).
+The cheat reference function, if the cloned game does not have a cheat file, it will reference the cheat file of the main ROM (By KAZE).
+
+Optimization of the "CPS1" system: adaptation of the MAME PLUS code (By 缘来是你).
 
 Supports UI DPI (The resolution 1920 x 1080 / 2560 x 1600) (By 缘来是你).
 
