@@ -2475,4 +2475,4 @@ bool GetFastRomAudit(void)
 {
 	return winui_opts.bool_value(MUIOPTION_FAST_ROM_AUDIT);
 }
-//========================================================>>>												 
+//========================================================>>>

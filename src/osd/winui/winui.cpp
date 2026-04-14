@@ -4466,7 +4466,7 @@ const wchar_t *GamePicker_GetItemString(HWND hwndPicker, int nItem, int nColumn,
 			utf8_s = GetDescriptionByIndex(nItem, GetUsekoreanList());
 /*************************************************************************/
 			break;
-																				
+
 		case COLUMN_ROMNAME:
 			/* Driver name (directory) */
 			utf8_s = GetDriverGameName(nItem);

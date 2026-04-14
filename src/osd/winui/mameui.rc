@@ -164,7 +164,7 @@ BEGIN
 	    MENUITEM "Delete the selected ROM file\tDel",                   ID_CONTEXT_DELETE_SELECTED_ROMS
         MENUITEM SEPARATOR
         MENUITEM "Select All\tCtrl+A",                     ID_CONTEXT_SELECT_ALL
-        MENUITEM "Cancel all\tCtrl+Z",                 ID_CONTEXT_SELECT_NONE
+        MENUITEM "Cancel all\tCtrl+Z",                    ID_CONTEXT_SELECT_NONE
         MENUITEM SEPARATOR
 /*********************************************************************************************/
         MENUITEM "Information\tAlt+I",                    ID_GAME_INFO
