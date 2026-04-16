@@ -151,7 +151,7 @@ files {
 	MAME_DIR .. "src/mame/video/exedexes.cpp",
 	MAME_DIR .. "src/hbmame/drivers/fcrash.cpp",
 --	MAME_DIR .. "src/hbmame/includes/fcrash.h",
-	MAME_DIR .. "src/mame/drivers/gng.cpp",
+	MAME_DIR .. "src/hbmame/drivers/gng.cpp",
 	MAME_DIR .. "src/mame/drivers/gunsmoke.cpp",
 	MAME_DIR .. "src/mame/drivers/higemaru.cpp",
 	MAME_DIR .. "src/mame/includes/higemaru.h",
