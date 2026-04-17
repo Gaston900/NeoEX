@@ -4624,7 +4624,7 @@ GAME( 2024, captcommhc12, captcomm, cps1_2XCLOCK,   captcomm, cps_state,   init_
 GAME( 2023, captcommhc13, captcomm, cps1_10MHz,     captcomm, cps_state,   init_cps1,     ROT0,   "hack",      "Captain Commando (Readjusted v1.2)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, captcommhc14, captcomm, cps1_10MHz,     captcomm, cps_state,   init_cps1,     ROT0,   "DDJ",       "Captain Commando (Change Weapon)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, captcommhc15, captcomm, cps1_10MHz,     captcomm, cps_state,   init_cps1,     ROT0,   "DDJ",       "Captain Commando (Stage Select)", MACHINE_SUPPORTS_SAVE )
-GAME( 1991, captcommhc16, captcomm, cps1_10MHz,     captcomm, cps_state,   init_cps1,     ROT0,   "DDJ",       "Captain Commando (Summon Mount)", MACHINE_SUPPORTS_SAVE )
+GAME( 1991, captcommhc16, captcomm, cps1_10MHz,     captcomm, cps_state,   init_cps1,     ROT0,   "DDJ",       "Captain Commando (War Chariot)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, captcommhc17, captcomm, cps1_10MHz,     captcomm, cps_state,   init_cps1,     ROT0,   "hack",      "Captain Commando (Korean Translation)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, captcommhc18, captcomm, cps1_10MHz,     captcomm, cps_state,   init_cps1,     ROT0,   "hack",      "Captain Commando (Chinese Translation)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, captcommhc19, captcomm, cps1_10MHz,     captcomm, cps_state,   init_cps1,     ROT0,   "GOTVG",     "Captain Commando (Nostalgic Sunny Day 2025-10-08)", MACHINE_SUPPORTS_SAVE )
