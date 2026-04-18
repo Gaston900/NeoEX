@@ -170,6 +170,7 @@ struct _play_options
 	const char *mngwrite;		// OPTION_MNGWRITE
 	const char *aviwrite;		// OPTION_AVIWRITE
 };
+
 // 缘来是你
 //============= USE_CLIST ===============>>>
 #define TSVNAME "Arcade_List.lst"
@@ -2001,7 +2002,7 @@ bool OnIdle(HWND hWnd)
   	pDescription = GetDescriptionByIndex(i, GetUsekoreanList());
 #else
 	pDescription = GetDriverGameTitle(driver_index);
- #endif
+#endif
 	SetStatusBarText(0, pDescription);
 
 #ifdef USE_KLIST
@@ -2328,7 +2329,6 @@ static void InitMenuIcons(void)
 	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_KLIST));
 	hklist = CreateBitmapTransparent(hTemp);
 //===================================================================>>>
-
 }
 
 static void CopyToolTipText(LPTOOLTIPTEXT lpttt)
@@ -4668,7 +4668,6 @@ static void ReloadIcons(void)
 		DestroyIcon(hIcon);
 	}
 }
-/********************************************************************************************************/
 
 // create iconlist for Listview control
 static void CreateIcons(void)

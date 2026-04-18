@@ -4078,7 +4078,7 @@ static void IPSSelectionChange(HWND hDlg, HWND hWndCtrl)
 		winui_set_window_text_utf8(GetDlgItem(hDlg, IDC_IPS_DESC), "");
 	}
 }
-/**************************************************/
+/*************************************************************************************************************/
 
 static void InitializeBIOSUI(HWND hWnd)
 {
