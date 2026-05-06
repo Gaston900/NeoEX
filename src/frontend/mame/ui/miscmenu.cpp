@@ -776,8 +776,6 @@ void menu_custom_button::handle(event const *ev)
 		reset (reset_options::REMEMBER_REF);
 }
 
-// 修改的 代码来源 (EKMAME)
-/****************************************************************************************************************************/
 #define AUTOFIRE_ITEM_P1_DELAY 1
 /*-------------------------------------------------
     menu_custom_setting - handle the autofire settings
@@ -859,7 +857,6 @@ void menu_custom_setting::handle(event const *ev)
 	if (changed)
 		reset(reset_options::REMEMBER_REF);
 }
-
 
 /*-------------------------------------------------
     menu_custom_setting_populate - populate the autofire

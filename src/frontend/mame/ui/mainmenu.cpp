@@ -124,7 +124,6 @@ void menu_main::menu_activated()
 
 void menu_main::populate(float &customtop, float &custombottom)
 {
-
 	m_phase = machine().phase();
 
 	item_append(_("menu-main", "Input Settings"), 0, (void *)INPUT_OPTIONS);
@@ -149,7 +148,7 @@ void menu_main::populate(float &customtop, float &custombottom)
 
 	item_append(_("menu-main", "Custom Buttons Setting"), 0, (void *)CUSTOM_BUTTON_SETTING);
 
-	item_append(_("menu-main", "Custom Buttons"), 0, (void *)CUSTOM_BUTTON);
+	item_append(_("menu-main", "Enable Custom Buttons"), 0, (void *)CUSTOM_BUTTON);
 /*******************************************************************************/
 
 	if (ui().found_machine_warnings())
