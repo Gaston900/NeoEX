@@ -1758,6 +1758,7 @@ sinvasn                         // Europe original?
 sinvasnb                        // bootleg
 
 @source:cps1.cpp
+cps1mult                        //
 1941                            // 27/02/1990 (c) 1990 (World)
 1941j                           // 2/1990 (c) 1990 (Japan)
 1941r1                          // 2/1990 (c) 1990 (World)
@@ -1822,7 +1823,7 @@ ganbare                         // 11/04/2000 (c) 2000 (Japan)
 ghouls                          // 12/1988 (c) 1988 (World)
 ghoulsu                         // 12/1988 (c) 1988 (USA)
 gulunpa                         //
-hkittymp                        // 12/07/1996 (c) 1996 (Japan)
+mpumpkin                        // 12/07/1996 (c) 1996 (Japan)
 knights                         // 27/11/1991 (c) 1991 (World)
 knightsb2                       // bootleg
 knightsj                        // 27/11/1991 (c) 1991 (Japan)
@@ -2340,6 +2341,7 @@ dimahoud                        //
 dstlk                           // 05/07/1994 (c) 1994 (Euro)
 dstlka                          // 05/07/1994 (c) 1994 (Asia)
 dstlkh                          // 18/08/1994 (c) 1994 (Hispanic)
+dstlkb                          //
 dstlku                          // 18/08/1994 (c) 1994 (USA)
 dstlku1d                        //
 dstlkur1                        // 05/07/1994 (c) 1994 (USA)
@@ -2609,7 +2611,6 @@ dstlkhc01                       // hack
 dstlkhc02                       // hack
 ffightaec2                      // hack
 ffightaec2ds                    // hack
-gigawinghc01                    // hack
 hsf2hc01                        // hack
 hsf2hc02                        // hack
 hsf2hc03                        // hack

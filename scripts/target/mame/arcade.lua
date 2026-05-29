@@ -63,6 +63,7 @@ MACHINES["TTL74259"] = true -- SONSON
 -- specify available bus cores
 --------------------------------------------------
 BUSES["NSCSI"] = true -- CPS3
+BUSES["NEOGEO_CTRL"] = true -- NEOGEO
 
 --------------------------------------------------
 -- this is the list of driver libraries that
@@ -193,12 +194,6 @@ files {
 	MAME_DIR .. "src/hbmame/machine/ng_memcard.cpp",
 	MAME_DIR .. "src/hbmame/bus/neogeo/prot.cpp",
 	MAME_DIR .. "src/hbmame/bus/neogeo/banked_cart.cpp",
-	MAME_DIR .. "src/hbmame/bus/neogeo_ctrl/ctrl.cpp",
-	MAME_DIR .. "src/hbmame/bus/neogeo_ctrl/joystick.cpp",
-	MAME_DIR .. "src/hbmame/bus/neogeo_ctrl/mahjong.cpp",
-	MAME_DIR .. "src/hbmame/bus/neogeo_ctrl/dial.cpp",
-	MAME_DIR .. "src/hbmame/bus/neogeo_ctrl/irrmaze.cpp",
-	MAME_DIR .. "src/hbmame/bus/neogeo_ctrl/kizuna4p.cpp",
 }
 
 end
