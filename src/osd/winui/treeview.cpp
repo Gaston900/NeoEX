@@ -2622,6 +2622,7 @@ void CreateNEOGEOFolders(int parent_index)
 		if (!strcmp("baddudesn", s))		        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("bbb2", s))		    	        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("beast", s))			        AddGame(lpNeoGeoHB, jj);
+		if (!strcmp("blueandr", s))			        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("bpanicdx", s))			        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("bonusstage", s))			    AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("cabalng", s))			        AddGame(lpNeoGeoHB, jj);
