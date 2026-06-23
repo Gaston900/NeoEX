@@ -160,6 +160,7 @@ static const TREEICON treeIconNames[] =
 /**********************************************/
 	{ IDI_FP_NEOGEO,       "fp-neogeo" },
     { IDI_FP_CAPCOM,	   "fp-cps"},
+	{ IDI_FOLDER,          "fp_folder" },
 /**********************************************/
 	{ IDI_FP_STEREO,       "fp-stereo" },
 	{ IDI_FP_TRACKBALL,    "fp-track" },
