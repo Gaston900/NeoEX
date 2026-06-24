@@ -220,7 +220,7 @@ void mame_machine_manager::start_luaengine()
 		{
 			plugin_options::plugin *p = m_plugins->find(excl);
 			if (!p)
-				fatalerror("Fatal error: Unknown plugin: %s\n", excl);	   
+				fatalerror("Fatal error: Unknown plugin: %s\n", excl);
 			p->m_start = false;
 		}
 	}
