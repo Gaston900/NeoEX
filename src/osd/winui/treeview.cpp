@@ -2262,6 +2262,7 @@ void CreateNEOGEOFolders(int parent_index)
 		if (!strcmp("kf2k3bladd", s))	            AddGame(lpNeoGeoDS, jj);
 		if (!strcmp("kf2k3upldd", s))	            AddGame(lpNeoGeoDS, jj);
 		if (!strcmp("kf2k3pldd", s))	            AddGame(lpNeoGeoDS, jj);
+		if (!strcmp("kf2k3pcbdd", s))	            AddGame(lpNeoGeoDS, jj);
 		if (!strcmp("kizunadd", s))		            AddGame(lpNeoGeoDS, jj);
 		if (!strcmp("kof2000dd", s))			    AddGame(lpNeoGeoDS, jj);
 		if (!strcmp("kof2000ndd", s))		   	    AddGame(lpNeoGeoDS, jj);
@@ -3164,6 +3165,7 @@ void CreateNEOGEOFolders(int parent_index)
 		if (!strcmp("kf2k3blands", s))			    AddGame(lpNeoSD, jj);
 		if (!strcmp("kf2k3uplnds", s))			    AddGame(lpNeoSD, jj);
 		if (!strcmp("kf2k3plnds", s))			    AddGame(lpNeoSD, jj);
+		if (!strcmp("kf2k3pcbnds", s))			    AddGame(lpNeoSD, jj);
 		if (!strcmp("kizunands", s))		        AddGame(lpNeoSD, jj);
 		if (!strcmp("kof2000nds", s))			    AddGame(lpNeoSD, jj);
 		if (!strcmp("kof2000nnds", s))			    AddGame(lpNeoSD, jj);
