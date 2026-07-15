@@ -2650,6 +2650,7 @@ void CreateNEOGEOFolders(int parent_index)
 		if (!strcmp("240ptest", s))			        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("4play", s))			        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("abyssal", s))			        AddGame(lpNeoGeoHB, jj);
+		if (!strcmp("adkw", s))			            AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("amazonn", s))			        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("badapple", s))			        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("baddudesn", s))		        AddGame(lpNeoGeoHB, jj);
@@ -2677,6 +2678,7 @@ void CreateNEOGEOFolders(int parent_index)
 		if (!strcmp("foodfn", s))			        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("galaxiann", s))		        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("gladmort", s))			        AddGame(lpNeoGeoHB, jj);
+		if (!strcmp("gladmortcm", s))		        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("goldaxen", s))		            AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("gxg", s))		                AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("horekidb3", s))	            AddGame(lpNeoGeoHB, jj);
