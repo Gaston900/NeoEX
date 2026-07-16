@@ -2700,6 +2700,7 @@ void CreateNEOGEOFolders(int parent_index)
 		if (!strcmp("mslug3x", s))			        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("nblktiger", s))			    AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("knacki", s))			        AddGame(lpNeoGeoHB, jj);
+		if (!strcmp("midnight", s))			        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("ndo_a_td", s))			        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("neo2500", s))			        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("neo2048", s))			        AddGame(lpNeoGeoHB, jj);
