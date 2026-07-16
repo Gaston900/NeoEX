@@ -2680,7 +2680,9 @@ void CreateNEOGEOFolders(int parent_index)
 		if (!strcmp("gladmort", s))			        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("gladmortcm", s))		        AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("goldaxen", s))		            AddGame(lpNeoGeoHB, jj);
+		if (!strcmp("grime", s))		            AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("gxg", s))		                AddGame(lpNeoGeoHB, jj);
+		if (!strcmp("halozero", s))	                AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("horekidb3", s))	            AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("hypernoid", s))			    AddGame(lpNeoGeoHB, jj);
 		if (!strcmp("igla", s))			            AddGame(lpNeoGeoHB, jj);
