@@ -214,10 +214,7 @@ void menu_main::populate(float &customtop, float &custombottom)
 	else
 		item_append(_("menu-main", "Remove From Favorites"), 0, (void *)REMOVE_FAVORITE);
 
-//	item_append(menu_item_type::SEPARATOR);
-
 //	item_append(_("Quit from Machine"), "", 0, (void *)QUIT_GAME);
-//	item_append(string_format(_("menu-main", "About %1$s"), emulator_info::get_appname()), 0, (void *)ABOUT);
 
 	item_append(menu_item_type::SEPARATOR);
 
@@ -232,6 +229,10 @@ void menu_main::populate(float &customtop, float &custombottom)
 		item_append(_("menu-main", "Select New System"), 0, (void *)SELECT_GAME);
 		item_append(_("menu-main", "Close Menu"), 0, (void *)DISMISS);
 	}
+
+	item_append(menu_item_type::SEPARATOR);
+
+	item_append(string_format(_("menu-main", "About %1$s"), emulator_info::get_appname()), 0, (void *)ABOUT);
 /***************************************************************************************************************/
 }
 
