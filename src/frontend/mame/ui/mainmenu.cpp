@@ -230,9 +230,9 @@ void menu_main::populate(float &customtop, float &custombottom)
 		item_append(_("menu-main", "Close Menu"), 0, (void *)DISMISS);
 	}
 
-	item_append(menu_item_type::SEPARATOR);
+//	item_append(menu_item_type::SEPARATOR);
 
-	item_append(string_format(_("menu-main", "About %1$s"), emulator_info::get_appname()), 0, (void *)ABOUT);
+//	item_append(string_format(_("menu-main", "About %1$s"), emulator_info::get_appname()), 0, (void *)ABOUT);
 /***************************************************************************************************************/
 }
 
