@@ -2730,6 +2730,7 @@ redearthnr1                     //
 redearthr1                      //
 sfiii                           //
 sfiii2                          //
+sfiii2a                         //
 sfiii2h                         //
 sfiii2j                         //
 sfiii2n                         //
@@ -2751,14 +2752,6 @@ sfiiina                         //
 sfiiiu                          //
 warzard                         //
 warzardr1                       //
-
-@source:cps3.cpp
-jojobald                        // Capcom
-jojotld                         // Capcom
-redearld                        // Capcom
-sfiiild                         // Capcom
-sfiii2ld                        // Capcom
-sfiii3ld                        // Capcom
 
 @source:cps3.cpp
 jojobahc01                      // hack
