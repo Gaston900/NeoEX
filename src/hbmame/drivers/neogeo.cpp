@@ -75,6 +75,7 @@
 #include "softlist_dev.h"
 #include "neogeo.lh"
 
+#include "speaker.h"
 
 #define LOG_VIDEO_SYSTEM         (0)
 #define LOG_MAIN_CPU_BANKING     (0)
@@ -254,7 +255,7 @@ u16 neogeo_state::in1_r()
 	return ((m_edge->in1_r() & m_ctrl2->read_ctrl()) << 8) | 0xff;
 }
 
-CUSTOM_INPUT_MEMBER(neogeo_state::kizuna4p_start_r)
+ioport_value neogeo_state::kizuna4p_start_r()
 {
 	return (m_edge->read_start_sel() & 0x05) | ~0x05;
 }
@@ -356,7 +357,7 @@ void neogeo_state::save_ram_w(offs_t offset, u16 data, u16 mem_mask)
  *
  *************************************/
 
-CUSTOM_INPUT_MEMBER(neogeo_state::get_memcard_status)
+ioport_value neogeo_state::get_memcard_status()
 {
 	// D0 and D1 are memcard 1 and 2 presence indicators, D2 indicates memcard
 	// write protect status (we are always write enabled)
@@ -404,7 +405,7 @@ void neogeo_state::audio_command_w(u8 data)
 	audio_cpu_check_nmi();
 
 	/* boost the interleave to let the audio CPU read the command */
-	machine().scheduler().boost_interleave(attotime::zero, attotime::from_usec(50));
+	machine().scheduler().perfect_quantum(attotime::from_usec(50));
 }
 
 
@@ -419,7 +420,7 @@ u8 neogeo_state::audio_command_r()
 }
 
 
-CUSTOM_INPUT_MEMBER(neogeo_state::get_audio_result)
+ioport_value neogeo_state::get_audio_result()
 {
 	u8 ret = m_soundlatch2->read();
 
@@ -641,7 +642,6 @@ void neogeo_state::neogeo_postload()
 
 void neogeo_state::machine_start()
 {
-	m_out_digit.resolve();
 	m_type = NEOGEO_MVS;
 
 	/* set the initial main CPU bank */
@@ -869,7 +869,7 @@ INPUT_PORTS_START( neogeo )
 	PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("Next Game") PORT_CODE(KEYCODE_3)
 	PORT_BIT( 0x0400, IP_ACTIVE_LOW, IPT_START2 )
 	PORT_BIT( 0x0800, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("Previous Game") PORT_CODE(KEYCODE_4)
-	PORT_BIT( 0x7000, IP_ACTIVE_HIGH, IPT_CUSTOM ) PORT_CUSTOM_MEMBER(neogeo_state, get_memcard_status)
+	PORT_BIT( 0x7000, IP_ACTIVE_HIGH, IPT_CUSTOM ) PORT_CUSTOM_MEMBER(FUNC(neogeo_state::get_memcard_status))
 	PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_CUSTOM ) /* Hardware type (AES=0, MVS=1). Some games check this and show a piracy warning screen if the hardware and BIOS don't match */
 
 	PORT_START("AUDIO_COIN")
@@ -879,9 +879,9 @@ INPUT_PORTS_START( neogeo )
 	PORT_BIT( 0x0008, IP_ACTIVE_LOW, IPT_COIN3 ) /* What is this? "us-e" BIOS uses it as a coin input; Universe BIOS uses it to detect MVS or AES hardware */
 	PORT_BIT( 0x0010, IP_ACTIVE_LOW, IPT_COIN4 ) /* What is this? "us-e" BIOS uses it as a coin input; Universe BIOS uses it to detect MVS or AES hardware */
 	PORT_BIT( 0x0020, IP_ACTIVE_LOW, IPT_CUSTOM ) /* what is this? When ACTIVE_HIGH + IN4 bit 6 ACTIVE_LOW MVS-4 slot is detected */
-	PORT_BIT( 0x0040, IP_ACTIVE_HIGH, IPT_CUSTOM ) PORT_READ_LINE_DEVICE_MEMBER("upd4990a", upd1990a_device, tp_r)
-	PORT_BIT( 0x0080, IP_ACTIVE_HIGH, IPT_CUSTOM ) PORT_READ_LINE_DEVICE_MEMBER("upd4990a", upd1990a_device, data_out_r)
-	PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_CUSTOM ) PORT_CUSTOM_MEMBER(neogeo_state,get_audio_result)
+	PORT_BIT( 0x0040, IP_ACTIVE_HIGH, IPT_CUSTOM ) PORT_READ_LINE_DEVICE_MEMBER("upd4990a", FUNC(upd1990a_device::tp_r))
+	PORT_BIT( 0x0080, IP_ACTIVE_HIGH, IPT_CUSTOM ) PORT_READ_LINE_DEVICE_MEMBER("upd4990a", FUNC(upd1990a_device::data_out_r))
+	PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_CUSTOM ) PORT_CUSTOM_MEMBER(FUNC(neogeo_state::get_audio_result))
 
 	PORT_START("TEST")
 	PORT_BIT( 0x003f, IP_ACTIVE_HIGH, IPT_UNUSED )
@@ -961,18 +961,17 @@ void neogeo_state::neogeo_base(machine_config &config)
 	NEOGEO_SPRITE(config, m_sprgen, 0).set_screen(m_screen);
 
 	/* audio hardware */
-	SPEAKER(config, "lspeaker").front_left();
-	SPEAKER(config, "rspeaker").front_right();
+    SPEAKER(config, "speaker", 2).front();
 
 	GENERIC_LATCH_8(config, m_soundlatch);
 	GENERIC_LATCH_8(config, m_soundlatch2);
 
 	YM2610(config, m_ym, NEOGEO_YM2610_CLOCK);
 	m_ym->irq_handler().set_inputline(m_audiocpu, 0);
-	m_ym->add_route(0, "lspeaker", 0.28);
-	m_ym->add_route(0, "rspeaker", 0.28);
-	m_ym->add_route(1, "lspeaker", 0.98);
-	m_ym->add_route(2, "rspeaker", 0.98);
+	m_ym->add_route(0, "speaker", 0.84, 0);
+	m_ym->add_route(0, "speaker", 0.84, 1);
+	m_ym->add_route(1, "speaker", 0.98, 0);
+	m_ym->add_route(2, "speaker", 0.98, 1);
 	NEOGEO_BANKED_CART(config, "banked_cart");
 }
 
@@ -1130,10 +1129,8 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 {
 	if (image.length() < 0x60000)
 	{
-		image.seterror(image_error::INVALIDIMAGE, "File too short");
 		printf("File too short\n");
-		image.message("File too short");
-		return image_init_result::FAIL;
+		return std::make_pair(image_error::INVALIDLENGTH, "File too short");
 	}
 
 	// check header
@@ -1145,10 +1142,8 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 	}
 	else
 	{
-		image.seterror(image_error::INVALIDIMAGE, "NEO header missing");
 		printf("NEO header missing\n");
-		image.message("NEO header missing");
-		return image_init_result::FAIL;
+		return std::make_pair(image_error::UNSPECIFIED, "NEO header missing");
 	}
 
 	// Get file sizes
@@ -1163,60 +1158,46 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 	u64 total = 0x1000 + psize + ssize + msize + vsize + v2size + csize;
 	if (total > image.length())
 	{
-		image.seterror(image_error::INVALIDIMAGE, "File is corrupt");
 		printf("File is corrupt.\n");
-		image.message("File is corrupt");
-		return image_init_result::FAIL;
+		return std::make_pair(image_error::UNSPECIFIED, "File is corrupt");
 	}
 
 	// Make sure regions are big enough
 	if (psize > cpuregion_size)
 	{
-		image.seterror(image_error::INVALIDIMAGE, "CPU region in NEO file is larger than supported");
 		printf("CPU size requested (%08X) is greater than available (%08X)\n",psize,cpuregion_size);
-		image.message("CPU region in NEO file is larger than supported");
-		return image_init_result::FAIL;
+		return std::make_pair(image_error::UNSPECIFIED, "CPU region in NEO file is larger than supported");
 	}
 
 	if (ssize > fix_region_size)
 	{
-		image.seterror(image_error::INVALIDIMAGE, "FIX region in NEO file is larger than supported");
 		printf("FIX size requested (%08X) is greater than available (%08X)\n",ssize,fix_region_size);
-		image.message("FIX region in NEO file is larger than supported");
-		return image_init_result::FAIL;
+		return std::make_pair(image_error::UNSPECIFIED, "FIX region in NEO file is larger than supported");
 	}
 
 	if (vsize > ym_region_size)
 	{
-		image.seterror(image_error::INVALIDIMAGE, "ADPCMA region in NEO file is larger than supported");
 		printf("ADPCMA size requested (%08X) is greater than available (%08X)\n",vsize,ym_region_size);
-		image.message("ADPCMA region in NEO file is larger than supported");
-		return image_init_result::FAIL;
+		return std::make_pair(image_error::UNSPECIFIED, "ADPCMA region in NEO file is larger than supported");
 	}
 
 	u32 ym2_region_size = memregion("ymsnd:adpcmb")->bytes();
 	if ((v2size > ym2_region_size) || (ym_region_size > ym2_region_size))
 	{
-		image.seterror(image_error::INVALIDIMAGE, "ADPCMB region in NEO file is larger than supported");
 		printf("ADPCMB size requested (%08X) is greater than available (%08X)\n",v2size,ym2_region_size);
-		image.message("ADPCMB region in NEO file is larger than supported");
-		return image_init_result::FAIL;
+		return std::make_pair(image_error::UNSPECIFIED, "ADPCMB region in NEO file is larger than supported");
 	}
 
 	if (msize > (audio_region_size - 0x10000))
 	{
-		image.seterror(image_error::INVALIDIMAGE, "AUDIO region in NEO file is larger than supported");
 		printf("AUDIO region (%08X) in NEO file is larger than supported\n",msize);
-		image.message("AUDIO region in NEO file is larger than supported");
-		return image_init_result::FAIL;
+		return std::make_pair(image_error::UNSPECIFIED, "AUDIO region in NEO file is larger than supported");
 	}
 
 	if (csize > spr_region_size)
 	{
-		image.seterror(image_error::INVALIDIMAGE, "SPR region in NEO file is larger than supported");
 		printf("SPR size requested (%08X) is greater than available (%08X)\n",csize,spr_region_size);
-		image.message("SPR region in NEO file is larger than supported");
-		return image_init_result::FAIL;
+		return std::make_pair(image_error::UNSPECIFIED, "SPR region in NEO file is larger than supported");
 	}
 
 	// copy the data from the NEO file to the regions
@@ -1271,10 +1252,10 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 	m_audiocpu->reset();
 	machine_reset();
 
-	return image_init_result::PASS;
+	return std::make_pair(std::error_condition(), std::string());
 }
 
-u32 neogeo_state::mvs_open7z(std::string zip_name, std::string filename, uint8_t *region_name, u32 region_size)
+u32 neogeo_state::mvs_open7z(std::string zip_name, std::string filename, u8 *region_name, u32 region_size)
 {
 	u32 file_size = 0U;
 	util::archive_file::ptr zip;
@@ -1329,10 +1310,8 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::mvs_q_cb)
 	}
 	if (!psize)
 	{
-		image.seterror(image_error::INVALIDIMAGE, "File is missing or unusable");
 		printf("File is missing or unusable\n");
-		image.message("File is missing or unusable");
-		return image_init_result::FAIL;
+		return std::make_pair(image_error::UNSPECIFIED, "File is missing or unusable");
 	}
 
 	fname = "srom";
@@ -1382,7 +1361,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::mvs_q_cb)
 	m_audiocpu->reset();
 	machine_reset();
 
-	return image_init_result::PASS;
+	return std::make_pair(std::error_condition(), std::string());
 }
 
 void neogeo_state::mv1_fixed(machine_config &config)
@@ -1611,7 +1590,7 @@ void neogeo_kf2k2ps2::audio2_command_w(u8 data)
 	m2_soundlatch->write(data);
 	m2_nmi_pending = true;
 	audio2_check_nmi();
-	machine().scheduler().boost_interleave(attotime::zero, attotime::from_usec(50));
+	machine().scheduler().perfect_quantum(attotime::from_usec(50));
 }
 
 u8 neogeo_kf2k2ps2::audio2_command_r()
@@ -1650,7 +1629,7 @@ void neogeo_kf2k2ps2::audio3_command_w(u8 data)
 	m3_soundlatch->write(data);
 	m3_nmi_pending = true;
 	audio3_check_nmi();
-	machine().scheduler().boost_interleave(attotime::zero, attotime::from_usec(50));
+	machine().scheduler().perfect_quantum(attotime::from_usec(50));
 }
 
 u8 neogeo_kf2k2ps2::audio3_command_r()
@@ -1684,7 +1663,7 @@ void neogeo_kf2k2ps2::audio4_command_w(u8 data)
 	m4_soundlatch->write(data);
 	m4_nmi_pending = true;
 	audio4_check_nmi();
-	machine().scheduler().boost_interleave(attotime::zero, attotime::from_usec(50));
+	machine().scheduler().perfect_quantum(attotime::from_usec(50));
 }
 
 u16 neogeo_kf2k2ps2::audio4_result_r()
@@ -1801,22 +1780,22 @@ void neogeo_kf2k2ps2::ps2(machine_config &config)
 
 	YM2610(config, m2_ym, NEOGEO_YM2610_CLOCK);
 	m2_ym->irq_handler().set_inputline(m2_audiocpu, 0);
-	m2_ym->add_route(0, "lspeaker", 0.84);
-	m2_ym->add_route(0, "rspeaker", 0.84);
-	m2_ym->add_route(1, "lspeaker", 0.98);
-	m2_ym->add_route(2, "rspeaker", 0.98);
+	m2_ym->add_route(0, "speaker", 0.84, 0);
+	m2_ym->add_route(0, "speaker", 0.84, 1);
+	m2_ym->add_route(1, "speaker", 0.98, 0);
+	m2_ym->add_route(2, "speaker", 0.98, 1);
 	YM2610(config, m3_ym, NEOGEO_YM2610_CLOCK);
 	m3_ym->irq_handler().set_inputline(m3_audiocpu, 0);
-	m3_ym->add_route(0, "lspeaker", 0.84);
-	m3_ym->add_route(0, "rspeaker", 0.84);
-	m3_ym->add_route(1, "lspeaker", 0.98);
-	m3_ym->add_route(2, "rspeaker", 0.98);
+	m3_ym->add_route(0, "speaker", 0.84, 0);
+	m3_ym->add_route(0, "speaker", 0.84, 1);
+	m3_ym->add_route(1, "speaker", 0.98, 0);
+	m3_ym->add_route(2, "speaker", 0.98, 1);
 	YM2610(config, m4_ym, NEOGEO_YM2610_CLOCK);
 	m4_ym->irq_handler().set_inputline(m4_audiocpu, 0);
-	m4_ym->add_route(0, "lspeaker", 0.84);
-	m4_ym->add_route(0, "rspeaker", 0.84);
-	m4_ym->add_route(1, "lspeaker", 0.98);
-	m4_ym->add_route(2, "rspeaker", 0.98);
+	m4_ym->add_route(0, "speaker", 0.84, 0);
+	m4_ym->add_route(0, "speaker", 0.84, 1);
+	m4_ym->add_route(1, "speaker", 0.98, 0);
+	m4_ym->add_route(2, "speaker", 0.98, 1);
 }
 
 /*********************************************** SMA + CMC42 */

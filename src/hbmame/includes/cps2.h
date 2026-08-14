@@ -170,7 +170,7 @@ public:
 	u16 *     m_scroll3 = nullptr;
 	u16 *     m_obj = nullptr;
 	u16 *     m_other = nullptr;
-	std::unique_ptr<u16[]>     m_buffered_obj{};
+	std::unique_ptr<u16[]>  m_buffered_obj{};
 	optional_shared_ptr<u8> m_qsound_sharedram1;
 	optional_shared_ptr<u8> m_qsound_sharedram2;
 	std::unique_ptr<u8[]> m_decrypt_kabuki{};
@@ -230,7 +230,7 @@ public:
 	int          m_palette_align = 0;
 	int          m_palette_size = 0;
 	int          m_stars_rom_size = 0;
-	u8     m_empty_tile[32*32]{};
+	u8           m_empty_tile[32*32]{};
 	int          m_cps_version = 0;
 
 	/* devices */
@@ -290,7 +290,7 @@ public:
 	DECLARE_MACHINE_START(ganbare);
 	DECLARE_MACHINE_RESET(cps);
 	u32 screen_update_cps1(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	DECLARE_WRITE_LINE_MEMBER(screen_vblank_cps1);
+	void screen_vblank_cps1(int state);
 	INTERRUPT_GEN_MEMBER(cps1_interrupt);
 	TIMER_DEVICE_CALLBACK_MEMBER(ganbare_interrupt);
 	IRQ_CALLBACK_MEMBER(cps1_int_ack);
@@ -328,13 +328,13 @@ public:
 	u16 kludge_r();
 	u16 joy_or_paddle_r();
 	u16 joy_or_paddle_ecofghtr_r();
-	DECLARE_WRITE_LINE_MEMBER(m5205_int1);
-	DECLARE_WRITE_LINE_MEMBER(m5205_int2);
-	void cps2(machine_config &config);
-	void gigaman2(machine_config &config);
-	void dead_cps2(machine_config &config);
-	void qsound(machine_config &config);
-	void cps1_12MHz(machine_config &config);
+	void m5205_int1(int state);
+	void m5205_int2(int state);
+	void cps2(machine_config &config) ATTR_COLD;
+	void gigaman2(machine_config &config) ATTR_COLD;
+	void dead_cps2(machine_config &config) ATTR_COLD;
+	void qsound(machine_config &config) ATTR_COLD;
+	void cps1_12MHz(machine_config &config) ATTR_COLD;
 	void cps2_map(address_map &map);
 	void dead_cps2_map(address_map &map);
 	void decrypted_opcodes_map(address_map &map);
@@ -347,8 +347,8 @@ public:
 
 	// CPS2TURBO by ZERO800 (c) 2023
 	void init_sfz3mix();
-	void qsound_sharedram1_samples_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
-	void cps2turbo(machine_config &config);
+	void qsound_sharedram1_samples_w(offs_t offset, u16 data, u16 mem_mask = ~0);
+	void cps2turbo(machine_config &config) ATTR_COLD;
 	void cps2turbo_map(address_map &map);
 	optional_device<samples_device> m_samples_l;
 	optional_device<samples_device> m_samples_r;

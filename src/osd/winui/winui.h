@@ -1,4 +1,3 @@
-// license:BSD-3-Clause
 // For licensing and usage information, read docs/release/winui_license.txt
 
 #ifndef WINUI_H
@@ -104,14 +103,9 @@
 
 #define MM_PLAY_GAME		(WM_APP + 15000)
 
-// 修改的 代码来源 (加斯顿90)
-/************************************/
-#define WM_DPICHANGED       0x02E0
-/************************************/
+#define JOYGUI_MS			100
 
-#define JOYGUI_MS 			100
-
-#define JOYGUI_TIMER 		1
+#define JOYGUI_TIMER		1
 #define SCREENSHOT_TIMER	2
 
 /* Max size of a sub-menu */
@@ -169,7 +163,8 @@ enum
 	FILETYPE_LUASCRIPT_FILES
 };
 
-typedef std::string string;
+typedef std::basic_string<char> string;
+typedef std::basic_string<wchar_t> wstring;
 
 int MameUIMain(HINSTANCE hInstance, LPWSTR lpCmdLine);
 typedef int (WINAPI *common_file_dialog_proc)(LPOPENFILENAME lpofn);

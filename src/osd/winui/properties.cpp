@@ -1,4 +1,3 @@
-// license:BSD-3-Clause
 // For licensing and usage information, read docs/release/winui_license.txt
 // IPS 实现代码由 eziochiu 添加，IPS 管理器由醉猫(Drunk Cat)修复
 
@@ -161,6 +160,8 @@ static bool ResetScreenShader(HWND hWnd, int slot);
 static void UpdateScreenShader(HWND hWnd, int slot, windows_options &opts);
 static bool SelectCheatFile(HWND hWnd);
 static bool ResetCheatFile(HWND hWnd);
+static BOOL ChangeFallback(HWND hWnd);
+static BOOL ChangeOverride(HWND hWnd);
 static bool ChangeJoystickMap(HWND hWnd);
 static bool ResetJoystickMap(HWND hWnd);
 static bool SelectLUAScript(HWND hWnd);
@@ -275,11 +276,12 @@ const DUALCOMBOSTR g_ComboBoxVideo[] =
 
 const DUALCOMBOSTR g_ComboBoxSound[] =
 {
-	{ TEXT("Auto"),            "auto"   },
-	{ TEXT("DirectSound"),     "dsound" },
-	{ TEXT("PortAudio"),       "portaudio" },
-	{ TEXT("XAudio2 (Win10)"), "xaudio2" },     // win10 only
-	{ TEXT("None"),            "none"   }
+	{ TEXT("None"),         "none"    },
+	{ TEXT("Auto"),         "auto"    },
+	{ TEXT("DirectSound"),  "dsound"  },
+	{ TEXT("PortAudio"),    "portaudio" },
+	{ TEXT("Wasapi"),       "wasapi" },
+	{ TEXT("XAudio2"),      "xaudio2" },
 };
 
 const DUALCOMBOINT g_ComboBoxSampleRate[] =
@@ -2407,6 +2409,14 @@ static intptr_t CALLBACK GameOptionsDialogProc(HWND hDlg, UINT uMsg, WPARAM wPar
 					changed = ResetJoystickMap(hDlg);
 					break;
 
+				case IDC_ARTWORK_FALLBACK:
+					changed = ChangeFallback(hDlg);
+					break;
+
+				case IDC_ARTWORK_OVERRIDE:
+					changed = ChangeOverride(hDlg);
+					break;
+
 				case IDC_SELECT_LUASCRIPT:
 					changed = SelectLUAScript(hDlg);
 					break;
@@ -3554,7 +3564,6 @@ static void BuildDataMap(void)
 	datamap_add(properties_datamap, IDC_STEADYKEY,				DM_BOOL,	OPTION_STEADYKEY);
 	datamap_add(properties_datamap, IDC_MULTIKEYBOARD,			DM_BOOL,	OPTION_MULTIKEYBOARD);
 	datamap_add(properties_datamap, IDC_MULTIMOUSE,				DM_BOOL,	OPTION_MULTIMOUSE);
-    datamap_add(properties_datamap, IDC_RELOAD,					DM_BOOL,	OPTION_OFFSCREEN_RELOAD);
 	datamap_add(properties_datamap, IDC_JDZ,					DM_FLOAT,	OPTION_JOYSTICK_DEADZONE);
 	datamap_add(properties_datamap, IDC_JDZDISP,				DM_FLOAT,	OPTION_JOYSTICK_DEADZONE);
 	datamap_add(properties_datamap, IDC_JSAT,					DM_FLOAT,	OPTION_JOYSTICK_SATURATION);
@@ -3620,8 +3629,8 @@ static void BuildDataMap(void)
 	datamap_add(properties_datamap, IDC_FSGAMMA,				DM_FLOAT,	WINOPTION_FULLSCREENGAMMA);
 	datamap_add(properties_datamap, IDC_FSGAMMADISP,			DM_FLOAT,	WINOPTION_FULLSCREENGAMMA);
 	// windows sound options
-	datamap_add(properties_datamap, IDC_AUDIO_LATENCY,			DM_INT,		OSDOPTION_AUDIO_LATENCY);
-	datamap_add(properties_datamap, IDC_AUDIO_LATENCY_DISP,		DM_INT,		OSDOPTION_AUDIO_LATENCY);
+	datamap_add(properties_datamap, IDC_AUDIO_LATENCY,			DM_FLOAT,		OSDOPTION_AUDIO_LATENCY);
+	datamap_add(properties_datamap, IDC_AUDIO_LATENCY_DISP,		DM_FLOAT,		OSDOPTION_AUDIO_LATENCY);
 	// input device options
 	datamap_add(properties_datamap, IDC_DUAL_LIGHTGUN,			DM_BOOL,	WINOPTION_DUAL_LIGHTGUN);
 	// hlsl
@@ -3652,7 +3661,7 @@ static void BuildDataMap(void)
 	datamap_set_option_name_callback(properties_datamap, IDC_SIZES,		ResolutionSetOptionName);
 	// formats
 	datamap_set_int_format(properties_datamap, IDC_VOLUMEDISP,			"%ddB");
-	datamap_set_int_format(properties_datamap, IDC_AUDIO_LATENCY_DISP,	"%d/5");
+	datamap_set_float_format(properties_datamap, IDC_AUDIO_LATENCY_DISP,	"%2.1f");
 	datamap_set_float_format(properties_datamap, IDC_BEAM_MINDISP,		"%3.2f");
 	datamap_set_float_format(properties_datamap, IDC_BEAM_MAXDISP,		"%3.2f");
 	datamap_set_float_format(properties_datamap, IDC_BEAM_INTENDISP,	"%3.2f");
@@ -3675,7 +3684,7 @@ static void BuildDataMap(void)
 	datamap_set_trackbar_range(properties_datamap, IDC_BEAM_MAX,        1.00, 10.00, 0.01);
 	datamap_set_trackbar_range(properties_datamap, IDC_BEAM_INTEN,      -10.00, 10.00, 0.01);
 	datamap_set_trackbar_range(properties_datamap, IDC_FLICKER,         0.00, 1.00, 0.01);
-	datamap_set_trackbar_range(properties_datamap, IDC_AUDIO_LATENCY, 	1, 5, 1);
+	datamap_set_trackbar_range(properties_datamap, IDC_AUDIO_LATENCY,   0.0, 10.0, 0.1);
 	datamap_set_trackbar_range(properties_datamap, IDC_VOLUME,          -32, 0, 1);
 	datamap_set_trackbar_range(properties_datamap, IDC_HIGH_PRIORITY,   -15, 1, 1);
 	datamap_set_trackbar_range(properties_datamap, IDC_SECONDSTORUN,    0, 60, 1);
@@ -4637,6 +4646,38 @@ static bool ResetCheatFile(HWND hWnd)
 	return changed;
 }
 
+static BOOL ChangeFallback(HWND hWnd)
+{
+	BOOL changed = false;
+	char data[90];
+
+	winui_get_window_text_utf8(GetDlgItem(hWnd, IDC_ARTWORK_FALLBACK), data, std::size(data));
+
+	if (strcmp(data, m_CurrentOpts.value(OPTION_FALLBACK_ARTWORK)))
+	{
+		m_CurrentOpts.set_value(OPTION_FALLBACK_ARTWORK, data, OPTION_PRIORITY_CMDLINE);
+		changed = true;
+	}
+
+	return changed;
+}
+
+static BOOL ChangeOverride(HWND hWnd)
+{
+	BOOL changed = false;
+	char data[90];
+
+	winui_get_window_text_utf8(GetDlgItem(hWnd, IDC_ARTWORK_OVERRIDE), data, std::size(data));
+
+	if (strcmp(data, m_CurrentOpts.value(OPTION_OVERRIDE_ARTWORK)))
+	{
+		m_CurrentOpts.set_value(OPTION_OVERRIDE_ARTWORK, data, OPTION_PRIORITY_CMDLINE);
+		changed = true;
+	}
+
+	return changed;
+}
+
 static bool ChangeJoystickMap(HWND hWnd)
 {
 	bool changed = false;
@@ -4867,7 +4908,6 @@ static void DisableVisualStyles(HWND hDlg)
 	SetWindowTheme(GetDlgItem(hDlg, IDC_JOYSTICK), L" ", L" ");
 	SetWindowTheme(GetDlgItem(hDlg, IDC_DEFAULT_INPUT), L" ", L" ");
 	SetWindowTheme(GetDlgItem(hDlg, IDC_LIGHTGUN), L" ", L" ");
-	SetWindowTheme(GetDlgItem(hDlg, IDC_RELOAD), L" ", L" ");
 	SetWindowTheme(GetDlgItem(hDlg, IDC_DUAL_LIGHTGUN), L" ", L" ");
 	SetWindowTheme(GetDlgItem(hDlg, IDC_MULTIKEYBOARD), L" ", L" ");
 	SetWindowTheme(GetDlgItem(hDlg, IDC_MULTIMOUSE), L" ", L" ");

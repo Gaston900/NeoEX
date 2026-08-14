@@ -1,4 +1,3 @@
-// license:BSD-3-Clause
 // For licensing and usage information, read docs/release/winui_license.txt
 
 #include "winui.h"
@@ -155,7 +154,7 @@ static const TREEICON treeIconNames[] =
 	{ IDI_FP_SAVESTATE,    "fp-savest" },
 	{ IDI_FP_SOUND,        "fp-sound" },
 	{ IDI_FP_SOURCE,       "fp-source" },
-		   
+
 // 修改的 代码来源 (加斯顿90)
 /**********************************************/
 	{ IDI_FP_NEOGEO,       "fp-neogeo" },
@@ -3392,16 +3391,19 @@ void CreateCAPCOMFolders(int parent_index)
 	int jj;
 	int nGames = GetNumGames();
 	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-    LPTREEFOLDER lp1942, lp1943, lpBionicc, lpBlktiger, lpCps1BT, lpCbasebal, lpCommando, lpCps1, lpCps1HC, lpCps1HB, lpCps1BL, lpCps1PI, lpCps2, lpCps2HC, lpCps2HB, lpCps3, lpCps3HC, lpEgghunt, lpExedexes, lpFcrash, lpGng, lpGunsmoke, lpHigemaru, lpKenseim, lpLastduel, lpLwings, lpMitchell, lpSf, lpSidearms, lpSonson, lpSrumbler, lpSupduck, lpTigeroad, lpVulgus;
+    LPTREEFOLDER lp1942, lp1942HC, lp1943, lp1943HC, lpBionicc, lpBlktiger, lpBlktigerHC, lpCps1BT, lpCbasebal, lpCommando, lpCps1, lpCps1HC, lpCps1HB, lpCps1BL, lpCps1PI, lpCps2, lpCps2HC, lpCps2HB, lpCps3, lpCps3HC, lpEgghunt, lpExedexes, lpFcrash, lpGng, lpGngHC, lpGunsmoke, lpHigemaru, lpKenseim, lpLastduel, lpLwings, lpMitchell, lpMitchellHC, lpSf, lpSidearms, lpSonson, lpSonsonHC, lpSrumbler, lpSupduck, lpTigeroad, lpVulgus;
 
 	// no games in top level folder
 	SetAllBits(lpFolder->m_lpGameBits,FALSE);
 
 	// create our two subfolders
     lp1942 = NewFolder("1942", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lp1942HC = NewFolder("1942 Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lp1943 = NewFolder("1943", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lp1943HC = NewFolder("1943 Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpBionicc = NewFolder("Bionicc", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpBlktiger = NewFolder("Blktiger", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpBlktigerHC = NewFolder("Blktiger Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpCps1BT = NewFolder("Bootleg", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpCbasebal = NewFolder("Cbasebal", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpCommando = NewFolder("Commando", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
@@ -3419,24 +3421,30 @@ void CreateCAPCOMFolders(int parent_index)
     lpExedexes = NewFolder("Exedexes", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpFcrash = NewFolder("Fcrash", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpGng = NewFolder("Gng", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpGngHC = NewFolder("Gng Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpGunsmoke = NewFolder("Gunsmoke", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpHigemaru = NewFolder("Higemaru", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpKenseim = NewFolder("Kenseim", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpLastduel = NewFolder("Lastduel", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpLwings = NewFolder("Lwings", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpMitchell = NewFolder("Mitchell", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpMitchellHC = NewFolder("Mitchell Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpSf = NewFolder("Sf", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpSidearms = NewFolder("Sidearms", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpSonson = NewFolder("Sonson", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
-    lpSrumbler = NewFolder("Srumbler", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpSonsonHC = NewFolder("Sonson Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpSrumbler = NewFolder("Srumbler", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpSupduck = NewFolder("Supduck", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpTigeroad = NewFolder("Tigeroad", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpVulgus = NewFolder("Vulgus", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
 
 	AddFolder(lp1942);
+	AddFolder(lp1942HC);
 	AddFolder(lp1943);
+	AddFolder(lp1943HC);
 	AddFolder(lpBionicc);
 	AddFolder(lpBlktiger);
+	AddFolder(lpBlktigerHC);
 	AddFolder(lpCps1BT);
 	AddFolder(lpCbasebal);
 	AddFolder(lpCommando);
@@ -3454,15 +3462,18 @@ void CreateCAPCOMFolders(int parent_index)
 	AddFolder(lpExedexes);
 	AddFolder(lpFcrash);
 	AddFolder(lpGng);
+	AddFolder(lpGngHC);
 	AddFolder(lpGunsmoke);
 	AddFolder(lpHigemaru);
 	AddFolder(lpKenseim);
 	AddFolder(lpLastduel);
 	AddFolder(lpLwings);
 	AddFolder(lpMitchell);
+	AddFolder(lpMitchellHC);
 	AddFolder(lpSf);
 	AddFolder(lpSidearms);
 	AddFolder(lpSonson);
+	AddFolder(lpSonsonHC);
 	AddFolder(lpSrumbler);
 	AddFolder(lpSupduck);
 	AddFolder(lpTigeroad);
@@ -4494,7 +4505,16 @@ void CreateCAPCOMFolders(int parent_index)
 			continue;
 
 		if (!strcmp("1942.cpp", s))                 AddGame(lp1942, jj);
-        if (!strcmp("1942hb.cpp", s))               AddGame(lpFolder, jj);
+	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("1942hc.cpp", s))               AddGame(lp1942HC, jj);
 	}
 
 	for (jj = 0; jj < nGames; jj++)
@@ -4505,7 +4525,16 @@ void CreateCAPCOMFolders(int parent_index)
 			continue;
 
 		if (!strcmp("1943.cpp", s))                 AddGame(lp1943, jj);
-		if (!strcmp("1943hb.cpp", s))               AddGame(lp1943, jj);
+	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("1943hc.cpp", s))               AddGame(lp1943HC, jj);
 	}
 
 	for (jj = 0; jj < nGames; jj++)
@@ -4526,7 +4555,16 @@ void CreateCAPCOMFolders(int parent_index)
 			continue;
 
 		if (!strcmp("blktiger.cpp", s))             AddGame(lpBlktiger, jj);
-		if (!strcmp("blktigerhb.cpp", s))           AddGame(lpBlktiger, jj);
+	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("blktigerhc.cpp", s))           AddGame(lpBlktigerHC, jj);
 	}
 
 	for (jj = 0; jj < nGames; jj++)
@@ -4576,7 +4614,7 @@ void CreateCAPCOMFolders(int parent_index)
 		if (s == NULL || s[0] == '\0')
 			continue;
 
-		if (!strcmp("cps3hb.cpp", s))              AddGame(lpCps3HC, jj);
+		if (!strcmp("cps3hc.cpp", s))              AddGame(lpCps3HC, jj);
 	}
 
 	for (jj = 0; jj < nGames; jj++)
@@ -4607,6 +4645,16 @@ void CreateCAPCOMFolders(int parent_index)
 			continue;
 
 		if (!strcmp("gng.cpp", s))                 AddGame(lpGng, jj);
+	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("gnghc.cpp", s))               AddGame(lpGngHC, jj);
 	}
 
 	for (jj = 0; jj < nGames; jj++)
@@ -4667,7 +4715,16 @@ void CreateCAPCOMFolders(int parent_index)
 			continue;
 
 		if (!strcmp("mitchell.cpp", s))            AddGame(lpMitchell, jj);
-		if (!strcmp("mitchellhb.cpp", s))          AddGame(lpMitchell, jj);
+	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("mitchellhc.cpp", s))          AddGame(lpMitchellHC, jj);
 	}
 
 	for (jj = 0; jj < nGames; jj++)
@@ -4698,7 +4755,16 @@ void CreateCAPCOMFolders(int parent_index)
 			continue;
 
 		if (!strcmp("sonson.cpp", s))             AddGame(lpSonson, jj);
-		if (!strcmp("sonsonhb.cpp", s))           AddGame(lpSonson, jj);
+	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("sonsonhc.cpp", s))           AddGame(lpSonsonHC, jj);
 	}
 
 	for (jj = 0; jj < nGames; jj++)
@@ -4749,12 +4815,12 @@ void CreateCAPCOMFolders(int parent_index)
 			continue;
 
 		if (!strcmp("1942.cpp", s))                AddGame(lpFolder, jj);
-		if (!strcmp("1942hb.cpp", s))              AddGame(lpFolder, jj);
+		if (!strcmp("1942hc.cpp", s))              AddGame(lpFolder, jj);
 		if (!strcmp("1943.cpp", s))                AddGame(lpFolder, jj);
-		if (!strcmp("1943hb.cpp", s))              AddGame(lpFolder, jj);
+		if (!strcmp("1943hc.cpp", s))              AddGame(lpFolder, jj);
 		if (!strcmp("bionicc.cpp", s))             AddGame(lpFolder, jj);
 		if (!strcmp("blktiger.cpp", s))            AddGame(lpFolder, jj);
-		if (!strcmp("blktigerhb.cpp", s))          AddGame(lpFolder, jj);
+		if (!strcmp("blktigerhc.cpp", s))          AddGame(lpFolder, jj);
 		if (!strcmp("cbasebal.cpp", s))            AddGame(lpFolder, jj);
 		if (!strcmp("commando.cpp", s))            AddGame(lpFolder, jj);
 		if (!strcmp("cps1.cpp", s))                AddGame(lpFolder, jj);
@@ -4764,57 +4830,27 @@ void CreateCAPCOMFolders(int parent_index)
 		if (!strcmp("cps2.cpp", s))                AddGame(lpFolder, jj);
 		if (!strcmp("cps2hb.cpp", s))              AddGame(lpFolder, jj);
 		if (!strcmp("cps3.cpp", s))                AddGame(lpFolder, jj);
-		if (!strcmp("cps3hb.cpp", s))              AddGame(lpFolder, jj);
+		if (!strcmp("cps3hc.cpp", s))              AddGame(lpFolder, jj);
 		if (!strcmp("egghunt.cpp", s))             AddGame(lpFolder, jj);
 		if (!strcmp("exedexes.cpp", s))            AddGame(lpFolder, jj);
 		if (!strcmp("fcrash.cpp", s))              AddGame(lpFolder, jj);
 		if (!strcmp("gng.cpp", s))                 AddGame(lpFolder, jj);
+		if (!strcmp("gnghc.cpp", s))               AddGame(lpFolder, jj);
 		if (!strcmp("gunsmoke.cpp", s))            AddGame(lpFolder, jj);
 		if (!strcmp("higemaru.cpp", s))            AddGame(lpFolder, jj);
 		if (!strcmp("kenseim.cpp", s))             AddGame(lpFolder, jj);
 		if (!strcmp("lastduel.cpp", s))            AddGame(lpFolder, jj);
 		if (!strcmp("lwings.cpp", s))              AddGame(lpFolder, jj);
 		if (!strcmp("mitchell.cpp", s))            AddGame(lpFolder, jj);
-		if (!strcmp("mitchellhb.cpp", s))          AddGame(lpFolder, jj);
+		if (!strcmp("mitchellhc.cpp", s))          AddGame(lpFolder, jj);
 		if (!strcmp("sf.cpp", s))                  AddGame(lpFolder, jj);
 		if (!strcmp("sidearms.cpp", s))            AddGame(lpFolder, jj);
 		if (!strcmp("sonson.cpp", s))              AddGame(lpFolder, jj);
-		if (!strcmp("sonsonhb.cpp", s))            AddGame(lpFolder, jj);
+		if (!strcmp("sonsonhc.cpp", s))            AddGame(lpFolder, jj);
 		if (!strcmp("srumbler.cpp", s))            AddGame(lpFolder, jj);
 		if (!strcmp("supduck.cpp", s))             AddGame(lpFolder, jj);
 		if (!strcmp("tigeroad.cpp", s))            AddGame(lpFolder, jj);
 		if (!strcmp("vulgus.cpp", s))              AddGame(lpFolder, jj);
-	}
-}
-
-void CreateMISCFolders(int parent_index)
-{
-	int jj;
-	int nGames = GetNumGames();
-	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-
-	// no games in top level folder
-	SetAllBits(lpFolder->m_lpGameBits,FALSE);
-
-	for (jj = 0; jj < nGames; jj++)
-	{
-		const char *s = GetDriverFileName(jj);
-
-		if (s == NULL || s[0] == '\0')
-			continue;
-
-        if (!strcmp("cave.cpp", s))	    		   AddGame(lpFolder, jj);
-		if (!strcmp("cavehb.cpp", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("m92.cpp", s))		           AddGame(lpFolder, jj);
-		if (!strcmp("m92hb.cpp", s))		       AddGame(lpFolder, jj);
-		if (!strcmp("midtunit.cpp", s))		       AddGame(lpFolder, jj);
-		if (!strcmp("midtunithb.cpp", s))		   AddGame(lpFolder, jj);
-		if (!strcmp("midyunit.cpp", s))			   AddGame(lpFolder, jj);
-		if (!strcmp("midwunit.cpp", s))	     	   AddGame(lpFolder, jj);
-		if (!strcmp("midwunithb.cpp", s))		   AddGame(lpFolder, jj);
-		if (!strcmp("pgm2.cpp", s))				   AddGame(lpFolder, jj);
-		if (!strcmp("powerins.cpp", s)) 	       AddGame(lpFolder, jj);
-		if (!strcmp("powerinshb.cpp", s)) 	       AddGame(lpFolder, jj);
 	}
 }
 

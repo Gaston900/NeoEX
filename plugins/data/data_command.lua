@@ -1,13 +1,16 @@
 local dat = {}
+
 local info, ver
-local datread = require("data/load_dat")
+local datread = require('data/load_dat')
 do
 	local buttonchar
 	local function convert(str)
-		if not buttonchar then buttonchar = require("data/button_char") end
+		if not buttonchar then
+			buttonchar = require("data/button_char")
+		end
 		return buttonchar(str)
 	end
-	datread, ver = datread.open("command.dat", "# Version:", convert)
+	datread, ver = datread.open('command.dat', '#[^V]*Ver[^.:]*[.:]', convert)
 end
 
 function dat.check(set, softlist)
@@ -16,7 +19,7 @@ function dat.check(set, softlist)
 	end
 	
 	local status
-	status, info = pcall(datread, "cmd", "info", set)
+	status, info = pcall(datread, 'cmd', 'info', set)
 ------------------------------------- 缘来是你 ------------------------------------------>>>	
 	-- 若当前游戏无出招表，则引用主游戏
 	if not status or not info then
@@ -24,18 +27,17 @@ function dat.check(set, softlist)
 		if driver then
 			local parent = driver.parent
 			if parent and parent ~= set and parent ~= "" then
-				status, info = pcall(datread, "cmd", "info", parent)
+				status, info = pcall(datread, 'cmd', 'info', parent)
 				if status and info then
-	                info = "#jf\n" .. info
-					return _("Command")
+					return _p('plugin-data', 'Command')
 				end
 			end
 		end
 		return nil
 	end
 ---------------------------------------------------------------------------------------->>>
-	info = "#jf\n" .. info
-	return _("Command")
+
+	return _p('plugin-data', 'Command')
 end
 
 function dat.get()

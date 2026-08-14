@@ -1,4 +1,3 @@
-// license:BSD-3-Clause
 // For licensing and usage information, read docs/release/winui_license.txt
 // IPS 实现代码由 eziochiu 添加，IPS 管理器由醉猫(Drunk Cat)修复
 
@@ -173,7 +172,11 @@ char * ConvertToWindowsNewlines(const char *source)
 
 const char * GetDriverGameTitle(int nIndex)
 {
-	return driver_list::driver(nIndex).type.fullname();
+	// Get rid of leading "The " - not exactly efficient but...
+	if (strncmp("The ",driver_list::driver(nIndex).type.fullname(),4)==0)
+		return driver_list::driver(nIndex).type.fullname()+4;
+	else
+		return driver_list::driver(nIndex).type.fullname();
 }
 
 const char * GetDriverGameName(int nIndex)
@@ -281,7 +284,7 @@ static void InitDriversInfo(void)
 		//gameinfo->isClone = (GetParentRomSetIndex(gamedrv) != -1);
 		gameinfo->isBroken = (cache & 0x4040) ? true : false;  // (MACHINE_NOT_WORKING | MACHINE_MECHANICAL)
 		gameinfo->isImperfect = (cache & 0x3fa000) ? true : false;  // MACHINE_INCOMPLETE | NO_SOUND_HW | (IMPERFECT|UNEMULATED) | (PALETTE|GRAPHICS|SOUND)
-		gameinfo->supportsSaveState = BIT(cache, 7) ? false : true;  //MACHINE_SUPPORTS_SAVE
+		gameinfo->supportsSaveState = BIT(cache, 7) ? true : false;  //MACHINE_SUPPORTS_SAVE
 		gameinfo->isVertical = BIT(cache, 2);  //ORIENTATION_SWAP_XY
 		gameinfo->isMechanical = BIT(cache, 14);  //MACHINE_MECHANICAL
 		gameinfo->isBIOS = BIT(cache, 9);  //MACHINE_IS_BIOS_ROOT
@@ -324,7 +327,7 @@ static void InitDriversInfo(void)
 		if (gamedrv->ipt)
 		{
 			ioport_list portlist;
-			std::string errors;
+			std::ostringstream errors;
 
 			for (device_t &cfg : device_enumerator(config.root_device()))
 				if (cfg.input_ports())
@@ -371,7 +374,7 @@ static void InitDriversCache(void)
 		cache_upper = GetDriverCacheUpper(ndriver);
 
 		gameinfo->isBroken          =  (cache_lower & 0x4040) ? true : false; //MACHINE_NOT_WORKING | MACHINE_MECHANICAL
-		gameinfo->supportsSaveState =  BIT(cache_lower, 7) ? false : true;  //MACHINE_SUPPORTS_SAVE
+		gameinfo->supportsSaveState =  BIT(cache_lower, 7) ? true : false;  //MACHINE_SUPPORTS_SAVE
 		gameinfo->isVertical        =  BIT(cache_lower, 2) ? true : false;  //ORIENTATION_XY
 		gameinfo->screenCount       =   cache_upper & DRIVER_CACHE_SCREEN;
 		gameinfo->isClone           = ((cache_upper & DRIVER_CACHE_CLONE) != 0);

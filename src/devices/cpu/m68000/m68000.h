@@ -137,7 +137,6 @@ protected:
 	// device_execute_interface overrides
 	virtual u32 execute_min_cycles() const noexcept override { return 4; }
 	virtual u32 execute_max_cycles() const noexcept override { return 158; }
-	virtual u32 execute_input_lines() const noexcept override { return m_interrupt_mixer ? 8 : 3; } // number of input lines
 	virtual bool execute_input_edge_triggered(int inputnum) const noexcept override { return m_interrupt_mixer ? inputnum == M68K_IRQ_7 : false; }
 	virtual void execute_run() override;
 	virtual void execute_set_input(int inputnum, int state) override;
@@ -165,10 +164,9 @@ public:
 	template <typename... T> void set_tas_write_callback(T &&... args) { m_tas_write_callback.set(std::forward<T>(args)...); }
 	u16 get_fc();
 	void set_hmmu_enable(int enable);
-	void set_emmu_enable(int enable);
 	int get_pmmu_enable() const {return m_pmmu_enabled;}
 	void set_fpu_enable(int enable);
-	void set_buserror_details(u32 fault_addr, u8 rw, u8 fc, bool rerun = false);
+	void set_buserror_details(u32 fault_addr, u8 rw, u8 fc);
 	void disable_interrupt_mixer() { m_interrupt_mixer = false; }
 	void set_cpu_space(int space_id) { m_cpu_space_id = space_id; }
 
@@ -221,8 +219,6 @@ protected:
 	int    m_has_hmmu;     /* Indicates if an Apple HMMU is available in place of the 68851 (020 only) */
 	int    m_pmmu_enabled; /* Indicates if the PMMU is enabled */
 	int    m_hmmu_enabled; /* Indicates if the HMMU is enabled */
-	int    m_emmu_enabled; /* Indicates if external MMU is enabled */
-	int    m_instruction_restart; /* Save DA regs for potential instruction restart */
 	int    m_fpu_just_reset; /* Indicates the FPU was just reset */
 
 	/* Clocks required for instructions / exceptions */
@@ -376,7 +372,7 @@ protected:
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
 
 	// device_memory_interface overrides
-	virtual bool memory_translate(int space, int intention, offs_t &address) override;
+	virtual bool memory_translate(int spacenum, int intention, offs_t &address, address_space *&target_space) override;
 
 #include "m68kcpu.h"
 #include "m68kops.h"
@@ -585,7 +581,7 @@ public:
 	virtual u32 execute_min_cycles() const noexcept override { return 2; }
 	virtual u32 execute_max_cycles() const noexcept override { return 158; }
 
-	virtual bool memory_translate(int space, int intention, offs_t &address) override;
+	virtual bool memory_translate(int spacenum, int intention, offs_t &address, address_space *&target_space) override;
 
 	// device-level overrides
 	virtual void device_start() override;

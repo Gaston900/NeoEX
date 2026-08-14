@@ -236,18 +236,19 @@ public:
 	void init_svcdd();
 	void init_vlinerdd();
 
-	DECLARE_CUSTOM_INPUT_MEMBER(get_memcard_status);
-	DECLARE_CUSTOM_INPUT_MEMBER(get_audio_result);
-	DECLARE_CUSTOM_INPUT_MEMBER(kizuna4p_start_r);
+	ioport_value get_memcard_status();
+	ioport_value get_audio_result();
+	ioport_value kizuna4p_start_r();
 	DECLARE_INPUT_CHANGED_MEMBER(select_bios);
 
 	// Public For kf2k2ps2re
 	int m_use_cart_audio = 0;
-	void gsc_map(address_map &map);
-	virtual void machine_start() override;
+	void gsc_map(address_map &map) ATTR_COLD;
+	virtual void machine_start() override ATTR_COLD;
 	required_device<cpu_device> m_maincpu;
 
 private:
+
 	u32 mvs_open7z(std::string zip_name, std::string filename, uint8_t *region_name, u32 region_size);
 	void io_control_w(offs_t offset, u8 data);
 	u16 memcard_r(offs_t offset);
@@ -272,16 +273,15 @@ private:
 	TIMER_CALLBACK_MEMBER(vblank_interrupt_callback);
     DECLARE_QUICKLOAD_LOAD_MEMBER(mvs_q_cb);
 	DECLARE_QUICKLOAD_LOAD_MEMBER(neo_q_cb);
-
 	u32 screen_update_neogeo(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 
-	void neogeo_main_map(address_map &map);
-	void main_map_slot(address_map &map);
-	void audio_map(address_map &map);
-	void audio_io_map(address_map &map);
-	void main_map_noslot(address_map &map);
-	void gsc2007_map(address_map &map);
-    void neogeo_68kram_map(address_map &map);
+	void neogeo_main_map(address_map &map) ATTR_COLD;
+	void main_map_slot(address_map &map) ATTR_COLD;
+	void audio_map(address_map &map) ATTR_COLD;
+	void audio_io_map(address_map &map) ATTR_COLD;
+	void main_map_noslot(address_map &map) ATTR_COLD;
+	void gsc2007_map(address_map &map) ATTR_COLD;
+    void neogeo_68kram_map(address_map &map) ATTR_COLD;
 
 	void neogeo_postload();
 	void update_interrupts();
@@ -308,7 +308,7 @@ private:
 	void set_output_latch( u8 data );
 	void set_output_data( u8 data );
 
-	virtual void machine_reset() override;
+	virtual void machine_reset() override ATTR_COLD;
 
 	memory_bank           *m_bank_audio_cart[4]{};
 
@@ -365,7 +365,7 @@ private:
 	optional_memory_region m_region_fixedbios;
 	optional_memory_bank   m_bank_audio_main; // optional because of neocd
 	optional_device<upd4990a_device> m_upd4990a;
-	optional_shared_ptr<u16 > m_save_ram;
+	optional_shared_ptr<u16> m_save_ram;
 	required_device<screen_device> m_screen;
 	optional_device<palette_device> m_palette;
 	optional_device<ng_memcard_device> m_memcard;
@@ -427,10 +427,10 @@ public:
 	void ps2(machine_config &config);
 
 private:
-    void ps2_map(address_map &map);
+    void ps2_map(address_map &map) ATTR_COLD;
 
-	void audio2_map(address_map &map);
-	void audio2_io(address_map &map);
+	void audio2_map(address_map &map) ATTR_COLD;
+	void audio2_io(address_map &map) ATTR_COLD;
 	void audio2_command_w(u8 data);
 	u16 audio2_result_r();
 	u8 audio2_command_r();
@@ -438,8 +438,8 @@ private:
 	void audio2_check_nmi();
 	void audio2_enable_nmi_w(offs_t offset, u8 data);
 
-	void audio3_map(address_map &map);
-	void audio3_io(address_map &map);
+	void audio3_map(address_map &map) ATTR_COLD;
+	void audio3_io(address_map &map) ATTR_COLD;
 	void audio3_command_w(u8 data);
 	u16 audio3_result_r();
 	u8 audio3_command_r();
@@ -447,8 +447,8 @@ private:
 	void audio3_check_nmi();
 	void audio3_enable_nmi_w(offs_t offset, u8 data);
 
-	void audio4_map(address_map &map);
-	void audio4_io(address_map &map);
+	void audio4_map(address_map &map) ATTR_COLD;
+	void audio4_io(address_map &map) ATTR_COLD;
 	void audio4_command_w(u8 data);
 	u16 audio4_result_r();
 	u8 audio4_command_r();

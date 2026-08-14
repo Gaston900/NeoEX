@@ -12,6 +12,7 @@
 #define MAME_FRONTEND_CHEAT_H
 
 #pragma once
+
 //========= JOSN字典 ========>>>
 #include <string>
 #include <unordered_map>
@@ -338,12 +339,12 @@ public:
 	std::vector<std::unique_ptr<cheat_entry>> const &entries() const { return m_cheatlist; }
 
 	// setters
-	void set_enable(bool enable);
+	void set_enable(bool enable, bool show);
 
 	// actions
 	void reload();
 	bool save_all(std::string const &filename);
-	void render_text(mame_ui_manager &mui, render_container &container);
+	void render_text(mame_ui_manager &mui, render_target &target);
 
 	// output helpers
 	std::string &get_output_string(int row, ui::text_layout::text_justify justify);

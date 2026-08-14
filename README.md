@@ -3,9 +3,9 @@ What is NeoEX?
 
 It focuses on compiling everything about the Neo Geo MVS/AES and Capcom system, and preserving all types of ROMs that have existed, including Bootleg, HomeBrew, and Hacks.
 
-Version 0.245 [[HBMAME](https://github.com/Robbbert/hbmame)] is being used as the base system.
+Version 0.289 [[HBMAME](https://github.com/Robbbert/hbmame)] is being used as the base system.
 
-I am only supporting the operating systems 64x bits, Windows 7, Windows 8, Windows 10 and Windows 11.
+I am only supporting the operating systems 64x bits, Windows 10 and Windows 11.
 
 What has been optimized in this version?
 ---------------------------------------
@@ -89,7 +89,7 @@ In order to compile this version we will need the source code, for this we will 
 
 And we will apply this command to start the compilation:
 ```
-make PTR64=1 SUBTARGET=arcade OSD=winui NOWERROR=1 STRIP_SYMBOLS=1
+make OSD=winui PTR64=1 SUBTARGET=arcade SYMBOLS=0 NO_SYMBOLS=1 DEPRECATED=0
 ```
 The compilation [TOOL](https://github.com/mamedev/buildtools/releases) is suggested to be version 7.0 msys64 (Jan 11, 2022).
 

@@ -12,11 +12,15 @@
 
 #include "emu.h"
 #include "emuopts.h"
-#include "drivenum.h"
-#include "softlist_dev.h"
-#include "hashfile.h"
 
+#include "drivenum.h"
+#include "hashfile.h"
+#include "main.h"
+#include "softlist_dev.h"
+
+// lib/util
 #include "corestr.h"
+#include "path.h"
 
 #include <stack>
 
@@ -38,38 +42,38 @@ const options_entry emu_options::s_option_entries[] =
 
 	// search path options
 	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "CORE SEARCH PATH OPTIONS" },
-	{ OPTION_PLUGINDATAPATH,                             ".",         core_options::option_type::STRING,     "path to base folder for plugin data (read/write)" },
-	{ OPTION_MEDIAPATH ";rp;biospath;bp",                "roms",      core_options::option_type::STRING,     "path to ROM sets and hard disk images" },
-	{ OPTION_HASHPATH ";hash_directory;hash",            "config/hash",       core_options::option_type::STRING,     "path to software definition files" }, // 修改的 (加斯顿90)
-	{ OPTION_SAMPLEPATH ";sp",                           "support/samples",   core_options::option_type::STRING,     "path to audio sample sets" }, // 修改的 (加斯顿90)
-	{ OPTION_ARTPATH,                                    "support/artwork",   core_options::option_type::STRING,     "path to artwork files" }, // 修改的 (加斯顿90)
-	{ OPTION_CTRLRPATH,                                  "support/ctrlr",     core_options::option_type::STRING,     "path to controller definitions" }, // 修改的 (加斯顿90)
-	{ OPTION_INIPATH,                                    "ini;.ini;/presets", core_options::option_type::STRING,     "path to ini files" },
-	{ OPTION_FONTPATH,                                   ".",                 core_options::option_type::STRING,     "path to font files" },
-	{ OPTION_CHEATPATH,                                  "support/cheat",     core_options::option_type::STRING,     "path to cheat files" }, // 修改的 (加斯顿90)
-	{ OPTION_CROSSHAIRPATH,                              "config/crosshair",  core_options::option_type::STRING,     "path to crosshair files" }, // 修改的 (加斯顿90)
-	{ OPTION_PLUGINSPATH,                                "config/plugins",    core_options::option_type::STRING,     "path to plugin files" }, // 修改的 (加斯顿90)
-	{ OPTION_LANGUAGEPATH,                               "config/language",   core_options::option_type::STRING,     "path to UI translation files" }, // 修改的 (加斯顿90)
-	{ OPTION_SWPATH,                                     "support/software",  core_options::option_type::STRING,     "path to loose software" }, // 修改的 (加斯顿90)
+	{ OPTION_PLUGINDATAPATH,                             ".",         core_options::option_type::PATH,       "path to base folder for plugin data (read/write)" },
+	{ OPTION_MEDIAPATH ";rp;biospath;bp",                "roms",      core_options::option_type::MULTIPATH,  "path to ROM sets and hard disk images" },
+	{ OPTION_HASHPATH ";hash_directory;hash",            "config/hash",      core_options::option_type::MULTIPATH,  "path to software definition files" }, // 修改的 (加斯顿90)
+	{ OPTION_SAMPLEPATH ";sp",                           "support/samples",  core_options::option_type::MULTIPATH,  "path to audio sample sets" }, // 修改的 (加斯顿90)
+	{ OPTION_ARTPATH,                                    "support/artwork",  core_options::option_type::MULTIPATH,  "path to artwork files" }, // 修改的 (加斯顿90)
+	{ OPTION_CTRLRPATH,                                  "support/ctrlr",    core_options::option_type::MULTIPATH,  "path to controller definitions" }, // 修改的 (加斯顿90)
+	{ OPTION_INIPATH,                                    "ini;.",     core_options::option_type::MULTIPATH,  "path to ini files" },
+	{ OPTION_FONTPATH,                                   ".",         core_options::option_type::MULTIPATH,  "path to font files" },
+	{ OPTION_CHEATPATH,                                  "support/cheat",    core_options::option_type::MULTIPATH,  "path to cheat files" }, // 修改的 (加斯顿90)
+	{ OPTION_CROSSHAIRPATH,                              "config/crosshair", core_options::option_type::MULTIPATH,  "path to crosshair files" }, // 修改的 (加斯顿90)
+	{ OPTION_PLUGINSPATH,                                "config/plugins",   core_options::option_type::MULTIPATH,  "path to plugin files" }, // 修改的 (加斯顿90)
+	{ OPTION_LANGUAGEPATH,                               "config/language",  core_options::option_type::MULTIPATH,  "path to UI translation files" }, // 修改的 (加斯顿90)
+	{ OPTION_SWPATH,                                     "support/software", core_options::option_type::MULTIPATH,  "path to loose software" }, // 修改的 (加斯顿90)
 
 //================== 缘来是你 ==========================>>>
-	{ OPTION_IPSPATH,                                    "support/ips",       core_options::option_type::STRING,  "path to IPS patch files" },
+	{ OPTION_IPSPATH,                                    "support/ips",      core_options::option_type::MULTIPATH,  "path to IPS patch files" },
 	{ OPTION_IPS,                                        nullptr,     core_options::option_type::STRING,     "IPS patch name" },
 	{ OPTION_SKIP_CRC_CHECK,                             "0",         core_options::option_type::BOOLEAN,    "Skip CRC and HASH checks" },
-//	{ OPTION_PGM2_MEMCARD_HACK, 						 "1", 		  core_options::option_type::BOOLEAN, 	 "Enable PGM2 without inserting a card" },
+	{ OPTION_PGM2_MEMCARD_HACK, 						 "1", 		  core_options::option_type::BOOLEAN, 	 "Enable PGM2 without inserting a card" },
 //======================================================>>>
 
 	// output directory options
 	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "CORE OUTPUT DIRECTORY OPTIONS" },
-	{ OPTION_CFG_DIRECTORY,                              "config/cfg",       core_options::option_type::STRING,     "directory to save configurations" }, // 修改的 (加斯顿90)
-	{ OPTION_NVRAM_DIRECTORY,                            "config/nvram",     core_options::option_type::STRING,     "directory to save NVRAM contents" }, // 修改的 (加斯顿90)
-	{ OPTION_INPUT_DIRECTORY,                            "config/inp",       core_options::option_type::STRING,     "directory to save input device logs" }, // 修改的 (加斯顿90)
-	{ OPTION_STATE_DIRECTORY,                            "config/sta",       core_options::option_type::STRING,     "directory to save states" }, // 修改的 (加斯顿90)
-	{ OPTION_SNAPSHOT_DIRECTORY,                         "support/snap",     core_options::option_type::STRING,     "directory to save/load screenshots" }, // 修改的 (加斯顿90)
-	{ OPTION_DIFF_DIRECTORY,                             "config/diff",      core_options::option_type::STRING,     "directory to save hard drive image difference files" }, // 修改的 (加斯顿90)
-	{ OPTION_COMMENT_DIRECTORY,                          "config/comments",  core_options::option_type::STRING,     "directory to save debugger comments" }, // 修改的 (加斯顿90)
+	{ OPTION_CFG_DIRECTORY,                              "config/cfg",       core_options::option_type::PATH,       "directory to save configurations" }, // 修改的 (加斯顿90)
+	{ OPTION_NVRAM_DIRECTORY,                            "config/nvram",     core_options::option_type::PATH,       "directory to save NVRAM contents" }, // 修改的 (加斯顿90)
+	{ OPTION_INPUT_DIRECTORY,                            "config/inp",       core_options::option_type::PATH,       "directory to save input device logs" }, // 修改的 (加斯顿90)
+	{ OPTION_STATE_DIRECTORY,                            "config/sta",       core_options::option_type::PATH,       "directory to save states" }, // 修改的 (加斯顿90)
+	{ OPTION_SNAPSHOT_DIRECTORY,                         "support/snap",     core_options::option_type::PATH,       "directory to save/load screenshots" }, // 修改的 (加斯顿90)
+	{ OPTION_DIFF_DIRECTORY,                             "config/diff",      core_options::option_type::PATH,       "directory to save hard drive image difference files" }, // 修改的 (加斯顿90)
+	{ OPTION_COMMENT_DIRECTORY,                          "config/comments",  core_options::option_type::PATH,       "directory to save debugger comments" }, // 修改的 (加斯顿90)
 	{ OPTION_VIDEO_DIRECTORY,                          	 "support/video",    core_options::option_type::STRING,     "directory to save/load video files" }, // 修改的 (加斯顿90)
-	{ OPTION_SHARE_DIRECTORY,                            "config/share",     core_options::option_type::STRING,     "directory to share with emulated machines" }, // 修改的 (加斯顿90)
+	{ OPTION_SHARE_DIRECTORY,                            "config/share",     core_options::option_type::PATH,       "directory to share with emulated machines" }, // 修改的 (加斯顿90)
 
 	// state/playback options
 	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "CORE STATE/PLAYBACK OPTIONS" },
@@ -81,9 +85,9 @@ const options_entry emu_options::s_option_entries[] =
 	{ OPTION_RECORD ";rec",                              nullptr,     core_options::option_type::STRING,     "record an input file" },
 	{ OPTION_EXIT_AFTER_PLAYBACK,                        "0",         core_options::option_type::BOOLEAN,    "close the program at the end of playback" },
 
-	{ OPTION_MNGWRITE,                                   nullptr,     core_options::option_type::STRING,     "optional filename to write a MNG movie of the current session" },
-	{ OPTION_AVIWRITE,                                   nullptr,     core_options::option_type::STRING,     "optional filename to write an AVI movie of the current session" },
-	{ OPTION_WAVWRITE,                                   nullptr,     core_options::option_type::STRING,     "optional filename to write a WAV file of the current session" },
+	{ OPTION_MNGWRITE,                                   nullptr,     core_options::option_type::PATH,       "optional filename to write a MNG movie of the current session" },
+	{ OPTION_AVIWRITE,                                   nullptr,     core_options::option_type::PATH,       "optional filename to write an AVI movie of the current session" },
+	{ OPTION_WAVWRITE,                                   nullptr,     core_options::option_type::PATH,       "optional filename to write a WAV file of the current session" },
 	{ OPTION_SNAPNAME,                                   "%g/%i",     core_options::option_type::STRING,     "override of the default snapshot/movie naming; %g == gamename, %i == index" },
 	{ OPTION_SNAPSIZE,                                   "auto",      core_options::option_type::STRING,     "specify snapshot/movie resolution (<width>x<height>) or 'auto' to use minimal size " },
 	{ OPTION_SNAPVIEW,                                   "auto",      core_options::option_type::STRING,     "snapshot/movie view - 'auto' for default, or 'native' for per-screen pixel-aspect views" },
@@ -97,9 +101,9 @@ const options_entry emu_options::s_option_entries[] =
 	{ OPTION_FRAMESKIP ";fs(0-10)",                      "0",         core_options::option_type::INTEGER,    "set frameskip to fixed value, 0-10 (upper limit with autoframeskip)" },
 	{ OPTION_SECONDS_TO_RUN ";str",                      "0",         core_options::option_type::INTEGER,    "number of emulated seconds to run before automatically exiting" },
 	{ OPTION_THROTTLE,                                   "1",         core_options::option_type::BOOLEAN,    "throttle emulation to keep system running in sync with real time" },
-	{ OPTION_SYNCREFRESH ";srf",                         "0",         core_options::option_type::BOOLEAN,    "enable using the start of VBLANK for throttling instead of the game time" },  // MAMEFX
+	{ OPTION_SYNCREFRESH ";srf",                         "0",         core_options::option_type::BOOLEAN,    "enable using the start of VBLANK for throttling instead of the game time" },  // MAMEFX, Mamesick 2016-08-31
 	{ OPTION_SLEEP,                                      "1",         core_options::option_type::BOOLEAN,    "enable sleeping, which gives time back to other applications when idle" },
-	{ OPTION_SPEED "(0.01-100)",                         "1.0",       core_options::option_type::FLOAT,      "controls the speed of gameplay, relative to realtime; smaller numbers are slower" },
+	{ OPTION_SPEED "(0.1-100)",                          "1.0",       core_options::option_type::FLOAT,      "controls the speed of gameplay, relative to realtime; smaller numbers are slower" },
 	{ OPTION_REFRESHSPEED ";rs",                         "0",         core_options::option_type::BOOLEAN,    "automatically adjust emulation speed to keep the emulated refresh rate slower than the host screen" },
 	{ OPTION_LOWLATENCY ";lolat",                        "0",         core_options::option_type::BOOLEAN,    "draws new frame before throttling to reduce input latency" },
 
@@ -108,7 +112,7 @@ const options_entry emu_options::s_option_entries[] =
 	{ OPTION_KEEPASPECT ";ka",                           "0",         core_options::option_type::BOOLEAN,    "maintain aspect ratio when scaling to fill output screen/window" }, // 修改的 (加斯顿90)
 	{ OPTION_UNEVENSTRETCH ";ues",                       "1",         core_options::option_type::BOOLEAN,    "allow non-integer ratios when scaling to fill output screen/window horizontally or vertically" },
 	{ OPTION_UNEVENSTRETCHX ";uesx",                     "0",         core_options::option_type::BOOLEAN,    "allow non-integer ratios when scaling to fill output screen/window horizontally"},
-	{ OPTION_UNEVENSTRETCHY ";uesy",                     "0",         core_options::option_type::BOOLEAN,    "allow non-integer ratios when scaling to fill otuput screen/window vertially"},
+	{ OPTION_UNEVENSTRETCHY ";uesy",                     "0",         core_options::option_type::BOOLEAN,    "allow non-integer ratios when scaling to fill output screen/window vertically"},
 	{ OPTION_AUTOSTRETCHXY ";asxy",                      "0",         core_options::option_type::BOOLEAN,    "automatically apply -unevenstretchx/y based on source native orientation"},
 	{ OPTION_INTOVERSCAN ";ios",                         "0",         core_options::option_type::BOOLEAN,    "allow overscan on integer scaled targets"},
 	{ OPTION_INTSCALEX ";sx",                            "0",         core_options::option_type::INTEGER,    "set horizontal integer scale factor"},
@@ -129,6 +133,7 @@ const options_entry emu_options::s_option_entries[] =
 	{ OPTION_ARTWORK_CROP ";artcrop",                    "0",         core_options::option_type::BOOLEAN,    "crop artwork so emulated screen image fills output screen/window in one axis" },
 	{ OPTION_FALLBACK_ARTWORK,                           nullptr,     core_options::option_type::STRING,     "fallback artwork if no external artwork or internal driver layout defined" },
 	{ OPTION_OVERRIDE_ARTWORK,                           nullptr,     core_options::option_type::STRING,     "override artwork for external artwork and internal driver layout" },
+	{ OPTION_ARTWORK_FONT ";artfont",                    "default",   core_options::option_type::STRING,     "specify a font to use for artwork text elements" },
 
 	// screen options
 	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "CORE SCREEN OPTIONS" },
@@ -137,7 +142,7 @@ const options_entry emu_options::s_option_entries[] =
 	{ OPTION_GAMMA "(0.1-3.0)",                          "1.0",       core_options::option_type::FLOAT,      "default game screen gamma correction" },
 	{ OPTION_PAUSE_BRIGHTNESS "(0.0-1.0)",               "0.65",      core_options::option_type::FLOAT,      "amount to scale the screen brightness when paused" },
 	{ OPTION_EFFECT,                                     "none",      core_options::option_type::STRING,     "name of a PNG file to use for visual effects, or 'none'" },
-	{ OPTION_WIDESTRETCH,                                "0",         core_options::option_type::BOOLEAN,    "enable D3D wide floating point stretching" },  // MAMEFX
+	{ OPTION_WIDESTRETCH,                                "0",         core_options::option_type::BOOLEAN,    "enable D3D wide floating point stretching" },  // MAMEFX, Mamesick 2016-08-31
 
 	// vector options
 	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "CORE VECTOR OPTIONS" },
@@ -151,9 +156,7 @@ const options_entry emu_options::s_option_entries[] =
 	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "CORE SOUND OPTIONS" },
 	{ OPTION_SAMPLERATE ";sr(1000-1000000)",             "48000",     core_options::option_type::INTEGER,    "set sound output sample rate" },
 	{ OPTION_SAMPLES,                                    "1",         core_options::option_type::BOOLEAN,    "enable the use of external samples if available" },
-	{ OPTION_VOLUME ";vol",                              "0",         core_options::option_type::INTEGER,    "sound volume in decibels (-32 min, 0 max)" },
-	{ OPTION_COMPRESSOR,                                 "1",         core_options::option_type::BOOLEAN,    "enable compressor for sound" },
-	{ OPTION_SPEAKER_REPORT "(0-4)",                     "0",         core_options::option_type::INTEGER,    "print report of speaker ouput maxima (0=none, or 1-4 for more detail)" },
+	{ OPTION_VOLUME ";vol(-96-12)",                      "0",         core_options::option_type::INTEGER,    "sound volume in decibels" },
 
 	// input options
 	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "CORE INPUT OPTIONS" },
@@ -166,10 +169,10 @@ const options_entry emu_options::s_option_entries[] =
 	{ OPTION_MULTIMOUSE,                                 "0",         core_options::option_type::BOOLEAN,    "enable separate input from each mouse device (if present)" },
 	{ OPTION_STEADYKEY ";steady",                        "0",         core_options::option_type::BOOLEAN,    "enable steadykey support" },
 	{ OPTION_UI_ACTIVE,                                  "0",         core_options::option_type::BOOLEAN,    "enable user interface on top of emulated keyboard (if present)" },
-	{ OPTION_OFFSCREEN_RELOAD ";reload",                 "0",         core_options::option_type::BOOLEAN,    "convert lightgun button 2 into offscreen reload" },
 	{ OPTION_JOYSTICK_MAP ";joymap",                     "auto",      core_options::option_type::STRING,     "explicit joystick map, or auto to auto-select" },
-	{ OPTION_JOYSTICK_DEADZONE ";joy_deadzone;jdz(0.00-1)",      "0.3",       core_options::option_type::FLOAT,      "center deadzone range for joystick where change is ignored (0.0 center, 1.0 end)" },
-	{ OPTION_JOYSTICK_SATURATION ";joy_saturation;jsat(0.00-1)", "0.85",      core_options::option_type::FLOAT,      "end of axis saturation range for joystick where change is ignored (0.0 center, 1.0 end)" },
+	{ OPTION_JOYSTICK_DEADZONE ";joy_deadzone;jdz(0.00-1)",       "0.15", core_options::option_type::FLOAT,  "center deadzone range for joystick where change is ignored (0.0 center, 1.0 end)" },
+	{ OPTION_JOYSTICK_SATURATION ";joy_saturation;jsat(0.00-1)",  "0.85", core_options::option_type::FLOAT,  "end of axis saturation range for joystick where change is ignored (0.0 center, 1.0 end)" },
+	{ OPTION_JOYSTICK_THRESHOLD ";joy_threshold;jthresh(0.00-1)", "0.3",  core_options::option_type::FLOAT,  "threshold for joystick to be considered active as a switch (0.0 center, 1.0 end)" },
 	{ OPTION_NATURAL_KEYBOARD ";nat",                    "0",         core_options::option_type::BOOLEAN,    "specifies whether to use a natural keyboard or not" },
 	{ OPTION_JOYSTICK_CONTRADICTORY ";joy_contradictory","0",         core_options::option_type::BOOLEAN,    "enable contradictory direction digital joystick input at the same time" },
 	{ OPTION_COIN_IMPULSE,                               "0",         core_options::option_type::INTEGER,    "set coin impulse time (n<0 disable impulse, n==0 obey driver, 0<n set time n)" },
@@ -192,7 +195,7 @@ const options_entry emu_options::s_option_entries[] =
 	{ OPTION_OSLOG,                                      "0",         core_options::option_type::BOOLEAN,    "output error.log data to system diagnostic output (debugger or standard error)" },
 	{ OPTION_DEBUG ";d",                                 "0",         core_options::option_type::BOOLEAN,    "enable/disable debugger" },
 	{ OPTION_UPDATEINPAUSE,                              "0",         core_options::option_type::BOOLEAN,    "keep calling video updates while in pause" },
-	{ OPTION_DEBUGSCRIPT,                                nullptr,     core_options::option_type::STRING,     "script for debugger" },
+	{ OPTION_DEBUGSCRIPT,                                nullptr,     core_options::option_type::PATH,       "script for debugger" },
 	{ OPTION_DEBUGLOG,                                   "0",         core_options::option_type::BOOLEAN,    "write debug console output to debug.log" },
 
 	// comm options
@@ -205,20 +208,22 @@ const options_entry emu_options::s_option_entries[] =
 
 	// misc options
 	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "CORE MISC OPTIONS" },
-	{ OPTION_DRC,                                        "1",         core_options::option_type::BOOLEAN,    "enable DRC CPU core if available" },
+	{ OPTION_DRC,                                        "1",         core_options::option_type::BOOLEAN,    "enable DRC CPU cores if available" },
+	{ OPTION_DRC_RWX,                                    "1",         core_options::option_type::BOOLEAN,    "allow DRC to use writable executable pages if supported" },
 	{ OPTION_DRC_USE_C,                                  "0",         core_options::option_type::BOOLEAN,    "force DRC to use C backend" },
 	{ OPTION_DRC_LOG_UML,                                "0",         core_options::option_type::BOOLEAN,    "write DRC UML disassembly log" },
 	{ OPTION_DRC_LOG_NATIVE,                             "0",         core_options::option_type::BOOLEAN,    "write DRC native disassembly log" },
 	{ OPTION_BIOS,                                       nullptr,     core_options::option_type::STRING,     "select the system BIOS to use" },
 	{ OPTION_CHEAT ";c",                                 "1",         core_options::option_type::BOOLEAN,    "enable cheat subsystem" }, // 修改的 (加斯顿90)
 	{ OPTION_SKIP_GAMEINFO,                              "0",         core_options::option_type::BOOLEAN,    "skip displaying the system information screen at startup" },
-	{ OPTION_UI_FONT,                                    "default",   core_options::option_type::STRING,     "specify a font to use" },
+	{ OPTION_UI_FONT,                                    "default",   core_options::option_type::STRING,     "specify a font to use for UI text" },
 	{ OPTION_UI,                                         "cabinet",   core_options::option_type::STRING,     "type of UI (simple|cabinet)" },
 	{ OPTION_RAMSIZE ";ram",                             nullptr,     core_options::option_type::STRING,     "size of RAM (if supported by driver)" },
 	{ OPTION_CONFIRM_QUIT,                               "0",         core_options::option_type::BOOLEAN,    "ask for confirmation before exiting" },
 	{ OPTION_UI_MOUSE,                                   "1",         core_options::option_type::BOOLEAN,    "display UI mouse cursor" },
-	{ OPTION_LANGUAGE ";lang",                           "English",   core_options::option_type::STRING,     "set UI display language" },
+	{ OPTION_LANGUAGE ";lang",                           "",          core_options::option_type::STRING,     "set UI display language" },
 	{ OPTION_NVRAM_SAVE ";nvwrite",                      "1",         core_options::option_type::BOOLEAN,    "save NVRAM data on exit" },
+	{ OPTION_RTC_TIME,                                   nullptr,     core_options::option_type::STRING,     "start emulation with time" },
 
 // 修改的 代码来源 (缘来是你)
 /*******************************************************************************************************************************************************************/
@@ -228,16 +233,16 @@ const options_entry emu_options::s_option_entries[] =
 	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "SCRIPTING OPTIONS" },
 	{ OPTION_AUTOBOOT_COMMAND ";ab",                     nullptr,     core_options::option_type::STRING,     "command to execute after machine boot" },
 	{ OPTION_AUTOBOOT_DELAY,                             "0",         core_options::option_type::INTEGER,    "delay before executing autoboot command (seconds)" },
-	{ OPTION_AUTOBOOT_SCRIPT ";script",                  nullptr,     core_options::option_type::STRING,     "Lua script to execute after machine boot" },
+	{ OPTION_AUTOBOOT_SCRIPT ";script",                  nullptr,     core_options::option_type::PATH,       "Lua script to execute after machine boot" },
 	{ OPTION_CONSOLE,                                    "0",         core_options::option_type::BOOLEAN,    "enable emulator Lua console" },
 	{ OPTION_PLUGINS,                                    "1",         core_options::option_type::BOOLEAN,    "enable Lua plugin support" },
 	{ OPTION_PLUGIN,                                     nullptr,     core_options::option_type::STRING,     "list of plugins to enable" },
 	{ OPTION_NO_PLUGIN,                                  nullptr,     core_options::option_type::STRING,     "list of plugins to disable" },
 
-	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "HTTP SERVER OPTIONS" },
-	{ OPTION_HTTP,                                       "0",         core_options::option_type::BOOLEAN,    "enable HTTP server" },
-	{ OPTION_HTTP_PORT,                                  "8080",      core_options::option_type::INTEGER,    "HTTP server port" },
-	{ OPTION_HTTP_ROOT,                                  "web",       core_options::option_type::STRING,     "HTTP server document root" },
+//	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "HTTP SERVER OPTIONS" },
+//	{ OPTION_HTTP,                                       "0",         core_options::option_type::BOOLEAN,    "enable HTTP server" },
+//	{ OPTION_HTTP_PORT,                                  "8080",      core_options::option_type::INTEGER,    "HTTP server port" },
+//	{ OPTION_HTTP_ROOT,                                  "web",       core_options::option_type::PATH,       "HTTP server document root" },
 
 //=============================== 缘来是你 ==================================>>>
 	//EKMAME FIX60FPS	
@@ -277,7 +282,7 @@ namespace
 		}
 
 	protected:
-		virtual void internal_set_value(std::string &&newvalue) override
+		virtual void internal_set_value(std::string &&newvalue, bool perform_substitutions) override
 		{
 			m_host.set_system_name(std::move(newvalue));
 		}
@@ -297,7 +302,7 @@ namespace
 		}
 
 	protected:
-		virtual void internal_set_value(std::string &&newvalue) override
+		virtual void internal_set_value(std::string &&newvalue, bool perform_substitutions) override
 		{
 			m_host.set_software(std::move(newvalue));
 		}
@@ -310,8 +315,8 @@ namespace
 	class slot_option_entry : public core_options::entry
 	{
 	public:
-		slot_option_entry(const char *name, slot_option &host)
-			: entry(name)
+		slot_option_entry(std::string &&name, slot_option &host)
+			: entry(std::move(name))
 			, m_host(host)
 		{
 		}
@@ -335,7 +340,7 @@ namespace
 		}
 
 	protected:
-		virtual void internal_set_value(std::string &&newvalue) override
+		virtual void internal_set_value(std::string &&newvalue, bool perform_substitutions) override
 		{
 			m_host.specify(std::move(newvalue), false);
 		}
@@ -361,7 +366,7 @@ namespace
 		}
 
 	protected:
-		virtual void internal_set_value(std::string &&newvalue) override
+		virtual void internal_set_value(std::string &&newvalue, bool perform_substitutions) override
 		{
 			m_host.specify(std::move(newvalue), false);
 		}
@@ -376,7 +381,7 @@ namespace
 	class existing_option_tracker
 	{
 	public:
-		existing_option_tracker(const std::unordered_map<std::string, T> &map)
+		existing_option_tracker(const util::transparent_string_unordered_map<std::string, T> &map)
 		{
 			m_vec.reserve(map.size());
 			for (const auto &entry : map)
@@ -585,7 +590,7 @@ bool emu_options::add_and_remove_slot_options()
 		for (const device_slot_interface &slot : slot_interface_enumerator(config.root_device()))
 		{
 			// come up with the canonical name of the slot
-			const char *slot_option_name = slot.slot_name();
+			const std::string_view slot_option_name = slot.slot_name();
 
 			// erase this option from existing (so we don't purge it later)
 			existing.remove(slot_option_name);
@@ -607,7 +612,7 @@ bool emu_options::add_and_remove_slot_options()
 						add_header(header);
 
 					// create a new entry in the options
-					auto new_entry = new_option.setup_option_entry(slot_option_name);
+					auto new_entry = new_option.setup_option_entry(std::string(slot_option_name));
 
 					// and add it
 					add_entry(std::move(new_entry), header);
@@ -637,8 +642,8 @@ bool emu_options::add_and_remove_slot_options()
 
 
 //-------------------------------------------------
-//  add_and_remove_slot_options - add any missing
-//  and/or purge extraneous slot options
+//  add_and_remove_image_options - add any missing
+//  and/or purge extraneous image options
 //-------------------------------------------------
 
 bool emu_options::add_and_remove_image_options()
@@ -741,7 +746,7 @@ bool emu_options::add_and_remove_image_options()
 
 //-------------------------------------------------
 //  reevaluate_default_card_software - based on recent
-//  changes in what images are mounted, give drivers
+//  changes in what images are mounted, give devices
 //  a chance to specify new default slot options
 //-------------------------------------------------
 
@@ -780,6 +785,16 @@ void emu_options::reevaluate_default_card_software()
 			std::string default_card_software = get_default_card_software(slot);
 			if (slot_opt.default_card_software() != default_card_software)
 			{
+				// HACK: prevent option values set from "XXX_default" in software list entries
+				// from getting cleared out, using crude heuristic to distinguish these from
+				// values representing cartridge types and such
+				if (default_card_software.empty())
+				{
+					auto *opt = slot.option(slot_opt.default_card_software().c_str());
+					if (opt && opt->selectable())
+						continue;
+				}
+
 				slot_opt.set_default_card_software(std::move(default_card_software));
 
 				// calling set_default_card_software() can cause a cascade of slot/image
@@ -868,12 +883,21 @@ void emu_options::set_software(std::string &&new_software)
 		}
 
 		// keep any deferred options for the next round
-		softlist_opts = std::move(deferred_opts);
+		softlist_opts.slot = std::move(deferred_opts.slot);
+		softlist_opts.image = std::move(deferred_opts.image);
 
 		// do we have any pending options after failing to distribute any?
 		size_t after_size = softlist_opts.slot.size() + softlist_opts.image.size();
 		if ((after_size > 0) && after_size >= before_size)
 			throw options_error_exception("Could not assign software option");
+	}
+
+	// distribute slot option defaults
+	for (auto &slot_opt : softlist_opts.slot_defaults)
+	{
+		auto iter = m_slot_options.find(slot_opt.first);
+		if (iter != m_slot_options.end())
+			iter->second.set_default_card_software(std::move(slot_opt.second));
 	}
 
 	// we've succeeded; update the set name
@@ -945,9 +969,12 @@ emu_options::software_options emu_options::evaluate_initial_softlist_options(con
 								// we need to find a mountable image slot, but we need to ensure it is a slot
 								// for which we have not already distributed a part to
 								device_image_interface *image = software_list_device::find_mountable_image(
-									config,
-									swpart,
-									[&results](const device_image_interface &candidate) { return results.image.count(candidate.instance_name()) == 0; });
+										config,
+										swpart,
+										[&results] (const device_image_interface &candidate)
+										{
+											return results.image.count(candidate.instance_name()) == 0;
+										});
 
 								// did we find a slot to put this part into?
 								if (image != nullptr)
@@ -980,7 +1007,15 @@ emu_options::software_options emu_options::evaluate_initial_softlist_options(con
 								&& fi.name().compare(fi.name().size() - default_suffix.size(), default_suffix.size(), default_suffix) == 0)
 							{
 								std::string slot_name = fi.name().substr(0, fi.name().size() - default_suffix.size());
-								results.slot[slot_name] = fi.value();
+
+								// only add defaults if they exist in this configuration
+								device_t *device = config.root_device().subdevice(slot_name.c_str());
+								if (device)
+								{
+									device_slot_interface *intf;
+									if (device->interface(intf) && intf->option(fi.value().c_str()))
+										results.slot_defaults[slot_name] = fi.value();
+								}
 							}
 						}
 					}
@@ -1014,16 +1049,16 @@ emu_options::software_options emu_options::evaluate_initial_softlist_options(con
 //  find_slot_option
 //-------------------------------------------------
 
-const slot_option *emu_options::find_slot_option(const std::string &device_name) const
+const slot_option *emu_options::find_slot_option(std::string_view device_name) const
 {
-	auto iter = m_slot_options.find(device_name);
-	return iter != m_slot_options.end() ? &iter->second : nullptr;
+	auto const iter = m_slot_options.find(device_name);
+	return (iter != m_slot_options.end()) ? &iter->second : nullptr;
 }
 
-slot_option *emu_options::find_slot_option(const std::string &device_name)
+slot_option *emu_options::find_slot_option(std::string_view device_name)
 {
-	auto iter = m_slot_options.find(device_name);
-	return iter != m_slot_options.end() ? &iter->second : nullptr;
+	auto const iter = m_slot_options.find(device_name);
+	return (iter != m_slot_options.end()) ? &iter->second : nullptr;
 }
 
 
@@ -1032,16 +1067,16 @@ slot_option *emu_options::find_slot_option(const std::string &device_name)
 //  slot_option
 //-------------------------------------------------
 
-const slot_option &emu_options::slot_option(const std::string &device_name) const
+const slot_option &emu_options::slot_option(std::string_view device_name) const
 {
-	const ::slot_option *opt = find_slot_option(device_name);
+	::slot_option const *const opt = find_slot_option(device_name);
 	assert(opt && "Attempt to access non-existent slot option");
 	return *opt;
 }
 
-slot_option &emu_options::slot_option(const std::string &device_name)
+slot_option &emu_options::slot_option(std::string_view device_name)
 {
-	::slot_option *opt = find_slot_option(device_name);
+	::slot_option *const opt = find_slot_option(device_name);
 	assert(opt && "Attempt to access non-existent slot option");
 	return *opt;
 }
@@ -1051,16 +1086,16 @@ slot_option &emu_options::slot_option(const std::string &device_name)
 //  image_option
 //-------------------------------------------------
 
-const image_option &emu_options::image_option(const std::string &device_name) const
+const image_option &emu_options::image_option(std::string_view device_name) const
 {
-	auto iter = m_image_options.find(device_name);
+	auto const iter = m_image_options.find(device_name);
 	assert(iter != m_image_options.end() && "Attempt to access non-existent image option");
 	return *iter->second;
 }
 
-image_option &emu_options::image_option(const std::string &device_name)
+image_option &emu_options::image_option(std::string_view device_name)
 {
-	auto iter = m_image_options.find(device_name);
+	auto const iter = m_image_options.find(device_name);
 	assert(iter != m_image_options.end() && "Attempt to access non-existent image option");
 	return *iter->second;
 }
@@ -1073,8 +1108,9 @@ image_option &emu_options::image_option(const std::string &device_name)
 void emu_options::command_argument_processed()
 {
 	// some command line arguments require that the system name be set, so we can get slot options
-	if (command_arguments().size() == 1 && !core_iswildstr(command_arguments()[0].c_str()) &&
-		(command() == "listdevices" || (command() == "listslots") || (command() == "listmedia") || (command() == "listsoftware")))
+	// FIXME: having this here is a massively leaky abstraction
+	if (command_arguments().size() == 1 && !core_iswildstr(command_arguments()[0]) &&
+		(command() == "listdevices" || (command() == "listslots") || (command() == "listbios") || (command() == "listmedia") || (command() == "listsoftware")))
 	{
 		set_system_name(command_arguments()[0]);
 	}
@@ -1254,13 +1290,13 @@ void slot_option::set_bios(std::string &&text)
 //  slot_option::setup_option_entry
 //-------------------------------------------------
 
-core_options::entry::shared_ptr slot_option::setup_option_entry(const char *name)
+core_options::entry::shared_ptr slot_option::setup_option_entry(std::string &&name)
 {
 	// this should only be called once
 	assert(m_entry.expired());
 
 	// create the entry and return it
-	core_options::entry::shared_ptr entry = std::make_shared<slot_option_entry>(name, *this);
+	auto entry = std::make_shared<slot_option_entry>(std::move(name), *this);
 	m_entry = entry;
 	return entry;
 }

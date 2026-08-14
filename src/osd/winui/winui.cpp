@@ -1,4 +1,3 @@
-// license:BSD-3-Clause
 // For licensing and usage information, read docs/release/winui_license.txt
 // IPS 实现代码由 eziochiu 添加
 
@@ -679,7 +678,7 @@ static void load_translation(emu_options &m_options)
 class mameui_output_error : public osd_output
 {
 public:
-	virtual void output_callback(osd_output_channel channel, const util::format_argument_pack<std::ostream> &args) override
+	virtual void output_callback(osd_output_channel channel, const util::format_argument_pack<char> &args) override
 	{
 		std::ostringstream sbuffer;
 		util::stream_format(sbuffer, args);
@@ -713,12 +712,13 @@ public:
 		if (s_action)
 		{
 			// if we are in fullscreen mode, go to windowed mode
-			if ((video_config.windowed == 0) && !osd_common_t::s_window_list.empty())
+			if ((video_config.windowed == 0) && !osd_common_t::window_list().empty())
 				winwindow_toggle_full_screen();
 
-			winui_message_box_utf8(!osd_common_t::s_window_list.empty() ?
-				std::static_pointer_cast<win_window_info>(osd_common_t::s_window_list.front())->platform_window() :
+			winui_message_box_utf8(!osd_common_t::window_list().empty() ?
+				dynamic_cast<win_window_info &>(*osd_common_t::window_list().front()).platform_window() :
 					hMain, buffer, MAMEUINAME, (BIT(s_action, 0) ? MB_ICONINFORMATION : MB_ICONERROR) | MB_OK);
+//			s_output_buffer.append(buffer);
 		}
 
 //		else
@@ -6375,7 +6375,7 @@ static intptr_t CALLBACK StartupProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM
 	{
 		case WM_INITDIALOG:
 		{
-			int imgWidth = (int)(461 * g_fDpiScale);
+			int imgWidth = (int)(485 * g_fDpiScale);
 			int imgHeight = (int)(136 * g_fDpiScale);
 			/* Original image size. If this does not display correctly, please use the code below */
 			//int imgWidth = (int)(461 * g_fDpiScale);
@@ -7032,7 +7032,7 @@ static void ExportGameToXML(FILE* f, int game_index)
 
 static void ExportFullXML(int mode, HWND hWndList)
 {
-    wchar_t wfilename[MAX_PATH] = L"NeoEX.xml";
+    wchar_t wfilename[MAX_PATH] = L"arcade64.xml";
     wchar_t szCurDir[MAX_PATH];
     
     GetCurrentDirectory(MAX_PATH, szCurDir);

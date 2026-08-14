@@ -82,10 +82,10 @@ private:
 	void sf2mdt_soundlatch_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 	void sf2mdta_layer_w(offs_t offset, uint16_t data);
 
-	void captcommb2_map(address_map &map);
-	void sf2b_map(address_map &map);
-	void sf2mdt_map(address_map &map);
-	void captcommb2_z80map(address_map &map);
+	void captcommb2_map(address_map &map) ATTR_COLD;
+	void sf2b_map(address_map &map) ATTR_COLD;
+	void sf2mdt_map(address_map &map) ATTR_COLD;
+	void captcommb2_z80map(address_map &map) ATTR_COLD;
 
 	bool m_captcommb2_mux_toggle = false;
 
@@ -386,10 +386,10 @@ void cps1bl_5205_state::captcommb2(machine_config &config)
 	ym2151.add_route(0, "mono", 0.35);
 	ym2151.add_route(1, "mono", 0.35);
 
-	LS157(config, m_msm_mux[0], 0);
+	LS157(config, m_msm_mux[0]);
 	m_msm_mux[0]->out_callback().set("msm1", FUNC(msm5205_device::data_w));
 
-	LS157(config, m_msm_mux[1], 0);
+	LS157(config, m_msm_mux[1]);
 	m_msm_mux[1]->out_callback().set("msm2", FUNC(msm5205_device::data_w));
 
 	MSM5205(config, m_msm[0], 400000);  // 400kHz measured on pcb
@@ -448,10 +448,10 @@ void cps1bl_5205_state::sf2mdt(machine_config &config)
 
 	YM2151(config, "2151", 3750000).add_route(0, "mono", 0.35).add_route(1, "mono", 0.35);
 
-	LS157(config, m_msm_mux[0], 0);
+	LS157(config, m_msm_mux[0]);
 	m_msm_mux[0]->out_callback().set("msm1", FUNC(msm5205_device::data_w));
 
-	LS157(config, m_msm_mux[1], 0);
+	LS157(config, m_msm_mux[1]);
 	m_msm_mux[1]->out_callback().set("msm2", FUNC(msm5205_device::data_w));
 
 	MSM5205(config, m_msm[0], 400000);  // 400kHz ?

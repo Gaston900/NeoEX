@@ -29,18 +29,18 @@ namespace ui {
 class menu_network_devices : public menu
 {
 public:
-	menu_network_devices(mame_ui_manager &mui, render_container &container);
+	menu_network_devices(mame_ui_manager &mui, render_target &target);
 	virtual ~menu_network_devices();
 
 private:
-	virtual void populate(float &customtop, float &custombottom) override;
-	virtual void handle(event const *ev) override;
+	virtual void populate() override;
+	virtual bool handle(event const *ev) override;
 };
 
 class menu_bookkeeping : public menu_textbox
 {
 public:
-	menu_bookkeeping(mame_ui_manager &mui, render_container &container);
+	menu_bookkeeping(mame_ui_manager &mui, render_target &target);
 	virtual ~menu_bookkeeping();
 
 protected:
@@ -48,8 +48,8 @@ protected:
 	virtual void populate_text(std::optional<text_layout> &layout, float &width, int &lines) override;
 
 private:
-	virtual void populate(float &customtop, float &custombottom) override;
-	virtual void handle(event const *ev) override;
+	virtual void populate() override;
+	virtual bool handle(event const *ev) override;
 
 	attotime prevtime;
 };
@@ -58,7 +58,7 @@ private:
 class menu_crosshair : public menu
 {
 public:
-	menu_crosshair(mame_ui_manager &mui, render_container &container);
+	menu_crosshair(mame_ui_manager &mui, render_target &target);
 	virtual ~menu_crosshair();
 
 private:
@@ -81,8 +81,8 @@ private:
 		std::string next_name;
 	};
 
-	virtual void populate(float &customtop, float &custombottom) override;
-	virtual void handle(event const *ev) override;
+	virtual void populate() override;
+	virtual bool handle(event const *ev) override;
 
 	std::vector<crosshair_item_data> m_data;
 	std::vector<std::string> m_pics;
@@ -92,12 +92,12 @@ private:
 class menu_bios_selection : public menu
 {
 public:
-	menu_bios_selection(mame_ui_manager &mui, render_container &container);
+	menu_bios_selection(mame_ui_manager &mui, render_target &target);
 	virtual ~menu_bios_selection();
 
 private:
-	virtual void populate(float &customtop, float &custombottom) override;
-	virtual void handle(event const *ev) override;
+	virtual void populate() override;
+	virtual bool handle(event const *ev) override;
 };
 
 
@@ -108,12 +108,12 @@ private:
 class menu_export : public menu
 {
 public:
-	menu_export(mame_ui_manager &mui, render_container &container, std::vector<const game_driver*> &&list);
+	menu_export(mame_ui_manager &mui, render_target &target, std::vector<const game_driver*> &&list);
 	virtual ~menu_export();
 
 private:
-	virtual void populate(float &customtop, float &custombottom) override;
-	virtual void handle(event const *ev) override;
+	virtual void populate() override;
+	virtual bool handle(event const *ev) override;
 
 	std::vector<const game_driver*> m_list;
 };
@@ -128,7 +128,7 @@ class menu_machine_configure : public menu
 public:
 	menu_machine_configure(
 			mame_ui_manager &mui,
-			render_container &container,
+			render_target &target,
 			ui_system_info const &info,
 			std::function<void (bool, bool)> &&handler = nullptr);
 	virtual ~menu_machine_configure();
@@ -148,8 +148,8 @@ private:
 		LAST = ADVANCED
 	};
 
-	virtual void populate(float &customtop, float &custombottom) override;
-	virtual void handle(event const *ev) override;
+	virtual void populate() override;
+	virtual bool handle(event const *ev) override;
 
 	void setup_bios();
 
@@ -170,12 +170,12 @@ private:
 class menu_plugins_configure : public menu
 {
 public:
-	menu_plugins_configure(mame_ui_manager &mui, render_container &container);
+	menu_plugins_configure(mame_ui_manager &mui, render_target &target);
 	virtual ~menu_plugins_configure();
 
 protected:
-	virtual void populate(float &customtop, float &custombottom) override;
-	virtual void handle(event const *ev) override;
+	virtual void populate() override;
+	virtual bool handle(event const *ev) override;
 };
 
 // 修改的 代码来源 (EKMAME)
@@ -186,10 +186,10 @@ protected:
 
 class menu_autofire : public menu {
 public:
-	menu_autofire(mame_ui_manager &mui, render_container &container);
+	menu_autofire(mame_ui_manager &mui, render_target &target);
 	virtual ~menu_autofire();
-	virtual void populate(float &customtop, float &custombottom) override;
-	virtual void handle(event const *ev) override;
+	virtual void populate() override;
+	virtual bool handle(event const *ev) override;
 };
 
 //-------------------------------------------------
@@ -198,10 +198,10 @@ public:
 
 class menu_custom_setting : public menu {
 public:
-	menu_custom_setting(mame_ui_manager &mui, render_container &container);
+	menu_custom_setting(mame_ui_manager &mui, render_target &target);
 	virtual ~menu_custom_setting();
-	virtual void populate(float &customtop, float &custombottom) override;
-	virtual void handle(event const *ev) override;
+	virtual void populate() override;
+	virtual bool handle(event const *ev) override;
 };
 
 //-------------------------------------------------
@@ -210,10 +210,10 @@ public:
 
 class menu_custom_button : public menu {
 public:
-	menu_custom_button(mame_ui_manager &mui, render_container &container);
+	menu_custom_button(mame_ui_manager &mui, render_target &target);
 	virtual ~menu_custom_button();
-	virtual void populate(float &customtop, float &custombottom) override;
-	virtual void handle(event const *ev) override;
+	virtual void populate() override;
+	virtual bool handle(event const *ev) override;
 };
 /****************************************************************************/
 

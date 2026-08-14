@@ -1,0 +1,70 @@
+// NeoEX
+// copyright-holders:Gaston90
+#include "../mame/capcom/gng.cpp"
+
+/******
+  Hack
+********/
+
+ROM_START( gngknight )
+	ROM_REGION( 0x18000, "maincpu", 0 )
+	ROM_LOAD( "mm_c_knight_03", 0x08000, 0x008000, CRC(57f4f653) SHA1(7fce045ccffd4274edb75ebd726e42c2cb797dcb) )
+	ROM_LOAD( "mm_c_knight_04", 0x04000, 0x004000, CRC(b96e18c0) SHA1(0822831a7cdb449f183cc16fd53b99dc64689830) )
+	ROM_LOAD( "mm_c_knight_05", 0x10000, 0x008000, CRC(a8a1a2e7) SHA1(30a8453986d32547fc9e33465a56cc99533ea6ec) )
+
+	ROM_REGION( 0x10000, "audiocpu", 0 )
+	ROM_LOAD( "gg2.bin", 0x000000, 0x008000, CRC(615f5b6f) SHA1(7ef9ec5c2072e21c787a6bbf700033f50c759c1d) )
+
+	ROM_REGION( 0x04000, "chars", 0 )
+	ROM_LOAD( "gg1knight.bin", 0x000000, 0x004000, CRC(c12dd3e3) SHA1(09dda1840ee4052d804423d19eb4ff712690ef38) )
+
+	ROM_REGION( 0x18000, "tiles", 0 )
+	ROM_LOAD( "gg6.bin", 0x014000, 0x004000, CRC(2d77e9b2) SHA1(944da1ce29a18bf0fc8deff78bceacba0bf23a07) )
+	ROM_LOAD( "gg7.bin", 0x010000, 0x004000, CRC(e525207d) SHA1(1947f159189b3a53f1251d8653b6e7c65c91fc3c) )
+	ROM_LOAD( "gg8.bin", 0x00c000, 0x004000, CRC(f12ba271) SHA1(1c42fa02cb27b35d10c3f7f036005e747f9f6b79) )
+	ROM_LOAD( "gg9.bin", 0x008000, 0x004000, CRC(20035bda) SHA1(bbb1fba0eb19471f66d29526fa8423ccb047bd63) )
+	ROM_LOAD( "gg10.bin", 0x004000, 0x004000, CRC(7302529d) SHA1(8434c994cc55d2586641f3b90b6b15fd65dfb67c) )
+	ROM_LOAD( "gg11.bin", 0x000000, 0x004000, CRC(ddd56fa9) SHA1(f9d77eee5e2738b7e83ba02fcc55dd480391479f) )
+
+	ROM_REGION( 0x20000, "sprites", ROMREGION_ERASEFF )
+	ROM_LOAD( "gg12knight.bin", 0x018000, 0x004000, CRC(7c6e8878) SHA1(4b94a4731f63af06004d5e847198af33110087ad) )
+	ROM_LOAD( "gg13knight.bin", 0x014000, 0x004000, CRC(d3cfe1f8) SHA1(0f3b72d4bea5d597258e310f97636f6b9393c978) )
+	ROM_LOAD( "gg14knight.bin", 0x010000, 0x004000, CRC(01d9a306) SHA1(94700f6894b109565a36d03f634d7ba353a9d8f6) )
+	ROM_LOAD( "gg15knight.bin", 0x008000, 0x004000, CRC(4b9933df) SHA1(a5ff3aab6fbcb8cd44f09c70f29d7427aa7d4473) )
+	ROM_LOAD( "gg16knight.bin", 0x004000, 0x004000, CRC(731dddc3) SHA1(656c599d94d98623ae6b2e95663479592d29992b) )
+	ROM_LOAD( "gg17knight.bin", 0x000000, 0x004000, CRC(a0713571) SHA1(0d30aa976bacc78b7ba0076af136580f34e865a4) )
+ROM_END
+
+ROM_START( gngmaiden )
+	ROM_REGION( 0x18000, "maincpu", 0 )
+	ROM_LOAD( "mm_c_maiden_03", 0x008000, 0x008000, CRC(57f4f653) SHA1(7fce045ccffd4274edb75ebd726e42c2cb797dcb) )
+	ROM_LOAD( "mm_c_maiden_04", 0x004000, 0x004000, CRC(269b5163) SHA1(fc7a0b83464f82b9716ff2ae83c80e2638a7f95f) )
+	ROM_LOAD( "mm_c_maiden_05", 0x010000, 0x008000, CRC(02e34e64) SHA1(ab2b398c9aabde459a7ecdab1a60b44c3523cf5b) )
+
+	ROM_REGION( 0x10000, "audiocpu", 0 )
+	ROM_LOAD( "gg2.bin", 0x000000, 0x008000, CRC(615f5b6f) SHA1(7ef9ec5c2072e21c787a6bbf700033f50c759c1d) )
+
+	ROM_REGION( 0x04000, "chars", 0 )
+	ROM_LOAD( "gg1maiden.bin", 0x000000, 0x004000, CRC(82e2fa18) SHA1(5dc939ca0b202e4c6dd1cb527ace3166c4932bac) )
+
+	ROM_REGION( 0x18000, "tiles", 0 )
+	ROM_LOAD( "gg6.bin", 0x014000, 0x004000, CRC(2d77e9b2) SHA1(944da1ce29a18bf0fc8deff78bceacba0bf23a07) )
+	ROM_LOAD( "gg7.bin", 0x010000, 0x004000, CRC(e525207d) SHA1(1947f159189b3a53f1251d8653b6e7c65c91fc3c) )
+	ROM_LOAD( "gg8.bin", 0x00c000, 0x004000, CRC(f12ba271) SHA1(1c42fa02cb27b35d10c3f7f036005e747f9f6b79) )
+	ROM_LOAD( "gg9.bin", 0x008000, 0x004000, CRC(20035bda) SHA1(bbb1fba0eb19471f66d29526fa8423ccb047bd63) )
+	ROM_LOAD( "gg10.bin", 0x004000, 0x004000, CRC(7302529d) SHA1(8434c994cc55d2586641f3b90b6b15fd65dfb67c) )
+	ROM_LOAD( "gg11.bin", 0x000000, 0x004000, CRC(ddd56fa9) SHA1(f9d77eee5e2738b7e83ba02fcc55dd480391479f) )
+
+	ROM_REGION( 0x20000, "sprites", ROMREGION_ERASEFF )
+	ROM_LOAD( "gg12maiden.bin", 0x018000, 0x004000, CRC(83f8a22c) SHA1(463bb47a5a776bdfa694864748f88ba7a7ed9bcf) )
+	ROM_LOAD( "gg13maiden.bin", 0x014000, 0x004000, CRC(ca6622c1) SHA1(a74a3cb75d0126780fd719a73487c565c30e8f8b) )
+	ROM_LOAD( "gg14maiden.bin", 0x010000, 0x004000, CRC(2eeb6ef5) SHA1(6548c78b5516756e1936640c0b2c5148184f7972) )
+	ROM_LOAD( "gg15maiden.bin", 0x008000, 0x004000, CRC(d6827437) SHA1(0590855a25264225140361858ca5b4ef93f4f95e) )
+	ROM_LOAD( "gg16maiden.bin", 0x004000, 0x004000, CRC(cbf803e7) SHA1(9c5a6131324d3b8c41e1a1081574874e7bc71e32) )
+	ROM_LOAD( "gg17maiden.bin", 0x000000, 0x004000, CRC(9fb0faaf) SHA1(903b926b0c22879721fdc8a551c1512dd0773802) )
+ROM_END
+
+/*    YEAR    NAME      PARENT  MACHINE  INPUT                    INIT   MONITOR   COMPANY         FULLNAME FLAGS */
+/* Gng Hack */
+GAME( 2026, gngknight,   gng,    gng,     gng,      gng_state, empty_init, ROT0, "GoodLuckTrying / Poody", "Ghosts'n Goblins (Knight, US)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, gngmaiden,   gng,    gng,     gng,      gng_state, empty_init, ROT0, "GoodLuckTrying / Poody", "Ghosts'n Goblins (Maiden, US)", MACHINE_SUPPORTS_SAVE )

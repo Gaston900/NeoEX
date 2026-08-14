@@ -221,18 +221,18 @@ public:
 	void kabuki_setup(void (*decode)(u8 *src, u8 *dst));
 
 	/* maps */
-	void main_map(address_map &map);
-	void cpu_space_map(address_map &map);
-	void forgottn_map(address_map &map);
-	void qsound_main_map(address_map &map);
-	void qsound_decrypted_opcodes_map(address_map &map);
-	void sub_map(address_map &map);
-	void qsound_sub_map(address_map &map);
-	void sf2m3_map(address_map &map);
-	void sf2cems6_map(address_map &map);
-	void sf2m10_map(address_map &map);
-	void varthb2_map(address_map &map);
-	void varthb3_map(address_map &map);
+	void main_map(address_map &map) ATTR_COLD;
+	void cpu_space_map(address_map &map) ATTR_COLD;
+	void forgottn_map(address_map &map) ATTR_COLD;
+	void qsound_main_map(address_map &map) ATTR_COLD;
+	void qsound_decrypted_opcodes_map(address_map &map) ATTR_COLD;
+	void sub_map(address_map &map) ATTR_COLD;
+	void qsound_sub_map(address_map &map) ATTR_COLD;
+	void sf2m3_map(address_map &map) ATTR_COLD;
+	void sf2cems6_map(address_map &map) ATTR_COLD;
+	void sf2m10_map(address_map &map) ATTR_COLD;
+	void varthb2_map(address_map &map) ATTR_COLD;
+	void varthb3_map(address_map &map) ATTR_COLD;
 
 	// game-specific
 	u16 m_sf2ceblp_prot = 0;
@@ -350,12 +350,12 @@ public:
 	u16 dinoh_r();	
 
 	/* maps */
-	void daimakb_map(address_map &map);
-	void wofsjb_map(address_map &map);
-	void cps1frog_map(address_map &map);
-	void wofsjsa_map(address_map &map);
-	void wofssj_map(address_map &map);
-	void wofsf2_map(address_map &map);
+	void daimakb_map(address_map &map) ATTR_COLD;
+	void wofsjb_map(address_map &map) ATTR_COLD;
+	void cps1frog_map(address_map &map) ATTR_COLD;
+	void wofsjsa_map(address_map &map) ATTR_COLD;
+	void wofssj_map(address_map &map) ATTR_COLD;
+	void wofsf2_map(address_map &map) ATTR_COLD;
 
 	/* video-related */
 	int m_cpsb_addr = 0;

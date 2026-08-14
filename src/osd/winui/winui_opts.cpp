@@ -1,4 +1,3 @@
-// license:BSD-3-Clause
 // For licensing and usage information, read docs/release/winui_license.txt
 
 #include "winui.h"
@@ -47,7 +46,7 @@ const options_entry winui_options::s_option_entries[] =
 	{ nullptr,								nullptr,    core_options::option_type::HEADER, "APPLICATION VERSION" },
 
 	{ nullptr,								nullptr,    core_options::option_type::HEADER, "DISPLAY STATE OPTIONS" },
-	{ MUIOPTION_DEFAULT_GAME,				"2020bb",   core_options::option_type::STRING, nullptr }, // 修改的 (加斯顿90)
+	{ MUIOPTION_DEFAULT_GAME,				"1942",     core_options::option_type::STRING, nullptr }, // 修改的 (加斯顿90)
 	{ MUIOPTION_DEFAULT_FOLDER_ID,			"0",        core_options::option_type::INTEGER, nullptr },
 	{ MUIOPTION_SHOW_IMAGE_SECTION,			"1",        core_options::option_type::BOOLEAN, nullptr },
 	{ MUIOPTION_CURRENT_TAB,				"0",        core_options::option_type::STRING, nullptr },
@@ -92,7 +91,7 @@ const options_entry winui_options::s_option_entries[] =
 	{ MUIOPTION_ENABLE_INDENT,				"1",        core_options::option_type::BOOLEAN, nullptr }, // 修改的 (加斯顿90)
 	{ MUIOPTION_ENABLE_FASTAUDIT,			"0",        core_options::option_type::BOOLEAN, nullptr },
 	{ MUIOPTION_ENABLE_SEVENZIP,			"0",        core_options::option_type::BOOLEAN, nullptr },
-	{ MUIOPTION_STRETCH_SCREENSHOT_LARGER,	"1",        core_options::option_type::BOOLEAN, nullptr },
+	{ MUIOPTION_STRETCH_SCREENSHOT_LARGER,	"1",        core_options::option_type::BOOLEAN, nullptr }, // 修改的 (加斯顿90)
 	{ MUIOPTION_CYCLE_SCREENSHOT,			"0",        core_options::option_type::INTEGER, nullptr },
 	{ MUIOPTION_SCREENSHOT_BORDER_SIZE,		"2",        core_options::option_type::INTEGER, nullptr }, // 修改的 (加斯顿90)
 	{ MUIOPTION_SCREENSHOT_BORDER_COLOR,	"187,0,0",  core_options::option_type::INTEGER, nullptr }, // 修改的 (加斯顿90)

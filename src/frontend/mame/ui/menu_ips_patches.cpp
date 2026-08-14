@@ -18,8 +18,8 @@
 
 namespace ui {
 
-menu_ips_patches::menu_ips_patches(mame_ui_manager &mui, render_container &container)
-    : menu(mui, container)
+menu_ips_patches::menu_ips_patches(mame_ui_manager &mui, render_target &target)
+    : menu(mui, target)
     , m_need_reset(false)
 {
     set_process_flags(PROCESS_LR_REPEAT);
@@ -231,11 +231,12 @@ void menu_ips_patches::scan_patches()
     }
 }
 
-void menu_ips_patches::populate(float &customtop, float &custombottom)
+void menu_ips_patches::populate()
 {
     int enabled_count = std::count(m_patch_enabled.begin(), m_patch_enabled.end(), true);
     std::string header = string_format("IPS Manager (%d Enabled)", enabled_count);
     item_append(header, FLAG_DISABLE, nullptr);
+
 
     for (size_t i = 0; i < m_patches.size(); i++)
     {
@@ -243,7 +244,7 @@ void menu_ips_patches::populate(float &customtop, float &custombottom)
     }
 
     if (m_need_reset)
-        item_append("Modification requires reloading the game", FLAG_DISABLE, nullptr);
+        item_append("Modification requires reloading the game.", FLAG_DISABLE, nullptr);
 }
 
 void menu_ips_patches::update_ips_option()
@@ -260,7 +261,7 @@ void menu_ips_patches::update_ips_option()
     machine().options().set_value(OPTION_IPS, new_ips.c_str(), OPTION_PRIORITY_CMDLINE);
 }
 
-void menu_ips_patches::handle(event const *ev)
+bool menu_ips_patches::handle(event const *ev)
 {
     if (ev && ev->itemref != nullptr)
     {
@@ -277,16 +278,21 @@ void menu_ips_patches::handle(event const *ev)
                     update_ips_option();
                     reset(reset_options::REMEMBER_REF);
                 }
+                return true;
             }
         }
     }
+#if 0
 // Automatically restarts after changing settings
 // I have tried both soft and hard restarts, but neither worked
 // Leaving this code here in the hope that someone can fix it
     else if (ev && ev->iptkey == IPT_UI_CANCEL && m_need_reset)
     {
         machine().schedule_hard_reset();
+        return true;
     }
+#endif
+    return false;
 }
 
 } // namespace ui

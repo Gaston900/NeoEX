@@ -1,4 +1,3 @@
-// license:BSD-3-Clause
 // For licensing and usage information, read docs/release/winui_license.txt
 
 /////////////////////////////////////////////////////////////////////////////
@@ -142,7 +141,8 @@ BEGIN
 		MENUITEM SEPARATOR
 /*********************************************************************************************/
 //        MENUITEM "Online Manual\tF1",                      ID_HELP_CONTENTS
-        MENUITEM "Support Forum\tF3",                       ID_HELP_TROUBLE
+//        MENUITEM "Support Forum\tF3",                       ID_HELP_TROUBLE
+        MENUITEM "Support Forum",                       ID_HELP_TROUBLE
 //        MENUITEM SEPARATOR
 //        MENUITEM "Mame release notes\tF6",              ID_HELP_WHATS_NEW
 //        MENUITEM SEPARATOR
@@ -383,7 +383,7 @@ IDI_FOLDER		        ICON		            "res\\fl_folder.ico"
 // Dialog
 //
 
-IDD_STARTUP DIALOGEX 0, 0, 256, 86
+IDD_STARTUP DIALOGEX 0, 0, 263, 86
 STYLE WS_POPUP | WS_VISIBLE | WS_BORDER | DS_CENTER | DS_SETFOREGROUND | DS_SETFONT
 EXSTYLE WS_EX_TOOLWINDOW
 FONT 10, "Tahoma"
@@ -399,7 +399,6 @@ EXSTYLE WS_EX_CONTROLPARENT
 CAPTION "MAMEUI - overwritten at runtime"
 CLASS "MainClass"
 FONT 9, "Tahoma"
-
 BEGIN
     CONTROL         "",IDC_DIVIDER,WC_STATIC,SS_ETCHEDHORZ,0,0,364,1
     CONTROL         "",IDC_TREE,WC_TREEVIEW,TVS_HASBUTTONS | TVS_TRACKSELECT | TVS_LINESATROOT | TVS_EDITLABELS | TVS_FULLROWSELECT | TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,5,28,48,172
@@ -416,7 +415,7 @@ END
 /*****************************************************************************************************************************/
 IDD_ABOUT DIALOGEX 0, 0, 320, 228
 STYLE WS_POPUP | WS_VISIBLE | WS_BORDER | DS_SETFONT
-FONT 8, "Tahoma"
+FONT 9, "Tahoma"
 BEGIN
     RTEXT            "",IDC_BUILD,6,4,308,10
     LTEXT            "",IDC_BUILDVER,6,4,120,10
@@ -755,7 +754,7 @@ BEGIN
 
     GROUPBOX        "Audio latency",IDC_AUDIO_LATENCY_TEXT,115,202,102,28
     CONTROL         "",IDC_AUDIO_LATENCY,TRACKBAR_CLASS,TBS_AUTOTICKS | WS_TABSTOP,121,214,72,10,0
-    RTEXT           "1/5",IDC_AUDIO_LATENCY_DISP,190,212,20,10,SS_CENTERIMAGE
+    RTEXT           "",IDC_AUDIO_LATENCY_DISP,190,212,20,10,SS_CENTERIMAGE
 
     CONTROL         "Use external samples",IDC_SAMPLES,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,121,240,140,10,0
     
@@ -787,10 +786,9 @@ BEGIN
     GROUPBOX        "Default input layout",IDC_STATIC,114,40,102,28
     COMBOBOX        IDC_DEFAULT_INPUT,120,50,90,62,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP,0
     CONTROL         "Enable lightgun input",IDC_LIGHTGUN,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,120,74,84,10,0
-    CONTROL         "Offscreen shots reload",IDC_RELOAD,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,120,86,88,10,0
-    CONTROL         "Dual lightguns",IDC_DUAL_LIGHTGUN,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,120,98,88,10,0
-    CONTROL         "Multiple keyboards",IDC_MULTIKEYBOARD,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,120,110,78,10,0
-    CONTROL         "Multiple mice",IDC_MULTIMOUSE,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,120,122,58,10,0
+    CONTROL         "Dual lightguns",IDC_DUAL_LIGHTGUN,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,120,86,88,10,0
+    CONTROL         "Multiple keyboards",IDC_MULTIKEYBOARD,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,120,98,78,10,0
+    CONTROL         "Multiple mice",IDC_MULTIMOUSE,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,120,110,58,10,0
     GROUPBOX        "Joystick map",IDC_STATIC,4,144,212,28
     EDITTEXT        IDC_JOYSTICKMAP,10,154,100,14,ES_AUTOHSCROLL | WS_BORDER,0
     PUSHBUTTON      "Reset joystick map",IDC_RESET_JOYSTICKMAP,120,154,70,14,0,0
@@ -855,6 +853,12 @@ BEGIN
     CONTROL         "Enable rewind savestates",IDC_REWIND,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,10,284,104,10,0
 
     GROUPBOX        "Artwork options",IDC_STATIC,114,40,70,84
+
+    GROUPBOX        "Fallback artwork",IDC_STATIC,114,50,70,28
+    EDITTEXT        IDC_ARTWORK_FALLBACK,118,60,62,14,ES_AUTOHSCROLL | WS_BORDER,0
+    GROUPBOX        "Override artwork",IDC_STATIC,114,80,70,28
+    EDITTEXT        IDC_ARTWORK_OVERRIDE,118,90,62,14,ES_AUTOHSCROLL | WS_BORDER,0
+
     CONTROL         "Crop artwork",IDC_ARTWORK_CROP,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,120,110,60,10,0
 
     GROUPBOX        "Selection language",IDC_STATIC,114,124,70,28
@@ -892,7 +896,7 @@ BEGIN
 
 //==================== 缘来是你 ========================>>>
 	CONTROL         "Skip CRC/HASH check",IDC_SKIP_CRC_CHECK,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,200,281,164,10,0
-//	CONTROL 		"Enable PGM2 without inserting a card",IDC_PGM2_MEMCARD_HACK, WC_BUTTON, BS_AUTOCHECKBOX | WS_TABSTOP, 10,214,164,10,0
+//	CONTROL 		"Enable PGM2 without inserting a card",IDC_PGM2_MEMCARD_HACK, WC_BUTTON, BS_AUTOCHECKBOX | WS_TABSTOP,200,293,164,10,0
 //======================================================>>>
 
     PUSHBUTTON      "Reset",IDC_PROP_RESET,4,294,98,14,0,0
@@ -954,7 +958,7 @@ BEGIN
     CONTROL         "Minimise window to system tray icon",IDC_DISABLE_TRAY_ICON,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,12,16,168,10
     CONTROL         "Allow game selection by joystick (needs restart)",IDC_JOY_GUI,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,12,30,168,10
     CONTROL         "Show confirmation dialog on exit",IDC_EXIT_DIALOG,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,12,44,168,10
-    CONTROL         "Use red icon for Not Working games",IDC_USE_BROKEN_ICON,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,12,58,168,10
+    CONTROL         "Use red icon for Not Working games",IDC_USE_BROKEN_ICON,WC_BUTTON,BS_AUTO3STATE | WS_TABSTOP,12,58,168,10
     CONTROL         "Enable inheritable filters on folders",IDC_FILTER_INHERIT,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,12,72,168,10
     CONTROL         "Display NO ROMS games always as available",IDC_DISPLAY_NO_ROMS,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,12,86,168,10
     CONTROL         "Enable new faster Audit All Games method",IDC_ENABLE_FASTAUDIT,WC_BUTTON,BS_AUTOCHECKBOX | WS_TABSTOP,12,100,168,10

@@ -1275,7 +1275,7 @@ static INPUT_PORTS_START( cps2_4p4b )
 	PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON4 ) PORT_PLAYER(4)
 
 	PORT_START("IN2")      /* (0x20) */
-	PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_CUSTOM ) PORT_READ_LINE_DEVICE_MEMBER("eeprom", eeprom_serial_93cxx_device, do_read)
+	PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_CUSTOM ) PORT_READ_LINE_DEVICE_MEMBER("eeprom", FUNC(eeprom_serial_93cxx_device::do_read))
 	PORT_SERVICE_NO_TOGGLE( 0x0002, IP_ACTIVE_LOW )
 	PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 )
 	PORT_BIT( 0x00f8, IP_ACTIVE_LOW, IPT_UNKNOWN )
@@ -1289,9 +1289,9 @@ static INPUT_PORTS_START( cps2_4p4b )
 	PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_COIN4 )
 
 	PORT_START( "EEPROMOUT" )
-	PORT_BIT( 0x1000, IP_ACTIVE_HIGH, IPT_OUTPUT ) PORT_WRITE_LINE_DEVICE_MEMBER("eeprom", eeprom_serial_93cxx_device, di_write)
-	PORT_BIT( 0x2000, IP_ACTIVE_HIGH, IPT_OUTPUT ) PORT_WRITE_LINE_DEVICE_MEMBER("eeprom", eeprom_serial_93cxx_device, clk_write)
-	PORT_BIT( 0x4000, IP_ACTIVE_HIGH, IPT_OUTPUT ) PORT_WRITE_LINE_DEVICE_MEMBER("eeprom", eeprom_serial_93cxx_device, cs_write)
+	PORT_BIT( 0x1000, IP_ACTIVE_HIGH, IPT_OUTPUT ) PORT_WRITE_LINE_DEVICE_MEMBER("eeprom", FUNC(eeprom_serial_93cxx_device::di_write))
+	PORT_BIT( 0x2000, IP_ACTIVE_HIGH, IPT_OUTPUT ) PORT_WRITE_LINE_DEVICE_MEMBER("eeprom", FUNC(eeprom_serial_93cxx_device::clk_write))
+	PORT_BIT( 0x4000, IP_ACTIVE_HIGH, IPT_OUTPUT ) PORT_WRITE_LINE_DEVICE_MEMBER("eeprom", FUNC(eeprom_serial_93cxx_device::cs_write))
 
 	/* fake inputs for digital volume buttons */
 	PORT_START( "DIGITALVOL" )
@@ -1573,12 +1573,12 @@ void cps2_state::dead_cps2(machine_config &config)
 	MCFG_VIDEO_START_OVERRIDE(cps2_state, cps2)
 
 	/* sound hardware */
-	SPEAKER(config, "lspeaker").front_left();
-	SPEAKER(config, "rspeaker").front_right();
+	SPEAKER(config, "speaker", 2).front();
+										   
 
 	QSOUND(config, m_qsound);
-	m_qsound->add_route(0, "lspeaker", 1.0);
-	m_qsound->add_route(1, "rspeaker", 1.0);
+	m_qsound->add_route(0, "speaker", 1.0, 0);
+	m_qsound->add_route(1, "speaker", 1.0, 1);
 }
 
 
@@ -1599,8 +1599,8 @@ void cps2_state::gigaman2(machine_config &config)
 	config.device_remove("qsound");
 
 	OKIM6295(config, m_oki, XTAL(32'000'000)/32, okim6295_device::PIN7_HIGH); // clock frequency & pin 7 not verified
-	m_oki->add_route(ALL_OUTPUTS, "lspeaker", 0.47);
-	m_oki->add_route(ALL_OUTPUTS, "rspeaker", 0.47);
+	m_oki->add_route(ALL_OUTPUTS, "speaker", 0.47, 0);
+	m_oki->add_route(ALL_OUTPUTS, "speaker", 0.47, 1);
 }
 /*************************************
  *
@@ -12222,7 +12222,6 @@ ROM_START( suicide )
 	ROM_LOAD16_WORD_SWAP( "pzf.12m",   0x200000, 0x200000, CRC(399d2c7b) SHA1(e849dea97b8d16540415c0d9bbc4f9f4eb755ec4) )
 ROM_END
 
-
 /*************************************
  *
  *  Games initialization
@@ -12709,4 +12708,4 @@ GAME( 1994, ssf2td,     ssf2t,    dead_cps2,cps2_2p6b, cps2_state, init_cps2,   
 GAME( 2015, suicide,    0,        dead_cps2,cps2_2p2b, cps2_state, init_cps2,     ROT0,   "Razoola", "Suicide Test",                                                                 MACHINE_SUPPORTS_SAVE )
 
 // NEOEX
-#include "cps2hb.cpp"
+#include "cps2hc.cpp"

@@ -25,6 +25,7 @@ static const char copyright_notice[] =
 /* ======================================================================== */
 
 #include "emu.h"
+#include "debugger.h"
 #include "m68000.h"
 #include "m68kdasm.h"
 
@@ -774,12 +775,12 @@ void m68000_base_device::m68k_cause_bus_error()
 	else if (CPU_TYPE_IS_010())
 	{
 		/* only the 68010 throws this unique type-1000 frame */
-		m68ki_stack_frame_1000(m_ppc, sr, EXCEPTION_BUS_ERROR, m_mmu_tmp_buserror_address);
+		m68ki_stack_frame_1000(m_ppc, sr, EXCEPTION_BUS_ERROR);
 	}
 	else if (CPU_TYPE_IS_070())
 	{
 		/* only the 68070 throws this unique type-1111 frame */
-		m68ki_stack_frame_1111(m_ppc, sr, EXCEPTION_BUS_ERROR, m_mmu_tmp_buserror_address);
+		m68ki_stack_frame_1111(m_ppc, sr, EXCEPTION_BUS_ERROR);
 	}
 	else if (m_mmu_tmp_buserror_address == m_ppc)
 	{
@@ -794,12 +795,13 @@ void m68000_base_device::m68k_cause_bus_error()
 	m_run_mode = RUN_MODE_BERR_AERR_RESET;
 }
 
-bool m68000_base_device::memory_translate(int space, int intention, offs_t &address)
+bool m68000_base_device::memory_translate(int spacenum, int intention, offs_t &address, address_space *&target_space)
 {
+	target_space = &space(spacenum);
 	/* only applies to the program address space and only does something if the MMU's enabled */
 	{
 		/* 68040 needs to call the MMU even when disabled so transparent translation works */
-		if ((space == AS_PROGRAM) && ((m_pmmu_enabled) || (CPU_TYPE_IS_040_PLUS())))
+		if ((spacenum == AS_PROGRAM) && ((m_pmmu_enabled) || (CPU_TYPE_IS_040_PLUS())))
 		{
 			// FIXME: m_mmu_tmp_sr will be overwritten in pmmu_translate_addr_with_fc
 			u16 temp_mmu_tmp_sr = m_mmu_tmp_sr;
@@ -902,7 +904,7 @@ void m68000_base_device::execute_run()
 
 			try
 			{
-			if (!m_instruction_restart)
+			if (!m_pmmu_enabled)
 			{
 				m_run_mode = RUN_MODE_NORMAL;
 				/* Read an instruction and call its handler */
@@ -958,15 +960,8 @@ void m68000_base_device::execute_run()
 
 					if (!CPU_TYPE_IS_020_PLUS())
 					{
-						if (CPU_TYPE_IS_010())
-						{
-							m68ki_stack_frame_1000(m_ppc, sr, EXCEPTION_BUS_ERROR, m_mmu_tmp_buserror_address);
-						}
-						else
-						{
-							/* Note: This is implemented for 68000 only! */
-							m68ki_stack_frame_buserr(sr);
-						}
+						/* Note: This is implemented for 68000 only! */
+						m68ki_stack_frame_buserr(sr);
 					}
 					else if(!CPU_TYPE_IS_040_PLUS()) {
 						if (m_mmu_tmp_buserror_address == m_ppc)
@@ -1030,8 +1025,6 @@ void m68000_base_device::init_cpu_common(void)
 	m_has_hmmu         = 0;
 	m_pmmu_enabled     = 0;
 	m_hmmu_enabled     = 0;
-	m_emmu_enabled     = 0;
-	m_instruction_restart = 0;
 
 	/* The first call to this function initializes the opcode handler jump table */
 	if(!emulation_initialized)
@@ -1065,8 +1058,6 @@ void m68000_base_device::init_cpu_common(void)
 	save_item(NAME(m_has_hmmu));
 	save_item(NAME(m_pmmu_enabled));
 	save_item(NAME(m_hmmu_enabled));
-	save_item(NAME(m_emmu_enabled));
-	save_item(NAME(m_instruction_restart));
 
 	save_item(NAME(m_mmu_crp_aptr));
 	save_item(NAME(m_mmu_crp_limit));
@@ -1103,8 +1094,6 @@ void m68000_base_device::device_reset()
 	/* Disable the PMMU/HMMU on reset, if any */
 	m_pmmu_enabled = 0;
 	m_hmmu_enabled = 0;
-	m_emmu_enabled = 0;
-	m_instruction_restart = 0;
 
 	m_mmu_tc = 0;
 	m_mmu_tt0 = 0;
@@ -1302,13 +1291,6 @@ void m68000_base_device::state_string_export(const device_state_entry &entry, st
 void m68000_base_device::set_hmmu_enable(int enable)
 {
 	m_hmmu_enabled = enable;
-}
-
-/* set for external MMU and instruction restart */
-void m68000_base_device::set_emmu_enable(int enable)
-{
-	m_emmu_enabled = enable;
-	m_instruction_restart = m_pmmu_enabled || m_emmu_enabled;
 }
 
 void m68000_base_device::set_fpu_enable(int enable)
@@ -1676,22 +1658,12 @@ void m68000_base_device::init32hmmu(address_space &space, address_space &ospace)
 // fault_addr = address to indicate fault at
 // rw = 1 for read, 0 for write
 // fc = 3-bit function code of access (usually you'd just put what m68k_get_fc() returns here)
-// rerun = trigger bus error and rerun instruction after RTE, intended for external MMU use
-//         do not call set_input_line(M68K_LINE_BUSERROR) when using rerun flag
-void m68000_base_device::set_buserror_details(u32 fault_addr, u8 rw, u8 fc, bool rerun)
+void m68000_base_device::set_buserror_details(u32 fault_addr, u8 rw, u8 fc)
 {
-	if (m_instruction_restart && rerun) m_mmu_tmp_buserror_occurred = 1; // hack for external MMU
-
-	// save values for 68000 specific bus error
 	m_aerr_address = fault_addr;
 	m_aerr_write_mode = (rw << 4);
 	m_aerr_fc = fc;
-
-	// Hack for x68030 and external MMU
 	m_mmu_tmp_buserror_address = fault_addr;
-	m_mmu_tmp_buserror_rw = m_mmu_tmp_rw;
-	m_mmu_tmp_buserror_fc = m_mmu_tmp_fc;
-	m_mmu_tmp_buserror_sz = m_mmu_tmp_sz;
 }
 
 u16 m68000_base_device::get_fc()
@@ -2293,11 +2265,11 @@ void m68000_base_device::m68ki_exception_interrupt(u32 int_level)
 
 	/* Inform the device than an interrupt is taken */
 	if(m_interrupt_mixer)
-		standard_irq_callback(int_level);
+		standard_irq_callback(int_level, m_pc);
 	else
 		for(int i=0; i<3; i++)
 			if(int_level & (1<<i))
-				standard_irq_callback(i);
+				standard_irq_callback(i, m_pc);
 
 	/* Acknowledge the interrupt by reading the cpu space. */
 	/* We require the handlers for autovector to return the correct
@@ -2419,8 +2391,6 @@ void m68000_base_device::clear_all()
 	m_has_hmmu= 0;
 	m_pmmu_enabled= 0;
 	m_hmmu_enabled= 0;
-	m_emmu_enabled= 0;
-	m_instruction_restart= 0;
 	m_has_fpu= 0;
 	m_fpu_just_reset= 0;
 
@@ -2705,11 +2675,12 @@ void m68020pmmu_device::device_start()
 	init_cpu_m68020pmmu();
 }
 
-bool m68020hmmu_device::memory_translate(int space, int intention, offs_t &address)
+bool m68020hmmu_device::memory_translate(int spacenum, int intention, offs_t &address, address_space *&target_space)
 {
+	target_space = &space(spacenum);
 	/* only applies to the program address space and only does something if the MMU's enabled */
 	{
-		if ((space == AS_PROGRAM) && (m_hmmu_enabled))
+		if ((spacenum == AS_PROGRAM) && (m_hmmu_enabled))
 		{
 			address = hmmu_translate_addr(address);
 		}

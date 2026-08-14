@@ -31,6 +31,7 @@ SOUNDS["QSOUND"] = true -- CPS1
 SOUNDS["YM2151"] = true -- CPS1
 SOUNDS["SN76496"] = true -- EXEDEXES
 SOUNDS["YM3812"] = true -- MITCHELL
+SOUNDS["CDDA"] = true -- CPS3
 
 --------------------------------------------------
 -- specify available video cores
@@ -84,7 +85,7 @@ function createMAMEProjects(_target, _subtarget, _name)
 	kind (LIBTYPE)
 	uuid (os.uuid("drv-" .. _target .."_" .. _subtarget .. "_" .._name))
 	addprojectflags()
-	precompiledheaders_novs()
+	precompiledheaders()
 
 	includedirs {
 		MAME_DIR .. "src/osd",
@@ -93,6 +94,7 @@ function createMAMEProjects(_target, _subtarget, _name)
 		MAME_DIR .. "src/hbmame/includes",
 		MAME_DIR .. "src/hbmame",
 		MAME_DIR .. "src/mame",
+		MAME_DIR .. "src/mame/shared",
 		MAME_DIR .. "src/lib",
 		MAME_DIR .. "src/lib/util",
 		MAME_DIR .. "src/lib/netlist",
@@ -111,78 +113,67 @@ end
 
 function createProjects_mame_arcade(_target, _subtarget)
 --------------------------------------------------
--- the following files are general components and
--- shared across a number of drivers
+-- manufacturer-specific groupings for drivers
 --------------------------------------------------
 
 createMAMEProjects(_target, _subtarget, "capcom")
 files {
-	MAME_DIR .. "src/hbmame/drivers/1942.cpp",
-	MAME_DIR .. "src/mame/includes/1942.h",
-	MAME_DIR .. "src/mame/video/1942.cpp",
-	MAME_DIR .. "src/mame/audio/nl_1942.cpp",
-	MAME_DIR .. "src/mame/audio/nl_1942.h",
-	MAME_DIR .. "src/hbmame/drivers/1943.cpp",
-	MAME_DIR .. "src/mame/includes/1943.h",
-	MAME_DIR .. "src/mame/video/1943.cpp",
-	MAME_DIR .. "src/mame/drivers/bionicc.cpp",
-	MAME_DIR .. "src/mame/drivers/supduck.cpp",
-	MAME_DIR .. "src/mame/video/tigeroad_spr.cpp",
-	MAME_DIR .. "src/mame/video/tigeroad_spr.h",
-	MAME_DIR .. "src/hbmame/drivers/blktiger.cpp",
-	MAME_DIR .. "src/mame/drivers/cbasebal.cpp",
-	MAME_DIR .. "src/mame/drivers/commando.cpp",
-	MAME_DIR .. "src/mame/includes/commando.h",
-	MAME_DIR .. "src/mame/video/commando.cpp",
+	MAME_DIR .. "src/hbmame/drivers/1942hc.cpp",
+	MAME_DIR .. "src/mame/capcom/1942.h",
+	MAME_DIR .. "src/mame/capcom/1942_v.cpp",
+	MAME_DIR .. "src/hbmame/drivers/1943hc.cpp",
+	MAME_DIR .. "src/mame/capcom/1943.h",
+	MAME_DIR .. "src/mame/capcom/1943_v.cpp",
+	MAME_DIR .. "src/mame/capcom/alien.cpp",
+	MAME_DIR .. "src/mame/capcom/bionicc.cpp",
+	MAME_DIR .. "src/hbmame/drivers/blktigerhc.cpp",
+	MAME_DIR .. "src/mame/capcom/blktiger_ms.cpp",
+	MAME_DIR .. "src/mame/capcom/cbasebal.cpp",
+	MAME_DIR .. "src/mame/capcom/chakumelo.cpp",
+	MAME_DIR .. "src/mame/capcom/commando.cpp",
 	MAME_DIR .. "src/hbmame/drivers/cps1.cpp",
---	MAME_DIR .. "src/hbmame/includes/cps1.h",
 	MAME_DIR .. "src/hbmame/video/cps1.cpp",
 	MAME_DIR .. "src/hbmame/drivers/cps1bl_5205.cpp",
 	MAME_DIR .. "src/hbmame/drivers/cps1bl_pic.cpp",
-	MAME_DIR .. "src/mame/drivers/kenseim.cpp",
 	MAME_DIR .. "src/hbmame/drivers/cps2.cpp",
 	MAME_DIR .. "src/hbmame/video/cps2.cpp",
-	MAME_DIR .. "src/hbmame/drivers/cps3hb.cpp",
-	MAME_DIR .. "src/mame/includes/cps3.h",
-	MAME_DIR .. "src/mame/audio/cps3.cpp",
-	MAME_DIR .. "src/mame/audio/cps3.h",
-	MAME_DIR .. "src/mame/drivers/egghunt.cpp",
-	MAME_DIR .. "src/mame/drivers/exedexes.cpp",
-	MAME_DIR .. "src/mame/includes/exedexes.h",
-	MAME_DIR .. "src/mame/video/exedexes.cpp",
+	MAME_DIR .. "src/hbmame/drivers/cps3hc.cpp",
+	MAME_DIR .. "src/mame/capcom/cps3.h",
+	MAME_DIR .. "src/mame/capcom/cps3_a.cpp",
+	MAME_DIR .. "src/mame/capcom/cps3_a.h",
+	MAME_DIR .. "src/mame/capcom/egghunt.cpp",
+	MAME_DIR .. "src/mame/capcom/exedexes.cpp",
 	MAME_DIR .. "src/hbmame/drivers/fcrash.cpp",
---	MAME_DIR .. "src/hbmame/includes/fcrash.h",
-	MAME_DIR .. "src/hbmame/drivers/gng.cpp",
-	MAME_DIR .. "src/mame/drivers/gunsmoke.cpp",
-	MAME_DIR .. "src/mame/drivers/higemaru.cpp",
-	MAME_DIR .. "src/mame/includes/higemaru.h",
-	MAME_DIR .. "src/mame/video/higemaru.cpp",
-	MAME_DIR .. "src/mame/drivers/lastduel.cpp",
-	MAME_DIR .. "src/mame/includes/lastduel.h",
-	MAME_DIR .. "src/mame/video/lastduel.cpp",
-	MAME_DIR .. "src/mame/drivers/lwings.cpp",
-	MAME_DIR .. "src/mame/includes/lwings.h",
-	MAME_DIR .. "src/mame/video/lwings.cpp",
-	MAME_DIR .. "src/hbmame/drivers/mitchell.cpp",
-	MAME_DIR .. "src/mame/drivers/sf.cpp",
-	MAME_DIR .. "src/mame/drivers/sidearms.cpp",
-	MAME_DIR .. "src/mame/includes/sidearms.h",
-	MAME_DIR .. "src/mame/video/sidearms.cpp",
-	MAME_DIR .. "src/hbmame/drivers/sonson.cpp",
-	MAME_DIR .. "src/mame/includes/sonson.h",
-	MAME_DIR .. "src/mame/video/sonson.cpp",
-	MAME_DIR .. "src/mame/drivers/srumbler.cpp",
-	MAME_DIR .. "src/mame/includes/srumbler.h",
-	MAME_DIR .. "src/mame/video/srumbler.cpp",
-	MAME_DIR .. "src/mame/drivers/tigeroad.cpp",
-	MAME_DIR .. "src/mame/includes/tigeroad.h",
-	MAME_DIR .. "src/mame/video/tigeroad.cpp",
-	MAME_DIR .. "src/mame/machine/tigeroad.cpp",
-	MAME_DIR .. "src/mame/drivers/vulgus.cpp",
-	MAME_DIR .. "src/mame/includes/vulgus.h",
-	MAME_DIR .. "src/mame/video/vulgus.cpp",
-	MAME_DIR .. "src/mame/machine/kabuki.cpp",
-	MAME_DIR .. "src/mame/machine/kabuki.h",
+	MAME_DIR .. "src/hbmame/drivers/gnghc.cpp",
+	MAME_DIR .. "src/mame/capcom/gunsmoke.cpp",
+	MAME_DIR .. "src/mame/capcom/higemaru.cpp",
+	MAME_DIR .. "src/mame/capcom/instantm.cpp",
+	MAME_DIR .. "src/mame/capcom/kabuki.cpp",
+	MAME_DIR .. "src/mame/capcom/kabuki.h",
+	MAME_DIR .. "src/mame/capcom/kenseim.cpp",
+	MAME_DIR .. "src/mame/capcom/lastduel.cpp",
+	MAME_DIR .. "src/mame/capcom/lastduel_ms.cpp",
+	MAME_DIR .. "src/mame/capcom/lwings.cpp",
+	MAME_DIR .. "src/hbmame/drivers/mitchellhc.cpp",
+	MAME_DIR .. "src/mame/capcom/miteshin.cpp",
+	MAME_DIR .. "src/mame/capcom/nl_1942.cpp",
+	MAME_DIR .. "src/mame/capcom/nl_1942.h",
+--	MAME_DIR .. "src/mame/capcom/psrockman.cpp",
+	MAME_DIR .. "src/mame/capcom/sf.cpp",
+	MAME_DIR .. "src/mame/capcom/sidearms.cpp",
+	MAME_DIR .. "src/mame/capcom/sidearms.h",
+	MAME_DIR .. "src/mame/capcom/sidearms_v.cpp",
+	MAME_DIR .. "src/hbmame/drivers/sonsonhc.cpp",
+	MAME_DIR .. "src/mame/capcom/srumbler.cpp",
+	MAME_DIR .. "src/mame/capcom/supduck.cpp",
+	MAME_DIR .. "src/mame/capcom/tigeroad.cpp",
+	MAME_DIR .. "src/mame/capcom/tigeroad.h",
+	MAME_DIR .. "src/mame/capcom/tigeroad_m.cpp",
+	MAME_DIR .. "src/mame/capcom/tigeroad_spr.cpp",
+	MAME_DIR .. "src/mame/capcom/tigeroad_spr.h",
+	MAME_DIR .. "src/mame/capcom/tigeroad_v.cpp",
+--	MAME_DIR .. "src/mame/capcom/tvcapcom.cpp",
+	MAME_DIR .. "src/mame/capcom/vulgus.cpp",
 }
 
 createMAMEProjects(_target, _subtarget, "neogeo")
