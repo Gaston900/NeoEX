@@ -674,7 +674,7 @@ intptr_t CALLBACK AboutDialogProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lP
 			}
 			float dpiScale = (float)currentDpi / 96.0f;
 			int imgWidth = (int)(491 * dpiScale);
-			int imgHeight = (int)(136 * dpiScale);
+			int imgHeight = (int)(156 * dpiScale);
 			/* Original image size. If this does not display correctly, please use the code below */
 			//int imgWidth = (int)(461 * dpiScale);
 			//int imgHeight = (int)(136 * dpiScale);
