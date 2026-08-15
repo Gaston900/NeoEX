@@ -13341,7 +13341,7 @@ GAME( 1996, wakuwak7hc03,     wakuwak7, neogeo_neo304h,  neogeo, neogeo_state,  
 GAME( 1994, wjammershc01,     wjammers, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "Shyma.X",      "Windjammers / Flying Power Disc (French Translation)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, wjammershc02,     wjammers, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Windjammers / Flying Power Disc (Korean Translation)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, wjammershc03,     wjammers, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "Boomchild",    "Windjammers / Flying Power Disc (Let me play longer)", MACHINE_SUPPORTS_SAVE )
-GAME( 2026, wjammershc04,     wjammers, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "Boomchild",    "Windjammers / Flying Power Disc (Endless Breeze)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, wjammershc04,     wjammers, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Windjammers / Flying Power Disc (Endless Breeze)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, wh1hc01,          wh1,      neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, wh1hc02,          wh1,      neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, wh2hc01,          wh2,      neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes 2 (Infinite Energy 2018-09-12)", MACHINE_SUPPORTS_SAVE )

@@ -4824,11 +4824,11 @@ void CreateCAPCOMFolders(int parent_index)
 		if (!strcmp("cbasebal.cpp", s))            AddGame(lpFolder, jj);
 		if (!strcmp("commando.cpp", s))            AddGame(lpFolder, jj);
 		if (!strcmp("cps1.cpp", s))                AddGame(lpFolder, jj);
-		if (!strcmp("cps1hb.cpp", s))              AddGame(lpFolder, jj);
+		if (!strcmp("cps1hc.cpp", s))              AddGame(lpFolder, jj);
 		if (!strcmp("cps1bl_5205.cpp", s))         AddGame(lpFolder, jj);
 		if (!strcmp("cps1bl_pic.cpp", s))          AddGame(lpFolder, jj);
 		if (!strcmp("cps2.cpp", s))                AddGame(lpFolder, jj);
-		if (!strcmp("cps2hb.cpp", s))              AddGame(lpFolder, jj);
+		if (!strcmp("cps2hc.cpp", s))              AddGame(lpFolder, jj);
 		if (!strcmp("cps3.cpp", s))                AddGame(lpFolder, jj);
 		if (!strcmp("cps3hc.cpp", s))              AddGame(lpFolder, jj);
 		if (!strcmp("egghunt.cpp", s))             AddGame(lpFolder, jj);
