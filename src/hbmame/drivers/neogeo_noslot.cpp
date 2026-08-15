@@ -2,7 +2,7 @@
 // license:BSD-3-Clause
 // copyright-holders:Bryan McPhail, Ernesto Corvi, Andrew Prime, Zsolt Vasvari
 // Thanks To The Collaborators Who Have Made A Great Contribution To The Project: Robbert.
-// Thank you very much for updating the driver: Gaston90
+// Updating the driver: Gaston90
 
 #include "includes/neogeo.h"
 
@@ -18274,6 +18274,23 @@ ROM_START( didemo )
 	ROM_LOAD16_BYTE( "677.c2",    0x000001, 0x200000, CRC(7b17b0f2) SHA1(b11071fd4782592a375f260352a0ca0d0df2c6e5) )
 ROM_END
 
+// 522: Doom Geo demo by Sabino
+// No sound. V1 was all zero, left out.
+// Controls: Alt = shoot; Space = Change weapon; Shift = Open door
+// Bugs: Too many to count. Bad gfx. If you get a black screen, press F3 to start over.
+ROM_START( doomgeo )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "522.p1", 0x000000, 0x080000, CRC(3fbc2d79) SHA1(591799dee2053fc1e8c95091127e5e20584eb929) )
+
+	NEO_SFIX_128K( "522.s1", CRC(248bc475) SHA1(c8c8da9ce21ab5ad555f9160e8b6e92f1b4f0e82) )
+
+	NEO_BIOS_AUDIO_128K( "522.m1", CRC(1c996f5d) SHA1(e7ef71811145628ae5eb253c45c5d999c728a8cd) )
+
+	ROM_REGION( 0x800000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "522.c1", 0x000000, 0x400000, CRC(70903dec) SHA1(325b58a476a08267143a8923562bb27ef0e237a1) )
+	ROM_LOAD16_BYTE( "522.c2", 0x000001, 0x400000, CRC(90bc023a) SHA1(f82bafc5238d1fde72069f4200a0e9654a1a36bb) )
+ROM_END
+
 ROM_START( doubled1 ) // 2025-09-16
 	ROM_REGION( 0x500000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "505.p1", 0x000000, 0x100000, CRC(5991da92) SHA1(c7387217e28c03483ea5d92fa062bb834f8d0534) )
@@ -18421,6 +18438,22 @@ ROM_START( foodfn )
 	ROM_REGION( 0x100000, "sprites", 0 )
 	ROM_LOAD16_BYTE( "514.c1", 0x000000, 0x080000, CRC(7b4ca9e3) SHA1(ed5aa0f673e6489f608b4fe3cd16ef7f6fdcff31) )
 	ROM_LOAD16_BYTE( "514.c2", 0x000001, 0x080000, CRC(d9f831bb) SHA1(f2bf06591506c8d142873800a55713de831c49eb) )
+ROM_END
+
+// 523: Free Doom
+// No sound. V1 was all zero, left out.
+// This is the same as Doom Geo but with different graphics. Same issues exist.
+ROM_START( freedoom )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "523.p1", 0x000000, 0x080000, CRC(f57478f2) SHA1(ada3a015ede437312effa13f1ab98c8ae6f61780) )
+
+	NEO_SFIX_128K( "523.s1", CRC(1b4ec91c) SHA1(4bc70b1fa8421571555453545f0ac340958611ce) )
+
+	NEO_BIOS_AUDIO_128K( "522.m1", CRC(1c996f5d) SHA1(e7ef71811145628ae5eb253c45c5d999c728a8cd) )
+
+	ROM_REGION( 0x800000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "523.c1", 0x000000, 0x400000, CRC(bb8e2a1b) SHA1(0181eb9a6dc5b920b7e8779d7c51db3c0845119c) )
+	ROM_LOAD16_BYTE( "523.c2", 0x000001, 0x400000, CRC(51a2ebaa) SHA1(64636eaf67ba57c67cd358894c623df072dfac66) )
 ROM_END
 
 // 507: Golden Axe port by Hoffman
@@ -19491,6 +19524,23 @@ ROM_START( raroggame )
 
 	ROM_REGION( 0x100000, "sprites", 0 )
 	ROM_LOAD( "685.c1", 0x000000, 0x051f80, CRC(423d679f) SHA1(24adcf1d041af512efc3141a33515cb6bc4fe8a7) )
+ROM_END
+
+// 521: Rick Dangerous DX by Z-team
+ROM_START( rickdangdx )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "521.p1", 0x000000, 0x080000, CRC(d3dd7ab5) SHA1(bf96ae1fe19fa3b6edb6aef4cfa60ab31330299b) )
+
+	NEO_SFIX_128K( "521.s1", CRC(4ec73f78) SHA1(cd252da99008c5055b6637ab9ac30356bf018813) )
+
+	NEO_BIOS_AUDIO_256K( "521.m1", CRC(ad8f34e8) SHA1(301b0d8a005c3dc0d71358de8a7ed8873a8f0644) )
+
+	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "521.v1", 0x000000, 0x6c0000, CRC(69fb1fdf) SHA1(9c610b72bfb5aa6dede6e799c39f6644c43585e5) )
+
+	ROM_REGION( 0x280000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "521.c1", 0x000000, 0x140000, CRC(89e09533) SHA1(f8707be8b6665ac80dfcef6ecdb1153b8e5c3ac6) )
+	ROM_LOAD16_BYTE( "521.c2", 0x000001, 0x140000, CRC(c2df94d4) SHA1(46c88955de5edded07f4ed8a3fda7aba201f9453) )
 ROM_END
 
 // 683 : Everlasting Summer: Samantha by Vasily Familiya
@@ -21279,11 +21329,13 @@ GAME( 1990, columnsn,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_
 GAME( 2023, cyborg,     neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Neo Byte Force", "Cyborg Force (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, ddsprdmo,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Vasily Familiya", "Double Dragon SpritePool Demo (HB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2016, didemo,     neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Mega Shocked", "DatImage Demo (HB)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, doomgeo,    neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Sabino", "Doom Geo (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, doubled1,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "La Casa De Ruivo / Neo Byte Force", "Double Dragon One Beta (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, flapchck,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Blastar", "Flappy Chicken (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2006, ffeast,     neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Rastersoft", "Neo Frog Feast (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, fr2,        neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Video Systems Co.", "Idol Mahjong Final Romance 2 (Neo-Geo, bootleg of CD version) (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, foodfn,     neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "iq132", "Food Fight - Neo Geo Conversion (HB)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, freedoom,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Sabino", "Freedoom v0.13.0 (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, galaxiann,  neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT270, "tcdev", "Galaxians Beta 2 (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, gladmort,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Pixelheart / ChipsOnSteroids", "Gladmort (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, gladmortcm, gladmort, neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Pixelheart / ChipsOnSteroids", "Gladmort - Caravan Mode (HB)", MACHINE_SUPPORTS_SAVE )
@@ -21344,6 +21396,7 @@ GAME( 2015, pcmbdemo,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_
 GAME( 2003, poknight,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Jeff Kurtz", "Poker Night (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, pown,       neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_cd,       ROT0, "iq132", "P.O.W. - Neo Geo Conversion (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, raroggame,  neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Vasily Familiya", "Ryurik - Poteryannaya Demo (HB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
+GAME( 2026, rickdangdx, neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Z-team", "Rick Dangerous DX (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, samantha,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Vasily Familiya", "Everlasting Summer - Samantha Demo (HB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2012, santabll,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "M.Priewe", "SantaBall - Christmas Tennis Game (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2026, sgz,        neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Shadow Gangs", "Shadow Gangs Zero Demo (HB)", MACHINE_SUPPORTS_SAVE )
