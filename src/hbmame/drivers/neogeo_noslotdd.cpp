@@ -10553,6 +10553,66 @@ ROM_START( zupapands )
 	ROM_COPY("asis", 0x340000, 0x00000, 0x1000000)
 ROM_END
 
+/*******
+  GnGeo 
+ *******/
+
+ROM_START( msluggno )
+	ROM_REGION( 0x300000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "mslug.gno", 0x000000, 0x00001B, CRC(1055fb11) SHA1(35570d6d51a13236f496d10d4e677346094db79c) )
+	ROM_CONTINUE( 0x000000, 0x20001B )
+	ROM_IGNORE( 0xE7C754 )
+    MSLUG_ESSENTIALPATCH_MODS_FILL
+
+	ROM_REGION(0x107C78A, "asis", 0)
+	ROM_LOAD("mslug.gno", 0x000000, 0x00001B, CRC(1055fb11) SHA1(35570d6d51a13236f496d10d4e677346094db79c) )
+	ROM_CONTINUE(0x000000, 0x107C76F)
+
+//  NEO_SFIX_MT(0x20000)
+//	ROM_COPY("asis", 0xA20012, 0x00000, 0x20000)
+
+	NEO_SFIX_128K( "srom", CRC(2f55958d) SHA1(550b53628daec9f1e1e11a398854092d90f9505a) )
+
+	NEO_BIOS_AUDIO_128K( "m1rom", CRC(c28b3253) SHA1(fd75bd15aed30266a8b3775f276f997af57d1c06) )
+
+	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_COPY("asis", 0x22000C, 0x00000, 0x800000)
+
+//	ROM_REGION( 0x1000000, "sprites", 0 )
+//	ROM_COPY("asis", 0xa40000, 0x00000, 0x1000000)
+
+	ROM_REGION( 0x1000000, "sprites", 0 )
+	ROM_LOAD( "crom0", 0x000000, 0x1000000, CRC(d2955fc3) SHA1(4b69f4926766543ae289546569b27c80a82d53d5) )
+ROM_END
+
+ROM_START( mslug2gno )
+	ROM_REGION( 0x400000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "mslug2.gno", 0x000000, 0x00001B, CRC(5ff2e3ad) SHA1(7aa8ccec268716e89cbc8acf66c799fb5c1b9676) )
+    ROM_CONTINUE( 0x000000, 0x30001B )
+	ROM_IGNORE( 0x118A902 )
+	MSLUG2_ESSENTIALPATCH_MODS_FILL
+
+	ROM_REGION(0x148A938, "asis", 0)
+	ROM_LOAD("mslug2.gno", 0x000000, 0x00001B, CRC(5ff2e3ad) SHA1(7aa8ccec268716e89cbc8acf66c799fb5c1b9676) )
+	ROM_CONTINUE(0x000000, 0x148A91D)
+
+//  NEO_SFIX_MT(0x20000)
+//	ROM_COPY("asis", 0x300000, 0x00000, 0x20000)
+
+	NEO_SFIX_128K( "srom", CRC(f3d32f0f) SHA1(2dc38b7dfd3ff14f64d5c0733c510b6bb8c692d0) )
+
+	NEO_BIOS_AUDIO_128K( "m1rom", CRC(94520ebd) SHA1(f8a1551cebcb91e416f30f50581feed7f72899e9) )
+
+	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_COPY("asis", 0x32000C, 0x00000, 0x800000)
+
+//	ROM_REGION( 0x2000000, "sprites", 0 )
+//	ROM_COPY("asis", 0xB40000, 0x00000, 0x2000000)
+
+	ROM_REGION( 0x2000000, "sprites", 0 )
+	ROM_LOAD( "crom0", 0x0000000, 0x2000000, CRC(fc9260fe) SHA1(9bb1da87524326dd9fdfa73f202f09411f65f6c5) )
+ROM_END
+
 /*    YEAR  NAME          PARENT       MACHINE       INPUT                      INIT        MONITOR COMPANY  */
 /* SNK Decrypted Darksoft */
 GAME( 1993, 3countbdd,    3countb,  neogeo_neobase,  neogeo, neogeo_state,   init_darksoft,   ROT0, "SNK", "3 Count Bout / Fire Suplex (NGM-043 ~ NGH-043) (Darksoft)", MACHINE_SUPPORTS_SAVE )
@@ -11102,3 +11162,11 @@ GAME( 1994, wjammersnds,  wjammers, neogeo_neo304h,  neogeo, neogeo_state,   ini
 GAME( 1994, zedbladends,  zedblade, neogeo_neo288h,  neogeo, neogeo_state,   init_neogeo,     ROT0, "NMK", "Zed Blade / Operation Ragnarok (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, zintrckbnds,  zintrckb, neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,     ROT0, "bootleg",          "Zintrick / Oshidashi Zentrix (bootleg of CD version) (Neo SD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, zupapands,    zupapa,   neogeo_neo288h,  neogeo, neogeo_state,   init_neogeo,     ROT0, "SNK", "Zupapa! (Neo SD)", MACHINE_SUPPORTS_SAVE )
+
+// Problems:
+// - Gfx are broken; need to unscramble FIX and SPR
+
+/*    YEAR  NAME          PARENT       MACHINE       INPUT                      INIT        MONITOR COMPANY  */
+/* SNK GnGeo */
+GAME( 1996, msluggno,     mslug,    neogeo_neo304h,  neogeo, neogeo_state,   init_darksoft,   ROT0, "Nazca", "Metal Slug - Super Vehicle-001 (GnGeo)", MACHINE_SUPPORTS_SAVE )
+GAME( 1998, mslug2gno,    mslug2,   neoclock_noslot, neogeo, neogeo_state,   init_darksoft,   ROT0, "SNK", "Metal Slug 2 - Super Vehicle-001/II (GnGeo)", MACHINE_SUPPORTS_SAVE )

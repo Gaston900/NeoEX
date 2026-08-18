@@ -102,6 +102,7 @@ public:
 	void neogeo_68kram(machine_config &config);
     void multimvs(machine_config &config);
 	void neosd(machine_config &config);
+	void nggno(machine_config &config);
 	void mv1_fixed(machine_config &config);
 	void neogeo_neobase(machine_config &config);
 	void neogeo_neo288h(machine_config &config);
@@ -273,6 +274,7 @@ private:
 	TIMER_CALLBACK_MEMBER(vblank_interrupt_callback);
     DECLARE_QUICKLOAD_LOAD_MEMBER(mvs_q_cb);
 	DECLARE_QUICKLOAD_LOAD_MEMBER(neo_q_cb);
+	DECLARE_QUICKLOAD_LOAD_MEMBER(gno_q_cb);
 	u32 screen_update_neogeo(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 
 	void neogeo_main_map(address_map &map) ATTR_COLD;

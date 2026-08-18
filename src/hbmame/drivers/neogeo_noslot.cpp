@@ -19015,7 +19015,7 @@ GAME( 1992, wh1d,       wh1,      neogeo_neobase,  neogeo, neogeo_state,   init_
 /* SNK CD conversion */
 GAME( 1991, 2020bbcd,   2020bb,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "CD_conv", "2020 Super Baseball (CD to MVS Conversion)", MACHINE_SUPPORTS_SAVE )
 GAME( 1990, columnsncd, columnsn, neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Jeff Kurtz", "Columns (CD to MVS Conversion)", MACHINE_SUPPORTS_SAVE )
-GAME( 1995, fr2cd,      fr2,      neogeo_neo304h,  neogeo, neogeo_state,   init_fr2cd,    ROT0, "Video Systems Co.", "Idol Mahjong Final Romance 2 (Neo-Geo, bootleg of CD to MVS version)", MACHINE_SUPPORTS_SAVE )
+GAME( 1995, fr2cd,      froman2b, neogeo_neo304h,  neogeo, neogeo_state,   init_fr2cd,    ROT0, "Video Systems Co.", "Idol Mahjong Final Romance 2 (Neo-Geo, bootleg of CD to MVS version)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, gpilotcd,   gpilots,  neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "CD_conv", "Ghost Pilots (CD to MVS Conversion)", MACHINE_SUPPORTS_SAVE )
 //GAME( 1996, ironcladcd, ironclad, neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "CD_conv", "Choutetsu Brikin'ger / Iron Clad (CD to MVS Conversion)", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )
 GAME( 2007, joyjoycd,   joyjoy,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "CD_conv", "Puzzled / Joy Joy Kid (CD to MVS Conversion)", MACHINE_SUPPORTS_SAVE )

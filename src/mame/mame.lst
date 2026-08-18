@@ -1228,6 +1228,7 @@ mitcdemo
 
 @source:../hbmame/drivers/neogeo.cpp
 neogeo
+//nggno
 neosd
 multimvs
 2020bb
@@ -1384,14 +1385,12 @@ moshougi
 ms5pcb
 ms4plus
 ms5plus
-
 mslug
 mslug2
 mslug3
 mslug3a
 mslug3b6
 mslug3h
-
 mslug4
 mslug4h
 mslug5
@@ -1464,7 +1463,6 @@ samsho5
 samsho5a
 samsho5b
 samsho5h
-
 savagere
 sbp
 sdodgeb
@@ -2295,6 +2293,10 @@ wjammersnds
 zedbladends
 zintrckbnds
 zupapands
+
+@source:../hbmame/drivers/neogeo.cpp
+msluggno
+mslug2gno
 
 @source:../hbmame/drivers/neogeo.cpp
 19yy
