@@ -1,7 +1,6 @@
 // license:BSD-3-Clause
 // copyright-holders:Bryan McPhail,Ernesto Corvi,Andrew Prime,Zsolt Vasvari
 // thanks-to:Fuzz
-// Thank you very much for updating the driver: Gaston90
 /*************************************************************************
 
     Neo-Geo hardware
@@ -172,7 +171,6 @@ public:
 	void init_matrim();
 	void init_matrima();
 	void init_matrimbl();
-	void init_matrimd();
 	void init_matrimnd();
 	void init_ms5pcb();
 	void init_ms5plus();
@@ -191,7 +189,6 @@ public:
 	void init_pnyaa();
 	void init_preisle2();
 	void init_rotd();
-	void init_rotdnd();
 	void init_s1945p();
 	void init_samsh5sp();
 	void init_samsho5();
