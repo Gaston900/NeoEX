@@ -11717,7 +11717,7 @@ ROM_END
 
 ROM_START( sengoku2hc01 ) //sengoku2rb
 	ROM_REGION( 0x100000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "040_hc01.p1", 0x000000, 0x100000, CRC(9a8925fe) SHA1(08e1a48af71d7929b041d3f8b04222cd2b902404) )
+	ROM_LOAD16_WORD_SWAP( "040_hc01.p1", 0x000000, 0x100000, CRC(ad8f774e) SHA1(c3133ff45b97b6f80ef32a1f1486fef212572bc6) )
 
 	NEO_SFIX_128K( "040.s1", CRC(cd9802a3) SHA1(f685d4638f4f68e7e3f101c0c39128454536721b) )
 
@@ -11732,8 +11732,8 @@ ROM_START( sengoku2hc01 ) //sengoku2rb
 	ROM_CONTINUE( 0x400000, 0x100000 )
 	ROM_LOAD16_BYTE( "040_hc01.c2", 0x000001, 0x100000, CRC(942d98b8) SHA1(3c018f5ebff511999195ff44d21f4587950658a5) )
 	ROM_CONTINUE( 0x400001, 0x100000 )
-	ROM_LOAD16_BYTE( "040_hc01.c3", 0x200000, 0x080000, CRC(f3992a91) SHA1(82027148f0ce85c3658cf86b59a06bd6697339f7) )
-	ROM_LOAD16_BYTE( "040_hc01.c4", 0x200001, 0x080000, CRC(7838143d) SHA1(56b9beaf54cdec72bcdff3d27b76161eee569f4e) )
+	ROM_LOAD16_BYTE( "040_hc01.c3", 0x200000, 0x080000, CRC(7a846578) SHA1(c6b9cbc5eed8b8f542cba14dc79b2b3f347cd862) )
+	ROM_LOAD16_BYTE( "040_hc01.c4", 0x200001, 0x080000, CRC(15eba55e) SHA1(95d9f2a3330798bfe5ff48b02a3459e7aa7c4ad5) )
 ROM_END
 
 ROM_START( sengoku3hc01 )
@@ -12841,7 +12841,7 @@ GAME( 2016, kof2002hc05,      kof2002,  neogeo_multiboot,neogeo, neogeo_state,  
 GAME( 2020, kof2002hc06,      kof2002,  neogeo_multiboot,neogeo, neogeo_state,    init_kof2002,  ROT0, "hack",         "The King of Fighters 2002 (All Mix Version 2020-12-30)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof2002hc07,      kof2002,  neogeo_multiboot,neogeo, neogeo_state,    init_kof2002,  ROT0, "GOTVG",        "The King of Fighters 2002 (Infinite Energy 2022-05-02)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof2002hc08,      kof2002,  neogeo_multiboot,neogeo, neogeo_state,    init_kof2002,  ROT0, "YZKOF",        "The King of Fighters 2002 (The Rise of The World War 2022-09-23)", MACHINE_SUPPORTS_SAVE )
-GAME( 2010, kof2002hc09,      kof2002,  neogeo_multiboot,neogeo, neogeo_state,    init_kof2002,  ROT0, "GOTVG",        "The King of Fighters 2002  Magic Plus III (2010-11-20)", MACHINE_SUPPORTS_SAVE )
+GAME( 2010, kof2002hc09,      kof2002,  neogeo_multiboot,neogeo, neogeo_state,    init_kof2002,  ROT0, "GOTVG",        "The King of Fighters 2002 Magic Plus III (2010-11-20)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof2002hc10,      kof2002,  neogeo_multiboot,neogeo, neogeo_state,    init_kof2002,  ROT0, "GOTVG",        "The King of Fighters 2002 (3rd Strike of Orochi 2020-06-14)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, kof2002hc11,      kof2002,  neogeo_multiboot,neogeo, neogeo_state,    init_kof2002,  ROT0, "GOTVG",        "The King of Fighters 2002 (Rise of the Storm Enhanced 2004-05-20)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, kof2002hc12,      kof2002,  gsc,             neogeo, neogeo_state,    init_kof2002,  ROT0, "GOTVG",        "The King of Fighters 2002 (Plus 2017 2020-10-22)", MACHINE_SUPPORTS_SAVE )
@@ -12862,7 +12862,7 @@ GAME( 2014, kof2003hc02,      kof2003,  neogeo_multiboot,neogeo, neogeo_state,  
 GAME( 2003, kof2003hc03,      kof2003,  neogeo_multiboot,neogeo, neogeo_state,    init_kof2003,  ROT0, "BisonSAS",     "The King of Fighters 2003 (Portuguese Translation)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, kof2003hc04,      kof2003,  neogeo_multiboot,neogeo, neogeo_state,    init_kof2003,  ROT0, "0 Day-S,Eddids,Hiker", "The King of Fighters 2003 (PS2 Style Portraits 2022-04-13)", MACHINE_SUPPORTS_SAVE )
 GAME( 2003, kof2003hc05,      kof2003,  neogeo_multiboot,neogeo, neogeo_state,    init_kof2003,  ROT0, "DDJ",          "The King of Fighters 2003 (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
-GAME( 2022, lans2004hc01,     shocktr2, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Lansquenet 2004 (Infinite Power 2022-12-17) (bootleg of Shock Troopers - 2nd Squad)", MACHINE_SUPPORTS_SAVE )
+GAME( 2022, lans2004hc01,     shocktr2, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Lansquenet 2004 (bootleg of Shock Troopers - 2nd Squad / Infinite Power 2022-12-17)", MACHINE_SUPPORTS_SAVE )
 GAME( 1997, lastbladhc01,     lastblad, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "DDJ",          "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 1997, lastbladhc02,     lastblad, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, lastbladhc03,     lastblad, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The Last Blade / Bakumatsu Roman - Gekka no Kenshi (Infinite Energy 2024-01-16)", MACHINE_SUPPORTS_SAVE )

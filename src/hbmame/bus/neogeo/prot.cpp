@@ -1043,6 +1043,15 @@ void ngbootleg_prot_device::neogeo_darksoft_cx_decrypt(u8*sprrom, u32 sprrom_siz
 		std::swap(rom[i+1], rom[i+2]);
 }
 
+void ngbootleg_prot_device::neogeo_gngeo_cx_decrypt(u8*sprrom, u32 sprrom_size)
+{
+	int cx_size = sprrom_size;
+	u8 *rom = sprrom;
+
+	for (int i = 0; i < cx_size; i+=2)
+		std::swap(rom[i], rom[i+1]);
+}
+
 /***********************************************************************************************************************************/
 
 DEFINE_DEVICE_TYPE(KOG_PROT, kog_prot_device, "kog_prot", "NeoGeo Protection (King of Gladiator)")

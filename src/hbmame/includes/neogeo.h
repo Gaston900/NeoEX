@@ -215,9 +215,7 @@ public:
 
 	// Fixed MVS/AES Decrypted Darksoft Software Configurations
 	void init_darksoft();
-	void init_ct2k3sadd();
 	void init_ct2k3spdd();
-	void init_cthd2003dd();
 	void init_fatfury2dd();
 	void init_garoudd();
 	void init_garouhdd();
@@ -236,6 +234,9 @@ public:
 	void init_mslug5dd();
 	void init_svcdd();
 	void init_vlinerdd();
+
+	// Fixed MVS/AES GnGeo Software Configurations
+	void init_gngeo();
 
 	ioport_value get_memcard_status();
 	ioport_value get_audio_result();
@@ -268,6 +269,7 @@ private:
 	u16 in0_r();
 	u16 in1_r();
 	void save_ram_w(offs_t offset, u16 data, u16 mem_mask = ~0);
+//	void boot_command_ngo();
 
 	TIMER_CALLBACK_MEMBER(display_position_interrupt_callback);
 	TIMER_CALLBACK_MEMBER(display_position_vblank_callback);
@@ -395,6 +397,56 @@ private:
 	memory_bank_creator m_bios_bank;
 	std::unique_ptr<uint16_t[]> m_extra_ram;
 };
+
+class neogeo_neosd : public neogeo_state
+{
+public:
+	neogeo_neosd(const machine_config &mconfig, device_type type, const char *tag)
+		: neogeo_state(mconfig, type, tag)
+	    , m_region_fixed(*this, "fixed")
+		, m_region_fixedbios(*this, "fixedbios")
+	    , m_region_sprites(*this, "sprites")
+		, m_sprgen(*this, "spritegen")
+	{ }
+
+	void boot_command_nds();
+	virtual void machine_start() override;
+
+private:
+	required_memory_region m_region_fixed;
+	optional_memory_region m_region_fixedbios;
+	required_memory_region m_region_sprites;
+
+    required_device<neosprite_device> m_sprgen;
+};
+
+class neogeo_gngeo : public neogeo_state
+{
+
+public:
+	neogeo_gngeo(const machine_config &mconfig, device_type type, const char *tag)
+		: neogeo_state(mconfig, type, tag)
+	    , m_region_fixed(*this, "fixed")
+		, m_region_fixedbios(*this, "fixedbios")
+	    , m_region_sprites(*this, "sprites")
+		, m_sprgen(*this, "spritegen")
+	{ }
+
+	void boot_command_ngo();
+	virtual void machine_start() override;
+
+private:
+	required_memory_region m_region_fixed;
+	optional_memory_region m_region_fixedbios;
+	required_memory_region m_region_sprites;
+
+    required_device<neosprite_device> m_sprgen;
+
+    u32 m_gno_csize = 0;
+	u32 m_gno_ssize = 0;
+    bool m_gno_parsed = false;
+};
+
 
 /********
   HBMAME
