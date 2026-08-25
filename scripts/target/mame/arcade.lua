@@ -59,6 +59,8 @@ MACHINES["NETLIST"] = true -- 1942
 MACHINES["I8255"] = true -- KENSEIM
 MACHINES["Z80CTC"] = true -- KENSEIM
 MACHINES["TTL74259"] = true -- SONSON
+MACHINES["INPUT_MERGER"] = true --NEOGEO CD
+
 
 --------------------------------------------------
 -- specify available bus cores
@@ -76,6 +78,7 @@ function linkProjects_mame_arcade(_target, _subtarget)
 	links {
 		"capcom",
 		"neogeo",
+		"snk",
 	}
 end
 
@@ -182,9 +185,21 @@ files {
 	MAME_DIR .. "src/hbmame/drivers/neogeo_noslot.cpp",
 	MAME_DIR .. "src/hbmame/video/neogeo.cpp",
 	MAME_DIR .. "src/hbmame/video/neogeo_spr.cpp",
-	MAME_DIR .. "src/hbmame/machine/ng_memcard.cpp",
+	MAME_DIR .. "src/hbmame/machine/nghb_memcard.cpp",
 	MAME_DIR .. "src/hbmame/bus/neogeo/prot.cpp",
 	MAME_DIR .. "src/hbmame/bus/neogeo/banked_cart.cpp",
+}
+
+createMAMEProjects(_target, _subtarget, "snk")
+files {
+	MAME_DIR .. "src/hbmame/drivers/neogeocd.cpp",
+	MAME_DIR .. "src/mame/snk/neogeo_spr.cpp",
+	MAME_DIR .. "src/mame/snk/neogeo.cpp",
+	MAME_DIR .. "src/mame/snk/neogeo_v.cpp",
+	MAME_DIR .. "src/mame/snk/ng_memcard.cpp",
+-- DEVICES
+	MAME_DIR .. "src/mame/shared/megacdcd.cpp",
+	MAME_DIR .. "src/devices/bus/neogeo/slot.cpp",
 }
 
 end

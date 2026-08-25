@@ -26,6 +26,7 @@ capcom/lwings.cpp
 capcom/mitchell.cpp
 ../hbmame/drivers/mitchellhc.cpp
 ../hbmame/drivers/neogeo.cpp
+../hbmame/drivers/neogeocd.cpp
 capcom/sf.cpp
 capcom/sidearms.cpp
 capcom/sonson.cpp
