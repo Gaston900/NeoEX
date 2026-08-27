@@ -217,6 +217,19 @@ public:
 };
 /****************************************************************************/
 
+//==================== USE_SCALE_EFFECTS ========================>>>
+class menu_scale_effect : public menu 
+{
+public:
+	menu_scale_effect(mame_ui_manager &mui, render_target &target); // MAME moderno usa render_target en lugar de render_container
+	virtual ~menu_scale_effect() override;
+
+private:
+	virtual void populate() override;              // Corregido: firma moderna sin floats
+	virtual bool handle(event const *ev) override; // Corregido: firma moderna con eventos obligatorios
+};
+//===============================================================>>>
+
 } // namespace ui
 
 #endif // MAME_FRONTEND_UI_MISCMENU_H

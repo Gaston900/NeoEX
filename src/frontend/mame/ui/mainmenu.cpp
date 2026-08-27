@@ -76,6 +76,9 @@ enum : unsigned {
 	AUDIO_EFFECTS,
 	SLIDERS,
 	VIDEO_TARGETS,
+//======= USE_SCALE_EFFECTS =======>>>
+	SCALE_EFFECT,
+//=================================>>>
 	CROSSHAIR,
 	CHEAT,
 	PLUGINS,
@@ -196,6 +199,10 @@ void menu_main::populate()
 		item_append(_("menu-main", "Slider Controls"), 0, (void *)SLIDERS);
 
 	item_append(_("menu-main", "Video Options"), 0, (void *)VIDEO_TARGETS);
+
+//==================== USE_SCALE_EFFECTS ========================>>>
+	item_append(_("menu-main", "Image Enhancement"), 0, (void *)SCALE_EFFECT);
+//===============================================================>>>
 
 	if (machine().crosshair().get_usage())
 		item_append(_("menu-main", "Crosshair Options"), 0, (void *)CROSSHAIR);
@@ -338,6 +345,12 @@ bool menu_main::handle(event const *ev)
 		case VIDEO_TARGETS:
 			menu::stack_push<menu_video_targets>(ui(), target());
 			break;
+
+//==================== USE_SCALE_EFFECTS ========================>>>
+		case SCALE_EFFECT:
+			menu::stack_push<menu_scale_effect>(ui(), target());
+			break;
+//===============================================================>>>
 
 		case CROSSHAIR:
 			menu::stack_push<menu_crosshair>(ui(), target());
