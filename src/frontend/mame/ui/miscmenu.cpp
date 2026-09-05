@@ -7,13 +7,18 @@
     Internal MAME menus for the user interface.
 
 *********************************************************************/
+//===== USE_SCALE_EFFECTS =====>>>
 #include <windows.h>
 #include <mmsystem.h>
 #undef interface
+//=============================>>>
 
 #include "emu.h"
 #include "ui/miscmenu.h"
+
+//===== USE_SCALE_EFFECTS =====>>>
 #include "screen.h"
+//=============================>>>
 
 #include "ui/inifile.h"
 #include "ui/selector.h"
@@ -38,19 +43,24 @@
 
 #include "path.h"
 
+//======= USE_SCALE_EFFECTS =======>>>
+#include "scale/osdscale.h"
+//=================================>>>
+
 //============ 缘来是你 ============>>>			
 #include <vector>
 //=================================>>>
 
 #include <algorithm>
 #include <cstring>
-//#ifdef USE_SCALE_EFFECTS
-#include "scale/osdscale.h"
-//#endif /* USE_SCALE_EFFECTS */
+
 #include <fstream>
 #include <iterator>
 #include <locale>
 
+//======= EKMAME =======>>>
+#include "rendfont.h"
+//======================>>>
 
 namespace ui {
 
@@ -775,14 +785,20 @@ void menu_autofire::populate()
         ioport_field::user_settings settings;
         btn.field->get_user_settings(settings);
 		
-				/* add an autofire item */
 				switch (settings.autofire)
 				{
 					case 0:	subtext.assign("Off");	break;
 					case 1:	subtext.assign("On");	break;
 					case 2:	subtext.assign("Toggle");	break;
 				}
-        item_append(btn.name, subtext, FLAG_LEFT_ARROW | FLAG_RIGHT_ARROW, (void *)(btn.field));
+
+//========================== EKMAME ==============================>>>
+        char button_name_buf[1024];
+        std::snprintf(button_name_buf, sizeof(button_name_buf), "%s", btn.name.c_str());
+        convert_command_glyphs(button_name_buf, std::size(button_name_buf));
+
+        item_append(button_name_buf, subtext, FLAG_LEFT_ARROW | FLAG_RIGHT_ARROW, (void *)(btn.field));
+//================================================================>>>
 	}
 
 	/* add autofire delay items */
@@ -934,14 +950,21 @@ void menu_custom_setting::populate()
         ioport_field::user_settings settings;
         btn.field->get_user_settings(settings);
 		
-				/* add an autofire item */
 				switch (settings.autofire)
 				{
 					case 0:	subtext.assign("Off");	break;
 					case 1:	subtext.assign("On");	break;
 					case 2:	subtext.assign("Toggle");	break;
 				}
-        item_append(btn.name, subtext, FLAG_LEFT_ARROW | FLAG_RIGHT_ARROW, (void *)(btn.field));
+
+//========================== EKMAME ==============================>>>
+        char custom_name_buf[1024];
+        std::snprintf(custom_name_buf, sizeof(custom_name_buf), "%s", btn.name.c_str());
+        convert_command_glyphs(custom_name_buf, std::size(custom_name_buf));
+
+        item_append(custom_name_buf, subtext, FLAG_LEFT_ARROW | FLAG_RIGHT_ARROW, (void *)(btn.field));
+//================================================================>>>
+
 	}
 
 	/* add autofire delay items */
@@ -1066,8 +1089,14 @@ void menu_custom_button::populate()
 				}
 				if (subtext.empty())
 					subtext.assign(" ");
-				item_append(name, subtext, 0, (void *)&machine().ioport().m_custom_button[player][type]);
 
+//========================== EKMAME ==============================>>>
+				char custom_btn_buf[1024];
+				std::snprintf(custom_btn_buf, sizeof(custom_btn_buf), "%s", name.c_str());
+				convert_command_glyphs(custom_btn_buf, std::size(custom_btn_buf));
+
+				item_append(custom_btn_buf, subtext, 0, (void *)&machine().ioport().m_custom_button[player][type]);
+//================================================================>>>
 				menu_items++;
 			}
 		}
@@ -1463,47 +1492,41 @@ menu_scale_effect::~menu_scale_effect()
 {
 }
 
-// 2. Populate moderno: sin parámetros flotantes (customtop/custombottom)
 void menu_scale_effect::populate()
 {
 	int scaler;
 	
-	// Añadir la opción por defecto usando las cadenas de traducción de la UI
 	item_append(_("None"), "", 0, (void *)(uintptr_t)SCALE_ITEM_NONE);
 
-	/* Recorrer y añadir los elementos para cada escalador por software disponible */
 	for (scaler = 1; ; scaler++)
 	{
 		const char *desc = scale_desc(scaler);
 		if (desc == nullptr)
 			break;
 
-		/* Añadir de forma estructurada a la lista visual del frontend */
 		item_append(desc, "", 0, (void *)(uintptr_t)(SCALE_ITEM_NONE + scaler));
 	}
 }
 
-// 3. Handle moderno: procesa eventos mediante punteros a estructuras estructuradas
 bool menu_scale_effect::handle(event const *ev)
 {
-	// Verificar si el usuario presionó el botón de selección (IPT_UI_SELECT)
 	if (ev && ev->iptkey == IPT_UI_SELECT && ev->itemref != nullptr)
 	{
 		uintptr_t selected_effect = uintptr_t(ev->itemref);
 		
 		if (selected_effect >= SCALE_ITEM_NONE)
 		{
-			// Corrección para HBMAME 0.289 usando screen_device_enumerator
 			screen_device *screen = screen_device_enumerator(machine().root_device()).first();
 			if (screen != nullptr)
 			{
 				screen->video_exit_scale_effect();
 				scale_decode(scale_name(selected_effect - SCALE_ITEM_NONE));
 				screen->video_init_scale_effect();
+
+				machine().video().frame_update(false);
 				
 				osd_printf_verbose("scale effect: %s\n", scale_name(selected_effect - SCALE_ITEM_NONE));
 				
-				// Reconstruir el menú para reflejar los cambios visuales inmediatamente
 				reset(reset_options::REMEMBER_REF);
 				return true;
 			}

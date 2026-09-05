@@ -10,7 +10,7 @@ local function check_db_result(msg)
 end
 
 local function settings_path()
-	return manager.machine.options.entries.homepath:value():match('([^;]+)') .. '/dats'
+	return manager.machine.options.entries.homepath:value():match('([^;]+)') .. '/support/dats'
 end
 
 local function check_version_table()

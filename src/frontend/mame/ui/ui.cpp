@@ -25,6 +25,11 @@
 #include "ui/systemlist.h"
 #include "ui/viewgfx.h"
 
+//========= EKMAME =========>>>
+#include "ui/miscmenu.h"
+#include "ui/cheatopt.h"
+//==========================>>>
+
 #include "imagedev/cassette.h"
 #include "machine/laserdsc.h"
 #include "video/vector.h"
@@ -52,6 +57,15 @@
 #include <functional>
 #include <type_traits>
 
+//=================== EKMAME ==================>>>
+struct scale_effect_t {
+	int effect;
+	int xsize;
+	int ysize;
+};
+extern scale_effect_t scale_effect;
+extern void scale_decode(const char *name);
+//=============================================>>>
 
 /***************************************************************************
     LOCAL VARIABLES
@@ -1879,6 +1893,43 @@ uint32_t mame_ui_manager::handler_ingame()
 	// handle a toggle cheats request
 	if (inp.pressed(IPT_UI_TOGGLE_CHEAT))
 		mame_machine_manager::instance()->cheat().set_enable(!mame_machine_manager::instance()->cheat().enabled(), true);
+
+//==================== EKMAME ========================>>>
+	if (inp.pressed(IPT_UI_TOGGLE_CHEAT_CONFIG))
+	{
+		m_ui_target = &current_ui_target();
+		if (!machine().paused() && options().menu_pause())
+		{
+			machine().pause();
+			m_paused_for_menu = true;
+		}
+
+		ui::menu::stack_reset(*this);
+		activate_menu();
+		ui::menu::stack_push<ui::menu_cheat>(*this, *m_ui_target);
+
+		return 0;
+	}
+
+	if (inp.pressed(IPT_UI_CLEAR_FILTER))
+	{
+		screen_device *screen = screen_device_enumerator(machine().root_device()).first();
+		if (screen != nullptr)
+		{
+			screen->video_exit_scale_effect();
+			
+			scale_effect.effect = 0;
+			scale_effect.xsize = 1;
+			scale_effect.ysize = 1;
+			
+			screen->video_init_scale_effect();
+			machine().video().frame_update(true);
+			popup_time(2, "%s", "Image Enhancement: NONE (Pixel-Art Restored)");
+			return 0;
+		}
+	}
+
+//====================================================>>>
 
 	// toggle MNG recording
 	if (inp.pressed(IPT_UI_RECORD_MNG))

@@ -806,8 +806,10 @@ screen_device::screen_device(const machine_config &mconfig, const char *tag, dev
 	m_id_counter++;
 	memset(m_texture, 0, sizeof(m_texture));
 
+//===== USE_SCALE_EFFECTS =====>>>
 	m_scale_dirty[0] = 0;
-	m_scale_dirty[1] = 0;	
+	m_scale_dirty[1] = 0;
+//=============================>>>
 }
 
 
