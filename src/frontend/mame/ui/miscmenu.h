@@ -224,6 +224,8 @@ public:
 private:
 	virtual void populate() override;
 	virtual bool handle(event const *ev) override;
+
+	virtual void custom_render(uint32_t flags, void *selectedref, float top, float bottom, float x1, float y1, float x2, float y2) override;
 };
 //====================================================================>>>
 
