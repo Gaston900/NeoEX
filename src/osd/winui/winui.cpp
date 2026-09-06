@@ -2432,10 +2432,42 @@ static void InitToolbar(void)
 	int idx = SendMessage(hToolBar, TB_BUTTONCOUNT, 0, 0) - 1;
 	SendMessage(hToolBar, TB_GETITEMRECT, idx, (LPARAM)&rect);
 	int iPosX = rect.right + 8;
-	int iPosY = (rect.bottom - rect.top) / 4;
-	int iHeight = rect.bottom - rect.top - 17;
-	// create Search Edit Control
-	hSearchWnd = CreateWindowEx(0, WC_EDIT, TEXT(SEARCH_PROMPT), ES_LEFT | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER | WS_VISIBLE, iPosX, iPosY, 200, iHeight, hToolBar, (HMENU)ID_TOOLBAR_EDIT, hInst, NULL );
+
+// 修改的 代码来源 (加斯顿90)
+//==========================================================================================================>>>
+//DPI
+	int iHeight = 24;
+	if (g_fDpiScale <= 1.01f)
+	{
+		iHeight = 20;
+	}
+
+	int nToolbarHeight = rect.bottom - rect.top;
+	int iPosY = (nToolbarHeight - iHeight) / 2;
+	if (iPosY < 2) iPosY = 2;
+
+	hSearchWnd = CreateWindowEx(0, WC_EDIT, TEXT(SEARCH_PROMPT), ES_LEFT | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER | WS_VISIBLE, iPosX, iPosY, 220, iHeight, hToolBar, (HMENU)ID_TOOLBAR_EDIT, hInst, NULL );
+	
+	if (hSearchWnd != NULL)
+	{
+		LOGFONT lf;
+		HFONT hDefaultFont = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
+		if (GetObject(hDefaultFont, sizeof(LOGFONT), &lf))
+		{
+			if (g_fDpiScale <= 1.01f)
+			{
+				lf.lfHeight = -13;
+				lf.lfWidth = 0;
+				HFONT hSearchFont = CreateFontIndirect(&lf);
+				SendMessage(hSearchWnd, WM_SETFONT, (WPARAM)hSearchFont, MAKELPARAM(TRUE, 0));
+			}
+		}
+
+		int nLeftMargin = 46;
+		int nRightMargin = 6;
+		SendMessage(hSearchWnd, EM_SETMARGINS, EC_LEFTMARGIN | EC_RIGHTMARGIN, MAKELPARAM(nLeftMargin, nRightMargin));
+	}
+//==========================================================================================================>>>
 }
 
 static void InitTabView(void)
@@ -2540,6 +2572,31 @@ static void UpdateStatusBar(void)
 		SetStatusBarText(5, MAMEUINAME);
 		SendMessage(hStatusBar, SB_SETICON, 5, (LPARAM)hIconFX);
 	}
+
+// 修改的 代码来源 (加斯顿90)
+//========================================================================================================>>>
+//DPI
+	int widths[6];
+	RECT rectDlg;
+	GetClientRect(hMain, &rectDlg);
+	int nTotalWidth = rectDlg.right - rectDlg.left;
+
+	widths[5] = (int)(96 * g_fDpiScale);  // Panel de MAMEUINAME
+	widths[4] = (int)(90 * g_fDpiScale);  // Panel del Contador de Juegos (Incrementado para respiro)
+	widths[3] = (int)(180 * g_fDpiScale); // Panel de Información de Pantalla (Hz)
+	widths[2] = (int)(150 * g_fDpiScale); // Panel de Estado (Working)
+	widths[1] = (int)(120 * g_fDpiScale); // Panel del Nombre de ROM Corto
+	widths[0] = -1;                       // El primer panel ocupa el resto izquierdo de forma automática
+
+	widths[0] = nTotalWidth - (widths[1] + widths[2] + widths[3] + widths[4] + widths[5]);
+	widths[1] += widths[0];
+	widths[2] += widths[1];
+	widths[3] += widths[2];
+	widths[4] += widths[3];
+	widths[5] += widths[4];
+
+	SendMessage(hStatusBar, SB_SETPARTS, 6, (LPARAM)widths);
+//========================================================================================================>>>
 }
 
 //============================== 缘来是你 ===========================>>>
@@ -2548,11 +2605,27 @@ static void ResetFonts(void)
 {
 	LOGFONT font;
 	
+	//==================== INYECCIÓN MAESTRA DE PUNTOS DE FUENTE DPI PROPORCIONAL ====================>>>
+	//==================== INYECCIÓN MAESTRA DE PUNTOS DE FUENTE DPI PROPORCIONAL ====================>>>
 	if (!g_fontPointsInitialized)
 	{
 		int refDpi = 96; // 参考 DPI
 		GetGuiFont(&font);
-		g_guiPointSize = MulDiv(-font.lfHeight, 72, refDpi);
+		
+		// FIJAMOS UN PISO MÍNIMO DE SEGURIDAD:
+		// Calculamos el tamaño elástico basado en el DPI, pero si el resultado es menor a 9,
+		// obligamos a la interfaz a quedarse en 9 puntos puros. Esto evita que el texto
+		// se vuelva diminuto en pantallas HD (1366x768) reproduciendo el aspecto del archivo original.
+		int nCalculatedPoints = (int)(8 * g_fDpiScale);
+		if (nCalculatedPoints < 9)
+		{
+			g_guiPointSize = 9;
+		}
+		else
+		{
+			g_guiPointSize = nCalculatedPoints;
+		}
+		
 		GetListFont(&font);
 		g_listPointSize = MulDiv(-font.lfHeight, 72, refDpi);
 		GetHistoryFont(&font);
@@ -2562,7 +2635,12 @@ static void ResetFonts(void)
 		g_fontPointsInitialized = true;
 	}
 	
-	int guiHeight = -MulDiv(g_guiPointSize, g_uCurrentDpi, 72);
+// 修改的 代码来源 (加斯顿90)
+//================================================================================>>>
+//DPI
+	int guiHeight = (int)(-MulDiv(g_guiPointSize, g_uCurrentDpi, 72) * 0.96f);
+//================================================================================>>>
+
 	int listHeight = -MulDiv(g_listPointSize, g_uCurrentDpi, 72);
 	int histHeight = -MulDiv(g_histPointSize, g_uCurrentDpi, 72);
 	int treeHeight = -MulDiv(g_treePointSize, g_uCurrentDpi, 72);
@@ -2671,6 +2749,52 @@ static void InitListTree(void)
 	hWndList = GetDlgItem(hMain, IDC_LIST);
 	SetWindowTheme(hWndList, L"Explorer", NULL);
 	SetWindowTheme(hTreeView, L"Explorer", NULL);
+
+//// 修改的 代码来源 (加斯顿90)
+//==================================================================================================>>>
+//DPI
+	HWND hMainTreeView = GetDlgItem(hMain, IDC_TREE);
+	if (hMainTreeView != NULL)
+	{
+		LOGFONT lf;
+		HFONT hDefaultFont = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
+		
+		if (GetObject(hDefaultFont, sizeof(LOGFONT), &lf))
+		{
+			lf.lfHeight = (int)(lf.lfHeight * g_fDpiScale);
+			lf.lfWidth = (int)(lf.lfWidth * g_fDpiScale);
+			
+			HFONT hScaledTreeFont = CreateFontIndirect(&lf);
+			SendMessage(hMainTreeView, WM_SETFONT, (WPARAM)hScaledTreeFont, MAKELPARAM(TRUE, 0));
+
+			int nNewRowHeight = (int)(16 * g_fDpiScale);
+			TreeView_SetItemHeight(hMainTreeView, nNewRowHeight);
+		}
+
+		InvalidateRect(hMainTreeView, NULL, TRUE);
+		UpdateWindow(hMainTreeView);
+	}
+
+	if (hTabCtrl != NULL)
+	{
+		LONG_PTR dwStyle = GetWindowLongPtr(hTabCtrl, GWL_STYLE);
+		SetWindowLongPtr(hTabCtrl, GWL_STYLE, dwStyle & ~TCS_FIXEDWIDTH);
+
+		int nCalculatedHeight = (int)(20 * g_fDpiScale);
+		int nNewTabHeight = (nCalculatedHeight < 24) ? 24 : nCalculatedHeight;
+		TabCtrl_SetItemSize(hTabCtrl, 0, nNewTabHeight);
+
+		int nPadX = (int)(6 * g_fDpiScale);
+		int nPadY = (int)(1 * g_fDpiScale);
+		if (nPadY < 1) nPadY = 1;
+		
+		SendMessage(hTabCtrl, TCM_SETPADDING, 0, MAKELPARAM(nPadX, nPadY));
+
+		InvalidateRect(hTabCtrl, NULL, TRUE);
+		UpdateWindow(hTabCtrl);
+	}
+//==================================================================================================>>>
+
 
 //缘来是你
 //=================================== 复选框==========================>>>
