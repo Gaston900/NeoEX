@@ -2074,7 +2074,7 @@ void CreateNEOGEOFolders(int parent_index)
 	int jj;
 	int nGames = GetNumGames();
 	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-    LPTREEFOLDER lpNeoGeoBT, lpNeoGeoCD, lpNeoGeoDS, lpNeoGeoDC, lpNeoGeoDM, lpNeoGeoEL, lpNeoGeoHC, lpNeoGeoHB, lpNeoGeoST, lpNeoGeoMG, lpNeoSD, lpGnGeo;
+    LPTREEFOLDER lpNeoGeoBT, lpNeoGeoCD, lpNeoGeoDS, lpNeoGeoDC, lpNeoGeoDM, lpNeoGeoEL, lpNeoGeoHC, lpNeoGeoST, lpNeoGeoHB, lpNeoGeoMG, lpNeoSD, lpGnGeo, lpNeoCD, lpNeoCDHB, lpNeoCDHC;
 
 	// no games in top level folder
 	SetAllBits(lpFolder->m_lpGameBits,FALSE);
@@ -2087,11 +2087,14 @@ void CreateNEOGEOFolders(int parent_index)
 	lpNeoGeoDM = NewFolder("Demo Music", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpNeoGeoEL = NewFolder("Earlier", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
 	lpNeoGeoHC = NewFolder("Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
-    lpNeoGeoHB = NewFolder("HomeBrew", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpNeoGeoST = NewFolder("NeoGeo", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+	lpNeoGeoHB = NewFolder("NeoGeo HB", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpNeoGeoMG = NewFolder("MGD2", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpNeoSD = NewFolder("NeoSD", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpGnGeo = NewFolder("GnGeo", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpNeoCD = NewFolder("Neo CD", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpNeoCDHB = NewFolder("Neo CD HB", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpNeoCDHC = NewFolder("Neo CD Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
 
 	AddFolder(lpNeoGeoBT);
 	AddFolder(lpNeoGeoCD);
@@ -2105,6 +2108,9 @@ void CreateNEOGEOFolders(int parent_index)
 	AddFolder(lpNeoGeoMG);
 	AddFolder(lpNeoSD);	
     AddFolder(lpGnGeo);
+    AddFolder(lpNeoCD);
+    AddFolder(lpNeoCDHB);
+    AddFolder(lpNeoCDHC);
 
 	for (jj = 0; jj < nGames; jj++)
 	{
@@ -3518,6 +3524,142 @@ void CreateNEOGEOFolders(int parent_index)
 		if (!strcmp("zedbladegno", s))			    AddGame(lpGnGeo, jj);
 		if (!strcmp("zintrckbgno", s))			    AddGame(lpGnGeo, jj);
 		if (!strcmp("zupapagno", s))			    AddGame(lpGnGeo, jj);
+
+        // NeoGeo CD
+		if (!strcmp("3countbncd", s))	            AddGame(lpNeoCD, jj);
+		if (!strcmp("2020bbncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("adkworldncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("alpham2ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("aodkncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("aofncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("aof2ncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("aof3ncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("aof3ancd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("b2bncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("bjourneyncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("breakersncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("bstarsncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("bstars2ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("burningfncd", s))		        AddGame(lpNeoCD, jj);
+		if (!strcmp("cpbarrelncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("crswordncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("crswd2blncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("cyberlipncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("doubledrncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("doubledrancd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("fatfurspncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("fatfury1ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("fatfury2ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("fatfury3ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("fatfury3ancd", s))		        AddGame(lpNeoCD, jj);
+		if (!strcmp("fbfrenzyncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("froman2bncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("galaxyfgncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("gowcaizrncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("gpilotsncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("ironcladncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("janshinncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("joyjoyncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("kabukiklncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("karnovrncd", s))		        AddGame(lpNeoCD, jj);
+		if (!strcmp("kof94ncd", s))		            AddGame(lpNeoCD, jj);
+		if (!strcmp("kof94ancd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("kof95ncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("kof95ancd", s))		        AddGame(lpNeoCD, jj);
+		if (!strcmp("kof96ncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("kof96ancd", s))	            AddGame(lpNeoCD, jj);
+		if (!strcmp("kof96colncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("kof97ncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("kof98ncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("kof99ncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("kotm2ncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("lastbladncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("lastbld2ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("lasthopencd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("lbowlingncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("looptrisncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("looptrspncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("lresortncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("magdrop2ncd", s))		        AddGame(lpNeoCD, jj);
+		if (!strcmp("maglordncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("mahretsuncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("moshougincd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("mslugncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("mslug2ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("mutnatncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("nam1975ncd", s))	            AddGame(lpNeoCD, jj);
+		if (!strcmp("ncombatncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("ncommandncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("neodriftncd", s))		        AddGame(lpNeoCD, jj);
+		if (!strcmp("ngcdspecncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("ninjamasncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("overtopncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("pbobblenncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("pgoalncdncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("pspikes2ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("pulstarncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("quizkofncd", s))		        AddGame(lpNeoCD, jj);
+		if (!strcmp("ragnagrdncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("rbff1ncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("rbff2ncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("rbffspecncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("ridheroncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("roboarmyncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("samshoncd", s))		        AddGame(lpNeoCD, jj);
+		if (!strcmp("samsho2ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("samsho3ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("samsho4ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("samsprpgncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("savagerencd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("sengokuncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("sengoku2ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("socbrawlncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("sonicwi2ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("sonicwi3ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("ssidekincd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("ssideki2ncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("ssideki3ncd", s))		        AddGame(lpNeoCD, jj);
+		if (!strcmp("stakwinncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("strhoopncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("superspyncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("tophuntrncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("totcncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("tpgolfncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("trallyncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("turfmastncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("twinsprincd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("viewpoinncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("wh1ncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("wh2ncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("wh2jncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("whpncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("wjammersncd", s))			    AddGame(lpNeoCD, jj);
+		if (!strcmp("xenoncd", s))			        AddGame(lpNeoCD, jj);
+		if (!strcmp("zintrckbncd", s))			    AddGame(lpNeoCD, jj);
+
+        // Neo CD/HACK
+		if (!strcmp("ffury_cd", s))	                AddGame(lpNeoCDHC, jj);
+		if (!strcmp("ssrpg_cd", s))		    	    AddGame(lpNeoCDHC, jj);
+
+        // Neo CD/HOMEBREW
+		if (!strcmp("alice_cd", s))	                AddGame(lpNeoCDHB, jj);
+		if (!strcmp("chelnov_cd", s))			    AddGame(lpNeoCDHB, jj);
+		if (!strcmp("diff_cd", s))			        AddGame(lpNeoCDHB, jj);
+		if (!strcmp("eira_cd", s))			        AddGame(lpNeoCDHB, jj);
+		if (!strcmp("fukkireta_cd", s))			    AddGame(lpNeoCDHB, jj);
+		if (!strcmp("gaxe_cd", s))			        AddGame(lpNeoCDHB, jj);
+		if (!strcmp("gaxearr_cd", s))			    AddGame(lpNeoCDHB, jj);
+		if (!strcmp("natademo_cd", s))			    AddGame(lpNeoCDHB, jj);
+		if (!strcmp("ngdark_cd", s))			    AddGame(lpNeoCDHB, jj);
+		if (!strcmp("noneon_cd", s))			    AddGame(lpNeoCDHB, jj);
+		if (!strcmp("ntris3d_cd", s))			    AddGame(lpNeoCDHB, jj);
+		if (!strcmp("phoenix_cd", s))			    AddGame(lpNeoCDHB, jj);
+		if (!strcmp("pong_cd", s))			        AddGame(lpNeoCDHB, jj);
+		if (!strcmp("pow_cd", s))			        AddGame(lpNeoCDHB, jj);
+		if (!strcmp("shinobiarr_cd", s))		    AddGame(lpNeoCDHB, jj);
+		if (!strcmp("speedball_cd", s))			    AddGame(lpNeoCDHB, jj);
+		if (!strcmp("subspecies_cd", s))			AddGame(lpNeoCDHB, jj);
+		if (!strcmp("visualnovel_cd", s))			AddGame(lpNeoCDHB, jj);
 	}
 
 	for (jj = 0; jj < nGames; jj++)
@@ -3551,6 +3693,7 @@ void CreateNEOGEOFolders(int parent_index)
 		if (!strcmp("neogeo_noslothc.cpp", s))      AddGame(lpFolder, jj);
 		if (!strcmp("neogeo_noslothb.cpp", s))      AddGame(lpFolder, jj);
 		if (!strcmp("neogeo_noslotdd.cpp", s))      AddGame(lpFolder, jj);
+		if (!strcmp("neogeocd.cpp", s))             AddGame(lpFolder, jj);
 	}
 }
 

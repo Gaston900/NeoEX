@@ -644,9 +644,9 @@ ROM_END
 
 // 514: Food Fight port by iq_132
 // bugs: priority issues
-ROM_START( foodfn )
+ROM_START( foodfight )
 	ROM_REGION( 0x100000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "514.p1", 0x000000, 0x080000, CRC(904bb32f) SHA1(b6e29634485af5e88997971f0dfb7661e93e8724) )
+	ROM_LOAD16_WORD_SWAP( "514.p1", 0x000000, 0x080000, CRC(455a609f) SHA1(d6c82c3925a8f3b1f3544de8908394bdce38b204) )
 
 	NEO_SFIX_128K( "021.s1", CRC(6956d778) SHA1(e3757776d60dc07d8e07c9ca61b223b14732f860) )
 
@@ -1800,6 +1800,24 @@ ROM_START( santabll )
 	ROM_LOAD16_BYTE( "443.c2", 0x000001, 0x100000, CRC(1c7fd396) SHA1(aa2e2fff1ad1804631f3058b9666b970a368a847) )
 ROM_END
 
+// 524: Super Mario Bros (not related to 495: New Super Mario Brothers)
+// Bugs: If the screen suddenly goes black, you'll have to restart the game
+ROM_START( smbn )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "524.p1", 0x000000, 0x100000, CRC(7f2203e2) SHA1(40c8a2aaedfde648729341da967698e46ebeee46) )
+
+	NEO_SFIX_128K( "524.s1", CRC(d26aa99f) SHA1(9157796d485fe6fcf9d6563e8f0006e0d26d7c8f) )
+
+	NEO_BIOS_AUDIO_128K( "524.m1", CRC(407e6cb6) SHA1(be0de4793809801436f8d4b1e8c639cb121e1022) )
+
+	ROM_REGION( 0x80000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "524.v1", 0x000000, 0x80000, CRC(87a8bcb3) SHA1(36005525795ef2c4779eae3955fae722a0abafb7) )
+
+	ROM_REGION( 0x400000, "sprites", ROMREGION_ERASE00 )
+	ROM_LOAD16_BYTE( "524.c1", 0x0000000, 0x200000, CRC(6ca43fd1) SHA1(35aacdc116d93d9ea719660e4d4ab13231944bc3) )
+	// c2 rom supplied is all zeroes, so not needed
+ROM_END
+
 // 539: Shadow Gangs demo by Shadow Gangs
 // bugs: screen goes black, sound stops after a few seconds
 ROM_START( sgz ) // demo
@@ -2288,7 +2306,7 @@ GAME( 2026, doomgeo,    neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_
 GAME( 2025, doubled1,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "La Casa De Ruivo / Neo Byte Force", "Double Dragon One Beta (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, flapchck,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Blastar", "Flappy Chicken (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2006, ffeast,     neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Rastersoft", "Neo Frog Feast (HB)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, foodfn,     neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "iq132", "Food Fight - Neo Geo Conversion (HB)", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, foodfight,  neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "iq132", "Food Fight - Neo Geo Conversion (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2026, freedoom,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Sabino", "Freedoom v0.13.0 (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, galaxiann,  neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT270, "tcdev", "Galaxians Beta 2 (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, gladmort,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Pixelheart / ChipsOnSteroids", "Gladmort (HB)", MACHINE_SUPPORTS_SAVE )
@@ -2353,6 +2371,7 @@ GAME( 2018, raroggame,  neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_
 GAME( 2026, rickdangdx, neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Z-team", "Rick Dangerous DX (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, samantha,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Vasily Familiya", "Everlasting Summer - Samantha Demo (HB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2012, santabll,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "M.Priewe", "SantaBall - Christmas Tennis Game (HB)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, smbn,       neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Sabino", "Super Mario Bros (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2026, sgz,        neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Shadow Gangs", "Shadow Gangs Zero Demo (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2019, shaman24,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Vasily Familiya", "Shaman King Demo (HB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2025, shinobin,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Hoffman", "Shinobi - Neo Geo Conversion (HB)", MACHINE_SUPPORTS_SAVE )

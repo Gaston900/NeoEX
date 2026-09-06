@@ -1,5 +1,6 @@
 // NeoEX
-// copyright-holders:Gaston90
+// copyright-holders:Robbbert
+// Updating the driver: Gaston90
 #include "../mame/capcom/cps3.cpp"
 
 class cps3_hbmame : public cps3_state
@@ -17,6 +18,7 @@ public:
 
 private:
 
+	DECLARE_MACHINE_START(redeartn);
 	DECLARE_MACHINE_RESET(redeartn);
 	TIMER_CALLBACK_MEMBER(fastboot_timer_callback);
 	void hb_unscramble();
@@ -227,11 +229,16 @@ void cps3_hbmame::init_sfiii3n()
 	init_sfiii3();
 }
 
+MACHINE_START_MEMBER( cps3_hbmame, redeartn )
+{
+	cps3_state::machine_start();
+	m_fastboot_timer = machine().scheduler().timer_alloc(timer_expired_delegate(FUNC(cps3_hbmame::fastboot_timer_callback),this));
+}
+
 MACHINE_RESET_MEMBER( cps3_hbmame, redeartn )
 {
+	cps3_state::machine_reset();
 	m_current_table_address = -1;
-
-	m_fastboot_timer = machine().scheduler().timer_alloc(timer_expired_delegate(FUNC(cps3_hbmame::fastboot_timer_callback),this));
 	m_fastboot_timer->adjust(attotime::zero);
 
 	// copy data from flashroms back into user regions + decrypt into regions we execute/draw from.
@@ -241,6 +248,7 @@ MACHINE_RESET_MEMBER( cps3_hbmame, redeartn )
 void cps3_hbmame::redeartn(machine_config &config)
 {
 	redearth(config);
+	MCFG_MACHINE_START_OVERRIDE(cps3_hbmame, redeartn)
 	MCFG_MACHINE_RESET_OVERRIDE(cps3_hbmame, redeartn)
 }
 

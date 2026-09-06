@@ -6044,6 +6044,26 @@ ROM_START( lastbld2hc08 ) //lastbld2sjxr
 	ROM_LOAD16_BYTE( "243.c6", 0x2000001, 0x800000, CRC(ec9c36d0) SHA1(e145e9e359000dda6e1dfe95a996bc6d29cfca21) )
 ROM_END
 
+ROM_START( lasthopehc01 ) //lasthopepb
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "300_hc01.p1", 0x000000, 0x100000, CRC(b81dd2e0) SHA1(53cfc791267e56d07f1288a20fd1cca4a9f7c631) )
+
+	NEO_SFIX_128K( "802_hc01.s1", CRC(f0719dbb) SHA1(8d1faa2dac59579b7bda6bdafd8bac5b794ce2f0) )
+
+	NEO_BIOS_AUDIO_128K( "802_hc01.m1", CRC(4b395814) SHA1(5fc88b369dceb6b8ff5ff42e284d7def0aad1148) )
+
+	ROM_REGION( 0x600000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "802_hc01.v1", 0x000000, 0x200000, CRC(2dda0948) SHA1(dc791a41d16b3aeb27f8da2fb7656b73ace579e1) )
+	ROM_LOAD( "802_hc01.v2", 0x200000, 0x200000, CRC(056f66ef) SHA1(d3ef0d5b75bc763f865315cbd3344e395a6673df) )
+	ROM_LOAD( "802_hc01.v3", 0x400000, 0x200000, CRC(3754d8f9) SHA1(620098a19151e289471cdab2230d71caacdab70c) )
+
+	ROM_REGION( 0x1000000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "802_hc01.c1", 0x000000, 0x400000, CRC(bc2d2a8b) SHA1(fd57c05863649ff609d3927c9d7c02d67b752f50) )
+	ROM_LOAD16_BYTE( "802_hc01.c2", 0x000001, 0x400000, CRC(1673318d) SHA1(6c3fafd7b3d22021c1430a9c019f63200e0cb5d7) )
+	ROM_LOAD16_BYTE( "802_hc01.c3", 0x800000, 0x400000, CRC(bf0e4af1) SHA1(41dac8b64e429550964529069e90a503a3b3dd35) )
+	ROM_LOAD16_BYTE( "802_hc01.c4", 0x800001, 0x400000, CRC(6b44c6a0) SHA1(295a60f69f6ed9a015b7d8790b88615ecf4f81f6))
+ROM_END
+
 ROM_START( magdrop3hc01 ) //magdrop3te
 	ROM_REGION( 0x100000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "233_hc01.p1", 0x000000, 0x100000, CRC(e2068d05) SHA1(01e5cb82b0e5cb5a62252167549deb66358c3276) )
@@ -11717,7 +11737,7 @@ ROM_END
 
 ROM_START( sengoku2hc01 ) //sengoku2rb
 	ROM_REGION( 0x100000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "040_hc01.p1", 0x000000, 0x100000, CRC(ad8f774e) SHA1(c3133ff45b97b6f80ef32a1f1486fef212572bc6) )
+	ROM_LOAD16_WORD_SWAP( "040_hc01.p1", 0x000000, 0x100000, CRC(551e137e) SHA1(178c7dea02138b02b6f3589e9bd1a109c19dcf70) )
 
 	NEO_SFIX_128K( "040.s1", CRC(cd9802a3) SHA1(f685d4638f4f68e7e3f101c0c39128454536721b) )
 
@@ -11728,9 +11748,9 @@ ROM_START( sengoku2hc01 ) //sengoku2rb
 	ROM_LOAD( "040.v2", 0x200000, 0x100000, CRC(c5cece01) SHA1(923a3377dac1919e8c3d9ab316902250caa4785f) )
 
 	ROM_REGION( 0x600000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "040_hc01.c1", 0x000000, 0x100000, CRC(451cdf68) SHA1(b86300adc6dfbb526f600be11dbe085abe0933f2) )
+	ROM_LOAD16_BYTE( "040_hc01.c1", 0x000000, 0x100000, CRC(7863e00c) SHA1(5fc9d88bd9cacbc36716d1223989f2245c883690) )
 	ROM_CONTINUE( 0x400000, 0x100000 )
-	ROM_LOAD16_BYTE( "040_hc01.c2", 0x000001, 0x100000, CRC(942d98b8) SHA1(3c018f5ebff511999195ff44d21f4587950658a5) )
+	ROM_LOAD16_BYTE( "040_hc01.c2", 0x000001, 0x100000, CRC(5f5105ff) SHA1(9534a19a2ec6a5e314b2b42f1f298e5065f4bea2) )
 	ROM_CONTINUE( 0x400001, 0x100000 )
 	ROM_LOAD16_BYTE( "040_hc01.c3", 0x200000, 0x080000, CRC(7a846578) SHA1(c6b9cbc5eed8b8f542cba14dc79b2b3f347cd862) )
 	ROM_LOAD16_BYTE( "040_hc01.c4", 0x200001, 0x080000, CRC(15eba55e) SHA1(95d9f2a3330798bfe5ff48b02a3459e7aa7c4ad5) )
@@ -12877,6 +12897,7 @@ GAME( 2023, lastbld2hc05,     lastbld2, neogeo_neobase,  neogeo, neogeo_state,  
 GAME( 2013, lastbld2hc06,     lastbld2, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Simplified 2013-03-09)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, lastbld2hc07,     lastbld2, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (2255 2024-10-14)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, lastbld2hc08,     lastbld2, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (2115 2023-12-15)", MACHINE_SUPPORTS_SAVE )
+GAME( 2005, lasthopehc01,     lasthope, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Last Hope - Pink Bullets (bootleg AES to MVS conversion, no coin support)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, magdrop3hc01,     magdrop3, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Magical Drop III (Tournament Edition 2022-08-10)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, magdrop3hc02,     magdrop3, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Magical Drop III (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, magdrop3hc03,     magdrop3, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "Shyma.X",      "Magical Drop III (French Translation)", MACHINE_SUPPORTS_SAVE )
@@ -13111,7 +13132,7 @@ GAME( 2018, savagerehc03,     savagere, neogeo_neo304h,  neogeo, neogeo_state,  
 GAME( 1996, sdodgebhc01,      sdodgeb,  neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Super Dodge Ball / Kunio no Nekketsu Toukyuu Densetsu (Infinite Energy)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, sdodgebhc02,      sdodgeb,  neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Super Dodge Ball / Kunio no Nekketsu Toukyuu Densetsu (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, sdodgebhc03,      sdodgeb,  neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Super Dodge Ball / Kunio no Nekketsu Toukyuu Densetsu (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
-GAME( 2026, sengoku2hc01,     sengoku2, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Sengoku 2 / Sengoku Denshou 2 (Red Blood)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, sengoku2hc01,     sengoku2, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Sengoku 2 / Sengoku Denshou 2 (Red Blood v1.18)", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, sengoku3hc01,     sengoku3, neogeo_multiboot,neogeo, neogeo_state,    init_sengoku3, ROT0, "DDJ",          "Sengoku 3 / Sengoku Densho 2001 (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, sengoku3hc02,     sengoku3, neogeo_multiboot,neogeo, neogeo_state,    init_sengoku3, ROT0, "hack",         "Sengoku 3 / Sengoku Densho 2001 (Unlock All Stages And Hidden Character)", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, sengoku3hc03,     sengoku3, neogeo_multiboot,neogeo, neogeo_state,    init_sengoku3, ROT0, "hack",         "Sengoku 3 / Sengoku Densho 2001 (Evolution v1.0)", MACHINE_SUPPORTS_SAVE )

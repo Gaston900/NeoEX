@@ -1206,6 +1206,34 @@ ROM_START( hsf2hc08 )
 	ROM_LOAD( "hsf2j.key",    0x00, 0x14, CRC(19455a93) SHA1(925cee29b37cb7a4048383ac715ad96f83280d37) )
 ROM_END
 
+ROM_START( mmatrixhc01 )
+	ROM_REGION( CODE_SIZE, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "mmxu_hc01.03", 0x000000, 0x80000, CRC(a578097b) SHA1(7d7153d58930d07aca61b9cddab650b687db51ff) )
+	ROM_LOAD16_WORD_SWAP( "mmxu.04", 0x080000, 0x80000, CRC(0135fc6c) SHA1(e40c8fa51dcb300b3ee72dc7de137e0b39dea490) )
+	ROM_LOAD16_WORD_SWAP( "mmxu_hc01.05", 0x100000, 0x80000, CRC(a1fbd3d8) SHA1(87a2494c88de302b10bb70a218d74ccf6b3b59a8) )
+
+	ROM_REGION( 0x2000000, "gfx", 0 )
+	ROM_LOAD64_WORD( "mmx.13m",   0x0000000, 0x400000, CRC(04748718) SHA1(d2e84d9dcc779c08469d815ccd709f30705954b8) )
+	ROM_LOAD64_WORD( "mmx.15m",   0x0000002, 0x400000, CRC(38074f44) SHA1(2002c4862c156b314bc4f3372b713c48e0667ec3) )
+	ROM_LOAD64_WORD( "mmx.17m",   0x0000004, 0x400000, CRC(e4635e35) SHA1(48ef7a82df83b981ddd6138c241ca129ab770e8e) )
+	ROM_LOAD64_WORD( "mmx.19m",   0x0000006, 0x400000, CRC(4400a3f2) SHA1(d0aa805ccbb153896e5983da1c398d1df4f40371) )
+	ROM_LOAD64_WORD( "mmx.14m",   0x1000000, 0x400000, CRC(d52bf491) SHA1(2398895cfdcf86fc485472e33df2cc446539e977) )
+	ROM_LOAD64_WORD( "mmx.16m",   0x1000002, 0x400000, CRC(23f70780) SHA1(691ee8964815b0ce54704e7feb59ca79b634f26d) )
+	ROM_LOAD64_WORD( "mmx.18m",   0x1000004, 0x400000, CRC(2562c9d5) SHA1(e7defc3d33db632c4035ae069f2f2332c58afaf5) )
+	ROM_LOAD64_WORD( "mmx.20m",   0x1000006, 0x400000, CRC(583a9687) SHA1(1d0b08b1e88509245db3c2090f0201938fd750b4) )
+
+	ROM_REGION( QSOUND_SIZE, "audiocpu", 0 )
+	ROM_LOAD( "mmx_hc01.01",   0x00000, 0x08000, CRC(45a29ce5) SHA1(f06f4479188c21e8be08797e4d86769c85aaaa1b) )
+	ROM_CONTINUE(         0x10000, 0x18000 )
+
+	ROM_REGION( 0x800000, "qsound", 0 )
+	ROM_LOAD16_WORD_SWAP( "mmx.11m",   0x000000, 0x400000, CRC(4180b39f) SHA1(cabb1c358eae1bb6cfed07f5b92e4acd38650667) )
+	ROM_LOAD16_WORD_SWAP( "mmx.12m",   0x400000, 0x400000, CRC(95e22a59) SHA1(b3431d170c0a1a0d826ad0af21300b9180e3f114) )
+
+	ROM_REGION( 0x20, "key", 0 )
+	ROM_LOAD( "mmatrix.key",  0x000000, 0x000014, CRC(8ed66bc4) SHA1(324d7bf9d95220ecab140b1385eba7087f1a9669) )
+ROM_END
+
 ROM_START( mvschc01 )
 	ROM_REGION( CODE_SIZE, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "mvce_hc01.03d", 0x000000, 0x80000, CRC(bf61f46a) SHA1(c2151c7fdcedd1e4da110a2ddba318b06e7075d6) )
@@ -3146,6 +3174,7 @@ GAME( 2004, hsf2hc05,    hsf2,         cps2,         cps2_2p6b, cps2_state, init
 GAME( 2017, hsf2hc06,    hsf2,         dead_cps2,    cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Hyper Street Fighter II: The Anniversary Edition (Plus Plus 2017-06-25)", MACHINE_SUPPORTS_SAVE )
 GAME( 2026, hsf2hc07,    hsf2,         dead_cps2,    cps2_2p6b, cps2_state, init_cps2,     ROT0,   "Zero800",     "Street Fighter II': Prime (v0.80)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, hsf2hc08,    hsf2,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "DDJ",         "Hyper Street Fighter II: The Anniversary Edition (Level Plus)", MACHINE_SUPPORTS_SAVE )
+GAME( 2000, mmatrixhc01, mmatrix,      cps2,         cps2_2p3b, cps2_state, init_cps2,     ROT0,   "hack",        "Mars Matrix: Hyper Solid Shooting (Improvement v1.0.0)", MACHINE_SUPPORTS_SAVE )
 GAME( 1998, mvschc01,    mvsc,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "DDJ",         "Marvel Vs. Capcom: Clash of Super Heroes (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 1998, mvschc02,    mvsc,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Marvel Vs. Capcom: Clash of Super Heroes (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, mvschc03,    mvsc,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "GOTVG",       "Marvel Vs. Capcom: Clash of Super Heroes (Plus 2023-04-18)", MACHINE_SUPPORTS_SAVE )
