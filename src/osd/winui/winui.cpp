@@ -1784,6 +1784,122 @@ static LRESULT CALLBACK MameWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 				LPNMHDR lpNmHdr = (LPNMHDR)lParam;
 				wchar_t szClass[128];
 
+// 修改的 代码来源 (加斯顿90)
+//===========================================================================================================>>>
+				if (lpNmHdr->hwndFrom == hTreeView && lpNmHdr->code == NM_CUSTOMDRAW)
+				{
+					LPNMTVCUSTOMDRAW lptvcd = (LPNMTVCUSTOMDRAW)lParam;
+					switch (lptvcd->nmcd.dwDrawStage)
+					{
+						case CDDS_PREPAINT:
+							return CDRF_NOTIFYITEMDRAW;
+
+						case CDDS_ITEMPREPAINT:
+						{
+							if ((lptvcd->nmcd.uItemState & CDIS_SELECTED) && (GetFocus() != hTreeView))
+							{
+								SetBkMode(lptvcd->nmcd.hdc, OPAQUE);
+								lptvcd->clrText = RGB(0, 0, 0);         // Texto Negro Puro
+								lptvcd->clrTextBk = RGB(255, 255, 255); // Fondo Blanco Puro Sólido
+
+								HBRUSH hSoftWhiteBrush = CreateSolidBrush(lptvcd->clrTextBk);
+								if (hSoftWhiteBrush != NULL)
+								{
+									FillRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hSoftWhiteBrush);
+									DeleteObject(hSoftWhiteBrush);
+								}
+
+								HBRUSH hWhiteBorderBrush = CreateSolidBrush(RGB(255, 255, 255)); // Borde Blanco
+								if (hWhiteBorderBrush != NULL)
+								{
+									FrameRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hWhiteBorderBrush);
+									DeleteObject(hWhiteBorderBrush);
+								}
+								return CDRF_NEWFONT;
+							}
+
+							if ((lptvcd->nmcd.uItemState & CDIS_HOT) && (lptvcd->nmcd.uItemState & CDIS_SELECTED))
+							{
+								SetBkMode(lptvcd->nmcd.hdc, OPAQUE);
+								lptvcd->clrText = RGB(255, 255, 255);   // Letras Blancas Puras
+								lptvcd->clrTextBk = RGB(0, 162, 232);  // Fondo Celeste
+
+								HBRUSH hSoftWhiteBrush = CreateSolidBrush(lptvcd->clrTextBk);
+								if (hSoftWhiteBrush != NULL)
+								{
+									FillRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hSoftWhiteBrush);
+									DeleteObject(hSoftWhiteBrush);
+								}
+
+								HBRUSH hWhiteBorderBrush = CreateSolidBrush(RGB(0, 162, 232)); // Fondo Celeste
+								if (hWhiteBorderBrush != NULL)
+								{
+									FrameRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hWhiteBorderBrush);
+									DeleteObject(hWhiteBorderBrush);
+								}
+								return CDRF_NEWFONT;
+							}
+
+							if (!(lptvcd->nmcd.uItemState & (CDIS_HOT)) && (lptvcd->nmcd.uItemState & CDIS_SELECTED))
+							{
+								SetBkMode(lptvcd->nmcd.hdc, OPAQUE);
+								lptvcd->clrText = RGB(255, 255, 255);   // Letras Blancas Puras
+								lptvcd->clrTextBk = RGB(0, 162, 232);  // Fondo Celeste
+
+								HBRUSH hSoftWhiteBrush = CreateSolidBrush(lptvcd->clrTextBk);
+								if (hSoftWhiteBrush != NULL)
+								{
+									FillRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hSoftWhiteBrush);
+									DeleteObject(hSoftWhiteBrush);
+								}
+
+								HBRUSH hWhiteBorderBrush = CreateSolidBrush(RGB(0, 162, 232)); // Fondo Celeste
+								if (hWhiteBorderBrush != NULL)
+								{
+									FrameRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hWhiteBorderBrush);
+									DeleteObject(hWhiteBorderBrush);
+								}
+								return CDRF_NEWFONT;
+							}
+
+							if ((lptvcd->nmcd.uItemState & CDIS_HOT) && !(lptvcd->nmcd.uItemState & CDIS_SELECTED))
+							{
+								SetBkMode(lptvcd->nmcd.hdc, OPAQUE);
+								lptvcd->clrText = RGB(255, 255, 255);   // Texto Blanco Puro
+								lptvcd->clrTextBk = RGB(36, 36, 36);    // Fondo Gris Carbón
+								
+								HBRUSH hSoftWhiteBrush = CreateSolidBrush(lptvcd->clrTextBk);
+								if (hSoftWhiteBrush != NULL)
+								{
+									FillRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hSoftWhiteBrush);
+									DeleteObject(hSoftWhiteBrush);
+								}
+
+								HBRUSH hBlackBorderBrush = CreateSolidBrush(RGB(0, 0, 0)); // Borde Negro Puro
+								if (hBlackBorderBrush != NULL)
+								{
+									FrameRect(lptvcd->nmcd.hdc, &lptvcd->nmcd.rc, hBlackBorderBrush);
+									DeleteObject(hBlackBorderBrush);
+								}
+								return CDRF_NEWFONT;
+							}
+
+							if (!(lptvcd->nmcd.uItemState & (CDIS_SELECTED | CDIS_FOCUS | CDIS_HOT)))
+							{
+								SetBkMode(lptvcd->nmcd.hdc, TRANSPARENT);
+								lptvcd->clrText = RGB(255, 255, 255);
+								lptvcd->clrTextBk = GetFolderBgColor();
+								return CDRF_NEWFONT;
+							}
+							
+							return CDRF_DODEFAULT;
+						}
+					}
+					return CDRF_DODEFAULT;
+				}
+
+//===========================================================================================================>>>
+
 				/* Fetch tooltip text */
 				if (lpNmHdr->code == TTN_NEEDTEXT)
 				{
@@ -1952,8 +2068,40 @@ static bool GameCheck(void)
 	if (changed && i != -1)
 		(void)ListView_RedrawItems(hWndList, i, i);
 
+// 修改的 代码来源 (加斯顿90)
+//===========================================================================================================>>>
+//DPI
 	if (percentage != oldpercent)
 	{
+		RECT rect_status;
+		GetClientRect(hStatusBar, &rect_status);
+
+		int iBaseWidth = 190;
+		if (g_fDpiScale <= 1.01f)
+		{
+			iBaseWidth = 170;
+		}
+
+		int iNewWidth = (int)(iBaseWidth * g_fDpiScale);
+		int widths[2];
+		widths[0] = iNewWidth;
+		widths[1] = -1;
+
+		SendMessage(hStatusBar, SB_SETPARTS, 2, (LPARAM)widths);
+		
+		StatusBar_GetItemRect(hStatusBar, 1, &rect_status);
+		MoveWindow(hProgWnd, rect_status.left, rect_status.top, rect_status.right - rect_status.left, rect_status.bottom - rect_status.top, TRUE);
+
+		HWND hStatusTextChild = GetDlgItem(hStatusBar, 0);
+		if (hStatusTextChild != NULL && hFontGui != NULL)
+		{
+			SendMessage(hStatusTextChild, WM_SETFONT, (WPARAM)hFontGui, MAKELPARAM(TRUE, 0));
+		}
+		else
+		{
+			SendMessage(hStatusBar, WM_SETFONT, (WPARAM)hFontGui, MAKELPARAM(TRUE, 0));
+		}
+//===========================================================================================================>>>
 		SetStatusBarTextF(0, "Game search %d%% completed", percentage);
 		oldpercent = percentage;
 	}
@@ -2158,7 +2306,15 @@ static void ResizeWindow(HWND hParent, Resize *r)
 static void ProgressBarShow()
 {
 	RECT rect;
-	int widths[2] = {160, -1};
+
+// 修改的 代码来源 (加斯顿90)
+//====================================================>>>
+//DPI
+	int iNewWidth = (int)(260 * g_fDpiScale);
+	int widths[2];
+	widths[0] = iNewWidth;
+	widths[1] = -1;
+//====================================================>>>
 
 	SendMessage(hStatusBar, SB_SETPARTS, 2, (LPARAM)widths);
 	SendMessage(hProgWnd, PBM_SETRANGE, 0, MAKELPARAM(0, game_total));
@@ -2747,12 +2903,13 @@ static void InitListTree(void)
 {
 	hTreeView = GetDlgItem(hMain, IDC_TREE);
 	hWndList = GetDlgItem(hMain, IDC_LIST);
-	SetWindowTheme(hWndList, L"Explorer", NULL);
-	SetWindowTheme(hTreeView, L"Explorer", NULL);
 
 // 修改的 代码来源 (加斯顿90)
 //==================================================================================================>>>
 //DPI
+	SetWindowTheme(hWndList, L"Explorer", NULL);
+	SetWindowTheme(hTreeView, L"Explorer", NULL);
+
 	HWND hMainTreeView = GetDlgItem(hMain, IDC_TREE);
 	if (hMainTreeView != NULL)
 	{
@@ -2770,6 +2927,12 @@ static void InitListTree(void)
 			int nNewRowHeight = (int)(16 * g_fDpiScale);
 			TreeView_SetItemHeight(hMainTreeView, nNewRowHeight);
 		}
+
+		TreeView_SetBkColor(hMainTreeView, GetFolderBgColor());
+		TreeView_SetTextColor(hMainTreeView, GetTreeFontColor()); 
+
+		DWORD dwExStyle = TVS_EX_AUTOHIDEBUTTONS | TVS_EX_FADEINOUTEXPANDOS;
+		SendMessage(hMainTreeView, TVM_SETEXTENDEDSTYLE, dwExStyle, dwExStyle);
 
 		InvalidateRect(hMainTreeView, NULL, TRUE);
 		UpdateWindow(hMainTreeView);
