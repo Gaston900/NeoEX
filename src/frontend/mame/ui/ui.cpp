@@ -1256,20 +1256,37 @@ void mame_ui_manager::draw_text_full(
 //  message with a box around it
 //-------------------------------------------------
 
+// 修改的 代码来源 (加斯顿90)
+//============================================================================================================>>>
 void mame_ui_manager::draw_text_box(render_target &target, std::string_view text, ui::text_layout::text_justify justify, float xpos, float ypos, rgb_t backcolor)
 {
-	// cap the maximum width
 	float maximum_width = 1.0F - (box_lr_border() * machine().render().ui_aspect(target) * 2.0F);
 
-	// create a layout
 	ui::text_layout layout = create_layout(target, maximum_width, justify);
-
-	// add text to it
 	layout.add_text(text);
 
-	// and draw the result
-	draw_text_box(target, layout, xpos, ypos, backcolor);
+	auto const lrborder = box_lr_border() * machine().render().ui_aspect(target);
+	auto const actual_width = layout.actual_width();
+	auto const actual_height = layout.actual_height();
+	auto const x = std::clamp(xpos - actual_width / 2, lrborder, 1.0F - actual_width - lrborder);
+	auto const y = std::clamp(ypos - actual_height / 2, box_tb_border(), 1.0F - actual_height - box_tb_border());
+
+	draw_outlined_box(
+			*target.ui_container(),
+			x - lrborder, y - box_tb_border(),
+			x + actual_width + lrborder, y + actual_height + box_tb_border(),
+			backcolor);
+
+	draw_text_full(
+			*target.ui_container(),
+			text,
+			x, y, actual_width,
+			justify, ui::text_layout::word_wrapping::WORD,
+			mame_ui_manager::NORMAL, rgb_t(255, 255, 255, 255), backcolor,
+			nullptr, nullptr,
+			get_line_height(target));
 }
+//============================================================================================================>>>
 
 
 //-------------------------------------------------

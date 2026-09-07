@@ -2750,7 +2750,7 @@ static void InitListTree(void)
 	SetWindowTheme(hWndList, L"Explorer", NULL);
 	SetWindowTheme(hTreeView, L"Explorer", NULL);
 
-//// 修改的 代码来源 (加斯顿90)
+// 修改的 代码来源 (加斯顿90)
 //==================================================================================================>>>
 //DPI
 	HWND hMainTreeView = GetDlgItem(hMain, IDC_TREE);
