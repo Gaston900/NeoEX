@@ -2760,18 +2760,12 @@ static void UpdateStatusBar(void)
 static void ResetFonts(void)
 {
 	LOGFONT font;
-	
-	//==================== INYECCIÓN MAESTRA DE PUNTOS DE FUENTE DPI PROPORCIONAL ====================>>>
-	//==================== INYECCIÓN MAESTRA DE PUNTOS DE FUENTE DPI PROPORCIONAL ====================>>>
+
 	if (!g_fontPointsInitialized)
 	{
 		int refDpi = 96; // 参考 DPI
 		GetGuiFont(&font);
-		
-		// FIJAMOS UN PISO MÍNIMO DE SEGURIDAD:
-		// Calculamos el tamaño elástico basado en el DPI, pero si el resultado es menor a 9,
-		// obligamos a la interfaz a quedarse en 9 puntos puros. Esto evita que el texto
-		// se vuelva diminuto en pantallas HD (1366x768) reproduciendo el aspecto del archivo original.
+
 		int nCalculatedPoints = (int)(8 * g_fDpiScale);
 		if (nCalculatedPoints < 9)
 		{
@@ -3639,7 +3633,7 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			SetFocus(hWndList);
 			return true;
 		}
-//=====================================================>>>
+//==================================================>>>
 
 		case ID_FILE_PLAY_RECORD:
 			MamePlayRecordGame();
