@@ -2924,8 +2924,8 @@ static void InitListTree(void)
 
 		TreeView_SetBkColor(hMainTreeView, GetFolderBgColor());
 		TreeView_SetTextColor(hMainTreeView, GetTreeFontColor()); 
-
-		DWORD dwExStyle = TVS_EX_AUTOHIDEBUTTONS | TVS_EX_FADEINOUTEXPANDOS;
+		
+		DWORD dwExStyle = 0;
 		SendMessage(hMainTreeView, TVM_SETEXTENDEDSTYLE, dwExStyle, dwExStyle);
 
 		InvalidateRect(hMainTreeView, NULL, TRUE);

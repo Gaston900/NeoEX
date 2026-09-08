@@ -149,9 +149,6 @@
 #ifndef TVS_EX_FADEINOUTEXPANDOS
 #define TVS_EX_FADEINOUTEXPANDOS     0x0040
 #endif
-#ifndef TVM_SETEXTENDEDSTYLE
-#define TVM_SETEXTENDEDSTYLE         (TV_FIRST + 44)
-#endif
 //=============================================================>>>
 
 enum
