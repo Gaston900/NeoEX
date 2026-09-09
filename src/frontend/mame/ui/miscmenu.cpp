@@ -785,6 +785,7 @@ void menu_autofire::populate()
         ioport_field::user_settings settings;
         btn.field->get_user_settings(settings);
 		
+				/* add an autofire item */
 				switch (settings.autofire)
 				{
 					case 0:	subtext.assign("Off");	break;
@@ -950,6 +951,7 @@ void menu_custom_setting::populate()
         ioport_field::user_settings settings;
         btn.field->get_user_settings(settings);
 		
+				/* add an autofire item */
 				switch (settings.autofire)
 				{
 					case 0:	subtext.assign("Off");	break;
@@ -964,7 +966,6 @@ void menu_custom_setting::populate()
 
         item_append(custom_name_buf, subtext, FLAG_LEFT_ARROW | FLAG_RIGHT_ARROW, (void *)(btn.field));
 //================================================================>>>
-
 	}
 
 	/* add autofire delay items */

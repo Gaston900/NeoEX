@@ -7,9 +7,11 @@
     Core MAME screen device.
 
 ***************************************************************************/
+//===== USE_SCALE_EFFECTS =====>>>
 #include <windows.h>
 #include <mmsystem.h>
 #undef interface
+//=============================>>>
 
 #include "emu.h"
 #include "screen.h"
@@ -23,7 +25,6 @@
 //======= USE_SCALE_EFFECTS =======>>>
 #include "scale/osdscale.h"
 //=================================>>>
-
 
 #include "nanosvg.h"
 #include "png.h"
