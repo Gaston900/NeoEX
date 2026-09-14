@@ -7527,7 +7527,7 @@ static void ExportGameToXML(FILE* f, int game_index)
 
 static void ExportFullXML(int mode, HWND hWndList)
 {
-    wchar_t wfilename[MAX_PATH] = L"arcade64.xml";
+    wchar_t wfilename[MAX_PATH] = L"NeoEX.xml";
     wchar_t szCurDir[MAX_PATH];
     
     GetCurrentDirectory(MAX_PATH, szCurDir);
