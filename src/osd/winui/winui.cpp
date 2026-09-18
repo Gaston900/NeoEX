@@ -1358,23 +1358,6 @@ int GetMinimumScreenShotWindowWidth(void)
 	return bmp.bmWidth + 6; 	// 6 is for a little breathing room
 }
 
-// 修改的 代码来源 (EKMAME)
-/****************************************************************************************/
-const char *funcGetParentName(const char *name)
-{
-	int index = GetGameNameIndex(name);// get current game index
-	int parentindex = GetParentIndex(&driver_list::driver(index));
-
-	if( parentindex >= 0)
-	{
-		const char *parentname =  GetDriverGameName(parentindex);
-		return parentname;
-	}
-
-	return NULL;
-}
-/****************************************************************************************/
-
 int GetParentIndex(const game_driver *driver)
 {
 	return GetGameNameIndex(driver->parent);

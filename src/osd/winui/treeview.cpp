@@ -4905,7 +4905,7 @@ void CreateCAPCOMFolders(int parent_index)
 		if (s == NULL || s[0] == '\0')
 			continue;
 
-		if (!strcmp("cps1hb.cpp", s))              AddGame(lpCps1HC, jj);
+		if (!strcmp("cps1hc.cpp", s))              AddGame(lpCps1HC, jj);
 	}
 
 	for (jj = 0; jj < nGames; jj++)
@@ -4915,7 +4915,7 @@ void CreateCAPCOMFolders(int parent_index)
 		if (s == NULL || s[0] == '\0')
 			continue;
 
-		if (!strcmp("cps2hb.cpp", s))              AddGame(lpCps2HC, jj);
+		if (!strcmp("cps2hc.cpp", s))              AddGame(lpCps2HC, jj);
 	}
 
 	for (jj = 0; jj < nGames; jj++)
