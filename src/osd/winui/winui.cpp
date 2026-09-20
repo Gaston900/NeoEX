@@ -1275,7 +1275,7 @@ void ResizePickerControls(HWND hWnd)
 	/* Screen shot Page tab control */
 	if (bShowTabCtrl)
 	{
-		MoveWindow(GetDlgItem(hWnd, IDC_SSTAB), nListWidth + 2, rect.top + 3, nScreenShotWidth - 4, (rect.bottom - rect.top) - 7, doSSControls); //
+		MoveWindow(GetDlgItem(hWnd, IDC_SSTAB), nListWidth + 2, rect.top + 3, nScreenShotWidth - 4, (rect.bottom - rect.top) - 7, doSSControls);
 
 // 修改的 代码来源 (加斯顿90)
 //===========================================================================================================>>>
@@ -1283,9 +1283,9 @@ void ResizePickerControls(HWND hWnd)
 		rect.top += (int)(24 * g_fDpiScale); 
 	}
 	else
-		MoveWindow(GetDlgItem(hWnd, IDC_SSBORDER), nListWidth + 2, rect.top + 3, nScreenShotWidth - 6, (rect.bottom - rect.top) - 8, doSSControls); //
+		MoveWindow(GetDlgItem(hWnd, IDC_SSBORDER), nListWidth + 2, rect.top + 3, nScreenShotWidth - 6, (rect.bottom - rect.top) - 8, doSSControls);
 
-	MoveWindow(GetDlgItem(hWnd, IDC_SSFRAME), nListWidth + 3, rect.top + 4, nScreenShotWidth - 8, (rect.bottom - rect.top) - 10, doSSControls); //
+	MoveWindow(GetDlgItem(hWnd, IDC_SSFRAME), nListWidth + 3, rect.top + 4, nScreenShotWidth - 8, (rect.bottom - rect.top) - 10, doSSControls);
 
 	if (hSearchWnd != NULL)
 	{
@@ -2764,33 +2764,23 @@ static void UpdateStatusBar(void)
 
 	int nStatusBarMetricsHeight = GetSystemMetrics(SM_CYSCREEN);
 
-	if (nStatusBarMetricsHeight <= 1080)
+	if (nStatusBarMetricsHeight >= 1080)
 	{
-		if (g_fDpiScale <= 1.26f)
-		{
-			widths[5] = (int)(96 * g_fDpiScale);  // Panel de MAMEUINAME (Logo NeoEX de fábrica)
-			widths[4] = (int)(80 * g_fDpiScale);  // Panel del Contador de Juegos de fábrica
-			widths[3] = (int)(160 * g_fDpiScale); // Panel de Información de Pantalla (Hz) de fábrica
-			widths[2] = (int)(120 * g_fDpiScale); // Panel de Estado (Working alineado) de fábrica
-			widths[1] = (int)(100 * g_fDpiScale); // Panel del Nombre de ROM Corto de fábrica
-		}
-		else
-		{
-			widths[5] = (int)(100 * g_fDpiScale); // Calce exacto para el logo NeoEX sin desbordes laterales
-			widths[4] = (int)(95 * g_fDpiScale);  // Espacio holgado justo para '3255 Games' sin tapar los Hz
-			widths[3] = (int)(165 * g_fDpiScale); // Impide que la cadena de decimales de los Hz pise a la derecha
-			widths[2] = (int)(120 * g_fDpiScale); // Working centrado con aire de padding prolijo y señorial
-			widths[1] = (int)(100 * g_fDpiScale); // Nombre de ROM Corto simétrico al bit
-		}
+		widths[5] = (int)(96 * g_fDpiScale);
+		widths[4] = (int)(90 * g_fDpiScale);
+		widths[3] = (int)(180 * g_fDpiScale);
+		widths[2] = (int)(150 * g_fDpiScale);
+		widths[1] = (int)(120 * g_fDpiScale);
 	}
 	else
 	{
-		widths[5] = (int)(100 * g_fDpiScale);
-		widths[4] = (int)(105 * g_fDpiScale);
-		widths[3] = (int)(215 * g_fDpiScale);
-		widths[2] = (int)(175 * g_fDpiScale);
-		widths[1] = (int)(130 * g_fDpiScale);
+		widths[5] = (int)(96 * g_fDpiScale); 
+		widths[4] = (int)(80 * g_fDpiScale);  
+		widths[3] = (int)(160 * g_fDpiScale); 
+		widths[2] = (int)(120 * g_fDpiScale); 
+		widths[1] = (int)(100 * g_fDpiScale); 
 	}
+
 	widths[0] = -1;
 
 	widths[0] = nTotalWidth - (widths[1] + widths[2] + widths[3] + widths[4] + widths[5]);
@@ -5229,7 +5219,7 @@ static void CreateIcons(void)
 
 // 修改的 代码来源 (加斯顿90)
 //==================================================================================================>>>
-//DPI																								   
+//DPI
 	dwStyle = GetWindowLong(hWndList,GWL_STYLE);
 	SetWindowLong(hWndList,GWL_STYLE,(dwStyle & ~LVS_TYPEMASK) | LVS_ICON);
 	
