@@ -48,7 +48,7 @@ const options_entry emu_options::s_option_entries[] =
 	{ OPTION_SAMPLEPATH ";sp",                           "support/samples",  core_options::option_type::MULTIPATH,  "path to audio sample sets" }, // 修改的 (加斯顿90)
 	{ OPTION_ARTPATH,                                    "support/artwork",  core_options::option_type::MULTIPATH,  "path to artwork files" }, // 修改的 (加斯顿90)
 	{ OPTION_CTRLRPATH,                                  "support/ctrlr",    core_options::option_type::MULTIPATH,  "path to controller definitions" }, // 修改的 (加斯顿90)
-	{ OPTION_INIPATH,                                    "ini;.",     core_options::option_type::MULTIPATH,  "path to ini files" },
+	{ OPTION_INIPATH,                                    "config/ini;.",     core_options::option_type::MULTIPATH,  "path to ini files" }, // 修改的 (加斯顿90)
 	{ OPTION_FONTPATH,                                   ".",         core_options::option_type::MULTIPATH,  "path to font files" },
 	{ OPTION_CHEATPATH,                                  "support/cheat",    core_options::option_type::MULTIPATH,  "path to cheat files" }, // 修改的 (加斯顿90)
 	{ OPTION_CROSSHAIRPATH,                              "config/crosshair", core_options::option_type::MULTIPATH,  "path to crosshair files" }, // 修改的 (加斯顿90)
