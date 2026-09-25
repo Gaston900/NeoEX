@@ -258,7 +258,7 @@ void menu_dats_view::custom_render(uint32_t flags, void *selectedref, float top,
         {
             std::string shortname = current_driver->name;
 			// 本地游戏列表路径
-            std::ifstream file("arcade.lst");
+            std::ifstream file("NeoEX.lst");
 
             if (file.is_open())
             {
