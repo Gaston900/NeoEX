@@ -2639,10 +2639,11 @@ static void InitToolbar(void)
 
 // 修改的 代码来源 (加斯顿90)
 //==========================================================================================================>>>
+//DPI
 	int nRealScreenHeightForSearch = GetSystemMetrics(SM_CYSCREEN);
 	int iHeight = 24;
 	int nSearchWidth = 220;
-	int nSearchTextSize = -14;
+	int nSearchTextSize = -13;
 
 	if (nRealScreenHeightForSearch <= 1080)
 	{
@@ -2669,8 +2670,8 @@ static void InitToolbar(void)
 		HFONT hDefaultFont = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
 		if (GetObject(hDefaultFont, sizeof(LOGFONT), &lf))
 		{
-			lf.lfHeight = (int)(nSearchTextSize * g_fDpiScale);		
-			lf.lfWidth = 0; 
+			lf.lfHeight = (int)(nSearchTextSize * g_fDpiScale);
+			lf.lfWidth = 0;
 			lf.lfWeight = 400;
 			
 			HFONT hSearchFontExclusiveNeoEX = CreateFontIndirect(&lf);
