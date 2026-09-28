@@ -1740,6 +1740,10 @@ void ioport_port::write(ioport_value data, ioport_value mem_mask)
 //  frame_update - once/frame update
 //-------------------------------------------------
 
+// 修改的 代码来源 (加斯顿90)
+//==========================================================================================================>>>
+int g_InsertGlobalConfiguration = 0;
+
 void ioport_port::frame_update()
 {
 	// start with 0 values for the digital bits
@@ -1748,8 +1752,57 @@ void ioport_port::frame_update()
 	// now loop back and modify based on the inputs
 	for (ioport_field &field : m_fieldlist)
 		field.frame_update(m_live->digital);
-}
 
+	static bool bSlotPressedNeoEX = false;
+	if (g_InsertGlobalConfiguration == 1)
+	{
+		if (!bSlotPressedNeoEX)
+		{
+			for (ioport_field &field : m_fieldlist)
+			{
+				if (field.type() == IPT_COIN1 || field.type() == IPT_COIN2 || 
+					field.type() == IPT_COIN3 || field.type() == IPT_COIN4)
+				{
+					m_live->digital |= field.mask();
+					bSlotPressedNeoEX = true;
+				}
+			}
+		}
+	}
+	else if (g_InsertGlobalConfiguration == 0)
+	{
+		bSlotPressedNeoEX = false;
+	}
+
+	static int nServiceFrameCounterNeoEX = 0;
+
+	if (g_InsertGlobalConfiguration == 99)
+	{
+		for (ioport_field &field : m_fieldlist)
+		{
+			if (field.type() == IPT_SERVICE || field.type() == IPT_SERVICE1)
+			{
+				m_live->digital |= field.mask();
+			}
+		}
+		
+		if (this == machine().ioport().ports().begin()->second.get())
+		{
+			nServiceFrameCounterNeoEX++;
+			if (nServiceFrameCounterNeoEX >= 5)
+			{
+				g_InsertGlobalConfiguration = 0;
+				nServiceFrameCounterNeoEX = 0;
+			}
+		}
+	}
+
+	if (g_InsertGlobalConfiguration == 1 && this == machine().ioport().ports().begin()->second.get())
+	{
+		g_InsertGlobalConfiguration = 0;
+	}
+}
+//==========================================================================================================>>>
 
 //-------------------------------------------------
 //  collapse_fields - remove any fields that are
