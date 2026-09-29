@@ -1753,56 +1753,105 @@ void ioport_port::frame_update()
 	for (ioport_field &field : m_fieldlist)
 		field.frame_update(m_live->digital);
 
-	static bool bSlotPressedNeoEX = false;
-	if (g_InsertGlobalConfiguration == 1)
+	static int nCoinCounter = 0;
+	static int nFramesCycle = 0;
+	static bool bChargerOn = false;
+	static bool bButtonPressed = false;
+	static int nRotarySlot = 1;
+
+	static int nServiceFrameTimer = 0;
+	static bool bServiceActive = false;
+
+	if (this == machine().ioport().ports().begin()->second.get())
 	{
-		if (!bSlotPressedNeoEX)
+		if (g_InsertGlobalConfiguration == 1 && !bChargerOn)
 		{
-			for (ioport_field &field : m_fieldlist)
+			bChargerOn = true;
+			bButtonPressed = true;
+			nCoinCounter = 0;
+			nFramesCycle = 0;
+			nRotarySlot = 1;
+			g_InsertGlobalConfiguration = 0;
+		}
+
+		else if (g_InsertGlobalConfiguration == 99)
+		{
+			bServiceActive = true;
+			nServiceFrameTimer = 25;
+			g_InsertGlobalConfiguration = 0;
+		}
+
+		if (bChargerOn)
+		{
+			nFramesCycle++;
+			
+			if (bButtonPressed)
 			{
-				if (field.type() == IPT_COIN1 || field.type() == IPT_COIN2 || 
-					field.type() == IPT_COIN3 || field.type() == IPT_COIN4)
+				if (nFramesCycle >= 2)
 				{
-					m_live->digital |= field.mask();
-					bSlotPressedNeoEX = true;
+					bButtonPressed = false;
+					nFramesCycle = 0;
+				}
+			}
+			else
+			{
+				if (nFramesCycle >= 1)
+				{
+					nCoinCounter++;
+					if (nCoinCounter >= 99)
+					{
+						bChargerOn = false;
+						bButtonPressed = false;
+					}
+					else
+					{
+						bButtonPressed = true;
+						
+						nRotarySlot++;
+						if (nRotarySlot > 4) nRotarySlot = 1;
+					}
+					nFramesCycle = 0;
 				}
 			}
 		}
-	}
-	else if (g_InsertGlobalConfiguration == 0)
-	{
-		bSlotPressedNeoEX = false;
+
+		if (bServiceActive && nServiceFrameTimer > 0)
+		{
+			nServiceFrameTimer--;
+			if (nServiceFrameTimer == 0) bServiceActive = false;
+		}
 	}
 
-	static int nServiceFrameCounterNeoEX = 0;
-
-	if (g_InsertGlobalConfiguration == 99)
+	if (bChargerOn && bButtonPressed && (nCoinCounter < 99))
 	{
+		ioport_type targetCoinType = IPT_COIN1;
+		if (nRotarySlot == 2) targetCoinType = IPT_COIN2;
+		else if (nRotarySlot == 3) targetCoinType = IPT_COIN3;
+		else if (nRotarySlot == 4) targetCoinType = IPT_COIN4;
+
 		for (ioport_field &field : m_fieldlist)
 		{
-			if (field.type() == IPT_SERVICE || field.type() == IPT_SERVICE1)
+			if (field.type() == targetCoinType)
 			{
 				m_live->digital |= field.mask();
 			}
 		}
-		
-		if (this == machine().ioport().ports().begin()->second.get())
+	}
+
+	if (bServiceActive)
+	{
+		for (ioport_field &field : m_fieldlist)
 		{
-			nServiceFrameCounterNeoEX++;
-			if (nServiceFrameCounterNeoEX >= 5)
+			if (field.type() == IPT_SERVICE  || field.type() == IPT_SERVICE1 || 
+				field.type() == IPT_SERVICE2 || field.type() == IPT_SERVICE3 || 
+				field.type() == IPT_SERVICE4)
 			{
-				g_InsertGlobalConfiguration = 0;
-				nServiceFrameCounterNeoEX = 0;
+				m_live->digital |= field.mask();
 			}
 		}
 	}
-
-	if (g_InsertGlobalConfiguration == 1 && this == machine().ioport().ports().begin()->second.get())
-	{
-		g_InsertGlobalConfiguration = 0;
-	}
 }
-//==========================================================================================================>>>
+// ==============================================================================================================>>>
 
 //-------------------------------------------------
 //  collapse_fields - remove any fields that are
