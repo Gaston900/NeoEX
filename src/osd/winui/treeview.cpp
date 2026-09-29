@@ -3702,7 +3702,7 @@ void CreateCAPCOMFolders(int parent_index)
 	int jj;
 	int nGames = GetNumGames();
 	LPTREEFOLDER lpFolder = treeFolders[parent_index];
-    LPTREEFOLDER lp1942, lp1942HC, lp1943, lp1943HC, lpBionicc, lpBlktiger, lpBlktigerHC, lpCps1BT, lpCbasebal, lpCommando, lpCps1, lpCps1HC, lpCps1HB, lpCps1BL, lpCps1PI, lpCps2, lpCps2HC, lpCps2HB, lpCps3, lpCps3HC, lpEgghunt, lpExedexes, lpFcrash, lpGng, lpGngHC, lpGunsmoke, lpHigemaru, lpKenseim, lpLastduel, lpLwings, lpMitchell, lpMitchellHC, lpSf, lpSidearms, lpSonson, lpSonsonHC, lpSrumbler, lpSupduck, lpTigeroad, lpVulgus;
+    LPTREEFOLDER lp1942, lp1942HC, lp1943, lp1943HC, lpBionicc, lpBlktiger, lpBlktigerHC, lpCps1BT, lpCbasebal, lpCommando, lpCps1, lpCps1HC, lpCps1HB, lpCps1BL, lpCps1PI, lpCps2, lpCps2HC, lpCps2HB, lpCps3, lpCps3HC, lpEgghunt, lpExedexes, lpExedexesHC, lpFcrash, lpGng, lpGngHC, lpGunsmoke, lpHigemaru, lpKenseim, lpLastduel, lpLwings, lpMitchell, lpMitchellHC, lpSf, lpSidearms, lpSonson, lpSonsonHC, lpSrumbler, lpSupduck, lpTigeroad, lpVulgus;
 
 	// no games in top level folder
 	SetAllBits(lpFolder->m_lpGameBits,FALSE);
@@ -3730,6 +3730,7 @@ void CreateCAPCOMFolders(int parent_index)
     lpCps3HC = NewFolder("Cps-3 Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpEgghunt = NewFolder("Egghunt", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpExedexes = NewFolder("Exedexes", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
+    lpExedexesHC = NewFolder("Exedexes Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpFcrash = NewFolder("Fcrash", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
     lpGng = NewFolder("Gng", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
 	lpGngHC = NewFolder("Gng Hack", next_folder_id++, parent_index, IDI_FOLDER, GetFolderFlags(numFolders));
@@ -3771,6 +3772,7 @@ void CreateCAPCOMFolders(int parent_index)
 	AddFolder(lpCps3HC);
 	AddFolder(lpEgghunt);
 	AddFolder(lpExedexes);
+	AddFolder(lpExedexesHC);
 	AddFolder(lpFcrash);
 	AddFolder(lpGng);
 	AddFolder(lpGngHC);
@@ -4946,6 +4948,16 @@ void CreateCAPCOMFolders(int parent_index)
 			continue;
 
 		if (!strcmp("exedexes.cpp", s))            AddGame(lpExedexes, jj);
+	}
+
+	for (jj = 0; jj < nGames; jj++)
+	{
+		const char *s = GetDriverFileName(jj);
+
+		if (s == NULL || s[0] == '\0')
+			continue;
+
+		if (!strcmp("exedexeshc.cpp", s))            AddGame(lpExedexesHC, jj);
 	}
 
 	for (jj = 0; jj < nGames; jj++)

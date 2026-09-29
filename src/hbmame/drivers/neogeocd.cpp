@@ -710,7 +710,7 @@ ROM_END
 
 ROM_START( ssrpg_cd )
 	NEOCDZ_BASE
-	DISK_IMAGE_READONLY( "828", 0, SHA1(2bc6a30d305c52e9189efe9840d34370ed260300) )
+	DISK_IMAGE_READONLY( "828_v11", 0, SHA1(e00cd4c12cd8d6b07d93f8e271337389af442f7d) )
 ROM_END
 
 ROM_START( subspecies_cd )
@@ -860,6 +860,6 @@ GAME( 2023, pong_cd,        0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  
 GAME( 2025, pow_cd,         0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "iq_132", "P.O.W. (Neo-Geo port) (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2026, shinobiarr_cd,  0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "H0ffman", "Shinobi Arranged v1.1 (Neo-Geo port)[CD]", MACHINE_SUPPORTS_SAVE )
 GAME( 2026, speedball_cd,   0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Z-team", "Speedball2 v1.0.0 demo (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
-GAME( 2016, ssrpg_cd,    samsprpgncd, neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Apocalypse", "Shinsetsu Samurai Spirits - Bushidou Retsuden (English) (Neo CD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2024, ssrpg_cd,    samsprpgncd, neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Jeff Nussbaum", "Shinsetsu Samurai Spirits - Bushidou Retsuden (English) (Neo CD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, subspecies_cd,  0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Blastar", "Subspecies_Unfinished demo (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, visualnovel_cd, 0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Trilobit", "Visual Novel demo (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )

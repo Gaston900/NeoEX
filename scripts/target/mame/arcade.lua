@@ -145,7 +145,7 @@ files {
 	MAME_DIR .. "src/mame/capcom/cps3_a.cpp",
 	MAME_DIR .. "src/mame/capcom/cps3_a.h",
 	MAME_DIR .. "src/mame/capcom/egghunt.cpp",
-	MAME_DIR .. "src/mame/capcom/exedexes.cpp",
+	MAME_DIR .. "src/hbmame/drivers/exedexeshc.cpp",
 	MAME_DIR .. "src/hbmame/drivers/fcrash.cpp",
 	MAME_DIR .. "src/hbmame/drivers/gnghc.cpp",
 	MAME_DIR .. "src/mame/capcom/gunsmoke.cpp",

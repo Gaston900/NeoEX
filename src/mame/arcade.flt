@@ -15,6 +15,7 @@ capcom/cps3.cpp
 ../hbmame/drivers/cps3hc.cpp
 capcom/egghunt.cpp
 capcom/exedexes.cpp
+../hbmame/drivers/exedexeshc.cpp
 ../hbmame/drivers/fcrash.cpp
 capcom/gng.cpp
 ../hbmame/drivers/gnghc.cpp

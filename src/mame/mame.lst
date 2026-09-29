@@ -392,6 +392,10 @@ wofjd
 wofud
 
 @source:../hbmame/drivers/cps1.cpp
+ffightjd
+ffightud
+
+@source:../hbmame/drivers/cps1.cpp
 cps1demo
 cps1frog
 cps1tests
@@ -458,8 +462,6 @@ ffighthc03
 ffighthc04
 ffighthc05
 ffighthc06
-ffighthc07
-ffighthc08
 ghoulshc01
 ghoulshc02
 kodhc01
@@ -997,9 +999,7 @@ spf2thc01
 spf2thc02
 spf2xhc01
 spf2xhc02
-vhunt2hc01
 vsavhc01
-vsav2hc01
 xmcotahc01
 xmcotahc02
 xmcotahc03
@@ -1008,10 +1008,20 @@ xmvsfhc02
 xmvsfhc03
 
 @source:../hbmame/drivers/cps2.cpp
+ssf2tgmc
+ssf2tuc
+ssf2xuc
+mshvsfru
+mshvsfrj
+mshvsfex
+mshvsfej
+sfz2alr
 sfa2d
 sfa2g
 sfz2d
 sfz2da
+vhunt2te
+vsav2te
 
 @source:../hbmame/drivers/cps2.cpp
 suicide
@@ -1104,6 +1114,9 @@ egghunt
 @source:capcom/exedexes.cpp
 exedexes
 savgbees
+
+@source:../hbmame/drivers/exedexeshc.cpp
+exedexeshc01
 
 @source:../hbmame/drivers/fcrash.cpp
 cawingb2

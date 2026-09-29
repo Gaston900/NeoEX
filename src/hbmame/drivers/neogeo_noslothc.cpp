@@ -6046,7 +6046,7 @@ ROM_END
 
 ROM_START( lasthopehc01 ) //lasthopepb
 	ROM_REGION( 0x100000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "300_hc01.p1", 0x000000, 0x100000, CRC(b81dd2e0) SHA1(53cfc791267e56d07f1288a20fd1cca4a9f7c631) )
+	ROM_LOAD16_WORD_SWAP( "300_hc01.p1", 0x000000, 0x100000, CRC(d6fce9c1) SHA1(9dd957fb96d874de7b1c56ab1efdcd3f9dd611cb) )
 
 	NEO_SFIX_128K( "802_hc01.s1", CRC(f0719dbb) SHA1(8d1faa2dac59579b7bda6bdafd8bac5b794ce2f0) )
 
@@ -12897,7 +12897,7 @@ GAME( 2023, lastbld2hc05,     lastbld2, neogeo_neobase,  neogeo, neogeo_state,  
 GAME( 2013, lastbld2hc06,     lastbld2, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (Simplified 2013-03-09)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, lastbld2hc07,     lastbld2, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (2255 2024-10-14)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, lastbld2hc08,     lastbld2, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "GOTVG",        "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi (2115 2023-12-15)", MACHINE_SUPPORTS_SAVE )
-GAME( 2005, lasthopehc01,     lasthope, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Last Hope - Pink Bullets (bootleg AES to MVS conversion, no coin support)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, lasthopehc01,     lasthope, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Last Hope - Pink Bullets (bootleg AES to MVS conversion, no coin support)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, magdrop3hc01,     magdrop3, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Magical Drop III (Tournament Edition 2022-08-10)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, magdrop3hc02,     magdrop3, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Magical Drop III (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, magdrop3hc03,     magdrop3, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "Shyma.X",      "Magical Drop III (French Translation)", MACHINE_SUPPORTS_SAVE )

@@ -16515,6 +16515,76 @@ ROM_START( wofud )
 	ROM_LOAD ( "wofch.key", 0x00, 0x80, CRC(23f2d0bb) SHA1(48ba9300bc2136e9583754a51d5ab2532eca85c6) )
 ROM_END
 
+ROM_START( ffightjd ) //ffightj with a 6 MB gfx region for the CD-cutscene backport (Japan disc)
+	ROM_REGION( CODE_SIZE, "maincpu", 0 )
+	ROM_LOAD16_BYTE( "ff_36jd.11f",      0x00000, 0x20000, CRC(72e9ce03) SHA1(f3668a8df6ab89690a10d0ef643ddbed52d4dbb2) )
+	ROM_LOAD16_BYTE( "ff_42jd.11h",      0x00001, 0x20000, CRC(869b64b9) SHA1(23617c1fdcbb95aff0f8f6c60c8ef9746310ec75) )
+	ROM_LOAD16_BYTE( "ff_37jd.12f",      0x40000, 0x20000, CRC(118eb060) SHA1(12188886993438298a83d2f4c0377672c809994b) )
+	ROM_LOAD16_BYTE( "ffj_43jd.12h",     0x40001, 0x20000, CRC(26242617) SHA1(49f7970114e28f97cc58c46e87941002c1d59f75) )
+	ROM_LOAD16_WORD_SWAP( "ffj-40jd.8f", 0x080000, 0x080000, CRC(db13824a) SHA1(d7c07d00857287a2a8310bb48a5ba6cbc84c135e) )
+	ROM_LOAD16_WORD_SWAP( "ffj-35jd.8h", 0x100000, 0x100000, CRC(ed618024) SHA1(bf9d12479f6896e29661b60f9688f23289d4015d) ) // cutscene script/palette/tilemap tables (JP disc timeline)
+
+	ROM_REGION( 0x600000, "gfx", 0 )
+	ROM_LOAD64_WORD( "ffj_09jd.4b",  0x000000, 0x80000, CRC(976bcfbb) SHA1(7df44df92e1dedf50c44bf683fb3c53354a6d570) ) // J content (77 SCROLL1 text tiles) in World layout
+	ROM_LOAD64_WORD( "ffj_01jd.4a",  0x000002, 0x80000, CRC(cfeb60c6) SHA1(72403cadb5bd46e68530bf56099f6ba67ba6bbe0) )
+	ROM_LOAD64_WORD( "ffj_13jd.9b",  0x000004, 0x80000, CRC(32deeebd) SHA1(43ba0c5ebfcad6c62f99719dbfa160ec17924ec1) )
+	ROM_LOAD64_WORD( "ffj_05jd.9a",  0x000006, 0x80000, CRC(aca1645f) SHA1(022a3052c084045f43af866e1d0f6a78e252f120) )
+	ROM_LOAD64_WORD( "ffj_24jd.5e",  0x200000, 0x80000, CRC(923bfeba) SHA1(82b1b1aac4c126106a5542056d117229a3f81a86) )
+	ROM_LOAD64_WORD( "ffj_17jd.5c",  0x200002, 0x80000, CRC(2699067e) SHA1(260e08c1083d5bcae8aab1773d739493c8e21661) )
+	ROM_LOAD64_WORD( "ffj_38jd.8h",  0x200004, 0x80000, CRC(ed5833cb) SHA1(7588b7e7309ad7d7600c90b40f1d98a22892ec16) )
+	ROM_LOAD64_WORD( "ffj_32jd.8f",  0x200006, 0x80000, CRC(bed965c8) SHA1(5a874dc45e6fbd4dd7f0986563f15c01d2e0280d) )
+	ROM_LOAD64_WORD( "ffj_10jd.5b",  0x400000, 0x80000, CRC(4611c2a6) SHA1(d92ed42690a8ca1231bdd05ab7c69b418f9f608f) )
+	ROM_LOAD64_WORD( "ffj_02jd.5a",  0x400002, 0x80000, CRC(2044be8a) SHA1(0c1ee6ecab181af66aa7ff321422a827033b607a) )
+	ROM_LOAD64_WORD( "ffj_14jd.10b", 0x400004, 0x80000, CRC(ed030a5c) SHA1(fde7403146971f2e9b0380beec912739a1f1e2e5) )
+	ROM_LOAD64_WORD( "ffj_06jd.10a", 0x400006, 0x80000, CRC(b75abe81) SHA1(5fb3eed3945459a18da69d2c4dba9b46be65aae2) )
+
+	ROM_REGION( 0x18000, "audiocpu", 0 )
+	ROM_LOAD( "ff_23jd.bin", 0x00000, 0x08000, CRC(283b10ed) SHA1(3d7979967145bd28c01490dd7ef9d9716dede2dd) )
+	ROM_CONTINUE(          0x10000, 0x08000 )
+
+	ROM_REGION( 0x40000, "oki", 0 )
+	ROM_LOAD( "ff_18.11c", 0x00000, 0x20000, CRC(375c66e7) SHA1(36189e23209ce4ae5d9cbabd1574540d0591e7b3) )
+	ROM_LOAD( "ff_19.12c", 0x20000, 0x20000, CRC(1ef137f9) SHA1(974b5e72aa28b87ebfa7438efbdfeda769dedf5e) )
+
+	ROM_REGION( 0x80, "control", 0 )
+	ROM_LOAD( "ffightjc.key", 0x00, 0x80, CRC(44c06640) SHA1(1c947e46dc87338f54266af7e6281eac1ed1c121) ) // 6 MB two-bank mapper (4+2)
+ROM_END
+
+ROM_START( ffightud ) //ffightu with a 6 MB gfx region for the CD-cutscene backport (USA disc)
+	ROM_REGION( CODE_SIZE, "maincpu", 0 )
+	ROM_LOAD16_BYTE( "ff_36ud.11f",      0x00000, 0x20000, CRC(f3b4ea53) SHA1(76634d74a21523faa7ff6bd92b3e0ffcd9cce9c8) )
+	ROM_LOAD16_BYTE( "ff_42ud.11h",      0x00001, 0x20000, CRC(76c49180) SHA1(bc1d9a4b19ddd96fcf50b98bb0ebfe476996b742) )
+	ROM_LOAD16_BYTE( "ff_37jd.12f",      0x40000, 0x20000, CRC(118eb060) SHA1(12188886993438298a83d2f4c0377672c809994b) )
+	ROM_LOAD16_BYTE( "ffu_43ud.12h",     0x40001, 0x20000, CRC(38964eff) SHA1(e450f3d872198b1c9de8f74ee250e9e5fb896110) )
+	ROM_LOAD16_WORD_SWAP( "ffu-40_hc08.8f", 0x080000, 0x080000, CRC(75f9a494) SHA1(76688e4f88d6a41ed3b4d63dbf4d453dafd8d770) )
+	ROM_LOAD16_WORD_SWAP( "ffu-35_hc08.8h", 0x100000, 0x100000, CRC(e6e4df5f) SHA1(f2c9b9c4166a06959006af6a150834cc82cb6869) ) // cutscene script/palette/tilemap tables (CRC pinned at ship)
+
+	ROM_REGION( 0x600000, "gfx", 0 )
+	ROM_LOAD64_WORD( "ffu_09ud.4b",  0x000000, 0x80000, CRC(7b4aad16) SHA1(c7caf017433ea06704866f9e78a34b2d61f98007) )
+	ROM_LOAD64_WORD( "ffu_01ud.4a",  0x000002, 0x80000, CRC(28192faf) SHA1(4e2476610f420711d20f71421d37445a47003acb) )
+	ROM_LOAD64_WORD( "ffu_13ud.9b",  0x000004, 0x80000, CRC(deff8c10) SHA1(8ffb7192d63f33032cf1c05d4c96eb17cda4275f) )
+	ROM_LOAD64_WORD( "ffu_05ud.9a",  0x000006, 0x80000, CRC(4b532b36) SHA1(39ab69abbd6a45fd5e21a748576b770c5bff2c98) )
+	ROM_LOAD64_WORD( "ffu_24ud.5e",  0x200000, 0x80000, CRC(3365bae7) SHA1(9d3c10d60f2b82ffdd5be486eb7bc38953955db1) )
+	ROM_LOAD64_WORD( "ffu_17ud.5c",  0x200002, 0x80000, CRC(9f53c8e0) SHA1(cad7f5fcf8c531af87d0a4ecedab34240b0448e8) )
+	ROM_LOAD64_WORD( "ffu_38ud.8h",  0x200004, 0x80000, CRC(cf35f998) SHA1(ca8ddb99e0b4ea1ae982fca9d894799c7b027a9c) )
+	ROM_LOAD64_WORD( "ffu_32ud.8f",  0x200006, 0x80000, CRC(d65f25ed) SHA1(2a8f48313b8cc34f0c393bd86ad4c6ade4d6d6a9) )
+	ROM_LOAD64_WORD( "ffu_10ud.5b",  0x400000, 0x80000, CRC(c9dbe31e) SHA1(80700194e7424cf75e17cb01f4b9b246385423e9) ) // 6 MB growth (CRC pinned at ship)
+	ROM_LOAD64_WORD( "ffu_02ud.5a",  0x400002, 0x80000, CRC(30c802e6) SHA1(278a01cc02ea25e9a0c48ef8fb0ccbffe9a6774e) )
+	ROM_LOAD64_WORD( "ffu_14ud.10b", 0x400004, 0x80000, CRC(936c49c4) SHA1(7f7f653d1740058b871016622e859d623a041f07) )
+	ROM_LOAD64_WORD( "ffu_06ud.10a", 0x400006, 0x80000, CRC(ce2427a3) SHA1(92aabccd325a7bc01b1efbdead53109f0129ea70) )
+
+	ROM_REGION( 0x18000, "audiocpu", 0 )
+	ROM_LOAD( "ff_23ud.bin", 0x00000, 0x08000, CRC(87eca9ec) SHA1(c266199d1753a67a5db8f3c819502d956e49ef64) )
+	ROM_CONTINUE(          0x10000, 0x08000 )
+
+	ROM_REGION( 0x40000, "oki", 0 )
+	ROM_LOAD( "ff_18.11c", 0x00000, 0x20000, CRC(375c66e7) SHA1(36189e23209ce4ae5d9cbabd1574540d0591e7b3) )
+	ROM_LOAD( "ff_19.12c", 0x20000, 0x20000, CRC(1ef137f9) SHA1(974b5e72aa28b87ebfa7438efbdfeda769dedf5e) )
+
+	ROM_REGION( 0x80, "control", 0 )
+	ROM_LOAD( "ffightu.key", 0x00, 0x80, CRC(44c06640) SHA1(1c947e46dc87338f54266af7e6281eac1ed1c121) ) // 6 MB two-bank mapper (4+2)
+ROM_END
+
  /*********
   HomeBrew
 *************/
@@ -17738,6 +17808,11 @@ GAME( 1992, wofsja,      wof,      wofssj,     wofssj,   cps_state, init_wofsjsa
 GAME( 1992, wofsjb,      wof,      wofsjb,     wof,      cps_state, init_wofsjb,   ROT0,   "bootleg", "Sangokushi II: Sheng Jian (Chinese bootleg set 3, 921005 Asia)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, wofjd,       wof,      qsound,     wof,      cps_state, init_wof,      ROT0,   "bootleg", "Tenchi wo Kurau II: Sekiheki no Tatakai (Japan 921031, Phoenix Edition)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, wofud,       wof,      qsound,     wof,      cps_state, init_wof,      ROT0,   "bootleg", "Warriors of Fate (USA 921031, Phoenix Edition)", MACHINE_SUPPORTS_SAVE )
+
+// CPS1 Port
+/*    YEAR    NAME        PARENT     MACHINE     INPUT                INIT        MONITOR   COMPANY   FULLNAME FLAGS */
+GAME( 2026, ffightjd,    ffight,   cps1_10MHz,  ffight,  cps_state, init_cps1,     ROT0,   "strygo",  "Final Fight EX (Japan, Sega CD Cutscenes Conversion CPS1, 2026-09-17)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, ffightud,    ffight,   cps1_10MHz,  ffight,  cps_state, init_cps1,     ROT0,   "strygo",  "Final Fight EX (USA, Sega CD Cutscenes Conversion CPS1, 2026-09-17)", MACHINE_SUPPORTS_SAVE )
 
 // CPS1 HomeBrew
 /*    YEAR    NAME        PARENT     MACHINE     INPUT                INIT        MONITOR   COMPANY   FULLNAME FLAGS */
