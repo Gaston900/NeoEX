@@ -328,9 +328,20 @@ ROM_END
 // CPS2 Hack
 GAME( 2026, sfz3mix,    sfa3,         cps2turbo,    cps2_2p6b, cps2_state, init_sfz3mix,  ROT0,   "Zero800",     "Street Fighter Zero 3 (Turbo Mix 0.32)", MACHINE_SUPPORTS_SAVE )
 
-/******
-  Hack
-********/
+/*********************************
+ Game-specific port definitions
+***********************************/
+
+static INPUT_PORTS_START( cps2_hsf2 )
+	PORT_INCLUDE( cps2_2p6b )
+
+	PORT_MODIFY("IN2")
+	PORT_BIT( 0x2000, IP_ACTIVE_LOW, IPT_START1 ) PORT_CODE(KEYCODE_5)
+INPUT_PORTS_END
+
+/**************************
+ Roms Hack definitions
+****************************/
 
 ROM_START( 19xxhc01 ) //19xxh
 	ROM_REGION( CODE_SIZE, "maincpu", 0 )
@@ -3104,7 +3115,7 @@ GAME( 2004, hsf2hc03,    hsf2,         cps2,         cps2_2p6b, cps2_state, init
 GAME( 2024, hsf2hc04,    hsf2,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Hyper Street Fighter II: The Anniversary Edition (Difficulty Fix)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, hsf2hc05,    hsf2,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Hyper Street Fighter II: The Anniversary Edition (30% Blood)", MACHINE_SUPPORTS_SAVE )
 GAME( 2017, hsf2hc06,    hsf2,         dead_cps2,    cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Hyper Street Fighter II: The Anniversary Edition (Plus Plus 2017-06-25)", MACHINE_SUPPORTS_SAVE )
-GAME( 2026, hsf2hc07,    hsf2,         dead_cps2,    cps2_2p6b, cps2_state, init_cps2,     ROT0,   "Zero800",     "Street Fighter II': Prime (v0.80)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, hsf2hc07,    hsf2,         dead_cps2,    cps2_hsf2, cps2_state, init_cps2,     ROT0,   "Zero800",     "Street Fighter II': Prime (v0.80)", MACHINE_SUPPORTS_SAVE )
 GAME( 2004, hsf2hc08,    hsf2,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "DDJ",         "Hyper Street Fighter II: The Anniversary Edition (Level Plus)", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, mmatrixhc01, mmatrix,      cps2,         cps2_2p3b, cps2_state, init_cps2,     ROT0,   "hack",        "Mars Matrix: Hyper Solid Shooting (Improvement v1.0.0)", MACHINE_SUPPORTS_SAVE )
 GAME( 1998, mvschc01,    mvsc,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "DDJ",         "Marvel Vs. Capcom: Clash of Super Heroes (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
