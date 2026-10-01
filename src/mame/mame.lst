@@ -1258,7 +1258,7 @@ mitcdemo
 
 @source:../hbmame/drivers/neogeo.cpp
 neogeo
-nggno
+//nggno
 neosd
 multimvs
 2020bb

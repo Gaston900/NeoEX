@@ -206,6 +206,13 @@
 #define IDI_HEADER_UP                   293
 #define IDI_HEADER_DOWN                 294
 
+// 修改的 代码来源 (加斯顿90)
+//=============================================>>>
+#define IDB_CLEANSINGLE                 295
+#define IDB_CLEANALL                    296
+#define IDB_CONTEXT                     297
+//=============================================>>>
+
 // 修改的 (Eziochiu)
 /*******************************************/
 #define IDB_MAME_IPS                    999
@@ -528,14 +535,14 @@
 //============= 缘来是你 ==========>>>
 
 //============ USE_SCALE_EFFECTS ============>>>
-#define IDC_SCALEEFFECT                 1406
+#define IDC_SCALEEFFECT                 1412
 //===========================================>>>
 
 // 修改的 代码来源 (加斯顿90)
 /********************************************/
-#define IDC_SICKFA                      1412
-#define IDC_SICKFB                      1413
-#define IDC_SICKFC                      1414
+#define IDC_SICKFA                      1413
+#define IDC_SICKFB                      1414
+#define IDC_SICKFC                      1415
 /********************************************/
 
 #define ID_CONTEXT_SHOW_FOLDER_START    39000
@@ -685,3 +692,8 @@
 /*******************************************/
 #define IDC_STATIC                      1
 
+// 修改的 代码来源 (加斯顿90)
+//=============================================>>>
+#define ID_CONTEXT_CLEAN_SINGLE_NVRAM_CFG 40180
+#define ID_CONTEXT_CLEAN_ALL_NVRAM_CFG    40181
+//=============================================>>>

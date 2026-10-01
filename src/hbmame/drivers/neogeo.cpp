@@ -1343,6 +1343,17 @@ void neogeo_state::neogeo_68kram(machine_config &config)
 	m_maincpu->set_addrmap(AS_PROGRAM, &neogeo_state::neogeo_68kram_map);
 }
 
+void neogeo_state::mv1_fixed(machine_config &config)
+{
+	neogeo_arcade(config);
+	m_maincpu->set_addrmap(AS_PROGRAM, &neogeo_state::main_map_noslot);
+
+	NEOGEO_CTRL_EDGE_CONNECTOR(config, m_edge, neogeo_arc_edge, "joy", true);
+
+	NEOGEO_CONTROL_PORT(config, "ctrl1", neogeo_arc_pin15, nullptr, true);
+	NEOGEO_CONTROL_PORT(config, "ctrl2", neogeo_arc_pin15, nullptr, true);
+}
+
 void neogeo_state::neogeo_neobase(machine_config &config)
 {
 	mv1_fixed(config);
@@ -1849,17 +1860,6 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::mvs_q_cb)
 	machine_reset();
 
 	return std::make_pair(std::error_condition(), std::string());
-}
-
-void neogeo_state::mv1_fixed(machine_config &config)
-{
-	neogeo_arcade(config);
-	m_maincpu->set_addrmap(AS_PROGRAM, &neogeo_state::main_map_noslot);
-
-	NEOGEO_CTRL_EDGE_CONNECTOR(config, m_edge, neogeo_arc_edge, "joy", true);
-
-	NEOGEO_CONTROL_PORT(config, "ctrl1", neogeo_arc_pin15, nullptr, true);
-	NEOGEO_CONTROL_PORT(config, "ctrl2", neogeo_arc_pin15, nullptr, true);
 }
 
 /*********************************************** non-carts */
