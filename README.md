@@ -5,11 +5,11 @@ It focuses on compiling everything related to NeoGeo CD, Neo Geo MVS/AES, and Ca
 
 All source code used to create the base system:
 
-Robert [[HBMAME](https://github.com/Robbbert/hbmame)]
+The GitHub container: Robert [[HBMAME](https://github.com/Robbbert/hbmame)]
 
-Dirstac [[Arcade Extended](https://github.com/Dirstac/ArcadeUI-CHS)]
+The GitHub container: Dirstac [[Arcade Extended](https://github.com/Dirstac/ArcadeUI-CHS)]
 
-Kaze [[EKMAME](https://github.com/WOOSEOK99/EKMAME)]
+The GitHub container: Kaze [[EKMAME](https://github.com/WOOSEOK99/EKMAME)]
 
 It runs on Windows 10 build 1607, 64-bit or later.
 
