@@ -15,7 +15,7 @@ It runs on Windows 10 build 1607, 64-bit or later.
 
 How to compile
 --------------
-To compile this version, we need the source code; you can find it in the folder “docs / Source Code [HBMame] / abcdefg-tag289.7z.001”. Once located, begin extracting the files (a process that will take a few minutes); upon completion, you will have a folder named “abcdefg-tag289.7z”, which you should rename to "src". Next, obtain the latest version of the source code from my GitHub repository; once downloaded, extract it and select the files corresponding to the "3rdparty, scripts, src, and makefile" folders, then copy them into the "src" folder. When the system asks to confirm file replacement, accept the operation.
+In order to compile this version we will need the source code, for this we will place it in the folder "docs/Source Code[HBMame]/abcdefg-tag289.7z.001", once located we will begin to unzip the files it will take a few minutes, once unzipped we will have a folder with the name "abcdefg-tag289.7z", we will rename it to “src”. Now we will get the latest source code from this Github container once downloaded we will start to unzip and once finished unzipping we will select the files that we had left in the folder “3rdparty, scripts, src and makefile” folders, then copy them into the "src" folder. When the system asks to confirm file replacement, accept the operation.
 
 The version used is msys64 15.0.2; if you do not have it, you can find it in the folder “docs / Build Tools / msys64-15.0.2.7z.001”.
 
