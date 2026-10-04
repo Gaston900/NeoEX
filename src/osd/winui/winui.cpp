@@ -4731,71 +4731,29 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 				FindClose(hFindCfg);
 			}
 
-			WIN32_FIND_DATAA fdaSta;
-			HANDLE hFindSta = FindFirstFileA(".\\config\\sta\\*", &fdaSta);
-			if (hFindSta != INVALID_HANDLE_VALUE)
-			{
-				do
-				{
-					if (strcmp(fdaSta.cFileName, ".") != 0 && strcmp(fdaSta.cFileName, "..") != 0)
-					{
-						char szStaPathToRemove[MAX_PATH];
-						snprintf(szStaPathToRemove, sizeof(szStaPathToRemove), ".\\config\\sta\\%s", fdaSta.cFileName);
+			char szMasterStaDir[MAX_PATH + 2] = ".\\config\\sta";
+			szMasterStaDir[strlen(szMasterStaDir) + 1] = 0;
 
-						if (fdaSta.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
-						{
-							char szDoubleNullStaDir[MAX_PATH + 2] = {0};
-							strcpy(szDoubleNullStaDir, szStaPathToRemove);
-							szDoubleNullStaDir[strlen(szStaPathToRemove) + 1] = 0;
+			SHFILEOPSTRUCTA shfoStaMaster = {0};
+			shfoStaMaster.hwnd = hWnd;
+			shfoStaMaster.wFunc = FO_DELETE;
+			shfoStaMaster.pFrom = szMasterStaDir;
+			shfoStaMaster.fFlags = FOF_NOCONFIRMATION | FOF_SILENT | FOF_NOERRORUI;
+			SHFileOperationA(&shfoStaMaster);
+			
+			CreateDirectoryA(".\\config\\sta", nullptr); 
 
-							SHFILEOPSTRUCTA shfoStaMasiva = {0};
-							shfoStaMasiva.hwnd = hWnd;
-							shfoStaMasiva.wFunc = FO_DELETE;
-							shfoStaMasiva.pFrom = szDoubleNullStaDir;
-							shfoStaMasiva.fFlags = FOF_ALLOWUNDO | FOF_NOCONFIRMATION | FOF_SILENT;
-							SHFileOperationA(&shfoStaMasiva);
-						}
-						else
-						{
-							DeleteFileA(szStaPathToRemove);
-						}
-					}
-				} while (FindNextFileA(hFindSta, &fdaSta));
-				FindClose(hFindSta);
-			}
+			char szMasterNvramDir[MAX_PATH + 2] = ".\\config\\nvram";
+			szMasterNvramDir[strlen(szMasterNvramDir) + 1] = 0;
 
-			WIN32_FIND_DATAA fdaNvram;
-			HANDLE hFindNvram = FindFirstFileA(".\\config\\nvram\\*", &fdaNvram);
-			if (hFindNvram != INVALID_HANDLE_VALUE)
-			{
-				do
-				{
-					if (strcmp(fdaNvram.cFileName, ".") != 0 && strcmp(fdaNvram.cFileName, "..") != 0)
-					{
-						char szPathToRemove[MAX_PATH];
-						snprintf(szPathToRemove, sizeof(szPathToRemove), ".\\config\\nvram\\%s", fdaNvram.cFileName);
-
-						if (fdaNvram.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
-						{
-							char szDoubleNullDir[MAX_PATH + 2] = {0};
-							strcpy(szDoubleNullDir, szPathToRemove);
-							szDoubleNullDir[strlen(szPathToRemove) + 1] = 0;
-
-							SHFILEOPSTRUCTA shfoMasiva = {0};
-							shfoMasiva.hwnd = hWnd;
-							shfoMasiva.wFunc = FO_DELETE;
-							shfoMasiva.pFrom = szDoubleNullDir;
-							shfoMasiva.fFlags = FOF_ALLOWUNDO | FOF_NOCONFIRMATION | FOF_SILENT;
-							SHFileOperationA(&shfoMasiva);
-						}
-						else
-						{
-							DeleteFileA(szPathToRemove);
-						}
-					}
-				} while (FindNextFileA(hFindNvram, &fdaNvram));
-				FindClose(hFindNvram);
-			}
+			SHFILEOPSTRUCTA shfoNvramMaster = {0};
+			shfoNvramMaster.hwnd = hWnd;
+			shfoNvramMaster.wFunc = FO_DELETE;
+			shfoNvramMaster.pFrom = szMasterNvramDir;
+			shfoNvramMaster.fFlags = FOF_NOCONFIRMATION | FOF_SILENT | FOF_NOERRORUI;
+			SHFileOperationA(&shfoNvramMaster);
+			
+			CreateDirectoryA(".\\config\\nvram", nullptr);
 
 			winui_message_box_utf8(hWnd, "Global NVRAM, CFG and ALL Savestate Folders cleaned up successfully!", MAMEUINAME, MB_ICONINFORMATION | MB_OK);
 			SetFocus(hWndList);
