@@ -3,7 +3,9 @@ What is NeoEX?
 
 It focuses on compiling everything related to NeoGeo CD, Neo Geo MVS/AES, and Capcom systems, as well as preserving all types of existing ROMs—including Bootleg, Translation, CD Conversion, Darksoft, Decrypted C, Earlier, MGD2, NeoSD, Homebrew and Hack versions.
 
-Version 0.289 [[HBMAME](https://github.com/Robbbert/hbmame)] is being used as the base system.
+All source code used to create the base system::
+
+Robert [[HBMAME](https://github.com/Robbbert/hbmame)], Dirstac [[Arcade Extended](https://github.com/Dirstac/ArcadeUI-CHS)] y Kaze [[EKMAME](https://github.com/WOOSEOK99/EKMAME)].
 
 It runs on Windows 10 build 1607, 64-bit or later.
 
