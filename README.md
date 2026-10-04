@@ -1,7 +1,7 @@
 # NeoEX
 What is NeoEX?
 
-It focuses on compiling everything about the Neo Geo MVS/AES and Capcom system, and preserving all types of ROMs that have existed, including Bootleg, HomeBrew, and Hacks.
+It focuses on compiling everything related to NeoGeo CD, Neo Geo MVS/AES, and Capcom systems, as well as preserving all types of existing ROMs—including Bootleg, Translation, CD Conversion, Darksoft, Decrypted C, Earlier, MGD2, NeoSD, Homebrew and Hack versions.
 
 Version 0.289 [[HBMAME](https://github.com/Robbbert/hbmame)] is being used as the base system.
 
