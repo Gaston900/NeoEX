@@ -219,6 +219,7 @@
 #define IDB_EXP_COMPLETE                303
 #define IDB_EXP_MISSING                 304
 #define IDB_EXP_CURRENT                 305
+#define IDB_IPS_MENU                    306
 //=============================================>>>
 
 // 修改的 (Eziochiu)

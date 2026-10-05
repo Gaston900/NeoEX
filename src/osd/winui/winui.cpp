@@ -462,6 +462,7 @@ static HBITMAP hExpAll = NULL;
 static HBITMAP hExpComplete = NULL;
 static HBITMAP hExpMissing = NULL;
 static HBITMAP hExpCurrent = NULL;
+static HBITMAP hIpsMenuExclusive = NULL;
 //==================================>>>
 
 // 修改的 代码来源 (EKMAME)
@@ -1679,6 +1680,7 @@ static void Win32UI_exit(void)
 	DeleteBitmap(hExpComplete);
 	DeleteBitmap(hExpMissing);
 	DeleteBitmap(hExpCurrent);
+    DeleteBitmap(hIpsMenuExclusive);
 //=================================>>>
 	DeleteBitmap(hMissing_bitmap);
 
@@ -2594,6 +2596,8 @@ static void InitMenuIcons(void)
 	hExpMissing = CreateBitmapTransparent(hTemp);
 	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_EXP_CURRENT));
 	hExpCurrent = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_IPS_MENU));
+	hIpsMenuExclusive = CreateBitmapTransparent(hTemp);
 //===================================================================>>>
 
 //============================== 缘来是你 ============================>>>
@@ -6886,7 +6890,7 @@ void InitBodyContextMenu(HMENU hBodyContextMenu)
 	SetMenuItemBitmaps(hBodyContextMenu, ID_FILE_PLAY, MF_BYCOMMAND, hPlay, hPlay);
 
 //================================================ 缘来是你 ===============================================>>>																		
-	SetMenuItemBitmaps(hBodyContextMenu, ID_PLAY_IPS, MF_BYCOMMAND, hFolders, hFolders);	// IPS
+	SetMenuItemBitmaps(hBodyContextMenu, ID_PLAY_IPS, MF_BYCOMMAND, hIpsMenuExclusive, hIpsMenuExclusive);	// IPS
 	SetMenuItemBitmaps(hBodyContextMenu, ID_CONTEXT_DELETE_ROM, MF_BYCOMMAND, hDeleteRomExclusive, hDeleteRomExclusive);	//删除 ROMs
 	SetMenuItemBitmaps(hBodyContextMenu, ID_CONTEXT_BATCH_DELETE_MODE, MF_BYCOMMAND, hBatchDelete, hBatchDelete);  // 批量删除模式
 	SetMenuItemBitmaps(hBodyContextMenu, ID_CONTEXT_DELETE_SELECTED_ROMS, MF_BYCOMMAND, hConText, hConText);	//批量删除 ROMs

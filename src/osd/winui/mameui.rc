@@ -1200,6 +1200,7 @@ IDB_EXP_ALL              BITMAP                     "res\\exp_all.bmp"
 IDB_EXP_COMPLETE         BITMAP                     "res\\exp_complete.bmp"
 IDB_EXP_MISSING          BITMAP                     "res\\exp_missing.bmp"
 IDB_EXP_CURRENT          BITMAP                     "res\\exp_current.bmp"
+IDB_IPS_MENU             BITMAP                     "res\\ipsmenu.bmp" 
 //===========================================================================>>>
 /////////////////////////////////////////////////////////////////////////////
 //
