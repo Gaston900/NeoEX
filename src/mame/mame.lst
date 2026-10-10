@@ -511,6 +511,7 @@ sf2cehc18
 sf2cehc19
 sf2cehc20
 sf2cehc21
+sf2cehc22
 sf2hc01
 sf2hc02
 sf2hc03
@@ -1015,12 +1016,17 @@ mshvsfru
 mshvsfrj
 mshvsfex
 mshvsfej
+nwarrru
 sfz2alr
 sfa2d
 sfa2g
 sfz2d
 sfz2da
+sfa2ex
+sfz2ex
+vamprest
 vhunt2te
+vsavru
 vsav2te
 
 @source:../hbmame/drivers/cps2.cpp
@@ -1258,7 +1264,7 @@ mitcdemo
 
 @source:../hbmame/drivers/neogeo.cpp
 neogeo
-//nggno
+nggno
 neosd
 multimvs
 2020bb
@@ -2584,6 +2590,7 @@ zupapands
 abyssal
 adkw
 amazonn
+altbeastng
 badapple
 baddudesn
 bbb2
@@ -2605,6 +2612,8 @@ ddsprdmo
 didemo
 doomgeo
 doubled1
+doubled1ed
+eswatng
 flapchck
 ffeast
 foodfight
@@ -2633,6 +2642,7 @@ ltorb
 mslug3x
 nblktiger
 knacki
+maiya
 midnight
 ndo_a_td
 neo2500
@@ -2670,9 +2680,10 @@ poknight
 pown
 raroggame
 rickdangdx
+robocopng
 samantha
 santabll
-smbn
+smbneo
 sgz
 shaman24
 shinobin
@@ -2689,6 +2700,7 @@ twister
 vaporous
 violentv
 vlad2000
+vssmbneo
 wrldracr
 ww2demo
 yoyoshkn

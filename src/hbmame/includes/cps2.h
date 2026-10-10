@@ -9,6 +9,8 @@
 #ifndef _CPS2_H_
 #define _CPS2_H_
 
+#pragma once
+
 #include "emu.h"
 #include "sound/msm5205.h"
 #include "sound/qsound.h"
@@ -17,6 +19,7 @@
 #include "machine/gen_latch.h"
 #include "machine/timekpr.h"
 #include "machine/timer.h"
+#include "machine/bankdev.h"
 #include "cpu/m68000/m68000.h"
 #include "tilemap.h"
 #include "emupal.h"
@@ -127,6 +130,8 @@ public:
 		m_gfxdecode(*this, "gfxdecode"),
 		m_screen(*this, "screen"),
 		m_palette(*this, "palette"),
+		m_soundlatch(*this, "soundlatch"),
+		m_soundlatch2(*this, "soundlatch2"),
 		m_decrypted_opcodes(*this, "decrypted_opcodes"),
 		m_region_key(*this, "key"),
 		m_region_stars(*this, "stars")
@@ -241,6 +246,8 @@ public:
 	required_device<gfxdecode_device> m_gfxdecode;
 	required_device<screen_device> m_screen;
 	required_device<palette_device> m_palette;
+	optional_device<generic_latch_8_device> m_soundlatch;
+	optional_device<generic_latch_8_device> m_soundlatch2;
 	optional_shared_ptr<u16> m_decrypted_opcodes;
 	optional_memory_region m_region_key;
 	optional_memory_region m_region_stars;
@@ -268,6 +275,7 @@ public:
 	void init_cps2();
 	void init_cps2nc();
 	void init_cps2crypt();
+	void init_cps2crypt(u32 length);
 	void init_ssf2tb();
 	void init_pzloop2();
 	void init_singbrd();
@@ -315,7 +323,11 @@ public:
 	void cps1_render_layer(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect, int layer, int primask);
 	void cps1_render_high_layer(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect, int layer);
 	void cps2_set_sprite_priorities();
-	void cps2_objram_latch();
+	enum class cps2_scroll_layer { SCROLL1, SCROLL2, SCROLL3 };
+	virtual void cps2_objram_latch();
+	virtual int cps2_scroll_code(cps2_scroll_layer layer, int code, int attr) const { return code; }
+	virtual int cps2_sprite_code(int code, int index, int column, int row) const { return code; }
+	virtual void cps2_sound_gain(double gain);
 	u16 *cps2_objbase();
 
 	/* cps2 driver */
@@ -342,6 +354,7 @@ public:
 	void qsound_decrypted_opcodes_map(address_map &map);
 	void qsound_main_map(address_map &map);
 	void qsound_sub_map(address_map &map);
+	void qsound_sub_map_common(address_map &map);
 	void sound_map(address_map &map);
 	void sub_map(address_map &map);
 
@@ -353,6 +366,67 @@ public:
 	optional_device<samples_device> m_samples_l;
 	optional_device<samples_device> m_samples_r;
 };
+
+
+// qsound.h aliases the DSP type to HLE by default. Use the actual DSP type
+// locally without changing the stock driver's finder or its configuration.
+#pragma push_macro("qsound_device")
+#undef qsound_device
+
+class cps2plus_state : public cps2_state
+{
+public:
+	cps2plus_state(machine_config const &mconfig, device_type type, char const *tag);
+
+	void cps2plus(machine_config &config);
+	void cps2plus_dsp(machine_config &config);
+	void cps2plus_16(machine_config &config);
+	void cps2plus_16_dsp(machine_config &config);
+	void cps2plus_8(machine_config &config);
+	void cps2plus_8_dsp(machine_config &config);
+	void init_cps2plus();
+
+private:
+	static constexpr u32 PROGRAM_SIZE = 0x800000;
+	static constexpr u32 ENCRYPTED_SIZE = 0x400000;
+	static constexpr u32 GRAPHICS_SIZE = 0x4000000;
+	static constexpr u32 OBJECT_TILE_BYTES = 128;
+	static constexpr u32 SCROLL1_TILE_BYTES = 64; // two column-side views per 8x8 record
+	static constexpr u32 SCROLL2_TILE_BYTES = OBJECT_TILE_BYTES;
+	static constexpr u32 SCROLL3_TILE_BYTES = 4 * OBJECT_TILE_BYTES;
+	static constexpr u32 OBJECT_ENTRIES = 0x2000 / 8;
+
+	optional_device<qsound_device> m_qsound_dsp;
+	required_device<address_map_bank_device> m_sample_rom;
+	memory_share_creator<u8> m_objram1_ext;
+	memory_share_creator<u8> m_objram2_ext;
+	memory_share_creator<u8> m_objram_ext_latched;
+	u32 m_sample_mask = 0x1ffffff; // immutable board configuration
+	u8 m_sound_bank = 0;
+	bool m_extended_sound_rom = false; // immutable ROM-board configuration
+	bool m_use_dsp = false; // address maps are built before device finders resolve
+
+	void configure(machine_config &config, u8 sample_bits, bool dsp);
+	void program_map(address_map &map);
+	void opcodes_map(address_map &map);
+	void sample_map(address_map &map);
+	void sound_map(address_map &map);
+	void sound_banksw_w(u8 data);
+	u8 sound_status_r();
+	void object_w(int window, u8 extension, offs_t offset, u16 data, u16 mem_mask);
+	void objram1_w(offs_t offset, u16 data, u16 mem_mask = 0xffff);
+	void objram1_alias_w(offs_t offset, u16 data, u16 mem_mask = 0xffff);
+	void objram2_w(offs_t offset, u16 data, u16 mem_mask = 0xffff);
+	void objram2_alias_w(offs_t offset, u16 data, u16 mem_mask = 0xffff);
+	int cps2_scroll_code(cps2_scroll_layer layer, int code, int attr) const override;
+	int cps2_sprite_code(int code, int index, int column, int row) const override;
+	void cps2_objram_latch() override;
+	void cps2_sound_gain(double gain) override;
+	DECLARE_MACHINE_START(cps2plus);
+	DECLARE_MACHINE_RESET(cps2plus);
+};
+
+#pragma pop_macro("qsound_device")
 
 /*----------- defined in drivers/cps1.c -----------*/
 
