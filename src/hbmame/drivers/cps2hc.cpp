@@ -2892,6 +2892,43 @@ ROM_START( ssf2thc05 )
 	ROM_LOAD( "ssf2t.key",    0x000000, 0x000014, CRC(524d608e) SHA1(fcd2b9a1a640a0dee4a674dc9cfb3975466f7757) )
 ROM_END
 
+ROM_START( ssf2thc06 ) //ssf2ttag
+	ROM_REGION( CODE_SIZE, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "sfxe_hc06.03c", 0x000000, 0x80000, CRC(4afb091d) SHA1(528ef5a2a295f10d9713f1922382ecd9e938cf72) )
+	ROM_LOAD16_WORD_SWAP( "sfxe_hc06.04a", 0x080000, 0x80000, CRC(6d6bd06a) SHA1(c0307516a4b9df60c0e0f01429f07f54eb6b0750) )
+	ROM_LOAD16_WORD_SWAP( "sfxe.05",  0x100000, 0x80000, CRC(65222964) SHA1(025bb708dc5b6365cc7fe60fc3f242511ad8f384) )
+	ROM_LOAD16_WORD_SWAP( "sfxe.06a", 0x180000, 0x80000, CRC(8fe9f531) SHA1(b5d9ed498f730fdb968992bdec33605db1a007f4) )
+	ROM_LOAD16_WORD_SWAP( "sfxe_hc06.07",  0x200000, 0x80000, CRC(33f87a59) SHA1(bb4ba29123e54500db87694e457f8d6ad9def23b) )
+	ROM_LOAD16_WORD_SWAP( "sfxe.08",  0x280000, 0x80000, CRC(74c24062) SHA1(f3eca09e0544c6aa46b0c4bead2246ab1e9a97d9) )
+	ROM_LOAD16_WORD_SWAP( "sfx.09",   0x300000, 0x80000, CRC(642fae3f) SHA1(746df99b826b9837bba267104132161153c1daff) )
+
+	ROM_REGION( 0x1000000, "gfx", 0 )
+	ROM_LOAD64_WORD( "sfx.13m",   0x000000, 0x200000, CRC(cf94d275) SHA1(bf2a6d98a656d1cb5734da7836686242d3211137) )
+	ROM_LOAD64_WORD( "sfx.15m",   0x000002, 0x200000, CRC(5eb703af) SHA1(4b302dbb66e8a5c2ad92798699391e981bada427) )
+	ROM_LOAD64_WORD( "sfx.17m",   0x000004, 0x200000, CRC(ffa60e0f) SHA1(b21b1c749a8241440879bf8e7cb33968ccef97e5) )
+	ROM_LOAD64_WORD( "sfx.19m",   0x000006, 0x200000, CRC(34e825c5) SHA1(4d320fc96d1ef0b9928a8ce801734245a4c097a5) )
+	ROM_LOAD64_WORD( "sfx.14m",   0x800000, 0x100000, CRC(b7cc32e7) SHA1(0f4d26af338dab5dce5b7b34d32ad0c573434ace) )
+	ROM_LOAD64_WORD( "sfx.16m",   0x800002, 0x100000, CRC(8376ad18) SHA1(f4456833fb396e6501f4174c0fe5fd63ea40a188) )
+	ROM_LOAD64_WORD( "sfx.18m",   0x800004, 0x100000, CRC(f5b1b336) SHA1(4b060501e56b9d61294748da5387cdae5280ec4d) )
+	ROM_LOAD64_WORD( "sfx.20m",   0x800006, 0x100000, CRC(459d5c6b) SHA1(32b11ba7a12004aff810d719bff7508204c7b7c0) )
+	ROM_LOAD64_WORD( "sfx.21m",   0xc00000, 0x100000, CRC(e32854af) SHA1(1a5e11e9caa2b96108d89ae660ef1f6bcb469a74) )
+	ROM_LOAD64_WORD( "sfx.23m",   0xc00002, 0x100000, CRC(760f2927) SHA1(491e28e14ee06821fc9e709efa7b91313bc0c2db) )
+	ROM_LOAD64_WORD( "sfx.25m",   0xc00004, 0x100000, CRC(1ee90208) SHA1(83df1d9953560edddc2951ea426d29fb014e6a8a) )
+	ROM_LOAD64_WORD( "sfx.27m",   0xc00006, 0x100000, CRC(f814400f) SHA1(ad6921af36d0bd5dfb89b1fb53c3ca3fd92d7204) )
+
+	ROM_REGION( QSOUND_SIZE, "audiocpu", 0 )
+	ROM_LOAD( "sfx.01",   0x00000, 0x08000, CRC(b47b8835) SHA1(c8b2d50fe3a329bd0592ea160d505155d873dab1) )
+	ROM_CONTINUE(         0x10000, 0x18000 )
+	ROM_LOAD( "sfx.02",   0x28000, 0x20000, CRC(0022633f) SHA1(cab3afc79da53e3887eb1ccd1f4d19790728e6cd) )
+
+	ROM_REGION( 0x400000, "qsound", 0 )
+	ROM_LOAD16_WORD_SWAP( "sfx.11m",   0x000000, 0x200000, CRC(9bdbd476) SHA1(a8520f77f30b97aae36408e0c4ca1ebbde1808a5) )
+	ROM_LOAD16_WORD_SWAP( "sfx.12m",   0x200000, 0x200000, CRC(a05e3aab) SHA1(d4eb9cae66c74e956569fea8b815156fbd420f83) )
+
+	ROM_REGION( 0x20, "key", 0 )
+	ROM_LOAD( "ssf2t.key",    0x000000, 0x000014, CRC(524d608e) SHA1(fcd2b9a1a640a0dee4a674dc9cfb3975466f7757) )
+ROM_END
+
 ROM_START( ssf2xhc01 ) //ssf2xjr1trn
 	ROM_REGION( CODE_SIZE, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "sfxj_hc01.03",  0x000000, 0x80000, CRC(37b25225) SHA1(5f89c69ea6073a5414abe4b849e356c45e1145d1) )
@@ -3377,6 +3414,7 @@ GAME( 2024, ssf2thc02,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init
 GAME( 2005, ssf2thc03,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Super Street Fighter II Turbo (French Translation)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, ssf2thc04,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "DDJ",         "Super Street Fighter II Turbo (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, ssf2thc05,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "DDJ",         "Super Street Fighter II Turbo (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, ssf2thc06,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "DDJ",         "Super Street Fighter II Turbo (Tag V3)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, ssf2xhc01,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Super Street Fighter II X: Grand Master Challenge (Trainer)", MACHINE_SUPPORTS_SAVE )
 GAME( 2012, ssf2hc01,    ssf2,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "DDJ",         "Super Street Fighter II X: The New Challengers (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, spf2thc01,   spf2t,        cps2,         cps2_2p2b, cps2_state, init_cps2,     ROT0,   "hack",        "Super Puzzle Fighter II Turbo (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )

@@ -994,6 +994,7 @@ ssf2thc02
 ssf2thc03
 ssf2thc04
 ssf2thc05
+ssf2thc06
 ssf2xhc01
 ssf2hc01
 spf2thc01
@@ -1024,6 +1025,10 @@ sfz2d
 sfz2da
 sfa2ex
 sfz2ex
+sfa2re
+sfz2rej
+sfz2rea
+sfa3re
 vamprest
 vhunt2te
 vsavru
@@ -1105,6 +1110,7 @@ sfiii3hc03
 sfiii3hc04
 sfiii3hc05
 sfiii3hc06
+sfiii3hc07
 
 @source:../hbmame/drivers/cps3hc.cpp
 jojobane
@@ -2691,6 +2697,8 @@ seafight
 snddemo
 spkick
 spriteex
+snowbrosn
+ssodan
 syscheck
 teot
 timesup

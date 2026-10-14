@@ -1844,27 +1844,22 @@ ROM_START( rickdangdx )
 	ROM_LOAD16_BYTE( "521.c2", 0x000001, 0x140000, CRC(c2df94d4) SHA1(46c88955de5edded07f4ed8a3fda7aba201f9453) )
 ROM_END
 
+// 534: Robocop v9 by Teo Tormo
+// Bugs: Some parts run too fast
 ROM_START( robocopng )
 	ROM_REGION( 0x100000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "525.p1", 0x000000, 0x100000, CRC(fb7146ff) SHA1(35d8317cc499e356a8d07850dd77a307b2ab982f) )
+	ROM_LOAD16_WORD_SWAP( "534.p1", 0x000000, 0x100000, CRC(eb0ffaed) SHA1(227a428924c9e5b2726902913b95a7d8ad973410) )
 
-	NEO_SFIX_128K( "525.s1", CRC(2ad60481) SHA1(284ece88c71499dff37d661b0e67af577fd9251d) )
+	NEO_SFIX_128K( "534.s1", CRC(2ad60481) SHA1(284ece88c71499dff37d661b0e67af577fd9251d) )
 
-	NEO_BIOS_AUDIO_64K( "525.m1", CRC(4686b60d) SHA1(047769e9408c8f71c6e5dbc296ae81c509eee560) )
+	NEO_BIOS_AUDIO_64K( "534.m1", CRC(19dab516) SHA1(44ad225503b5c0d46fca88c3dc828bb0a20f47f1) )
 
 	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
-	ROM_LOAD( "525.v1", 0x000000, 0x200000, CRC(e04149c3) SHA1(51aedf14cdd79335bc4618f7a5c140913ee3ee97) )
-	ROM_LOAD( "525.v2", 0x200000, 0x200000, CRC(4d49946c) SHA1(2ec863943d1a50f51f0f5e8e93c96e3adfae2a8e) )
-	ROM_LOAD( "525.v3", 0x400000, 0x200000, CRC(ee55d37d) SHA1(2e67e4479ea45858cf0bfb66b0218adeeff67ab3) )
-	ROM_LOAD( "525.v4", 0x600000, 0x200000, CRC(9ea51796) SHA1(b4f70a89ac32539616bc6ab7b085609d0dda1089) )
-	ROM_LOAD( "525.v5", 0x800000, 0x200000, CRC(6ac6ddb5) SHA1(1fad4f2acecad867ba5339e4eceb19b2ec89c813) )
-	ROM_LOAD( "525.v6", 0xa00000, 0x200000, CRC(008bdfc1) SHA1(b6d60c419362e8b5379f7e1d983a640007394c45) )
-	ROM_LOAD( "525.v7", 0xc00000, 0x200000, CRC(5ae7034d) SHA1(1472d00b48ce603bba74082147078734c21e3ae2) )
-	ROM_LOAD( "525.v8", 0xe00000, 0x200000, CRC(7f59fffc) SHA1(352fef61cd1d2f57342734b3a961bd232a141222) )
+	ROM_LOAD( "534.v1", 0x000000, 0x1000000, CRC(2cbffd4b) SHA1(6be522829fc649fc20c138304c2f2dbe088c2815) )
 
 	ROM_REGION( 0x280000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "525.c1", 0x000000, 0x80000, CRC(bfece2db) SHA1(f4e6f907904c7e334fc389be79124aabb79aad8a) )
-	ROM_LOAD16_BYTE( "525.c2", 0x000001, 0x80000, CRC(73d6bbdc) SHA1(401de766f518fd563b66037dfce46b6c513fc803) )
+	ROM_LOAD16_BYTE( "534.c1", 0x000000, 0x80000, CRC(44593b72) SHA1(7c9949cd39c16fda38f815709ae8206f67877206) )
+	ROM_LOAD16_BYTE( "534.c2", 0x000001, 0x80000, CRC(03182a3a) SHA1(d62c4e5bc1b45d4c69822829950e23834b3689a0) )
 ROM_END
 
 // 683 : Everlasting Summer: Samantha by Vasily Familiya
@@ -2058,6 +2053,41 @@ ROM_START( spriteex )
 	ROM_CONTINUE( 0x400000, 0x200000 )
 	ROM_LOAD16_BYTE( "667.c2", 0x000001, 0x200000, CRC(c8a4d037) SHA1(6541074be8493bf2c7b869e8dbdb39f3309dcaf7) )
 	ROM_CONTINUE( 0x400001, 0x200000 )
+ROM_END
+
+// 528: Snow Bros (beta 0.3) by Bendk97
+// Bugs: No Sound
+ROM_START( snowbrosn )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "528.p1", 0x000000, 0x80000, CRC(d429ba5b) SHA1(4b853dc60216f16310ae6903cc18e60c85ad9c49) )
+
+	NEO_SFIX_128K( "528.s1", CRC(5fb678af) SHA1(40f78732f1f6c63ddfbbd9b3b9086369c1cceaef) )
+
+	NEO_BIOS_AUDIO_64K( "528.m1", CRC(ee77fdcb) SHA1(1d985af3f60b8925e25f20bc0bf8bbd7eab52cae) )
+
+	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "528.v1", 0x000000, 0x800000, CRC(548c091b) SHA1(20997304536d0319d81df73cf43738ca208e54fc) )
+
+	ROM_REGION( 0x100000, "sprites", ROMREGION_ERASE00 )
+	ROM_LOAD16_BYTE( "528.c1", 0x000000, 0x80000, CRC(c73e580e) SHA1(9dd123ba870ce3011049f31ea5a93fad6c301dd8) )
+	ROM_LOAD16_BYTE( "528.c2", 0x000001, 0x80000, CRC(75e57c19) SHA1(2177c973f9d59f6a3a218c4ed063c9352e901071) )
+ROM_END
+
+// 529: Sword of Sodan (beta 0.5) by Bendk97
+ROM_START( ssodan )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "529.p1", 0x000000, 0x100000, CRC(66994776) SHA1(864a51ea7630b071a65e4bcd16f8ebba3fc3932a) )
+
+	NEO_SFIX_128K( "529.s1", CRC(8c2cfe44) SHA1(bfb8e3cf54d316e815c9da46dc56f64169859fcb) )
+
+	NEO_BIOS_AUDIO_128K( "529.m1", CRC(bf95a6a1) SHA1(0feb60965c8eab84b7123235cacfc2a85b6a1fe4) )
+
+	ROM_REGION( 0x400000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "529.v1", 0x000000, 0x400000, CRC(f1962c04) SHA1(640b60789f15eb11a15a0aa63d0b9893558b9d07) )
+
+	ROM_REGION( 0x400000, "sprites", ROMREGION_ERASE00 )
+	ROM_LOAD16_BYTE( "529.c1", 0x000000, 0x200000, CRC(1255788c) SHA1(387702fef4a8de948b25ca2c607a9b266057f12d) )
+	ROM_LOAD16_BYTE( "529.c2", 0x000001, 0x200000, CRC(497b17e1) SHA1(4c9939e0013fde7a0cbe7033ca786b15061235c1) )
 ROM_END
 
 // 606 : NeoSystemCheck v1.0b by Blastar
@@ -2506,6 +2536,8 @@ GAME( 2018, seafight,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_
 GAME( 2015, snddemo,    neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Freem", "Sound-Loop Demo (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, spkick,     neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Kakoeimon", "Super Power Kick Beta 2 (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2011, spriteex,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Furrtek", "Sprite Experimenter (HB)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, snowbrosn,  neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Bendk97", "Snow Bros (HB)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, ssodan,     neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Bendk97", "Sword of Sodan (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, syscheck,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Blastar", "Neo System Check (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, teot,       neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "OzzyOuzo", "The Eye of Typhoon Beta 7 (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2012, timesup,    neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "NGF Dev. Inc", "Time's Up! (HB)", MACHINE_SUPPORTS_SAVE )
