@@ -463,6 +463,16 @@ static HBITMAP hExpComplete = NULL;
 static HBITMAP hExpMissing = NULL;
 static HBITMAP hExpCurrent = NULL;
 static HBITMAP hIpsMenuExclusive = NULL;
+static HBITMAP hAtomisKofnw = NULL;
+static HBITMAP hAtomisKofxi = NULL;
+static HBITMAP hAtomisMslug6 = NULL;
+static HBITMAP hAtomisNgbc = NULL;
+static HBITMAP hAtomisSamsptk = NULL;
+static HBITMAP hNaomiCapsnk = NULL;
+static HBITMAP hNaomiCapsnkPro = NULL;
+static HBITMAP hNaomiCvs2 = NULL;
+static HBITMAP hNaomiMvsc2 = NULL;
+static HBITMAP hNaomiSfz3u = NULL;
 //==================================>>>
 
 // 修改的 代码来源 (EKMAME)
@@ -1383,12 +1393,17 @@ static void Win32UI_init(void)
 	CreateDirectoryA(".\\config", nullptr);
 	CreateDirectoryA(".\\support", nullptr);
 	CreateDirectoryA(".\\roms", nullptr);
+	CreateDirectoryA(".\\roms\\Arcade", nullptr);
+	CreateDirectoryA(".\\roms\\Atomiswave", nullptr);
+	CreateDirectoryA(".\\roms\\Naomi", nullptr);
 
     // Semi-automatic Subfolder is created
 	CreateDirectoryA(".\\config\\bgfx", nullptr);
 	CreateDirectoryA(".\\config\\cfg", nullptr);
 	CreateDirectoryA(".\\config\\diff", nullptr);
 	CreateDirectoryA(".\\config\\docs", nullptr);
+	CreateDirectoryA(".\\config\\emu", nullptr);
+    CreateDirectoryA(".\\config\\emu\\Flycast", nullptr);
 	CreateDirectoryA(".\\config\\folders", nullptr);
 	CreateDirectoryA(".\\config\\glsl", nullptr);
 	CreateDirectoryA(".\\config\\hash", nullptr);
@@ -1681,6 +1696,16 @@ static void Win32UI_exit(void)
 	DeleteBitmap(hExpMissing);
 	DeleteBitmap(hExpCurrent);
     DeleteBitmap(hIpsMenuExclusive);
+	DeleteBitmap(hAtomisKofnw);
+	DeleteBitmap(hAtomisKofxi);
+	DeleteBitmap(hAtomisMslug6);
+	DeleteBitmap(hAtomisNgbc);
+	DeleteBitmap(hAtomisSamsptk);
+	DeleteBitmap(hNaomiCapsnk);
+	DeleteBitmap(hNaomiCapsnkPro);
+	DeleteBitmap(hNaomiCvs2);
+	DeleteBitmap(hNaomiMvsc2);
+	DeleteBitmap(hNaomiSfz3u);
 //=================================>>>
 	DeleteBitmap(hMissing_bitmap);
 
@@ -2598,6 +2623,26 @@ static void InitMenuIcons(void)
 	hExpCurrent = CreateBitmapTransparent(hTemp);
 	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_IPS_MENU));
 	hIpsMenuExclusive = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_ATOMIS_KOFNW));
+	hAtomisKofnw = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_ATOMIS_KOFXI));
+	hAtomisKofxi = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_ATOMIS_MSLUG6));
+	hAtomisMslug6 = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_ATOMIS_NGBC));
+	hAtomisNgbc = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_ATOMIS_SAMSPTK));
+	hAtomisSamsptk = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NAOMI_CAPSNK));
+	hNaomiCapsnk = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NAOMI_CAPSNK_PRO));
+	hNaomiCapsnkPro = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NAOMI_CVS2));
+	hNaomiCvs2 = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NAOMI_MVSC2));
+	hNaomiMvsc2 = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NAOMI_SFZ3U));
+	hNaomiSfz3u = CreateBitmapTransparent(hTemp);
 //===================================================================>>>
 
 //============================== 缘来是你 ============================>>>
@@ -4133,6 +4178,117 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 
 	switch (id)
 	{
+// 修改的 代码来源 (加斯顿90)
+// =============================================================================================================>>>
+		case ID_ATOMISWAVE_KOFNW:
+		case ID_ATOMISWAVE_KOFXI:
+		case ID_ATOMISWAVE_MSLUG6:
+		case ID_ATOMISWAVE_NGBC:
+		case ID_ATOMISWAVE_SAMSPTK:
+		{
+			const char* szFlycastExe = "config\\emu\\Flycast\\flycast.exe";
+			const char* szSelectedRom = "";
+			
+			if (id == ID_ATOMISWAVE_KOFNW)
+				szSelectedRom = "roms\\Atomiswave\\kofnw.7z";
+			else if (id == ID_ATOMISWAVE_KOFXI)
+				szSelectedRom = "roms\\Atomiswave\\kofxi.7z";
+			else if (id == ID_ATOMISWAVE_MSLUG6)
+				szSelectedRom = "roms\\Atomiswave\\mslug6.7z";
+			else if (id == ID_ATOMISWAVE_NGBC)
+				szSelectedRom = "roms\\Atomiswave\\ngbc.7z";
+			else // ID_ATOMISWAVE_SAMSPTK
+				szSelectedRom = "roms\\Atomiswave\\samsptk.7z";
+			
+			if (GetFileAttributesA(szFlycastExe) == INVALID_FILE_ATTRIBUTES)
+			{
+				winui_message_box_utf8(hWnd,
+					"ATOMISWAVE SYSTEM CRITICAL ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\Flycast\\flycast.exe'\n\nPlease verify that the file is in its place.", 
+					"Boxes Flycast Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			if (GetFileAttributesA(szSelectedRom) == INVALID_FILE_ATTRIBUTES)
+			{
+				char szRomError[MAX_PATH + 200];
+				snprintf(szRomError, sizeof(szRomError), 
+					"ATOMISWAVE ROMS FILE ERROR DETECTED:\n\nThe location of the compressed game file was not found:\n'%s'\n\nPlace the correct 7Z, Zip, or .CHT file.", szSelectedRom);
+				winui_message_box_utf8(hWnd, szRomError, "Boxes ROM Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			char szCmdArgs[MAX_PATH];
+			snprintf(szCmdArgs, sizeof(szCmdArgs), "\"%s\" \"%s\"", szFlycastExe, szSelectedRom);
+
+			STARTUPINFOA si = { sizeof(si) };
+			PROCESS_INFORMATION pi;
+			if (CreateProcessA(nullptr, szCmdArgs, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
+			{
+				CloseHandle(pi.hProcess);
+				CloseHandle(pi.hThread);
+			}
+			else
+			{
+				winui_message_box_utf8(hWnd, "Failed to initialize CreateProcess for the selected Atomiswave target.", "The System Failed", MB_ICONWARNING | MB_OK);
+			}
+			break;
+		}
+
+		case ID_NAOMI_CAPSNK:
+		case ID_NAOMI_CAPSNK_PRO:
+		case ID_NAOMI_CVS2:
+		case ID_NAOMI_MVSC2:
+		case ID_NAOMI_SFZ3U:
+		{
+			const char* szFlycastExe = "config\\emu\\Flycast\\flycast.exe";
+			const char* szSelectedRom = "";
+			
+			if (id == ID_NAOMI_CAPSNK)
+				szSelectedRom = "roms\\Naomi\\capsnk.7z";
+			else if (id == ID_NAOMI_CAPSNK_PRO)
+				szSelectedRom = "roms\\Naomi\\cvsgd.zip";
+			else if (id == ID_NAOMI_CVS2)
+				szSelectedRom = "roms\\Naomi\\cvs2.zip";
+			else if (id == ID_NAOMI_MVSC2)
+				szSelectedRom = "roms\\Naomi\\mvsc2.7z";
+			else // ID_NAOMI_SFZ3U
+				szSelectedRom = "roms\\Naomi\\sfz3ugd.zip";
+	
+			if (GetFileAttributesA(szFlycastExe) == INVALID_FILE_ATTRIBUTES)
+			{
+				winui_message_box_utf8(hWnd,
+					"NAOMI SYSTEM CRITICAL ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\Flycast\\flycast.exe'\n\nPlease verify that the file is in its place.", 
+					"Boxes Flycast Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			if (GetFileAttributesA(szSelectedRom) == INVALID_FILE_ATTRIBUTES)
+			{
+				char szRomError[MAX_PATH + 250];
+				snprintf(szRomError, sizeof(szRomError), 
+					"NAOMI ROMS FILE ERROR DETECTED:\n\nThe location of the compressed game file was not found:\n'%s'\n\nPlace the correct 7Z, Zip, or .CHT file.", szSelectedRom);
+				winui_message_box_utf8(hWnd, szRomError, "Boxes ROM Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			char szCmdArgs[MAX_PATH];
+			snprintf(szCmdArgs, sizeof(szCmdArgs), "\"%s\" \"%s\"", szFlycastExe, szSelectedRom);
+
+			STARTUPINFOA si = { sizeof(si) };
+			PROCESS_INFORMATION pi;
+			if (CreateProcessA(nullptr, szCmdArgs, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
+			{
+				CloseHandle(pi.hProcess);
+				CloseHandle(pi.hThread);
+			}
+			else
+			{
+				winui_message_box_utf8(hWnd, "Failed to initialize CreateProcess for the selected target.", "Engine Failure", MB_ICONWARNING | MB_OK);
+			}
+			break;
+		}
+// =============================================================================================================>>>
+
 		case ID_FILE_PLAY:
 			MamePlayGame();
 			SetFocus(hWndList);
@@ -6794,8 +6950,49 @@ void InitMainMenu(HMENU hMainMenu)
 /**************************************************************************************/
 	SetMenuItemBitmaps(hMainMenu, ID_KOREAN_GAMELIST, MF_BYCOMMAND, hklist, hklist);
 /**************************************************************************************/
-}
 
+// 修改的 代码来源 (加斯顿90)
+// =============================================================================================================>>>
+	HMENU hAtomiswaveMenu = CreatePopupMenu();
+	if (hAtomiswaveMenu != nullptr)
+	{
+		AppendMenu(hAtomiswaveMenu, MF_STRING, ID_ATOMISWAVE_KOFNW, TEXT("The King of Fighters Neowave"));
+		AppendMenu(hAtomiswaveMenu, MF_STRING, ID_ATOMISWAVE_KOFXI, TEXT("The King of Fighters XI"));
+		AppendMenu(hAtomiswaveMenu, MF_STRING, ID_ATOMISWAVE_MSLUG6, TEXT("Metal Slug 6"));
+		AppendMenu(hAtomiswaveMenu, MF_STRING, ID_ATOMISWAVE_NGBC, TEXT("NeoGeo Battle Coliseum"));
+		AppendMenu(hAtomiswaveMenu, MF_STRING, ID_ATOMISWAVE_SAMSPTK, TEXT("Samurai Spirits Tenkaichi Kenkakuden"));
+		
+		SetMenuItemBitmaps(hAtomiswaveMenu, ID_ATOMISWAVE_KOFNW, MF_BYCOMMAND, hAtomisKofnw, hAtomisKofnw);
+		SetMenuItemBitmaps(hAtomiswaveMenu, ID_ATOMISWAVE_KOFXI, MF_BYCOMMAND, hAtomisKofxi, hAtomisKofxi);
+		SetMenuItemBitmaps(hAtomiswaveMenu, ID_ATOMISWAVE_MSLUG6, MF_BYCOMMAND, hAtomisMslug6, hAtomisMslug6);
+		SetMenuItemBitmaps(hAtomiswaveMenu, ID_ATOMISWAVE_NGBC, MF_BYCOMMAND, hAtomisNgbc, hAtomisNgbc);
+		SetMenuItemBitmaps(hAtomiswaveMenu, ID_ATOMISWAVE_SAMSPTK, MF_BYCOMMAND, hAtomisSamsptk, hAtomisSamsptk);
+		
+		InsertMenu(hMainMenu, 4, MF_BYPOSITION | MF_POPUP, (UINT_PTR)hAtomiswaveMenu, TEXT("Atomiswave"));
+	}
+	
+	HMENU hNaomiMenu = CreatePopupMenu();
+	if (hNaomiMenu != nullptr)
+	{
+		AppendMenu(hNaomiMenu, MF_STRING, ID_NAOMI_CAPSNK, TEXT("Capcom Vs. SNK: Millennium Fight 2000"));
+		AppendMenu(hNaomiMenu, MF_STRING, ID_NAOMI_CAPSNK_PRO, TEXT("Capcom Vs. SNK: Millennium Fight 2000 Pro"));
+		AppendMenu(hNaomiMenu, MF_STRING, ID_NAOMI_CVS2, TEXT("Capcom Vs. SNK 2: Millionaire Fighting 2001"));
+		AppendMenu(hNaomiMenu, MF_STRING, ID_NAOMI_MVSC2, TEXT("Marvel Vs. Capcom 2: New Age of Heroes"));
+		AppendMenu(hNaomiMenu, MF_STRING, ID_NAOMI_SFZ3U, TEXT("Street Fighter Zero 3 Upper"));
+		
+		SetMenuItemBitmaps(hNaomiMenu, ID_NAOMI_CAPSNK, MF_BYCOMMAND, hNaomiCapsnk, hNaomiCapsnk);
+		SetMenuItemBitmaps(hNaomiMenu, ID_NAOMI_CAPSNK_PRO, MF_BYCOMMAND, hNaomiCapsnkPro, hNaomiCapsnkPro);
+		SetMenuItemBitmaps(hNaomiMenu, ID_NAOMI_CVS2, MF_BYCOMMAND, hNaomiCvs2, hNaomiCvs2);
+		SetMenuItemBitmaps(hNaomiMenu, ID_NAOMI_MVSC2, MF_BYCOMMAND, hNaomiMvsc2, hNaomiMvsc2);
+		SetMenuItemBitmaps(hNaomiMenu, ID_NAOMI_SFZ3U, MF_BYCOMMAND, hNaomiSfz3u, hNaomiSfz3u);
+		
+		InsertMenu(hMainMenu, 5, MF_BYPOSITION | MF_POPUP, (UINT_PTR)hNaomiMenu, TEXT("Naomi"));
+	}
+	
+	DrawMenuBar(hMain);
+}
+// =============================================================================================================>>>
+	
 void InitTreeContextMenu(HMENU hTreeMenu)
 {
 	MENUINFO mi;

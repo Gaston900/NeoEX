@@ -43,7 +43,7 @@ const options_entry emu_options::s_option_entries[] =
 	// search path options
 	{ nullptr,                                           nullptr,     core_options::option_type::HEADER,     "CORE SEARCH PATH OPTIONS" },
 	{ OPTION_PLUGINDATAPATH,                             ".",         core_options::option_type::PATH,       "path to base folder for plugin data (read/write)" },
-	{ OPTION_MEDIAPATH ";rp;biospath;bp",                "roms",      core_options::option_type::MULTIPATH,  "path to ROM sets and hard disk images" },
+	{ OPTION_MEDIAPATH ";rp;biospath;bp",                "roms/Arcade",      core_options::option_type::MULTIPATH,  "path to ROM sets and hard disk images" },
 	{ OPTION_HASHPATH ";hash_directory;hash",            "config/hash",      core_options::option_type::MULTIPATH,  "path to software definition files" }, // 修改的 (加斯顿90)
 	{ OPTION_SAMPLEPATH ";sp",                           "support/samples",  core_options::option_type::MULTIPATH,  "path to audio sample sets" }, // 修改的 (加斯顿90)
 	{ OPTION_ARTPATH,                                    "support/artwork",  core_options::option_type::MULTIPATH,  "path to artwork files" }, // 修改的 (加斯顿90)
@@ -222,7 +222,7 @@ const options_entry emu_options::s_option_entries[] =
 	{ OPTION_UI_FONT,                                    "default",   core_options::option_type::STRING,     "specify a font to use for UI text" },
 	{ OPTION_UI,                                         "cabinet",   core_options::option_type::STRING,     "type of UI (simple|cabinet)" },
 	{ OPTION_RAMSIZE ";ram",                             nullptr,     core_options::option_type::STRING,     "size of RAM (if supported by driver)" },
-	{ OPTION_CONFIRM_QUIT,                               "1",         core_options::option_type::BOOLEAN,    "ask for confirmation before exiting" }, // 修改的 (加斯顿90)
+	{ OPTION_CONFIRM_QUIT,                               "1",         core_options::option_type::BOOLEAN,    "ask for confirmation before exiting" },
 	{ OPTION_UI_MOUSE,                                   "1",         core_options::option_type::BOOLEAN,    "display UI mouse cursor" },
 	{ OPTION_LANGUAGE ";lang",                           "",          core_options::option_type::STRING,     "set UI display language" },
 	{ OPTION_NVRAM_SAVE ";nvwrite",                      "1",         core_options::option_type::BOOLEAN,    "save NVRAM data on exit" },

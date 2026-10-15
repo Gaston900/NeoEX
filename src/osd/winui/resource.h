@@ -220,6 +220,16 @@
 #define IDB_EXP_MISSING                 304
 #define IDB_EXP_CURRENT                 305
 #define IDB_IPS_MENU                    306
+#define IDB_ATOMIS_KOFNW                307
+#define IDB_ATOMIS_KOFXI                308
+#define IDB_ATOMIS_MSLUG6               309
+#define IDB_ATOMIS_NGBC                 310
+#define IDB_ATOMIS_SAMSPTK              311
+#define IDB_NAOMI_CAPSNK                312
+#define IDB_NAOMI_CAPSNK_PRO            313
+#define IDB_NAOMI_CVS2                  314
+#define IDB_NAOMI_MVSC2                 315
+#define IDB_NAOMI_SFZ3U                 316
 //=============================================>>>
 
 // 修改的 (Eziochiu)
@@ -548,11 +558,21 @@
 //===========================================>>>
 
 // 修改的 代码来源 (加斯顿90)
-/********************************************/
+//===========================================>>>
 #define IDC_SICKFA                      1413
 #define IDC_SICKFB                      1414
 #define IDC_SICKFC                      1415
-/********************************************/
+#define ID_ATOMISWAVE_KOFNW             5231
+#define ID_ATOMISWAVE_KOFXI             5232
+#define ID_ATOMISWAVE_MSLUG6            5233
+#define ID_ATOMISWAVE_NGBC              5234
+#define ID_ATOMISWAVE_SAMSPTK           5235
+#define ID_NAOMI_CAPSNK                 5236
+#define ID_NAOMI_CAPSNK_PRO             5237
+#define ID_NAOMI_CVS2                   5238
+#define ID_NAOMI_MVSC2                  5239
+#define ID_NAOMI_SFZ3U                  5240
+//===========================================>>>
 
 #define ID_CONTEXT_SHOW_FOLDER_START    39000
 #define ID_CONTEXT_SHOW_FOLDER_END      39499

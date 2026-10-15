@@ -1200,7 +1200,17 @@ IDB_EXP_ALL              BITMAP                     "res\\exp_all.bmp"
 IDB_EXP_COMPLETE         BITMAP                     "res\\exp_complete.bmp"
 IDB_EXP_MISSING          BITMAP                     "res\\exp_missing.bmp"
 IDB_EXP_CURRENT          BITMAP                     "res\\exp_current.bmp"
-IDB_IPS_MENU             BITMAP                     "res\\ipsmenu.bmp" 
+IDB_IPS_MENU             BITMAP                     "res\\ipsmenu.bmp"
+IDB_ATOMIS_KOFNW         BITMAP                     "res\\atomis_kofnw.bmp"
+IDB_ATOMIS_KOFXI         BITMAP                     "res\\atomis_kofxi.bmp"
+IDB_ATOMIS_MSLUG6        BITMAP                     "res\\atomis_mslug6.bmp"
+IDB_ATOMIS_NGBC          BITMAP                     "res\\atomis_ngbc.bmp"
+IDB_ATOMIS_SAMSPTK       BITMAP                     "res\\atomis_samsptk.bmp"
+IDB_NAOMI_CAPSNK         BITMAP                     "res\\naomi_capsnk.bmp"
+IDB_NAOMI_CAPSNK_PRO     BITMAP                     "res\\naomi_capsnk_pro.bmp"
+IDB_NAOMI_CVS2           BITMAP                     "res\\naomi_cvs2.bmp"
+IDB_NAOMI_MVSC2          BITMAP                     "res\\naomi_mvsc2.bmp"
+IDB_NAOMI_SFZ3U          BITMAP                     "res\\naomi_sfz3u.bmp"
 //===========================================================================>>>
 /////////////////////////////////////////////////////////////////////////////
 //
