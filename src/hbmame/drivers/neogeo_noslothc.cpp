@@ -10561,6 +10561,30 @@ ROM_START( nitdhc02 )
 	ROM_LOAD16_BYTE( "260_hc02.c2", 0x0000001, 0x800000, CRC(b5ddbb97) SHA1(b44dee65bbb5b2c6d7c6d4990762b26deaf3c696) )
 ROM_END
 
+ROM_START( pulstarhc01 ) //pulstarae
+	ROM_REGION( 0x300000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "089_hc01.p1",  0x000000, 0x100000, CRC(dcb02236) SHA1(078a71f82b1c4caca62dbc154679a9f9b4724da2) )
+	ROM_LOAD16_WORD_SWAP( "089.p2", 0x100000, 0x200000, CRC(028b774c) SHA1(fc5da2821a5072f2b78245fc59b6e3eeef116d16) )
+
+	NEO_SFIX_128K( "089_hc01.s1", CRC(2a659ff9) SHA1(cd8bec9be236219952cb7db3bba610fa914795b0) )
+
+	NEO_BIOS_AUDIO_128K( "089.m1", CRC(ff3df7c7) SHA1(59d2ef64f734f6026073b365300221909057a512) )
+
+	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "089.v1", 0x000000, 0x400000, CRC(6f726ecb) SHA1(e8e2a46af690ce6c7ee64a58ab5010d22df9548c) )
+	ROM_LOAD( "089.v2", 0x400000, 0x400000, CRC(9d2db551) SHA1(83f7e5db7fb1502ceadcd334df90b11b1bba78e5) )
+
+	ROM_REGION( 0x1c00000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "089.c1", 0x0000000, 0x400000, CRC(f4e97332) SHA1(54693827a99836e7d61c45d495dd78bf3fcf1544) )
+	ROM_LOAD16_BYTE( "089.c2", 0x0000001, 0x400000, CRC(836d14da) SHA1(99cc4f9b764503eff7849ff2977d90bb47c5564a) )
+	ROM_LOAD16_BYTE( "089.c3", 0x0800000, 0x400000, CRC(913611c4) SHA1(9664eb1fe1e6f8c3ddeeff872d38ea920ed38a82) )
+	ROM_LOAD16_BYTE( "089.c4", 0x0800001, 0x400000, CRC(44cef0e3) SHA1(34f6f348ba86a2a06cb9c43a16b97cf6ee6158ac) )
+	ROM_LOAD16_BYTE( "089.c5", 0x1000000, 0x400000, CRC(89baa1d7) SHA1(976c745c44967de61e2a23227835be580b1d283a) )
+	ROM_LOAD16_BYTE( "089.c6", 0x1000001, 0x400000, CRC(b2594d56) SHA1(685c0bf8ff76c76e41c2ceaebb96349634cfdb2e) )
+	ROM_LOAD16_BYTE( "089_hc01.c7", 0x1800000, 0x200000, CRC(3a74b3a2) SHA1(d98df081b7fc2508d26da5dc09599384f84fdc63) )
+	ROM_LOAD16_BYTE( "089_hc01.c8", 0x1800001, 0x200000, CRC(8a0bb5d5) SHA1(0f42546589fb7a852221109bb7bdf3789df2fb0f) )
+ROM_END
+
 ROM_START( pbobblenhc01 )
 	ROM_REGION( 0x100000, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "462_hc01.p1", 0x000000, 0x038db2, CRC(6a3227ff) SHA1(45e9006edcb44c208ee1e8221f47158d6a749667) )
@@ -12359,9 +12383,9 @@ ROM_END
 
 ROM_START( wjammershc04 ) //wjammeb
 	ROM_REGION( 0x100000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "065_hc04.p1", 0x000000, 0x100000, CRC(042fbcdf) SHA1(932b031048f9f5d85b40844f62966f34d133cc12) )
+	ROM_LOAD16_WORD_SWAP( "065_hc04.p1", 0x000000, 0x100000, CRC(e82fae8b) SHA1(e98eca1550fde0d67d89f2dbc41e1d9df8e325c8) )
 
-	NEO_SFIX_128K( "065_hc04.s1", CRC(9827f989) SHA1(15db8737f32d43a39dfb0575898eaeb0f69cc778) )
+	NEO_SFIX_128K( "065_hc04.s1", CRC(0b9ac678) SHA1(21370efe745388412259029827e402af345c5eab) )
 
 	NEO_BIOS_AUDIO(0x20000, "065.m1", CRC(52c23cfc) SHA1(809a7e072ad9acbffc25e9bd27cdb97638d09d07) )
 
@@ -12372,10 +12396,10 @@ ROM_START( wjammershc04 ) //wjammeb
 	ROM_LOAD( "065.v4", 0x300000, 0x100000, CRC(5dee7963) SHA1(f8e6de73d65dd80b29c711f00835a574a770cb4e) )
 
 	ROM_REGION( 0x400000, "sprites", 0 )
-	ROM_LOAD16_BYTE( "065.c1", 0x000000, 0x100000, CRC(c7650204) SHA1(42918d700d59864f8ab15caf968a062a563c9b09) )
-	ROM_LOAD16_BYTE( "065.c2", 0x000001, 0x100000, CRC(d9f3e71d) SHA1(fad1f64061eac1bf85bf6d75d2eae974a8c94069) )
-	ROM_LOAD16_BYTE( "065_hc04.c3", 0x200000, 0x100000, CRC(153363b0) SHA1(bb4d5d112989916790c02e663fdd9fd74f1de575) )
-	ROM_LOAD16_BYTE( "065_hc04.c4", 0x200001, 0x100000, CRC(c7b5b02d) SHA1(ec8b0e2ffe792b20d08bb1465a17afedc5dc22c1) )
+	ROM_LOAD16_BYTE( "065_hc04.c1", 0x000000, 0x100000, CRC(e267ae0e) SHA1(fc009a2b70546e8c69e657c740ac481235eae170) )
+	ROM_LOAD16_BYTE( "065_hc04.c2", 0x000001, 0x100000, CRC(b26f6d16) SHA1(da5a173e27a43a814c98b15df85de19d91ca414a) )
+	ROM_LOAD16_BYTE( "065_hc04.c3", 0x200000, 0x100000, CRC(2fb1c407) SHA1(912eb144c071bcaaa3415ed3ba38bb3ffa2ddca2) )
+	ROM_LOAD16_BYTE( "065_hc04.c4", 0x200001, 0x100000, CRC(1fb46167) SHA1(c6332ed8f2550e4c2c8296f9964b683d365124a1) )
 ROM_END
 
 ROM_START( wh1hc01 )
@@ -13084,6 +13108,7 @@ GAME( 2017, ninjamashc02,     ninjamas, neogeo_neobase,  neogeo, neogeo_state,  
 GAME( 1996, ninjamashc03,     ninjamas, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "DDJ",          "Ninja Master's - Haoh-ninpo-cho (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, nitdhc01,         nitd,     neogeo_multiboot,neogeo, neogeo_state,    init_nitd,     ROT0, "Shyma.X",      "Nightmare in the Dark (French Translation)", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, nitdhc02,         nitd,     neogeo_multiboot,neogeo, neogeo_state,    init_nitd,     ROT0, "hack",         "Nightmare in the Dark (Spanish Translation)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, pulstarhc01,      pulstar,  neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "Boomchil",     "Pulstar (Aegis)", MACHINE_SUPPORTS_SAVE )
 GAME( 2009, pbobblenhc01,     pbobblen, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Puzzle Bobble / Bust-A-Move (Crazy beta 2 2009-07-23)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, pbobblenhc02,     pbobblen, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Puzzle Bobble / Bust-A-Move Crazy", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, pbobblenhc03,     pbobblen, neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Puzzle Bobble / Bust-A-Move (Precise Controls)", MACHINE_SUPPORTS_SAVE )
@@ -13160,7 +13185,7 @@ GAME( 1996, wakuwak7hc03,     wakuwak7, neogeo_neo304h,  neogeo, neogeo_state,  
 GAME( 1994, wjammershc01,     wjammers, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "Shyma.X",      "Windjammers / Flying Power Disc (French Translation)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, wjammershc02,     wjammers, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Windjammers / Flying Power Disc (Korean Translation)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, wjammershc03,     wjammers, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "Boomchild",    "Windjammers / Flying Power Disc (Let me play longer)", MACHINE_SUPPORTS_SAVE )
-GAME( 2026, wjammershc04,     wjammers, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Windjammers / Flying Power Disc (Endless Breeze)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, wjammershc04,     wjammers, neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "Windjammers / Flying Power Disc (Endless Breeze v1.2.0)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, wh1hc01,          wh1,      neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, wh1hc02,          wh1,      neogeo_neobase,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, wh2hc01,          wh2,      neogeo_neo304h,  neogeo, neogeo_state,    init_neogeo,   ROT0, "hack",         "World Heroes 2 (Infinite Energy 2018-09-12)", MACHINE_SUPPORTS_SAVE )

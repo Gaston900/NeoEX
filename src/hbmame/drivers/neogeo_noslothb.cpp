@@ -2000,6 +2000,24 @@ ROM_START( seafight )
 	ROM_LOAD16_BYTE( "444.c2", 0x000001, 0x100000, CRC(1f43c1f4) SHA1(aa0cd4eebb02225b939f57cee4347c0a43654d31) )
 ROM_END
 
+// 533: Sky Lance (v1) by Eagle Software
+// Bugs: Bad colours and gfx
+ROM_START( skylance )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "533.p1", 0x000000, 0x80000, CRC(29e1968d) SHA1(d8996809f3c77b0e1dafdd634e21ba255553cec3) )
+
+	NEO_SFIX_128K( "533.s1", CRC(bd69c9ff) SHA1(e0694292073549d50cbcb1e02f853c3122805bff) )
+
+	NEO_BIOS_AUDIO_128K( "533.m1", CRC(cb88d068) SHA1(074a5a4be1e2bbb296709937053a3bd52b79a4c5) )
+
+	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "533.v1", 0x000000, 0x455f00, CRC(897c1fbc) SHA1(7c539a98a9c95cf4eccda2e5f432a42628af4102) )
+
+	ROM_REGION( 0x800000, "sprites", ROMREGION_ERASE00 )
+	ROM_LOAD16_BYTE( "533.c1", 0x000000, 0x400000, CRC(e80e7df9) SHA1(f3234d43b9c78630f4100d30e79820ba48a20969) )
+	ROM_LOAD16_BYTE( "533.c2", 0x000001, 0x400000, CRC(0668da32) SHA1(216fc99e3929dd6d6f08196546aa900000d17248) )
+ROM_END
+
 // 674 : Sound-Loop Demo by freem.
 // Bugs: The first time 5 is pressed, the game resets. After that it has no effect.
 ROM_START( snddemo )
@@ -2055,15 +2073,14 @@ ROM_START( spriteex )
 	ROM_CONTINUE( 0x400001, 0x200000 )
 ROM_END
 
-// 528: Snow Bros (beta 0.3) by Bendk97
-// Bugs: No Sound
+// 528: Snow Bros (beta 1.0) by Bendk97
 ROM_START( snowbrosn )
 	ROM_REGION( 0x100000, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "528.p1", 0x000000, 0x80000, CRC(d429ba5b) SHA1(4b853dc60216f16310ae6903cc18e60c85ad9c49) )
+	ROM_LOAD16_WORD_SWAP( "528.p1", 0x000000, 0x80000, CRC(3c91d30a) SHA1(e4877602b558cf75b4aa4c7ec8aed8eac4f0bb9e) )
 
 	NEO_SFIX_128K( "528.s1", CRC(5fb678af) SHA1(40f78732f1f6c63ddfbbd9b3b9086369c1cceaef) )
 
-	NEO_BIOS_AUDIO_64K( "528.m1", CRC(ee77fdcb) SHA1(1d985af3f60b8925e25f20bc0bf8bbd7eab52cae) )
+	NEO_BIOS_AUDIO_64K( "528.m1", CRC(ca694dcf) SHA1(0f75452eb7f72c51792ba6e29b266e31cfcd470f) )
 
 	ROM_REGION( 0x800000, "ymsnd:adpcma", 0 )
 	ROM_LOAD( "528.v1", 0x000000, 0x800000, CRC(548c091b) SHA1(20997304536d0319d81df73cf43738ca208e54fc) )
@@ -2288,6 +2305,22 @@ ROM_START( vssmbneo )
 	ROM_REGION( 0x400000, "sprites", ROMREGION_ERASE00 )
 	ROM_LOAD16_BYTE( "525.c1", 0x0000000, 0x200000, CRC(bfa287fa) SHA1(ae85fde5636e49607aae509b89cd9786a068c749) )
 //	ROM_LOAD16_BYTE( "525.v2", 0x0000001, 0x200000, CRC(8d89877e) SHA1(7d76d48d64d7ac5411d714a4bb83f37e3e5b8df6) )
+ROM_END
+
+ROM_START( warriorman )
+	ROM_REGION( 0x100000, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "612.p1", 0x000000, 0x80000, CRC(7a91cc78) SHA1(3114bc6276efa09cdb451c8e2ac09226009e59b0) )
+
+	NEO_SFIX_128K( "612.s1", CRC(4c175fa4) SHA1(06834aa930d981959c4be0f4391b1d37c8688785) )
+
+	NEO_BIOS_AUDIO_128K( "612.m1", CRC(a3e65a9c) SHA1(5ecf9d35e870eeae47f9ea21e198a803485a07c1) )
+
+	ROM_REGION( 0x1000000, "ymsnd:adpcma", 0 )
+	ROM_LOAD( "612.v1", 0x000000, 0x1000000, CRC(3dccb4ad) SHA1(0e12cb865a9091297ce36327d8e1408d5388d31e) )
+
+	ROM_REGION( 0x800000, "sprites", 0 )
+	ROM_LOAD16_BYTE( "612.c1", 0x000000, 0x400000, CRC(7864d85f) SHA1(4e82ed3d09f496f37af4e3e9fa795aa0d105e94d) )
+	ROM_LOAD16_BYTE( "612.c2", 0x000001, 0x400000, CRC(b7f686ec) SHA1(689e9df41dedbde80155380569beebd0d8421d0f) )
 ROM_END
 
 // 417 : World Racer by Blastar
@@ -2533,6 +2566,7 @@ GAME( 2026, sgz,        neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_
 GAME( 2019, shaman24,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Vasily Familiya", "Shaman King Demo (HB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2025, shinobin,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Hoffman", "Shinobi - Neo Geo Conversion (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, seafight,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "kl3mousse", "Sea Fighter (HB)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, skylance,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Eagle Software", "Sky Lance (HB)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
 GAME( 2015, snddemo,    neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Freem", "Sound-Loop Demo (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, spkick,     neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Kakoeimon", "Super Power Kick Beta 2 (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2011, spriteex,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Furrtek", "Sprite Experimenter (HB)", MACHINE_SUPPORTS_SAVE )
@@ -2549,6 +2583,7 @@ GAME( 2019, venuswars,  neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_
 GAME( 2025, violentv,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Balek Corp", "Violent Vengeance: The Universe Hero Beta (HB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2018, vlad2000,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Vasily Familiya", "Vladivostok 2000 Demo (HB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2026, vssmbneo,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "sabino", "Vs. Super Mario Bros. Neo (HB)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, warriorman, neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "NK Home Entertainment", "Warrior Man (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, wrldracr,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Blastar", "World Racer (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, ww2demo,    neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Rastersoft", "WW2 - Arcade Development Project Demo (HB)", MACHINE_IS_INCOMPLETE | MACHINE_SUPPORTS_SAVE )
 GAME( 2023, yoyoshkn,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Dr Ludos", "Yo-Yo Shuriken (HB)", MACHINE_SUPPORTS_SAVE )

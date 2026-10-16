@@ -1008,6 +1008,7 @@ xmcotahc03
 xmvsfhc01
 xmvsfhc02
 xmvsfhc03
+xmvsfhc04
 
 @source:../hbmame/drivers/cps2.cpp
 ssf2tgmc
@@ -2694,6 +2695,7 @@ sgz
 shaman24
 shinobin
 seafight
+skylance
 snddemo
 spkick
 spriteex
@@ -2709,6 +2711,7 @@ vaporous
 violentv
 vlad2000
 vssmbneo
+warriorman
 wrldracr
 ww2demo
 yoyoshkn
@@ -3134,6 +3137,7 @@ ninjamashc02
 ninjamashc03
 nitdhc01
 nitdhc02
+pulstarhc01
 pbobblenhc01
 pbobblenhc02
 pbobblenhc03
