@@ -17,6 +17,7 @@ CPUS["SH"] = true -- CPS3
 CPUS["MCS51"] = true -- 1943
 CPUS["M6809"] = true -- GNG
 CPUS["M6805"] = true -- TIGEROAD
+CPUS["ARM7"] = true -- PGM2
 
 --------------------------------------------------
 -- specify available sound cores
@@ -32,6 +33,8 @@ SOUNDS["YM2151"] = true -- CPS1
 SOUNDS["SN76496"] = true -- EXEDEXES
 SOUNDS["YM3812"] = true -- MITCHELL
 SOUNDS["CDDA"] = true -- CPS3
+SOUNDS["MPEG_AUDIO"] = true -- PGM2
+SOUNDS["YMZ770"] = true -- PGM2
 
 --------------------------------------------------
 -- specify available video cores
@@ -60,7 +63,8 @@ MACHINES["I8255"] = true -- KENSEIM
 MACHINES["Z80CTC"] = true -- KENSEIM
 MACHINES["TTL74259"] = true -- SONSON
 MACHINES["INPUT_MERGER"] = true --NEOGEO CD
-
+MACHINES["BANKDEV"] = true -- CPS2
+MACHINES["ARM_AIC"] = true -- PGM2
 
 --------------------------------------------------
 -- specify available bus cores
@@ -77,6 +81,7 @@ BUSES["NEOGEO_CTRL"] = true -- NEOGEO
 function linkProjects_mame_arcade(_target, _subtarget)
 	links {
 		"capcom",
+		"igs",
 		"neogeo",
 		"snk",
 	}
@@ -177,6 +182,14 @@ files {
 	MAME_DIR .. "src/mame/capcom/tigeroad_v.cpp",
 --	MAME_DIR .. "src/mame/capcom/tvcapcom.cpp",
 	MAME_DIR .. "src/mame/capcom/vulgus.cpp",
+}
+
+createMAMEProjects(_target, _subtarget, "igs")
+files {
+	MAME_DIR .. "src/mame/igs/igs036crypt.cpp",
+	MAME_DIR .. "src/mame/igs/pgm2.cpp",
+	MAME_DIR .. "src/mame/igs/pgm2_memcard.cpp",
+	MAME_DIR .. "src/mame/igs/pgm2_v.cpp",
 }
 
 createMAMEProjects(_target, _subtarget, "neogeo")

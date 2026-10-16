@@ -36,6 +36,7 @@ capcom/srumbler.cpp
 capcom/supduck.cpp
 capcom/tigeroad.cpp
 capcom/vulgus.cpp
+igs/pgm2.cpp
 
 ../hbmame/drivers/cps1.cpp
 -3wondersbi
@@ -49,6 +50,9 @@ capcom/mitchell.cpp
 -pkladiesbl
 -pkladiesblu
 -spangbl2
+
+igs/pgm2.cpp
+-bubucar
 
 capcom/vulgus.cpp
 -1942iti
