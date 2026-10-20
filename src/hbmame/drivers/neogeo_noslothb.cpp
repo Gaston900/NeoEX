@@ -2570,7 +2570,7 @@ GAME( 2026, skylance,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_
 GAME( 2015, snddemo,    neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Freem", "Sound-Loop Demo (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, spkick,     neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Kakoeimon", "Super Power Kick Beta 2 (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2011, spriteex,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Furrtek", "Sprite Experimenter (HB)", MACHINE_SUPPORTS_SAVE )
-GAME( 2026, snowbrosn,  neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Bendk97", "Snow Bros (HB)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, snowbrosn,  neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Bendk97", "Snow Bros - Neo Geo Port (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2026, ssodan,     neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Bendk97", "Sword of Sodan (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, syscheck,   neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "Blastar", "Neo System Check (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, teot,       neogeo,   neogeo_neo304h,  neogeo, neogeo_state,   init_neogeo,   ROT0, "OzzyOuzo", "The Eye of Typhoon Beta 7 (HB)", MACHINE_SUPPORTS_SAVE )
