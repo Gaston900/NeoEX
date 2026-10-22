@@ -3036,9 +3036,9 @@ ROM_END
 
 ROM_START( sf2cehc11 ) //sf2cre
 	ROM_REGION( CODE_SIZE, "maincpu", 0 )
-	ROM_LOAD16_WORD_SWAP( "s92_23b_hc11.8f", 0x000000, 0x80000, CRC(25dc14c8) SHA1(fc7b5de3a50d7d9ee977091bab5f82f824e386f2) )
-	ROM_LOAD16_WORD_SWAP( "s92_22b_hc11.7f", 0x080000, 0x80000, CRC(1c9dd91c) SHA1(66fbd10958d3b9f027bc3ba85c99b649cf866ab7) )
-	ROM_LOAD16_WORD_SWAP( "s92_21a_hc11.6f", 0x100000, 0x80000, CRC(925a7877) SHA1(1960dca35f0ca6f2b399a9fccfbc0132ac6425d1) )
+	ROM_LOAD16_WORD_SWAP( "s92_23b_hc11.8f", 0x000000, 0x80000, CRC(ffa481c9) SHA1(4a980dbc7ed668ce2617b6bc73b244852b8f987d) )
+	ROM_LOAD16_WORD_SWAP( "s92_22b_hc11.7f", 0x080000, 0x80000, CRC(e2944558) SHA1(da83405d8a4ddd6f4d91a45e6207331900bfe6dc) )
+	ROM_LOAD16_WORD_SWAP( "s92_21a_hc11.6f", 0x100000, 0x80000, CRC(c9c4acb8) SHA1(87dace0d88acb7dafdbae46ee64d12d55ee26571) )
 
 	ROM_REGION( 0x600000, "gfx", 0 )
 	ROM_LOAD64_WORD( "s92-1m.3a",  0x000000, 0x80000, CRC(03b0d852) SHA1(f370f25c96ad2b94f8c53d6b7139100285a25bef) )
@@ -4850,7 +4850,7 @@ GAME( 2023, sf2cehc07,    sf2ce,    cps1_12MHz,     sf2,      cps_state,   init_
 GAME( 2025, sf2cehc08,    sf2ce,    cps1_12MHz,     sf2mix,   cps_state,   init_cps1,     ROT0,   "hack",      "Street Fighter II': Champion Edition (Mix 1.7 2025-06-11)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, sf2cehc09,    sf2ce,    cps1_12MHz,     sf2,      cps_state,   init_cps1,     ROT0,   "hack",      "Street Fighter II': Champion Edition (Brazil Translation)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, sf2cehc10,    sf2ce,    cps1_12MHz,     sf2,      cps_state,   init_cps1,     ROT0,   "hack",      "Street Fighter II': Champion Edition (Hispanic Translation)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, sf2cehc11,    sf2ce,    cps1_12MHz,     sf2,      cps_state,   init_cps1,     ROT0,   "hack",      "Street Fighter II': Champion Edition (Re-edit v0.29.7)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, sf2cehc11,    sf2ce,    cps1_12MHz,     sf2,      cps_state,   init_cps1,     ROT0,   "hack",      "Street Fighter II': Champion Edition (Re-edit v0.32)", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, sf2cehc12,    sf2ce,    cps1_12MHz,     sf2,      cps_state,   init_cps1,     ROT0,   "hack",      "Street Fighter II': Champion Edition (Golden Magic 2020-10-13)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, sf2cehc13,    sf2ce,    cps1_12MHz,     sf2,      cps_state,   init_cps1,     ROT0,   "hack",      "Street Fighter II': Champion Edition (Aimed Barrels)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, sf2cehc14,    sf2ce,    cps1_12MHz,     sf2,      cps_state,   init_cps1,     ROT0,   "hack",      "Street Fighter II': Champion Edition (Aimed Fires)", MACHINE_SUPPORTS_SAVE )
