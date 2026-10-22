@@ -1675,7 +1675,7 @@ GAME( 1999, sfiii3hc03,     sfiii3,   sfiii3,        cps3,       cps3_state,    
 GAME( 2013, sfiii3hc04,     sfiii3,   sfiii3,        cps3,       cps3_state,      init_sfiii3,   ROT0,      "hack",        "Street Fighter III 3rd Strike: Fight for the Future (4rd Arrange 2013-07-16)", 0 )
 GAME( 1999, sfiii3hc05,     sfiii3,   sfiii3,        cps3,       cps3_hbmame,     init_sfiii3n,  ROT0,      "hack",        "Street Fighter III 3rd Strike: Fight for the Future (Enable Hidden Characters)", 0 ) // Hack Old Roms
 GAME( 2021, sfiii3hc06,     sfiii3,   sfiii3,        cps3,       cps3_state,      init_sfiii3,   ROT0,      "hack",        "Street Fighter III 3rd Strike: Fight for the Future (re:THIRD update 2021)", 0 )
-GAME( 2026, sfiii3hc07,     sfiii3,   sfiii3,        cps3,       cps3_state,      init_sfiii3,   ROT0,      "hack",        "Street Fighter III 3rd Strike: Fight for the Future (Tag v4.3)", 0 )
+GAME( 2026, sfiii3hc07,     sfiii3,   sfiii3,        cps3,       cps3_state,      init_sfiii3,   ROT0,      "Morphus56K",  "Street Fighter III 3rd Strike: Fight for the Future (Tag v4.3)", 0 )
 
 /*    YEAR  NAME            PARENT    MACHINE        INPUT       CLASS                INIT      MONITOR     COMPANY        FULLNAME FLAGS */
 // Capcom Earlier
