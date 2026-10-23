@@ -2775,6 +2775,35 @@ ROM_START( sfz2alhc06 ) //sfz2albr
 	ROM_LOAD( "sfz2al.key",   0x00, 0x14, CRC(2904963e) SHA1(f4fa44646746ab4c6f2e76eaba57a7aee32e2933) )
 ROM_END
 
+ROM_START( sfz2alhc07 ) //sfz2aldash
+	ROM_REGION( CODE_SIZE, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "szaj_hc07.03", 0x000000, 0x80000, CRC(ab1ac222) SHA1(949956b142b467e38ed866d8d5752d1803be8b49) )
+	ROM_LOAD16_WORD_SWAP( "szaj_hc07.04", 0x080000, 0x80000, CRC(ae70e890) SHA1(2f2163ca72645a316054ccdc51eefa5e3a401bd1) )
+	ROM_LOAD16_WORD_SWAP( "szaa.05", 0x100000, 0x80000, CRC(f053a55e) SHA1(f98a8af5cd33a543a5596d59381f9adafed38854) )
+	ROM_LOAD16_WORD_SWAP( "szaa.06", 0x180000, 0x80000, CRC(cfc0e7a8) SHA1(31ed58451c7a6ac88a8fccab369167694698f044) )
+	ROM_LOAD16_WORD_SWAP( "szaj_hc07.07a", 0x200000, 0x80000, CRC(be2178e3) SHA1(c5085dcf3d482939a345d517c354186450f4d651) )
+	ROM_LOAD16_WORD_SWAP( "szaj_hc07.08a", 0x280000, 0x80000, CRC(90e4727a) SHA1(19163cd055fff795761e926f2a55896b4329f699) )
+
+	ROM_REGION( 0x1400000, "gfx", 0 )
+	ROM_LOAD64_WORD( "szaj_hc07.13m",   0x0000000, 0x400000, CRC(18f746b2) SHA1(15b2ac9cf63721e4f073364790ae0acba6cc8716) )
+	ROM_LOAD64_WORD( "szaj_hc07.15m",   0x0000002, 0x400000, CRC(7d3ba3aa) SHA1(ede0098547374db68d50f57034d8277db0457c3f) )
+	ROM_LOAD64_WORD( "szaj_hc07.17m",   0x0000004, 0x400000, CRC(0a6a6660) SHA1(045141488a73cce7866687b216e7a6ccba8ba701) )
+	ROM_LOAD64_WORD( "szaj_hc07.19m",   0x0000006, 0x400000, CRC(65ab1a0f) SHA1(dad7e6b6acbe6dd640348baaabd503f4d3f14b26) )
+	ROM_LOAD64_WORD( "szaj_hc07.14m",   0x1000000, 0x100000, CRC(445c63d2) SHA1(1b6f5b68e67b76d70a99ebbc812d657709a8bd34) )
+	ROM_LOAD64_WORD( "szaj_hc07.16m",   0x1000002, 0x100000, CRC(87eff508) SHA1(c6a24e6bb4ab944d9db93d338424eb1fc5a08bf1) )
+	ROM_LOAD64_WORD( "szaj_hc07.18m",   0x1000004, 0x100000, CRC(f1d8c9d8) SHA1(d36c04fec2202ed77bbde60927accf1a7aa05544) )
+	ROM_LOAD64_WORD( "szaj_hc07.20m",   0x1000006, 0x100000, CRC(f874c20e) SHA1(e9063233ea682d3565819aad32d4ed0dc1e065e7) )
+
+	ROM_REGION( QSOUND_SIZE, "audiocpu", 0 )
+	ROM_LOAD( "szaj_hc07.01",   0x00000, 0x08000, CRC(ef593e8a) SHA1(d695aa4216a8f579e7f835ca5f8042c2ebc2ddb5) )
+	ROM_CONTINUE(         0x10000, 0x18000 )
+	ROM_LOAD( "szaj_hc07.02",   0x28000, 0x20000, CRC(f6a8628b) SHA1(0b93098cf7ad3fa20c8c28fb856b7e578ed7a0d4) )
+
+	ROM_REGION( 0x400000, "qsound", 0 )
+	ROM_LOAD16_WORD_SWAP( "szaj_hc07.11m",   0x000000, 0x200000, CRC(f8cce5f7) SHA1(09dcc5f4ae3bdf2a5a527066e908e76b78f0da2b) )
+	ROM_LOAD16_WORD_SWAP( "szaj_hc07.12m",   0x200000, 0x200000, CRC(6bd3daee) SHA1(8c1141783b3c60f90896242e79b4e065d721447d) )
+ROM_END
+
 ROM_START( ssf2thc01 )  // ssf2tnl 0.9
 	ROM_REGION( CODE_SIZE, "maincpu", 0 )
 	ROM_LOAD16_WORD_SWAP( "sfxh_hc01.03c",  0x000000, 0x80000, CRC(4beda7d5) SHA1(2045e322043387a05fb1773d45bcc2c1215a9a98) )
@@ -3020,6 +3049,43 @@ ROM_START( ssf2xhc01 ) //ssf2xjr1trn
 	ROM_LOAD64_WORD( "sfx.23m",   0xc00002, 0x100000, CRC(760f2927) SHA1(491e28e14ee06821fc9e709efa7b91313bc0c2db) )
 	ROM_LOAD64_WORD( "sfx.25m",   0xc00004, 0x100000, CRC(1ee90208) SHA1(83df1d9953560edddc2951ea426d29fb014e6a8a) )
 	ROM_LOAD64_WORD( "sfx.27m",   0xc00006, 0x100000, CRC(f814400f) SHA1(ad6921af36d0bd5dfb89b1fb53c3ca3fd92d7204) )
+
+	ROM_REGION( QSOUND_SIZE, "audiocpu", 0 )
+	ROM_LOAD( "sfx.01",   0x00000, 0x08000, CRC(b47b8835) SHA1(c8b2d50fe3a329bd0592ea160d505155d873dab1) )
+	ROM_CONTINUE(         0x10000, 0x18000 )
+	ROM_LOAD( "sfx.02",   0x28000, 0x20000, CRC(0022633f) SHA1(cab3afc79da53e3887eb1ccd1f4d19790728e6cd) )
+
+	ROM_REGION( 0x400000, "qsound", 0 )
+	ROM_LOAD16_WORD_SWAP( "sfx.11m",   0x000000, 0x200000, CRC(9bdbd476) SHA1(a8520f77f30b97aae36408e0c4ca1ebbde1808a5) )
+	ROM_LOAD16_WORD_SWAP( "sfx.12m",   0x200000, 0x200000, CRC(a05e3aab) SHA1(d4eb9cae66c74e956569fea8b815156fbd420f83) )
+
+	ROM_REGION( 0x20, "key", 0 )
+	ROM_LOAD( "ssf2xj.key",   0x00, 0x14, CRC(160d1424) SHA1(187baff83b54acfdcedd9b9222a4cc768040c622) )
+ROM_END
+
+ROM_START( ssf2xhc02 ) //ssf2xdced
+	ROM_REGION( CODE_SIZE, "maincpu", 0 )
+	ROM_LOAD16_WORD_SWAP( "sfxj_hc02.03",  0x000000, 0x80000, CRC(53968914) SHA1(b3978b556cd689d34151759cfd65fd2dd12ea484) )
+	ROM_LOAD16_WORD_SWAP( "sfxj_hc02.04a", 0x080000, 0x80000, CRC(d8a825e6) SHA1(7b111f47430ca403f1fb263a63c4e72046bf5533) )
+	ROM_LOAD16_WORD_SWAP( "sfxj.05",  0x100000, 0x80000, CRC(f4ff18f5) SHA1(aa713c9e1a2eba35bf1c9b40bb262ff7e46b9ce4) )
+	ROM_LOAD16_WORD_SWAP( "sfxj.06b", 0x180000, 0x80000, CRC(413477c2) SHA1(63bf120566db0c23cc726e7cdbf78428582c694f) )
+	ROM_LOAD16_WORD_SWAP( "sfxj.07a", 0x200000, 0x80000, CRC(a18b3d83) SHA1(f08dd30a1b864fdd5d05d58a0b43e65077702d32) )
+	ROM_LOAD16_WORD_SWAP( "sfxj.08",  0x280000, 0x80000, CRC(2de76f10) SHA1(8cbe96dfeaa41306caa2819b82272ce3b0b9f926) )
+	ROM_LOAD16_WORD_SWAP( "sfxj_hc02.09",  0x300000, 0x80000, CRC(c7f1e39d) SHA1(f7cd83585d72693ebea145ea7952601fbda44b02) )
+
+	ROM_REGION( 0x1000000, "gfx", 0 )
+	ROM_LOAD64_WORD( "sfx.13m",   0x000000, 0x200000, CRC(cf94d275) SHA1(bf2a6d98a656d1cb5734da7836686242d3211137) )
+	ROM_LOAD64_WORD( "sfx.15m",   0x000002, 0x200000, CRC(5eb703af) SHA1(4b302dbb66e8a5c2ad92798699391e981bada427) )
+	ROM_LOAD64_WORD( "sfx.17m",   0x000004, 0x200000, CRC(ffa60e0f) SHA1(b21b1c749a8241440879bf8e7cb33968ccef97e5) )
+	ROM_LOAD64_WORD( "sfx.19m",   0x000006, 0x200000, CRC(34e825c5) SHA1(4d320fc96d1ef0b9928a8ce801734245a4c097a5) )
+	ROM_LOAD64_WORD( "sfx.14m",   0x800000, 0x100000, CRC(b7cc32e7) SHA1(0f4d26af338dab5dce5b7b34d32ad0c573434ace) )
+	ROM_LOAD64_WORD( "sfx.16m",   0x800002, 0x100000, CRC(8376ad18) SHA1(f4456833fb396e6501f4174c0fe5fd63ea40a188) )
+	ROM_LOAD64_WORD( "sfx.18m",   0x800004, 0x100000, CRC(f5b1b336) SHA1(4b060501e56b9d61294748da5387cdae5280ec4d) )
+	ROM_LOAD64_WORD( "sfx.20m",   0x800006, 0x100000, CRC(459d5c6b) SHA1(32b11ba7a12004aff810d719bff7508204c7b7c0) )
+	ROM_LOAD64_WORD( "sfxj_hc02.21m",   0xc00000, 0x100000, CRC(69f3654c) SHA1(0f5be6edac9bff7a8cf6a2aa1791c54b7715115c) )
+	ROM_LOAD64_WORD( "sfxj_hc02.23m",   0xc00002, 0x100000, CRC(5a1a5e58) SHA1(36fd52bc506da05548d3e005447a651b5ed0b463) )
+	ROM_LOAD64_WORD( "sfxj_hc02.25m",   0xc00004, 0x100000, CRC(632c11bf) SHA1(36bb50deebcd969bd46d0364beed700de439527f) )
+	ROM_LOAD64_WORD( "sfxj_hc02.27m",   0xc00006, 0x100000, CRC(09883f5f) SHA1(7537aed7a4ced6fff157f8dc9c136ff5afb4df7d) )
 
 	ROM_REGION( QSOUND_SIZE, "audiocpu", 0 )
 	ROM_LOAD( "sfx.01",   0x00000, 0x08000, CRC(b47b8835) SHA1(c8b2d50fe3a329bd0592ea160d505155d873dab1) )
@@ -3509,7 +3575,7 @@ GAME( 1998, mvschc01,    mvsc,         cps2,         cps2_2p6b, cps2_state, init
 GAME( 1998, mvschc02,    mvsc,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Marvel Vs. Capcom: Clash of Super Heroes (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, mvschc03,    mvsc,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "GOTVG",       "Marvel Vs. Capcom: Clash of Super Heroes (Plus 2023-04-18)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, mvschc04,    mvsc,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "GOTVG",       "Marvel Vs. Capcom: Clash of Super Heroes (Infinite Energy 2025-09-01)", MACHINE_SUPPORTS_SAVE )
-GAME( 2026, mvschc05,    mvsc,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "GOTVG",       "Marvel Vs. Capcom: Clash of Super Heroes (Delayed Hyper Combo v11)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, mvschc05,    mvsc,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "Morphus56K",  "Marvel Vs. Capcom: Clash of Super Heroes (Delayed Hyper Combo v11)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, mshhc01,     msh,          cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Marvel Super Heroes (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, mshhc02,     msh,          cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "DDJ",         "Marvel Super Heroes (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 2026, mshhc03,     msh,          cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "Morphus56K",  "Marvel Super Heroes (Tag v1.2)", MACHINE_SUPPORTS_SAVE )
@@ -3546,6 +3612,7 @@ GAME( 2016, sfz2alhc03,  sfz2al,       cps2,         cps2_2p6b, cps2_state, init
 GAME( 2009, sfz2alhc04,  sfz2al,       cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Street Fighter Zero 2 Alpha (Dragon Level 2009-04-24)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, sfz2alhc05,  sfz2al,       cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Street Fighter Zero 2 Alpha (Korean Translation)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, sfz2alhc06,  sfz2al,       cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Street Fighter Zero 2 Alpha (Brazil Translation)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, sfz2alhc07,  sfz2al,       dead_cps2,    cps2_2p6b, cps2_state, init_cps2,     ROT0,   "Zer0-NexuS",  "Street Fighter Zero 2 Alpha (Dash / Gold v1.2.1)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, ssf2thc01,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Super Street Fighter II Turbo (New Legacy v0.9 beta, 2024-04-02)", MACHINE_SUPPORTS_SAVE )
 GAME( 2024, ssf2thc02,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Super Street Fighter II Turbo (Difficulty Fix)", MACHINE_SUPPORTS_SAVE )
 GAME( 2005, ssf2thc03,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Super Street Fighter II Turbo (French Translation)", MACHINE_SUPPORTS_SAVE )
@@ -3553,6 +3620,7 @@ GAME( 1994, ssf2thc04,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init
 GAME( 1994, ssf2thc05,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "DDJ",         "Super Street Fighter II Turbo (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 2026, ssf2thc06,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "DDJ",         "Super Street Fighter II Turbo (Tag V3)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, ssf2xhc01,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Super Street Fighter II X: Grand Master Challenge (Trainer)", MACHINE_SUPPORTS_SAVE )
+GAME( 1994, ssf2xhc02,   ssf2t,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "Zer0-NexuS",  "Super Street Fighter II X: Grand Master Challenge (Dreamcast Gouki RC1 2026-10-20)", MACHINE_SUPPORTS_SAVE )
 GAME( 2012, ssf2hc01,    ssf2,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "DDJ",         "Super Street Fighter II X: The New Challengers (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, spf2thc01,   spf2t,        cps2,         cps2_2p2b, cps2_state, init_cps2,     ROT0,   "hack",        "Super Puzzle Fighter II Turbo (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, spf2thc02,   spf2t,        cps2,         cps2_2p2b, cps2_state, init_cps2,     ROT0,   "hack",        "Super Puzzle Fighter II Turbo (Color Blind v1.1)", MACHINE_SUPPORTS_SAVE )

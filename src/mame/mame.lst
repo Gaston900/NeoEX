@@ -991,6 +991,7 @@ sfz2alhc03
 sfz2alhc04
 sfz2alhc05
 sfz2alhc06
+sfz2alhc07
 ssf2thc01
 ssf2thc02
 ssf2thc03
@@ -998,6 +999,7 @@ ssf2thc04
 ssf2thc05
 ssf2thc06
 ssf2xhc01
+ssf2xhc02
 ssf2hc01
 spf2thc01
 spf2thc02
@@ -1014,14 +1016,21 @@ xmvsfhc03
 xmvsfhc04
 
 @source:../hbmame/drivers/cps2.cpp
-ssf2tgmc
-ssf2tuc
-ssf2xuc
 mshvsfru
 mshvsfrj
 mshvsfex
 mshvsfej
 nwarrru
+sfare
+sfzrej
+ssf2tgmc
+ssf2tuc
+ssf2xuc
+usf2t
+usf2xj
+sfa2re
+sfz2rea
+sfz2rej
 sfz2alr
 sfa2d
 sfa2g
@@ -1029,9 +1038,6 @@ sfz2d
 sfz2da
 sfa2ex
 sfz2ex
-sfa2re
-sfz2rej
-sfz2rea
 sfa3re
 sfz3rej
 vamprest
