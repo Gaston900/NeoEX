@@ -643,6 +643,11 @@ ROM_START( eira_cd )
 	DISK_IMAGE_READONLY( "817", 0, SHA1(c441932e9566f0647888ceeff3229622ae9609a8) )
 ROM_END
 
+ROM_START( eswat_cd )
+	NEOCDZ_BASE
+	DISK_IMAGE_READONLY( "eswat", 0, SHA1(2b8228d0c7075591c21bc9a0d8f9b5352761451b) )
+ROM_END
+
 ROM_START( ffury_cd )
 	NEOCDZ_BASE
 	DISK_IMAGE_READONLY( "ffuryae", 0, SHA1(c0e0e4180bddc3691ab59e5e2900ab3dcc9080f7) )
@@ -666,6 +671,11 @@ ROM_END
 ROM_START( natademo_cd )
 	NEOCDZ_BASE
 	DISK_IMAGE_READONLY( "818", 0, SHA1(22ac0c741defe9d792b9f38cd48dd0742140ec0a) )
+ROM_END
+
+ROM_START( neotris2_cd )
+	NEOCDZ_BASE
+	DISK_IMAGE_READONLY( "neotris2", 0, SHA1(715b54bf5b6e55617d8f9bfd1f0794c6e377184a) )
 ROM_END
 
 ROM_START( ngdark_cd )
@@ -696,6 +706,16 @@ ROM_END
 ROM_START( pow_cd )
 	NEOCDZ_BASE
 	DISK_IMAGE_READONLY( "pow2", 0, SHA1(9017ead20ecbfeb25c6c36282423c90375403b32) )
+ROM_END
+
+ROM_START( sdodgeb_cd )
+	NEOCDZ_BASE
+	DISK_IMAGE_READONLY( "sdodgeb", 0, SHA1(0275bee8ba9508b2d8a338ec5997029ba452e51d) ) // sd loader
+ROM_END
+
+ROM_START( sf2ce_cd )
+	NEOCDZ_BASE
+	DISK_IMAGE_READONLY( "sf2ce", 0, SHA1(69881892dcb5ba910da2279c370951f83b16b07c) ) // v1
 ROM_END
 
 ROM_START( shinobiarr_cd )
@@ -847,19 +867,23 @@ GAME( 2016, alice_cd,       0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  
 GAME( 2024, chelnov_cd,     0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "iq_132", "Atomic Runner Chelnov (Neo-Geo port) (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, diff_cd,        0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Citavia", "DIFF demo (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2015, eira_cd,        0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Resistance", "Eira demo (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, eswat_cd,       0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Teo Tormo", "Cyber Police ESWAT - Neo-Geo Port (Neo CD) [HB]", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, ffury_cd,      fatfury1,  neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "[unk]", "Fatal Fury - King of Fighters / Garou Densetsu - Shukumei no Tatakai (Album Edition) (Neo CD)", MACHINE_SUPPORTS_SAVE )
 GAME( 2017, fukkireta_cd,   0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Visy", "Neo Fukkireta demo (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, gaxe_cd,        0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "h0ffman", "Golden Axe (Neo-Geo port) (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2025, gaxearr_cd,     0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "h0ffman", "Golden Axe (v1.0) (PS2 Sega Ages Arranged) (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, natademo_cd,    0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "BEY", "NATADEMO Rel.05 (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, neotris2_cd,    0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Chips On Steroids", "Neotris 2 Proto (Neo CD)[HB]", MACHINE_SUPPORTS_SAVE )
 GAME( 2011, ngdark_cd,      0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "NGD::Devgroup", "NGD::ARK (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2019, noneon_cd,      0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Citavia", "No Neo - No Party demo (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2021, ntris3d_cd,     0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Blastar", "N*tris3D Techdemo (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, phoenix_cd,     0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "BEY", "Phoenix(v013) (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2023, pong_cd,        0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "David Vandensteen", "Pong (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
-GAME( 2025, pow_cd,         0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "iq_132", "P.O.W. (Neo-Geo port) (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
-GAME( 2026, shinobiarr_cd,  0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "H0ffman", "Shinobi Arranged v1.1 (Neo-Geo port)[CD]", MACHINE_SUPPORTS_SAVE )
+GAME( 2025, pow_cd,         0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "iq_132", "P.O.W. - Neo-Geo Port (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, sdodgeb_cd,     0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Teo Tormo", "Super Dodge Ball (Neo CD) [HB]", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, shinobiarr_cd,  0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "H0ffman", "Shinobi Arranged v1.1 - Neo-Geo port (Neo CD) [HB]", MACHINE_SUPPORTS_SAVE )
+GAME( 2026, sf2ce_cd,       0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Teo Tormo", "Street Fighter II' Champion Edition - Neo-Geo port (Neo CD) [HB]", MACHINE_SUPPORTS_SAVE )
 GAME( 2026, speedball_cd,   0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Z-team", "Speedball2 v1.0.0 demo (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
-GAME( 2024, ssrpg_cd,    samsprpgncd, neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Jeff Nussbaum", "Shinsetsu Samurai Spirits - Bushidou Retsuden (English) (Neo CD)", MACHINE_SUPPORTS_SAVE )
+GAME( 2024, ssrpg_cd,    samsprpgncd, neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Jeff Nussbaum", "Shinsetsu Samurai Spirits - Bushidou Retsuden (English) (Neo CD) [HB]", MACHINE_SUPPORTS_SAVE )
 GAME( 2020, subspecies_cd,  0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Blastar", "Subspecies_Unfinished demo (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, visualnovel_cd, 0,        neocd_hb,  neocd, ngcd_hb,  init_neocdz,  ROT0, "Trilobit", "Visual Novel demo (Neo CD) (HB)", MACHINE_SUPPORTS_SAVE )
