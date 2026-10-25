@@ -3559,7 +3559,7 @@ GAME( 1993, ddtodhc02,   ddtod,        cps2,         cps2_4p4b, cps2_state, init
 GAME( 2016, dstlkhc01,   dstlk,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Darkstalkers: The Night Warriors (Easy Special Attacks)", MACHINE_SUPPORTS_SAVE )
 GAME( 2006, dstlkhc02,   dstlk,        cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Darkstalkers: The Night Warriors (Enable Hidden Characters)", MACHINE_SUPPORTS_SAVE )
 GAME( 2022, ffightaec2,  0,            dead_cps2,    cps2_3p3b, cps2_state, init_cps2,     ROT0,   "hack",        "Fight Fight Anniversary Edition (CPS2 hardware)", MACHINE_SUPPORTS_SAVE )
-GAME( 2023, ffightaec2ds,ffightaec2,   dead_cps2,    cps2_3p3b, cps2_state, init_cps2,     ROT0,   "hack",        "Fight Fight Anniversary Edition (Deadly Streets)", MACHINE_SUPPORTS_SAVE )
+GAME( 2023, ffightaec2ds,ffightaec2,   dead_cps2,    cps2_3p3b, cps2_state, init_cps2,     ROT0,   "hack",        "Fight Fight Anniversary Edition (CPS2 hardware, Deadly Streets)", MACHINE_SUPPORTS_SAVE )
 GAME( 2026, gigawinghc01,gigawing,     dead_cps2,    cps2_2p2b, cps2_state, init_cps2,     ROT0,   "GOTVG",       "Giga Wing (Hidden BOSS Airplane 2026-03-13)", MACHINE_SUPPORTS_SAVE )
 GAME( 2014, gigawinghc02,gigawing,     cps2,         cps2_2p2b, cps2_state, init_cps2,     ROT0,   "hack",        "Giga Wing (Infinite Power 2014-11-04)", MACHINE_SUPPORTS_SAVE )
 GAME( 2018, hsf2hc01,    hsf2,         cps2,         cps2_2p6b, cps2_state, init_cps2,     ROT0,   "hack",        "Hyper Street Fighter II: The Anniversary Edition (Gouki Edition 2018-07-29)", MACHINE_SUPPORTS_SAVE )

@@ -1016,6 +1016,9 @@ xmvsfhc03
 xmvsfhc04
 
 @source:../hbmame/drivers/cps2.cpp
+ffex2j
+ffex2r
+ffex2u
 mshvsfru
 mshvsfrj
 mshvsfex
@@ -1023,6 +1026,7 @@ mshvsfej
 nwarrru
 sfare
 sfzrej
+sfzra
 ssf2tgmc
 ssf2tuc
 ssf2xuc
@@ -1042,10 +1046,14 @@ sfa3re
 sfz3rej
 vamprest
 vhunt2te
-vhunt2dcu
-vhunt2dcj
+vhunt2tep
+vhunt2tjp
 vsavru
+vsavtep
+vsavtjp
 vsav2te
+vsav2tep
+vsav2tjp
 
 @source:../hbmame/drivers/cps2.cpp
 suicide
@@ -2604,11 +2612,13 @@ zupapands
 19yy
 19yyo
 68kng
+7wonders
 240ptest
 4play
 abyssal
 adkw
 amazonn
+arena2
 altbeastng
 badapple
 baddudesn
@@ -2617,6 +2627,7 @@ beast
 blueandr
 bpanicdx
 bonusstage
+bubbleopen
 cabalng
 cakefght
 caravan
@@ -2655,6 +2666,7 @@ jumpnrund
 jurl
 karnovn
 knightsch
+kotrng
 lernit
 lhcdb
 looptris
@@ -2663,6 +2675,7 @@ ltorb
 mslug3x
 nblktiger
 knacki
+mahjongd
 maiya
 midnight
 ndo_a_td
@@ -2692,14 +2705,17 @@ ngmontst
 ngtd2
 ngtetris
 ngym2610
+nosignal
 nsmbd
 nsmb
 nyan
 outrunng
 pcmademo
 pcmbdemo
+perfectf
 poknight
 pown
+prehisneo
 raroggame
 rickdangdx
 robocopng
@@ -2707,8 +2723,10 @@ samantha
 santabll
 smbneo
 sgz
+shadowlf
 shaman24
 shinobin
+sdkdemo
 seafight
 skylance
 snddemo
@@ -2727,6 +2745,7 @@ vaporous
 violentv
 vlad2000
 vssmbneo
+wrallyng
 warriorman
 wolfn3d
 wrldracr
