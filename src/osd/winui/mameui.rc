@@ -1211,6 +1211,9 @@ IDB_NAOMI_CAPSNK_PRO     BITMAP                     "res\\naomi_capsnk_pro.bmp"
 IDB_NAOMI_CVS2           BITMAP                     "res\\naomi_cvs2.bmp"
 IDB_NAOMI_MVSC2          BITMAP                     "res\\naomi_mvsc2.bmp"
 IDB_NAOMI_SFZ3U          BITMAP                     "res\\naomi_sfz3u.bmp"
+IDB_PCSX2_MSLUG6         BITMAP                     "res\\pcsx2_mslug6.bmp"
+IDB_PCSX2_MSLUG6P        BITMAP                     "res\\pcsx2_mslug6p.bmp"
+IDB_PCSX2_MSLUG6S        BITMAP                     "res\\pcsx2_mslug6s.bmp"
 //===========================================================================>>>
 /////////////////////////////////////////////////////////////////////////////
 //

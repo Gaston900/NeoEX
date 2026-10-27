@@ -3298,6 +3298,11 @@ mslug3ctmg01
 mslug3ctmg02
 mslug3ctmg03
 mslug3ctmg04
+mslug4ctma01
+mslug4ctma02
+mslug4ctmb01
+mslug4ctmc01
+mslug4ctmd01
 mslugla01
 msluglb01
 mslug2la01
@@ -3330,6 +3335,20 @@ mslug3lg03
 mslug3lh01
 mslug3lh02
 mslug3lh03
+mslug4la01
+mslug4la02
+mslug4lb01
+mslug4lb02
+mslug4lc01
+mslug4lc02
+mslug4ld01
+mslug4ld02
+mslug4le01
+mslug4le02
+mslug4lf01
+mslug4lf02
+mslug4lg01
+mslug4lg02
 mslugrma01
 mslugrmb01
 mslug2rma01
@@ -3345,6 +3364,14 @@ mslug3rmf01
 mslug3rmg01
 mslug3rmh01
 mslug3rmi01
+mslug4rma01
+mslug4rmb01
+mslug4rmc01
+mslug4rmd01
+mslug4rme01
+mslug4rmf01
+mslug4rmg01
+mslug4rmh01
 
 @source:../hbmame/drivers/neogeocd.cpp
 neocdb

@@ -230,6 +230,9 @@
 #define IDB_NAOMI_CVS2                  314
 #define IDB_NAOMI_MVSC2                 315
 #define IDB_NAOMI_SFZ3U                 316
+#define IDB_PCSX2_MSLUG6                317
+#define IDB_PCSX2_MSLUG6P               318
+#define IDB_PCSX2_MSLUG6S               319
 //=============================================>>>
 
 // 修改的 (Eziochiu)
@@ -572,6 +575,9 @@
 #define ID_NAOMI_CVS2                   5238
 #define ID_NAOMI_MVSC2                  5239
 #define ID_NAOMI_SFZ3U                  5240
+#define ID_PCSX2_MSLUG6                 5241
+#define ID_PCSX2_MSLUG6_PLUS            5242
+#define ID_PCSX2_MSLUG6_SLUG            5243
 //===========================================>>>
 
 #define ID_CONTEXT_SHOW_FOLDER_START    39000

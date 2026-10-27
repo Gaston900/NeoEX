@@ -473,6 +473,9 @@ static HBITMAP hNaomiCapsnkPro = NULL;
 static HBITMAP hNaomiCvs2 = NULL;
 static HBITMAP hNaomiMvsc2 = NULL;
 static HBITMAP hNaomiSfz3u = NULL;
+static HBITMAP hPcsx2Mslug6 = NULL;
+static HBITMAP hPcsx2Mslug6P = NULL;
+static HBITMAP hPcsx2Mslug6S = NULL;
 //==================================>>>
 
 // 修改的 代码来源 (EKMAME)
@@ -1396,6 +1399,7 @@ static void Win32UI_init(void)
 	CreateDirectoryA(".\\roms\\Arcade", nullptr);
 	CreateDirectoryA(".\\roms\\Atomiswave", nullptr);
 	CreateDirectoryA(".\\roms\\Naomi", nullptr);
+	CreateDirectoryA(".\\roms\\PS2", nullptr);
 
     // Semi-automatic Subfolder is created
 	CreateDirectoryA(".\\config\\bgfx", nullptr);
@@ -1404,6 +1408,7 @@ static void Win32UI_init(void)
 	CreateDirectoryA(".\\config\\docs", nullptr);
 	CreateDirectoryA(".\\config\\emu", nullptr);
     CreateDirectoryA(".\\config\\emu\\Flycast", nullptr);
+	CreateDirectoryA(".\\config\\emu\\PCSX2", nullptr);
 	CreateDirectoryA(".\\config\\folders", nullptr);
 	CreateDirectoryA(".\\config\\glsl", nullptr);
 	CreateDirectoryA(".\\config\\hash", nullptr);
@@ -1706,6 +1711,9 @@ static void Win32UI_exit(void)
 	DeleteBitmap(hNaomiCvs2);
 	DeleteBitmap(hNaomiMvsc2);
 	DeleteBitmap(hNaomiSfz3u);
+    DeleteBitmap(hPcsx2Mslug6);
+    DeleteBitmap(hPcsx2Mslug6P);
+    DeleteBitmap(hPcsx2Mslug6S);
 //=================================>>>
 	DeleteBitmap(hMissing_bitmap);
 
@@ -2643,6 +2651,12 @@ static void InitMenuIcons(void)
 	hNaomiMvsc2 = CreateBitmapTransparent(hTemp);
 	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_NAOMI_SFZ3U));
 	hNaomiSfz3u = CreateBitmapTransparent(hTemp);
+    hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_PCSX2_MSLUG6));
+    hPcsx2Mslug6 = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_PCSX2_MSLUG6P));
+	hPcsx2Mslug6P = CreateBitmapTransparent(hTemp);
+	hTemp = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_PCSX2_MSLUG6S));
+	hPcsx2Mslug6S = CreateBitmapTransparent(hTemp);
 //===================================================================>>>
 
 //============================== 缘来是你 ============================>>>
@@ -4287,6 +4301,56 @@ static bool MameCommand(HWND hWnd, int id, HWND hWndCtl, UINT codeNotify)
 			}
 			break;
 		}
+
+		case ID_PCSX2_MSLUG6:
+		case ID_PCSX2_MSLUG6_PLUS:
+		case ID_PCSX2_MSLUG6_SLUG:
+		{
+			const char* szPcsx2Exe = "config\\emu\\PCSX2\\pcsx2.exe";
+			const char* szSelectedIso = "";
+			
+			if (id == ID_PCSX2_MSLUG6) {
+				szSelectedIso = "roms\\PS2\\mslug6.iso";
+			} else if (id == ID_PCSX2_MSLUG6_PLUS) {
+				szSelectedIso = "roms\\PS2\\mslug6p.iso";
+			} else { // ID_PCSX2_MSLUG6_SLUG
+				szSelectedIso = "roms\\PS2\\mslug6s.iso";
+			}
+			
+			if (GetFileAttributesA(szPcsx2Exe) == INVALID_FILE_ATTRIBUTES)
+			{
+				winui_message_box_utf8(hWnd,
+					"PCSX2 SYSTEM CRITICAL ERROR:\n\nThe emulator cannot be found at the required path:\n'config\\emu\\PCSX2\\pcsx2.exe'\n\nPlease verify that the emulator is correctly installed.", 
+					"PCSX2 Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			if (GetFileAttributesA(szSelectedIso) == INVALID_FILE_ATTRIBUTES)
+			{
+				char szIsoError[MAX_PATH + 250];
+				snprintf(szIsoError, sizeof(szIsoError), 
+					"PCSX2 ROM FILE ERROR DETECTED:\n\nThe location of the game ISO image was not found:\n'%s'\n\nPlease ensure the file is present in the specified directory.", szSelectedIso);
+				winui_message_box_utf8(hWnd, szIsoError, "ROM ISO Missing", MB_ICONERROR | MB_OK);
+				break;
+			}
+
+			char szCmdArgs[MAX_PATH * 2];
+			snprintf(szCmdArgs, sizeof(szCmdArgs), "\"%s\" \"%s\"", szPcsx2Exe, szSelectedIso);
+
+			STARTUPINFOA si = { sizeof(si) };
+			PROCESS_INFORMATION pi;
+			if (CreateProcessA(nullptr, szCmdArgs, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
+			{
+				CloseHandle(pi.hProcess);
+				CloseHandle(pi.hThread);
+			}
+			else
+			{
+				winui_message_box_utf8(hWnd, "Failed to initialize CreateProcess for the selected PCSX2 target.", "Execution Failure", MB_ICONWARNING | MB_OK);
+			}
+			break;
+		}
+
 // =============================================================================================================>>>
 
 		case ID_FILE_PLAY:
@@ -6988,7 +7052,21 @@ void InitMainMenu(HMENU hMainMenu)
 		
 		InsertMenu(hMainMenu, 5, MF_BYPOSITION | MF_POPUP, (UINT_PTR)hNaomiMenu, TEXT("Naomi"));
 	}
-	
+
+	HMENU hPcsx2Menu = CreatePopupMenu();
+	if (hPcsx2Menu != nullptr)
+	{
+		AppendMenu(hPcsx2Menu, MF_STRING, ID_PCSX2_MSLUG6, TEXT("Metal Slug 6"));
+		AppendMenu(hPcsx2Menu, MF_STRING, ID_PCSX2_MSLUG6_PLUS, TEXT("Metal Slug 6 Plus"));
+		AppendMenu(hPcsx2Menu, MF_STRING, ID_PCSX2_MSLUG6_SLUG, TEXT("Metal Slug 6 Slug"));
+		
+		SetMenuItemBitmaps(hPcsx2Menu, ID_PCSX2_MSLUG6, MF_BYCOMMAND, hPcsx2Mslug6, hPcsx2Mslug6);
+		SetMenuItemBitmaps(hPcsx2Menu, ID_PCSX2_MSLUG6_PLUS, MF_BYCOMMAND, hPcsx2Mslug6P, hPcsx2Mslug6P);
+		SetMenuItemBitmaps(hPcsx2Menu, ID_PCSX2_MSLUG6_SLUG, MF_BYCOMMAND, hPcsx2Mslug6S, hPcsx2Mslug6S);
+
+		InsertMenu(hMainMenu, 6, MF_BYPOSITION | MF_POPUP, (UINT_PTR)hPcsx2Menu, TEXT("PCSX2"));
+	}
+
 	DrawMenuBar(hMain);
 }
 // =============================================================================================================>>>

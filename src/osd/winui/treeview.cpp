@@ -3646,18 +3646,24 @@ void CreateNEOGEOFolders(int parent_index)
 		if (!strcmp("chelnov_cd", s))			    AddGame(lpNeoCDHB, jj);
 		if (!strcmp("diff_cd", s))			        AddGame(lpNeoCDHB, jj);
 		if (!strcmp("eira_cd", s))			        AddGame(lpNeoCDHB, jj);
+		if (!strcmp("eswat_cd", s))			        AddGame(lpNeoCDHB, jj);
+		if (!strcmp("ffury_cd", s))		    	    AddGame(lpNeoCDHB, jj);
 		if (!strcmp("fukkireta_cd", s))			    AddGame(lpNeoCDHB, jj);
 		if (!strcmp("gaxe_cd", s))			        AddGame(lpNeoCDHB, jj);
 		if (!strcmp("gaxearr_cd", s))			    AddGame(lpNeoCDHB, jj);
 		if (!strcmp("natademo_cd", s))			    AddGame(lpNeoCDHB, jj);
+		if (!strcmp("neotris2_cd", s))			    AddGame(lpNeoCDHB, jj);
 		if (!strcmp("ngdark_cd", s))			    AddGame(lpNeoCDHB, jj);
 		if (!strcmp("noneon_cd", s))			    AddGame(lpNeoCDHB, jj);
 		if (!strcmp("ntris3d_cd", s))			    AddGame(lpNeoCDHB, jj);
 		if (!strcmp("phoenix_cd", s))			    AddGame(lpNeoCDHB, jj);
 		if (!strcmp("pong_cd", s))			        AddGame(lpNeoCDHB, jj);
 		if (!strcmp("pow_cd", s))			        AddGame(lpNeoCDHB, jj);
+		if (!strcmp("sdodgeb_cd", s))		        AddGame(lpNeoCDHB, jj);
 		if (!strcmp("shinobiarr_cd", s))		    AddGame(lpNeoCDHB, jj);
+		if (!strcmp("sf2ce_cd", s))		            AddGame(lpNeoCDHB, jj);
 		if (!strcmp("speedball_cd", s))			    AddGame(lpNeoCDHB, jj);
+		if (!strcmp("ssrpg_cd", s))	    		    AddGame(lpNeoCDHB, jj);
 		if (!strcmp("subspecies_cd", s))			AddGame(lpNeoCDHB, jj);
 		if (!strcmp("visualnovel_cd", s))			AddGame(lpNeoCDHB, jj);
 	}
