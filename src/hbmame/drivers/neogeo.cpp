@@ -292,10 +292,10 @@ void neogeo_state::io_control_w(offs_t offset, u8 data)
 			}
 			break;
 
-//  case 0x30: break; // coin counters
-//  case 0x31: break; // coin counters
-//  case 0x32: break; // coin lockout
-//  case 0x33: break; // coin lockout
+		case 0x30: break; // coin counters
+		case 0x31: break; // coin counters
+		case 0x32: break; // coin lockout
+		case 0x33: break; // coin lockout
 
 		default:
 			logerror("PC: %x  Unmapped I/O control write.  Offset: %x  Data: %x\n", machine().describe_context(), offset, data);
@@ -533,6 +533,7 @@ void neogeo_state::system_control_w(offs_t offset, u8 data)
 				m_use_cart_audio = bit;
 				m_sprgen->neogeo_set_fixed_layer_source(bit);
 				m_bank_audio_main->set_entry(m_use_cart_audio);
+				m_audiocpu->reset();
 			}
 			break;
 
