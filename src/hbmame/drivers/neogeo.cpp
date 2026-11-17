@@ -109,21 +109,21 @@ void neogeo_state::adjust_display_position_interrupt_timer()
 }
 
 
-void neogeo_state::neogeo_set_display_position_interrupt_control( u16  data )
+void neogeo_state::neogeo_set_display_position_interrupt_control( uint16_t  data )
 {
 	m_display_position_interrupt_control = data;
 }
 
 
-void neogeo_state::neogeo_set_display_counter_msb( u16  data )
+void neogeo_state::neogeo_set_display_counter_msb( uint16_t  data )
 {
-	m_display_counter = (m_display_counter & 0x0000ffff) | ((u32)data << 16);
+	m_display_counter = (m_display_counter & 0x0000ffff) | ((uint32_t)data << 16);
 
 	if (LOG_VIDEO_SYSTEM) logerror("PC %06x: set_display_counter %08x\n", m_maincpu->pc(), m_display_counter);
 }
 
 
-void neogeo_state::neogeo_set_display_counter_lsb( u16  data )
+void neogeo_state::neogeo_set_display_counter_lsb( uint16_t  data )
 {
 	m_display_counter = (m_display_counter & 0xffff0000) | data;
 
@@ -145,7 +145,7 @@ void neogeo_state::update_interrupts()
 }
 
 
-void neogeo_state::neogeo_acknowledge_interrupt( u16  data )
+void neogeo_state::neogeo_acknowledge_interrupt( uint16_t  data )
 {
 	if (data & 0x01)
 		m_irq3_pending = 0;
@@ -230,7 +230,7 @@ void neogeo_state::audio_cpu_check_nmi()
 	m_audiocpu->set_input_line(INPUT_LINE_NMI, (m_audio_cpu_nmi_enabled && m_audio_cpu_nmi_pending) ? ASSERT_LINE : CLEAR_LINE);
 }
 
-void neogeo_state::audio_cpu_enable_nmi_w(offs_t offset, u8 data)
+void neogeo_state::audio_cpu_enable_nmi_w(offs_t offset, uint8_t data)
 {
 	// out ($08) enables the nmi, out ($18) disables it
 	m_audio_cpu_nmi_enabled = !(offset & 0x10);
@@ -245,12 +245,12 @@ void neogeo_state::audio_cpu_enable_nmi_w(offs_t offset, u8 data)
  *
  *************************************/
 
-u16 neogeo_state::in0_r()
+uint16_t neogeo_state::in0_r()
 {
 	return ((m_edge->in0_r() & m_ctrl1->read_ctrl()) << 8) | m_dsw->read();
 }
 
-u16 neogeo_state::in1_r()
+uint16_t neogeo_state::in1_r()
 {
 	return ((m_edge->in1_r() & m_ctrl2->read_ctrl()) << 8) | 0xff;
 }
@@ -260,7 +260,7 @@ ioport_value neogeo_state::kizuna4p_start_r()
 	return (m_edge->read_start_sel() & 0x05) | ~0x05;
 }
 
-void neogeo_state::io_control_w(offs_t offset, u8 data)
+void neogeo_state::io_control_w(offs_t offset, uint8_t data)
 {
 	switch (offset)
 	{
@@ -310,9 +310,9 @@ void neogeo_state::io_control_w(offs_t offset, u8 data)
  *
  *************************************/
 
-u16 neogeo_state::neogeo_unmapped_r(address_space &space)
+uint16_t neogeo_state::neogeo_unmapped_r(address_space &space)
 {
-	u16  ret = 0U;
+	uint16_t  ret = 0U;
 
 	/* unmapped memory returns the last word on the data bus, which is almost always the opcode
 	   of the next instruction due to prefetch */
@@ -337,13 +337,13 @@ u16 neogeo_state::neogeo_unmapped_r(address_space &space)
  *
  *************************************/
 
-void neogeo_state::set_save_ram_unlock( u8 data )
+void neogeo_state::set_save_ram_unlock( uint8_t data )
 {
 	m_save_ram_unlocked = data;
 }
 
 
-void neogeo_state::save_ram_w(offs_t offset, u16 data, u16 mem_mask)
+void neogeo_state::save_ram_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (m_save_ram_unlocked)
 		COMBINE_DATA(&m_save_ram[offset]);
@@ -365,11 +365,11 @@ ioport_value neogeo_state::get_memcard_status()
 }
 
 
-u16 neogeo_state::memcard_r(offs_t offset)
+uint16_t neogeo_state::memcard_r(offs_t offset)
 {
 	m_maincpu->eat_cycles(2); // insert waitstate
 
-	u16  ret = 0U;
+	uint16_t  ret = 0U;
 
 	if (m_memcard->present() != -1)
 		ret = m_memcard->read(offset) | 0xff00;
@@ -380,7 +380,7 @@ u16 neogeo_state::memcard_r(offs_t offset)
 }
 
 
-void neogeo_state::memcard_w(offs_t offset, u16 data, u16 mem_mask)
+void neogeo_state::memcard_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	m_maincpu->eat_cycles(2); // insert waitstate
 
@@ -397,7 +397,7 @@ void neogeo_state::memcard_w(offs_t offset, u16 data, u16 mem_mask)
  *
  *************************************/
 
-void neogeo_state::audio_command_w(u8 data)
+void neogeo_state::audio_command_w(uint8_t data)
 {
 	m_soundlatch->write(data);
 
@@ -409,9 +409,9 @@ void neogeo_state::audio_command_w(u8 data)
 }
 
 
-u8 neogeo_state::audio_command_r()
+uint8_t neogeo_state::audio_command_r()
 {
-	u8 ret = m_soundlatch->read();
+	uint8_t ret = m_soundlatch->read();
 
 	m_audio_cpu_nmi_pending = false;
 	audio_cpu_check_nmi();
@@ -422,7 +422,7 @@ u8 neogeo_state::audio_command_r()
 
 ioport_value neogeo_state::get_audio_result()
 {
-	u8 ret = m_soundlatch2->read();
+	uint8_t ret = m_soundlatch2->read();
 
 	return ret;
 }
@@ -447,7 +447,7 @@ void neogeo_state::neogeo_main_cpu_banking_init()
  *
  *************************************/
 
-u8 neogeo_state::audio_cpu_bank_select_r(offs_t offset)
+uint8_t neogeo_state::audio_cpu_bank_select_r(offs_t offset)
 {
 	m_bank_audio_cart[offset & 3]->set_entry(offset >> 8);
 
@@ -459,7 +459,7 @@ void neogeo_state::neogeo_audio_cpu_banking_init(int set_entry)
 {
 	if (m_type == NEOGEO_CD) return;
 
-	u8 *rgn = memregion("audiocpu")->base();
+	uint8_t *rgn = memregion("audiocpu")->base();
 
 	/* audio bios/cartridge selection */
 	m_bank_audio_main->configure_entry(1, memregion("audiocpu")->base());
@@ -476,14 +476,14 @@ void neogeo_state::neogeo_audio_cpu_banking_init(int set_entry)
 	m_bank_audio_cart[2] = membank("audio_c000");
 	m_bank_audio_cart[3] = membank("audio_8000");
 
-	u32 address_mask = (memregion("audiocpu")->bytes() - 0x10000 - 1) & 0x3ffff;
+	uint32_t address_mask = (memregion("audiocpu")->bytes() - 0x10000 - 1) & 0x3ffff;
 
 
-	for (u8 region = 0; region < 4; region++)
+	for (uint8_t region = 0; region < 4; region++)
 	{
 		for (int bank = 0xff; bank >= 0; bank--)
 		{
-			u32 bank_address = 0x10000 + ((bank << (11 + region)) & address_mask);
+			uint32_t bank_address = 0x10000 + ((bank << (11 + region)) & address_mask);
 			m_bank_audio_cart[region]->configure_entry(bank, &rgn[bank_address]);
 		}
 	}
@@ -509,9 +509,10 @@ void neogeo_state::neogeo_audio_cpu_banking_init(int set_entry)
  *
  *************************************/
 
-void neogeo_state::system_control_w(offs_t offset, u8 data)
+void neogeo_state::system_control_w(offs_t offset, uint8_t data)
 {
-	u8 bit = (offset >> 3) & 0x01;
+	uint8_t bit = (offset >> 3) & 0x01;
+	uint8_t bankbit;
 
 	switch (offset & 0x07)
 	{
@@ -530,10 +531,12 @@ void neogeo_state::system_control_w(offs_t offset, u8 data)
 		case 0x05:
 			if (m_type == NEOGEO_MVS)
 			{
+				bankbit = (bit != m_use_cart_audio);
 				m_use_cart_audio = bit;
 				m_sprgen->neogeo_set_fixed_layer_source(bit);
 				m_bank_audio_main->set_entry(m_use_cart_audio);
-				m_audiocpu->reset();
+				if (bankbit)
+					m_audiocpu->reset();
 			}
 			break;
 
@@ -566,7 +569,7 @@ void neogeo_state::system_control_w(offs_t offset, u8 data)
 
 void neogeo_state::set_outputs(  )
 {
-	static const u8 led_map[0x10] =
+	static const uint8_t led_map[0x10] =
 		{ 0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x58,0x4c,0x62,0x69,0x78,0x00 };
 
 	/* EL */
@@ -582,11 +585,11 @@ void neogeo_state::set_outputs(  )
 }
 
 
-void neogeo_state::set_output_latch( u8 data )
+void neogeo_state::set_output_latch( uint8_t data )
 {
 	/* looks like the LEDs are set on the
 	   falling edge */
-	u8 falling_bits = m_output_latch & ~data;
+	uint8_t falling_bits = m_output_latch & ~data;
 
 	if (falling_bits & 0x08)
 		m_el_value = 16 - (m_output_data & 0x0f);
@@ -606,7 +609,7 @@ void neogeo_state::set_output_latch( u8 data )
 }
 
 
-void neogeo_state::set_output_data( u8 data )
+void neogeo_state::set_output_data( uint8_t data )
 {
 	m_output_data = data;
 }
@@ -700,8 +703,8 @@ void neogeo_neosd::machine_start()
 void neogeo_neosd::boot_command_nds()
 {
     // Buscamos si la región principal tiene datos cargados
-    u8 *rom_base = memregion("maincpu")->base();
-    u32 rom_size = memregion("maincpu")->bytes();
+    uint8_t *rom_base = memregion("maincpu")->base();
+    uint32_t rom_size = memregion("maincpu")->bytes();
 
     // Validar tamaño mínimo de seguridad y firma "NEO"
     if (rom_size < 0x1000 || rom_base[0] != 'N' || rom_base[1] != 'E' || rom_base[2] != 'O')
@@ -710,18 +713,18 @@ void neogeo_neosd::boot_command_nds()
     }
 
     // --- LEER CABECERA DE 4096 BYTES (0x1000) ---
-    u32 psize  = rom_base[4]  + rom_base[5]*0x100  + rom_base[6]*0x10000  + rom_base[7]*0x1000000;
-    u32 ssize  = rom_base[8]  + rom_base[9]*0x100  + rom_base[10]*0x10000 + rom_base[11]*0x1000000;
-    u32 msize  = rom_base[12] + rom_base[13]*0x100 + rom_base[14]*0x10000 + rom_base[15]*0x1000000;
-    u32 vsize  = rom_base[16] + rom_base[17]*0x100 + rom_base[18]*0x10000 + rom_base[19]*0x1000000;
-    u32 v2size = rom_base[20] + rom_base[21]*0x100 + rom_base[22]*0x10000 + rom_base[23]*0x1000000;
-    u32 csize  = rom_base[24] + rom_base[25]*0x100 + rom_base[26]*0x10000 + rom_base[27]*0x1000000;
+    uint32_t psize  = rom_base[4]  + rom_base[5]*0x100  + rom_base[6]*0x10000  + rom_base[7]*0x1000000;
+    uint32_t ssize  = rom_base[8]  + rom_base[9]*0x100  + rom_base[10]*0x10000 + rom_base[11]*0x1000000;
+    uint32_t msize  = rom_base[12] + rom_base[13]*0x100 + rom_base[14]*0x10000 + rom_base[15]*0x1000000;
+    uint32_t vsize  = rom_base[16] + rom_base[17]*0x100 + rom_base[18]*0x10000 + rom_base[19]*0x1000000;
+    uint32_t v2size = rom_base[20] + rom_base[21]*0x100 + rom_base[22]*0x10000 + rom_base[23]*0x1000000;
+    uint32_t csize  = rom_base[24] + rom_base[25]*0x100 + rom_base[26]*0x10000 + rom_base[27]*0x1000000;
 
     // Reservar un búfer temporal para mover el archivo completo de la memoria RAM
-    std::vector<u8> temp_buffer(rom_base, rom_base + rom_size);
+    std::vector<uint8_t> temp_buffer(rom_base, rom_base + rom_size);
 
     // Ajustar el offset inicial de datos (pasando la cabecera)
-    u32 offset = 0x1000;
+    uint32_t offset = 0x1000;
 
     // --- REASIGNACIÓN DINÁMICA DE REGIONES ---
     // P1 (Main CPU) - Sobrescribimos el inicio de la misma región "maincpu" con los bytes correctos
@@ -738,7 +741,7 @@ void neogeo_neosd::boot_command_nds()
 
     // M1 (Audio CPU)
     if (msize && memregion("audiocpu")) {
-        u8 *audio = memregion("audiocpu")->base();
+        uint8_t *audio = memregion("audiocpu")->base();
         std::copy(&temp_buffer[offset], &temp_buffer[offset + msize], &audio[0x10000]);
         std::copy(&audio[0x10000], &audio[0x1ffff], &audio[0]); // Espejo clásico de Neo-Geo
         offset += msize;
@@ -772,7 +775,7 @@ void neogeo_neosd::boot_command_nds()
 
         // Corrección dinámica de la capa de texto fija (bancos de 512k)
         if (ssize > 0x20000) {
-            u16 game = rom_base[0x109] * 256 + rom_base[0x108];
+            uint16_t game = rom_base[0x109] * 256 + rom_base[0x108];
             if ((game == 0x257) || (game == 0x266) || (game == 0x269) || (game == 0x271))
                 m_sprgen->m_fixed_layer_bank_type = 2;
             else
@@ -791,13 +794,13 @@ void neogeo_gngeo::machine_start()
 void neogeo_gngeo::boot_command_ngo()
 {
     if (!memregion("maincpu")) return;
-    u8 *rom_base = memregion("maincpu")->base();
-    u32 rom_size = memregion("maincpu")->bytes();
+    uint8_t *rom_base = memregion("maincpu")->base();
+    uint32_t rom_size = memregion("maincpu")->bytes();
 
     if (rom_size < 0x60000) return; 
 
-    u8 *fix_ptr    = memregion("fixed") ? memregion("fixed")->base() : nullptr;
-    u8 *sprite_ptr = memregion("sprites") ? memregion("sprites")->base() : nullptr;
+    uint8_t *fix_ptr    = memregion("fixed") ? memregion("fixed")->base() : nullptr;
+    uint8_t *sprite_ptr = memregion("sprites") ? memregion("sprites")->base() : nullptr;
 
     // CORRECCIÓN: Comprobar la firma mágica Y verificar que NO haya sido procesado en esta sesión de emulación
     if (!m_gno_parsed && 
@@ -806,19 +809,19 @@ void neogeo_gngeo::boot_command_ngo()
     {
 //        osd_printf_verbose("HBMAME: Procesando contenedor GNO por primera vez...\n");
 
-        std::vector<u8> temp_gno(rom_base, rom_base + rom_size);
-        u8 num_regions = temp_gno[20];
-        u32 offset = 21; 
+        std::vector<uint8_t> temp_gno(rom_base, rom_base + rom_size);
+        uint8_t num_regions = temp_gno[20];
+        uint32_t offset = 21; 
         
         m_gno_csize = 0;
         m_gno_ssize = 0;
 
-        for (u8 r = 0; r < num_regions; r++)
+        for (uint8_t r = 0; r < num_regions; r++)
         {
             if (offset + 6 > rom_size) break;
 
-            u32 region_size = temp_gno[offset] | (temp_gno[offset+1] << 8) | (temp_gno[offset+2] << 16) | (temp_gno[offset+3] << 24);
-            u8 region_code  = temp_gno[offset+4];
+            uint32_t region_size = temp_gno[offset] | (temp_gno[offset+1] << 8) | (temp_gno[offset+2] << 16) | (temp_gno[offset+3] << 24);
+            uint8_t region_code  = temp_gno[offset+4];
             offset += 6; 
 
             if (offset + region_size > rom_size)
@@ -826,15 +829,15 @@ void neogeo_gngeo::boot_command_ngo()
                 region_size = rom_size - offset;
             }
 
-            const u8 *src_ptr = &temp_gno[offset];
+            const uint8_t *src_ptr = &temp_gno[offset];
 
             switch (region_code)
             {
                 case 1: // AUDIO Z80
                     if (memory_region *aud_reg = memregion("audiocpu"))
                     {
-                        u8 *dst = aud_reg->base();
-                        u32 max_size = aud_reg->bytes();
+                        uint8_t *dst = aud_reg->base();
+                        uint32_t max_size = aud_reg->bytes();
                         if (region_size <= (max_size - 0x10000))
                         {
                             std::copy(src_ptr, src_ptr + region_size, &dst[0x10000]);
@@ -873,7 +876,7 @@ void neogeo_gngeo::boot_command_ngo()
                     {
                         std::copy(src_ptr, src_ptr + region_size, sprite_ptr);
                         m_gno_csize = region_size;
-                        for (u32 i = 0; i < m_gno_csize; i += 2)
+                        for (uint32_t i = 0; i < m_gno_csize; i += 2)
                         {
                             std::swap(sprite_ptr[i], sprite_ptr[i+1]);
                         }                    
@@ -912,7 +915,7 @@ void neogeo_gngeo::boot_command_ngo()
 
         if (m_gno_ssize > 0x20000)
         {
-            u16 game = rom_base[0x109] * 256 + rom_base[0x108]; 
+            uint16_t game = rom_base[0x109] * 256 + rom_base[0x108]; 
             if ((game == 0x257) || (game == 0x266) || (game == 0x269) || (game == 0x271))
                 m_sprgen->m_fixed_layer_bank_type = 2;
             else
@@ -948,35 +951,35 @@ void neogeo_state::machine_reset()
 
 	m_recurse = false;
 
-	u16 game = cpuregion[0x109] * 256 + cpuregion[0x108];
+	uint16_t game = cpuregion[0x109] * 256 + cpuregion[0x108];
 	printf("Game number = %04X\n", game);
 }
 
-u16 neogeo_state::banked_vectors_r(offs_t offset)
+uint16_t neogeo_state::banked_vectors_r(offs_t offset)
 {
 	if (!m_use_cart_vectors)
 	{
-		u16 * bios = (u16 *)memregion("mainbios")->base();
+		uint16_t * bios = (uint16_t *)memregion("mainbios")->base();
 		return bios[offset];
 	}
 	else
 	{
-		u16 * game = (u16 *)m_region_maincpu->base();
+		uint16_t * game = (uint16_t *)m_region_maincpu->base();
 		return game[offset];
 	}
 
 }
 
-u16 neogeo_state::neogeo_slot_rom_low_r()
+uint16_t neogeo_state::neogeo_slot_rom_low_r()
 {
 	return 0;
 }
 
-u16 neogeo_state::neogeo_slot_rom_low_vectors_r(offs_t offset)
+uint16_t neogeo_state::neogeo_slot_rom_low_vectors_r(offs_t offset)
 {
 	if (!m_use_cart_vectors)
 	{
-		u16 * bios = (u16 *)memregion("mainbios")->base();
+		uint16_t * bios = (uint16_t *)memregion("mainbios")->base();
 		return bios[offset];
 	}
 	else
@@ -1460,7 +1463,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::gno_q_cb)
 	// 8 bytes = game name (we don't use)
 	// 4 bytes = flags (we don't use)
 	// 1 byte  = number of regions
-	u8 header[21];
+	uint8_t header[21];
 	image.fread( &header, 21);
 
 	if ((header[0] == 'g') && (header[1] == 'n') && (header[2] == 'o') && (header[3] == 'd')
@@ -1473,7 +1476,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::gno_q_cb)
 		return std::make_pair(image_error::UNSPECIFIED, "GNO header missing");
 	}
 
-	u32 region_size = 0, csize = 0, ssize = 0, ym2_region_size = 0, offset = 21;
+	uint32_t region_size = 0, csize = 0, ssize = 0, ym2_region_size = 0, offset = 21;
 
 	for (uint8_t regions = 0; regions < header[20]; regions++)
 	{
@@ -1482,7 +1485,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::gno_q_cb)
 		// 1 byte  = region code
 		// 1 byte  = type (we don't use, 00 assumed)
 		// size bytes = data
-		u8 region_code = 0, region_type = 0;
+		uint8_t region_code = 0, region_type = 0;
 		image.fread( &region_size, 4);
 		image.fread( &region_code, 1);
 		image.fread( &region_type, 1);
@@ -1568,7 +1571,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::gno_q_cb)
                     csize = region_size;
 
                     // CORRECCIÓN SPRITES: Ajustar ordenamiento de bytes para el decodificador de MAME
-                    for (u32 i = 0; i < csize; i += 2) {
+                    for (uint32_t i = 0; i < csize; i += 2) {
                     std::swap(spr_region[i], spr_region[i+1]);
                 }
                 }
@@ -1598,7 +1601,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::gno_q_cb)
 	// Fix the 512k text with horrible game-specific stuff
 	if (ssize > 0x20000)
 	{
-		u16 game = cpuregion[0x109] * 256 + cpuregion[0x108];
+		uint16_t game = cpuregion[0x109] * 256 + cpuregion[0x108];
 		// identify kof2000, matrim, svc, kof2003
 		if ((game == 0x257) || (game == 0x266) || (game == 0x269) || (game == 0x271))
 			m_sprgen->m_fixed_layer_bank_type = 2;
@@ -1633,7 +1636,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 	}
 
 	// check header
-	u8 header[0x1000];
+	uint8_t header[0x1000];
 	image.fread( &header, 0x1000);
 
 	if ((header[0] == 'N') && (header[1] == 'E') && (header[2] == 'O'))
@@ -1646,12 +1649,12 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 	}
 
 	// Get file sizes
-	u32 psize = header[4] + header[5]*0x100 + header[6]*0x10000 + header[7]*0x1000000;
-	u32 ssize = header[8] + header[9]*0x100 + header[10]*0x10000 + header[11]*0x1000000;
-	u32 msize = header[12] + header[13]*0x100 + header[14]*0x10000 + header[15]*0x1000000;
-	u32 vsize = header[16] + header[17]*0x100 + header[18]*0x10000 + header[19]*0x1000000;
-	u32 v2size = header[20] + header[21]*0x100 + header[22]*0x10000 + header[23]*0x1000000;
-	u32 csize = header[24] + header[25]*0x100 + header[26]*0x10000 + header[27]*0x1000000;
+	uint32_t psize = header[4] + header[5]*0x100 + header[6]*0x10000 + header[7]*0x1000000;
+	uint32_t ssize = header[8] + header[9]*0x100 + header[10]*0x10000 + header[11]*0x1000000;
+	uint32_t msize = header[12] + header[13]*0x100 + header[14]*0x10000 + header[15]*0x1000000;
+	uint32_t vsize = header[16] + header[17]*0x100 + header[18]*0x10000 + header[19]*0x1000000;
+	uint32_t v2size = header[20] + header[21]*0x100 + header[22]*0x10000 + header[23]*0x1000000;
+	uint32_t csize = header[24] + header[25]*0x100 + header[26]*0x10000 + header[27]*0x1000000;
 
 	// Make sure file is big enough
 	u64 total = 0x1000 + psize + ssize + msize + vsize + v2size + csize;
@@ -1680,7 +1683,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 		return std::make_pair(image_error::UNSPECIFIED, "ADPCMA region in NEO file is larger than supported");
 	}
 
-	u32 ym2_region_size = memregion("ymsnd:adpcmb")->bytes();
+	uint32_t ym2_region_size = memregion("ymsnd:adpcmb")->bytes();
 	if ((v2size > ym2_region_size) || (ym_region_size > ym2_region_size))
 	{
 		printf("ADPCMB size requested (%08X) is greater than available (%08X)\n",v2size,ym2_region_size);
@@ -1740,7 +1743,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 	// Fix the 512k text with horrible game-specific stuff
 	if (ssize > 0x20000)
 	{
-		u16 game = cpuregion[0x109] * 256 + cpuregion[0x108];
+		uint16_t game = cpuregion[0x109] * 256 + cpuregion[0x108];
 		// identify kof2000, matrim, svc, kof2003
 		if ((game == 0x257) || (game == 0x266) || (game == 0x269) || (game == 0x271))
 			m_sprgen->m_fixed_layer_bank_type = 2;
@@ -1754,9 +1757,9 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::neo_q_cb)
 	return std::make_pair(std::error_condition(), std::string());
 }
 
-u32 neogeo_state::mvs_open7z(std::string zip_name, std::string filename, u8 *region_name, u32 region_size)
+uint32_t neogeo_state::mvs_open7z(std::string zip_name, std::string filename, uint8_t *region_name, uint32_t region_size)
 {
-	u32 file_size = 0U;
+	uint32_t file_size = 0U;
 	util::archive_file::ptr zip;
 	std::error_condition ziperr{};
 
@@ -1795,7 +1798,7 @@ void neogeo_state::multimvs(machine_config &config)
 
 QUICKLOAD_LOAD_MEMBER(neogeo_state::mvs_q_cb)
 {
-	u32 psize = 0U, ssize = 0U, msize = 0U, vsize = 0U, csize = 0U, fsize = 0U;
+	uint32_t psize = 0U, ssize = 0U, msize = 0U, vsize = 0U, csize = 0U, fsize = 0U;
 	std::string fname = "prom", sstr = ".7z", zipname = image.filename();
 	// assuming that first .7z is the only occurence
 	std::size_t found = zipname.find(sstr);
@@ -1830,7 +1833,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::mvs_q_cb)
 	fname = "crom0";
 	csize = mvs_open7z(zipname, fname, &spr_region[0], spr_region_size);
 	if (csize)
-		for (u32 i = 0; i < csize; i+=4)
+		for (uint32_t i = 0; i < csize; i+=4)
 			std::swap(spr_region[i+1], spr_region[i+2]);
 
 	init_neogeo();
@@ -1841,7 +1844,7 @@ QUICKLOAD_LOAD_MEMBER(neogeo_state::mvs_q_cb)
 	// Fix the 512k text with horrible game-specific stuff
 	if (ssize > 0x20000)
 	{
-		u16 game = cpuregion[0x109] * 256 + cpuregion[0x108];
+		uint16_t game = cpuregion[0x109] * 256 + cpuregion[0x108];
 		// identify kof2000, matrim, svc, kof2003
 		if ((game == 0x257) || (game == 0x266) || (game == 0x269) || (game == 0x271))
 			m_sprgen->m_fixed_layer_bank_type = 2;
@@ -1881,7 +1884,7 @@ void neogeo_kf2k2ps2::machine_start()
 	m4_ym->reset();
 
 	/* set the initial audio CPU ROM banks */
-	u8 *rgn = memregion("audiocpu_m2")->base();
+	uint8_t *rgn = memregion("audiocpu_m2")->base();
 
 	/* audio bios/cartridge selection */
 	m2_bank_audio_main->configure_entry(1, memregion("audiocpu_m2")->base());
@@ -1898,14 +1901,14 @@ void neogeo_kf2k2ps2::machine_start()
 	m2_bank_audio_cart[2] = membank("audio2_c000");
 	m2_bank_audio_cart[3] = membank("audio2_8000");
 
-	u32 address_mask = (memregion("audiocpu_m2")->bytes() - 0x10000 - 1) & 0x3ffff;
+	uint32_t address_mask = (memregion("audiocpu_m2")->bytes() - 0x10000 - 1) & 0x3ffff;
 
 
-	for (u8 region = 0; region < 4; region++)
+	for (uint8_t region = 0; region < 4; region++)
 	{
 		for (int bank = 0xff; bank >= 0; bank--)
 		{
-			u32 bank_address = 0x10000 + ((bank << (11 + region)) & address_mask);
+			uint32_t bank_address = 0x10000 + ((bank << (11 + region)) & address_mask);
 			m2_bank_audio_cart[region]->configure_entry(bank, &rgn[bank_address]);
 		}
 	}
@@ -1936,11 +1939,11 @@ void neogeo_kf2k2ps2::machine_start()
 	address_mask = (memregion("audiocpu_m3")->bytes() - 0x10000 - 1) & 0x3ffff;
 
 
-	for (u8 region = 0; region < 4; region++)
+	for (uint8_t region = 0; region < 4; region++)
 	{
 		for (int bank = 0xff; bank >= 0; bank--)
 		{
-			u32 bank_address = 0x10000 + ((bank << (11 + region)) & address_mask);
+			uint32_t bank_address = 0x10000 + ((bank << (11 + region)) & address_mask);
 			m3_bank_audio_cart[region]->configure_entry(bank, &rgn[bank_address]);
 		}
 	}
@@ -1971,11 +1974,11 @@ void neogeo_kf2k2ps2::machine_start()
 	address_mask = (memregion("audiocpu_m4")->bytes() - 0x10000 - 1) & 0x3ffff;
 
 
-	for (u8 region = 0; region < 4; region++)
+	for (uint8_t region = 0; region < 4; region++)
 	{
 		for (int bank = 0xff; bank >= 0; bank--)
 		{
-			u32 bank_address = 0x10000 + ((bank << (11 + region)) & address_mask);
+			uint32_t bank_address = 0x10000 + ((bank << (11 + region)) & address_mask);
 			m4_bank_audio_cart[region]->configure_entry(bank, &rgn[bank_address]);
 		}
 	}
@@ -1991,19 +1994,19 @@ void neogeo_kf2k2ps2::audio2_check_nmi()
 	m2_audiocpu->set_input_line(INPUT_LINE_NMI, (m2_nmi_enabled && m2_nmi_pending) ? ASSERT_LINE : CLEAR_LINE);
 }
 
-void neogeo_kf2k2ps2::audio2_enable_nmi_w(offs_t offset, u8 data)
+void neogeo_kf2k2ps2::audio2_enable_nmi_w(offs_t offset, uint8_t data)
 {
 	// out ($08) enables the nmi, out ($18) disables it
 	m2_nmi_enabled = BIT(offset, 4) ^ 1;
 	audio2_check_nmi();
 }
 
-u16 neogeo_kf2k2ps2::audio2_result_r()
+uint16_t neogeo_kf2k2ps2::audio2_result_r()
 {
 	return m2_soundlatch2->read() << 8;
 }
 
-void neogeo_kf2k2ps2::audio2_command_w(u8 data)
+void neogeo_kf2k2ps2::audio2_command_w(uint8_t data)
 {
 	m2_soundlatch->write(data);
 	m2_nmi_pending = true;
@@ -2011,15 +2014,15 @@ void neogeo_kf2k2ps2::audio2_command_w(u8 data)
 	machine().scheduler().perfect_quantum(attotime::from_usec(50));
 }
 
-u8 neogeo_kf2k2ps2::audio2_command_r()
+uint8_t neogeo_kf2k2ps2::audio2_command_r()
 {
-	u8 ret = m2_soundlatch->read();
+	uint8_t ret = m2_soundlatch->read();
 	m2_nmi_pending = false;
 	audio2_check_nmi();
 	return ret;
 }
 
-u8 neogeo_kf2k2ps2::audio2_bank_select_r(offs_t offset)
+uint8_t neogeo_kf2k2ps2::audio2_bank_select_r(offs_t offset)
 {
 	m2_bank_audio_cart[offset & 3]->set_entry(offset >> 8);
 	return 0;
@@ -2030,19 +2033,19 @@ void neogeo_kf2k2ps2::audio3_check_nmi()
 	m3_audiocpu->set_input_line(INPUT_LINE_NMI, (m3_nmi_enabled && m3_nmi_pending) ? ASSERT_LINE : CLEAR_LINE);
 }
 
-void neogeo_kf2k2ps2::audio3_enable_nmi_w(offs_t offset, u8 data)
+void neogeo_kf2k2ps2::audio3_enable_nmi_w(offs_t offset, uint8_t data)
 {
 	// out ($08) enables the nmi, out ($18) disables it
 	m3_nmi_enabled = BIT(offset, 4) ^ 1;
 	audio3_check_nmi();
 }
 
-u16 neogeo_kf2k2ps2::audio3_result_r()
+uint16_t neogeo_kf2k2ps2::audio3_result_r()
 {
 	return m3_soundlatch2->read() << 8;
 }
 
-void neogeo_kf2k2ps2::audio3_command_w(u8 data)
+void neogeo_kf2k2ps2::audio3_command_w(uint8_t data)
 {
 	m3_soundlatch->write(data);
 	m3_nmi_pending = true;
@@ -2050,15 +2053,15 @@ void neogeo_kf2k2ps2::audio3_command_w(u8 data)
 	machine().scheduler().perfect_quantum(attotime::from_usec(50));
 }
 
-u8 neogeo_kf2k2ps2::audio3_command_r()
+uint8_t neogeo_kf2k2ps2::audio3_command_r()
 {
-	u8 ret = m3_soundlatch->read();
+	uint8_t ret = m3_soundlatch->read();
 	m3_nmi_pending = false;
 	audio3_check_nmi();
 	return ret;
 }
 
-u8 neogeo_kf2k2ps2::audio3_bank_select_r(offs_t offset)
+uint8_t neogeo_kf2k2ps2::audio3_bank_select_r(offs_t offset)
 {
 	m3_bank_audio_cart[offset & 3]->set_entry(offset >> 8);
 	return 0;
@@ -2069,14 +2072,14 @@ void neogeo_kf2k2ps2::audio4_check_nmi()
 	m4_audiocpu->set_input_line(INPUT_LINE_NMI, (m4_nmi_enabled && m4_nmi_pending) ? ASSERT_LINE : CLEAR_LINE);
 }
 
-void neogeo_kf2k2ps2::audio4_enable_nmi_w(offs_t offset, u8 data)
+void neogeo_kf2k2ps2::audio4_enable_nmi_w(offs_t offset, uint8_t data)
 {
 	// out ($08) enables the nmi, out ($18) disables it
 	m4_nmi_enabled = BIT(offset, 4) ^ 1;
 	audio4_check_nmi();
 }
 
-void neogeo_kf2k2ps2::audio4_command_w(u8 data)
+void neogeo_kf2k2ps2::audio4_command_w(uint8_t data)
 {
 	m4_soundlatch->write(data);
 	m4_nmi_pending = true;
@@ -2084,20 +2087,20 @@ void neogeo_kf2k2ps2::audio4_command_w(u8 data)
 	machine().scheduler().perfect_quantum(attotime::from_usec(50));
 }
 
-u16 neogeo_kf2k2ps2::audio4_result_r()
+uint16_t neogeo_kf2k2ps2::audio4_result_r()
 {
 	return m4_soundlatch2->read() << 8;
 }
 
-u8 neogeo_kf2k2ps2::audio4_command_r()
+uint8_t neogeo_kf2k2ps2::audio4_command_r()
 {
-	u8 ret = m4_soundlatch->read();
+	uint8_t ret = m4_soundlatch->read();
 	m4_nmi_pending = false;
 	audio4_check_nmi();
 	return ret;
 }
 
-u8 neogeo_kf2k2ps2::audio4_bank_select_r(offs_t offset)
+uint8_t neogeo_kf2k2ps2::audio4_bank_select_r(offs_t offset)
 {
 	m4_bank_audio_cart[offset & 3]->set_entry(offset >> 8);
 	return 0;
@@ -2224,7 +2227,7 @@ void neogeo_state::init_kof99()
 	m_sprgen->m_fixed_layer_bank_type = 1; // only meaningful if s1 > 128k
 
 	// decrypt p roms if needed
-	u8 *ram = cpuregion;
+	uint8_t *ram = cpuregion;
 	if (ram[0x100] != 0x45)
 	{
 		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
@@ -2263,7 +2266,7 @@ void neogeo_state::init_garou()
 	m_sprgen->m_fixed_layer_bank_type = 1;
 
 	// decrypt p roms if needed
-	u8 *ram = memregion("maincpu")->base();
+	uint8_t *ram = memregion("maincpu")->base();
 	if (ram[0x100] != 0x45)
 	{
 		//printf("Maincpu=%X\n",ram[0x100007]);fflush(stdout);
@@ -2302,7 +2305,7 @@ void neogeo_state::init_garouh()
 	m_sprgen->m_fixed_layer_bank_type = 1;
 
 	// decrypt p roms if needed
-	u8 *ram = memregion("maincpu")->base();
+	uint8_t *ram = memregion("maincpu")->base();
 	if (ram[0x100] != 0x45)
 	{
 		//printf("Maincpu=%X\n",ram[0x100007]);fflush(stdout);
@@ -2350,7 +2353,7 @@ void neogeo_state::init_mslug3()
 	m_sprgen->m_fixed_layer_bank_type = 1;
 
 	// decrypt p roms if needed
-	u8 *ram = memregion("maincpu")->base();
+	uint8_t *ram = memregion("maincpu")->base();
 	if (ram[0x100] != 0x45)
 	{
 		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
@@ -2396,7 +2399,7 @@ void neogeo_state::init_kof2000()
 	m_sprgen->m_fixed_layer_bank_type = 2; // only meaningful if s1 > 128k
 
 	// decrypt p roms if needed
-	u8 *ram = cpuregion;
+	uint8_t *ram = cpuregion;
 	if (ram[0x100] != 0x45)
 	{
 		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
@@ -2444,7 +2447,7 @@ void neogeo_state::init_mslug4()
 		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
 
 	// decrypt v roms if needed
-	u8 *ram = memregion("ymsnd:adpcma")->base();
+	uint8_t *ram = memregion("ymsnd:adpcma")->base();
 	if (ram[0x20] != 0x99)
 	{
 		//printf("ym=%X\n",ram[0x20]);
@@ -2481,7 +2484,7 @@ void neogeo_state::init_ganryu()
 	m_sprgen->m_fixed_layer_bank_type = 1;
 
 	// decrypt c roms if needed
-	u8 *ram = memregion("sprites")->base();
+	uint8_t *ram = memregion("sprites")->base();
 	if (ram[0] != 0)
 	{
 		//printf("Sprites=%X\n",ram[0]);
@@ -2504,7 +2507,7 @@ void neogeo_state::init_s1945p()
 	m_sprgen->m_fixed_layer_bank_type = 1;
 
 	// decrypt c roms if needed
-	u8 *ram = memregion("sprites")->base();
+	uint8_t *ram = memregion("sprites")->base();
 	if (ram[0] != 0)
 	{
 		//printf("Sprites=%X\n",ram[0]);
@@ -2527,7 +2530,7 @@ void neogeo_state::init_preisle2()
 	m_sprgen->m_fixed_layer_bank_type = 1;
 
 	// decrypt c roms if needed
-	u8 *ram = memregion("sprites")->base();
+	uint8_t *ram = memregion("sprites")->base();
 	if (ram[0] != 0)
 	{
 		//printf("Sprites=%X\n",ram[0]);
@@ -2558,7 +2561,7 @@ void neogeo_state::init_nitd()
 	m_sprgen->m_fixed_layer_bank_type = 1;
 
 	// decrypt c roms if needed
-	u8 *ram = memregion("sprites")->base();
+	uint8_t *ram = memregion("sprites")->base();
 	if (ram[0] != 0)
 	{
 		//printf("Sprites=%X\n",ram[0]);
@@ -2581,7 +2584,7 @@ void neogeo_state::init_sengoku3()
 	m_sprgen->m_fixed_layer_bank_type = 1;
 
 	// decrypt c roms if needed
-	u8 *ram = memregion("sprites")->base();
+	uint8_t *ram = memregion("sprites")->base();
 	if (ram[0] != 0)
 	{
 		//printf("Sprites=%X\n",ram[0]);
@@ -2618,7 +2621,7 @@ void neogeo_state::init_kof2001()
 		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
 
 	// decrypt c roms if needed
-	u8 *ram = spr_region;
+	uint8_t *ram = spr_region;
 	if (ram[0] != 0)
 	{
 		//printf("Sprites=%X\n",ram[0]);
@@ -2646,7 +2649,7 @@ void neogeo_state::init_rotd()
 	    m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
 
 	// decrypt v roms if needed
-	u8 *ram = memregion("ymsnd:adpcma")->base();
+	uint8_t *ram = memregion("ymsnd:adpcma")->base();
 	if (ram[0x60] != 0x3D)
 	{
 		//printf("ym=%X\n",ram[0x60]);
@@ -2687,7 +2690,7 @@ void neogeo_state::init_pnyaa()
 		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
 
 	// decrypt v roms if needed
-	u8 *ram = memregion("ymsnd:adpcma")->base();
+	uint8_t *ram = memregion("ymsnd:adpcma")->base();
 	if (ram[0x100] != 0xB0)
 	{
 		//printf("ym=%X\n",ram[0x60]);
@@ -2720,7 +2723,7 @@ void neogeo_state::init_kof2002()
 	m_sprgen->m_fixed_layer_bank_type = 1; // only meaningful if s1 > 128k
 
 	// decrypt p roms if needed
-	u8 *ram = cpuregion;
+	uint8_t *ram = cpuregion;
 	if (ram[0x100002] != 0xFF)
 	{
 		//printf("Maincpu=%X\n",ram[0x100002]);fflush(stdout);
@@ -2762,7 +2765,7 @@ void neogeo_state::init_matrim()
 	m_sprgen->m_fixed_layer_bank_type = 2;
 
 	// decrypt p roms if needed
-	u8 *ram = memregion("maincpu")->base();
+	uint8_t *ram = memregion("maincpu")->base();
 	if (ram[0x100002] != 0xFF)
 	{
 		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
@@ -2805,7 +2808,7 @@ void neogeo_state::init_samsho5()
 	m_sprgen->m_fixed_layer_bank_type = 1;
 
 	// decrypt p roms if needed
-	u8 *ram = memregion("maincpu")->base();
+	uint8_t *ram = memregion("maincpu")->base();
 	if (ram[0x100007] != 0xC2)
 	{
 		//printf("Maincpu=%X\n",ram[0x100007]);fflush(stdout);
@@ -2848,7 +2851,7 @@ void neogeo_state::init_samsh5sp()
 	m_sprgen->m_fixed_layer_bank_type = 1;
 
 	// decrypt p roms if needed
-	u8 *ram = memregion("maincpu")->base();
+	uint8_t *ram = memregion("maincpu")->base();
 	if (ram[0x100007] == 0)
 	{
 		//printf("Maincpu=%X\n",ram[0x100007]);fflush(stdout);
@@ -2911,7 +2914,7 @@ void neogeo_state::init_mslug5()
 	m_sprgen->m_fixed_layer_bank_type = 2; // for those sets with 512k of s1
 
 	// decrypt p roms if needed
-	u8 *ram = memregion("maincpu")->base();
+	uint8_t *ram = memregion("maincpu")->base();
 	if (ram[0x100] != 0x45)
 	{
 		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
@@ -2960,7 +2963,7 @@ void neogeo_state::init_mslug5nd()
 	m_sprgen->m_fixed_layer_bank_type = 2; // for those sets with 512k of s1
 
 	// decrypt p roms if needed
-	u8 *ram = memregion("maincpu")->base();
+	uint8_t *ram = memregion("maincpu")->base();
 	if (ram[0x100] != 0x45)
 	{
 		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
@@ -3003,7 +3006,7 @@ void neogeo_state::init_svc()
 	m_sprgen->m_fixed_layer_bank_type = 2;
 
 	// decrypt p roms if needed
-	u8 *ram = memregion("maincpu")->base();
+	uint8_t *ram = memregion("maincpu")->base();
 	if (ram[0x100] != 0x45)
 	{
 		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
@@ -3060,7 +3063,7 @@ void neogeo_state::init_kof2003()
 	m_sprgen->m_fixed_layer_bank_type = 2; // for those sets with 512k of s1
 
 	// decrypt p roms if needed
-	u8 *ram = cpuregion;
+	uint8_t *ram = cpuregion;
 	if (ram[0x100] != 0x45)
 	{
 		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
@@ -3114,7 +3117,7 @@ void neogeo_state::init_kof2003b() // hacks of kf2k3bl
 		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region, audio_region_size);
 
 	// decrypt v roms if needed
-	u8 *ram = ym_region;
+	uint8_t *ram = ym_region;
 	if (ram[0x91] != 0x33)
 	{
 		//printf("ym=%X\n",ram[0x91]);
@@ -3138,7 +3141,7 @@ void neogeo_state::init_kof2003h()
 	m_sprgen->m_fixed_layer_bank_type = 2; // for those sets with 512k of s1
 
 	// decrypt p roms if needed
-	u8 *ram = cpuregion;
+	uint8_t *ram = cpuregion;
 	if (ram[0x100] != 0x45)
 	{
 		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
@@ -3218,7 +3221,7 @@ void neogeo_state::init_jockeygp()
 		m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
 
 	// decrypt c roms if needed
-	u8 *ram = memregion("sprites")->base();
+	uint8_t *ram = memregion("sprites")->base();
 	if (ram[0] != 0)
 	{
 		//printf("Sprites=%X\n",ram[0]);
@@ -3430,7 +3433,7 @@ void neogeo_state::init_ms5plus()
 	m_sprgen->m_fixed_layer_bank_type = 1; // for those sets with 512k of s1
 
 	// decrypt p roms if needed
-	u8 *ram = memregion("maincpu")->base();
+	uint8_t *ram = memregion("maincpu")->base();
 	if (ram[0x100] != 0x45)
 	{
 		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
@@ -3525,7 +3528,7 @@ void neogeo_state::init_ms5pcb()
 	m_sprgen->m_fixed_layer_bank_type = 2; // for those sets with 512k of s1
 
 	// decrypt p roms if needed
-	u8 *ram = memregion("maincpu")->base();
+	uint8_t *ram = memregion("maincpu")->base();
 	if (ram[0x100] != 0x45)
 	{
 		//printf("Maincpu=%X\n",ram[0x100]);fflush(stdout);
@@ -3592,14 +3595,14 @@ void neogeo_state::init_kf2k3pcb()
 	init_neogeo();
 	m_pvc_prot->kf2k3pcb_decrypt_68k(cpuregion, cpuregion_size);
 	m_sma_prot->kf2k3pcb_gfx_decrypt(spr_region, spr_region_size);
-	m_sma_prot->kf2k3pcb_sp1_decrypt((u16 *)memregion("mainbios")->base());
+	m_sma_prot->kf2k3pcb_sp1_decrypt((uint16_t *)memregion("mainbios")->base());
 	m_cmc_prot->neogeo_cmc50_m1_decrypt(audiocrypt_region, audiocrypt_region_size, audiocpu_region,audio_region_size);
 
 	/* extra little swap on the m1 - this must be performed AFTER the m1 decrypt
 	   or the m1 checksum (used to generate the key) for decrypting the m1 is
 	   incorrect */
 	{
-		u8* rom = memregion("audiocpu")->base();
+		uint8_t* rom = memregion("audiocpu")->base();
 		for (int i = 0; i < 0x90000; i++)
 			rom[i] = bitswap<8>(rom[i], 5, 6, 1, 4, 3, 0, 7, 2);
 	}
@@ -3617,8 +3620,8 @@ void neogeo_state::init_kof2k4pls()
 {
 	init_neogeo();
 
-	u8 *src = cpuregion;
-	std::vector<u8> dst( 0x200000 );
+	uint8_t *src = cpuregion;
+	std::vector<uint8_t> dst( 0x200000 );
 
 	memcpy(&dst[0],src,0x100000);
 	memcpy(&dst[0x100000],src+0x500000,0x100000);
@@ -3638,7 +3641,7 @@ void neogeo_state::init_cthd2k3a()
 {
 	init_neogeo();
 
-	u8 nBank[] = {
+	uint8_t nBank[] = {
 		0x06, 0x02, 0x04, 0x05, 0x01, 0x03, 0x00, 0x07,
 		0x27, 0x0E, 0x1C, 0x15, 0x1B, 0x17, 0x0A, 0x0F,
 		0x16, 0x14, 0x23, 0x0B, 0x22, 0x26, 0x08, 0x24,
@@ -3646,8 +3649,8 @@ void neogeo_state::init_cthd2k3a()
 		0x09, 0x20, 0x18, 0x1F, 0x1E, 0x12, 0x0D, 0x11
 	};
 
-	u8 *src = cpuregion;
-	std::vector<u8> dst( cpuregion_size );
+	uint8_t *src = cpuregion;
+	std::vector<uint8_t> dst( cpuregion_size );
 
 	for (int i = 0; i < 0x500000 / 0x20000; i++)
 		memcpy (&dst[i * 0x20000], src + nBank[i] * 0x20000, 0x20000);
@@ -3695,11 +3698,11 @@ void neogeo_state::init_kof96ep()
 
 void neogeo_state::init_kf2k1pa()
 {
-	u32 sx_size = memregion("fixed")->bytes();
-	u8 *rom = memregion("fixed")->base();
+	uint32_t sx_size = memregion("fixed")->bytes();
+	uint8_t *rom = memregion("fixed")->base();
 
 	/* S-rom has its own unique encryption */
-	for( u32 i = 0; i < sx_size; i++ )
+	for( uint32_t i = 0; i < sx_size; i++ )
 		rom[ i ] = bitswap<8>( rom[ i ], 3, 2, 4, 5, 1, 6, 0, 7 );
 
 	init_kof2001();
@@ -3781,10 +3784,10 @@ void neogeo_state::init_shockt2w()
 
 void neogeo_state::init_cd()
 {
-	u8 a,b,c,d;
+	uint8_t a,b,c,d;
 	init_neogeo();
 	// decrypt sprites extracted from CD to MVS format
-	for (u32 i = 0; i < spr_region_size; i+=4)
+	for (uint32_t i = 0; i < spr_region_size; i+=4)
 	{
 		a = spr_region[i];
 		b = spr_region[i+1];
